@@ -1,0 +1,139 @@
+/* Trang tĩnh SEO của Tâm HSK – nhẹ, không phông web */
+:root{--jade:#0d7a63;--jade2:#0a5e4d;--jsoft:#e3f3ee;--paper:#fdf6ea;--card:#fff;--ink:#23201c;--muted:#6d665d;--line:#eadfcd;--amber:#c87a14;--red:#d6453d}
+@media (prefers-color-scheme:dark){:root{--paper:#14181a;--card:#1d2326;--ink:#ecebe7;--muted:#a3a7a6;--line:#30383b;--jsoft:#173a32;--jade:#2fb08f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--jade)}
+.in{max-width:960px;margin:0 auto;padding:0 16px}
+.han{font-family:"Noto Serif SC","Noto Serif CJK SC","Songti SC","SimSun",serif}
+.muted{color:var(--muted)}.small{font-size:13px}
+.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.top .in{display:flex;align-items:center;gap:12px;min-height:58px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:var(--ink);text-decoration:none;margin-right:auto}
+.brand img{border-radius:10px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.top nav a{padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px}
+.top nav a:hover{background:var(--jsoft)}
+.top nav a.cta{background:var(--jade);color:#fff}
+@media (max-width:620px){.top nav a:not(.cta){display:none}}
+main.in{padding-top:14px;padding-bottom:28px}
+.crumb{font-size:13px;color:var(--muted);margin:4px 0 12px;overflow-wrap:anywhere}
+.crumb a{color:var(--muted)}.crumb span{margin:0 2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:16px}
+h1{font-size:28px;line-height:1.25;margin:0 0 8px}h2{font-size:20px;margin:22px 0 10px}h3{font-size:16px;margin:16px 0 8px}
+.label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--jade)}
+.lead{font-size:17px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--jade);color:var(--jade);font-weight:700;text-decoration:none;font-size:15px}
+.btn.pri{background:var(--jade);color:#fff}
+.btn:hover{filter:brightness(1.05)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.chip{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--jsoft);color:var(--jade);font-weight:700;font-size:13px;text-decoration:none}
+.chip.hsk{background:var(--jade);color:#fff}
+/* từ */
+.hero{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.hl{min-width:0}
+.zrow{display:flex;align-items:center;gap:12px}
+h1.zh{font-size:64px;line-height:1.1;margin:0;font-weight:700;overflow-wrap:anywhere}
+.py{font-size:24px;font-weight:700;color:var(--jade)}
+.hv{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.vi{font-size:20px;font-weight:600;margin-top:2px}
+.art{width:220px;max-width:100%;border-radius:18px;overflow:hidden;flex:none}
+.art svg{display:block;width:100%;height:auto}
+.spk{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-grid;place-items:center;flex:none}
+.spk svg{width:20px;height:20px;fill:currentColor;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.spk:hover{border-color:var(--jade);color:var(--jade)}
+.trap{padding:10px 14px;border-radius:14px;background:color-mix(in srgb,var(--red) 10%,var(--card));border-left:4px solid var(--red);margin:10px 0}
+.senses{padding-left:18px}.tpy{font-weight:700;color:var(--jade);margin-right:6px}
+.ex{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px dashed var(--line)}
+.exz{font-size:20px}.expy{color:var(--jade);font-size:14px}.exvi{color:var(--muted);font-size:15px}
+.wls{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.wl{display:flex;flex-direction:column;padding:8px 12px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);background:var(--paper)}
+.wl:hover{border-color:var(--jade)}
+.wl .han{font-size:20px}.wl .han b{color:var(--red)}
+.wpy{font-size:13px;color:var(--jade);font-weight:600}.wvi{font-size:13px;color:var(--muted);line-height:1.35}
+.root{color:var(--red);font-size:22px}.hvc{text-transform:uppercase;color:var(--jade);font-weight:800;letter-spacing:.06em}
+.pn{display:flex;justify-content:space-between;gap:8px;margin:0 0 16px;font-weight:700}
+.pn a{text-decoration:none;padding:8px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+/* bảng từ */
+.wt{width:100%;border-collapse:collapse;font-size:15px}
+.wt th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:2px solid var(--line);padding:6px 8px}
+.wt td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top}
+.wt td:first-child{white-space:nowrap}
+.wt td a.han{font-size:20px;text-decoration:none;font-weight:700}
+.hvt{text-transform:capitalize;color:var(--muted)}
+@media (max-width:560px){.wt th:nth-child(3),.wt td:nth-child(3){display:none}}
+.pager{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.pager a{min-width:36px;text-align:center;padding:6px 10px;border-radius:10px;border:1px solid var(--line);text-decoration:none;font-weight:700}
+.pager a[aria-current]{background:var(--jade);color:#fff;border-color:var(--jade)}
+.lvs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.lvc{display:flex;flex-direction:column;gap:2px;padding:16px;border-radius:16px;background:var(--jsoft);text-decoration:none;color:var(--ink)}
+.lvc b{font-size:22px;color:var(--jade)}.lvc .han{font-size:18px;color:var(--muted)}
+.lsns{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.lsn{display:flex;flex-direction:column;padding:12px 14px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);background:var(--paper)}
+.lsn b{color:var(--jade)}.lsn .han{font-size:19px}
+.gp{border-top:1px solid var(--line);padding-top:4px}
+.gf{display:inline-block;font-weight:700;background:var(--jsoft);color:var(--jade);border-radius:10px;padding:4px 10px}
+/* trò chơi */
+.ghero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.gart{display:block;border-radius:16px;overflow:hidden;background:var(--jsoft)}
+.gart svg{display:block;width:100%;height:auto}
+.gart.big{width:260px;max-width:100%;flex:none}
+.gcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.gc{display:flex;flex-direction:column;gap:6px;padding:10px;border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--ink);background:var(--paper)}
+.gc .muted{font-size:13px;line-height:1.4}
+.gc.sm b{font-size:14px}
+/* quảng bá */
+.promo{display:flex;gap:16px;align-items:center;padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--jade),var(--jade2));color:#fff;margin-bottom:16px}
+.promo img{flex:none;border-radius:20px;background:rgba(255,255,255,.12)}
+.promo p{margin:4px 0 10px;opacity:.92}
+.promo .btn.pri{background:#fff;color:var(--jade2);border-color:#fff}
+@media (max-width:520px){.promo{flex-direction:column;text-align:center}h1.zh{font-size:52px}.art{width:100%}}
+.foot{border-top:1px solid var(--line);background:var(--card);padding:20px 0;font-size:14px}
+.foot .in{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.foot .fl{display:flex;flex-direction:column;gap:4px}
+.foot p{grid-column:1/-1;margin:8px 0 0;color:var(--muted)}
+
+.wart .wa-bob{animation:waBob 1.6s ease-in-out infinite}
+.wart .wa-hop{animation:waHop 1.1s ease-in-out infinite}
+.wart .wa-wave{animation:waWave .9s ease-in-out infinite}
+.wart .wa-poke{animation:waPoke 1s ease-in-out infinite}
+.wart .wa-poke2{animation:waPoke2 1s ease-in-out infinite}
+.wart .wa-pulse{animation:waPulse 1.4s ease-in-out infinite}
+.wart .wa-shake{animation:waShake .8s ease-in-out infinite}
+.wart .wa-tilt{animation:waTilt 2s ease-in-out infinite}
+.wart .wa-bow{animation:waBow 2.4s ease-in-out infinite}
+.wart .wa-bow2{animation:waBow2 2.4s ease-in-out infinite}
+.wart .wa-drip{animation:waDrip 1.6s ease-in infinite}
+.wart .wa-float{animation:waFloat 2.4s ease-out infinite}
+.wart .wa-fly{animation:waFly 2.2s ease-in-out infinite}
+.wart .wa-tw{animation:waTw 1.6s ease-in-out infinite}
+.wart .wa-pop{transform-box:fill-box;transform-origin:center;animation:waPop 2.4s cubic-bezier(.3,1.6,.5,1) infinite}
+.wart .wa-q{animation:waQ 1.3s ease-in-out infinite}
+.wart .wa-swing{animation:waSwing 2.6s ease-in-out infinite}
+.wart .wa-tap{animation:waTap .8s ease-in-out infinite}
+.wart .wa-flag{animation:waFlag 1.8s ease-in-out infinite}
+.wart .wa-wavein{animation:waWaveIn 1.2s ease-out infinite;opacity:0}
+@keyframes waIn{0%{transform:scale(.6) rotate(-4deg);opacity:0}100%{transform:none;opacity:1}}
+@keyframes waBao{to{opacity:1;transform:none}}
+@keyframes waBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes waHop{0%,100%{transform:translateY(0)}40%{transform:translateY(-9px)}60%{transform:translateY(-9px)}}
+@keyframes waWave{0%,100%{transform:rotate(0)}50%{transform:rotate(-28deg)}}
+@keyframes waPoke{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@keyframes waPoke2{0%,100%{transform:translateX(0)}50%{transform:translateX(-3px)}}
+@keyframes waPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes waShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+@keyframes waTilt{0%,100%{transform:rotate(0)}50%{transform:rotate(-10deg)}}
+@keyframes waBow{0%,25%,100%{transform:rotate(0)}45%,70%{transform:rotate(24deg)}}
+@keyframes waBow2{0%,25%,100%{transform:rotate(0)}45%,70%{transform:rotate(14deg)}}
+@keyframes waDrip{0%{transform:translateY(-4px);opacity:0}20%{opacity:1}100%{transform:translateY(10px);opacity:0}}
+@keyframes waFloat{0%{transform:translateY(10px) scale(.6);opacity:0}25%{opacity:1}100%{transform:translateY(-22px) scale(1);opacity:0}}
+@keyframes waFly{0%{transform:translate(0,0) scale(.7);opacity:0}20%{opacity:1}80%{transform:translate(34px,-6px) scale(1);opacity:1}100%{transform:translate(40px,-6px) scale(1);opacity:0}}
+@keyframes waTw{0%,100%{transform:scale(.6) rotate(0);opacity:.5}50%{transform:scale(1.1) rotate(25deg);opacity:1}}
+@keyframes waPop{0%{transform:scale(0)}18%,85%{transform:scale(1)}100%{transform:scale(0)}}
+@keyframes waQ{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(8deg) translateY(-5px)}}
+@keyframes waSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes waTap{0%,100%{transform:rotate(0)}50%{transform:rotate(-8deg)}}
+@keyframes waFlag{0%,100%{transform:skewY(0) scaleX(1)}50%{transform:skewY(3deg) scaleX(.97)}}
+@keyframes waWaveIn{0%{opacity:0;transform:scale(.7)}30%{opacity:1}100%{opacity:0;transform:scale(1.15)}}

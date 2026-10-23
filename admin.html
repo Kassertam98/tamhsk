@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Quản trị Tâm HSK</title>
+<style>
+:root{--paper:#faf6ee;--card:#fff;--ink:#22231f;--muted:#6b6a63;--line:#e4ddcf;--jade:#0d7a63;--seal:#c0392b;--amber:#c8860b;--soft:#f3efe6}
+@media (prefers-color-scheme:dark){:root{--paper:#171815;--card:#22231f;--ink:#eeeae0;--muted:#a7a49a;--line:#3a3b35;--soft:#2a2b26}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:16px}h1{font-size:22px;margin:4px 0 12px}h2{font-size:18px;margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+input,select,textarea,button{font:inherit}input,select,textarea{padding:8px 10px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+button{padding:7px 13px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-weight:600}button.pri{background:var(--jade);color:#fff;border-color:var(--jade)}button.danger{color:var(--seal);border-color:var(--seal)}button:disabled{opacity:.5}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.muted{color:var(--muted)}.small{font-size:13px}.err{color:var(--seal)}.okc{color:var(--jade)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.tabs button.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12.5px;color:var(--muted);font-weight:600}tr.click{cursor:pointer}tr.click:hover{background:var(--soft)}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;background:var(--soft);font-size:12px;margin:1px 3px 1px 0;white-space:nowrap}.tag.g{background:#e8f0fe}.tag.k{background:#fff3d6}.tag.p{background:#fff1b8}.tag.b{background:#fde2e2;color:var(--seal)}.tag.r{background:#e3f4ec;color:var(--jade)}
+.scroll{overflow-x:auto}.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.grid2 label{display:grid;gap:3px;font-size:13px;color:var(--muted)}
+.reg{display:grid;gap:6px;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;background:var(--card)}
+.reg.new{border-left:5px solid var(--seal)}.reg.contacted{border-left:5px solid var(--amber)}.reg.placed{border-left:5px solid var(--jade)}.reg.closed{opacity:.6}
+.drawer{position:fixed;inset:0;background:rgba(0,0,0,.35);display:flex;justify-content:flex-end;z-index:10}.drawer>div{width:min(560px,100%);height:100%;overflow:auto;background:var(--paper);padding:16px;box-shadow:-10px 0 30px rgba(0,0,0,.2)}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:4px 10px;font-size:14px}.kv span{color:var(--muted)}
+.act{border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;background:var(--card)}
+.act input,.act textarea,.act select{width:100%;min-width:0!important}.act .row{flex-wrap:nowrap}.act .row input{flex:1}
+a{color:var(--jade)}
+</style></head><body><main>
+<h1>Quản trị Tâm HSK</h1>
+<div class="card" id="login">
+  <h2>Đăng nhập quản trị</h2>
+  <div class="row"><input id="em" type="text" autocapitalize="none" placeholder="ID / Email tài khoản KasserGroup (chủ app, quản trị viên, giáo viên)" style="flex:1;min-width:220px" autocomplete="username"><input id="pw" type="password" placeholder="Mật khẩu" autocomplete="current-password" style="min-width:160px"><button class="pri" id="golog">Đăng nhập</button></div>
+  <div class="small muted" style="margin:8px 0 4px">Hoặc chủ web dùng mã quản trị (ADMIN_KEY):</div>
+  <div class="row"><input id="key" type="password" placeholder="Mã quản trị" style="flex:1;min-width:220px"><button id="gokey">Vào bằng mã</button></div>
+  <div id="lmsg" class="err small" style="margin-top:6px"></div>
+</div>
+<div id="box" hidden>
+  <div class="row" style="justify-content:space-between;margin-bottom:10px"><span class="small muted" id="whoami"></span><button id="logout">Thoát</button></div>
+  <div class="tabs" id="tabs"></div><div id="pane"></div>
+</div>
+<script>
+(function(){
+  var API=(localStorage.getItem('tamhsk-api')||'https://tamhsk-api.nguyenminhtam19081998.workers.dev').replace(/\/$/,'');
+  var AUTH=JSON.parse(sessionStorage.getItem('adauth')||'null'),ROLE='',TAB='';
+  var $=function(s,r){return (r||document).querySelector(s);},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+  var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var vnd=function(n){return Number(n||0).toLocaleString('vi-VN')+'đ';},dt=function(t){return t?new Date(t).toLocaleString('vi-VN'):'';};
+  var ERR={ADMIN_KEY_INVALID:'Không có quyền (mã sai hoặc tài khoản chưa được cấp quyền).',ADMIN_NOT_CONFIGURED:'Máy chủ chưa đặt ADMIN_KEY.',INVALID_LOGIN_CREDENTIALS:'Email hoặc mật khẩu không đúng.',FORBIDDEN:'Vai trò của bạn không được làm thao tác này.',NO_EMAIL:'Tài khoản này chưa có email.',NO_APP_ACCOUNT:'Người này không có tài khoản app để nhận thông báo.',WEAK_PASSWORD:'Mật khẩu cần ít nhất 6 ký tự.',INVALID_CODE:'Mã voucher cần ít nhất 3 ký tự (chữ, số, - _).',INVALID_VALUE:'Giá trị giảm không hợp lệ.',USER_DISABLED:'Tài khoản đã bị khóa.'};
+  var emsg=function(m){m=String(m||'');var k=(m.match(/[A-Z_]{6,}/)||[''])[0];return ERR[k]||m;};
+  function hdr(){var h={'Content-Type':'application/json'};if(AUTH&&AUTH.key)h['X-Admin-Key']=AUTH.key;if(AUTH&&AUTH.id)h.Authorization='Bearer '+AUTH.id;return h;}
+  function refresh(){return fetch(API+'/v1/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'grant_type=refresh_token&refresh_token='+encodeURIComponent(AUTH.rf)}).then(function(r){return r.json();}).then(function(j){if(!j.id_token)throw new Error('ADMIN_KEY_INVALID');AUTH.id=j.id_token;sessionStorage.setItem('adauth',JSON.stringify(AUTH));});}
+  function req(m,p,b,again){return fetch(API+p,{method:m,headers:hdr(),body:b?JSON.stringify(b):undefined}).then(function(r){return r.json().then(function(j){
+    if(r.status===401&&AUTH&&AUTH.rf&&!again)return refresh().then(function(){return req(m,p,b,true);});if(!r.ok)throw new Error(emsg(j.error&&j.error.message||r.status));return j;});});}
+  function start(){req('GET','/v1/admin/whoami').then(function(j){ROLE=j.role;$('#login').hidden=true;$('#box').hidden=false;
+      $('#whoami').innerHTML='Đang đăng nhập: <b>'+esc(j.who)+'</b> · vai trò <b>'+({owner:'Chủ',admin:'Quản trị viên',teacher:'Giáo viên'}[j.role])+'</b>'+(j.bank?'':' · <span class="err">Chưa đặt tài khoản ngân hàng (BANK_ID, BANK_ACC)</span>');
+      var T=ROLE==='teacher'?[['regs','Đăng ký lớp']]:[['users','Người dùng'],['orders','Đơn mua'],['vouchers','Voucher'],['regs','Đăng ký lớp'],['notify','Gửi thông báo'],['log','Nhật ký']];
+      $('#tabs').innerHTML=T.map(function(t){return '<button data-t="'+t[0]+'">'+t[1]+'</button>';}).join('');show(TAB&&T.some(function(t){return t[0]===TAB;})?TAB:T[0][0]);})
+    .catch(function(e){AUTH=null;sessionStorage.removeItem('adauth');$('#login').hidden=false;$('#box').hidden=true;$('#lmsg').textContent=e.message;});}
+  $('#tabs').onclick=function(e){var b=e.target.closest('[data-t]');if(b)show(b.dataset.t);};
+  function show(t){TAB=t;$$('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t);});$('#pane').innerHTML='<div class="card muted">Đang tải…</div>';({users:users,orders:orders,vouchers:vouchers,regs:regs,notify:notify,log:log})[t]();}
+  function fail(e){$('#pane').innerHTML='<div class="card err">'+esc(e.message)+'</div>';}
+  /* --- Người dùng --- */
+  var UQ='';
+  function users(){req('GET','/v1/admin/users?q='+encodeURIComponent(UQ)).then(function(j){
+    $('#pane').innerHTML='<div class="card"><div class="row"><input id="uq" placeholder="Tìm theo email, tên, @ID hoặc mã người dùng" value="'+esc(UQ)+'" style="flex:1;min-width:220px"><button class="pri" id="ugo">Tìm</button><span class="small muted">'+j.users.length+' / '+j.total+' tài khoản</span></div></div>'+
+      '<div class="card scroll"><table><tr><th>Người dùng</th><th>Loại</th><th>Từ đã học</th><th>Chuỗi</th><th>Nguyên bảo</th><th>Hoạt động gần nhất</th></tr>'+j.users.map(function(u){
+        return '<tr class="click" data-uid="'+esc(u.uid)+'"><td><b>'+esc(u.name||'(chưa đặt tên)')+'</b>'+(u.handle?' <span class="small" style="color:var(--jade)">@'+esc(u.handle)+'</span>':'')+'<div class="small muted">'+esc(u.email||u.uid)+'</div></td><td>'+kindTags(u)+'</td><td>'+u.sum.words+'</td><td>'+u.sum.streak+'</td><td>'+u.sum.coins+'</td><td class="small">'+dt(u.lastSeen)+'</td></tr>';}).join('')+'</table></div>';
+    $('#ugo').onclick=function(){UQ=$('#uq').value.trim();users();};$('#uq').onkeydown=function(e){if(e.key==='Enter')$('#ugo').click();};
+    $$('tr[data-uid]').forEach(function(tr){tr.onclick=function(){openUser(tr.dataset.uid);};});}).catch(fail);}
+  function kindTags(u){return '<span class="tag '+(u.kind==='google'?'g':u.kind==='kasser'?'k':'')+'">'+({google:'Google',kasser:'KasserGroup',anon:'Khách'}[u.kind])+'</span>'+(u.premium||(u.premium&&u.premium.study)?'<span class="tag p">⭐ Gói</span>':'')+(u.role?'<span class="tag r">'+({admin:'Quản trị',teacher:'Giáo viên'}[u.role]||u.role)+'</span>':'')+(u.banned?'<span class="tag b">Đã khóa</span>':'');}
+  function openUser(uid){req('GET','/v1/admin/user?uid='+encodeURIComponent(uid)).then(function(j){var u=j.user,pm=!!(u.premium&&u.premium.study);
+    var d=document.createElement('div');d.className='drawer';d.innerHTML='<div><div class="row" style="justify-content:space-between"><h2>'+esc(j.profile.name||u.email||'Người dùng')+'</h2><button id="dx">Đóng ✕</button></div>'+
+      '<div class="kv card"><span>Email</span><b>'+esc(u.email||'(không có)')+'</b><span>Loại</span><div>'+kindTags({kind:u.kind,premium:pm,role:u.role,banned:u.banned})+'</div><span>Mã người dùng</span><code class="small">'+esc(u.uid)+'</code><span>Ngày tạo</span><span>'+dt(u.created)+'</span><span>Đồng bộ gần nhất</span><span>'+dt(j.saveAt)+'</span>'+
+      '<span>Tiến độ</span><b>'+j.sum.words+' từ · chuỗi '+j.sum.streak+' ngày · '+j.sum.coins+' Nguyên bảo</b><span>Ví trên máy chủ</span><div>'+(j.wallet?'<b>'+j.wallet.coins+' Nguyên bảo</b><div class="small muted">'+j.wallet.log.slice(0,8).map(function(x){return (x.delta>0?'+':'')+x.delta+' · '+esc(x.why||x.kind)+' · '+dt(x.at);}).join('<br>')+'</div>':'<span class="muted">Chưa chuyển ví (app cũ hoặc chưa đăng nhập)</span>')+'</div><span>Hồ sơ bạn bè</span><span>'+(j.profile.code?'Mã '+esc(j.profile.code)+' · cấp '+j.profile.level+' · '+j.profile.xp+' XP':'Chưa tạo')+'</span>'+
+      '<span>Giải đấu</span><span>'+(j.league.map(function(l){return l.week+': hạng '+['Đồng','Bạc','Vàng','Bạch Kim','Kim Cương'][l.tier]+' '+l.xp+' XP';}).join('<br>')||'Chưa tham gia')+'</span>'+
+      '<span>Đơn mua</span><span>'+(j.orders.map(function(o){return esc(o.ref)+' · '+vnd(o.final)+' · '+o.status;}).join('<br>')||'Chưa có')+'</span><span>Đăng ký lớp</span><span>'+(j.regs.map(function(r){return esc(r.want)+' · '+r.status;}).join('<br>')||'Chưa có')+'</span></div>'+
+      '<div class="grid2"><div class="act"><b>⭐ Gói Học liên tục</b><button data-a="premium">'+(pm?'Tắt gói':'Bật gói (đã nhận tiền)')+'</button></div>'+
+      '<div class="act"><b>'+String.fromCodePoint(0x1FA99)+' Nguyên bảo</b><div class="row"><input id="acn" type="number" placeholder="+50 / -20"><input id="acw" placeholder="Lý do"></div><button data-a="coins">Gửi</button></div>'+
+      '<div class="act"><b>🔑 Mật khẩu tạm</b><input id="apw" placeholder="Ít nhất 6 ký tự"><button data-a="password"'+(u.email?'':' disabled')+'>Đặt mật khẩu</button><span class="small muted">Báo cho học viên mật khẩu mới qua điện thoại/Zalo.</span></div>'+
+      '<div class="act"><b>🔔 Thông báo riêng</b><input id="ant" placeholder="Tiêu đề"><textarea id="anb" rows="2" placeholder="Nội dung"></textarea><button data-a="notify">Gửi</button></div>'+
+      (ROLE==='owner'?'<div class="act"><b>👤 Phân quyền</b><select id="arole"><option value="">Người dùng thường</option><option value="teacher"'+(u.role==='teacher'?' selected':'')+'>Giáo viên (tạo lớp học, xem đăng ký lớp)</option><option value="admin"'+(u.role==='admin'?' selected':'')+'>Quản trị viên (toàn quyền trừ phân quyền)</option></select><button data-a="role"'+(u.email?'':' disabled')+'>Lưu quyền</button></div>':'')+
+      '<div class="act"><b>🖼️ Ảnh, bảng xếp hạng & thông báo thế giới</b><span class="small muted">Gỡ ảnh không phù hợp, tin vinh danh sai, hoặc người gian lận điểm khỏi bảng xếp hạng.</span><button data-a="avatar" class="danger">Gỡ ảnh đại diện</button><button data-a="world" class="danger">Xóa tin thế giới của người này</button><button data-a="league" class="danger">Gỡ khỏi Giải đấu tuần này</button><button data-a="wall" class="danger">Gỡ khỏi bảng thợ xây Vạn Lý</button></div>'+
+      '<div class="act"><b>⛔ Khóa / xóa</b><button data-a="ban" class="danger">'+(u.banned?'Mở khóa tài khoản':'Khóa tài khoản')+'</button><button data-a="delete" class="danger">Xóa vĩnh viễn</button></div></div><div id="amsg" class="small" style="margin-top:8px"></div></div>';
+    document.body.appendChild(d);var close=function(){d.remove();};$('#dx',d).onclick=close;d.onclick=function(e){if(e.target===d)close();};
+    var done=function(t){$('#amsg',d).innerHTML='<span class="okc">'+esc(t)+' ✓</span>';setTimeout(function(){close();openUser(uid);users();},700);},bad=function(e){$('#amsg',d).innerHTML='<span class="err">'+esc(e.message)+'</span>';};
+    $$('[data-a]',d).forEach(function(b){b.onclick=function(){var a=b.dataset.a,body={uid:uid,action:a};
+      if(a==='premium')body.on=!pm;if(a==='coins'){body.coins=+$('#acn',d).value;body.why=$('#acw',d).value;}if(a==='password')body.password=$('#apw',d).value;if(a==='role')body.role=$('#arole',d).value||null;if(a==='ban')body.on=!u.banned;
+      if(a==='delete'&&prompt('Gõ XOA để xóa vĩnh viễn tài khoản '+(u.email||uid)+' và toàn bộ dữ liệu:')!=='XOA')return;
+      if(a==='notify'){if(!$('#ant',d).value.trim())return bad(new Error('Nhập tiêu đề'));return req('POST','/v1/admin/notify',{uid:uid,title:$('#ant',d).value,body:$('#anb',d).value,important:true}).then(function(){done('Đã gửi thông báo');}).catch(bad);}
+      req('POST','/v1/admin/user/action',body).then(function(){done('Đã lưu');if(a==='delete')close();}).catch(bad);};});}).catch(function(e){alert(e.message);});}
+  /* --- Đơn mua --- */
+  var OS='pending';
+  function orders(){req('GET','/v1/admin/orders'+(OS?'?status='+OS:'')).then(function(j){
+    $('#pane').innerHTML='<div class="card row"><b>Lọc:</b><select id="os"><option value="pending">Chờ xác nhận</option><option value="paid">Đã thanh toán</option><option value="cancelled">Đã hủy</option><option value="">Tất cả</option></select><span class="small muted">Đối chiếu sao kê ngân hàng theo <b>nội dung chuyển khoản</b> (mã HSK…) rồi bấm xác nhận.</span></div>'+
+      '<div class="card scroll"><table><tr><th>Mã (nội dung CK)</th><th>Người mua</th><th>Gói</th><th>Giá</th><th>Voucher</th><th>Phải trả</th><th>Tạo lúc</th><th></th></tr>'+(j.orders.map(function(o){
+        return '<tr><td><b>'+esc(o.ref)+'</b></td><td class="small">'+esc(o.email||o.uid)+'</td><td>'+esc(o.product==='study'?'Học liên tục':o.product)+'</td><td>'+vnd(o.price)+'</td><td>'+(o.voucher?'<span class="tag">'+esc(o.voucher)+'</span> −'+vnd(o.discount):'')+'</td><td><b>'+vnd(o.final)+'</b></td><td class="small">'+dt(o.created)+'</td><td>'+
+        (o.status==='pending'?'<button class="pri" data-ok="'+o.id+'">Xác nhận đã nhận tiền</button> <button data-no="'+o.id+'">Hủy</button>':o.status==='paid'?'<span class="okc">Đã kích hoạt '+dt(o.paid_at)+'</span>':'<span class="muted">Đã hủy</span>')+'</td></tr>';}).join('')||'<tr><td colspan="8" class="muted">Không có đơn.</td></tr>')+'</table></div>';
+    $('#os').value=OS;$('#os').onchange=function(){OS=this.value;orders();};
+    $$('[data-ok]').forEach(function(b){b.onclick=function(){if(!confirm('Đã kiểm tra sao kê và nhận đủ tiền cho đơn này?'))return;req('POST','/v1/admin/orders/update',{id:+b.dataset.ok,status:'paid'}).then(orders).catch(function(e){alert(e.message);});};});
+    $$('[data-no]').forEach(function(b){b.onclick=function(){if(!confirm('Hủy đơn này?'))return;req('POST','/v1/admin/orders/update',{id:+b.dataset.no,status:'cancelled'}).then(orders).catch(function(e){alert(e.message);});};});}).catch(fail);}
+  /* --- Voucher --- */
+  function vouchers(){req('GET','/v1/admin/vouchers').then(function(j){
+    $('#pane').innerHTML='<div class="card"><h2>Tạo / sửa voucher</h2><div class="grid2"><label>Mã<input id="vc" placeholder="VD: TET2027" style="text-transform:uppercase"></label><label>Kiểu giảm<select id="vk"><option value="percent">Phần trăm (%)</option><option value="amount">Số tiền (đ)</option></select></label><label>Giá trị<input id="vv" type="number" placeholder="VD: 30 hoặc 20000"></label>'+
+      '<label>Áp dụng cho<select id="vp"><option value="study">Gói Học liên tục</option><option value="class">Học phí lớp online</option><option value="all">Tất cả</option></select></label><label>Số lượt dùng tối đa (0 = không giới hạn)<input id="vm" type="number" value="0"></label><label>Hết hạn (để trống = không hết hạn)<input id="ve" type="date"></label><label style="grid-column:1/-1">Ghi chú<input id="vn" placeholder="VD: tặng học viên lớp tối thứ 3"></label></div>'+
+      '<div class="row" style="margin-top:8px"><button class="pri" id="vsave">Lưu voucher</button><span id="vmsg" class="small"></span></div></div>'+
+      '<div class="card scroll"><table><tr><th>Mã</th><th>Giảm</th><th>Cho</th><th>Đã dùng</th><th>Hết hạn</th><th>Ghi chú</th><th></th></tr>'+(j.vouchers.map(function(v){
+        return '<tr style="'+(v.active?'':'opacity:.5')+'"><td><b>'+esc(v.code)+'</b></td><td>'+(v.kind==='percent'?v.value+'%':vnd(v.value))+'</td><td>'+({study:'Gói học',class:'Lớp online',all:'Tất cả'}[v.product])+'</td><td>'+v.used+(v.max_uses?' / '+v.max_uses:'')+'</td><td class="small">'+(v.expires?new Date(v.expires).toLocaleDateString('vi-VN'):'Không')+'</td><td class="small">'+esc(v.note||'')+'</td><td><button data-edit="'+esc(v.code)+'">Sửa</button> <button data-tg="'+esc(v.code)+'" data-on="'+(v.active?0:1)+'">'+(v.active?'Tắt':'Bật')+'</button></td></tr>';}).join('')||'<tr><td colspan="7" class="muted">Chưa có voucher.</td></tr>')+'</table></div>';
+    $('#vsave').onclick=function(){req('POST','/v1/admin/vouchers/save',{code:$('#vc').value,kind:$('#vk').value,value:+$('#vv').value,product:$('#vp').value,maxUses:+$('#vm').value,expires:$('#ve').value||null,note:$('#vn').value}).then(function(r){$('#vmsg').innerHTML='<span class="okc">Đã lưu '+esc(r.code)+' ✓</span>';setTimeout(vouchers,600);}).catch(function(e){$('#vmsg').innerHTML='<span class="err">'+esc(e.message)+'</span>';});};
+    $$('[data-tg]').forEach(function(b){b.onclick=function(){req('POST','/v1/admin/vouchers/toggle',{code:b.dataset.tg,active:b.dataset.on==='1'}).then(vouchers);};});
+    $$('[data-edit]').forEach(function(b){b.onclick=function(){var v=j.vouchers.find(function(x){return x.code===b.dataset.edit;});$('#vc').value=v.code;$('#vk').value=v.kind;$('#vv').value=v.value;$('#vp').value=v.product;$('#vm').value=v.max_uses;$('#ve').value=v.expires?new Date(v.expires+7*3600e3).toISOString().slice(0,10):'';$('#vn').value=v.note||'';scrollTo(0,0);};});}).catch(fail);}
+  /* --- Đăng ký lớp --- */
+  var RS='',ST={new:'Mới',contacted:'Đã liên hệ',placed:'Đã xếp lớp',closed:'Đã đóng'};
+  function regs(){req('GET','/v1/admin/regs'+(RS?'?status='+RS:'')).then(function(j){var D=j.regs||[];
+    $('#pane').innerHTML='<div class="card row"><b>Lọc:</b><select id="rs"><option value="">Tất cả</option><option value="new">Mới</option><option value="contacted">Đã liên hệ</option><option value="placed">Đã xếp lớp</option><option value="closed">Đã đóng</option></select><button id="csv">Tải CSV</button><span class="muted small">'+D.length+' đăng ký</span></div><div id="list"></div>';
+    $('#rs').value=RS;$('#rs').onchange=function(){RS=this.value;regs();};
+    $('#list').innerHTML=D.length?D.map(function(r){var subj=encodeURIComponent('Tâm HSK: lớp '+(r.want||'online')+' dành cho bạn'),body=encodeURIComponent('Chào '+r.name+',\n\nKasser đã có lớp '+(r.want||'')+' phù hợp với bạn.\n\n');
+      return '<div class="reg '+r.status+'" data-id="'+r.id+'"><div class="row" style="justify-content:space-between"><b style="font-size:17px">'+esc(r.name)+'</b><span class="small muted">#'+r.id+' · '+dt(r.created)+'</span></div>'+
+      '<div><span class="tag">'+esc(r.level||'')+'</span><span class="tag">Muốn học: '+esc(r.want||'')+'</span><span class="tag">Nhận tin qua: '+esc(r.via||'')+'</span>'+(r.voucher?'<span class="tag p">Voucher '+esc(r.voucher)+'</span>':'')+'</div>'+
+      '<div class="row"><a href="mailto:'+esc(r.email)+'?subject='+subj+'&body='+body+'">✉️ '+esc(r.email)+'</a><a href="tel:'+esc(r.phone)+'">📞 '+esc(r.phone)+'</a><a href="https://zalo.me/'+esc(String(r.phone).replace(/^\+?84/,'0'))+'" target="_blank" rel="noopener">Zalo</a></div>'+(r.note?'<div class="small">📝 '+esc(r.note)+'</div>':'')+
+      '<div class="row"><select class="st">'+Object.keys(ST).map(function(k){return '<option value="'+k+'"'+(k===r.status?' selected':'')+'>'+ST[k]+'</option>';}).join('')+'</select><input class="an" placeholder="Ghi chú nội bộ" value="'+esc(r.admin_note||'')+'" style="flex:1;min-width:160px"><button class="save">Lưu</button>'+
+      (r.uid?'<button class="pri ntf">🔔 Gửi thông báo trong app</button>':'<span class="small muted">(không có tài khoản app)</span>')+'</div><div class="small msg"></div></div>';}).join(''):'<div class="card muted">Chưa có đăng ký nào.</div>';
+    $('#list').onclick=function(e){var c=e.target.closest('.reg');if(!c)return;var id=+c.dataset.id,msg=$('.msg',c);
+      if(e.target.classList.contains('save'))req('POST','/v1/admin/regs/update',{id:id,status:$('.st',c).value,adminNote:$('.an',c).value}).then(function(){msg.textContent='Đã lưu ✓';c.className='reg '+$('.st',c).value;}).catch(function(x){msg.textContent=x.message;});
+      if(e.target.classList.contains('ntf')){var r=D.find(function(x){return x.id===id;});var t=prompt('Tiêu đề thông báo','Đã có lớp '+(r.want||'')+' phù hợp với bạn!');if(!t)return;var b=prompt('Nội dung','Kasser sẽ liên hệ bạn qua email/điện thoại để xếp lịch học. Bạn kiểm tra hộp thư nhé!');if(b===null)return;
+        req('POST','/v1/admin/notify',{regId:id,title:t,body:b,link:'#classreg',important:true}).then(function(){msg.textContent='Đã gửi thông báo, chuông trong app của học viên sẽ rung ✓';}).catch(function(x){msg.textContent=x.message;});}};
+    $('#csv').onclick=function(){var cols=['id','created','name','level','want','email','phone','note','via','voucher','status','admin_note'];var lines=[cols.join(',')].concat(D.map(function(r){return cols.map(function(k){var v=k==='created'?dt(r.created):(r[k]==null?'':r[k]);return '"'+String(v).replace(/"/g,'""')+'"';}).join(',');}));
+      var a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['﻿'+lines.join('\n')],{type:'text/csv'}));a.download='dang-ky-lop-hoc.csv';a.click();};}).catch(fail);}
+  /* --- Gửi thông báo toàn bộ --- */
+  function notify(){$('#pane').innerHTML='<div class="card"><h2>Gửi thông báo cho tất cả người dùng</h2><div class="grid2"><label style="grid-column:1/-1">Tiêu đề<input id="bt" maxlength="120" placeholder="VD: Khai giảng lớp HSK2 tối thứ 3!"></label><label style="grid-column:1/-1">Nội dung<textarea id="bb" rows="3" maxlength="1000"></textarea></label>'+
+      '<label>Bấm vào sẽ mở<select id="bl"><option value="">Không mở trang nào</option><option value="#classreg">Form đăng ký lớp</option><option value="#premium">Gói Học liên tục</option><option value="#league">Giải đấu</option><option value="#review">Ôn tập</option></select></label><label>Quan trọng (chuông rung)<select id="bi"><option value="1">Có</option><option value="0">Không</option></select></label></div>'+
+      '<div class="row" style="margin-top:8px"><button class="pri" id="bsend">Gửi cho tất cả</button><span id="bmsg" class="small"></span></div><p class="small muted">Người dùng thấy thông báo ở chuông 🔔 khi mở web hoặc app (đã đăng nhập hoặc có hồ sơ bạn bè).</p></div>';
+    $('#bsend').onclick=function(){if(!$('#bt').value.trim())return;if(!confirm('Gửi thông báo này cho TẤT CẢ người dùng?'))return;req('POST','/v1/admin/broadcast',{title:$('#bt').value,body:$('#bb').value,link:$('#bl').value,important:$('#bi').value==='1'}).then(function(r){$('#bmsg').innerHTML='<span class="okc">Đã gửi tới '+r.sent+' tài khoản ✓</span>';}).catch(function(e){$('#bmsg').innerHTML='<span class="err">'+esc(e.message)+'</span>';});};}
+  /* --- Nhật ký --- */
+  var AN={reg_status:'Đổi trạng thái đăng ký',notify:'Gửi thông báo',broadcast:'Gửi thông báo toàn bộ',set_password:'Đặt mật khẩu tạm',coins:'Nguyên bảo',premium_on:'Bật gói',premium_off:'Tắt gói',ban:'Khóa tài khoản',unban:'Mở khóa',role:'Phân quyền',delete_user:'Xóa tài khoản',voucher_save:'Lưu voucher',voucher_on:'Bật voucher',voucher_off:'Tắt voucher',order_paid:'Xác nhận thanh toán',order_cancelled:'Hủy đơn'};
+  function log(){req('GET','/v1/admin/log').then(function(j){$('#pane').innerHTML='<div class="card scroll"><table><tr><th>Lúc</th><th>Ai</th><th>Thao tác</th><th>Đối tượng</th><th>Chi tiết</th></tr>'+j.log.map(function(l){return '<tr><td class="small">'+dt(l.at)+'</td><td class="small">'+esc(l.who)+'</td><td>'+esc(AN[l.action]||l.action)+'</td><td class="small"><code>'+esc(l.target)+'</code></td><td class="small">'+esc(l.detail)+'</td></tr>';}).join('')+'</table></div>';}).catch(fail);}
+  /* --- đăng nhập --- */
+  $('#gokey').onclick=function(){AUTH={key:$('#key').value.trim()};sessionStorage.setItem('adauth',JSON.stringify(AUTH));start();};
+  $('#key').onkeydown=function(e){if(e.key==='Enter')$('#gokey').click();};
+  function stretch(pw,em){if(!(window.crypto&&crypto.subtle))return Promise.resolve('');var te=new TextEncoder();return crypto.subtle.importKey('raw',te.encode(pw),'PBKDF2',false,['deriveBits']).then(function(k){return crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:te.encode(em),iterations:600000},k,256);}).then(function(b){var s='';new Uint8Array(b).forEach(function(x){s+=String.fromCharCode(x);});return btoa(s);});}
+  $('#golog').onclick=function(){$('#lmsg').textContent='Đang đăng nhập…';var em=$('#em').value.trim(),pw=$('#pw').value;fetch(API+'/v1/accounts:prelogin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({login:em})}).then(function(r){return r.json();}).then(function(j){return stretch(pw,j.s||('tamhsk-pw-v2|'+em.toLowerCase()));}).catch(function(){return '';}).then(function(ck){return fetch(API+'/v1/accounts:signInWithPassword',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({login:em,password:pw,ck:ck||undefined,returnSecureToken:true})});}).then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(emsg(j.error&&j.error.message));return j;});})
+    .then(function(j){AUTH={id:j.idToken,rf:j.refreshToken};sessionStorage.setItem('adauth',JSON.stringify(AUTH));start();}).catch(function(e){$('#lmsg').textContent=e.message;});};
+  $('#pw').onkeydown=function(e){if(e.key==='Enter')$('#golog').click();};
+  $('#logout').onclick=function(){AUTH=null;sessionStorage.removeItem('adauth');location.reload();};
+  if(AUTH)start();
+})();
+</script></main></body></html>
