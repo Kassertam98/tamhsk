@@ -2827,6 +2827,23 @@ html.rails.rl-on:not(.fs) #viewtools:hover{opacity:1}
 /* ===== 5.23 ===== */
 .dictwait{display:grid;gap:8px;justify-items:center;text-align:center;padding:40px 16px}
 .dictwait .bootbar{width:160px}
+/* ===== 5.25: bảng giá ===== */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.plan{position:relative;text-align:left;display:grid;gap:6px;padding:16px 14px 14px;border-radius:18px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
+.plan:hover{transform:translateY(-2px)}.plan.on{border-color:#b8860b;box-shadow:0 10px 24px -14px rgba(184,134,11,.6)}
+.plan.best{background:linear-gradient(180deg,color-mix(in srgb,#f5b800 10%,var(--card)),var(--card))}
+.plbest{position:absolute;top:-10px;right:12px;background:#b8860b;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:999px;letter-spacing:.04em}
+.plearly{display:inline-block;background:color-mix(in srgb,var(--seal) 14%,var(--card));color:var(--seal);font-size:12px;font-weight:800;padding:2px 8px;border-radius:999px;justify-self:start}
+.plname{font-size:17px}.plprice{font-size:26px;font-weight:800;color:#b8860b;display:flex;gap:8px;align-items:baseline}.plprice s{font-size:14px;color:var(--muted);font-weight:500}
+.plan small{color:var(--muted);font-size:12px}
+.plfeat{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-size:13px;line-height:1.4}
+.prmini.pron{background:linear-gradient(135deg,color-mix(in srgb,var(--jade) 12%,var(--card)),var(--card));border-color:color-mix(in srgb,var(--jade) 40%,var(--line))}
+.prfan{color:#b8860b}
+.paywait{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,#f5b800 10%,var(--card));font-size:14px;text-align:left;max-width:420px}
+.paywait .spin{width:16px;height:16px;border:2px solid #b8860b;border-top-color:transparent;border-radius:50%;animation:prspin .9s linear infinite;flex:none}
+@keyframes prspin{to{transform:rotate(360deg)}}
+.expred{border-left:5px solid #b8860b}
+.modes .mode .small{display:block}
 </style>
 </head><body>
 
@@ -2853,11 +2870,11 @@ html.rails.rl-on:not(.fs) #viewtools:hover{opacity:1}
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=49918783"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=67fc2179"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=49918783','strokes-file');A('packs/dict.js?v=49918783','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=67fc2179','strokes-file');A('packs/dict.js?v=67fc2179','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -12291,7 +12308,7 @@ if(window.__T)window.__u68={ICA,CH_IC,icFix,icSVG,avNumSVG,IC_SEL};
 const CLS={k:null,ms:null,code:'',watchAt:0};
 const CLSK_KEY='hsk-clsk';
 const myRoleC=()=>{try{return (JSON.parse(localStorage.getItem(MEKEY)||'{}').role)||'';}catch(e){return '';}};
-const canTeachC=()=>['teacher','admin'].includes(myRoleC());
+let canTeachC=()=>['teacher','admin'].includes(myRoleC());
 const clsCache=k=>{try{if(k)localStorage.setItem(CLSK_KEY,JSON.stringify(k));}catch(e){}};
 const clsCached=()=>{try{return JSON.parse(localStorage.getItem(CLSK_KEY)||'null');}catch(e){return null;}};
 const mWx=m=>m&&m.wk===weekId()?(m.wx||0):0;
@@ -12457,6 +12474,110 @@ async function wordShare(zh){const url=SEO_BASE+'/tu/'+encodeURIComponent(zh);co
     if(box){const b=document.createElement('button');b.className='btn sm';b.id='wdshare';b.type='button';b.innerHTML=SHARE_SVG+' Chia sẻ';b.onclick=()=>wordShare(zh);box.appendChild(b);}}}catch(e){}
   return r;};})();
 if(window.__T)window.__u70={seoHasPage,SEO_BASE};
+
+/* ===== 5.25: bảng giá mới (Tháng / Năm / Trọn đời / Giáo viên), tự kích hoạt khi tiền vào, gói luyện thi, phễu lớp online ===== */
+const PLAN_NAME={month:'Gói Tháng',year:'Gói Năm',life:'Gói Trọn đời',teacher:'Gói Giáo viên'};
+function PM(){const m=ME();return (SOC.auth&&m.uid===SOC.auth.uid&&m.premium)||{};}
+const planActiveC=p=>!!(p&&(p.study||p.plan==='life'||(p.until&&p.until>Date.now())));
+isPremium=function(){return planActiveC(PM());};
+const isLegacyFan=()=>{const p=PM();return !!(p.legacy||(p.study&&!p.plan));};
+const hasExamPack=()=>{const p=PM();return planActiveC(p)&&(p.plan==='life'||p.plan==='year'||!!p.study);};
+const teacherPlanC=()=>{const p=PM();return !!(p.teacher&&p.teacher.until>Date.now());};
+(function(){const base=canTeachC;canTeachC=function(){return base.apply(this,arguments)||teacherPlanC();};})();
+const fmtVN=t=>{try{return new Date(t).toLocaleDateString('vi-VN');}catch(e){return '';}};
+const daysLeft=t=>Math.max(0,Math.ceil((t-Date.now())/86400000));
+// bảng giá từ máy chủ (cache 10 phút)
+let PRICING=null,PRICING_AT=0;
+async function pricingGet(){if(PRICING&&Date.now()-PRICING_AT<600000)return PRICING;try{const r=await netFetch('GET',API_BASE+'/v1/pricing',{},'');const j=JSON.parse(r.text||'{}');if(j.products){PRICING=j;PRICING_AT=Date.now();}}catch(e){}
+  return PRICING||{products:{month:{name:'Gói Tháng',price:49000,days:30,plan:'month'},year:{name:'Gói Năm',price:299000,days:365,plan:'year',coins:300},life:{name:'Gói Trọn đời',price:599000,days:0,plan:'life',early:{price:199000,left:500,label:'Ưu đãi 500 người đầu'}},teacher:{name:'Gói Giáo viên (1 tháng / lớp)',price:199000,days:30,plan:'teacher'}},bank:true,auto:false};}
+const PLAN_FEAT={
+  month:['⚡ Học bài mới không tốn năng lượng','📚 Ôn từ hay sai không giới hạn','☁️ Gắn với tài khoản, đổi máy vẫn giữ'],
+  year:['⚡ Mọi quyền lợi Gói Tháng','📝 Gói luyện thi: đề đầy đủ không giới hạn, dự đoán điểm, phân tích phần yếu','🪙 Tặng 300 Nguyên bảo','💸 Rẻ hơn 50% so với mua từng tháng'],
+  life:['♾️ Mọi quyền lợi Gói Năm, trả một lần dùng mãi','🆕 Gồm cả các cấp ra sau này (HSK3, HSK4…)','🏅 Huy hiệu Người ủng hộ'],
+  teacher:['🏫 Tạo lớp, tới 40 học viên mỗi lớp','📌 Giao bài, ghim lời nhắn, khen thưởng, bảng xếp hạng lớp','📊 Xuất CSV tiến độ học viên','👩‍🏫 Dành cho giáo viên, trung tâm; không gồm gói học cá nhân']};
+function planStatusHTML(){const p=PM();if(!SOC.auth)return '';const out=[];
+  if(planActiveC(p)){const nm=p.plan==='life'?PLAN_NAME.life:PLAN_NAME[p.plan]||'Gói học';const t=p.plan==='life'?'trọn đời':`đến ${fmtVN(p.until)} (còn ${daysLeft(p.until)} ngày)`;
+    out.push(`<div class="panel row prmini pron"><span>⭐ <b>${esc(nm)}</b> đang hoạt động · ${t}${isLegacyFan()?' · <b class="prfan">🏅 Người ủng hộ đầu tiên</b>':''}</span>${p.plan!=='life'?'<b class="prgo">Gia hạn ↓</b>':''}</div>`);}
+  if(p.teacher){const on=p.teacher.until>Date.now();out.push(`<div class="panel row prmini${on?' pron':''}"><span>🏫 <b>Gói Giáo viên</b> ${on?`đến ${fmtVN(p.teacher.until)} (còn ${daysLeft(p.teacher.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.teacher.until)}: lớp cũ vẫn xem được, cần gia hạn để tạo lớp mới`}</span><b class="prgo">${on?'Gia hạn ↓':'Gia hạn ↓'}</b></div>`);}
+  return out.join('');}
+function planCardHTML(k,P,chosen,quote,code){const early=P.early&&P.early.left>0;const price=quote&&quote.product===k?quote.final:(early?P.early.price:P.price);
+  const per=k==='year'?`<small>≈ ${vnd(Math.round(P.price/12/1000)*1000)}/tháng</small>`:k==='month'?'<small>30 ngày</small>':k==='teacher'?'<small>30 ngày · mỗi lớp</small>':'<small>một lần</small>';
+  return `<button class="plan${chosen===k?' on':''}${k==='year'?' best':''}" data-plan="${k}">${k==='year'?'<span class="plbest">Khuyên dùng</span>':''}${early?`<span class="plearly">🔥 ${esc(P.early.label)} · còn ${P.early.left}</span>`:''}
+    <b class="plname">${esc(PLAN_NAME[k]||P.name)}</b><span class="plprice">${vnd(price)}${(early&&!(quote&&quote.product===k))||(quote&&quote.product===k&&quote.discount)?`<s>${vnd(quote&&quote.product===k?quote.base||P.price:P.price)}</s>`:''}</span>${per}
+    <ul class="plfeat">${(PLAN_FEAT[k]||[]).map(f=>`<li>${f}</li>`).join('')}</ul></button>`;}
+let prPoll=null;
+function prPollStart(ref,onPaid){clearInterval(prPoll);let n=0;prPoll=setInterval(async()=>{n++;if(n>120||location.hash!=='#premium'){clearInterval(prPoll);return;}
+  const j=await meFetch();if(!j)return;const o=(j.orders||[]).find(x=>x.ref===ref);if(o&&o.status==='paid'){clearInterval(prPoll);onPaid();}},5000);}
+function payHTML2(o,auto){const b=o.bank,po=o.payos;
+  return `<div class="panel stack paybox" id="paybox"><div class="label">${o.reused?'Đơn đang chờ của bạn':'Thanh toán để kích hoạt'} · ${esc(PLAN_NAME[o.plan]||o.name||'')}</div><h2 style="margin:0">${vnd(o.final)}${o.discount?` <small class="muted" style="text-decoration:line-through;font-weight:500">${vnd(o.base||o.price)}</small>`:''}</h2>
+    ${po&&po.checkoutUrl?`<a class="btn pri big" href="${esc(po.checkoutUrl)}" target="_blank" rel="noopener">Thanh toán qua PayOS (QR, ví, thẻ) →</a><div class="small muted">hoặc chuyển khoản theo thông tin bên dưới</div>`:''}
+    ${b?`<img class="payqr" src="${qrURL(b,o.final,o.ref)}" alt="Mã QR chuyển khoản ${vnd(o.final)}" width="260" height="300">
+    <div class="payinfo"><div><span>Ngân hàng</span><b>${esc(String(b.id).toUpperCase())}</b></div><div><span>Số tài khoản</span><b>${esc(b.acc)}</b> <button class="btn sm ghost" data-copy="${esc(b.acc)}">Sao chép</button></div>${b.name?`<div><span>Chủ tài khoản</span><b>${esc(b.name)}</b></div>`:''}<div><span>Số tiền</span><b>${vnd(o.final)}</b></div><div><span>Nội dung</span><b class="payref">${esc(o.ref)}</b> <button class="btn sm ghost" data-copy="${esc(o.ref)}">Sao chép</button></div></div>`:''}
+    <div class="paywait" id="paywait"><span class="spin"></span><span>${auto?'Đang chờ tiền vào… gói sẽ <b>tự kích hoạt trong vài giây</b> sau khi bạn chuyển khoản. Giữ đúng nội dung <b>'+esc(o.ref)+'</b>.':'Sau khi chuyển khoản, Kasser xác nhận trong vòng 24 giờ, chuông 🔔 sẽ rung khi gói được kích hoạt. Giữ đúng nội dung <b>'+esc(o.ref)+'</b>.'}</span></div>
+    <p class="small muted" style="margin:0">Cần hỗ trợ? Nhắn <a href="https://facebook.com/kassertam" target="_blank" rel="noopener">fanpage Kasser</a> kèm mã <b>${esc(o.ref)}</b>.</p></div>`;}
+viewPremium=async function(){
+  const head=`<section class="addhero prhero"><div class="addicon" aria-hidden="true">⭐</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Học thoải mái, không lo năng lượng</h1><p>Chọn gói phù hợp. Gói <b>Năm</b> và <b>Trọn đời</b> có thêm <b>Gói luyện thi HSK</b>: đề đầy đủ không giới hạn, dự đoán điểm và phân tích phần yếu.</p></div></section>`;
+  app.innerHTML=`<div class="stack">${head}<div class="panel muted">Đang tải bảng giá…</div></div>`;
+  try{await meFetch();}catch(e){}
+  const pr=await pricingGet(),P=pr.products,p=PM();
+  if(isApp()){app.innerHTML=`<div class="stack">${head}${planStatusHTML()||'<div class="panel"><p class="muted" style="margin:0">Tài khoản này chưa có gói trả phí. Gói mua trên bản web sẽ tự đồng bộ vào đây.</p></div>'}</div>`;return;}
+  let chosen=p.plan==='life'?'teacher':(p.teacher&&p.teacher.until>Date.now()&&!planActiveC(p))?'teacher':'year',quote=null,code='';
+  const m=ME(),pend=(m.uid===(SOC.auth&&SOC.auth.uid))&&(m.orders||[]).find(o=>o.status==='pending');
+  const draw=()=>{const lifeOwned=p.plan==='life'||!!p.study;
+    app.innerHTML=`<div class="stack">${head}${planStatusHTML()}
+    <div class="plans">${['month','year','life','teacher'].filter(k=>P[k]&&!(lifeOwned&&k!=='teacher')).map(k=>planCardHTML(k,P[k],chosen,quote,code)).join('')}</div>
+    <div class="panel stack prcard"><div class="row" style="justify-content:space-between;align-items:baseline;flex-wrap:wrap"><b>${esc(PLAN_NAME[chosen])}</b><span class="prprice"><b>${vnd(quote?quote.final:(P[chosen].early&&P[chosen].early.left>0?P[chosen].early.price:P[chosen].price))}</b>${quote&&quote.discount?`<span class="prtag">${esc(quote.label||'')}</span>`:''}</span></div>
+      <div class="row prvc"><input id="prcode" placeholder="Mã voucher giảm giá (nếu có)" maxlength="30" value="${esc(code)}" autocomplete="off"><button class="btn" id="prapply">Áp dụng</button></div><div class="small" id="prmsg" role="status"></div>
+      ${accCloud()?`<button class="btn pri big" id="prbuy">Mua ${esc(PLAN_NAME[chosen])}</button>`:`<p class="small muted" style="margin:0">Đăng nhập để mua, gói sẽ gắn với tài khoản của bạn:</p><div id="pracc"></div>`}
+      <p class="small muted" style="margin:0">${pr.auto?'Thanh toán bằng chuyển khoản hoặc PayOS, gói tự kích hoạt ngay khi tiền vào.':'Thanh toán bằng chuyển khoản, Kasser kích hoạt trong 24 giờ.'} Có thể gia hạn bất cứ lúc nào, ngày còn lại được cộng dồn.</p></div>
+    ${pend?`<div class="fb">Bạn có đơn <b>${esc(pend.ref)}</b> (${vnd(pend.final)}) đang chờ thanh toán. Bấm "Mua" cùng gói để xem lại mã QR.</div>`:''}<div id="prpay"></div>
+    <div class="panel row prmini" style="justify-content:space-between"><span>👩‍🏫 Muốn học có giáo viên kèm? <b>Lớp online của Kasser</b> mỗi tuần, luyện nói và chữa phát âm trực tiếp.</span><a class="btn sm" href="#classreg">Đăng ký lớp →</a></div></div>`;
+    app.querySelectorAll('[data-plan]').forEach(b=>b.onclick=()=>{chosen=b.dataset.plan;quote=null;code='';draw();});
+    const msg=t=>{const e=app.querySelector('#prmsg');if(e)e.innerHTML=t?`<span style="color:var(--seal)">${esc(t)}</span>`:'';};
+    app.querySelector('#prapply').onclick=async()=>{const c=app.querySelector('#prcode').value.trim();if(!c){code='';quote=null;draw();return;}
+      try{const j=await shopPost('/v1/voucher/check',{code:c,product:chosen});code=j.code;quote=Object.assign({product:chosen},j);draw();app.querySelector('#prmsg').innerHTML=`<span style="color:var(--jade)">✓ ${esc(j.label)}: còn ${vnd(j.final)}</span>`;}catch(e){msg(e.message);}};
+    const pa=app.querySelector('#pracc');if(pa)accUI(pa,{guest:false,done:()=>{pendClaim();meFetch().then(draw);}});
+    const bb=app.querySelector('#prbuy');if(bb)bb.onclick=async()=>{bb.disabled=true;bb.textContent='Đang tạo đơn…';
+      try{const o=await shopPost('/v1/order/create',{product:chosen,voucher:code||undefined});
+        if(o.status==='paid'){await meFetch();gardenToast('⭐ Đã kích hoạt '+(PLAN_NAME[chosen]||'gói')+'!');try{confetti(60);}catch(e){}viewPremium();return;}
+        bb.disabled=false;bb.textContent='Mua '+(PLAN_NAME[chosen]||'');const px=app.querySelector('#prpay');px.innerHTML=payHTML2(o,pr.auto);wireCopy(px);px.scrollIntoView({behavior:'smooth',block:'start'});meFetch();
+        prPollStart(o.ref,async()=>{try{sfx('win');confetti(80);}catch(e){}gardenToast('⭐ Đã nhận tiền, '+(PLAN_NAME[chosen]||'gói')+' đã kích hoạt!');viewPremium();});}
+      catch(e){bb.disabled=false;bb.textContent='Mua '+(PLAN_NAME[chosen]||'');msg(e.message);}};};
+  draw();};
+premiumPanelHTML=function(){const p=PM();if(planActiveC(p)){const t=p.plan==='life'?'trọn đời':`còn ${daysLeft(p.until)} ngày`;return `<a class="panel row prmini pron" href="#premium"><span>⭐ <b>${esc(PLAN_NAME[p.plan]||'Gói học')}</b> đang hoạt động (${t}): học bài mới không tốn năng lượng.</span>${p.plan!=='life'?'<b class="prgo">Gia hạn →</b>':''}</a>`;}
+  if(isApp())return '';return `<a class="panel row prmini" href="#premium"><span>⭐ <b>Gói học</b> từ 49.000đ/tháng: không tốn năng lượng, ôn không giới hạn. Gói Năm kèm luyện thi.</span><b class="prgo">Xem gói →</b></a>`;};
+// ---- Lớp học: cổng mua Gói Giáo viên, số học viên / 40 ----
+(function(){const base=classTeacherList;classTeacherList=async function(box){await base.apply(this,arguments);
+  const g=box.querySelector('.cgate');if(!g||canTeachC())return;
+  g.innerHTML=`<span>🏫</span><div><b>Tạo lớp cần Gói Giáo viên (199.000đ/tháng) hoặc được Tâm HSK cấp quyền.</b><div class="small muted">Mỗi lớp tới 40 học viên: giao bài, ghim lời nhắn, khen thưởng, bảng xếp hạng, xuất CSV. Lớp đã tạo trước đây vẫn dùng bình thường.</div><div class="row" style="margin-top:8px">${isApp()?'<span class="small muted">Mua Gói Giáo viên trên bản web hsk.kassertam.com</span>':'<a class="btn sm pri" href="#premium">Mua Gói Giáo viên →</a>'}<a class="btn sm" href="https://facebook.com/kassertam" target="_blank" rel="noopener">Nhắn Kasser</a></div></div>`;};})();
+(function(){const base=viewClassDash;viewClassDash=async function(code){const r=await base.apply(this,arguments);
+  try{const n=app.querySelectorAll('.cbr').length;const h=app.querySelector('#kpin')&&app.querySelector('.cbl');if(h&&n){h.insertAdjacentHTML('beforebegin',`<div class="small muted">Sĩ số: <b>${n}/40</b> học viên${n>=36?' · sắp đầy, tạo lớp mới cho học viên tiếp theo':''}</div>`);}}catch(e){}
+  return r;};})();
+// ---- Gói luyện thi: đề đầy đủ (free: 1 lần thử), dự đoán điểm, phần yếu ----
+(function(){const base=viewExam;viewExam=function(){base.apply(this,arguments);
+  if(hasExamPack())return;const used=(S.exams||[]).filter(x=>x.mode==='full').length;
+  const mb=app.querySelector('[data-mode="full"]');if(!mb)return;
+  mb.insertAdjacentHTML('beforeend',`<span class="small" style="color:#b8860b">${used?'🔒 Gói luyện thi':'🎁 Thử miễn phí 1 lần'}</span>`);
+  if(examCfg.mode==='full'&&used){const st=app.querySelector('#exstart');st.textContent='Mở Gói luyện thi để làm đề đầy đủ';st.onclick=()=>{location.hash='#premium';};
+    st.insertAdjacentHTML('afterend',`<div class="panel prmini" style="margin-top:8px"><b>Gói luyện thi HSK</b> (trong Gói Năm và Trọn đời): đề đầy đủ không giới hạn, dự đoán điểm thi thật, phân tích phần yếu và bài cần ôn. Đề rút gọn vẫn làm miễn phí không giới hạn.</div>`);}
+};})();
+const EXAM_PRED=(pct,lv)=>{const s=Math.round(pct*2);return {score:s,pass:s>=120,label:s>=180?'Xuất sắc':s>=150?'Vững vàng':s>=120?'Đủ đậu':s>=100?'Sát mốc, cần ôn thêm':'Chưa sẵn sàng'};};
+(function(){const base=finishExam;finishExam=function(timeout){base.apply(this,arguments);
+  const rec=(S.exams||[]).slice(-1)[0];if(!rec)return;const pct=pctOf(rec);const res=app.querySelector('.panel.result');if(!res)return;
+  if(!hasExamPack()){if(rec.mode==='full')res.insertAdjacentHTML('afterend',`<div class="panel prmini"><span>📝 Muốn biết <b>điểm dự đoán</b> và phần cần ôn kỹ? <b>Gói luyện thi</b> (Gói Năm/Trọn đời) phân tích từng phần cho bạn.</span><a class="btn sm" href="#premium">Xem gói →</a></div>`);return;}
+  const pr=EXAM_PRED(pct,LEVEL);const secs=Object.keys(rec.sec).filter(k=>rec.sec[k][1]).map(k=>[k,rec.sec[k][0]/rec.sec[k][1]]).sort((a,b)=>a[1]-b[1]);const weak=secs[0];
+  const hist=(S.exams||[]).filter(x=>x.mode===rec.mode).slice(-5).map(pctOf);const trend=hist.length>=2?hist[hist.length-1]-hist[0]:0;
+  res.insertAdjacentHTML('afterend',`<div class="panel stack expred"><div class="label" style="color:#b8860b">📝 Gói luyện thi · Dự đoán</div>
+    <div class="row" style="align-items:baseline;gap:10px"><b style="font-size:34px">${pr.score}<small class="muted" style="font-size:16px">/200</small></b><span class="passchip${pr.pass?'':' fail'}">${pr.label}</span></div>
+    <p class="muted small" style="margin:0">Quy đổi theo thang 200 điểm của đề HSK (đậu từ 120). Dự đoán dựa trên đề ${rec.mode==='full'?'đầy đủ':'rút gọn'} từ Bài 1–${rec.upto}${rec.upto<15?', làm thêm các bài còn lại để dự đoán sát hơn':''}.</p>
+    ${weak?`<div>Phần yếu nhất: <b>${SECS[weak[0]]}</b> (${Math.round(weak[1]*100)}%). ${weak[0]==='nghe'?'Luyện thêm ở <a href="#listen">Luyện nghe</a> và <a href="#handsfree">Rảnh tay</a>.':weak[0]==='doc'?'Luyện thêm ở <a href="#read">Truyện đọc</a> và <a href="#grammar">Sổ ngữ pháp</a>.':'Luyện thêm ở <a href="#sheet">Phiếu tập viết</a> và phần Chữ Hán trong bài.'}</div>`:''}
+    ${hist.length>=2?`<div class="small muted">5 lần gần nhất: ${hist.join('% → ')}% · ${trend>0?'đang tiến bộ 📈':trend<0?'đang giảm, ôn lại từ hay sai 📉':'giữ nguyên'}</div>`:''}
+    ${pct<60?`<div class="row prmini" style="justify-content:space-between"><span>Cần người kèm? <b>Lớp online Kasser</b> chữa phát âm và giải đề trực tiếp.</span><a class="btn sm" href="#classreg">Đăng ký →</a></div>`:''}</div>`);
+};})();
+// ---- Phễu lớp online: sau khi qua Boss ----
+(function(){const base=stBoss;stBoss=function(el,l){base.apply(this,arguments);
+  try{const o=new MutationObserver(()=>{const r=el.querySelector('.stamp, .bossx .score');if(r&&!el.querySelector('.clsfunnel')&&(l.n%3===0)){el.insertAdjacentHTML('beforeend',`<div class="panel row prmini clsfunnel" style="justify-content:space-between;margin-top:12px"><span>🎉 Qua ${l.n} bài rồi! Muốn nói chuyện với giáo viên thật? <b>Lớp online Kasser</b> mỗi tuần.</span><a class="btn sm" href="#classreg">Tìm hiểu →</a></div>`);o.disconnect();}});o.observe(el,{childList:true,subtree:true});setTimeout(()=>o.disconnect(),600000);}catch(e){}};})();
+if(window.__T){window.__u71={PM,hasExamPack,teacherPlanC,pricingGet,EXAM_PRED};if(window.__pr)window.__pr.isPremium=isPremium;}
 
 function route(){
   stopGames();
