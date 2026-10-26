@@ -2870,11 +2870,11 @@ html.rails.rl-on:not(.fs) #viewtools:hover{opacity:1}
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=67fc2179"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=26810ed5"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=67fc2179','strokes-file');A('packs/dict.js?v=67fc2179','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=26810ed5','strokes-file');A('packs/dict.js?v=26810ed5','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -5678,7 +5678,7 @@ async function meFetch(){if(!SOC.auth)return null;if(meBusy){clearTimeout(meFetc
     if(j.grants&&j.grants.length){const s=SHOP();let tot=0;j.grants.forEach(g=>{if(!g.wal||!walOn())s.coins=Math.max(0,s.coins+g.coins);tot+=g.coins;s.log.unshift([Date.now(),g.coins,g.why||'Quà từ Kasser']);});if(s.log.length>40)s.log.length=40;shSave();renderWallet(true);
       try{await netFetch('POST',API_BASE+'/v1/me/ack',{'Content-Type':'application/json','Authorization':'Bearer '+tok},JSON.stringify({ids:j.grants.map(g=>g.id)}));}catch(e){}
       if(tot>0)setTimeout(()=>{try{gardenToast(`${YB} <b>+${tot} Nguyên bảo</b> · quà từ Kasser 🎁`);sfx('coin');}catch(e){}},800);}
-    if(!was&&isPremium()){setTimeout(()=>{try{gardenToast('⭐ Gói Học liên tục đã kích hoạt: học bài mới không tốn năng lượng!');confetti(50);}catch(e){}},1200);if(location.hash==='#premium')viewPremium();}
+    if(!was&&isPremium()){setTimeout(()=>{try{gardenToast('⭐ Gói học đã kích hoạt: học bài mới không tốn năng lượng!');confetti(50);}catch(e){}},1200);if(location.hash==='#premium')viewPremium();}
     return j;}catch(e){return null;}finally{meBusy=false;}}
 setTimeout(meFetch,2200);setInterval(()=>{if(!document.hidden)meFetch();},180000);window.addEventListener('hsk-acc',()=>setTimeout(meFetch,500));
 const vnd=n=>Number(n||0).toLocaleString('vi-VN')+'đ';
@@ -12520,7 +12520,7 @@ viewPremium=async function(){
   app.innerHTML=`<div class="stack">${head}<div class="panel muted">Đang tải bảng giá…</div></div>`;
   try{await meFetch();}catch(e){}
   const pr=await pricingGet(),P=pr.products,p=PM();
-  if(isApp()){app.innerHTML=`<div class="stack">${head}${planStatusHTML()||'<div class="panel"><p class="muted" style="margin:0">Tài khoản này chưa có gói trả phí. Gói mua trên bản web sẽ tự đồng bộ vào đây.</p></div>'}</div>`;return;}
+  if(isApp()){app.innerHTML=`<div class="stack">${head}${planStatusHTML()||'<div class="panel"><p class="muted" style="margin:0">Tài khoản này chưa có gói trả phí.</p></div>'}</div>`;return;}
   let chosen=p.plan==='life'?'teacher':(p.teacher&&p.teacher.until>Date.now()&&!planActiveC(p))?'teacher':'year',quote=null,code='';
   const m=ME(),pend=(m.uid===(SOC.auth&&SOC.auth.uid))&&(m.orders||[]).find(o=>o.status==='pending');
   const draw=()=>{const lifeOwned=p.plan==='life'||!!p.study;
@@ -12549,7 +12549,7 @@ premiumPanelHTML=function(){const p=PM();if(planActiveC(p)){const t=p.plan==='li
 // ---- Lớp học: cổng mua Gói Giáo viên, số học viên / 40 ----
 (function(){const base=classTeacherList;classTeacherList=async function(box){await base.apply(this,arguments);
   const g=box.querySelector('.cgate');if(!g||canTeachC())return;
-  g.innerHTML=`<span>🏫</span><div><b>Tạo lớp cần Gói Giáo viên (199.000đ/tháng) hoặc được Tâm HSK cấp quyền.</b><div class="small muted">Mỗi lớp tới 40 học viên: giao bài, ghim lời nhắn, khen thưởng, bảng xếp hạng, xuất CSV. Lớp đã tạo trước đây vẫn dùng bình thường.</div><div class="row" style="margin-top:8px">${isApp()?'<span class="small muted">Mua Gói Giáo viên trên bản web hsk.kassertam.com</span>':'<a class="btn sm pri" href="#premium">Mua Gói Giáo viên →</a>'}<a class="btn sm" href="https://facebook.com/kassertam" target="_blank" rel="noopener">Nhắn Kasser</a></div></div>`;};})();
+  g.innerHTML=`<span>🏫</span><div><b>Tạo lớp cần Gói Giáo viên${isApp()?'':' (199.000đ/tháng)'} hoặc được Tâm HSK cấp quyền.</b><div class="small muted">Mỗi lớp tới 40 học viên: giao bài, ghim lời nhắn, khen thưởng, bảng xếp hạng, xuất CSV. Lớp đã tạo trước đây vẫn dùng bình thường.</div><div class="row" style="margin-top:8px">${isApp()?'':'<a class="btn sm pri" href="#premium">Mua Gói Giáo viên →</a>'}<a class="btn sm" href="https://facebook.com/kassertam" target="_blank" rel="noopener">Nhắn Kasser</a></div></div>`;};})();
 (function(){const base=viewClassDash;viewClassDash=async function(code){const r=await base.apply(this,arguments);
   try{const n=app.querySelectorAll('.cbr').length;const h=app.querySelector('#kpin')&&app.querySelector('.cbl');if(h&&n){h.insertAdjacentHTML('beforebegin',`<div class="small muted">Sĩ số: <b>${n}/40</b> học viên${n>=36?' · sắp đầy, tạo lớp mới cho học viên tiếp theo':''}</div>`);}}catch(e){}
   return r;};})();
@@ -12578,6 +12578,77 @@ const EXAM_PRED=(pct,lv)=>{const s=Math.round(pct*2);return {score:s,pass:s>=120
 (function(){const base=stBoss;stBoss=function(el,l){base.apply(this,arguments);
   try{const o=new MutationObserver(()=>{const r=el.querySelector('.stamp, .bossx .score');if(r&&!el.querySelector('.clsfunnel')&&(l.n%3===0)){el.insertAdjacentHTML('beforeend',`<div class="panel row prmini clsfunnel" style="justify-content:space-between;margin-top:12px"><span>🎉 Qua ${l.n} bài rồi! Muốn nói chuyện với giáo viên thật? <b>Lớp online Kasser</b> mỗi tuần.</span><a class="btn sm" href="#classreg">Tìm hiểu →</a></div>`);o.disconnect();}});o.observe(el,{childList:true,subtree:true});setTimeout(()=>o.disconnect(),600000);}catch(e){}};})();
 if(window.__T){window.__u71={PM,hasExamPack,teacherPlanC,pricingGet,EXAM_PRED};if(window.__pr)window.__pr.isPremium=isPremium;}
+
+/* ===== 5.26: app Android mua gói qua Google Play (Play Billing) ===== */
+const GPB={items:{},subs:[],asked:false,restored:false,busy:{}};
+const gpbOK=()=>{try{return !!(isApp()&&window.AndroidBilling&&AndroidBilling.available());}catch(e){return false;}};
+const GPB_IDS={month:'tamhsk_month',year:'tamhsk_year',life:'tamhsk_life',teacher:'tamhsk_teacher'};
+const GPB_OF=Object.fromEntries(Object.entries(GPB_IDS).map(([k,v])=>[v,k]));
+const GPB_ERR={PURCHASE_OTHER_ACCOUNT:'Giao dịch này thuộc một tài khoản Tâm HSK khác. Hãy đăng nhập đúng tài khoản đã mua.',PLAY_NOT_CONFIGURED:'Máy chủ chưa bật thanh toán Google Play. Tiền chưa bị mất: gói sẽ tự kích hoạt khi máy chủ sẵn sàng, mở lại trang Gói trả phí sau.',PURCHASE_NOT_FOUND:'Không tìm thấy giao dịch trên Google Play.',PURCHASE_NOT_COMPLETED:'Giao dịch chưa hoàn tất hoặc đã bị hủy.',NEED_ACCOUNT:'Hãy đăng nhập tài khoản trước khi mua.'};
+try{Object.assign(VC_ERR,GPB_ERR,{PLAY_AUTH_FAILED:'Máy chủ chưa kết nối được Google Play. Gói sẽ tự kích hoạt khi mở lại trang Gói trả phí.',PLAY_PERMISSION:'Máy chủ chưa được cấp quyền đọc giao dịch Google Play. Gói sẽ tự kích hoạt khi mở lại trang Gói trả phí.',PLAY_UNREACHABLE:'Chưa kết nối được Google Play, app sẽ thử lại sau.'});}catch(e){}
+// Android gọi về: window.__gpb('{"type":...}')
+window.__gpb=function(s){let e;try{e=typeof s==='string'?JSON.parse(s):s;}catch(x){return;}
+  if(e.type==='products')(e.items||[]).forEach(i=>{GPB.items[i.id]=i;});
+  if(e.type==='purchase'&&e.item)gpbSend(e.item,true);
+  if(e.type==='pending')gardenToast('⏳ Giao dịch đang chờ thanh toán. Gói sẽ tự kích hoạt khi Google Play báo đã nhận tiền.');
+  if(e.type==='owned')(e.items||[]).forEach(it=>{if(it.state===1)gpbSend(it,false);});
+  GPB.subs.slice().forEach(f=>{try{f(e);}catch(x){}});};
+function gpbOn(f){GPB.subs.push(f);return ()=>{GPB.subs=GPB.subs.filter(x=>x!==f);};}
+// gửi giao dịch lên máy chủ để kích hoạt, rồi tiêu thụ (Tháng/Năm/Giáo viên) hoặc xác nhận (Trọn đời)
+async function gpbSend(it,fresh){const pid=(it.products||[])[0],tok=it.token;if(!pid||!tok||GPB.busy[tok]||!GPB_OF[pid])return;
+  if(!SOC.auth){if(fresh)gardenToast('Hãy đăng nhập để kích hoạt gói vừa mua.');return;}
+  GPB.busy[tok]=1;const d=GPB.items[pid]||{};
+  try{const j=await shopPost('/v1/pay/play',{productId:pid,purchaseToken:tok,orderId:it.orderId||'',micros:d.micros||0,currency:d.currency||''});
+    if(j.pending){if(fresh)gardenToast('⏳ Giao dịch đang chờ thanh toán.');return;}
+    try{if(j.consume)AndroidBilling.consume(tok);else if(!it.acked)AndroidBilling.ack(tok);}catch(e){}
+    await meFetch();
+    if(!j.already||fresh){try{sfx('win');confetti(80);}catch(e){}gardenToast('⭐ Đã kích hoạt '+(PLAN_NAME[GPB_OF[pid]]||'gói')+'!');}
+    if(location.hash==='#premium')viewPremium();}
+  catch(e){if(fresh)gardenToast('⚠️ '+(e.message||'Chưa kích hoạt được, app sẽ thử lại lần sau.'));}
+  finally{delete GPB.busy[tok];}}
+function gpbQuery(){if(!gpbOK())return;try{AndroidBilling.query(JSON.stringify(Object.values(GPB_IDS)));}catch(e){}}
+function gpbRestore(){if(!gpbOK()||!SOC.auth||GPB.restored)return;GPB.restored=true;try{AndroidBilling.restore();}catch(e){}}
+async function gpbAcc(){try{const r=await netFetch('GET',API_BASE+'/v1/pay/play/acc',{'Authorization':'Bearer '+await idToken()},'');return JSON.parse(r.text||'{}').acc||'';}catch(e){return '';}}
+// mở app: kiểm tra giao dịch còn treo (VD tắt app trước khi kích hoạt xong)
+setTimeout(()=>{if(gpbOK()){gpbQuery();gpbRestore();}},4000);
+function viewPremiumPlay(head){const p=PM(),lifeOwned=p.plan==='life'||!!p.study;
+  let chosen=lifeOwned?'teacher':(p.teacher&&p.teacher.until>Date.now()&&!planActiveC(p))?'teacher':'year',waiting=false,err='';
+  const keys=['month','year','life','teacher'].filter(k=>!(lifeOwned&&k!=='teacher'));
+  const priceOf=k=>{const it=GPB.items[GPB_IDS[k]];return it&&it.price?esc(it.price):'';};
+  const card=k=>{const pz=priceOf(k);const per=k==='year'?'<small>365 ngày</small>':k==='month'?'<small>30 ngày</small>':k==='teacher'?'<small>30 ngày · mỗi lớp</small>':'<small>một lần, dùng mãi</small>';
+    return `<button class="plan${chosen===k?' on':''}${k==='year'?' best':''}" data-plan="${k}">${k==='year'?'<span class="plbest">Khuyên dùng</span>':''}<b class="plname">${esc(PLAN_NAME[k])}</b><span class="plprice">${pz||'<span class="small muted">Đang tải giá…</span>'}</span>${per}<ul class="plfeat">${(PLAN_FEAT[k]||[]).map(f=>`<li>${f}</li>`).join('')}</ul></button>`;};
+  const draw=()=>{if(location.hash!=='#premium')return;const loaded=!!GPB.items[GPB_IDS[chosen]];
+    app.innerHTML=`<div class="stack">${head}${planStatusHTML()}<div class="plans">${keys.map(card).join('')}</div>
+    <div class="panel stack prcard"><div class="row" style="justify-content:space-between;align-items:baseline;flex-wrap:wrap"><b>${esc(PLAN_NAME[chosen])}</b><span class="prprice"><b>${priceOf(chosen)}</b></span></div>
+      ${accCloud()?`<button class="btn pri big" id="gpbuy"${loaded&&!waiting?'':' disabled'}>${waiting?'Đang mở Google Play…':loaded?'Mua qua Google Play':'Đang tải giá từ Google Play…'}</button>`:`<p class="small muted" style="margin:0">Đăng nhập để mua, gói sẽ gắn với tài khoản của bạn (đổi máy vẫn giữ):</p><div id="pracc"></div>`}
+      <div class="small" id="prmsg" role="status">${err?`<span style="color:var(--seal)">${esc(err)}</span>`:''}</div>
+      <p class="small muted" style="margin:0">Thanh toán an toàn qua Google Play (thẻ, ví, số dư Google Play). Gói kích hoạt ngay sau khi thanh toán, ngày còn lại được cộng dồn khi gia hạn. Gói không tự gia hạn.</p></div>
+    <div class="panel row prmini" style="justify-content:space-between"><span>👩‍🏫 Muốn học có giáo viên kèm? <b>Lớp online của Kasser</b> mỗi tuần, luyện nói và chữa phát âm trực tiếp.</span><a class="btn sm" href="#classreg">Đăng ký lớp →</a></div></div>`;
+    app.querySelectorAll('[data-plan]').forEach(b=>b.onclick=()=>{chosen=b.dataset.plan;err='';draw();});
+    const pa=app.querySelector('#pracc');if(pa)accUI(pa,{guest:false,done:()=>{pendClaim();GPB.restored=false;gpbRestore();meFetch().then(draw);}});
+    const bb=app.querySelector('#gpbuy');if(bb)bb.onclick=async()=>{waiting=true;err='';draw();const acc=await gpbAcc();
+      if(!acc){waiting=false;err='Chưa kết nối được máy chủ, kiểm tra mạng rồi thử lại.';draw();return;}
+      try{AndroidBilling.buy(GPB_IDS[chosen],acc);}catch(e){waiting=false;err='Không mở được Google Play.';draw();}
+      setTimeout(()=>{if(waiting){waiting=false;draw();}},8000);};};
+  const off=gpbOn(e=>{if(location.hash!=='#premium'){off();return;}
+    if(e.type==='products'){draw();}
+    else if(e.type==='cancel'){waiting=false;err='';draw();}
+    else if(e.type==='purchase'||e.type==='pending'){waiting=false;draw();}
+    else if(e.type==='error'){waiting=false;err=e.msg==='ITEM_ALREADY_OWNED'?'Bạn đã mua gói này, đang kích hoạt lại…':e.code===-2?'Chưa tải được gói từ Google Play, thử lại sau ít phút.':e.code===3?'Google Play chưa sẵn sàng trên máy này (cần đăng nhập Google Play).':'Google Play báo lỗi ('+e.code+'). Thử lại sau.';draw();}
+    else if(e.type==='ready'&&!e.ok){err='Google Play chưa sẵn sàng trên máy này.';draw();}});
+  draw();gpbQuery();gpbRestore();}
+(function(){const base=viewPremium;viewPremium=async function(){
+  if(!gpbOK())return base.apply(this,arguments);
+  const head=`<section class="addhero prhero"><div class="addicon" aria-hidden="true">⭐</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Học thoải mái, không lo năng lượng</h1><p>Chọn gói phù hợp. Gói <b>Năm</b> và <b>Trọn đời</b> có thêm <b>Gói luyện thi HSK</b>: đề đầy đủ không giới hạn, dự đoán điểm và phân tích phần yếu.</p></div></section>`;
+  app.innerHTML=`<div class="stack">${head}<div class="panel muted">Đang tải…</div></div>`;
+  try{await meFetch();}catch(e){}
+  viewPremiumPlay(head);};})();
+// khung nhỏ mời mua và cổng Gói Giáo viên: hiện lại trong app khi có Google Play
+(function(){const base=premiumPanelHTML;premiumPanelHTML=function(){const h=base.apply(this,arguments);if(h||!gpbOK())return h;
+  return `<a class="panel row prmini" href="#premium"><span>⭐ <b>Gói học</b>: không tốn năng lượng, ôn không giới hạn. Gói Năm kèm luyện thi.</span><b class="prgo">Xem gói →</b></a>`;};})();
+(function(){const base=classTeacherList;classTeacherList=async function(box){await base.apply(this,arguments);
+  if(!gpbOK()||canTeachC())return;const g=box.querySelector('.cgate .row');if(g&&!g.querySelector('a[href="#premium"]'))g.insertAdjacentHTML('afterbegin','<a class="btn sm pri" href="#premium">Mua Gói Giáo viên →</a>');};})();
+if(window.__T)window.__gpbT={GPB,gpbOK,GPB_IDS};
 
 function route(){
   stopGames();

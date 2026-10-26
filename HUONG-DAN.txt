@@ -1,0 +1,8 @@
+TÂM HSK - BẢN WEB (Cloudflare Pages)
+Lần đầu:
+1. dash.cloudflare.com > Workers & Pages > Create application > Pages > Upload assets.
+2. Project name: tamhsk > Create project.
+3. Kéo cả thư mục này (thư mục chứa index.html) vào khung > Deploy site.
+4. Tab Custom domains > Set up a custom domain > hsk.kassertam.com > Activate domain.
+Cập nhật bản mới: mở dự án tamhsk > Create deployment > kéo thư mục mới vào > Save and Deploy.
+Máy chủ tài khoản/bạn bè: Worker tamhsk-api (file worker.js), tên miền tamhsk-api.kassertam.com.
