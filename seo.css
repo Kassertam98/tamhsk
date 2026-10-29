@@ -137,3 +137,4 @@ h1.zh{font-size:64px;line-height:1.1;margin:0;font-weight:700;overflow-wrap:anyw
 @keyframes waTap{0%,100%{transform:rotate(0)}50%{transform:rotate(-8deg)}}
 @keyframes waFlag{0%,100%{transform:skewY(0) scaleX(1)}50%{transform:skewY(3deg) scaleX(.97)}}
 @keyframes waWaveIn{0%{opacity:0;transform:scale(.7)}30%{opacity:1}100%{opacity:0;transform:scale(1.15)}}
+@keyframes warrDash{to{stroke-dashoffset:-116}}
