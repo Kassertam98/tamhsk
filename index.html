@@ -3080,6 +3080,15 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 /* HSK3: kiến thức chữ Hán của bài */
 .hzp .hzws{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.hzw{padding:4px 10px;border-radius:10px;background:color-mix(in srgb,var(--jade) 10%,var(--card));border:1px solid color-mix(in srgb,var(--jade) 30%,var(--line));text-decoration:none;color:var(--ink);font-size:18px}
 .hzprov{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,#c3402b 8%,var(--card));border-left:4px solid #c3402b}.hzprov .han{font-size:20px}.hzprov small{flex:1;min-width:140px;color:var(--muted)}
+/* 5.34 Sự kiện & Nhiệm vụ */
+.evhero .addicon{background:linear-gradient(135deg,#7a3cf0,#e46a2b)}
+.gevq{margin:2px 0 4px}.gquest{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:0 12px}
+.gquest>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 2px;font-weight:600}
+.gquest>summary::-webkit-details-marker{display:none}.gquest>summary b{color:var(--jade);font-size:14px}
+.gquest[open]>summary{border-bottom:1px dashed var(--line)}.gquest .quests{border:0;box-shadow:none;background:transparent;padding:10px 0 12px;margin:0}
+.msevq{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;text-decoration:none;color:var(--ink);background:linear-gradient(90deg,color-mix(in srgb,#7a3cf0 14%,var(--card)),color-mix(in srgb,#e46a2b 14%,var(--card)));border:1px solid var(--line);position:relative}
+.msevi{font-size:26px}.msevt{flex:1;display:flex;flex-direction:column;min-width:0}.msevt small{color:var(--muted)}
+.msevq .rpb{position:static}
 </style>
 </head><body>
 
@@ -3106,11 +3115,11 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=4aff62b5"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=331644e7"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=4aff62b5','strokes-file');A('packs/dict.js?v=4aff62b5','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=331644e7','strokes-file');A('packs/dict.js?v=331644e7','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -3324,7 +3333,7 @@ function viewHome(){
     <button class="hlcard" data-go="#l${nx}">${licon(nx,64)}<span class="hlmid"><span class="label">${lessonProgress(nx)>0?'Học tiếp':'Bài tiếp theo'} · Bài ${nx}</span><b class="han">${esc(nl.zh)}</b><span class="small muted">${esc(nl.vi)}</span><span class="bar"><i style="width:${Math.round(lessonProgress(nx)*100)}%"></i></span></span><span class="hlgo" aria-hidden="true">▶</span></button>
     <div class="hlchips">${due?chip('#review','复',`Ôn ${due} từ`,'hot'):''}${chip('#exam','考','Thi thử')}${chip('#tudien','典','Tra từ')}${chip('#more','练','Luyện thêm')}</div>
   </section>
-    ${voiceNote()}${typeof planCard==='function'?planCard():''}${questHTML()}${discoverHTML()}
+    ${voiceNote()}${typeof planCard==='function'?planCard():''}${discoverHTML()}
     <div class="lvstrip"><span class="small muted">Cấp độ</span><div class="lvrow">${HSK_LEVELS.map(([n])=>`<button class="lvpill${n===LEVEL?' on':''}${LEVEL_READY[n]?'':' soon'}" data-lv="${n}" style="--lc:${LEVEL_COL[n]}">HSK ${n}${LEVEL_READY[n]?'':'<small>sắp có</small>'}</button>`).join('')}</div></div>
     <div class="grid" style="margin-top:14px">${LESSONS.map(l=>{const p=lessonProgress(l.n);return `<button class="lcard hasicon${l.n===nx?' next':''}" data-go="#l${l.n}">${licon(l.n,58)}
       ${passed(l.n)?'<span class="stamp" title="Đã qua bài">过</span>':''}
@@ -9422,7 +9431,7 @@ const QPOOL={new:['Học 5 từ mới',5,'新','#home'],rev:['Ôn 10 từ',10,'�
 function QD(){const t=today();if(!S.qd||S.qd.d!==t){S.qd={d:t,rev:0,xp:0,game:0,listen:0,write:0,gram:0,claimed:false};}return S.qd;}
 function qPick(){const keys=Object.keys(QPOOL),h=dayNo();const first=(h%2||!Object.keys(S.cards||{}).length)?'new':'rev';const rest=keys.filter(k=>k!=='new'&&k!=='rev'),n=rest.length,a=h%n,b=(a+1+(Math.floor(h/7)%(n-1)))%n;return [first,rest[a],rest[b]];}
 function qVal(k){const q=QD();if(k==='new')return WORDS.filter(w=>S.cards[w.id]&&S.cards[w.id].first===q.d).length;return q[k]||0;}
-function qTick(k,n){try{hwTick(k,n||1);}catch(e){}const q=QD();const before=qAllDone();q[k]=(q[k]||0)+(n||1);if(!before&&qAllDone()&&!q.toasted){q.toasted=true;setTimeout(()=>{sfx('win');gardenToast('🎉 Xong cả 3 nhiệm vụ hôm nay! Về trang chủ mở rương quà nhé.');},400);}}
+function qTick(k,n){try{hwTick(k,n||1);}catch(e){}const q=QD();const before=qAllDone();q[k]=(q[k]||0)+(n||1);if(!before&&qAllDone()&&!q.toasted){q.toasted=true;setTimeout(()=>{sfx('win');gardenToast('🎉 Xong cả 3 nhiệm vụ hôm nay! Vào <a href="#events">Sự kiện & Nhiệm vụ</a> mở rương quà nhé.');},400);}}
 const qAllDone=()=>qPick().every(k=>qVal(k)>=QPOOL[k][1]);
 function questHTML(){const q=QD(),ks=qPick(),done=ks.filter(k=>qVal(k)>=QPOOL[k][1]).length;
   const msg=q.claimed?'Hôm nay bạn giỏi lắm! Mai gặp lại nhé.':done===3?'Xong hết rồi! Mở rương quà đi!':done?`Còn ${3-done} nhiệm vụ nữa thôi, cố lên!`:'Hôm nay mình làm 3 việc nhỏ này nhé!';
@@ -13223,7 +13232,7 @@ async function viewDuo(game){stopGames();duoStop();DUO.live=false;DUO.m=null;
   if(!SOC.auth||!SOC.me){app.innerHTML=`<div class="stack">${head}<div class="panel stack"><h3>Cần hồ sơ người chơi</h3><p class="muted" style="margin:0">Chơi đôi cần mạng và hồ sơ người chơi (tên hiển thị + hình đại diện). Tạo hồ sơ trong mục Bạn bè, chỉ mất 10 giây.</p><div class="row"><a class="btn pri" href="#friends">Tạo hồ sơ</a><a class="btn ghost" href="#games">Về Trò chơi</a></div></div></div>`;return;}
   const nl=duoNl();
   app.innerHTML=`<div class="stack duolobby">${head}
-    <div class="panel stack"><h3 style="margin:0">Ghép đôi tự do</h3><p class="small muted" style="margin:0">Ghép ngẫu nhiên với người chơi cùng cấp HSK ${LEVEL} đang chờ. Bộ từ lấy theo bài thấp hơn của hai người (bạn đang ở bài ${nl}). Mỗi ván tốn 1 năng lượng.</p>
+    <div class="panel stack"><h3 style="margin:0">Ghép đôi tự do</h3><p class="small muted" style="margin:0">Ghép ngẫu nhiên với người chơi cùng cấp HSK ${LEVEL} đang chờ. Bộ từ lấy theo bài thấp hơn của hai người (bạn đang ở bài ${nl}). Tìm quá 3 phút chưa có ai sẽ tự đấu với Rồng Máy 🤖 (thắng máy được một nửa thưởng). Mỗi ván tốn 1 năng lượng.</p>
       <div class="row" style="gap:8px;align-items:center"><button class="btn pri big" id="duoq">👥 Tìm đối thủ</button><span class="small" id="duoqs" role="status"></span></div></div>
     <div class="panel stack" id="duoinv"><h3 style="margin:0">Lời mời</h3><p class="small muted" style="margin:0">Đang xem lời mời…</p></div>
     <div class="panel stack"><h3 style="margin:0">Mời bạn bè</h3>${SOC.friends.length?`<div class="duofr">${SOC.friends.map(f=>`<div class="duofrow"><span class="duofav">${avatarHTML(f.avatar,36,f.frame)}</span><span style="min-width:0;flex:1"><b>${esc(f.name)}</b><div class="small muted">Cấp ${f.level||1}${typeof isOnline==='function'&&isOnline(f)?' · <span style="color:var(--jade)">đang online</span>':''}</div></span><button class="btn sm" data-dinv="${esc(f.id)}">Mời</button></div>`).join('')}</div>`:'<p class="muted" style="margin:0">Chưa có bạn nào. Kết bạn bằng mã 6 ký tự trong mục Bạn bè rồi quay lại mời nhé.</p>'}<div class="row"><a class="btn sm" href="#friends">Mục Bạn bè</a></div></div>
@@ -13289,7 +13298,7 @@ function duoAfter(game,st,quit){const m=DUO.m;if(!duoOn()||m.game!==game)return 
   const mine=game==='race'?{dist:Math.floor(st.dist),score:Math.round(st.score),correct:st.correct,total:st.total,done:1}:{kills:st.kills,hp:st.hp,done:1};
   const xp=(st.correct||st.kills||0)*2;if(xp)addXp(xp);touch();save();
   app.innerHTML=`<div class="stack racev"><section class="rchero end"><div class="rchtxt"><div class="label" style="color:#ffd166">${DUO_NAME[game]}</div><h1 id="duores">${quit?'Bạn đã dừng':'Xong phần của bạn!'}</h1><div class="rcbest" id="duoresm"><span>⏳ Đang chờ đối thủ chơi xong…</span></div></div></section><div class="row" style="gap:8px;justify-content:center"><a class="btn" href="#duo-${game}">👥 Ván mới</a><a class="btn ghost" href="#games">Về Trò chơi</a></div></div>`;
-  const show=j=>{const win=j.winner===m.role,draw=j.winner==='draw';const a=(j.st||{})[m.role]||{},b=(j.st||{})[m.role==='a'?'b':'a']||{};let coins=win?10:draw?5:0;if(coins)earn(coins,DUO_NAME[game]+(win?' · thắng':' · hòa'),{delay:500,once:'duo:'+m.id});
+  const show=j=>{const win=j.winner===m.role,draw=j.winner==='draw';const a=(j.st||{})[m.role]||{},b=(j.st||{})[m.role==='a'?'b':'a']||{};let coins=(win?10:draw?5:0)*(m.bot?.5:1);if(coins)earn(coins,DUO_NAME[game]+(win?' · thắng':' · hòa'),{delay:500,once:'duo:'+m.id});
     const h=document.getElementById('duores'),mm=document.getElementById('duoresm');if(!h)return;h.innerHTML=win?'🏆 Bạn thắng!':draw?'🤝 Hòa!':'Đối thủ thắng';
     mm.innerHTML=game==='race'?`<span>🏎️ Bạn <b>${(a.dist||0).toLocaleString('vi-VN')} m</b> · ${a.correct||0}/${a.total||0} đúng</span><span>🚗 ${esc(m.opp.name||'Đối thủ')} <b>${(b.dist||0).toLocaleString('vi-VN')} m</b> · ${b.correct||0}/${b.total||0} đúng</span>${coins?`<span>${YB} +${coins}</span>`:''}<span>⭐ +${xp} XP</span>`
       :`<span>🏹 Bạn hạ <b>${a.kills||0}</b> quái</span><span>🏹 ${esc(m.opp.name||'Đối thủ')} hạ <b>${b.kills||0}</b> quái</span>${coins?`<span>${YB} +${coins}</span>`:''}<span>⭐ +${xp} XP</span>`;
@@ -13665,6 +13674,67 @@ try{HUB.splice(Math.min(4,HUB.length),0,{k:'rank',cat:'friends',ic:'榜',col:'#b
 if(window.__T)window.__u77={RK,rankSync,rankMe,lessonsTotal,viewRank,cupSVG,cupShelfHTML,myTitle,NAVG,frExtra:()=>frExtra(),feedPostHTML:p=>feedPostHTML(p)};
 function frExtra(){return{seen:Date.now(),handle:myHandle(),idn:myIdn(),rn:realName(),ttl:myTitle(),fashion:fashionScore(),house:houseSnap(),wear:Object.values(SHOP().wear||{}).filter(Boolean).slice(0,6)};}
 
+/* ===== 5.34: Chơi đôi — tìm quá 3 phút thì tự ghép với máy (Rồng Máy 🤖); ván với máy chạy ngay trên máy, không qua máy chủ ===== */
+let DUO_BOT_MS=180000;
+const DUO_BOT={name:'Rồng Máy 🤖',avatar:3};
+const fmtMS=ms=>{const s=Math.max(0,Math.ceil(ms/1000));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');};
+async function duoQueue(game){const b=app.querySelector('#duoq');if(!b)return;duoQueueing=true;DUO.qStart=Date.now();b.textContent='✕ Hủy tìm';b.classList.remove('pri');duoQsEl('<span class="duowait">⏳ Đang tìm đối thủ…</span>');
+  const tick=async()=>{if(location.hash!=='#duo-'+game||!duoQueueing){return;}
+    const left=DUO_BOT_MS-(Date.now()-DUO.qStart);
+    if(left<=0){duoQueueing=false;clearInterval(DUO.qT);DUO.qT=0;let real=null;try{real=await duoApi('POST','/v1/duo/queue/cancel',{});}catch(e){}
+      window.__gmPaid=game;if(real&&real.matched){duoLaunch(real);return;}
+      gardenToast('🤖 Chưa có ai đang chờ. Bạn đấu với <b>'+esc(DUO_BOT.name)+'</b> nhé!');duoLaunch(duoBotMatch(game));return;}
+    try{const j=await duoApi('POST','/v1/duo/queue',{game,lv:LEVEL,nl:duoNl()});if(!duoQueueing)return;
+      if(j.matched){duoQueueing=false;clearInterval(DUO.qT);DUO.qT=0;window.__gmPaid=game;duoLaunch(j);return;}
+      duoQsEl(`<span class="duowait">⏳ Đang tìm đối thủ… ${j.waiting?`<b>${j.waiting}</b> người cùng trò, cùng cấp đang chờ`:'chưa có ai khác cùng cấp, hãy mời bạn bè'}<br><small class="muted">Sau <b id="duobotleft">${fmtMS(left)}</b> chưa có ai sẽ tự ghép với ${esc(DUO_BOT.name)}</small></span>`);}
+    catch(e){duoQsEl(`<span style="color:var(--seal)">${esc(netMsg(e))}</span><br><small class="muted">Sau ${fmtMS(left)} sẽ tự ghép với ${esc(DUO_BOT.name)}</small>`);}};
+  tick();DUO.qT=setInterval(tick,1800);}
+async function duoCancel(game){duoQueueing=false;clearInterval(DUO.qT);DUO.qT=0;const b=app.querySelector('#duoq');if(b){b.textContent='👥 Tìm đối thủ';b.classList.add('pri');}duoQsEl('Đã hủy. Năng lượng của ván này được giữ cho lần tìm tiếp theo.');window.__gmPaid=game;
+  try{const j=await duoApi('POST','/v1/duo/queue/cancel',{});if(j&&j.matched&&location.hash==='#duo-'+game){gardenToast('👥 Vừa ghép được đối thủ, vào ván luôn nhé!');duoLaunch(j);}}catch(e){}}
+function duoBotMatch(game){const seed=(Math.floor(Math.random()*2**31))|1;DUO.offs=0;
+  const m={id:'bot-'+Date.now().toString(36),game,lv:LEVEL,nl:duoNl(),seed,start:Date.now()+4000,role:'a',me:(SOC.auth&&SOC.auth.uid)||'me',opp:{uid:'bot',name:DUO_BOT.name,avatar:DUO_BOT.avatar},st:{},ev:[],n:0,ended:false,winner:'',bot:1};
+  const r=duoRng(seed^0x9e3779b9),B={ev:[],n:0,st:{a:{},b:{}},taken:new Set(),leaks:0};
+  if(game==='race'){const acc=.7+r()*.15;let t=2500;B.ans=[];for(let k=0;k<20;k++){t+=3200+r()*3000;B.ans.push([t,r()<acc]);}}
+  else{B.plan=duoFoes(m).foes.map(f=>({f:f.i,t:f.at+1800+r()*4500,go:r()<.62})).filter(x=>x.go).sort((a,b)=>a.t-b.t);B.kills=0;}
+  m.B=B;return m;}
+function botRace(B,tms){let d=0,sp=1,c=0,n=0,tp=0;for(const [ta,ok] of B.ans){if(ta>tms)break;d+=(ta-tp)*0.006*sp;tp=ta;n++;if(ok){d+=25*sp;c++;sp=Math.min(2.6,1+0.06*c);}}d+=(Math.min(tms,B.ans[B.ans.length-1][0])-tp)*0.006*sp*(tms>tp?1:0);return {dist:Math.floor(d),correct:c,total:n,done:n>=B.ans.length?1:0};}
+function botStep(m,st,ev,since){const B=m.B,t=Date.now()-m.start,acc=[];
+  if(st&&typeof st==='object'){const o=B.st.a;for(const k of ['dist','score','correct','total','kills','done','hp'])if(st[k]!=null)o[k]=st[k];}
+  (ev||[]).forEach(e=>{if(!e)return;if((e.k==='kill'||e.k==='leak')&&!B.taken.has(e.f)){B.taken.add(e.f);B.n++;B.ev.push({i:B.n,k:e.k,f:e.f,by:'a',t});acc.push(e.f);if(e.k==='leak')B.leaks++;}else if(e.k==='done')B.st.a.done=1;});
+  const fin=!!B.st.a.done;
+  if(m.game==='race'){B.st.b=botRace(B,fin?1e9:t);if(fin)B.st.b.done=1;}
+  else{for(const p of B.plan){if(p.t>t&&!fin)break;if(B.taken.has(p.f))continue;if(fin&&p.t>t)continue;B.taken.add(p.f);B.n++;B.kills++;B.ev.push({i:B.n,k:'kill',f:p.f,by:'b',t});}B.st.b={kills:B.kills,done:fin?1:0};}
+  const ended=!!(B.st.a.done&&B.st.b.done);let winner='';if(ended){const a=B.st.a,b=B.st.b,ka=m.game==='race'?(a.dist||0):(a.kills||0),kb=m.game==='race'?(b.dist||0):(b.kills||0);winner=ka>kb?'a':kb>ka?'b':'draw';}
+  return {acc,ev:B.ev.filter(e=>e.i>(since||0)),n:B.n,st:{a:Object.assign({},B.st.a),b:Object.assign({},B.st.b)},opp:Object.assign({},B.st.b),ended,winner,now:Date.now(),start:m.start,hp:B.leaks};}
+async function duoPush(st,ev,force){const m=DUO.m;if(!m)return null;const now=Date.now();if(!force&&(DUO.busy||now-DUO.lastPush<850))return null;DUO.busy=true;DUO.lastPush=now;
+  try{const evs=DUO.pend.concat(ev||[]);DUO.pend=[];const j=m.bot?botStep(m,st,evs,DUO.since):await duoApi('POST','/v1/duo/push',{id:m.id,st,ev:evs,since:DUO.since});if(DUO.m!==m)return null;
+    DUO.opp=j.opp||{};(j.ev||[]).forEach(e=>{if(e.i>DUO.since)DUO.since=e.i;});if(j.ended){m.ended=true;m.winner=j.winner;m.st=j.st;}return j;}
+  catch(e){if(ev&&ev.length)DUO.pend=ev.concat(DUO.pend);return null;}finally{DUO.busy=false;}}
+if(window.__T)window.__u78={setBotMs:v=>{DUO_BOT_MS=v;},duoBotMatch,botStep,botRace,DUO};
+
+/* ===== 5.34: Sự kiện & Nhiệm vụ — rời trang Học, đặt ở Trò chơi và một mục riêng trong Mở rộng ===== */
+function evChestHTML(){let cr=[];try{cr=chestReady();}catch(e){}return cr.length?`<a class="evban chestban" href="#shop" data-shoptab="chest" style="--ec:#b8860b"><span class="evic">🎁</span><span class="evtx"><span class="label">Rương mốc</span><b>Bạn có ${cr.length} rương chưa mở!</b><small>${esc(cr[0][1])} · bấm để mở</small></span><span class="evgo">→</span></a>`:'';}
+function evAllHTML(){let eb='';try{eb=evBanner();}catch(e){}return eb+evChestHTML();}
+function questLeft(){try{const q=QD();if(q.claimed)return 0;const ks=qPick();const done=ks.filter(k=>qVal(k)>=QPOOL[k][1]).length;return done===3?-1:3-done;}catch(e){return 0;}}
+function bindQuestHere(root,redraw){const b=root.querySelector('#qclaim');if(!b)return;b.onclick=()=>{const q=QD();if(q.claimed)return;q.claimed=true;const g=G();g.coins=(g.coins||0)+20;g.water=(g.water||0)+5;addXp(10);save();sfx('coin');confetti();gardenToast('Rương quà: <b>+20 Nguyên bảo, +5 giọt nước, +10 XP</b>');setTimeout(redraw,900);};}
+function viewEvents(){stopGames();const ev=evAllHTML();
+  app.innerHTML=`<div class="stack evpage"><section class="addhero evhero"><div class="addicon han" aria-hidden="true">庆</div><div style="min-width:0"><div class="label">Mở rộng</div><h1>Sự kiện & Nhiệm vụ</h1><p>Sự kiện đang diễn ra, 3 nhiệm vụ mỗi ngày và rương quà. Xong cả 3 nhiệm vụ được mở rương: +20 ${YB}, +5 giọt nước, +10 XP.</p></div></section>
+    ${ev?`<div class="stack evlist"><h3 style="margin:0">🎉 Sự kiện</h3>${ev}</div>`:'<div class="panel"><h3 style="margin:0">🎉 Sự kiện</h3><p class="small muted" style="margin:4px 0 0">Hiện chưa có sự kiện nào. Sự kiện mới sẽ hiện ở đây và trong Thông báo.</p></div>'}
+    ${questHTML()}
+    <div class="row" style="gap:8px;justify-content:center"><a class="btn" href="#games">🎮 Khu trò chơi</a><a class="btn ghost" href="#rank">🏆 Bảng xếp hạng</a></div></div>`;
+  bindQuestHere(app,()=>{if(location.hash==='#events')viewEvents();});}
+/* Khu trò chơi: thêm khối Sự kiện & Nhiệm vụ ở đầu trang */
+(function(){const base=viewGames;viewGames=function(){base.apply(this,arguments);if(location.hash!=='#games'||app.querySelector('.gevq'))return;
+  const ql=questLeft(),ev=evAllHTML();const hero=app.querySelector('section')||app.firstElementChild;if(!hero)return;
+  hero.insertAdjacentHTML('afterend',`<div class="gevq stack">${ev}<details class="gquest"${ql?' open':''}><summary><span>📋 Nhiệm vụ hôm nay</span><b>${ql===-1?'🎁 Mở rương quà!':ql?`Còn ${ql}/3`:'Đã xong ✓'}</b></summary>${questHTML()}</details></div>`);
+  bindQuestHere(app,()=>{if(location.hash==='#games')viewGames();});};})();
+/* Mở rộng: ô riêng trong Luyện thêm và trong bảng Khám phá trên điện thoại */
+try{MORE_TILES.unshift(['#events','庆','Sự kiện & Nhiệm vụ','Sự kiện đang diễn ra, nhiệm vụ hôm nay và rương quà']);const g=TILE_GROUPS.find(x=>x[0]==='Mở rộng');if(g&&!g[1].includes('#events'))g[1].unshift('#events');TILE_ART['#events']=TILE_ART['#events']||null;}catch(e){}
+(function(){const base=msheetOpen;msheetOpen=function(k){base.apply(this,arguments);if(k!=='explore'||MSHEET.open!=='explore')return;const g=document.querySelector('#msheet .msgrid');if(!g||document.querySelector('#msheet .msevq'))return;
+  const ql=questLeft();let evn='';try{const e=evNow()||hwNow();evn=e?(e.name||e.t||'đang diễn ra'):'';}catch(x){}
+  g.insertAdjacentHTML('afterend',`<h3 style="margin-top:14px">Mở rộng</h3><a class="msevq" href="#events"><span class="msevi">🎁</span><span class="msevt"><b>Sự kiện & Nhiệm vụ</b><small>${evn?'Có sự kiện '+esc(String(evn))+' · ':''}${ql===-1?'Mở rương quà!':ql?`Nhiệm vụ còn ${ql}/3`:'Nhiệm vụ đã xong'}</small></span>${ql?`<em class="rpb">${ql===-1?'!':ql}</em>`:''}<span class="evgo">→</span></a>`);};})();
+if(window.__T)window.__u79={viewEvents,questLeft,evAllHTML};
+
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
 function hzPanel(l){const z=l.hz;if(!z)return '';const wl=w=>`<a class="hzw han" href="${typeof wpURL==='function'?wpURL(w):'#'}" target="_blank" rel="noopener">${esc(w)}</a>`;
@@ -13686,7 +13756,7 @@ function route(){
   if(ttsOK)try{speechSynthesis.cancel();}catch(e){}
   if(sttStop){try{sttStop();}catch(e){}sttStop=null;}
   {const wg=document.getElementById('wdg');if(wg&&wg.open)wg.close();}
-  const MORE=['more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
+  const MORE=['events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
   navUpdate(h);if(typeof navGroup==='function'&&navGroup(navKey(h))==='game'&&h!=='games'&&h!=='friends'&&h!=='achievements'){const q=QD();if(!q.gv){q.gv=1;qTick('game');save();}}
   const m=h.match(/^l(\d{1,2})$/);
   if(m&&+m[1]>=1&&+m[1]<=NL){const n=+m[1];if(cur.n!==n){cur={n,stage:'words'};}viewLesson(n,cur.stage);}
@@ -13695,7 +13765,7 @@ function route(){
   else if(h==='more')viewMore();else if(h==='pron')viewPron();else if(h==='listen')viewListen();else if(h==='culture')viewCulture();
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
-  else if(h==='settings')viewSettings();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
+  else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
   else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(/^duo-(race|defense)$/.test(h))viewDuo(h.slice(4));else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
@@ -13708,7 +13778,7 @@ function route(){
   else if(h==='speak')viewSpeak();else if(/^speak-\d{1,2}$/.test(h)&&+h.slice(6)>=1&&+h.slice(6)<=NL)viewSpeak(+h.slice(6));
   else if(h==='add')viewAdd();else if(/^add-\d{1,2}$/.test(h)&&+h.slice(4)>=1&&+h.slice(4)<=NL){addSt.pick=null;viewAdd(+h.slice(4));}
   else viewHome();
-  if(h==='home'||h===''){try{const eb=evBanner(),cr=chestReady();const hero=app.querySelector('.hello')||app.firstElementChild;const extra=eb+(cr.length?`<a class="evban chestban" href="#shop" data-shoptab="chest" style="--ec:#b8860b"><span class="evic">🎁</span><span class="evtx"><span class="label">Rương mốc</span><b>Bạn có ${cr.length} rương chưa mở!</b><small>${esc(cr[0][1])} · bấm để mở</small></span><span class="evgo">→</span></a>`:'');if(extra&&hero)hero.insertAdjacentHTML('afterend',extra);}catch(e){}}
+  /* 5.34: sự kiện, rương mốc, nhiệm vụ nằm ở #events và Khu trò chơi */
   gameBar(h);gpromoRender(h);
   renderStat();
   document.getElementById('fab').hidden=/^add|^exam|^speak/.test(h);
