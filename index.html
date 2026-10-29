@@ -3089,6 +3089,15 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .msevq{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;text-decoration:none;color:var(--ink);background:linear-gradient(90deg,color-mix(in srgb,#7a3cf0 14%,var(--card)),color-mix(in srgb,#e46a2b 14%,var(--card)));border:1px solid var(--line);position:relative}
 .msevi{font-size:26px}.msevt{flex:1;display:flex;flex-direction:column;min-width:0}.msevt small{color:var(--muted)}
 .msevq .rpb{position:static}
+
+/* 5.36 Kasser English */
+.enhero{background:linear-gradient(135deg,color-mix(in srgb,#1f5fbf 14%,var(--card)),var(--card) 70%);border-color:#1f5fbf}
+.enlogo{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;background:#e3eeff}
+.engrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.enf{display:flex;flex-direction:column;gap:4px}.enfi{font-size:24px}
+.msen{margin-top:8px;background:linear-gradient(90deg,color-mix(in srgb,#1f5fbf 14%,var(--card)),color-mix(in srgb,#f5b041 16%,var(--card)))}
+.msen .msevi{display:grid;place-items:center}
+@media (max-width:560px){.enhero{grid-template-columns:1fr}.enlogo{width:56px;height:56px}}
 </style>
 </head><body>
 
@@ -3115,11 +3124,11 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=b7d72e69"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=5682cb01"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=b7d72e69','strokes-file');A('packs/dict.js?v=b7d72e69','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=5682cb01','strokes-file');A('packs/dict.js?v=5682cb01','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -13838,6 +13847,31 @@ if(LEVEL===3)Object.assign(LICON,LICON3);else if(LEVEL===4)Object.assign(LICON,L
 if(LEVEL>=3){const BG=['#ffe9c7','#ffe1d6','#ffdce0','#f9e0f0','#e4e9ff','#fff1cf','#dff2ff','#efe6dc','#e3f4e6','#e8f0ff','#e6f7e3','#e3f1fb','#e6f3ec','#ece4ff','#ffe0dc','#e0f2f1','#fff3e0','#f3e5f5','#e8f5e9','#fce4ec'];for(let i=1;i<=20;i++)LICON_BG[i]=BG[(i-1+(LEVEL===4?7:0))%BG.length];}
 if(window.__T)window.__u80={LICON,LICON3,LICON4,SCENE_MAP,SC_LIB,WART,wordArt,licon,sceneSVG};
 
+/* ===== 5.36: Liên kết sang Kasser English (web anh em học tiếng Anh) — chỉ đặt ở Mở rộng và Khám phá, không chen trang Học ===== */
+const EN_URL='https://english.kassertam.com/?ref=tamhsk';
+function enStreak(){try{const t=today();return (S.streak&&S.streak.last&&S.streak.last>=addDays(t,-1))?(S.streak.count||0):0;}catch(e){return 0;}}
+function enNudge(){const n=enStreak();return n>=3?`Bạn đã học tiếng Trung ${n} ngày liên tiếp. Thử thêm 5 phút tiếng Anh mỗi ngày nhé?`:'Cùng giao diện, cùng trò chơi bạn đã quen, nay dành cho tiếng Anh.';}
+const EN_ART=`<rect x="6" y="12" width="40" height="40" rx="8" fill="#fff" stroke="#1f5fbf" stroke-width="2.5"/><text x="26" y="38" text-anchor="middle" font-size="15" font-weight="800" fill="#1f5fbf" font-family="system-ui,sans-serif">ABC</text><path d="M34 6 h22 q4 0 4 4 v12 q0 4 -4 4 h-12 l-6 6 v-6 h-4 q-4 0 -4 -4 v-12 q0 -4 4 -4z" fill="#f5b041"/><text x="45" y="20" text-anchor="middle" font-size="10" font-weight="800" fill="#5a3a00" font-family="system-ui,sans-serif">Hi!</text>`;
+function viewEnglish(){stopGames();
+  const feats=[['🔤','Từ có phiên âm IPA','Mỗi từ kèm IPA, loại từ, nghĩa tiếng Việt và câu ví dụ, bấm nghe giọng đọc.'],
+    ['✍️','Chính tả nghe – viết','Thay cho chặng Chữ Hán: nghe từ rồi gõ lại cho đúng.'],
+    ['📚','Cấp A1 và A2','Mỗi cấp 15 bài, có truyện đọc và từ điển Anh – Việt.'],
+    ['🎮','Trò chơi, vườn, nhà','Đua xe, thủ thành, khu vườn và ví Nguyên bảo y như Tâm HSK.']];
+  app.innerHTML=`<div class="stack enpage"><section class="addhero enhero"><div class="enlogo" aria-hidden="true"><svg viewBox="0 0 64 64" width="56" height="56">${EN_ART}</svg></div><div style="min-width:0"><div class="label">Web anh em của Tâm HSK</div><h1>Kasser English</h1><p>${esc(enNudge())}</p>
+      <div class="row" style="gap:8px;margin-top:12px;flex-wrap:wrap"><a class="btn pri big" id="engo" href="${EN_URL}" target="_blank" rel="noopener">Mở Kasser English →</a></div><p class="small muted" style="margin-top:6px">english.kassertam.com · mở trong trình duyệt</p></div></section>
+    <div class="engrid">${feats.map(f=>`<div class="panel enf"><span class="enfi" aria-hidden="true">${f[0]}</span><b>${f[1]}</b><span class="small muted">${f[2]}</span></div>`).join('')}</div>
+    <div class="panel enacc"><h3 style="margin:0">Tài khoản</h3><p class="small" style="margin:4px 0 0">Hiện tài khoản của hai web còn riêng. Bên Kasser English, bạn đăng ký bằng cùng email hoặc cùng tài khoản Google để sau này gộp làm một. Tiến độ, ví Nguyên bảo và gói Pro của Tâm HSK vẫn giữ nguyên ở đây.</p></div>
+    <div class="row" style="justify-content:center"><a class="btn ghost" href="#more">← Về Mở rộng</a></div></div>`;
+  const b=app.querySelector('#engo');if(b)b.addEventListener('click',()=>{try{const k='en-clicks';localStorage.setItem(k,String((+localStorage.getItem(k)||0)+1));}catch(e){}});}
+/* ô trong Mở rộng (trang Luyện thêm, máy tính) */
+try{MORE_TILES.push(['#english','英','Kasser English','Học tiếng Anh cùng giao diện Tâm HSK: IPA, chính tả, A1 – A2']);TILE_ART['#english']=['#e3eeff','#1f5fbf',EN_ART];
+  const g=TILE_GROUPS.find(x=>x[0]==='Mở rộng');if(g&&!g[1].includes('#english')){const i=g[1].indexOf('#settings');g[1].splice(i<0?g[1].length:i,0,'#english');}}catch(e){}
+/* dòng trong bảng Khám phá trên điện thoại, ngay dưới Sự kiện & Nhiệm vụ */
+(function(){const base=msheetOpen;msheetOpen=function(k){base.apply(this,arguments);if(k!=='explore'||MSHEET.open!=='explore')return;if(document.querySelector('#msheet .msen'))return;
+  const at=document.querySelector('#msheet .msevq')||document.querySelector('#msheet .msgrid');if(!at)return;const n=enStreak();
+  at.insertAdjacentHTML('afterend',`<a class="msevq msen" href="#english"><span class="msevi"><svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">${EN_ART}</svg></span><span class="msevt"><b>Kasser English</b><small>${n>=3?`Chuỗi ${n} ngày · thử 5 phút tiếng Anh?`:'Học tiếng Anh cùng Long Hổ'}</small></span><span class="evgo">→</span></a>`);};})();
+if(window.__T)window.__u81={viewEnglish,enStreak,EN_URL,setStreak:n=>{S.streak={count:n,last:today()};}};
+
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
 function hzPanel(l){const z=l.hz;if(!z)return '';const wl=w=>`<a class="hzw han" href="${typeof wpURL==='function'?wpURL(w):'#'}" target="_blank" rel="noopener">${esc(w)}</a>`;
@@ -13859,7 +13893,7 @@ function route(){
   if(ttsOK)try{speechSynthesis.cancel();}catch(e){}
   if(sttStop){try{sttStop();}catch(e){}sttStop=null;}
   {const wg=document.getElementById('wdg');if(wg&&wg.open)wg.close();}
-  const MORE=['events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
+  const MORE=['english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
   navUpdate(h);if(typeof navGroup==='function'&&navGroup(navKey(h))==='game'&&h!=='games'&&h!=='friends'&&h!=='achievements'){const q=QD();if(!q.gv){q.gv=1;qTick('game');save();}}
   const m=h.match(/^l(\d{1,2})$/);
   if(m&&+m[1]>=1&&+m[1]<=NL){const n=+m[1];if(cur.n!==n){cur={n,stage:'words'};}viewLesson(n,cur.stage);}
@@ -13868,7 +13902,7 @@ function route(){
   else if(h==='more')viewMore();else if(h==='pron')viewPron();else if(h==='listen')viewListen();else if(h==='culture')viewCulture();
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
-  else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
+  else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
   else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(/^duo-(race|defense)$/.test(h))viewDuo(h.slice(4));else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
