@@ -3115,11 +3115,11 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=331644e7"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=b7d72e69"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=331644e7','strokes-file');A('packs/dict.js?v=331644e7','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=b7d72e69','strokes-file');A('packs/dict.js?v=b7d72e69','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -5659,6 +5659,9 @@ Object.assign(WART,{
 '阴':()=>waBg('#d9dee6','#b9c0ca')+wb8_cloud(70,46,1.3,'#9aa5b4','wa-bob')+wb8_cloud(140,58,1.1,'#b3bccb','wa-bob')+`<g style="animation-delay:.6s">${wb8_cloud(110,30,.9,'#c8d0dc')}</g>`
   +`<path d="M0,112 Q50,100 100,110 Q150,100 200,112 L200,140 L0,140Z" fill="#8fa38a"/>`+waP(100,96,{s:.5,shirt:'#5a8fd6',mood:'n',mouth:'flat'}),
 });
+
+/* hình từ mới HSK3/HSK4 nằm trong gói dữ liệu của cấp (packs/hskN.js) */
+if(typeof window.WART_PACK==='function'){try{window.WART_PACK({WART,WA_INK,WA_SKIN,waP,waHeart,waStar,waBg,waShadow,waTxt,waBubble});}catch(e){console.warn('WART_PACK',e);}}
 
 /* ---------- Giải đấu tuần: lên hạng, xuống hạng theo XP tuần ---------- */
 const LGKEY='hsk-league';
@@ -13734,6 +13737,106 @@ try{MORE_TILES.unshift(['#events','庆','Sự kiện & Nhiệm vụ','Sự kiệ
   const ql=questLeft();let evn='';try{const e=evNow()||hwNow();evn=e?(e.name||e.t||'đang diễn ra'):'';}catch(x){}
   g.insertAdjacentHTML('afterend',`<h3 style="margin-top:14px">Mở rộng</h3><a class="msevq" href="#events"><span class="msevi">🎁</span><span class="msevt"><b>Sự kiện & Nhiệm vụ</b><small>${evn?'Có sự kiện '+esc(String(evn))+' · ':''}${ql===-1?'Mở rương quà!':ql?`Nhiệm vụ còn ${ql}/3`:'Nhiệm vụ đã xong'}</small></span>${ql?`<em class="rpb">${ql===-1?'!':ql}</em>`:''}<span class="evgo">→</span></a>`);};})();
 if(window.__T)window.__u79={viewEvents,questLeft,evAllHTML};
+
+/* ===== 5.35: Hình minh họa HSK3/HSK4 — biểu tượng bài, ảnh nền bài khóa (thêm cảnh mới) ===== */
+/* cảnh mới cho bài khóa */
+Object.assign(SC_LIB,{
+ mountain:o=>sc_sky(o,240)+`<path d="M-10 200 L90 70 L150 140 L230 40 L330 150 L410 90 V240 H-10Z" fill="#9cc79a" stroke="${SC_INK}" stroke-width="1.2"/><path d="M230 40 L252 68 L238 64 L226 74 L212 62Z" fill="#fff"/><path d="M90 70 L106 90 L94 88 L84 96Z" fill="#fff"/>${sc_r(0,200,400,40,'#b9e3a8')}<path d="M180 240 Q200 210 230 200 T300 160" stroke="#e8dcc4" stroke-width="10" fill="none"/>`+sc_tree(40,215,.9)+sc_tree(360,212,.8,'#b7dd9a')+sc_cloud(60,30,1)+sc_cloud(280,24,.8,3),
+ theater:o=>`<rect width="400" height="240" fill="#3a1d1d"/>${sc_r(0,0,400,30,'#7a1e1e')}${[0,1,2,3,4,5,6,7].map(i=>`<path d="M${i*50} 30 q25 26 50 0" fill="#a52a2a" stroke="${SC_INK}"/>`).join('')}${sc_o(60,40,280,140,'#f6e7c8',4)}<path d="M60 40 q-30 70 0 140 M340 40 q30 70 0 140" fill="#a52a2a"/>${sc_lantern(110,60)}${sc_lantern(290,60)}<g class="scw" style="transform-origin:200px 170px"><circle cx="200" cy="112" r="24" fill="#fff" stroke="${SC_INK}"/><path d="M180 104 q10 -8 20 0 q10 -8 20 0" stroke="#c0392b" stroke-width="5" fill="none"/><path d="M192 126 q8 6 16 0" stroke="#c0392b" stroke-width="3" fill="none"/><path d="M176 92 L200 74 L224 92" fill="#2f5d4e"/></g>${sc_r(0,180,400,60,'#5a2a1a')}${[40,110,180,250,320].map(x=>sc_o(x,196,50,26,'#8b3a2a',6)).join('')}`,
+ bank:o=>sc_room('#eef1f5','#cfd6de',165)+`${sc_sign(200,30,'银行','#b8860b')}${sc_o(40,96,320,70,'#c9d3dc',4)}${[0,1,2].map(i=>sc_o(60+i*110,60,80,40,'#dff0fb',3)+sc_t(100+i*110,86,String(i+1),18,'#3a6f9f')).join('')}<g class="scb">${sc_o(330,120,40,46,'#ffd166',4)}${sc_t(350,148,'¥',20,'#8a5a00')}</g>`+sc_people(80,165,3)+sc_plant(30,165),
+ sea:o=>sc_sky(o,120)+`${sc_r(0,120,400,120,'#8fd3ea')}${[0,1,2,3].map(i=>`<path class="scd" style="animation-delay:${i}s" d="M${-20+i*10} ${140+i*24} q25 -10 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" stroke="#fff" stroke-width="2.5" fill="none" opacity=".8"/>`).join('')}<g class="scr" style="animation-duration:16s"><path d="M0 0 q14 -10 28 0 q-14 10 -28 0z M28 0 l8 -6 v12z" transform="translate(80 190)" fill="#ffb347" stroke="${SC_INK}"/></g>${sc_sun(330,50)}${sc_cloud(80,30,1)}`,
+ salon:o=>sc_room('#fbeef3','#e3cdb4',160)+`${sc_sign(200,30,'理发','#d6457a')}${sc_o(60,50,90,100,'#dff0fb',8)}${sc_o(250,50,90,100,'#dff0fb',8)}${sc_o(70,150,70,40,'#3a3f4b',8)}${sc_o(260,150,70,40,'#3a3f4b',8)}<g class="scsp" style="transform-origin:30px 100px">${sc_o(22,60,16,80,'#fff',8)}<path d="M22 70 l16 10 M22 90 l16 10 M22 110 l16 10" stroke="#e5383b" stroke-width="4"/></g>`,
+ zoo:o=>sc_sky(o,150)+`${sc_r(0,150,400,90,'#c9e3a6')}${sc_sign(200,40,'动物园','#2e8b57')}<path d="M0 150 h400" stroke="#8b6a4a" stroke-width="3"/>${[0,1,2,3,4,5,6,7,8].map(i=>`<path d="M${20+i*45} 150 v-36" stroke="#8b6a4a" stroke-width="4"/>`).join('')}<path d="M0 124 h400" stroke="#8b6a4a" stroke-width="3"/><g class="scw" style="transform-origin:300px 200px"><path d="M280 200 v-60 q0 -10 8 -10 h6 q8 0 8 10 v60" fill="#f4c542" stroke="${SC_INK}"/><circle cx="300" cy="126" r="9" fill="#f4c542" stroke="${SC_INK}"/></g>`+sc_tree(70,200,1.1)+sc_tree(150,205,.8,'#b7dd9a'),
+});
+Object.assign(SCENE_MAP,{
+ '3-1-0':['mountain',{}],'3-1-1':['living',{}],'3-1-2':['study',{}],'3-1-3':['sea',{}],
+ '3-2-0':['street',{}],'3-2-1':['hospital',{}],'3-2-2':['park',{}],'3-2-3':['living',{rain:1}],
+ '3-3-0':['clothes',{}],'3-3-1':['mountain',{}],'3-3-2':['market',{}],'3-3-3':['street',{rain:1}],
+ '3-4-0':['shop',{}],'3-4-1':['field',{}],'3-4-2':['shop',{}],'3-4-3':['classroom',{}],
+ '3-5-0':['park',{}],'3-5-1':['hospital',{}],'3-5-2':['bedroom',{}],'3-5-3':['clothes',{}],
+ '3-6-0':['park',{}],'3-6-1':['classroom',{}],'3-6-2':['bedroom',{night:1}],'3-6-3':['office',{}],
+ '3-7-0':['office',{}],'3-7-1':['airport',{}],'3-7-2':['cafe',{}],'3-7-3':['bank',{}],
+ '3-8-0':['office',{}],'3-8-1':['cafe',{}],'3-8-2':['restaurant',{}],'3-8-3':['street',{}],
+ '3-9-0':['classroom',{}],'3-9-1':['study',{}],'3-9-2':['living',{}],'3-9-3':['living',{rain:1}],
+ '3-10-0':['classroom',{board:'数学'}],'3-10-1':['living',{}],'3-10-2':['living',{}],'3-10-3':['street',{}],
+ '3-11-0':['classroom',{}],'3-11-1':['office',{}],'3-11-2':['dining',{}],'3-11-3':['study',{}],
+ '3-12-0':['airport',{}],'3-12-1':['classroom',{board:'太阳'}],'3-12-2':['street',{}],'3-12-3':['living',{}],
+ '3-13-0':['shop',{}],'3-13-1':['living',{night:1}],'3-13-2':['kitchen',{}],'3-13-3':['office',{}],
+ '3-14-0':['restaurant',{}],'3-14-1':['bedroom',{}],'3-14-2':['living',{}],'3-14-3':['park',{night:1}],
+ '3-15-0':['hall',{}],'3-15-1':['airport',{}],'3-15-2':['study',{}],'3-15-3':['shop',{}],
+ '3-16-0':['hospital',{}],'3-16-1':['living',{}],'3-16-2':['shop',{}],'3-16-3':['study',{}],
+ '3-17-0':['hospital',{}],'3-17-1':['living',{}],'3-17-2':['restaurant',{}],'3-17-3':['park',{}],
+ '3-18-0':['zoo',{}],'3-18-1':['study',{}],'3-18-2':['classroom',{}],'3-18-3':['mountain',{}],
+ '3-19-0':['park',{}],'3-19-1':['living',{}],'3-19-2':['hospital',{}],'3-19-3':['newyear',{}],
+ '3-20-0':['street',{}],'3-20-1':['shop',{}],'3-20-2':['classroom',{}],'3-20-3':['study',{night:1}],
+ '4-1-0':['cafe',{}],'4-1-1':['office',{night:1}],'4-1-2':['cafe',{}],'4-1-3':['park',{}],
+ '4-2-0':['party',{}],'4-2-1':['living',{}],'4-2-2':['cafe',{}],'4-2-3':['campus',{}],
+ '4-3-0':['office',{}],'4-3-1':['cinema',{}],'4-3-2':['office',{}],'4-3-3':['office',{}],
+ '4-4-0':['bank',{}],'4-4-1':['office',{}],'4-4-2':['living',{}],'4-4-3':['study',{}],
+ '4-5-0':['shop',{}],'4-5-1':['living',{}],'4-5-2':['restaurant',{}],'4-5-3':['shop',{}],
+ '4-6-0':['cafe',{}],'4-6-1':['office',{}],'4-6-2':['hall',{}],'4-6-3':['shop',{}],
+ '4-7-0':['park',{}],'4-7-1':['living',{}],'4-7-2':['street',{}],'4-7-3':['bedroom',{}],
+ '4-8-0':['office',{}],'4-8-1':['living',{}],'4-8-2':['cafe',{}],'4-8-3':['street',{}],
+ '4-9-0':['study',{}],'4-9-1':['mountain',{}],'4-9-2':['living',{}],'4-9-3':['bank',{}],
+ '4-10-0':['campus',{}],'4-10-1':['park',{}],'4-10-2':['living',{}],'4-10-3':['study',{}],
+ '4-11-0':['study',{}],'4-11-1':['station',{}],'4-11-2':['classroom',{}],'4-11-3':['classroom',{}],
+ '4-12-0':['dining',{}],'4-12-1':['kitchen',{}],'4-12-2':['office',{}],'4-12-3':['park',{}],
+ '4-13-0':['theater',{}],'4-13-1':['theater',{}],'4-13-2':['cafe',{}],'4-13-3':['classroom',{}],
+ '4-14-0':['living',{}],'4-14-1':['market',{}],'4-14-2':['station',{}],'4-14-3':['park',{}],
+ '4-15-0':['bedroom',{}],'4-15-1':['hospital',{}],'4-15-2':['living',{}],'4-15-3':['park',{}],
+ '4-16-0':['street',{}],'4-16-1':['field',{}],'4-16-2':['classroom',{}],'4-16-3':['office',{}],
+ '4-17-0':['sea',{}],'4-17-1':['sea',{}],'4-17-2':['snow',{}],'4-17-3':['office',{night:1}],
+ '4-18-0':['street',{}],'4-18-1':['study',{night:1}],'4-18-2':['airport',{}],'4-18-3':['restaurant',{}],
+ '4-19-0':['salon',{}],'4-19-1':['reception',{}],'4-19-2':['hall',{}],'4-19-3':['living',{}],
+ '4-20-0':['airport',{}],'4-20-1':['classroom',{}],'4-20-2':['restaurant',{}],'4-20-3':['mountain',{}],
+});
+/* biểu tượng bài HSK3, HSK4 */
+const LI_C=(x,y,r,f,s)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${f}"${s?` stroke="${s}" stroke-width="3"`:''}/>`;
+const LICON3={
+ 1:`<rect x="8" y="12" width="48" height="44" rx="6" fill="#fff" stroke="#c3402b" stroke-width="3"/><rect x="8" y="12" width="48" height="12" rx="5" fill="#c3402b"/><path d="M20 6 v10 M44 6 v10" stroke="#555" stroke-width="4" stroke-linecap="round"/><text x="22" y="47" font-size="15" font-weight="800" fill="#c3402b" font-family="sans-serif">六</text><text x="36" y="47" font-size="15" font-weight="800" fill="#c3402b" font-family="sans-serif">日</text>`,
+ 2:`<rect x="6" y="34" width="52" height="8" rx="2" fill="#a0724e"/><path d="M12 42 v14 M52 42 v14" stroke="#7a5230" stroke-width="4"/><rect x="14" y="18" width="24" height="16" rx="2" fill="#5a8fd6"/><rect x="24" y="34" width="4" height="0" fill="#555"/>${LI_C(48,18,10,'#fff','#2e8b57')}<path d="M48 18 v-6 M48 18 l4 3" stroke="#2e8b57" stroke-width="2.5" stroke-linecap="round"/>`,
+ 3:`<rect x="6" y="40" width="52" height="8" rx="2" fill="#c9a27a"/><rect x="12" y="16" width="10" height="24" rx="3" fill="#e5484d"/><rect x="14" y="10" width="6" height="7" fill="#e5484d"/><rect x="27" y="22" width="10" height="18" rx="3" fill="#2e8b57"/><path d="M42 22 h12 l-2 18 h-8z" fill="#ffd166" stroke="#c98a00" stroke-width="2"/><path d="M48 22 l4 -12" stroke="#5a8fd6" stroke-width="3"/>`,
+ 4:`${LI_C(26,34,18,'#ffd166')}<path d="M18 30 q3 -4 6 0 M28 30 q3 -4 6 0" stroke="#5a3a20" stroke-width="2.5" fill="none"/><path d="M18 40 q8 9 16 0" stroke="#5a3a20" stroke-width="3" fill="none"/><path d="M40 6 h20 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-12 l-6 5 v-5 a4 4 0 0 1 -2 -4 v-10 a4 4 0 0 1 4 -4z" fill="#fff" stroke="#2e8b57" stroke-width="2.5"/>`,
+ 5:`<rect x="10" y="40" width="44" height="16" rx="5" fill="#e4e9ff" stroke="#5b6bd6" stroke-width="3"/><path d="M16 40 q16 -26 32 0" fill="#fff" stroke="#5b6bd6" stroke-width="3"/><path d="M32 38 l8 -12" stroke="#e5484d" stroke-width="3" stroke-linecap="round"/>${LI_C(32,38,3,'#5b6bd6')}`,
+ 6:`${LI_C(26,26,16,'#e3f1fb','#2f6fb3')}<path d="M38 38 l16 16" stroke="#2f6fb3" stroke-width="7" stroke-linecap="round"/><text x="20" y="33" font-size="20" font-weight="800" fill="#e5484d" font-family="sans-serif">?</text>`,
+ 7:`${LI_C(32,32,24,'#fff','#c87a14')}<path d="M32 32 V16 M32 32 l10 6" stroke="#5a3a20" stroke-width="4" stroke-linecap="round"/><text x="44" y="58" font-size="16" font-weight="900" fill="#c3402b" font-family="sans-serif">5</text>`,
+ 8:`<path d="M32 6 a14 14 0 0 1 14 14 c0 12 -14 26 -14 26 s-14 -14 -14 -26 a14 14 0 0 1 14 -14z" fill="#e5484d"/>${LI_C(32,20,5,'#fff')}${[[14,54],[24,50],[40,50],[50,54]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="4" ry="2.6" fill="#8a5a44"/>`).join('')}`,
+ 9:`<path d="M6 10 h34 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-20 l-8 7 v-7 h-6 a4 4 0 0 1 -4 -4 v-20 a4 4 0 0 1 4 -4z" fill="#2e8b57"/><text x="23" y="33" text-anchor="middle" font-size="20" font-weight="800" fill="#fff" font-family="'Noto Sans SC',sans-serif">汉</text>${LI_C(48,46,10,'#ffd166','#c98a00')}<path d="M44 56 l-3 7 l7 -3 l7 3 l-3 -7" fill="#e5484d"/>`,
+ 10:`<rect x="8" y="10" width="22" height="44" rx="3" fill="#5b6bd6"/><rect x="34" y="10" width="22" height="44" rx="3" fill="#c87a14"/><text x="19" y="38" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="sans-serif">÷</text><text x="45" y="38" text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="'Noto Sans SC',sans-serif">史</text>`,
+ 11:`<rect x="6" y="12" width="52" height="22" rx="6" fill="#fff" stroke="#2f6fb3" stroke-width="3"/><path d="M12 28 h40" stroke="#2f6fb3" stroke-width="2.5"/>${[18,32,46].map(x=>`<path d="M${x} 40 v14 M${x-5} 44 l10 6 M${x+5} 44 l-10 6" stroke="#7fb3e0" stroke-width="2.5" stroke-linecap="round"/>`).join('')}${LI_C(50,20,3,'#2e8b57')}`,
+ 12:`<rect x="10" y="20" width="44" height="34" rx="6" fill="#c87a14"/><path d="M24 20 v-6 h16 v6" stroke="#7a4a10" stroke-width="4" fill="none"/><rect x="10" y="32" width="44" height="5" fill="#a85f0e"/><rect x="26" y="30" width="12" height="9" rx="2" fill="#ffd166"/>`,
+ 13:`<path d="M32 8 L56 28 H50 V54 H14 V28 H8Z" fill="#ffe1d6" stroke="#c3402b" stroke-width="3" stroke-linejoin="round"/><rect x="27" y="38" width="10" height="16" fill="#c3402b"/>${[[10,58],[18,52],[26,58]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="3.5" ry="2.2" fill="#5a3a20"/>`).join('')}`,
+ 14:`<path d="M8 32 h48 l-6 22 h-36z" fill="#c98a50" stroke="#7a5230" stroke-width="2.5"/>${LI_C(20,26,8,'#e5484d')}${LI_C(34,24,8,'#ffb347')}${LI_C(46,28,7,'#9ad35a')}<path d="M20 18 v-4 M34 16 v-4" stroke="#2e8b57" stroke-width="2.5"/>`,
+ 15:`<rect x="12" y="6" width="40" height="52" rx="4" fill="#fff" stroke="#2e8b57" stroke-width="3"/>${[18,32,46].map(y=>`<path d="M18 ${y} l4 4 l7 -8" stroke="#2e8b57" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M33 ${y+1} h13" stroke="#9ab" stroke-width="3" stroke-linecap="round"/>`).join('')}`,
+ 16:`<rect x="6" y="36" width="52" height="14" rx="4" fill="#9fb7e8"/><rect x="6" y="28" width="16" height="12" rx="4" fill="#fff" stroke="#5b6bd6" stroke-width="2"/><path d="M6 50 v6 M58 50 v6" stroke="#5a3a20" stroke-width="4"/><path d="M36 10 a10 10 0 1 0 10 14 a8 8 0 1 1 -10 -14z" fill="#ffd166"/><text x="48" y="14" font-size="10" font-weight="800" fill="#5b6bd6" font-family="sans-serif">z</text>`,
+ 17:`<rect x="10" y="20" width="44" height="34" rx="6" fill="#fff" stroke="#c3402b" stroke-width="3"/><path d="M24 20 v-6 h16 v6" stroke="#c3402b" stroke-width="3" fill="none"/><path d="M32 28 v18 M23 37 h18" stroke="#e5484d" stroke-width="6" stroke-linecap="round"/>`,
+ 18:`<path d="M6 34 l12 -12 l12 6 l8 -6 l20 12 l-14 14 l-10 -4 l-8 6z" fill="#ffd9b8" stroke="#8a5a44" stroke-width="2.5" stroke-linejoin="round"/><path d="M24 30 l10 8 M30 26 l10 8" stroke="#8a5a44" stroke-width="2"/>${LI_C(50,12,7,'#2e8b57')}<path d="M46 12 l3 3 l5 -6" stroke="#fff" stroke-width="2.5" fill="none"/>`,
+ 19:`${LI_C(20,32,11,'#e3f1fb','#3a3f4b')}${LI_C(44,32,11,'#e3f1fb','#3a3f4b')}<path d="M31 32 h2 M9 32 l-4 -4 M55 32 l4 -4" stroke="#3a3f4b" stroke-width="3"/><text x="32" y="58" text-anchor="middle" font-size="16" font-weight="900" fill="#e5484d" font-family="sans-serif">?!</text>`,
+ 20:`${LI_C(18,32,8,'#c3402b')}${[16,24,32].map((r,i)=>`<path d="M${26+i*8} ${32-r} a${r} ${r} 0 0 1 0 ${2*r}" stroke="#c3402b" stroke-width="3" fill="none" opacity="${1-i*.25}"/>`).join('')}<path d="M50 14 l3 6 l6 1 l-4 4 l1 6 l-6 -3 l-6 3 l1 -6 l-4 -4 l6 -1z" fill="#ffd166"/>`};
+const LICON4={
+ 1:`<path d="M32 54 C10 40 6 26 14 16 C20 9 30 11 32 19 C34 11 44 9 50 16 C58 26 54 40 32 54Z" fill="#e5484d"/>${LI_C(24,24,5,'none','#ffd166')}${LI_C(32,24,5,'none','#ffd166')}`,
+ 2:`${LI_C(22,32,14,'none','#2f6fb3')}${LI_C(42,32,14,'none','#e5484d')}<path d="M28 44 l4 6 l4 -6" fill="#2e8b57"/>`,
+ 3:`<rect x="10" y="22" width="44" height="32" rx="5" fill="#5a3a20"/><path d="M24 22 v-6 h16 v6" stroke="#5a3a20" stroke-width="4" fill="none"/><rect x="10" y="34" width="44" height="4" fill="#3a2410"/><path d="M50 4 l3 6 l6 1 l-4 4 l1 6 l-6 -3 l-6 3 l1 -6 l-4 -4 l6 -1z" fill="#ffd166"/>`,
+ 4:`<path d="M20 22 q-10 20 0 32 h24 q10 -12 0 -32z" fill="#c98a00"/><path d="M22 22 l4 -10 h12 l4 10z" fill="#a87400"/><text x="32" y="46" text-anchor="middle" font-size="18" font-weight="900" fill="#fff" font-family="sans-serif">¥</text>${LI_C(52,48,7,'#ffd166','#a87400')}`,
+ 5:`<path d="M6 12 h8 l6 28 h28 l6 -20 h-36" stroke="#2f6fb3" stroke-width="4" fill="none" stroke-linejoin="round"/>${LI_C(24,50,5,'#2f6fb3')}${LI_C(44,50,5,'#2f6fb3')}<path d="M26 26 l6 6 l12 -12" stroke="#2e8b57" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+ 6:`<path d="M8 30 L30 8 H54 V32 L32 54Z" fill="#ffd166" stroke="#c98a00" stroke-width="3" stroke-linejoin="round"/>${LI_C(44,18,4,'#fff','#c98a00')}<path d="M24 36 l6 -10 h8 l6 10 l-10 10z" fill="#7fd3f5" stroke="#2f6fb3" stroke-width="2"/>`,
+ 7:`<path d="M32 54 C14 42 10 30 16 21 C21 14 29 16 32 22 C35 16 43 14 48 21 C54 30 50 42 32 54Z" fill="#e5484d"/><path d="M14 34 h10 l4 -8 l6 16 l4 -8 h12" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/>`,
+ 8:`${[0,72,144,216,288].map(a=>`<ellipse cx="32" cy="18" rx="8" ry="12" fill="#f48fb1" transform="rotate(${a} 32 30)"/>`).join('')}${LI_C(32,30,7,'#ffd166')}<path d="M32 42 v16" stroke="#2e8b57" stroke-width="3"/>`,
+ 9:`${[['#e5484d',26],['#ffb347',22],['#ffd166',18],['#2e8b57',14]].map(([c,r])=>`<path d="M${32-r} 50 a${r} ${r} 0 0 1 ${2*r} 0" stroke="${c}" stroke-width="4" fill="none"/>`).join('')}${LI_C(48,14,7,'#ffd166')}<path d="M8 18 q4 -8 12 -4 q6 -6 12 2 q6 2 2 8 h-24 q-6 -2 -2 -6z" fill="#cfd8e3"/>`,
+ 10:`<path d="M32 8 L56 28 H50 V54 H14 V28 H8Z" fill="#fff1cf" stroke="#c87a14" stroke-width="3" stroke-linejoin="round"/><path d="M32 48 C22 41 21 35 24 32 C27 29 31 30 32 33 C33 30 37 29 40 32 C43 35 42 41 32 48Z" fill="#e5484d"/>`,
+ 11:`<path d="M6 16 q13 -6 26 2 q13 -8 26 -2 v36 q-13 -6 -26 2 q-13 -8 -26 -2z" fill="#fff" stroke="#2e8b57" stroke-width="3" stroke-linejoin="round"/><path d="M32 18 v36" stroke="#2e8b57" stroke-width="2.5"/><path d="M12 26 h14 M12 34 h14 M38 26 h14 M38 34 h14" stroke="#9ab" stroke-width="2.5" stroke-linecap="round"/>`,
+ 12:`${LI_C(32,32,22,'#7fd3f5','#2f6fb3')}<path d="M18 22 q8 4 6 12 q-4 4 -8 2 M40 14 q-2 8 6 10 q6 6 2 14" fill="#9ad35a"/><path d="M32 42 C26 38 26 34 28 32 C30 30 32 31 32 33 C32 31 34 30 36 32 C38 34 38 38 32 42Z" fill="#e5484d"/>`,
+ 13:`<path d="M8 34 h28 q0 18 -14 18 q-14 0 -14 -18z" fill="#fff" stroke="#2e8b57" stroke-width="3"/><path d="M36 38 q8 0 6 8 q-2 4 -8 3" stroke="#2e8b57" stroke-width="3" fill="none"/><path d="M42 8 q14 0 14 16 q0 16 -14 16 q-14 0 -14 -16 q0 -16 14 -16z" fill="#fff" stroke="#c3402b" stroke-width="2.5"/><path d="M34 20 q4 -4 8 0 M42 20 q4 -4 8 0" stroke="#c3402b" stroke-width="3" fill="none"/><path d="M38 30 q4 4 8 0" stroke="#c3402b" stroke-width="2.5" fill="none"/>`,
+ 14:`${LI_C(30,34,22,'#7fd3f5','#2f6fb3')}<path d="M14 26 q10 2 10 12 q-6 6 -12 2 M34 14 q-2 10 8 12 q8 6 2 16" fill="#9ad35a"/><path d="M46 8 q14 0 12 16 q-14 0 -12 -16z" fill="#2e8b57"/>`,
+ 15:`<rect x="8" y="38" width="16" height="16" rx="2" fill="#e5484d"/><rect x="26" y="38" width="16" height="16" rx="2" fill="#5b6bd6"/><rect x="17" y="22" width="16" height="16" rx="2" fill="#ffd166"/><text x="16" y="51" text-anchor="middle" font-size="12" font-weight="900" fill="#fff" font-family="sans-serif">A</text><text x="34" y="51" text-anchor="middle" font-size="12" font-weight="900" fill="#fff" font-family="sans-serif">B</text><text x="25" y="35" text-anchor="middle" font-size="12" font-weight="900" fill="#fff" font-family="sans-serif">C</text>${LI_C(50,26,7,'#ffd9b8','#8a5a44')}<path d="M44 34 h12 v20 h-12z" fill="#2e8b57"/>`,
+ 16:`<path d="M8 50 L24 34 L34 42 L54 18" stroke="#2e8b57" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 16 h12 v12" stroke="#2e8b57" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M16 12 l2 5 l5 1 l-4 3 l1 5 l-4 -3 l-4 3 l1 -5 l-4 -3 l5 -1z" fill="#ffd166"/>`,
+ 17:`<path d="M2 54 L22 22 L34 40 L44 28 L62 54Z" fill="#9cc79a" stroke="#2e7d32" stroke-width="2"/><path d="M22 22 l5 8 l-5 -2 l-5 2z" fill="#fff"/>${LI_C(50,14,7,'#ffd166')}<path d="M12 54 v-10" stroke="#7a5230" stroke-width="3"/>${LI_C(12,40,6,'#2e8b57')}`,
+ 18:`<rect x="16" y="6" width="26" height="48" rx="5" fill="#3a3f4b"/><rect x="19" y="12" width="20" height="34" rx="2" fill="#7fd3f5"/>${LI_C(29,50,2.5,'#fff')}${LI_C(48,42,10,'#ffd166','#c98a00')}${LI_C(48,42,4,'#c98a00')}`,
+ 19:`<path d="M8 32 h48 q-2 22 -24 22 q-22 0 -24 -22z" fill="#fff" stroke="#c87a14" stroke-width="3"/>${[20,32,44].map((x,i)=>`<path d="M${x} 28 q-4 -6 0 -12 q4 -6 0 -12" stroke="#bbb" stroke-width="2.5" fill="none" stroke-linecap="round"/>`).join('')}<path d="M44 30 L60 10 M50 31 L62 14" stroke="#8a5a44" stroke-width="3" stroke-linecap="round"/>`,
+ 20:`<path d="M24 62 L30 30 H34 L40 62Z" fill="#8a8f9a"/><path d="M32 34 v4 M32 44 v5 M32 55 v5" stroke="#fff" stroke-width="2"/><path d="M0 34 L16 14 L28 30 L40 16 L64 34Z" fill="#9cc79a" stroke="#2e7d32" stroke-width="2"/>${LI_C(52,10,6,'#ffd166')}`};
+if(LEVEL===3)Object.assign(LICON,LICON3);else if(LEVEL===4)Object.assign(LICON,LICON4);
+if(LEVEL>=3){const BG=['#ffe9c7','#ffe1d6','#ffdce0','#f9e0f0','#e4e9ff','#fff1cf','#dff2ff','#efe6dc','#e3f4e6','#e8f0ff','#e6f7e3','#e3f1fb','#e6f3ec','#ece4ff','#ffe0dc','#e0f2f1','#fff3e0','#f3e5f5','#e8f5e9','#fce4ec'];for(let i=1;i<=20;i++)LICON_BG[i]=BG[(i-1+(LEVEL===4?7:0))%BG.length];}
+if(window.__T)window.__u80={LICON,LICON3,LICON4,SCENE_MAP,SC_LIB,WART,wordArt,licon,sceneSVG};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
