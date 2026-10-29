@@ -3104,13 +3104,13 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 <script src="lib/hanzi-writer.min.js"></script>
 
 <script>
-window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1};
+window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=588f748b"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=4aff62b5"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=588f748b','strokes-file');A('packs/dict.js?v=588f748b','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=4aff62b5','strokes-file');A('packs/dict.js?v=4aff62b5','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -9910,7 +9910,7 @@ function houseUpgradeFxRaw(from,t){const d=document.createElement('dialog');d.cl
 function bigTrophies(){const d1=lvData(1),d2=lvData(2);const pass=d=>Object.values(d.lessons||{}).filter(l=>(l.boss||0)>=7).length;const cards=d=>Object.keys(d.cards||{}).length;
   const words=cards(d1)+cards(d2),sb=Math.max(d1.streakBest||0,d2.streakBest||0,stkNow()),hv=[d1,d2].reduce((a,d)=>a+Object.values((d.garden&&d.garden.harvest)||{}).reduce((x,y)=>x+y,0),0);
   const stamps=Math.max(...[d1,d2].map(d=>Object.keys((d.trip&&d.trip.stamps)||{}).length)),evs=Object.keys(SHOP().ev).length,rare=['crown','goldglass','jade'].filter(k=>SHOP().own[k]).length+(SHOP().own['fr:rainbow']?1:0)+(SHOP().own['sk:gold']?1:0);
-  return [['hsk1','Chứng chỉ HSK1','Qua cả 15 bài HSK1',pass(d1),15,'cert','#0d7a63','HSK 1'],['hsk2','Chứng chỉ HSK2','Qua cả 15 bài HSK2',pass(d2),15,'cert','#c3402b','HSK 2'],['hsk3','Chứng chỉ HSK3','Qua cả 20 bài HSK3',pass(lvData(3)),20,'cert','#2f6fb3','HSK 3'],
+  return [['hsk1','Chứng chỉ HSK1','Qua cả 15 bài HSK1',pass(d1),15,'cert','#0d7a63','HSK 1'],['hsk2','Chứng chỉ HSK2','Qua cả 15 bài HSK2',pass(d2),15,'cert','#c3402b','HSK 2'],['hsk3','Chứng chỉ HSK3','Qua cả 20 bài HSK3',pass(lvData(3)),20,'cert','#2f6fb3','HSK 3'],...((window.HSK_READY||{})[4]?[['hsk4','Chứng chỉ HSK4','Qua cả 20 bài HSK4',pass(lvData(4)),20,'cert','#6a4fb3','HSK 4']]:[]),
     ['s7','Cúp lửa đồng','Chuỗi 7 ngày học',sb,7,'cup','#c97a4c'],['s30','Cúp lửa bạc','Chuỗi 30 ngày học',sb,30,'cup','#9aa5ad'],['s100','Cúp lửa vàng','Chuỗi 100 ngày học',sb,100,'cup','#e0a812'],
     ['w100','Cuộn trúc thư','Học 100 từ',words,100,'scroll','#a0673d'],['w300','Bộ sách bạc','Học 300 từ',words,300,'books','#7d8b95'],['w600','Bộ sách vàng','Học 600 từ',words,600,'books','#e0a812'],
     ['hv20','Bông lúa vàng','Thu hoạch 20 cây trong vườn',hv,20,'plant','#e0a812'],['trip','Hộ chiếu Trung Hoa','Đóng đủ 16 tem du lịch',stamps,16,'pass','#c3402b'],
