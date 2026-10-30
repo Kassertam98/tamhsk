@@ -2891,6 +2891,25 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .duotur.me{left:30%}.duotur.opp{left:70%;filter:hue-rotate(160deg)}.duotur.fire{animation:dfire .25s}
 .defhud .gpill.me{background:#fff0d6;border:1px solid #ffd166}.defhud .gpill.opp{background:#e7e9f7;border:1px solid #5b6bd6}
 .foe.v2.hit{opacity:.45}.dpts small{font-size:10px;font-weight:600;color:#cfd6ff}
+/* 5.37: sai 1 lần là thua, màn hình đối thủ, đấu chênh lệch cấp */
+.duoxl{margin-top:8px;padding:6px 12px;border-radius:999px;background:#fff3cf;color:#7a4a00;font-size:13px;font-weight:600}
+.duorule{margin-top:8px;font-weight:800;color:#d7261e;letter-spacing:.2px}
+.duowhy{display:block;font-size:15px;font-weight:600;opacity:.85;margin-top:4px}
+.duomini{position:absolute;z-index:6;pointer-events:none;width:80px;left:calc(50% - var(--cw)/2 + 6px);bottom:26%;border-radius:12px;overflow:hidden;background:rgba(20,24,40,.82);color:#fff;font-size:10px;box-shadow:0 4px 12px rgba(0,0,0,.3);border:1.5px solid rgba(255,255,255,.25);transition:opacity .3s}
+.duomini.side{width:150px;left:calc(50% + var(--cw)/2 + 14px);bottom:auto;top:60px;font-size:12px}
+.duomini .dmhd{display:flex;flex-direction:column;padding:4px 6px 2px;line-height:1.2}.duomini .dmhd b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.duomini .dmhd small{opacity:.7}
+.duomini .dmroad{position:relative;height:84px;background:linear-gradient(#7cc2ff,#bfe3ff 30%,#6dbb5a 31%)}.duomini.side .dmroad{height:170px}
+.duomini .dmroad svg{position:absolute;inset:0;width:100%;height:100%}
+.duomini .dmdash{animation:dmRun var(--sp,1s) linear infinite}
+@keyframes dmRun{to{stroke-dashoffset:-14}}
+.duomini .dmcar{position:absolute;bottom:6px;transform:translateX(-50%);font-size:20px;transition:left .35s ease}.duomini.side .dmcar{font-size:30px}
+.duomini .dmboom{position:absolute;left:50%;bottom:10px;transform:translateX(-50%) scale(0);font-size:34px}
+.duomini.out .dmboom{animation:dmBoom .6s ease-out forwards}.duomini.out .dmdash{animation:none}.duomini.out{border-color:#ff6b6b}
+.duomini.combo{border-color:#ffd166;box-shadow:0 0 12px rgba(255,209,102,.7)}
+.duomini.done{border-color:#4ade80}
+@keyframes dmBoom{60%{transform:translateX(-50%) scale(1.3)}100%{transform:translateX(-50%) scale(1)}}
+.duomini .dmst{display:flex;flex-wrap:wrap;gap:2px 6px;padding:3px 6px 5px;font-weight:700}
+@media (prefers-reduced-motion:reduce){.duomini .dmdash{animation:none}}
 /* ===== 5.31 ===== */
 /* giới thiệu: chữ 人 có mũi tên */
 .onbmizi.onbren{position:relative}
@@ -3098,6 +3117,48 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .msen{margin-top:8px;background:linear-gradient(90deg,color-mix(in srgb,#1f5fbf 14%,var(--card)),color-mix(in srgb,#f5b041 16%,var(--card)))}
 .msen .msevi{display:grid;place-items:center}
 @media (max-width:560px){.enhero{grid-template-columns:1fr}.enlogo{width:56px;height:56px}}
+
+/* 5.37 Vườn: hiệu ứng tưới + hướng dẫn tưới */
+.gwpour{position:absolute;left:50%;bottom:2%;width:24%;aspect-ratio:1/1.15;transform:translateX(-50%);z-index:6;pointer-events:none}
+@media (max-width:640px){.gwpour{width:40%}}
+.gwcanw{position:absolute;right:-40%;top:-6%;width:56%;transform-origin:20% 60%;animation:gwCan 1.9s ease-in-out both}
+.gwpour.big .gwcanw{animation-duration:2.2s}
+.gwcan{width:100%;height:auto;display:block;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25))}
+@keyframes gwCan{0%{transform:translate(60%,-40%) rotate(15deg);opacity:0}18%{transform:translate(0,0) rotate(0);opacity:1}32%,74%{transform:translate(0,0) rotate(-34deg);opacity:1}100%{transform:translate(50%,-30%) rotate(5deg);opacity:0}}
+.gwstream{position:absolute;left:40%;top:14%;width:22%;height:56%;opacity:0;animation:gwOn 1.9s linear both}
+.gwpour.big .gwstream{animation-duration:2.2s}
+@keyframes gwOn{0%,30%{opacity:0}36%,72%{opacity:1}80%,100%{opacity:0}}
+.gwstream i{position:absolute;left:50%;top:0;width:7px;height:12px;margin-left:var(--x);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 35% 35%,#e8f6ff,#4fb3ff 55%,#1d82d6);animation:gwDrop .55s linear infinite;animation-delay:var(--d)}
+@keyframes gwDrop{from{transform:translateY(0) scale(.7);opacity:0}15%{opacity:1}to{transform:translateY(560%) scale(1);opacity:.9}}
+.gwsplash{position:absolute;left:50%;bottom:16%;width:0;height:0}
+.gwsplash i{position:absolute;left:0;top:0;width:6px;height:6px;border-radius:50%;background:#7cc8ff;opacity:0;animation:gwSpl var(--d) ease-out 1.15s 2 both;--r:var(--a)}
+@keyframes gwSpl{0%{transform:rotate(var(--r)) translateX(0) scale(1);opacity:1}100%{transform:rotate(var(--r)) translateX(34px) scale(.3);opacity:0}}
+.gwring{position:absolute;left:50%;bottom:14%;width:10%;height:4%;border-radius:50%;border:3px solid #8fd2ff;transform:translate(-50%,50%);opacity:0;animation:gwRing 1s ease-out 1.1s 2 both}
+.gwring.r2{animation-delay:1.45s;border-color:#c4e8ff}
+@keyframes gwRing{0%{width:8%;height:3%;opacity:1}100%{width:90%;height:16%;opacity:0}}
+.gwspark{position:absolute;inset:0}
+.gwspark i{position:absolute;left:calc(20% + var(--j)*20%);bottom:40%;font-style:normal;font-size:clamp(14px,3vw,22px);opacity:0;animation:gwSpk 1.2s ease-out calc(1.3s + var(--j)*.12s) both}
+@keyframes gwSpk{0%{transform:translateY(10px) scale(.4);opacity:0}30%{opacity:1}100%{transform:translateY(-70px) scale(1.15);opacity:0}}
+.gwlbl{position:absolute;left:50%;top:-16%;transform:translateX(-50%);white-space:nowrap;font-weight:800;font-size:clamp(15px,3.4vw,22px);color:#0d47a1;background:#e3f2fd;border:2px solid #64b5f6;padding:4px 14px;border-radius:999px;box-shadow:0 4px 10px rgba(13,71,161,.25);animation:gwLbl 2.1s ease both}
+@keyframes gwLbl{0%{transform:translate(-50%,10px) scale(.6);opacity:0}15%{transform:translate(-50%,0) scale(1.1);opacity:1}25%{transform:translate(-50%,0) scale(1)}80%{opacity:1}100%{transform:translate(-50%,-14px);opacity:0}}
+.gbig.drink{animation:gwDrink 1.6s ease .9s both}
+.gbig.drink>svg:first-child{animation:gwGlow 1.6s ease .9s both}
+@keyframes gwDrink{0%{transform:translateX(-50%)}20%{transform:translateX(-50%) scale(1.1,.88)}45%{transform:translateX(-50%) scale(.94,1.12)}65%{transform:translateX(-50%) scale(1.04,.97)}100%{transform:translateX(-50%)}}
+@keyframes gwGlow{0%,100%{filter:none}40%{filter:drop-shadow(0 0 10px #8ff5b0) drop-shadow(0 0 22px #4ade80) saturate(1.3)}}
+/* hướng dẫn tưới */
+.g3pot.gwtarget{position:relative;outline:3px solid #4fb3ff;outline-offset:3px;animation:gwPulse 1.4s ease-in-out infinite;z-index:3}
+@keyframes gwPulse{0%,100%{box-shadow:0 0 0 0 rgba(79,179,255,.6)}50%{box-shadow:0 0 0 12px rgba(79,179,255,0)}}
+.gwhand{position:absolute;left:50%;top:-6px;transform:translate(-50%,-100%);font-size:22px;display:flex;flex-direction:column;align-items:center;line-height:1;animation:gwHand 1s ease-in-out infinite;pointer-events:none;z-index:4}
+.gwhand b{font-size:26px;transform:rotate(180deg)}
+@keyframes gwHand{50%{transform:translate(-50%,-80%)}}
+.gwcoach{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translate(-50%,30px);opacity:0;z-index:60;width:min(460px,calc(100vw - 32px));transition:transform .35s cubic-bezier(.3,1.4,.5,1),opacity .25s}
+.gwcoach.on{transform:translate(-50%,0);opacity:1}
+@media (max-width:640px){.gwcoach{bottom:calc(76px + env(safe-area-inset-bottom))}}
+.gwcin{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:18px;background:var(--card);color:var(--ink);border:2px solid #4fb3ff;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.gwcin b{font-size:16px}.gwcin p{margin:4px 0 10px;font-size:13.5px;color:var(--muted)}
+.gwcic{flex:none;width:56px;animation:gwTilt 1.6s ease-in-out infinite;transform-origin:20% 60%}
+@keyframes gwTilt{0%,100%{transform:rotate(0)}50%{transform:rotate(-22deg)}}
+@media (prefers-reduced-motion:reduce){.gwcanw,.gwstream i,.gwsplash i,.gwring,.gwspark i,.gbig.drink,.gbig.drink>svg:first-child,.g3pot.gwtarget,.gwhand,.gwcic{animation:none!important}.gwstream{opacity:1}.gwcanw{transform:rotate(-30deg)}}
 </style>
 </head><body>
 
@@ -3124,11 +3185,11 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=5682cb01"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=8de1291f"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=5682cb01','strokes-file');A('packs/dict.js?v=5682cb01','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=8de1291f','strokes-file');A('packs/dict.js?v=8de1291f','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -10323,7 +10384,7 @@ function careRound(i){
   const fit=()=>{const hd=document.querySelector('header.top'),hh=hd?hd.offsetHeight:0,w=sc.offsetWidth;sc.style.height=Math.round(Math.max(460,Math.min(innerHeight-hh-20,w*1.7)))+'px';window.scrollTo({top:Math.max(0,sc.getBoundingClientRect().top+scrollY-hh-10),behavior:'smooth'});};fit();
   sc.querySelector('#gqx').onclick=()=>{clearInterval(tInt);askConfirm('<b>Dừng chăm cây?</b><div class="small muted" style="margin-top:4px">Các câu đã trả lời đúng vẫn được tính cho cây.</div>','Dừng',()=>finish(true));};
   const rain=()=>{cl.classList.add('grain');gSound('rain');fx.innerHTML=Array.from({length:46},(_,j)=>`<i class="gdrop" style="left:${34+Math.random()*32}%;animation-delay:${(Math.random()*.7).toFixed(2)}s;animation-duration:${(.45+Math.random()*.25).toFixed(2)}s"></i>`).join('')+'<span class="plus1">+1 💧</span><span class="puddle"></span>';
-    big.classList.remove('grow');void big.offsetWidth;big.classList.add('grow');};
+    big.classList.remove('grow');void big.offsetWidth;big.classList.add('grow');try{gWaterPlay(sc,big,'');}catch(e){}};
   const storm=()=>{cl.classList.add('gstorm');setTimeout(()=>gSound('thunder'),120);const x=40+Math.random()*20;
     fx.innerHTML=`<svg class="gbolt" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M${x} 24 L${x-6} 46 L${x+3} 46 L${x-8} 70 L${x+1} 70 L${x-10} 92" stroke="#fff7b0" stroke-width="2.4" fill="none" stroke-linejoin="round"/><path d="M${x} 24 L${x-6} 46 L${x+3} 46 L${x-8} 70 L${x+1} 70 L${x-10} 92" stroke="#ffd84d" stroke-width="1" fill="none"/></svg><i class="gflash"></i><span class="scorch" style="left:${x-10}%"></span><span class="smoke" style="left:${x-10}%"></span>`;
     sc.classList.remove('shake');void sc.offsetWidth;sc.classList.add('shake');big.classList.remove('shiver');void big.offsetWidth;big.classList.add('shiver');};
@@ -10350,7 +10411,7 @@ function careRound(i){
     big.querySelector('svg').outerHTML=plantSVG(p.l,after,200,p.pot||0);if(after>before||score>=4){try{confetti(80);sfx('win');}catch(e){}big.classList.add('grow');}
     pk.innerHTML=`<div class="gend"><button class="btn pri" id="gback">🌿 Về vườn</button>${after<4&&G().water>=GROW_COST&&gWaterDay(g).n<WATER_MAX?'<button class="btn" id="gagain">💧 Tưới tiếp</button>':''}${after===4?'<button class="btn pri" id="gharv">✨ Thu hoạch</button>':''}</div>`;
     pk.querySelector('#gback').onclick=()=>{viewGarden();window.scrollTo({top:0});};const ag=pk.querySelector('#gagain');if(ag)ag.onclick=()=>careRound(i);const hv=pk.querySelector('#gharv');if(hv)hv.onclick=()=>{viewGarden();harvest(i);};};
-  ask();}
+  try{gWaterPlay(sc,big,'big');}catch(e){}ask();}
 
 /* ---------- Thủ thành chữ Hán 2.0: đồ họa mới + nhãn chữ không che nhau ---------- */
 const DEF_DEFS=`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -11568,7 +11629,7 @@ function viewGarden(){const g=G();if(typeof socialOnGarden==='function')socialOn
     el.className='g3frl';el.innerHTML=j.list.length?j.list.map(f=>`<a class="g3f" href="#vg-${esc(f.uid)}">${typeof avHTML==='function'?avHTML(f.avatar,36):''}<span><b>${esc(f.name)}</b><small>${f.has?(f.ripe?`🌸 ${f.ripe} cây chín`:'')+(f.grow?` 🌱 ${f.grow} đang lớn`:'')||'Vườn trống':'Chưa mở vườn'}</small></span><i>Thăm ›</i></a>`).join(''):'<span class="small muted">Chưa có bạn bè. Kết bạn trong mục Bạn bè để thăm vườn nhau.</span>';}).catch(()=>{});
   gPublishSoon();}
 function seedCard(l,ok,i){const [pn,ch]=PLANTS[l];const h=(PLANT_HOURS[l]||8);return `<div class="g3seed${ok?'':' locked'}"><span class="seedic">${plantSVG(l,4,52)}</span><span class="g3sd"><b>${esc(pn)} <span class="han small muted">${ch}</span></b>
-  <small>${l<=NL?'Bài '+l:l===XPID?'HSK 3.0':'Từ tự thêm'} · ⏳ ${h} giờ</small><span class="g3price"><em>Hạt ${SEED_PRICE[l]} ${YB}</em><em class="up">Thu ${HARV_PRICE[l]} ${YB}</em></span>${ok?'':`<small class="muted">🔒 ${l<=NL?'Thu hoạch cây bài '+(l-1)+' để mở':l===XPID?'Cần mở 5 bài':'Tự thêm từ 4 từ'}</small>`}</span></div>`;}
+  <small>${l<=NL?seedLsTxt(l):l===XPID?'HSK 3.0':'Từ tự thêm'} · ⏳ ${h} giờ</small><span class="g3price"><em>Hạt ${SEED_PRICE[l]} ${YB}</em><em class="up">Thu ${HARV_PRICE[l]} ${YB}</em></span>${ok?'':`<small class="muted">🔒 ${l<=NL?'Thu hoạch cây bài '+(l-1)+' để mở':l===XPID?'Cần mở 5 bài':'Tự thêm từ 4 từ'}</small>`}</span></div>`;}
 function potTable(){let d=document.getElementById('gdlg');if(!d){d=document.createElement('dialog');d.id='gdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
   d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏺 Bảng chậu</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div><p class="small muted" style="margin:0">Chậu nâng lần lượt từng bậc. Chậu càng xịn cây càng lớn nhanh và giữ được lâu hơn sau khi chín mới héo.</p>
     <div class="g3pt">${POTS.map(([k,n,c,pc],t)=>`<div class="g3ptr"><svg viewBox="10 76 100 46" width="70" height="32" aria-hidden="true">${potSVG(1,t)}</svg><b>${n}</b><span>${c?c.toLocaleString('vi-VN')+' '+YB:'Có sẵn'}</span><span>${pc?'⚡ −'+pc+'% thời gian':'—'}</span><span>${pc?'🥀 héo chậm +'+pc*2+'%':'—'}</span></div>`).join('')}</div></div>`;
@@ -11722,8 +11783,8 @@ function raceStart(mode,showText){if(typeof gmGate==='function'&&!gmGate('race',
     cv.style.width=w+'px';cv.style.height=(w*H/W)+'px';cv.width=Math.round(W*dpr*w/W);cv.height=Math.round(H*dpr*w/W);cx.setTransform(cv.width/W,0,0,cv.height/H,0,0);wrap.style.setProperty('--cw',w+'px');};
   fit();addEventListener('resize',fit);setTimeout(()=>{const hd=document.querySelector('header.top'),hh=hd?hd.offsetHeight:0;window.scrollTo({top:Math.max(0,wrap.getBoundingClientRect().top+scrollY-hh-8)});},30);
   const pet=new Image();pet.src=petSrc();
-  const st={lane:1,carX:1,dist:0,score:0,correct:0,total:0,streak:0,best:0,shields:surv?1:(mode==='duo'?99:RC_SHIELD),speed:1,nitro:0,qs:(typeof duoQs==='function'&&duoQs())||rcBuild(40),qi:-1,phase:'idle',u:0,t0:0,ask0:0,commit:false,lock:0,flip:false,res:null,fx:0,shake:0,crash:[],miles:{},over:false,parts:[],scene:0,stall:0,lastT:performance.now(),off:0};
-  if(window.__T)window.__race=st;
+  const st={lane:1,carX:1,dist:0,score:0,correct:0,total:0,streak:0,best:0,shields:surv?1:(mode==='duo'?1:RC_SHIELD),speed:1,nitro:0,qs:(typeof duoQs==='function'&&duoQs())||rcBuild(40),qi:-1,phase:'idle',u:0,t0:0,ask0:0,commit:false,lock:0,flip:false,res:null,fx:0,shake:0,crash:[],miles:{},over:false,parts:[],scene:0,stall:0,lastT:performance.now(),off:0};
+  if(window.__T)window.__race=st;if(mode==='duo'&&typeof DUO!=='undefined')DUO.rcSt=st;
   const rushDur=()=>Math.max(.75,1.6-0.04*st.correct)*1000;
   const roadHalf=z=>18+250*z,Y=z=>HY+(H-HY)*z,laneX=(l,z)=>CX+(l-1)*roadHalf(z)*0.66;
   const sceneAt=d=>{let k=0;RC_SCENES.forEach((s,i)=>{if(d>=s[0])k=i;});return k;};
@@ -11735,7 +11796,7 @@ function raceStart(mode,showText){if(typeof gmGate==='function'&&!gmGate('race',
     const k=st.lane+'|'+st.flip+'|'+st.res;if(k===ansKey)return;ansKey=k;ui.ans.style.top=(ui.box.offsetTop+ui.box.offsetHeight+8)+'px';
     ui.ans.querySelectorAll('.rca').forEach((b,i)=>{b.classList.toggle('sel',st.lane===i);b.classList.toggle('ok',st.flip&&!!Q.opts[i].ok);b.classList.toggle('no',st.flip&&st.lane===i&&!Q.opts[i].ok);b.classList.toggle('dim',st.flip&&st.lane!==i&&!Q.opts[i].ok);});};
   const say=(t,ms)=>{ui.say.innerHTML=t;ui.say.classList.add('on');clearTimeout(say.t);say.t=setTimeout(()=>ui.say.classList.remove('on'),ms||1600);};
-  const hud=()=>{wrap.querySelector('#rcdist').textContent=Math.floor(st.dist).toLocaleString('vi-VN')+' m';wrap.querySelector('#rcsc').textContent='⭐ '+Math.round(st.score);wrap.querySelector('#rclife').textContent=surv?'💀 Sinh tử':mode==='duo'?'👥 Đua đôi':('🛡️'.repeat(st.shields)+'▫️'.repeat(RC_SHIELD-st.shields));wrap.querySelector('#rcnitro').classList.toggle('on',st.nitro>0);};
+  const hud=()=>{wrap.querySelector('#rcdist').textContent=Math.floor(st.dist).toLocaleString('vi-VN')+' m';wrap.querySelector('#rcsc').textContent='⭐ '+Math.round(st.score);wrap.querySelector('#rclife').textContent=surv?'💀 Sinh tử':mode==='duo'?'💥 Sai 1 lần là thua':('🛡️'.repeat(st.shields)+'▫️'.repeat(RC_SHIELD-st.shields));wrap.querySelector('#rcnitro').classList.toggle('on',st.nitro>0);};
   const next=()=>{if(st.over)return;st.qi++;if(st.qi>=st.qs.length){if(typeof duoOn==='function'&&duoOn())return finish(false);st.qs=st.qs.concat(rcBuild(30));}const Q=q();st.phase='speak';st.u=0;st.commit=false;st.flip=false;st.res=null;st.lock=0;
     ui.box.className='rcq on';ui.ql.textContent=Q.label;ansDraw(Q);const show=showText||!ttsOK||Q.t==='fill';ui.qt.textContent=show?Q.text:'🎧 Đang nghe…';ui.qt.classList.toggle('han',show);ui.bar.style.width='100%';ui.qs.textContent='';
     const go=()=>{if(st.qi<0||q()!==Q||st.phase!=='speak')return;st.phase='ask';st.ask0=performance.now();if(!show)ui.qt.textContent='Chọn làn có đáp án đúng!';};
@@ -12988,7 +13049,7 @@ function bulkSow(){const g=G();const empty=g.plots.map((p,i)=>(!p||!p.l)?i:-1).f
   let d=document.getElementById('gdlg');if(!d){d=document.createElement('dialog');d.id='gdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
   const opts=Object.keys(PLANTS).map(Number).filter(l=>l!==XPID||HASX);
   d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🌱 Gieo hàng loạt · ${empty.length} chậu trống</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div><div class="small muted">Bạn có <b>${g.coins} ${YB}</b>. Chọn một loại hạt, gieo vào tất cả chậu trống (tối đa theo số Nguyên bảo).</div>
-    <div class="g3pick">${opts.map(l=>{const ok=seedOk(l),[nm,ch]=PLANTS[l],c=SEED_PRICE[l],n=Math.min(empty.length,Math.floor(g.coins/c)),can=ok&&n>0;return `<button class="g3seed pick${ok?'':' locked'}" data-seed="${l}"${can?'':' disabled'}><span class="seedic">${plantSVG(l,4,52)}</span><span class="g3sd"><b>${esc(nm)} <span class="han small muted">${ch}</span></b><small>${l<=NL?'Bài '+l:l===XPID?'HSK 3.0':'Từ tự thêm'} · ⏳ ${PLANT_HOURS[l]} giờ</small>
+    <div class="g3pick">${opts.map(l=>{const ok=seedOk(l),[nm,ch]=PLANTS[l],c=SEED_PRICE[l],n=Math.min(empty.length,Math.floor(g.coins/c)),can=ok&&n>0;return `<button class="g3seed pick${ok?'':' locked'}" data-seed="${l}"${can?'':' disabled'}><span class="seedic">${plantSVG(l,4,52)}</span><span class="g3sd"><b>${esc(nm)} <span class="han small muted">${ch}</span></b><small>${l<=NL?seedLsTxt(l):l===XPID?'HSK 3.0':'Từ tự thêm'} · ⏳ ${PLANT_HOURS[l]} giờ</small>
       <span class="g3price"><em>${ok?`${n} chậu × ${c} = ${n*c} ${YB}`:seedLockTxt(l)}</em><em class="up">Thu ${HARV_PRICE[l]} ${YB}/cây</em></span></span></button>`;}).join('')}</div></div>`;
   d.querySelector('[data-x]').onclick=()=>d.close();
   d.querySelectorAll('[data-seed]').forEach(b=>b.onclick=()=>{const l=+b.dataset.seed,c=SEED_PRICE[l];let n=0;
@@ -13015,11 +13076,11 @@ function potBed(p,i,g){const st=p.l?stageOf(p.gr||0):-1,nm=p.l?PLANTS[p.l][0]:''
     <span class="g3art">${art}</span><span class="g3tier" style="--pc:${POT_COL[tier]}">${POTS[tier][1]}</span>
     <span class="g3tag">${p.l?`<b>${esc(nm)}</b><i class="gbbar${dc<1?' dec':''}"><b style="width:${dc<1?Math.round(dc*100):Math.min(100,p.gr||0)}%"></b></i><small>${wl?'🥀 Đã héo':ripe?gRipeText(p):'⏳ '+fmtLeft(gLeft(p))}</small>`:'<b>Gieo hạt</b><small>Chạm để chọn</small>'}</span></button>`;}
 function seedCard(l,ok,i){const [pn,ch]=PLANTS[l];const h=(PLANT_HOURS[l]||8);return `<div class="g3seed${ok?'':' locked'}"><span class="seedic">${plantSVG(l,4,52)}</span><span class="g3sd"><b>${esc(pn)} <span class="han small muted">${ch}</span></b>
-  <small>${l<=NL?'Bài '+l:l===XPID?'HSK 3.0':'Từ tự thêm'} · ⏳ ${h} giờ · Lv ${SEED_LV[l]}${l<=NL?' + Bài '+l:''}</small><span class="g3price"><em>Hạt ${SEED_PRICE[l]} ${YB}</em><em class="up">Thu ${HARV_PRICE[l]} ${YB}</em></span>${ok?'':`<small class="muted">${seedLockTxt(l)}</small>`}</span></div>`;}
+  <small>${l<=NL?seedLsTxt(l):l===XPID?'HSK 3.0':'Từ tự thêm'} · ⏳ ${h} giờ · Lv ${SEED_LV[l]}${l<=NL&&seedLesson(l)?' + Bài '+seedLesson(l):''}</small><span class="g3price"><em>Hạt ${SEED_PRICE[l]} ${YB}</em><em class="up">Thu ${HARV_PRICE[l]} ${YB}</em></span>${ok?'':`<small class="muted">${seedLockTxt(l)}</small>`}</span></div>`;}
 function chooseSeed(i){const g=G();let d=document.getElementById('gdlg');if(!d){d=document.createElement('dialog');d.id='gdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
   const p=g.plots[i]||{},pc=potPct(p);const opts=Object.keys(PLANTS).map(Number).filter(l=>l!==XPID||HASX);
   d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Chọn hạt giống</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div><div class="small muted">Bạn có <b>${g.coins} ${YB}</b>. Hạt mở theo <b>cấp người chơi</b> (Lv ${pLevel()}) và <b>bài đã qua</b>. Cây chín giữ được 50% thời gian trồng, sau đó héo dần.</div>
-    <div class="g3pick">${opts.map(l=>{const ok=seedOk(l),[nm,ch]=PLANTS[l],h=plantDur(l)*(1-pc),c=SEED_PRICE[l],can=ok&&g.coins>=c;return `<button class="g3seed pick${ok?'':' locked'}" data-seed="${l}"${can?'':' disabled'}><span class="seedic">${plantSVG(l,4,52)}</span><span class="g3sd"><b>${esc(nm)} <span class="han small muted">${ch}</span></b><small>${l<=NL?'Bài '+l:l===XPID?'HSK 3.0':'Từ tự thêm'} · Lv ${SEED_LV[l]}</small>
+    <div class="g3pick">${opts.map(l=>{const ok=seedOk(l),[nm,ch]=PLANTS[l],h=plantDur(l)*(1-pc),c=SEED_PRICE[l],can=ok&&g.coins>=c;return `<button class="g3seed pick${ok?'':' locked'}" data-seed="${l}"${can?'':' disabled'}><span class="seedic">${plantSVG(l,4,52)}</span><span class="g3sd"><b>${esc(nm)} <span class="han small muted">${ch}</span></b><small>${l<=NL?seedLsTxt(l):l===XPID?'HSK 3.0':'Từ tự thêm'} · Lv ${SEED_LV[l]}</small>
       <span class="g3price"><em>Hạt ${c} ${YB}</em><em class="up">Thu ${HARV_PRICE[l]} ${YB}</em><em>⏳ ${fmtLeft(h)}</em></span>${ok?'':`<small class="muted">${seedLockTxt(l)}</small>`}</span></button>`;}).join('')}</div></div>`;
   d.querySelector('[data-x]').onclick=()=>d.close();
   d.querySelectorAll('[data-seed]').forEach(b=>b.onclick=()=>{const l=+b.dataset.seed,c=SEED_PRICE[l];if(g.coins<c)return;g.coins-=c;const pot=(g.plots[i]&&g.plots[i].pot)||0;
@@ -13239,17 +13300,17 @@ let duoQueueing=false;
 async function viewDuo(game){stopGames();duoStop();DUO.live=false;DUO.m=null;
   const name=DUO_NAME[game],han=DUO_HAN[game];
   const head=`<section class="addhero duohero ${game}"><div class="addicon han" aria-hidden="true">${game==='race'?'赛':'守'}</div><div style="min-width:0"><div class="label" style="color:${game==='race'?'#d7261e':'#5b6bd6'}">Chơi đôi · Online</div><h1>${name} <span class="han">${han}</span></h1>
-    <p>${game==='race'?'Hai xe chạy trên 2 đường đua song song, cùng bộ câu hỏi. Ai chạy xa hơn khi hết 20 câu là thắng.':'Hai ụ súng bảo vệ cùng một cổng thành. Quái tiến về cổng, ai bắn hạ trước được tính cho người đó. Ai hạ nhiều quái hơn là thắng.'}</p></div></section>`;
+    <p>${game==='race'?'Hai xe chạy song song, mỗi người 20 câu. <b>Sai 1 câu là đâm xe và thua ngay.</b> Cả hai cùng về đích thì ai chạy xa hơn thắng.':'Hai ụ súng giữ chung một cổng thành. <b>Bắn nhầm 1 lần là thua ngay.</b> Cả hai không sai thì ai hạ nhiều quái hơn thắng.'}</p></div></section>`;
   if(SOC.auth&&(!SOC.me||!SOC.friends.length)){app.innerHTML=`<div class="stack">${head}<div class="panel"><p class="muted" style="margin:0">Đang tải hồ sơ…</p></div></div>`;try{if(!SOC.me)SOC.me=await fsGet('users/'+SOC.auth.uid);if(SOC.me&&!SOC.friends.length)await socialLoad();}catch(e){}if(location.hash!=='#duo-'+game)return;}
   if(!SOC.auth||!SOC.me){app.innerHTML=`<div class="stack">${head}<div class="panel stack"><h3>Cần hồ sơ người chơi</h3><p class="muted" style="margin:0">Chơi đôi cần mạng và hồ sơ người chơi (tên hiển thị + hình đại diện). Tạo hồ sơ trong mục Bạn bè, chỉ mất 10 giây.</p><div class="row"><a class="btn pri" href="#friends">Tạo hồ sơ</a><a class="btn ghost" href="#games">Về Trò chơi</a></div></div></div>`;return;}
   const nl=duoNl();
   app.innerHTML=`<div class="stack duolobby">${head}
-    <div class="panel stack"><h3 style="margin:0">Ghép đôi tự do</h3><p class="small muted" style="margin:0">Ghép ngẫu nhiên với người chơi cùng cấp HSK ${LEVEL} đang chờ. Bộ từ lấy theo bài thấp hơn của hai người (bạn đang ở bài ${nl}). Tìm quá 3 phút chưa có ai sẽ tự đấu với Rồng Máy 🤖 (thắng máy được một nửa thưởng). Mỗi ván tốn 1 năng lượng.</p>
+    <div class="panel stack"><h3 style="margin:0">Ghép đôi tự do</h3><p class="small muted" style="margin:0">Ưu tiên ghép người cùng cấp HSK ${LEVEL}. Nếu chỉ có người khác cấp đang chờ, app hỏi bạn có muốn <b>đấu chênh lệch</b> không: bấm Có là vào chơi, mỗi người trả lời câu hỏi theo cấp của mình. Bộ từ lấy theo bài thấp hơn của hai người (bạn đang ở bài ${nl}). Tìm quá 3 phút chưa có ai sẽ tự đấu với Rồng Máy 🤖 (thắng máy được một nửa thưởng). Mỗi ván tốn 1 năng lượng.</p>
       <div class="row" style="gap:8px;align-items:center"><button class="btn pri big" id="duoq">👥 Tìm đối thủ</button><span class="small" id="duoqs" role="status"></span></div></div>
     <div class="panel stack" id="duoinv"><h3 style="margin:0">Lời mời</h3><p class="small muted" style="margin:0">Đang xem lời mời…</p></div>
     <div class="panel stack"><h3 style="margin:0">Mời bạn bè</h3>${SOC.friends.length?`<div class="duofr">${SOC.friends.map(f=>`<div class="duofrow"><span class="duofav">${avatarHTML(f.avatar,36,f.frame)}</span><span style="min-width:0;flex:1"><b>${esc(f.name)}</b><div class="small muted">Cấp ${f.level||1}${typeof isOnline==='function'&&isOnline(f)?' · <span style="color:var(--jade)">đang online</span>':''}</div></span><button class="btn sm" data-dinv="${esc(f.id)}">Mời</button></div>`).join('')}</div>`:'<p class="muted" style="margin:0">Chưa có bạn nào. Kết bạn bằng mã 6 ký tự trong mục Bạn bè rồi quay lại mời nhé.</p>'}<div class="row"><a class="btn sm" href="#friends">Mục Bạn bè</a></div></div>
-    <div class="panel stack duohow"><h3 style="margin:0">Luật chơi</h3>${game==='race'?`<div><span>🏁</span><p><b>20 câu giống nhau</b><small>Hai người nhận cùng bộ câu hỏi, cùng xuất phát. Dải đua phía trên cho thấy xe bạn và xe đối thủ.</small></p></div><div><span>💥</span><p><b>Đâm không chết</b><small>Chọn sai làn chỉ mất đà, không mất mạng. Xa hơn là thắng.</small></p></div><div><span>🎁</span><p><b>Thưởng</b><small>Thắng +10 ${YB}, hòa +5 ${YB} mỗi người. Đúng câu nào cũng được XP.</small></p></div>`
-      :`<div><span>🏰</span><p><b>Một cổng, hai ụ súng</b><small>40 quái tiến về cổng chung. Cổng có 5 máu, quái lọt cổng là cả hai cùng mất máu.</small></p></div><div><span>⚡</span><p><b>Ai nhanh tay hơn</b><small>Cùng thấy một con quái; ai chạm đúng chữ Hán trước thì được tính quái đó.</small></p></div><div><span>🎁</span><p><b>Thưởng</b><small>Hạ nhiều quái hơn là thắng: +10 ${YB}. Hòa +5 ${YB}. Giữ được cổng cả hai cùng +5 XP.</small></p></div>`}</div></div>`;
+    <div class="panel stack duohow"><h3 style="margin:0">Luật chơi</h3>${game==='race'?`<div><span>🏁</span><p><b>20 câu, cùng xuất phát</b><small>Dải đua phía trên cho thấy hai xe. Bên cạnh có <b>màn hình nhỏ của đối thủ</b>: làn đang chạy, câu thứ mấy, đúng bao nhiêu.</small></p></div><div><span>💥</span><p><b>Sai 1 lần là thua</b><small>Đâm xe (chọn sai hoặc hết giờ) là bị loại, đối thủ thắng ngay. Cả hai về đích thì xa hơn là thắng.</small></p></div><div><span>🎁</span><p><b>Thưởng</b><small>Thắng +10 ${YB}, hòa +5 ${YB}. Đúng câu nào cũng được XP. Kết quả khoe được lên tường của bạn và đối thủ.</small></p></div>`
+      :`<div><span>🏰</span><p><b>Một cổng, hai ụ súng</b><small>40 quái tiến về cổng chung. Cổng có 5 máu, quái lọt cổng là cả hai cùng mất máu.</small></p></div><div><span>⚡</span><p><b>Ai nhanh tay hơn</b><small>Cùng thấy một con quái; ai chạm đúng chữ Hán trước thì được tính quái đó.</small></p></div><div><span>💥</span><p><b>Bắn nhầm 1 lần là thua</b><small>Chạm sai chữ là bị loại, đối thủ thắng ngay. Bỏ cuộc cũng tính là thua.</small></p></div><div><span>🎁</span><p><b>Thưởng</b><small>Thắng +10 ${YB}, hòa +5 ${YB}. Kết quả khoe được lên tường của bạn và đối thủ.</small></p></div>`}</div></div>`;
   const key=game;
   app.querySelector('#duoq').onclick=()=>{if(duoQueueing){duoCancel(game);return;}if(typeof gmGate==='function'&&!gmGate(key,()=>duoQueue(game)))return;duoQueue(game);};
   app.querySelectorAll('[data-dinv]').forEach(b=>b.onclick=()=>duoInvite(b.dataset.dinv,game,b));
@@ -13269,26 +13330,26 @@ async function duoInvRender(game){const box=app.querySelector('#duoinv');if(!box
     const acc=(j.out||[]).find(o=>o.status==='accepted'&&o.mid&&o.id!==DUO.inv);
     if(acc){DUO.inv=acc.id;const m=await duoApi('GET','/v1/duo/match?id='+encodeURIComponent(acc.mid));if(!m.ended){clearInterval(DUO.qT);duoQueueing=false;if(typeof gmGate==='function'&&!gmGate(m.game,()=>duoLaunch(m)))return;duoLaunch(m);return;}}
     const inn=(j.in||[]),out=(j.out||[]).filter(o=>o.status==='pending');
-    box2.innerHTML=`<h3 style="margin:0">Lời mời</h3>${inn.length?inn.map(i=>`<div class="duofrow inv">${avatarHTML(i.avatar,36)}<span style="min-width:0;flex:1"><b>${esc(i.name)}</b> mời bạn chơi <b>${DUO_NAME[i.game]}</b><div class="small muted">bài ${i.nl} · HSK ${i.lv}${i.lv!==LEVEL?' · <span style="color:var(--seal)">khác cấp của bạn, không nhận được</span>':''}</div></span><button class="btn sm pri" data-iacc="${i.id}" data-g="${i.game}" ${i.lv!==LEVEL?'disabled':''}>Nhận lời</button><button class="btn sm ghost" data-idec="${i.id}">Từ chối</button></div>`).join(''):'<p class="small muted" style="margin:0">Chưa có lời mời nào. Lời mời có hiệu lực 2 phút.</p>'}
+    box2.innerHTML=`<h3 style="margin:0">Lời mời</h3>${inn.length?inn.map(i=>`<div class="duofrow inv">${avatarHTML(i.avatar,36)}<span style="min-width:0;flex:1"><b>${esc(i.name)}</b> mời bạn chơi <b>${DUO_NAME[i.game]}</b><div class="small muted">bài ${i.nl} · HSK ${i.lv}${i.lv!==LEVEL?' · <span style="color:#c87a14">khác cấp (bạn HSK '+LEVEL+')</span>':''}</div></span><button class="btn sm pri" data-iacc="${i.id}" data-g="${i.game}" data-lv="${i.lv}">Nhận lời</button><button class="btn sm ghost" data-idec="${i.id}">Từ chối</button></div>`).join(''):'<p class="small muted" style="margin:0">Chưa có lời mời nào. Lời mời có hiệu lực 2 phút.</p>'}
       ${out.map(o=>{const f=SOC.friends.find(x=>x.id===o.tto);return `<div class="small duowait">⏳ Đã mời <b>${esc(f?f.name:'bạn')}</b> chơi ${DUO_NAME[o.game]}, đang chờ nhận lời…</div>`;}).join('')}`;
-    box2.querySelectorAll('[data-iacc]').forEach(b=>b.onclick=()=>{const g=b.dataset.g;const go=()=>duoAccept(+b.dataset.iacc,g);if(typeof gmGate==='function'&&!gmGate(g,go))return;go();});
+    box2.querySelectorAll('[data-iacc]').forEach(b=>b.onclick=()=>{const g=b.dataset.g,lv=+b.dataset.lv,xl=lv!==LEVEL;const go=()=>duoAccept(+b.dataset.iacc,g,xl);const run=()=>{if(typeof gmGate==='function'&&!gmGate(g,go))return;go();};if(xl)duoXlAsk([lv],run);else run();});
     box2.querySelectorAll('[data-idec]').forEach(b=>b.onclick=async()=>{try{await duoApi('POST','/v1/duo/invite/act',{id:+b.dataset.idec,accept:false});}catch(e){}duoInvRender(game);});}
   catch(e){}finally{DUO.busy=false;}}
-async function duoAccept(id,game){try{const m=await duoApi('POST','/v1/duo/invite/act',{id,accept:true,lv:LEVEL,nl:duoNl()});if(m.matched){duoQueueing=false;clearInterval(DUO.qT);window.__gmPaid=m.game;duoLaunch(m);}}catch(e){gardenToast(esc(/LEVEL_MISMATCH/.test(e.message)?'Bạn ấy đang ở cấp HSK khác, không ghép được.':/INVITE_CLOSED/.test(e.message)?'Lời mời đã hết hạn.':netMsg(e)));window.__gmPaid=null;}}
+async function duoAccept(id,game,xl){try{const m=await duoApi('POST','/v1/duo/invite/act',{id,accept:true,lv:LEVEL,nl:duoNl(),any:xl?1:0});if(m.matched){duoQueueing=false;clearInterval(DUO.qT);window.__gmPaid=m.game;duoLaunch(m);}}catch(e){gardenToast(esc(/LEVEL_MISMATCH/.test(e.message)?'Bạn ấy đang ở cấp HSK khác, không ghép được.':/INVITE_CLOSED/.test(e.message)?'Lời mời đã hết hạn.':netMsg(e)));window.__gmPaid=null;}}
 async function duoInvite(to,game,btn){if(btn){btn.disabled=true;btn.textContent='Đang mời…';}
   try{await duoApi('POST','/v1/duo/invite',{to,game,lv:LEVEL,nl:duoNl()});gardenToast('👥 Đã gửi lời mời. Bạn ấy có 2 phút để nhận lời.');if(btn)btn.textContent='Đã mời';if(location.hash==='#duo-'+game)duoInvRender(game);else location.hash='#duo-'+game;}
   catch(e){gardenToast(esc(/NOT_FRIEND/.test(e.message)?'Chỉ mời được bạn bè. Hãy kết bạn trước.':netMsg(e)));if(btn){btn.disabled=false;btn.textContent='Mời';}}}
 /* mời từ mục Bạn bè: chọn trò */
-function duoInviteDlg(fid){const f=SOC.friends.find(x=>x.id===fid);gmDlg(`<div class="label" style="color:var(--jade)">Chơi đôi</div><h3 style="margin:4px 0">Mời ${esc(f?f.name:'bạn')} chơi trò nào?</h3><div class="row" style="gap:8px"><button class="btn" id="duog-race">🏎️ Đua xe đôi</button><button class="btn" id="duog-defense">🏰 Thủ thành đôi</button></div><p class="small muted" style="margin:0">Hai bạn cần cùng cấp HSK. Lời mời có hiệu lực 2 phút.</p>`,'Đóng',()=>{},null);
+function duoInviteDlg(fid){const f=SOC.friends.find(x=>x.id===fid);gmDlg(`<div class="label" style="color:var(--jade)">Chơi đôi</div><h3 style="margin:4px 0">Mời ${esc(f?f.name:'bạn')} chơi trò nào?</h3><div class="row" style="gap:8px"><button class="btn" id="duog-race">🏎️ Đua xe đôi</button><button class="btn" id="duog-defense">🏰 Thủ thành đôi</button></div><p class="small muted" style="margin:0">Khác cấp HSK vẫn đấu được, bạn ấy sẽ được hỏi xác nhận. Lời mời có hiệu lực 2 phút.</p>`,'Đóng',()=>{},null);
   const d=document.getElementById('gmdlg');d.querySelector('#gmyes').style.display='none';['race','defense'].forEach(g=>d.querySelector('#duog-'+g).onclick=()=>{d.onclose=null;d.close();duoInvite(fid,g);});}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-duo]');if(b){e.preventDefault();duoInviteDlg(b.dataset.duo);}});
 /* lời mời đến khi đang ở trang khác */
-setInterval(async()=>{try{if(!SOC.auth||document.hidden||/^#duo-/.test(location.hash)||DUO.live)return;const j=await duoApi('GET','/v1/duo/invites');const i=(j.in||[])[0];if(i&&i.id!==DUO.inv&&i.lv===LEVEL){DUO.inv=i.id;gardenToast(`👥 <b>${esc(i.name)}</b> mời bạn chơi ${DUO_NAME[i.game]} · <a href="#duo-${i.game}">Nhận lời</a>`);try{sfx('coin');}catch(e){}}}catch(e){}},30000);
+setInterval(async()=>{try{if(!SOC.auth||document.hidden||/^#duo-/.test(location.hash)||DUO.live)return;const j=await duoApi('GET','/v1/duo/invites');const i=(j.in||[])[0];if(i&&i.id!==DUO.inv){DUO.inv=i.id;gardenToast(`👥 <b>${esc(i.name)}</b> mời bạn chơi ${DUO_NAME[i.game]} · <a href="#duo-${i.game}">Nhận lời</a>`);try{sfx('coin');}catch(e){}}}catch(e){}},30000);
 /* ---------- Bắt đầu ván: đếm ngược theo giờ máy chủ ---------- */
-function duoLaunch(m){duoStop();DUO.m=m;DUO.live=true;DUO.since=0;DUO.pend=[];DUO.opp={};DUO.fin=null;DUO.lastPush=0;
-  app.innerHTML=`<div class="duocd"><div class="label">${DUO_NAME[m.game]}</div><div class="duovs"><div class="duop me">${avatarHTML(SOC.me.avatar,56,SHOP().frame)}<b>${esc(typeof idDisplay==='function'?idDisplay():SOC.me.name)}</b><small>bạn</small></div><div class="duox">VS</div><div class="duop">${avatarHTML(m.opp.avatar,56)}<b>${esc(m.opp.name||'Đối thủ')}</b><small>đối thủ</small></div></div>
+function duoLaunch(m){duoStop();DUO.m=m;DUO.live=true;DUO.rcSt=null;DUO.since=0;DUO.pend=[];DUO.opp={};DUO.fin=null;DUO.lastPush=0;
+  app.innerHTML=`<div class="duocd"><div class="label">${DUO_NAME[m.game]}</div><div class="duovs"><div class="duop me">${avatarHTML(SOC.me.avatar,56,SHOP().frame)}<b>${esc(typeof idDisplay==='function'?idDisplay():SOC.me.name)}</b><small>bạn · HSK ${duoLv(m,'me')}</small></div><div class="duox">VS</div><div class="duop">${avatarHTML(m.opp.avatar,56)}<b>${esc(m.opp.name||'Đối thủ')}</b><small>đối thủ · HSK ${duoLv(m,'opp')}</small></div></div>${duoLv(m,'me')!==duoLv(m,'opp')?'<div class="duoxl">⚖️ Đấu chênh lệch cấp: mỗi người trả lời câu hỏi theo cấp của mình</div>':''}<div class="duorule">💥 Sai 1 lần là thua</div>
     <div class="duonum" id="duonum">…</div><div class="small muted">${m.game==='race'?'Cùng bộ câu hỏi · bài 1–'+m.nl:'Bộ từ bài '+m.nl+' · 40 quái · cổng 5 máu'}</div></div>`;
-  const go=()=>{if(!DUO.live||DUO.m!==m)return;try{sfx('win');}catch(e){}if(m.game==='race'){window.__gmPaid='race';raceStart('duo',rcShowText);duoStrip({dist:0});}else defDuoPlay(m);};
+  const go=()=>{if(!DUO.live||DUO.m!==m)return;try{sfx('win');}catch(e){}if(m.game==='race'){window.__gmPaid='race';raceStart('duo',rcShowText);duoStrip({dist:0});duoRaceLive(m);}else defDuoPlay(m);};
   const tick=()=>{if(!DUO.live||DUO.m!==m)return;const left=m.start-duoNow();const el=document.getElementById('duonum');if(left<=0){go();return;}if(el){const s=Math.ceil(left/1000);if(el.textContent!==String(s)){el.textContent=s;el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');}}timers.push(setTimeout(tick,120));};
   tick();}
 /* ---------- Đồng bộ với máy chủ ---------- */
@@ -13304,20 +13365,42 @@ function duoStrip(st){const wrap=document.getElementById('rcwrap');if(!wrap)retu
   const me=Math.floor(st.dist),op=Math.floor(DUO.opp.dist||0),top=Math.max(300,me,op)*1.12;
   s.querySelector('.duolane.me .duocar').style.left=(Math.min(80,me/top*100))+'%';s.querySelector('.duolane.opp .duocar').style.left=(Math.min(80,op/top*100))+'%';
   s.querySelector('#duome').textContent=me.toLocaleString('vi-VN')+' m';s.querySelector('#duoopp').textContent=op.toLocaleString('vi-VN')+' m'+(DUO.opp.done?' · xong':'');s.classList.toggle('ahead',me>=op);}
-function duoTick(game,st){if(!duoOn()||DUO.m.game!==game)return;if(game==='race'){duoStrip(st);duoPush({dist:Math.floor(st.dist),score:Math.round(st.score),correct:st.correct,total:st.total}).then(j=>{if(j&&DUO.live)duoStrip(st);});}}
+const duoRaceSt=st=>({dist:Math.floor(st.dist),score:Math.round(st.score),correct:st.correct,total:st.total,q:Math.max(0,st.qi+1),lane:st.lane,combo:st.streak||0});
+function duoTick(game,st){if(!duoOn()||DUO.m.game!==game)return;if(game==='race'){DUO.rcSt=st;duoStrip(st);duoPush(duoRaceSt(st)).then(j=>{if(j&&DUO.live){duoStrip(st);duoMini();duoOppOut(j);}});}}
+/* đối thủ bị loại giữa chừng: dừng ván của mình, mình thắng */
+function duoOppOut(j){const m=DUO.m;if(!m||!DUO.live||!j||!j.ended)return;const st=DUO.rcSt;if(m.game==='race'&&st&&!st.over){st.over=true;stopGames();try{speechSynthesis.cancel();}catch(e){}duoAfter('race',st,false);}}
+function duoRaceLive(m){clearInterval(DUO.poll);DUO.poll=setInterval(()=>{if(!duoOn()||DUO.m!==m||!document.getElementById('rcwrap')){clearInterval(DUO.poll);return;}const st=DUO.rcSt;if(!st||st.over)return;
+  duoPush(duoRaceSt(st)).then(j=>{if(!j||!DUO.live)return;duoStrip(st);duoMini();duoOppOut(j);});},1300);}
+/* màn hình nhỏ của đối thủ: đường đua thu nhỏ, làn, câu, số đúng */
+function duoMini(){const wrap=document.getElementById('rcwrap'),m=DUO.m;if(!wrap||!m)return;let b=wrap.querySelector('#duomini');const o=DUO.opp||{};
+  if(!b){b=document.createElement('div');b.id='duomini';b.className='duomini';b.setAttribute('aria-label','Màn hình đối thủ');b.innerHTML=`<div class="dmhd"><b>${esc(m.opp.name||'Đối thủ')}</b><small>HSK ${duoLv(m,'opp')}</small></div><div class="dmroad"><svg viewBox="0 0 90 120" preserveAspectRatio="none" aria-hidden="true"><path d="M38 0 H52 L90 120 H0Z" fill="#3b4150"/><path d="M41 0 L28 120 M49 0 L62 120" stroke="#fff" stroke-width="1.6" stroke-dasharray="7 7" class="dmdash"/><path d="M38 0 L0 120 M52 0 L90 120" stroke="#ffd166" stroke-width="2"/></svg><span class="dmcar">🏎️</span><span class="dmboom">💥</span></div><div class="dmst"><span class="dmq"></span><span class="dmc"></span><span class="dmd"></span></div>`;wrap.appendChild(b);}
+  const ln=typeof o.lane==='number'?o.lane:1;b.querySelector('.dmcar').style.left=(22+ln*28)+'%';b.querySelector('.dmq').textContent='Câu '+Math.min(20,o.q||0)+'/20';b.querySelector('.dmc').textContent='✓ '+(o.correct||0);b.querySelector('.dmd').textContent=(o.dist||0).toLocaleString('vi-VN')+' m';
+  const cvw=(wrap.querySelector('canvas')||{}).offsetWidth||0;b.classList.toggle('side',wrap.clientWidth>=cvw+340);b.style.setProperty('--sp',(1.1-Math.min(.8,(o.correct||0)*.04)).toFixed(2)+'s');b.classList.toggle('out',!!o.out);b.classList.toggle('done',!!o.done&&!o.out);b.classList.toggle('combo',(o.combo||0)>=5);}
 /* kết thúc: báo xong, chờ đối thủ, hiện kết quả */
-function duoAfter(game,st,quit){const m=DUO.m;if(!duoOn()||m.game!==game)return false;DUO.live=false;
-  const mine=game==='race'?{dist:Math.floor(st.dist),score:Math.round(st.score),correct:st.correct,total:st.total,done:1}:{kills:st.kills,hp:st.hp,done:1};
+function duoAfter(game,st,quit){const m=DUO.m;if(!m||!DUO.live||m.game!==game)return false;DUO.live=false;clearInterval(DUO.poll);
+  const out=!!(quit||st.out||(game==='race'&&st.shields<=0&&!m.ended));
+  const mine=game==='race'?{dist:Math.floor(st.dist),score:Math.round(st.score),correct:st.correct,total:st.total,done:1,out:out?1:0}:{kills:st.kills,hp:st.hp,done:1,out:out?1:0};
   const xp=(st.correct||st.kills||0)*2;if(xp)addXp(xp);touch();save();
-  app.innerHTML=`<div class="stack racev"><section class="rchero end"><div class="rchtxt"><div class="label" style="color:#ffd166">${DUO_NAME[game]}</div><h1 id="duores">${quit?'Bạn đã dừng':'Xong phần của bạn!'}</h1><div class="rcbest" id="duoresm"><span>⏳ Đang chờ đối thủ chơi xong…</span></div></div></section><div class="row" style="gap:8px;justify-content:center"><a class="btn" href="#duo-${game}">👥 Ván mới</a><a class="btn ghost" href="#games">Về Trò chơi</a></div></div>`;
+  app.innerHTML=`<div class="stack racev"><section class="rchero end"><div class="rchtxt"><div class="label" style="color:#ffd166">${DUO_NAME[game]}</div><h1 id="duores">${quit?'Bạn đã bỏ cuộc':out?'💥 Bạn bị loại':'Xong phần của bạn!'}</h1><div class="rcbest" id="duoresm"><span>${out?'Đang báo kết quả…':'⏳ Đang chờ đối thủ chơi xong…'}</span></div></div></section><div class="row" style="gap:8px;justify-content:center;flex-wrap:wrap"><span id="duobrag"></span><button class="btn" id="duonew">👥 Ván mới</button><a class="btn ghost" href="#games">Về Trò chơi</a></div></div>`;
+  app.querySelector('#duonew').onclick=()=>{if(location.hash==='#duo-'+game)viewDuo(game);else location.hash='#duo-'+game;};
   const show=j=>{const win=j.winner===m.role,draw=j.winner==='draw';const a=(j.st||{})[m.role]||{},b=(j.st||{})[m.role==='a'?'b':'a']||{};let coins=(win?10:draw?5:0)*(m.bot?.5:1);if(coins)earn(coins,DUO_NAME[game]+(win?' · thắng':' · hòa'),{delay:500,once:'duo:'+m.id});
-    const h=document.getElementById('duores'),mm=document.getElementById('duoresm');if(!h)return;h.innerHTML=win?'🏆 Bạn thắng!':draw?'🤝 Hòa!':'Đối thủ thắng';
+    const h=document.getElementById('duores'),mm=document.getElementById('duoresm');if(!h)return;const why=win&&b.out?'Đối thủ bị loại trước (sai 1 lần hoặc bỏ cuộc)':!win&&!draw&&a.out?(quit?'Bạn đã bỏ cuộc':game==='race'?'Bạn đâm xe trước':'Bạn bắn nhầm trước'):'';h.innerHTML=(win?'🏆 Bạn thắng!':draw?'🤝 Hòa!':'Đối thủ thắng')+(why?`<small class="duowhy">${why}</small>`:'');
     mm.innerHTML=game==='race'?`<span>🏎️ Bạn <b>${(a.dist||0).toLocaleString('vi-VN')} m</b> · ${a.correct||0}/${a.total||0} đúng</span><span>🚗 ${esc(m.opp.name||'Đối thủ')} <b>${(b.dist||0).toLocaleString('vi-VN')} m</b> · ${b.correct||0}/${b.total||0} đúng</span>${coins?`<span>${YB} +${coins}</span>`:''}<span>⭐ +${xp} XP</span>`
       :`<span>🏹 Bạn hạ <b>${a.kills||0}</b> quái</span><span>🏹 ${esc(m.opp.name||'Đối thủ')} hạ <b>${b.kills||0}</b> quái</span>${coins?`<span>${YB} +${coins}</span>`:''}<span>⭐ +${xp} XP</span>`;
-    if(win)try{confetti(60);}catch(e){}DUO.m=null;};
-  (async()=>{let j=await duoPush(mine,[{k:'done'}],true);let n=0;while(j&&!j.ended&&n++<400&&document.getElementById('duores')){await new Promise(r=>setTimeout(r,1500));j=await duoPush({},[],true);}
+    if(win)try{confetti(60);}catch(e){}duoBragBtn(m,j,win?'win':draw?'draw':'lose',a,b);DUO.m=null;};
+  (async()=>{let j=await duoPush(mine,[{k:out?'out':'done'}],true);let n=0;while(j&&!j.ended&&n++<400&&document.getElementById('duores')){await new Promise(r=>setTimeout(r,1500));j=await duoPush({},[],true);}
     if(j&&j.ended)show(j);else{const mm=document.getElementById('duoresm');if(mm)mm.innerHTML='<span>Không nhận được kết quả (mất mạng hoặc quá 15 phút).</span>';}})();
   return true;}
+/* khoe kết quả lên tường của mình và đối thủ */
+function duoBragBtn(m,j,res,a,b){const box=document.getElementById('duobrag');if(!box)return;const game=m.game;
+  const sc=game==='race'?`${(a.dist||0).toLocaleString('vi-VN')} m – ${(b.dist||0).toLocaleString('vi-VN')} m`:`${a.kills||0} – ${b.kills||0} quái`;
+  box.innerHTML=`<button class="btn pri" id="duobragb">📣 ${m.bot?'Khoe lên tường':'Khoe lên tường mình và đối thủ'}</button>`;
+  box.querySelector('#duobragb').onclick=async e=>{const bt=e.currentTarget;bt.disabled=true;bt.textContent='Đang đăng…';
+    try{const r=await duoApi('POST','/v1/duo/brag',m.bot?{bot:1,game,res,sc}:{id:m.id});bt.textContent=r.walls>1?'✓ Đã đăng lên 2 tường':'✓ Đã đăng lên tường';try{sfx('coin');}catch(x){}gardenToast(r.walls>1?'📣 Đã khoe kết quả lên tường của bạn và tường đối thủ!':'📣 Đã khoe kết quả lên tường của bạn!');}
+    catch(x){bt.textContent=/ALREADY_POSTED/.test(x.message)?'✓ Đã đăng rồi':'Chưa đăng được, thử lại';if(!/ALREADY_POSTED/.test(x.message))bt.disabled=false;}};}
+const duoLv=(m,who)=>{const L=(m&&m.st&&m.st.lvs)||{},me=m.role||'a',op=me==='a'?'b':'a';return (who==='me'?L[me]:L[op])||m.lv||LEVEL;};
+/* hỏi xác nhận đấu chênh lệch cấp */
+function duoXlAsk(lvs,yes){const u=[...new Set(lvs)].filter(x=>x!==LEVEL);askConfirm(`<b>Đấu chênh lệch cấp?</b><div class="small muted" style="margin-top:4px">Đối thủ đang ở <b>HSK ${u.join(', ')||'khác'}</b>, bạn ở HSK ${LEVEL}. Mỗi người trả lời câu hỏi theo cấp của mình, luật như thường: sai 1 lần là thua.</div>`,'Có, vào chơi',yes);}
 /* ---------- Thủ thành đôi ---------- */
 function duoFoes(m){const r=duoRng(m.seed^0x5bd1e995);let ws=defWords(m.nl);if(ws.length<6)ws=WORDS.filter(w=>!w.custom&&w.l>=1&&w.l<=Math.max(2,m.nl));const out=[];let t=1500,lastLane=-1;
   for(let i=0;i<40;i++){let lane=Math.floor(r()*3);if(lane===lastLane)lane=(lane+1+Math.floor(r()*2))%3;lastLane=lane;const w=ws[Math.floor(r()*ws.length)];
@@ -13354,9 +13437,9 @@ function defDuoPlay(m){stopGames();const {foes:ALL,ws}=duoFoes(m);const role=m.r
   const sync=async(force)=>{const j=await duoPush({kills:st.kills,hp:st.hp},[],force);if(j){applyEv(j);if(j.ended&&!st.over)finish(false);}};
   O.onclick=e=>{const b=e.target.closest('.dopt');if(!b||!target||st.over)return;const ok=b.dataset.z===target.w.zh;grade(target.w,ok,1);
     if(ok){st.combo++;st.correct++;speak(target.w.zh);shoot(target);b.classList.add('yes');const f=target;pend.add(f.i);f.el.classList.add('hit');DUO.pend.push({k:'kill',f:f.i});target=null;if(st.combo>0&&st.combo%5===0)fx('dcombo',50,30,`Chuỗi ${st.combo}!`,900);sync(true);}
-    else{st.combo=0;b.classList.add('no');F.classList.add('shake');timers.push(setTimeout(()=>F.classList.remove('shake'),350));const z=target.w;banner(`<span class="han">${esc(z.zh)}</span> ${esc(z.py)} · ${esc(z.vi)}`,1600);}
+    else{st.combo=0;b.classList.add('no');F.classList.add('shake');timers.push(setTimeout(()=>F.classList.remove('shake'),350));const z=target.w;banner(`💥 Bắn nhầm! <span class="han">${esc(z.zh)}</span> ${esc(z.py)} · ${esc(z.vi)}`,1600);st.out=1;O.querySelectorAll('.dopt').forEach(x=>x.disabled=true);timers.push(setTimeout(()=>finish(false),900));return;}
     pickTarget();};
-  wrap.querySelector('#dquit').onclick=()=>askConfirm('<b>Bỏ cuộc?</b><div class="small muted" style="margin-top:4px">Số quái đã hạ vẫn được tính.</div>','Bỏ cuộc',()=>finish(true));
+  wrap.querySelector('#dquit').onclick=()=>askConfirm('<b>Bỏ cuộc?</b><div class="small muted" style="margin-top:4px">Bỏ cuộc là thua, đối thủ thắng ván này.</div>','Bỏ cuộc',()=>finish(true));
   const finish=quit=>{if(st.over)return;st.over=true;removeEventListener('resize',onRs);stopGames();st.hp=Math.max(0,5-leaked.size);duoAfter('defense',st,quit);};
   let last=0;const loop=t=>{if(st.over)return;if(!document.body.contains(F)){st.over=true;return;}const dt=last?Math.min(60,t-last):16;last=t;const el=duoNow()-m.start;
     ALL.forEach(f=>{if(dead.has(f.i))return;if(!f.el){if(el>=f.at){spawn(f);pickTarget();}return;}f.y=-12+(el-f.at)*0.0042*f.sp;f.el.style.top=f.y+'%';
@@ -13369,10 +13452,10 @@ function defDuoPlay(m){stopGames();const {foes:ALL,ws}=duoFoes(m);const role=m.r
   banner('Giữ cổng!',1200);hud();pickTarget();rafs.splice(0,rafs.length,requestAnimationFrame(loop));}
 /* ---------- Gắn vào Khu trò chơi ---------- */
 try{GA_ART['duo-race']=GA_ART.race;GA_BG['duo-race']=['#ffd9d6','#fff4ee'];GA_ART['duo-defense']=GA_ART.defense;GA_BG['duo-defense']=GA_BG.defense;}catch(e){}
-HUB.push({k:'duo-race',cat:'friends action',ic:'赛',col:'#d7261e',name:'Đua xe đôi',d:'Hai xe, hai đường đua song song, cùng bộ câu hỏi. Ghép tự do hoặc mời bạn bè.',meta:()=>'Online · cùng cấp HSK · thắng +10 '+YB,isNew:1,net:1});
-HUB.push({k:'duo-defense',cat:'friends action',ic:'守',col:'#5b6bd6',name:'Thủ thành đôi',d:'Một cổng thành, hai ụ súng. Ai bắn hạ quái trước được tính; hạ nhiều hơn là thắng.',meta:()=>'Online · 40 quái · thắng +10 '+YB,isNew:1,net:1});
+HUB.push({k:'duo-race',cat:'friends action',ic:'赛',col:'#d7261e',name:'Đua xe đôi',d:'Hai xe, hai đường đua song song, cùng bộ câu hỏi. Ghép tự do hoặc mời bạn bè.',meta:()=>'Online · sai 1 lần là thua · thắng +10 '+YB,isNew:1,net:1});
+HUB.push({k:'duo-defense',cat:'friends action',ic:'守',col:'#5b6bd6',name:'Thủ thành đôi',d:'Một cổng thành, hai ụ súng. Ai bắn hạ quái trước được tính; hạ nhiều hơn là thắng.',meta:()=>'Online · bắn nhầm 1 lần là thua · +10 '+YB,isNew:1,net:1});
 try{XP_GAME_RT.add('duo-race');XP_GAME_RT.add('duo-defense');}catch(e){}
-if(window.__T)window.__duo={DUO,duoRng,duoQs,duoFoes,duoLaunch,duoPush,duoNow,viewDuo};
+if(window.__T)window.__duo={DUO,duoRng,duoQs,duoFoes,duoLaunch,duoPush,duoNow,viewDuo,duoMini,duoLv,duoXlAsk};
 
 /* ===== 5.31: tập viết rõ nét, giới thiệu chữ 人, thẻ từ mới tự lật, trang riêng của từ, sảnh trò chơi có hướng dẫn,
    chơi đôi gộp vào Đua xe / Thủ thành, Tên ID – Tên thật, thông báo cá nhân · tin nhắn · bảng tin ===== */
@@ -13690,15 +13773,16 @@ function frExtra(){return{seen:Date.now(),handle:myHandle(),idn:myIdn(),rn:realN
 let DUO_BOT_MS=180000;
 const DUO_BOT={name:'Rồng Máy 🤖',avatar:3};
 const fmtMS=ms=>{const s=Math.max(0,Math.ceil(ms/1000));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');};
-async function duoQueue(game){const b=app.querySelector('#duoq');if(!b)return;duoQueueing=true;DUO.qStart=Date.now();b.textContent='✕ Hủy tìm';b.classList.remove('pri');duoQsEl('<span class="duowait">⏳ Đang tìm đối thủ…</span>');
+async function duoQueue(game){const b=app.querySelector('#duoq');if(!b)return;duoQueueing=true;DUO.qStart=Date.now();DUO.xl=0;DUO.xlAsked=0;b.textContent='✕ Hủy tìm';b.classList.remove('pri');duoQsEl('<span class="duowait">⏳ Đang tìm đối thủ…</span>');
   const tick=async()=>{if(location.hash!=='#duo-'+game||!duoQueueing){return;}
     const left=DUO_BOT_MS-(Date.now()-DUO.qStart);
     if(left<=0){duoQueueing=false;clearInterval(DUO.qT);DUO.qT=0;let real=null;try{real=await duoApi('POST','/v1/duo/queue/cancel',{});}catch(e){}
       window.__gmPaid=game;if(real&&real.matched){duoLaunch(real);return;}
       gardenToast('🤖 Chưa có ai đang chờ. Bạn đấu với <b>'+esc(DUO_BOT.name)+'</b> nhé!');duoLaunch(duoBotMatch(game));return;}
-    try{const j=await duoApi('POST','/v1/duo/queue',{game,lv:LEVEL,nl:duoNl()});if(!duoQueueing)return;
+    try{const j=await duoApi('POST','/v1/duo/queue',{game,lv:LEVEL,nl:duoNl(),any:DUO.xl?1:0});if(!duoQueueing)return;
       if(j.matched){duoQueueing=false;clearInterval(DUO.qT);DUO.qT=0;window.__gmPaid=game;duoLaunch(j);return;}
-      duoQsEl(`<span class="duowait">⏳ Đang tìm đối thủ… ${j.waiting?`<b>${j.waiting}</b> người cùng trò, cùng cấp đang chờ`:'chưa có ai khác cùng cấp, hãy mời bạn bè'}<br><small class="muted">Sau <b id="duobotleft">${fmtMS(left)}</b> chưa có ai sẽ tự ghép với ${esc(DUO_BOT.name)}</small></span>`);}
+      if(!j.waiting&&j.others&&!DUO.xl&&!DUO.xlAsked){DUO.xlAsked=1;duoXlAsk(j.otherLv||[],()=>{DUO.xl=1;if(duoQueueing)tick();});}
+      duoQsEl(`<span class="duowait">⏳ Đang tìm đối thủ… ${j.waiting?`<b>${j.waiting}</b> người cùng trò, cùng cấp đang chờ`:j.others?`<b>${j.others}</b> người khác cấp đang chờ${DUO.xl?' · bạn đã đồng ý đấu chênh lệch':''}`:'chưa có ai khác cùng cấp, hãy mời bạn bè'}<br><small class="muted">Sau <b id="duobotleft">${fmtMS(left)}</b> chưa có ai sẽ tự ghép với ${esc(DUO_BOT.name)}</small></span>`);}
     catch(e){duoQsEl(`<span style="color:var(--seal)">${esc(netMsg(e))}</span><br><small class="muted">Sau ${fmtMS(left)} sẽ tự ghép với ${esc(DUO_BOT.name)}</small>`);}};
   tick();DUO.qT=setInterval(tick,1800);}
 async function duoCancel(game){duoQueueing=false;clearInterval(DUO.qT);DUO.qT=0;const b=app.querySelector('#duoq');if(b){b.textContent='👥 Tìm đối thủ';b.classList.add('pri');}duoQsEl('Đã hủy. Năng lượng của ván này được giữ cho lần tìm tiếp theo.');window.__gmPaid=game;
@@ -13706,22 +13790,29 @@ async function duoCancel(game){duoQueueing=false;clearInterval(DUO.qT);DUO.qT=0;
 function duoBotMatch(game){const seed=(Math.floor(Math.random()*2**31))|1;DUO.offs=0;
   const m={id:'bot-'+Date.now().toString(36),game,lv:LEVEL,nl:duoNl(),seed,start:Date.now()+4000,role:'a',me:(SOC.auth&&SOC.auth.uid)||'me',opp:{uid:'bot',name:DUO_BOT.name,avatar:DUO_BOT.avatar},st:{},ev:[],n:0,ended:false,winner:'',bot:1};
   const r=duoRng(seed^0x9e3779b9),B={ev:[],n:0,st:{a:{},b:{}},taken:new Set(),leaks:0};
-  if(game==='race'){const acc=.7+r()*.15;let t=2500;B.ans=[];for(let k=0;k<20;k++){t+=3200+r()*3000;B.ans.push([t,r()<acc]);}}
-  else{B.plan=duoFoes(m).foes.map(f=>({f:f.i,t:f.at+1800+r()*4500,go:r()<.62})).filter(x=>x.go).sort((a,b)=>a.t-b.t);B.kills=0;}
+  if(game==='race'){const acc=.88+r()*.1;let t=2500;B.ans=[];B.outT=Infinity;for(let k=0;k<20;k++){t+=3200+r()*3000;const ok=r()<acc;B.ans.push([t,ok]);if(!ok&&B.outT===Infinity)B.outT=t;}}
+  else{B.plan=duoFoes(m).foes.map(f=>({f:f.i,t:f.at+1800+r()*4500,go:r()<.62})).filter(x=>x.go).sort((a,b)=>a.t-b.t);B.kills=0;B.outT=r()<.55?15000+r()*90000:Infinity;}
   m.B=B;return m;}
-function botRace(B,tms){let d=0,sp=1,c=0,n=0,tp=0;for(const [ta,ok] of B.ans){if(ta>tms)break;d+=(ta-tp)*0.006*sp;tp=ta;n++;if(ok){d+=25*sp;c++;sp=Math.min(2.6,1+0.06*c);}}d+=(Math.min(tms,B.ans[B.ans.length-1][0])-tp)*0.006*sp*(tms>tp?1:0);return {dist:Math.floor(d),correct:c,total:n,done:n>=B.ans.length?1:0};}
+function botRace(B,tms){let d=0,sp=1,c=0,n=0,tp=0,out=0,lane=1;for(const [ta,ok] of B.ans){if(ta>tms)break;d+=(ta-tp)*0.006*sp;tp=ta;n++;lane=Math.floor((ta/997)%3);if(ok){d+=25*sp;c++;sp=Math.min(2.6,1+0.06*c);}else{out=1;break;}}if(!out)d+=(Math.min(tms,B.ans[B.ans.length-1][0])-tp)*0.006*sp*(tms>tp?1:0);return {dist:Math.floor(d),correct:c,total:n,q:Math.min(20,n+(out?0:1)),lane,combo:c,out,done:out||n>=B.ans.length?1:0};}
 function botStep(m,st,ev,since){const B=m.B,t=Date.now()-m.start,acc=[];
   if(st&&typeof st==='object'){const o=B.st.a;for(const k of ['dist','score','correct','total','kills','done','hp'])if(st[k]!=null)o[k]=st[k];}
-  (ev||[]).forEach(e=>{if(!e)return;if((e.k==='kill'||e.k==='leak')&&!B.taken.has(e.f)){B.taken.add(e.f);B.n++;B.ev.push({i:B.n,k:e.k,f:e.f,by:'a',t});acc.push(e.f);if(e.k==='leak')B.leaks++;}else if(e.k==='done')B.st.a.done=1;});
+  (ev||[]).forEach(e=>{if(!e)return;if((e.k==='kill'||e.k==='leak')&&!B.taken.has(e.f)){B.taken.add(e.f);B.n++;B.ev.push({i:B.n,k:e.k,f:e.f,by:'a',t});acc.push(e.f);if(e.k==='leak')B.leaks++;}else if(e.k==='done')B.st.a.done=1;else if(e.k==='out'){B.st.a.out=1;B.st.a.done=1;}});
+  if(B.st.a.out&&B.aOutT==null)B.aOutT=t;if(B.ended)return Object.assign({},B.ended,{acc,ev:B.ev.filter(e=>e.i>(since||0)),now:Date.now()});
   const fin=!!B.st.a.done;
-  if(m.game==='race'){B.st.b=botRace(B,fin?1e9:t);if(fin)B.st.b.done=1;}
-  else{for(const p of B.plan){if(p.t>t&&!fin)break;if(B.taken.has(p.f))continue;if(fin&&p.t>t)continue;B.taken.add(p.f);B.n++;B.kills++;B.ev.push({i:B.n,k:'kill',f:p.f,by:'b',t});}B.st.b={kills:B.kills,done:fin?1:0};}
-  const ended=!!(B.st.a.done&&B.st.b.done);let winner='';if(ended){const a=B.st.a,b=B.st.b,ka=m.game==='race'?(a.dist||0):(a.kills||0),kb=m.game==='race'?(b.dist||0):(b.kills||0);winner=ka>kb?'a':kb>ka?'b':'draw';}
-  return {acc,ev:B.ev.filter(e=>e.i>(since||0)),n:B.n,st:{a:Object.assign({},B.st.a),b:Object.assign({},B.st.b)},opp:Object.assign({},B.st.b),ended,winner,now:Date.now(),start:m.start,hp:B.leaks};}
+  const aOut=B.st.a.out?B.aOutT:Infinity,tb=fin&&!B.st.a.out?1e9:Math.min(t,aOut);
+  if(m.game==='race'){B.st.b=botRace(B,tb);}
+  else{const td=Math.min(t,aOut),lim=Math.min(td,B.outT);for(const p of B.plan){if(p.t>lim)break;if(B.taken.has(p.f))continue;B.taken.add(p.f);B.n++;B.kills++;B.ev.push({i:B.n,k:'kill',f:p.f,by:'b',t});}const bo=B.outT<=td?1:0;B.st.b={kills:B.kills,out:bo,done:bo||(fin?1:0)};}
+  const bOut=B.st.b.out?B.outT:Infinity;let ended=false,winner='';
+  if(B.st.a.out||B.st.b.out){ended=true;winner=aOut<bOut?'b':'a';}
+  else if(B.st.a.done&&B.st.b.done){ended=true;const a=B.st.a,b=B.st.b,ka=m.game==='race'?(a.dist||0):(a.kills||0),kb=m.game==='race'?(b.dist||0):(b.kills||0);winner=ka>kb?'a':kb>ka?'b':'draw';}
+  const out={acc,ev:B.ev.filter(e=>e.i>(since||0)),n:B.n,st:{a:Object.assign({},B.st.a),b:Object.assign({},B.st.b)},opp:Object.assign({},B.st.b),ended,winner,now:Date.now(),start:m.start,hp:B.leaks};
+  if(ended)B.ended={n:B.n,st:out.st,opp:out.opp,ended,winner,start:m.start,hp:B.leaks};return out;}
 async function duoPush(st,ev,force){const m=DUO.m;if(!m)return null;const now=Date.now();if(!force&&(DUO.busy||now-DUO.lastPush<850))return null;DUO.busy=true;DUO.lastPush=now;
   try{const evs=DUO.pend.concat(ev||[]);DUO.pend=[];const j=m.bot?botStep(m,st,evs,DUO.since):await duoApi('POST','/v1/duo/push',{id:m.id,st,ev:evs,since:DUO.since});if(DUO.m!==m)return null;
     DUO.opp=j.opp||{};(j.ev||[]).forEach(e=>{if(e.i>DUO.since)DUO.since=e.i;});if(j.ended){m.ended=true;m.winner=j.winner;m.st=j.st;}return j;}
   catch(e){if(ev&&ev.length)DUO.pend=ev.concat(DUO.pend);return null;}finally{DUO.busy=false;}}
+/* Đấu đôi: không có lượt chơi tiếp, sai 1 lần là thua */
+(function(){const base=gmLose;gmLose=function(){if(typeof duoOn==='function'&&duoOn())return false;return base.apply(this,arguments);};})();
 if(window.__T)window.__u78={setBotMs:v=>{DUO_BOT_MS=v;},duoBotMatch,botStep,botRace,DUO};
 
 /* ===== 5.34: Sự kiện & Nhiệm vụ — rời trang Học, đặt ở Trò chơi và một mục riêng trong Mở rộng ===== */
@@ -13871,6 +13962,42 @@ try{MORE_TILES.push(['#english','英','Kasser English','Học tiếng Anh cùng 
   const at=document.querySelector('#msheet .msevq')||document.querySelector('#msheet .msgrid');if(!at)return;const n=enStreak();
   at.insertAdjacentHTML('afterend',`<a class="msevq msen" href="#english"><span class="msevi"><svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">${EN_ART}</svg></span><span class="msevt"><b>Kasser English</b><small>${n>=3?`Chuỗi ${n} ngày · thử 5 phút tiếng Anh?`:'Học tiếng Anh cùng Long Hổ'}</small></span><span class="evgo">→</span></a>`);};})();
 if(window.__T)window.__u81={viewEnglish,enStreak,EN_URL,setStreak:n=>{S.streak={count:n,last:today()};}};
+
+/* ===== 5.37: Vườn — 4 cây tân thủ (Trúc, Lan, Cúc, Mai), hướng dẫn tưới sau lần gieo đầu, hiệu ứng tưới rõ hơn ===== */
+/* Trúc không cần qua bài nào; Lan cần Bài 1, Cúc Bài 2, Mai Bài 3. Chín sau 8, 9, 10, 11 giờ. Cả 4 mở từ cấp 1. */
+const NEWBIE_PLANTS={1:[0,8],2:[1,9],3:[2,10],4:[3,11]};
+Object.keys(NEWBIE_PLANTS).forEach(k=>{PLANT_HOURS[k]=NEWBIE_PLANTS[k][1];SEED_LV[k]=1;});
+const seedLesson=l=>NEWBIE_PLANTS[l]?NEWBIE_PLANTS[l][0]:l;
+const seedLsTxt=l=>{const n=seedLesson(l);return n?'Bài '+n:'Không cần qua bài';};
+seedNeed=function(l){const lv=SEED_LV[l]||1,need=[],ls=seedLesson(l);if(pLevel()<lv)need.push('cấp '+lv);if(l<=NL&&ls>0&&!lessonDoneAny(ls))need.push('qua Bài '+ls);if(l===XPID&&!HASX)need.push('gói HSK 3.0');if(l===MEID&&WORDS.filter(w=>w.custom).length<4)need.push('4 từ tự thêm');return need;};
+/* ---------- Hiệu ứng tưới: bình tưới nghiêng rót nước, giọt bắn, cây "uống" nước và lớn lên ---------- */
+const GW_CAN=`<svg class="gwcan" viewBox="0 0 120 90" aria-hidden="true"><path d="M30 34 Q30 26 38 26 H82 Q90 26 90 34 V70 Q90 80 80 80 H40 Q30 80 30 70Z" fill="#3fa7e0" stroke="#1d6fa3" stroke-width="3"/><path d="M38 26 Q60 4 82 26" fill="none" stroke="#1d6fa3" stroke-width="6" stroke-linecap="round"/><path d="M30 46 L6 30 L2 36 L28 58Z" fill="#3fa7e0" stroke="#1d6fa3" stroke-width="3" stroke-linejoin="round"/><ellipse cx="4" cy="33" rx="5" ry="8" fill="#1d6fa3" transform="rotate(-35 4 33)"/><path d="M42 40 Q60 34 78 40" stroke="#bfe6ff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/><circle cx="74" cy="60" r="7" fill="#fff" opacity=".35"/></svg>`;
+function gWaterFX(kind){const n=kind==='big'?14:9;
+  return `<div class="gwpour ${kind||''}" aria-hidden="true"><div class="gwcanw">${GW_CAN}</div><div class="gwstream">${Array.from({length:n},(_,j)=>`<i style="--x:${(Math.random()*16-8).toFixed(1)}px;--d:${(j*0.07).toFixed(2)}s"></i>`).join('')}</div>
+    <div class="gwsplash">${Array.from({length:8},(_,j)=>`<i style="--a:${j*45}deg;--d:${(0.55+Math.random()*.2).toFixed(2)}s"></i>`).join('')}</div><div class="gwring"></div><div class="gwring r2"></div>
+    <div class="gwspark">${['✨','💧','🌱','✨'].map((e,j)=>`<i style="--j:${j}">${e}</i>`).join('')}</div>${kind==='big'?'<div class="gwlbl">💧 Tưới cây!</div>':''}</div>`;}
+function gWaterPlay(sc,big,kind){if(!sc)return;const old=sc.querySelector('.gwpour');if(old)old.remove();sc.insertAdjacentHTML('beforeend',gWaterFX(kind));const el=sc.querySelector('.gwpour');
+  if(big){big.classList.remove('drink');void big.offsetWidth;big.classList.add('drink');}try{gSound('rain');}catch(e){}
+  setTimeout(()=>{if(el&&el.parentNode)el.remove();if(big)big.classList.remove('drink');},kind==='big'?2300:1800);}
+/* ---------- Hướng dẫn tưới ngay sau lần gieo đầu tiên ---------- */
+const gHarvTotal=g=>Object.values(g.harvest||{}).reduce((a,b)=>a+(+b||0),0);
+(function(){const base=gqTick;gqTick=function(k,n){const r=base.apply(this,arguments);try{const g=G();if(k==='plant1'&&!g.wtut&&!g.wtutPend&&gHarvTotal(g)===0){g.wtutPend=1;save();}}catch(e){}return r;};})();
+function gWaterCoach(){const g=G();if(!g.wtutPend||g.wtut||location.hash!=='#garden'||document.querySelector('#gscene.play'))return;
+  const i=g.plots.findIndex(p=>p&&p.l&&!p.wilt&&stageOf(p.gr||0)<4);if(i<0)return;const pot=document.querySelector(`[data-plot="${i}"]`);if(!pot)return;
+  document.querySelectorAll('.gwcoach').forEach(x=>x.remove());pot.classList.add('gwtarget');pot.insertAdjacentHTML('beforeend','<span class="gwhand" aria-hidden="true">💧<b>👆</b></span>');
+  const [nm]=PLANTS[g.plots[i].l];const box=document.createElement('div');box.className='gwcoach';box.setAttribute('role','dialog');box.setAttribute('aria-label','Hướng dẫn tưới cây');
+  box.innerHTML=`<div class="gwcin"><div class="gwcic" aria-hidden="true">${GW_CAN}</div><div style="min-width:0"><b>Tưới cây ${esc(nm)} ngay nhé!</b><p>Mỗi lần tưới tốn 1 giọt nước và trả lời 5 câu. Đúng càng nhiều, cây càng mau chín. Mỗi ngày tưới được nhiều lần.</p>
+    <div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn pri" id="gwgo">💧 Tưới ngay</button><button class="btn ghost sm" id="gwlater">Để sau</button></div></div></div>`;
+  document.body.appendChild(box);requestAnimationFrame(()=>box.classList.add('on'));
+  const done=()=>{g.wtutPend=0;g.wtut=1;save();box.remove();pot.classList.remove('gwtarget');const h=pot.querySelector('.gwhand');if(h)h.remove();};
+  box.querySelector('#gwgo').onclick=()=>{done();if(g.water<1){gardenToast('Hết nước rồi. Nước tự hồi 1 giọt mỗi 3 giờ, hoặc mua bình tưới.');return;}careRound(i);};
+  box.querySelector('#gwlater').onclick=()=>{done();gardenToast('Khi muốn tưới, chạm vào chậu cây rồi chọn <b>💧 Chăm cây</b>.');};
+  try{pot.scrollIntoView({behavior:'smooth',block:'center'});}catch(e){}}
+(function(){const base=viewGarden;viewGarden=function(){document.querySelectorAll('.gwcoach').forEach(x=>x.remove());const r=base.apply(this,arguments);setTimeout(gWaterCoach,450);return r;};})();
+(function(){const base=careRound;careRound=function(i){document.querySelectorAll('.gwcoach').forEach(x=>x.remove());const g=G();if(g.wtutPend){g.wtutPend=0;g.wtut=1;save();}return base.apply(this,arguments);};})();
+addEventListener('hashchange',()=>{if(location.hash!=='#garden')document.querySelectorAll('.gwcoach').forEach(x=>x.remove());});
+if(window.__u73)window.__u73.seedNeed=seedNeed;
+if(window.__T)window.__u82={seedLesson,seedLsTxt,gWaterCoach,gWaterPlay,NEWBIE_PLANTS};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
