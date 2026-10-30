@@ -3303,6 +3303,7 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .wgrid .wcard.hzopen{grid-column:1/-1}
 .hzidc{width:22px;height:22px;vertical-align:-6px;margin-right:4px}
 .hzkc{display:flex;align-items:center}
+.mizi .hw>.wfb2{color:var(--line);opacity:.9;pointer-events:none}
 
 /* 5.41 Ngữ pháp */
 .gfbig .gblocks{gap:8px;margin-top:8px}
@@ -3358,12 +3359,12 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='08d99e19';
-document.write('<script src="packs/hsk'+L+'.js?v=08d99e19"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='144007f1';
+document.write('<script src="packs/hsk'+L+'.js?v=144007f1"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=08d99e19','strokes-file');A('packs/dict.js?v=08d99e19','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=144007f1','strokes-file');A('packs/dict.js?v=144007f1','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -3462,7 +3463,7 @@ function makeWriter(el,ch,opts){
   el.innerHTML='';
   const size=el.clientWidth||180;
   return HanziWriter.create(el,ch,Object.assign({width:size,height:size,padding:12,strokeColor:css('--ink'),radicalColor:css('--jade'),outlineColor:css('--line'),highlightColor:css('--jade'),drawingColor:css('--jade'),strokeAnimationSpeed:1.2,delayBetweenStrokes:180,
-    charDataLoader:(c,ok,err)=>{if(STROKES[c])return ok(STROKES[c]);fetch('https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/'+encodeURIComponent(c)+'.json').then(r=>r.ok?r.json():Promise.reject()).then(d=>{STROKES[c]=d;ok(d);}).catch(()=>{fallback();});}},opts||{}));
+    charDataLoader:(c,ok,err)=>{if(STROKES[c])return ok(STROKES[c]);fetch('https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/'+encodeURIComponent(c)+'.json',window.AbortSignal&&AbortSignal.timeout?{signal:AbortSignal.timeout(5000)}:{}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{STROKES[c]=d;ok(d);}).catch(()=>{fallback();});}},opts||{}));
 }
 
 /* ---------- Bộ sinh câu hỏi ---------- */
@@ -16101,12 +16102,29 @@ function hzCompHTML(ch){const C=window.COMP&&window.COMP[ch];const d=STROKES[ch]
     const pn=card.querySelector('.hzxp');const open=(k,html)=>{if(pn.dataset.k===k&&!pn.hidden){pn.hidden=true;card.classList.remove('hzopen');pn.dataset.k='';card.querySelectorAll('.hzx .btn').forEach(b=>b.classList.remove('pri'));return;}pn.dataset.k=k;pn.hidden=false;card.classList.add('hzopen');pn.innerHTML=html;card.querySelectorAll('.hzx .btn').forEach(b=>b.classList.toggle('pri',b.hasAttribute('data-'+k)));};
     card.querySelector('[data-hzs]').onclick=()=>{open('hzs',hzStepsHTML(ch));const b=pn.querySelector('.hzst');if(b)hzStepsBind(b,ch);try{sfx('tap');}catch(e){}};
     card.querySelector('[data-hzc]').onclick=()=>{open('hzc','<p class="small muted">Đang tải phân tích…</p>');try{sfx('tap');}catch(e){}compLoad().then(()=>{if(pn.dataset.k==='hzc'&&!pn.hidden)pn.innerHTML=hzCompHTML(ch);});};});};})();
-/* sửa chữ dự phòng (khi gói nét chưa tải xong) rơi ra ngoài ô */
-(function(){const base=makeWriter;makeWriter=function(el,ch,opts){const w=base.apply(this,arguments);if(!el)return w;
-  const fix=()=>{el.querySelectorAll('.wfb').forEach(x=>{if(el.querySelector('path'))x.remove();});};
-  try{const mo=new MutationObserver(()=>{if(!el.isConnected){mo.disconnect();return;}fix();});mo.observe(el,{childList:true,subtree:true});setTimeout(()=>mo.disconnect(),20000);}catch(e){}
-  return w;};})();
-if(window.__T)window.__u87={strokeKind,strokeRule,compName,compLoad,hzCompHTML,hzStepsHTML};
+/* Ô viết chữ tự hồi phục: gói nét đến muộn / tải hỏng / CDN treo → tải lại gói, vẽ lại khi có dữ liệu, trong lúc chờ hiện chữ mờ ngay giữa ô */
+let hzPackTry=0;
+function hzEnsurePack(){if(Object.keys(window.STROKES||{}).length>80||hzPackTry>=3)return;hzPackTry++;const L=window.HSK_LEVEL||(typeof LEVEL!=='undefined'?LEVEL:2);
+  try{const s=document.createElement('script');s.src='packs/hsk'+L+'-strokes.js?r='+Date.now();s.async=true;document.head.appendChild(s);}catch(e){}}
+/* Bộ vẽ nét chỉ hiểu màu #hex / rgb(): đổi mọi màu giao diện (kể cả color-mix của giao diện tùy chỉnh) sang rgb() trước khi vẽ */
+let hzCv=null;
+function hzRGB(v,fb){try{const raw=getComputedStyle(document.documentElement).getPropertyValue(v).trim();if(!raw)return fb;if(/^#[0-9a-f]{3,8}$/i.test(raw)||/^rgba?\(/i.test(raw))return raw;
+  const t=document.createElement('i');t.style.cssText='position:absolute;width:0;height:0;color:'+raw;document.body.appendChild(t);const c=getComputedStyle(t).color;t.remove();
+  if(/^rgba?\(/i.test(c))return c;hzCv=hzCv||document.createElement('canvas');hzCv.width=hzCv.height=1;const x=hzCv.getContext('2d',{willReadFrequently:true});x.clearRect(0,0,1,1);x.fillStyle=fb;x.fillStyle=c;x.fillRect(0,0,1,1);const d=x.getImageData(0,0,1,1).data;return `rgba(${d[0]},${d[1]},${d[2]},${(d[3]/255).toFixed(3)})`;}catch(e){return fb;}}
+function hzCols(){const dark=document.documentElement.getAttribute('data-theme')==='dark'||(document.documentElement.getAttribute('data-theme')!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);
+  const ink=hzRGB('--ink',dark?'#e4ebe8':'#1b2826'),jade=hzRGB('--jade',dark?'#3dbf9a':'#0d7a63');return {strokeColor:ink,radicalColor:jade,highlightColor:jade,drawingColor:jade};}
+const hzDrawn=el=>!!(el.querySelector('svg path[clip-path]')||el.querySelector('canvas'));
+(function(){const base=makeWriter;makeWriter=function(el,ch,opts0){const opts=Object.assign(hzCols(),opts0||{});let cur=base(el,ch,opts);if(!el||!cur)return cur;
+  const glyph=()=>{if(hzDrawn(el)||el.querySelector('.wfb2')||el.querySelector(':scope>.han:not(.wfb)'))return;el.querySelectorAll('.wfb').forEach(x=>x.remove());el.insertAdjacentHTML('beforeend',`<div class="han wfb2" aria-hidden="true">${esc(ch)}</div>`);};
+  const clean=()=>el.querySelectorAll('.wfb,.wfb2').forEach(x=>x.remove());
+  const redraw=()=>{if(!el.isConnected||hzDrawn(el)||!STROKES[ch])return false;try{const w=base(el,ch,opts);if(w)cur=w;}catch(e){}return true;};
+  const heal=()=>{if(!el.isConnected)return;if(hzDrawn(el)){clean();return;}if(redraw())return;hzEnsurePack();glyph();};
+  [1200,3500,7000,12000,20000].forEach(t=>setTimeout(heal,t));
+  const on=e=>{if(!el.isConnected){removeEventListener('hsk-pack',on);return;}if(e.detail==='strokes'&&STROKES[ch]&&!hzDrawn(el)){setTimeout(()=>{redraw();setTimeout(()=>{if(hzDrawn(el))clean();},400);},30);}};addEventListener('hsk-pack',on);
+  try{const mo=new MutationObserver(()=>{if(!el.isConnected){mo.disconnect();return;}if(hzDrawn(el))clean();});mo.observe(el,{childList:true,subtree:true});setTimeout(()=>mo.disconnect(),30000);}catch(e){}
+  /* các nút Xem nét / Tập viết luôn điều khiển bản vẽ mới nhất */
+  return new Proxy({},{get:(_,k)=>{const v=cur&&cur[k];return typeof v==='function'?v.bind(cur):v;}});};})();
+if(window.__T)window.__u87={hzCols,hzRGB,strokeKind,strokeRule,compName,compLoad,hzCompHTML,hzStepsHTML};
 
 
 /* ===== 5.41 Ngữ pháp: âm thanh đúng/sai rõ, công thức to, mổ xẻ 2 câu có pinyin + nghĩa, máy đổi câu có nghĩa, bài khóa có pinyin + nghĩa ===== */
