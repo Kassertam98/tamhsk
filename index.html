@@ -3426,6 +3426,43 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .gmcdbar{width:200px;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
 .gmcdbar i{display:block;height:100%;width:100%;background:var(--jade);border-radius:99px}
 @media (prefers-reduced-motion:reduce){.gmcdn.pop{animation:none}}
+
+/* 5.46 Góc phát âm */
+.steps .prtab{border-color:color-mix(in srgb,#c3402b 45%,var(--line))}
+.steps .prtab .dot{font-family:var(--f-han)}
+.steps .prtab.on{background:color-mix(in srgb,#c3402b 12%,var(--card));border-color:#c3402b;color:var(--ink)}
+.prhero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:16px;border-radius:18px;border:1.5px solid #c3402b;background:color-mix(in srgb,#c3402b 7%,var(--card))}
+.prhic{width:56px;height:56px;border-radius:16px;background:#c3402b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px}
+.prsec{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.prsec h3{margin:0;display:flex;align-items:center;gap:8px}
+.prno{width:28px;height:28px;border-radius:50%;background:var(--jade);color:#fff;font-size:14px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.prgrp{display:flex;flex-direction:column;gap:6px}
+.prgh{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.prcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.prcard{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"k s" "t t";gap:4px 8px;align-items:center;padding:10px;border-radius:14px;border:1px solid var(--line);background:var(--paper)}
+.prk{grid-area:k;font-size:22px;font-weight:800;color:#c3402b;min-width:34px}
+.prcard .prsnd{grid-area:s;justify-self:start}
+.prtip{grid-area:t;color:var(--muted);line-height:1.45}
+.prrules{display:grid;gap:6px}
+.prrule{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;padding:8px 12px;border-radius:12px;background:var(--paper);border:1px solid var(--line);font-size:14px}
+.prrule .han{color:var(--jade)}
+.prneu{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px}
+.prquiz{border:1.5px solid var(--jade)}
+.prhz summary{cursor:pointer;list-style:none}
+.prhz summary::-webkit-details-marker{display:none}
+.prstk{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.prstroke{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px;border-radius:14px;border:1px solid var(--line);background:var(--paper);text-align:center}
+.prstroke svg{width:58px;height:58px}
+.prstroke b{font-size:13.5px}.prstroke small{font-size:12px;color:var(--muted)}
+.prords{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.prord{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:14px;border:1.5px solid var(--line);background:var(--card)}
+.prord .han{width:36px;height:36px;border-radius:10px;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:22px}
+.prord small{font-size:13px;font-weight:600}
+.prord.on{border-color:var(--jade);background:color-mix(in srgb,var(--jade) 8%,var(--card))}
+.prord:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+.prgrid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.prbox{display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
+.prcomp{font-size:14.5px}.prcomp .han{font-size:20px}
 </style>
 </head><body>
 
@@ -3451,12 +3488,12 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='8431bcd6';
-document.write('<script src="packs/hsk'+L+'.js?v=8431bcd6"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='de5f4c43';
+document.write('<script src="packs/hsk'+L+'.js?v=de5f4c43"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=8431bcd6','strokes-file');A('packs/dict.js?v=8431bcd6','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=de5f4c43','strokes-file');A('packs/dict.js?v=de5f4c43','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -16361,6 +16398,98 @@ gmLose=function(key,revive,giveUp){try{if(typeof duoOn==='function'&&duoOn())ret
     if(cost>0&&!spend(cost,'Chơi tiếp '+(GM_NAME[key]||'trò chơi')))return giveUp&&giveUp();GM_RUN.n=n+1;try{sfx('win');}catch(e){}gmCountdown(key,n+1,max,revive);},giveUp);
   return true;}catch(e){return false;}};
 if(window.__T)window.__u91={gmCost,gmMax,run:()=>GM_RUN,lose:(k,r,g)=>gmLose(k,r,g)};
+
+
+/* ===== 5.46 Góc phát âm cho HSK1 Bài 1–3 + Nhập môn chữ Hán (Bài 1) + bảng phát âm tổng hợp (#pron) ===== */
+const PR_INIT=[
+ ['Hai môi, môi – răng',[['b','八','bā','Gần “p” trong “pin”: không bật hơi, không rung.'],['p','爬','pá','Như b nhưng bật mạnh hơi ra.'],['m','美','měi','Như “m” tiếng Việt.'],['f','发','fā','Như “ph” tiếng Việt.']]],
+ ['Đầu lưỡi',[['d','大','dà','Gần “t” tiếng Việt, không bật hơi.'],['t','他','tā','Gần “th” tiếng Việt (bật hơi).'],['n','你','nǐ','Như “n”.'],['l','老','lǎo','Như “l”.']]],
+ ['Cuống lưỡi',[['g','国','guó','Gần “c / k” tiếng Việt, không bật hơi.'],['k','客','kè','Như g nhưng bật mạnh hơi.'],['h','好','hǎo','Gần “kh” tiếng Việt, hơi cọ ở cuống họng.']]],
+ ['Mặt lưỡi (môi dẹt)',[['j','叫','jiào','Gần “ch” tiếng Việt: mặt lưỡi áp lên vòm, môi dẹt như cười.'],['q','七','qī','Như j nhưng bật mạnh hơi.'],['x','学','xué','Gần “x” tiếng Việt, môi dẹt.']]],
+ ['Uốn lưỡi',[['zh','中','zhōng','Cong đầu lưỡi lên vòm miệng, gần “tr” uốn lưỡi.'],['ch','吃','chī','Như zh nhưng bật mạnh hơi.'],['sh','师','shī','Cong lưỡi, gần “s” uốn lưỡi tiếng Việt.'],['r','人','rén','Cong lưỡi như sh nhưng có rung dây thanh, nghe gần “r” nhẹ.']]],
+ ['Đầu lưỡi – răng (lưỡi phẳng)',[['z','字','zì','Như “ts”: đầu lưỡi sau răng cửa, không bật hơi.'],['c','菜','cài','Như z nhưng bật mạnh hơi.'],['s','四','sì','Gần “x” tiếng Việt, lưỡi phẳng, không cong.']]]];
+const PR_FIN=[
+ ['Vần đơn',[['a','啊','ā','Như “a”.'],['o','我','wǒ','Môi tròn, gần “ô”; viết uo ở đầu âm tiết thành wo.'],['e','饿','è','Gần “ơ”, miệng hơi dẹt (lướt từ “ư” sang “ơ”).'],['i','衣','yī','Như “i”.'],['u','五','wǔ','Như “u”.'],['ü','鱼','yú','Đọc “i” rồi giữ nguyên lưỡi, chu tròn môi.']]],
+ ['Vần kép',[['ai','再','zài','Như “ai”.'],['ei','美','měi','Gần “ây”.'],['ao','好','hǎo','Như “ao”.'],['ou','都','dōu','Gần “âu”.'],['ie','谢','xiè','Gần “iê”: 谢谢 xièxie.'],['ian','见','jiàn','Viết ian nhưng đọc gần “iên”: 再见 zàijiàn.'],['uo','国','guó','Gần “ua / uô”.'],['iao','叫','jiào','Đọc liền i-ao, gần “eo” có i đứng trước.']]],
+ ['Vần mũi',[['an','安','ān','Như “an”.'],['ang','忙','máng','Như “ang”.'],['en','们','men','Gần “ân”.'],['eng','冷','lěng','Gần “âng”.'],['in','您','nín','Như “in”.'],['ing','名','míng','Gần “inh”.'],['ong','中','zhōng','Gần “ung”.']]],
+ ['Vần đặc biệt',[['er','儿','ér','Đọc “ơ” rồi cong lưỡi lên.'],['-i (zhi, shi, zi…)','是','shì','Sau zh ch sh r z c s, chữ i đọc gần “ư”, không đọc “i”: 是 shì, 字 zì.']]]];
+const PR_RULES=[['i đứng đầu âm tiết viết thành y','衣 yī, 也 yě'],['u đứng đầu âm tiết viết thành w','五 wǔ, 我 wǒ'],['ü đứng đầu viết yu; sau j q x bỏ hai chấm','鱼 yú, 学 xué, 去 qù'],['iou, uei, uen viết gọn thành iu, ui, un','六 liù, 对 duì'],['Dấu thanh đặt trên a, rồi o / e; iu và ui đặt trên chữ sau','好 hǎo, 谢 xiè, 六 liù, 对 duì']];
+const PR_STROKES=[['横','Ngang','M15 50 Q50 45 85 50','一'],['竖','Sổ','M50 12 V88','十'],['撇','Phẩy','M62 14 Q56 56 22 86','八'],['点','Chấm','M42 28 Q56 42 58 60','六'],['捺','Mác','M22 16 Q48 62 88 84','人'],['提','Hất','M18 74 L82 36','我'],['折','Gập','M18 26 H78 V86','口'],['钩','Móc','M56 12 V78 Q56 90 38 80','小']];
+const PR_ORDER=[['Ngang trước, sổ sau','十'],['Phẩy trước, mác sau','八'],['Trên trước, dưới sau','三'],['Trái trước, phải sau','你'],['Ngoài trước, trong sau','月'],['Vào nhà trước, đóng cửa sau','国'],['Giữa trước, hai bên sau','小']];
+const PR_LS={
+ 1:{t:'Thanh điệu',sub:'4 thanh, thanh nhẹ và biến điệu 3 + 3',intro:'Tiếng Trung có 4 thanh và 1 thanh nhẹ. Đọc sai thanh là sai nghĩa: 妈 mā (mẹ) khác hẳn 马 mǎ (ngựa). Bài này có 你好 — câu đầu tiên đã gặp ngay biến điệu!'},
+ 2:{t:'Vần & biến điệu 不, 一',sub:'Vận mẫu, quy tắc viết pinyin, thanh nhẹ, 不 bú / 一 yí',intro:'Bài này có 谢谢 xièxie, 再见 zàijiàn, 不客气 bú kèqi: đủ để học vần kép, thanh nhẹ và biến điệu của 不.'},
+ 3:{t:'Phụ âm đầu',sub:'21 thanh mẫu, nhấn vào các cặp người Việt hay nhầm',intro:'Bài này có 叫 jiào, 学生 xuésheng, 中国 Zhōngguó, 是 shì, 老师 lǎoshī, 人 rén, 名字 míngzi: gặp đủ các âm j, x, zh, sh, r, z khó nhất với người Việt.'}};
+const prOn=()=>LEVEL===1;
+const PRS=()=>{S.pron=S.pron||{};return S.pron;};
+const prSnd=(ch,py)=>`<button class="tbtn prsnd" data-speak="${esc(ch)}" aria-label="Nghe ${esc(py)}"><span class="han">${esc(ch)}</span><b>${esc(py)}</b></button>`;
+function prGroupHTML(list,cls){return list.map(([g,items])=>`<div class="prgrp"><div class="prgh">${esc(g)}</div><div class="prcards ${cls||''}">${items.map(([k,ch,py,tip])=>`<div class="prcard"><div class="prk">${esc(k)}</div>${prSnd(ch,py)}<div class="small prtip">${esc(tip)}</div></div>`).join('')}</div></div>`).join('');}
+function prToneHTML(){return `<div class="tonegrid">${toneSVG()}<div class="stack" style="gap:8px">${TONES4.map(([n,mk,ch,py,a,b])=>`<div class="tonerow"><button class="tbtn" data-speak="${ch}" aria-label="Nghe ${py}"><span class="han">${ch}</span><b>${py}</b></button><div><b>${n?'Thanh '+n:'Thanh nhẹ'} · ${a}</b><div class="small muted">${b}</div></div></div>`).join('')}</div></div>
+  <div class="row" style="gap:6px;flex-wrap:wrap">${TONESETS.map(set=>`<button class="btn sm" data-prseq="${set.join('')}"><span class="han">${set.join(' ')}</span></button>`).join('')}</div>`;}
+function prSandhiHTML(idx){return `<div class="sgrid">${idx.map(i=>SANDHI[i]).map(sd=>`<div class="scard"><b>${sd.t}</b><div class="small muted">${sd.r}</div>${sd.ex.map(([zh,w,r])=>`<div class="srow">${speakBtn(zh)}<span class="han" style="font-size:20px">${zh}</span><span class="small"><span class="muted">${w}</span><br><b style="color:var(--jade)">→ ${r}</b></span></div>`).join('')}</div>`).join('')}</div>`;}
+function prRulesHTML(){return `<div class="prrules">${PR_RULES.map(([r,ex])=>`<div class="prrule"><b>${esc(r)}</b><span class="han small">${esc(ex)}</span></div>`).join('')}</div>`;}
+function prNeutralHTML(ws){return `<div class="prneu">${ws.map(([zh,py,vi])=>`<div class="srow">${speakBtn(zh)}<span class="han" style="font-size:20px">${zh}</span><span class="small"><b>${py}</b><br><span class="muted">${vi}</span></span></div>`).join('')}</div>`;}
+/* phần học của từng bài */
+function prBody(n){
+  if(n===1)return `<section class="prsec"><h3><span class="prno">1</span>Bốn thanh và thanh nhẹ</h3>${prToneHTML()}</section>
+    <section class="prsec"><h3><span class="prno">2</span>Hai thanh 3 đi liền nhau</h3><p class="small muted" style="margin:0">Câu đầu tiên của bài: <b class="han">你好</b> viết nǐ hǎo nhưng đọc <b style="color:var(--jade)">ní hǎo</b>.</p>${prSandhiHTML([0])}</section>
+    <section class="prsec"><h3><span class="prno">3</span>Thanh nhẹ trong bài</h3><p class="small muted" style="margin:0">Âm tiết sau đọc ngắn, nhẹ, không đánh dấu.</p>${prNeutralHTML([['你们','nǐmen','các bạn'],['没关系','méi guānxi','không sao đâu']])}</section>`;
+  if(n===2)return `<section class="prsec"><h3><span class="prno">1</span>Vận mẫu (vần)</h3>${prGroupHTML(PR_FIN)}</section>
+    <section class="prsec"><h3><span class="prno">2</span>Quy tắc viết pinyin</h3>${prRulesHTML()}</section>
+    <section class="prsec"><h3><span class="prno">3</span>Thanh nhẹ trong bài</h3>${prNeutralHTML([['谢谢','xièxie','cảm ơn'],['客气','kèqi','khách sáo']])}</section>
+    <section class="prsec"><h3><span class="prno">4</span>Biến điệu của 不 và 一</h3>${prSandhiHTML([1,2])}</section>`;
+  return `<section class="prsec"><h3><span class="prno">1</span>Thanh mẫu (phụ âm đầu)</h3><p class="small muted" style="margin:0">b, f, m, n, l gần giống tiếng Việt. Chú ý cặp <b>không bật hơi / bật hơi</b> (b–p, d–t, g–k, j–q, zh–ch, z–c) và nhóm <b>uốn lưỡi</b> zh ch sh r.</p>${prGroupHTML(PR_INIT)}</section>
+    <section class="prsec"><h3><span class="prno">2</span>Cặp âm người Việt hay nhầm</h3><div class="pairs">${PAIRS.slice(0,6).map(([k,tip,sets])=>`<div class="pcard"><b class="pk">${k}</b><div class="small muted">${tip}</div><div class="row" style="gap:6px">${sets.map(([a,pa,b,pb])=>`${prSnd(a,pa)}${prSnd(b,pb)}`).join('<span class="sep"></span>')}</div></div>`).join('')}</div></section>`;}
+/* bài luyện nghe cuối góc */
+function prQuiz(n){const tq=k=>pick(TONECHARS,k).map(([ch,t,py])=>qmc(`<div class="label">Nghe rồi chọn thanh</div><div class="row" style="justify-content:center">${speakBtn(ch,'Nghe lại')}${slowBtn(ch)}</div>`,['Thanh 1 ¯','Thanh 2 ´','Thanh 3 ˇ','Thanh 4 `'],t-1,`<span class="han" style="font-size:20px">${ch}</span> · <b>${py}</b>`,{audio:ch}));
+  const sq=(idx,k)=>pick(idx.flatMap(i=>SANDHI[i].ex),k).map(([zh,w,r])=>{const opts=[...new Set([r,w,...retoneAll(r)])].slice(0,3);return qmc(`<div class="label">Khi nói, từ này đọc thế nào?</div><div class="big han">${zh}</div><div class="small muted">Pinyin trong sách: ${w}</div>`,opts,0,`Đọc là <b>${r}</b>`,{audio:zh});});
+  const pq=(sets,k)=>pick(sets,k).map(([a,pa,b,pb,lab])=>{const first=Math.random()<.5,ch=first?a:b;return qmc(`<div class="label">Nghe rồi chọn pinyin đúng${lab?' · '+lab:''}</div><div class="row" style="justify-content:center">${speakBtn(ch,'Nghe lại')}${slowBtn(ch)}</div>`,[first?pa:pb,first?pb:pa],0,`<span class="han" style="font-size:20px">${a}</span> ${pa} · <span class="han" style="font-size:20px">${b}</span> ${pb}`,{audio:ch});});
+  if(n===1)return shuffle([...tq(6),...sq([0],2)]);
+  if(n===2)return shuffle([...pq([['安','ān','忙','máng','an / ang'],['您','nín','名','míng','in / ing'],['们','men','冷','lěng','en / eng'],['鱼','yú','衣','yī','ü / i'],['见','jiàn','叫','jiào','ian / iao'],['谢','xiè','下','xià','ie / ia']],4),...sq([1,2],4)]);
+  return shuffle(pq(PAIRS.flatMap(([k,,sets])=>sets.map(s=>[...s,k])),8));}
+function prCornerHTML(n){const L0=PR_LS[n],st=PRS()[n]||{};
+  return `<div class="stack prcorner"><section class="prhero"><div class="prhic han" aria-hidden="true">音</div><div style="min-width:0"><div class="label">Góc phát âm · Bài ${n}/3</div><h2 style="margin:2px 0">${esc(L0.t)}</h2><p class="small" style="margin:0">${esc(L0.intro)}</p>
+      <div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">${st.done?'<span class="chip ok">✓ Đã hoàn thành</span>':'<span class="chip">+10 XP khi hoàn thành</span>'}<a class="btn sm ghost" href="#pron">Bảng phát âm tổng hợp</a><button class="btn sm ghost" id="prskip">Đã biết pinyin, bỏ qua →</button></div></div></section>
+    ${voiceNote()}${prBody(n)}
+    <section class="prsec prquiz"><h3><span class="prno">✓</span>Luyện nghe</h3><p class="small muted" style="margin:0">Đúng từ 70% trở lên là hoàn thành Góc phát âm.</p><div id="prq"><button class="btn pri" id="prgo">Bắt đầu (8 câu)</button></div></section></div>`;}
+function prDone(n,xp){const s=PRS();const first=!s[n]||!s[n].done;s[n]=Object.assign(s[n]||{},{done:1});if(first&&xp){addXp(10);s[n].xp=1;}save();
+  const tab=app.querySelector('[data-prtab]');if(tab){tab.classList.add('done');const d=tab.querySelector('.dot');if(d)d.textContent='✓';}return first;}
+function prMount(n){const el=document.getElementById('stage');if(!el)return;try{stopGames();}catch(e){}try{if(ttsOK)speechSynthesis.cancel();}catch(e){}
+  app.querySelectorAll('.steps [role="tab"]').forEach(b=>b.classList.toggle('on',b.hasAttribute('data-prtab')));
+  el.innerHTML=prCornerHTML(n);
+  el.querySelectorAll('[data-prseq]').forEach(b=>b.onclick=()=>speakQueue([...b.dataset.prseq],.7));
+  el.querySelector('#prskip').onclick=()=>{prDone(n,false);goStage('dialog');};
+  const go=()=>{const box=el.querySelector('#prq');box.className='qbox';runQuiz(box,prQuiz(n),{onFinish:(s,t)=>{touch();const pass=s/t>=.7;let first=false;if(pass)first=prDone(n,true);
+    box.innerHTML=`<div class="panel result"><div class="score">${s}/${t}</div><div>${pass?`Phát âm Bài ${n} đã vững!${first?' <b>+10 XP</b>':''}`:'Chưa đạt 70%. Nghe lại các mục ở trên rồi thử lần nữa nhé.'}</div><div class="row" style="justify-content:center"><button class="btn" id="prre">Làm lượt khác</button>${pass?'<button class="btn pri" data-stage="dialog">Sang Bài khóa →</button>':''}</div></div>`;
+    if(pass)try{sfx('win');confetti(60);}catch(e){}box.querySelector('#prre').onclick=go;}});box.scrollIntoView({behavior:'smooth',block:'start'});};
+  el.querySelector('#prgo').onclick=go;}
+/* tab "Phát âm" giữa Từ mới và Bài khóa cho HSK1 Bài 1–3 */
+(function(){const base=viewLesson;viewLesson=function(n,stage){const r=base.apply(this,arguments);try{if(prOn()&&n>=1&&n<=3){const steps=app.querySelector('.steps');const w=steps&&steps.querySelector('[data-stage="words"]');
+  if(w&&!steps.querySelector('[data-prtab]')){const d=(PRS()[n]||{}).done;w.insertAdjacentHTML('afterend',`<button role="tab" class="prtab${d?' done':''}" data-prtab="${n}"><span class="dot">${d?'✓':'音'}</span>Phát âm<small class="stxp prx">${d?'':'+10'}</small></button>`);
+    steps.querySelector('[data-prtab]').onclick=()=>{try{sfx('tap');}catch(e){}prMount(n);};}
+  if(window.__prOpen===n){window.__prOpen=0;prMount(n);}}}catch(e){console.warn(e);}return r;};})();
+/* xong Từ mới ở Bài 1–3: mời sang Góc phát âm */
+new MutationObserver(()=>{if(!prOn()||!cur||cur.n>3)return;const fd=app.querySelector('.fwdone');if(!fd||fd.querySelector('[data-prgo]'))return;const nx=fd.querySelector('[data-stage="dialog"]');if(!nx)return;
+  nx.classList.remove('pri');nx.insertAdjacentHTML('beforebegin',`<button class="btn pri" data-prgo="1">Góc phát âm →</button>`);fd.querySelector('[data-prgo]').onclick=()=>{prMount(cur.n);window.scrollTo({top:0});};}).observe(app,{childList:true,subtree:true});
+/* Nhập môn chữ Hán ở bước Chữ Hán Bài 1 */
+function prHanziIntroHTML(){const ord=PR_ORDER.map(([r,ch])=>`<button class="prord" data-prord="${esc(ch)}"><span class="han">${esc(ch)}</span><small>${esc(r)}</small></button>`).join('');
+  return `<details class="panel prhz" open><summary><b>Nhập môn chữ Hán</b><span class="small muted"> · 8 nét cơ bản, 7 quy tắc thứ tự nét, bộ thủ, trật tự câu</span></summary>
+   <div class="stack" style="gap:14px;margin-top:10px">
+    <div><div class="prgh">8 nét cơ bản</div><div class="prstk">${PR_STROKES.map(([zh,vi,d,ex],i)=>`<div class="prstroke"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="3" y="3" width="94" height="94" rx="6" fill="none" stroke="var(--grid)" stroke-dasharray="4 4"/><path d="${d}" fill="none" stroke="${['#c3402b','#0d7a63','#3b6fd8','#c87a14','#8e5cc7','#0f8a8a','#a0612e','#c2185b'][i]}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><b><span class="han">${zh}</span> ${vi}</b><small>ví dụ <span class="han">${ex}</span></small></div>`).join('')}</div></div>
+    <div><div class="prgh">7 quy tắc thứ tự nét <span class="small muted">· chạm chữ để xem từng nét</span></div><div class="prords">${ord}</div><div id="prordbox"></div></div>
+    <div class="prgrid2"><div class="prbox"><div class="prgh">Chữ ghép từ bộ thủ</div><div class="small">Phần lớn chữ Hán ghép từ 2–3 bộ phận. <b>Bộ thủ</b> thường gợi nghĩa, phần còn lại gợi cách đọc.</div>
+      <div class="prcomp"><span class="han">你</span> = <span class="han" style="color:#c3402b">亻</span> người + <span class="han">尔</span></div><div class="prcomp"><span class="han">好</span> = <span class="han" style="color:#c3402b">女</span> phụ nữ + <span class="han" style="color:#1d6fb8">子</span> con → mẹ bên con là “tốt”</div><div class="prcomp"><span class="han">妈</span> = <span class="han" style="color:#c3402b">女</span> (nghĩa) + <span class="han" style="color:#1d6fb8">马</span> mǎ (gợi âm mā)</div><div class="small muted">Bấm nút 🧩 Bộ thủ dưới mỗi ô tập viết để xem phân tích.</div></div>
+     <div class="prbox"><div class="prgh">Trật tự câu</div><div class="small">Giống tiếng Việt: <b>Chủ ngữ – Động từ – Tân ngữ</b>.</div><div class="prcomp"><span class="han">我 是 学生。</span> Tôi là học sinh.</div><div class="small">Khác tiếng Việt: <b>từ bổ nghĩa đứng trước</b>.</div><div class="prcomp"><span class="han">中国 人</span> = người Trung Quốc</div><div class="prcomp"><span class="han">我 的 老师</span> = thầy của tôi</div></div></div>
+   </div></details>`;}
+(function(){const base=stHanzi;stHanzi=function(el,l){const r=base.apply(this,arguments);try{if(prOn()&&l&&l.n===1&&!el.querySelector('.prhz')){el.insertAdjacentHTML('afterbegin',prHanziIntroHTML());
+  el.querySelectorAll('[data-prord]').forEach(b=>b.onclick=()=>{const ch=b.dataset.prord,box=el.querySelector('#prordbox');el.querySelectorAll('[data-prord]').forEach(x=>x.classList.toggle('on',x===b));
+    if(!STROKES[ch]){box.innerHTML=`<p class="small muted">Chữ <span class="han">${esc(ch)}</span> chưa có dữ liệu nét.</p>`;return;}box.innerHTML=hzStepsHTML(ch);const s=box.querySelector('.hzst');if(s){hzStepsBind(s,ch);const a=s.querySelector('[data-hza]');if(a)a.click();}});}}catch(e){console.warn(e);}return r;};})();
+/* bảng phát âm tổng hợp: thêm thanh mẫu, vận mẫu, quy tắc viết vào trang Phát âm */
+(function(){const base=viewPron;viewPron=function(){const r=base.apply(this,arguments);try{const st=app.querySelector('.stack');if(st&&!st.querySelector('.prmore')){
+  st.insertAdjacentHTML('beforeend',`<div class="panel stack prmore"><h2>4. Thanh mẫu (phụ âm đầu)</h2>${prGroupHTML(PR_INIT)}</div><div class="panel stack prmore"><h2>5. Vận mẫu (vần)</h2>${prGroupHTML(PR_FIN)}<h3 style="margin:6px 0 0">Quy tắc viết pinyin</h3>${prRulesHTML()}</div>
+    ${LEVEL===1?`<div class="panel prmore"><h2 style="margin-top:0">Góc phát âm theo bài</h2><div class="row" style="gap:8px;flex-wrap:wrap">${[1,2,3].map(n=>`<button class="btn sm${(PRS()[n]||{}).done?'':' pri'}" data-prl="${n}">Bài ${n} · ${esc(PR_LS[n].t)}${(PRS()[n]||{}).done?' ✓':''}</button>`).join('')}</div></div>`:''}`);
+  st.querySelectorAll('[data-prl]').forEach(b=>b.onclick=()=>{window.__prOpen=+b.dataset.prl;location.hash='#l'+b.dataset.prl;});}}catch(e){console.warn(e);}return r;};})();
+if(window.__T)window.__u92={prMount,prQuiz,PRS,prDone};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
