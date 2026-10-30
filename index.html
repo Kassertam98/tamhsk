@@ -3275,6 +3275,64 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .fess{position:absolute;top:6px;left:6px;font-style:normal;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:99px;background:#c87a14;color:#fff}
 .btn.warn{background:color-mix(in srgb,#e5383b 12%,var(--card));color:#c3402b;border-color:color-mix(in srgb,#e5383b 40%,var(--line))}
 @media (prefers-reduced-motion:reduce){.hallsvg .hfnew,.roomsvg .hfnew{animation:none}}
+
+/* 5.41 Chữ Hán: từng nét, bộ thủ, chữ dự phòng nằm gọn trong ô */
+.mizi .hw>.han{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:62cqw!important;line-height:1!important;text-align:center;margin:0}
+.mizi .hw{container-type:size}
+.hzx{margin-top:-2px}
+.hzxp{width:100%;text-align:left;border-top:1px dashed var(--line);padding-top:10px;margin-top:4px}
+.hzst,.hzcp{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;align-items:start}
+.hzsv,.hzcv{width:150px}
+.hzs{width:100%;height:auto;aspect-ratio:1;display:block;border:1.5px solid var(--line);border-radius:6px;background:var(--card)}
+.hzsi{display:grid;gap:6px}
+.hzsn{font-size:15px}.hzsn b{color:var(--seal);font-size:18px}
+.hzsk{font-size:17px}.hzsk .han{font-size:22px;color:var(--jade);margin-right:4px}
+.hzsr{color:var(--muted)}
+.hzchips{display:flex;flex-wrap:wrap;gap:4px}
+.hzch{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:12.5px;cursor:pointer;color:var(--ink)}
+.hzch.on{background:var(--jade);border-color:var(--jade);color:#fff}
+.hzci{display:grid;gap:8px;min-width:0}
+.hzcl{display:grid;gap:6px}
+.hzcr{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 10%,var(--card))}
+.hzcg{font-size:30px;line-height:1;color:var(--c);min-width:34px;text-align:center}
+.hzcr b{color:var(--c)}
+.hzrole{display:inline-block;font-style:normal;font-size:11.5px;margin-left:6px;padding:1px 7px;border-radius:99px;background:var(--c);color:#fff}
+.hztyp{padding:8px 10px;border-radius:10px;background:var(--paper)}
+.hzcp .hzs path{transition:fill .3s}
+@media (max-width:560px){.hzst,.hzcp{grid-template-columns:1fr}.hzsv,.hzcv{width:160px;margin:0 auto}}
+.wgrid .wcard.hzopen{grid-column:1/-1}
+.hzidc{width:22px;height:22px;vertical-align:-6px;margin-right:4px}
+.hzkc{display:flex;align-items:center}
+
+/* 5.41 Ngữ pháp */
+.gfbig .gblocks{gap:8px;margin-top:8px}
+.gfbig .gb{padding:10px 14px;border-radius:12px;min-width:56px;border-width:2px}
+.gfbig .gb b{font-size:24px}.gfbig .gb b.han{font-size:30px}.gfbig .gb small{font-size:12px}
+.gan2{display:grid;gap:12px}
+.gan1{padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.gann{font-size:12px;font-weight:700;color:var(--seal);text-transform:uppercase;letter-spacing:.04em}
+.gpyb .gb{gap:1px;min-width:52px;padding:7px 12px}
+.gpyb .gb b.han{font-size:24px}
+.gpyb .gb .gpy{font-style:normal;font-size:13px;color:var(--jade);font-weight:600;white-space:nowrap}
+.gvi{font-size:15px;color:var(--ink);margin-top:8px;padding-top:6px;border-top:1px dashed var(--line)}
+.gmore summary{cursor:pointer;color:var(--seal);font-weight:600}
+.gswvi{margin-top:4px;font-size:14px;line-height:1.5}
+.gsg{display:inline-block;padding:1px 6px;border-radius:8px;background:var(--paper);margin:2px 0}
+.gsg .han{color:var(--seal);font-weight:600}
+.gsl{align-items:flex-start}
+.gsl .gslt{display:grid;gap:1px;min-width:0}
+.gsl .gslt .han{font-size:17px}
+.gsl .dpy{font-size:12.5px}.gsl .dvi{font-size:13px}
+.gpanel.gokfx{animation:gokfx .7s ease-out}
+.gpanel.gnofx{animation:gnofx .5s ease-out}
+@keyframes gokfx{0%{box-shadow:0 0 0 0 rgba(46,154,92,.0)}20%{box-shadow:0 0 0 6px rgba(46,154,92,.45)}100%{box-shadow:0 0 0 0 rgba(46,154,92,0)}}
+@keyframes gnofx{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+/* 5.41 Từ mới */
+.fwbig.fwlift{filter:drop-shadow(0 14px 18px rgba(0,0,0,.35))}
+.fwbig.fwlift::after{content:'⬆ Thả để đặt lên bàn';position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);font-size:13px;font-weight:700;color:var(--jade);white-space:nowrap}
+.fwtable .fwc.fwfly{pointer-events:none;z-index:5}
+.fwpet img.bao{transition:transform .5s,filter .5s}
 </style>
 </head><body>
 
@@ -3300,12 +3358,12 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=a2ca72ab"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='08d99e19';
+document.write('<script src="packs/hsk'+L+'.js?v=08d99e19"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a2ca72ab','strokes-file');A('packs/dict.js?v=a2ca72ab','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=08d99e19','strokes-file');A('packs/dict.js?v=08d99e19','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -3685,16 +3743,15 @@ function stGrammar(el,l){
     const seen=l.texts.flatMap(t=>t.d.map(d=>[d,t])).filter(([d])=>g.kw.some(k=>d[1].includes(k))).slice(0,4);
     b.innerHTML=`<div class="stack">
       <div class="gteach">${castSVG('laoshi',52)}<div class="gtb"><div class="bname">Cô Vương</div><div class="gtbin">${esc(g.tip)}</div><details><summary class="small">Giải thích đầy đủ</summary><p class="small" style="margin:6px 0 0">${esc(g.e)}</p></details></div></div>
-      <section><div class="label">Công thức</div>${gBlocks(g.fb)}</section>
-      ${g.an?`<section class="gan"><div class="row" style="justify-content:space-between"><div class="label">Mổ xẻ một câu</div>${speakBtn(g.an.map(x=>x[0]).join(''))}</div>${gBlocks(g.an)}<div class="dpy">${esc(sentPy(g.an.map(x=>x[0]).join('')))}</div><div class="dvi">${esc(g.anvi)}</div></section>`:''}
-      <section><div class="label">Câu ví dụ</div><div class="stack" style="gap:8px;margin-top:6px">${g.ex.map(x=>`<div class="ex">${speakBtn(join(x[0]))}<div style="min-width:0"><div class="zh han">${hlKw(join(x[0]),g.kw)}</div><div class="dpy">${esc(sentPy(x[0]))}</div><div class="dvi">${esc(x[1])}</div></div></div>`).join('')}</div></section>
-      ${g.sw?`<section class="gsw"><div class="row" style="justify-content:space-between"><div><div class="label">Máy đổi câu</div><div class="small muted">Chạm ô có ↻ để thay từ, khung ngữ pháp giữ nguyên.</div></div><button class="btn sm" id="swr">🎲 Ngẫu nhiên</button></div><div class="swrow" id="swrow"></div><div class="row"><span class="dpy" id="swpy"></span>${speakBtn('','Nghe câu')}</div></section>`:''}
-      ${seen.length?`<section><div class="label">Gặp trong bài khóa</div><div class="gseen">${seen.map(([d,t])=>{const id=d[0]==='A'?t.p[0]:t.p[1];return `<button class="gsl" data-speak="${esc(d[1])}">${castSVG(id,30)}<span class="han">${hlKw(d[1],g.kw)}</span></button>`;}).join('')}</div></section>`:''}
+      <section class="gfbig"><div class="label">Công thức</div>${gBlocks(g.fb)}</section>
+      ${gAnEx(g)}
+      ${g.sw?`<section class="gsw"><div class="row" style="justify-content:space-between"><div><div class="label">Thử một câu với Máy đổi câu</div><div class="small muted">Chạm ô có ↻ để thay từ, khung ngữ pháp giữ nguyên.</div></div><button class="btn sm" id="swr">🎲 Ngẫu nhiên</button></div><div class="swrow" id="swrow"></div><div class="row"><span class="dpy dpy2" id="swpy"></span>${speakBtn('','Nghe câu')}</div><div class="gswvi" id="swvi"></div></section>`:''}
+      ${seen.length?`<section><div class="label">Gặp trong bài khóa</div><div class="gseen">${seen.map(([d,t])=>{const id=d[0]==='A'?t.p[0]:t.p[1];return `<button class="gsl" data-speak="${esc(d[1])}">${castSVG(id,30)}<span class="gslt"><span class="han">${hlKw(d[1],g.kw)}</span><span class="dpy">${esc(sentPy(d[1]))}</span>${d[2]?`<span class="dvi">${esc(d[2])}</span>`:''}</span></button>`;}).join('')}</div></section>`:''}
       <div class="row"><button class="btn pri" id="gtry">Bắt đầu thử →</button></div></div>`;
     if(g.sw){const cur=g.sw.t.map(()=>0);const row=b.querySelector('#swrow'),py=b.querySelector('#swpy'),sp=b.querySelector('.gsw [data-speak]');
       const tok=j=>j in g.sw.s&&cur[j]>0?g.sw.s[j][cur[j]-1]:g.sw.t[j];
       const sent=()=>g.sw.t.map((_,j)=>tok(j)).join('');
-      const paint=()=>{row.innerHTML=g.sw.t.map((_,j)=>{const can=j in g.sw.s;const isk=g.kw.some(k=>g.sw.t[j].includes(k));return `<button class="swt${can?' can':''}${isk?' kw':''}" data-j="${j}" ${can?'':'disabled'}><span class="han">${esc(tok(j))}</span>${can?'<i>↻</i>':''}</button>`;}).join('');const s=sent();py.textContent=sentPy(s);sp.dataset.speak=s;};
+      const paint=()=>{row.innerHTML=g.sw.t.map((_,j)=>{const can=j in g.sw.s;const isk=g.kw.some(k=>g.sw.t[j].includes(k));return `<button class="swt${can?' can':''}${isk?' kw':''}" data-j="${j}" ${can?'':'disabled'}><span class="han">${esc(tok(j))}</span>${can?'<i>↻</i>':''}</button>`;}).join('');const s=sent();py.textContent=sentPy(s);sp.dataset.speak=s;const vi=b.querySelector('#swvi');if(vi)vi.innerHTML=gSwVi(g,g.sw.t.map((_,j)=>tok(j)));};
       row.onclick=e=>{const x=e.target.closest('.swt.can');if(!x)return;const j=+x.dataset.j;cur[j]=(cur[j]+1)%(g.sw.s[j].length+1);paint();speak(sent());};
       b.querySelector('#swr').onclick=()=>{Object.keys(g.sw.s).forEach(j=>{cur[j]=Math.floor(Math.random()*(g.sw.s[j].length+1));});paint();speak(sent());};
       paint();}
@@ -3715,7 +3772,7 @@ function stGrammar(el,l){
   const drawThu=(b,g)=>{
     const qs=gQs(g);
     b.innerHTML=`<div id="gq"></div>`;
-    runQuiz(b.querySelector('#gq'),qs,{requeue:true,onFinish:(s,t,wrong)=>{
+    runQuiz(b.querySelector('#gq'),qs,{requeue:true,onAnswer:ok=>gAnswerFx(ok),onFinish:(s,t,wrong)=>{
       const miss=wrong.length,st=miss===0?3:miss===1?2:1;const k=gkey(l.n,gi),G0=GS()[k];const first=!G0||!G0.st;
       qTick('gram');if(st===3){sfx('win');confetti(80);}GS()[k]=Object.assign(G0||{box:1,due:addDays(today(),1),miss:0},{st:Math.max(st,(G0&&G0.st)||0)});if(miss)GS()[k].miss=(GS()[k].miss||0)+miss;
       bump(t);touch();save();
@@ -13584,7 +13641,7 @@ const wOutline=()=>wDark()?'#5f716a':'#b4c0ba';
   if(el&&!STROKES[ch]&&window.HSK_PACKS&&!window.HSK_PACKS.strokes&&!el.dataset.wwait){el.dataset.wwait='1';const on=ev=>{if(ev.detail!=='strokes')return;removeEventListener('hsk-pack',on);if(el.isConnected&&!el.querySelector('svg path'))try{base(el,ch,o);}catch(e){}};addEventListener('hsk-pack',on);}
   const w=base(el,ch,o);
   /* lưới an toàn: 6 giây sau ô vẫn trống thì hiện chữ in */
-  if(el)setTimeout(()=>{try{if(el.isConnected&&!el.querySelector('path')&&!el.querySelector('.han'))el.insertAdjacentHTML('beforeend',`<div class="han wfb" style="font-size:110px;line-height:170px;text-align:center;color:${wOutline()}">${esc(ch)}</div>`);}catch(e){}},6000);
+  if(el)setTimeout(()=>{try{if(el.isConnected&&!el.querySelector('svg')&&!el.querySelector('.han'))el.insertAdjacentHTML('beforeend',`<div class="han wfb" style="color:${wOutline()}">${esc(ch)}</div>`);}catch(e){}},6000);
   return w;};})();
 
 /* ---------- 2. Giới thiệu: viết chữ 人 có mũi tên từng nét ---------- */
@@ -13639,9 +13696,9 @@ function stWords(el,l,opt){
           <div class="fwface fwbackf">${back(w)}</div></div></div>
         <div class="fwtimer" id="fwtimer" hidden><span class="fwtl">Thẻ tự ngửa lên bàn sau <b id="fwsec">8s</b></span><span class="fwtb"><i id="fwtime"></i></span></div></div>
       <div class="row fwctl" style="justify-content:center">${speakBtn(w.zh)}${favBtn(w)}${dictLink(w.zh)}<button class="btn sm" id="fwagain" disabled>🔊 Nghe lại</button><button class="btn sm" id="fwhold" disabled>⏸ Giữ thẻ</button><button class="btn sm ghost" id="fwmiss" disabled>🔁 Chưa nhớ</button><button class="btn sm pri" id="fwnext" disabled>Đặt lên bàn ✓</button></div>
-      <p class="small muted fwguide">Chạm thẻ để lật: Tiểu Long Hổ đọc <b>tiếng Trung</b> rồi <b>nghĩa tiếng Việt</b>. Khoảng 8 giây sau thẻ tự ngửa lên bàn, không cần vuốt. Chạm thẻ trên bàn để xem lại.<span class="kbnote"> Bàn phím: Space lật / đặt thẻ.</span></p></div>${table()}`;
+      <p class="small muted fwguide">Chạm thẻ để lật: Tiểu Long Hổ đọc <b>tiếng Trung</b> rồi <b>nghĩa tiếng Việt</b>. Khoảng 8 giây sau thẻ tự ngửa lên bàn, hoặc <b>vuốt thẻ lên</b> để đặt ngay. Chạm thẻ trên bàn để xem lại.<span class="kbnote"> Bàn phím: Space lật / đặt thẻ.</span></p></div>${table()}`;
     const big=el.querySelector('#fwbig');requestAnimationFrame(()=>big.classList.add('in'));
-    big.onclick=()=>{if(!open)flip();};big.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open?lay():flip();}};
+    big.onclick=()=>{if(!open)flip();};big.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open?lay():flip();}};fwSwipe(big,()=>open&&!busy,()=>lay());
     el.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{if(busy)return;const k=+b.dataset.k;if(k===i&&!open){flip();return;}stopT();open=false;i=k;try{sfx('tap');}catch(e){}draw();flip();});
     el.querySelector('#fwauto').onchange=e=>{fwAuto=e.target.checked;try{localStorage.setItem('hsk-fwauto',fwAuto?'1':'0');}catch(_){}if(fwAuto&&!open)flip();};
     el.querySelector('#fwagain').onclick=()=>talk(ws[i]);
@@ -13663,7 +13720,8 @@ function stWords(el,l,opt){
       big.style.transform=`translate(${r2.left+r2.width/2-(r1.left+r1.width/2)}px,${r2.top+r2.height/2-(r1.top+r1.height/2)}px) scale(${Math.max(.1,r2.width/r1.width)})`;big.style.opacity='.4';
       try{sfx(ok?'ok':'no');}catch(e){}timers.push(setTimeout(()=>{dst.classList.add('up','land');dst.classList.toggle('no',!ok);fin();},600));}
     else fin();}
-  function finish(){if(finished)return;finished=true;stopT();markStage(l.n,'words');if(isGuest())setTimeout(()=>guestPrompt('lesson',{n:l.n}),2200);try{cheer(2);}catch(e){}
+  function finish(){if(finished)return;finished=true;stopT();markStage(l.n,'words');fwAbsorb(el,finish2);}
+  function finish2(){if(isGuest())setTimeout(()=>guestPrompt('lesson',{n:l.n}),2200);try{cheer(2);}catch(e){}
     const nOk=N-miss.size;el.innerHTML=`<div class="panel result fcdone fwdone"><div class="fwpet big">${baoSVG('cheer',96)}</div><div class="score">${N}</div><div>Tiểu Long Hổ đã cùng bạn lật đủ <b>${N} thẻ</b> của Bài ${l.n}: nhớ ngay ${nOk}, cần ôn thêm ${miss.size}. Các từ này đã vào lịch ôn tập ngắt quãng.</div>
       <div class="fwtable done">${ws.map((w,k)=>`<button class="fwc up${miss.has(k)?' no':''}" data-k="${k}"><span class="fwci"><span class="fwcb"><b class="han">${esc(w.zh)}</b><small>${esc(w.py)}</small><em>${esc(vi1(w).slice(0,14))}</em></span></span></button>`).join('')}</div>
       <div class="row" style="justify-content:center"><button class="btn" id="fcredo">↻ Lật lại cả bộ</button><button class="btn pri" data-stage="dialog">Sang Bài khóa →</button></div></div>${table()}`;
@@ -15969,6 +16027,137 @@ function furnBuy(id){const h=HS(),f=FURN[id];if(!f||(h.furn[id]||0)>=5)return;co
   gardenToast(`🛋 <b>${esc(f[0])}</b> đã được đặt vào ${esc(s[2]===0?'phòng khách':ROOM_NAMES[s[2]%ROOM_NAMES.length].toLowerCase())} · ✨ +${f[2]}`);
   if(location.hash==='#house')viewHouse();else location.hash='#house';window.scrollTo({top:0});}
 if(window.__T)window.__u86={hStat,hPlace,furnBuy,HALL_POS,FURN_ESS,spots:()=>HALL_SPOTS.map(x=>x[0]),edit:v=>{houseEdit=!!v;}};
+
+
+/* ===== 5.41 Chữ Hán: hướng dẫn từng nét + phân tích bộ thủ/thành phần, sửa chữ dự phòng lệch ô ===== */
+const COMP_VI={'亻':['Nhân','người'],'人':['Nhân','người'],'入':['Nhập','vào'],'八':['Bát','tám; chia ra'],'冂':['Quynh','vùng biên'],'冖':['Mịch','trùm, che'],'冫':['Băng','băng giá'],'几':['Kỷ','cái bàn nhỏ'],'凵':['Khảm','hố, hộp mở'],'刀':['Đao','dao'],'刂':['Đao','dao'],'力':['Lực','sức mạnh'],'勹':['Bao','bọc lấy'],'匕':['Chủy','cái thìa'],'匚':['Phương','cái hộp'],'十':['Thập','mười'],'卜':['Bốc','bói'],'卩':['Tiết','đốt tre; dấu'],'厂':['Hán','sườn núi, mái che'],'厶':['Khư','riêng tư'],'又':['Hựu','lại; bàn tay'],'口':['Khẩu','miệng'],'囗':['Vi','vây quanh'],'土':['Thổ','đất'],'士':['Sĩ','kẻ sĩ'],'夂':['Truy','đi theo sau'],'夕':['Tịch','buổi chiều tối'],'大':['Đại','to lớn'],'女':['Nữ','phụ nữ'],'子':['Tử','con'],'宀':['Miên','mái nhà'],'寸':['Thốn','tấc'],'小':['Tiểu','nhỏ'],'⺌':['Tiểu','nhỏ'],'尢':['Uông','què'],'尸':['Thi','thân người; mái'],'山':['Sơn','núi'],'巛':['Xuyên','sông'],'川':['Xuyên','sông'],'工':['Công','công việc'],'己':['Kỷ','bản thân'],'巾':['Cân','khăn'],'干':['Can','khô; can thiệp'],'幺':['Yêu','nhỏ bé'],'广':['Nghiễm','mái nhà rộng'],'廴':['Dẫn','đi xa'],'廾':['Củng','chắp tay'],'弋':['Dặc','bắn tên'],'弓':['Cung','cái cung'],'彐':['Kệ','đầu heo'],'彡':['Sam','lông, nét vẽ'],'彳':['Xích','bước chân'],'心':['Tâm','tim, tâm trạng'],'忄':['Tâm','tim, tâm trạng'],'⺗':['Tâm','tim'],'戈':['Qua','cây giáo'],'户':['Hộ','cửa, nhà'],'手':['Thủ','tay'],'扌':['Thủ','tay'],'支':['Chi','nhánh'],'攵':['Phộc','đánh nhẹ; hành động'],'文':['Văn','chữ, văn'],'斗':['Đẩu','cái đấu'],'斤':['Cân','cái rìu'],'方':['Phương','vuông; phương hướng'],'无':['Vô','không'],'日':['Nhật','mặt trời, ngày'],'曰':['Viết','nói'],'月':['Nguyệt','mặt trăng; thịt'],'木':['Mộc','cây, gỗ'],'欠':['Khiếm','há miệng, thiếu'],'止':['Chỉ','dừng'],'歹':['Đãi','xấu, chết'],'殳':['Thù','binh khí'],'毋':['Vô','chớ'],'比':['Tỉ','so sánh'],'毛':['Mao','lông'],'氏':['Thị','họ'],'气':['Khí','hơi'],'水':['Thủy','nước'],'氵':['Thủy','nước'],'火':['Hỏa','lửa'],'灬':['Hỏa','lửa'],'爪':['Trảo','móng vuốt'],'爫':['Trảo','móng vuốt'],'父':['Phụ','cha'],'爻':['Hào','hào trong quẻ'],'片':['Phiến','mảnh'],'牙':['Nha','răng'],'牛':['Ngưu','trâu bò'],'牜':['Ngưu','trâu bò'],'犬':['Khuyển','chó'],'犭':['Khuyển','chó'],'玉':['Ngọc','ngọc'],'王':['Vương','vua; ngọc'],'⺩':['Ngọc','ngọc'],'瓜':['Qua','dưa'],'瓦':['Ngõa','ngói'],'甘':['Cam','ngọt'],'生':['Sinh','sinh ra'],'用':['Dụng','dùng'],'田':['Điền','ruộng'],'疋':['Thất','tấm vải'],'疒':['Nạch','bệnh'],'癶':['Bát','dang chân'],'白':['Bạch','trắng'],'皮':['Bì','da'],'皿':['Mãnh','bát đĩa'],'目':['Mục','mắt'],'矛':['Mâu','cây giáo'],'矢':['Thỉ','mũi tên'],'石':['Thạch','đá'],'示':['Thị','thần, cúng tế'],'礻':['Thị','thần, cúng tế'],'禾':['Hòa','cây lúa'],'穴':['Huyệt','hang'],'立':['Lập','đứng'],'竹':['Trúc','tre'],'⺮':['Trúc','tre'],'米':['Mễ','gạo'],'糸':['Mịch','sợi tơ'],'纟':['Mịch','sợi tơ'],'缶':['Phẫu','đồ sành'],'网':['Võng','lưới'],'罒':['Võng','lưới'],'羊':['Dương','dê cừu'],'⺶':['Dương','dê cừu'],'羽':['Vũ','lông chim'],'老':['Lão','già'],'耂':['Lão','già'],'而':['Nhi','mà; râu'],'耳':['Nhĩ','tai'],'聿':['Duật','cây bút'],'肉':['Nhục','thịt'],'臣':['Thần','bề tôi'],'自':['Tự','tự mình; mũi'],'至':['Chí','đến'],'臼':['Cữu','cái cối'],'舌':['Thiệt','lưỡi'],'舟':['Chu','thuyền'],'艮':['Cấn','dừng; quẻ Cấn'],'色':['Sắc','màu sắc'],'艹':['Thảo','cỏ'],'虍':['Hô','vằn hổ'],'虫':['Trùng','sâu bọ'],'血':['Huyết','máu'],'行':['Hành','đi'],'衣':['Y','áo'],'衤':['Y','áo'],'覀':['Á','che đậy'],'见':['Kiến','nhìn thấy'],'角':['Giác','sừng; góc'],'言':['Ngôn','lời nói'],'讠':['Ngôn','lời nói'],'谷':['Cốc','thung lũng'],'豆':['Đậu','hạt đậu'],'豕':['Thỉ','con heo'],'贝':['Bối','vỏ sò; tiền'],'走':['Tẩu','chạy'],'足':['Túc','chân'],'⻊':['Túc','chân'],'身':['Thân','thân mình'],'车':['Xa','xe'],'辛':['Tân','cay; vất vả'],'辰':['Thần','giờ thìn'],'辶':['Sước','đi, bước'],'⻌':['Sước','đi, bước'],'邑':['Ấp','ấp, thành'],'阝':['Phụ/Ấp','gò đất (trái) / thành ấp (phải)'],'酉':['Dậu','bình rượu'],'里':['Lý','làng; dặm'],'金':['Kim','kim loại, vàng'],'钅':['Kim','kim loại'],'长':['Trường','dài'],'门':['Môn','cửa'],'隹':['Chuy','chim'],'雨':['Vũ','mưa'],'⻗':['Vũ','mưa'],'青':['Thanh','màu xanh'],'页':['Hiệt','đầu; trang'],'风':['Phong','gió'],'飞':['Phi','bay'],'食':['Thực','ăn'],'饣':['Thực','ăn'],'马':['Mã','ngựa'],'鸟':['Điểu','chim'],'鱼':['Ngư','cá'],'黑':['Hắc','đen'],'一':['Nhất','một'],'丨':['Cổn','sổ thẳng'],'丶':['Chủ','chấm'],'丿':['Phiệt','phẩy'],'乙':['Ất','cong, móc'],'亅':['Quyết','móc'],'二':['Nhị','hai'],'亠':['Đầu','nắp'],'儿':['Nhi','trẻ con'],'也':['Dã','cũng'],'云':['Vân','mây'],'五':['Ngũ','năm'],'井':['Tỉnh','giếng'],'亚':['Á','kém'],'今':['Kim','nay'],'仑':['Luân','suy nghĩ'],'令':['Lệnh','ra lệnh'],'以':['Dĩ','lấy'],'全':['Toàn','trọn vẹn'],'公':['Công','chung'],'关':['Quan','đóng, cửa ải'],'其':['Kỳ','của nó'],'卜':['Bốc','bói'],'占':['Chiếm','chiếm'],'古':['Cổ','xưa'],'可':['Khả','có thể'],'台':['Đài','đài'],'司':['Tư','quản'],'各':['Các','mỗi'],'合':['Hợp','hợp'],'同':['Đồng','cùng'],'吉':['Cát','tốt lành'],'向':['Hướng','hướng'],'周':['Chu','vòng'],'员':['Viên','nhân viên'],'回':['Hồi','trở về'],'圭':['Khuê','ngọc khuê'],'央':['Ương','giữa'],'失':['Thất','mất'],'夫':['Phu','chồng; người'],'太':['Thái','quá'],'央':['Ương','giữa'],'奇':['Kỳ','lạ'],'定':['Định','định'],'寺':['Tự','chùa'],'少':['Thiểu','ít'],'尚':['Thượng','cao'],'居':['Cư','ở'],'巴':['Ba','mong'],'市':['Thị','chợ'],'平':['Bình','bằng'],'年':['Niên','năm'],'幸':['Hạnh','may'],'廷':['Đình','triều đình'],'建':['Kiến','xây'],'开':['Khai','mở'],'弗':['Phất','không'],'录':['Lục','ghi'],'当':['Đương','đương'],'戋':['Tiên','nhỏ'],'成':['Thành','thành'],'我':['Ngã','tôi'],'才':['Tài','tài'],'斥':['Xích','bác bỏ'],'旦':['Đán','sáng sớm'],'旧':['Cựu','cũ'],'早':['Tảo','sớm'],'昔':['Tích','xưa'],'昌':['Xương','thịnh'],'易':['Dịch','dễ; đổi'],'朋':['Bằng','bạn'],'未':['Vị','chưa'],'末':['Mạt','cuối'],'本':['Bản','gốc'],'术':['Thuật','thuật'],'东':['Đông','phía đông'],'果':['Quả','quả'],'查':['Tra','tra'],'每':['Mỗi','mỗi'],'母':['Mẫu','mẹ'],'民':['Dân','dân'],'永':['Vĩnh','mãi'],'求':['Cầu','cầu xin'],'氐':['Để','gốc'],'申':['Thân','trình bày'],'由':['Do','do'],'甲':['Giáp','giáp'],'直':['Trực','thẳng'],'相':['Tương','nhau'],'真':['Chân','thật'],'者':['Giả','người'],'肖':['Tiếu','giống'],'良':['Lương','tốt'],'艮':['Cấn','cứng'],'苗':['Miêu','mầm'],'莫':['Mạc','chớ'],'虽':['Tuy','tuy'],'西':['Tây','phía tây'],'要':['Yếu','cần'],'身':['Thân','thân'],'辰':['Thần','thìn'],'重':['Trọng','nặng'],'非':['Phi','không'],'音':['Âm','âm thanh'],'首':['Thủ','đầu'],'香':['Hương','thơm'],'骨':['Cốt','xương'],'高':['Cao','cao'],'龙':['Long','rồng'],'齐':['Tề','đều'],'丁':['Đinh','đinh'],'巳':['Tị','tị'],'且':['Thả','vả lại'],'世':['Thế','đời'],'乍':['Sạ','bỗng'],'乎':['Hồ','ư'],'乐':['Lạc','vui'],'亡':['Vong','mất'],'交':['Giao','giao'],'京':['Kinh','kinh đô'],'兑':['Đoài','đổi'],'兄':['Huynh','anh'],'免':['Miễn','miễn'],'典':['Điển','sách'],'册':['Sách','sách'],'冬':['Đông','mùa đông'],'凡':['Phàm','phàm'],'分':['Phân','chia'],'包':['Bao','bọc'],'化':['Hóa','biến đổi'],'北':['Bắc','phía bắc'],'区':['Khu','khu'],'半':['Bán','nửa'],'卖':['Mại','bán'],'去':['Khứ','đi'],'反':['Phản','ngược'],'发':['Phát','phát'],'叔':['Thúc','chú'],'史':['Sử','sử'],'只':['Chỉ','chỉ'],'召':['Triệu','gọi'],'兆':['Triệu','điềm'],'呆':['Ngốc','ngốc'],'咸':['Hàm','mặn'],'圣':['Thánh','thánh'],'夬':['Quyết','quyết'],'夭':['Yểu','non'],'头':['Đầu','đầu'],'奂':['Hoán','rực rỡ'],'妥':['Thỏa','ổn thỏa'],'孝':['Hiếu','hiếu'],'宗':['Tông','tổ tông'],'官':['Quan','quan'],'害':['Hại','hại'],'尞':['Liệu','đốt'],'尤':['Vưu','rất'],'就':['Tựu','đến'],'山':['Sơn','núi'],'差':['Sai','khác'],'带':['Đái','mang'],'幼':['Ấu','non'],'庄':['Trang','trang trại'],'式':['Thức','kiểu'],'张':['Trương','mở'],'往':['Vãng','đi'],'志':['Chí','chí'],'思':['Tư','nghĩ'],'息':['Tức','nghỉ'],'感':['Cảm','cảm'],'或':['Hoặc','hoặc'],'戌':['Tuất','tuất'],'房':['Phòng','phòng'],'所':['Sở','nơi'],'扁':['Biển','dẹt'],'折':['Chiết','gãy'],'故':['Cố','cũ'],'旁':['Bàng','bên'],'族':['Tộc','tộc'],'星':['Tinh','sao'],'昷':['Ôn','ấm'],'曷':['Hạt','sao'],'曾':['Tằng','từng'],'有':['Hữu','có'],'朱':['Chu','đỏ'],'李':['Lý','mận'],'杨':['Dương','dương'],'林':['Lâm','rừng'],'柬':['Giản','chọn'],'桼':['Tất','sơn'],'欠':['Khiếm','thiếu'],'此':['Thử','này'],'步':['Bộ','bước'],'武':['Vũ','võ'],'毕':['Tất','xong'],'氐':['Để','gốc'],'永':['Vĩnh','mãi'],'汤':['Thang','canh'],'冓':['Cấu','kết'],'炎':['Viêm','nóng'],'爰':['Viên','bèn'],'犮':['Bạt','nhổ'],'畐':['Phúc','đầy'],'畏':['Úy','sợ'],'疌':['Tiệp','nhanh'],'白':['Bạch','trắng'],'皃':['Mạo','dáng'],'盾':['Thuẫn','khiên'],'矞':['Duật','khoan'],'票':['Phiếu','vé'],'禺':['Ngung','khỉ'],'秀':['Tú','đẹp'],'竟':['Cánh','rốt cuộc'],'章':['Chương','chương'],'童':['Đồng','trẻ'],'立':['Lập','đứng'],'羊':['Dương','dê'],'羽':['Vũ','lông'],'习':['Tập','học'],'肖':['Tiếu','giống'],'能':['Năng','có thể'],'至':['Chí','đến'],'舍':['Xá','nhà'],'艮':['Cấn','dừng'],'若':['Nhược','nếu'],'英':['Anh','hoa'],'虎':['Hổ','hổ'],'见':['Kiến','thấy'],'角':['Giác','sừng'],'豆':['Đậu','đậu'],'贵':['Quý','quý'],'赤':['Xích','đỏ'],'辟':['Tích','mở'],'里':['Lý','dặm'],'釆':['Biện','phân biệt'],'青':['Thanh','xanh'],'面':['Diện','mặt'],'韦':['Vi','da'],'页':['Hiệt','trang'],'颀':['Kỳ','cao'],'鬼':['Quỷ','ma'],'鹿':['Lộc','hươu'],'黄':['Hoàng','vàng'],'齿':['Xỉ','răng']};
+const IDC_VI={'⿰':'trái – phải','⿱':'trên – dưới','⿲':'ba phần trái – giữa – phải','⿳':'ba phần trên – giữa – dưới','⿴':'bao quanh toàn bộ','⿵':'bao trên, hở dưới','⿶':'bao dưới, hở trên','⿷':'bao trái, hở phải','⿸':'bao góc trên trái','⿹':'bao góc trên phải','⿺':'bao góc dưới trái','⿻':'chồng lên nhau'};
+const IDC_BOX={'⿰':[[0,0,.5,1],[.5,0,.5,1]],'⿱':[[0,0,1,.5],[0,.5,1,.5]],'⿲':[[0,0,.33,1],[.33,0,.34,1],[.67,0,.33,1]],'⿳':[[0,0,1,.33],[0,.33,1,.34],[0,.67,1,.33]],'⿴':[[0,0,1,1],[.3,.3,.4,.4]],'⿵':[[0,0,1,1],[.3,.45,.4,.55]],'⿶':[[0,0,1,1],[.3,0,.4,.55]],'⿷':[[0,0,1,1],[.45,.3,.55,.4]],'⿸':[[0,0,1,1],[.4,.4,.6,.6]],'⿹':[[0,0,1,1],[0,.4,.6,.6]],'⿺':[[0,0,1,1],[.4,0,.6,.6]],'⿻':[[0,0,1,1],[.25,.25,.5,.5]]};
+const idcSVG=(idc,cols)=>{const B=IDC_BOX[idc];if(!B)return '';return `<svg viewBox="0 0 40 40" class="hzidc" aria-hidden="true">${B.map(([x,y,w,h],i)=>`<rect x="${x*36+2}" y="${y*36+2}" width="${w*36}" height="${h*36}" rx="3" fill="${cols?cols(i):'#999'}" fill-opacity="${i&&B[0][2]===1&&B[0][3]===1?'.9':'.35'}" stroke="${cols?cols(i):'#999'}" stroke-width="1.5"/>`).join('')}</svg>`;};
+const COMP_COL=['#c3402b','#1d6fb8','#0d7a63','#b8860b','#7b3fa0','#d2691e'];
+const STROKE_VI={'横':'Ngang','竖':'Sổ','撇':'Phẩy','捺':'Mác','点':'Chấm','提':'Hất','折':'gập','钩':'móc','弯':'cong'};
+let compReq=null;
+function compLoad(){if(window.COMP&&Object.keys(window.COMP).length>50)return Promise.resolve(window.COMP);if(compReq)return compReq;
+  compReq=new Promise(res=>{const s=document.createElement('script');s.src='packs/comp.js?v='+(window.HSK_PACK_VER||'1');s.async=true;s.onload=()=>res(window.COMP||{});s.onerror=()=>res(window.COMP||{});document.head.appendChild(s);setTimeout(()=>res(window.COMP||{}),8000);});return compReq;}
+/* tên thành phần: bảng riêng → bộ thủ của cấp → Hán Việt + nghĩa từ điển */
+function compName(c){if(COMP_VI[c])return COMP_VI[c];const R=(typeof RADICALS!=='undefined'&&RADICALS[c]);if(R)return [R[1],R[2]];
+  let hv='';try{hv=hvOf(c);if(hv==='?')hv='';}catch(e){}let vi='';try{const w=(typeof ALLW!=='undefined'?ALLW:WORDS).find(x=>x.zh===c);if(w)vi=w.vi.split(/[;,]/)[0].trim();}catch(e){}
+  if(!vi)try{if(typeof DICT!=='undefined'&&DICT&&DICT.length){const e=DICT.find(x=>x.zh===c);if(e)vi=String(e.vi||'').split(/[;(]/)[0].trim().slice(0,28);}}catch(e){}
+  return [hv,vi];}
+/* ---- phân loại nét từ đường tâm (medians) ---- */
+function strokeKind(med){if(!med||med.length<2)return '点';const P=med.map(([x,y])=>[x,-y]);let seg=[];for(let i=1;i<P.length;i++){const dx=P[i][0]-P[i-1][0],dy=P[i][1]-P[i-1][1];const L=Math.hypot(dx,dy);if(L<3)continue;seg.push({dx,dy,L});}
+  if(!seg.length)return '点';const tot=seg.reduce((a,s)=>a+s.L,0);const ang=s=>Math.atan2(s.dy,s.dx);const dif=(a,b)=>Math.abs(((a-b)+Math.PI*3)%(Math.PI*2)-Math.PI);
+  // gộp các đoạn cùng hướng thành "phần"
+  let parts=[];seg.forEach(s=>{const c=parts[parts.length-1];if(c&&dif(ang(c),ang(s))<Math.PI*.28){c.dx+=s.dx;c.dy+=s.dy;c.L+=s.L;}else parts.push(Object.assign({},s));});
+  // bỏ phần quá ngắn (nét vào bút, nét ra bút) bằng cách gộp vào phần bên cạnh; giữ phần cuối ngắn nếu là móc hướng lên/trái
+  const minL=Math.max(42,tot*.12);const isHook=q=>q.dy<-8||(q.dx<0&&Math.abs(q.dy)<q.L*.9);
+  for(let k=0;k<parts.length&&parts.length>1;){const q=parts[k];const lim=k===0?Math.max(70,tot*.2):minL;if(q.L<lim&&!(k===parts.length-1&&k>0&&isHook(q)&&q.L>=28)){if(k>0){const t=parts[k-1];t.dx+=q.dx;t.dy+=q.dy;t.L+=q.L;}parts.splice(k,1);if(k>0)k--;}else k++;}
+  const base=p=>{const L=p.L;if(Math.abs(p.dx)>=Math.abs(p.dy)*2)return p.dx>0?(p.dy<-L*.25?'提':'横'):'横';if(Math.abs(p.dy)>=Math.abs(p.dx)*3.2)return '竖';if(p.dy>0&&p.dx<0)return '撇';if(p.dy>0&&p.dx>0)return '捺';if(p.dy<0&&p.dx>0)return '提';return '撇';};
+  if(parts.length===1){const q=parts[0],b=base(q);if(tot<150&&b!=='横'&&b!=='竖')return '点';if(tot<110)return '点';return b;}
+  const last=parts[parts.length-1];const hook=parts.length>=2&&last.L<Math.max(150,tot*.3)&&isHook(last);
+  const body=hook?parts.slice(0,-1):parts;const first=base(body[0]);let s=first;
+  for(let k=1;k<body.length;k++){const b=base(body[k]);if(k===1&&body.length===2&&!hook&&first==='横'&&b==='撇'){s='横撇';break;}if(k===1&&body.length===2&&!hook&&first==='撇'&&(b==='横'||b==='提')){s='撇折';break;}if(k===1&&body.length===2&&!hook&&first==='竖'&&b==='提'){s='竖提';break;}s+='折';}
+  if(hook)s+='钩';if(s.length>5)s=s.slice(0,4)+(hook?'钩':'');return s;}
+const strokeVi=k=>[...k].map(c=>STROKE_VI[c]||c).join(' ').replace(/^(\p{L})/u,m=>m.toUpperCase());
+function strokeRule(d,i){if(i===0)return 'Bắt đầu từ nét đầu tiên: thường là nét trên cùng hoặc bên trái.';const bb=m=>{const xs=m.map(p=>p[0]),ys=m.map(p=>-p[1]);return {x:(Math.min(...xs)+Math.max(...xs))/2,y:(Math.min(...ys)+Math.max(...ys))/2,w:Math.max(...xs)-Math.min(...xs),h:Math.max(...ys)-Math.min(...ys)};};
+  const a=bb(d.medians[i-1]),b=bb(d.medians[i]),ka=strokeKind(d.medians[i-1]),kb=strokeKind(d.medians[i]);
+  if(ka==='撇'&&kb==='捺')return 'Phẩy trước, mác sau (撇 rồi 捺).';
+  if(ka.startsWith('横')&&kb.startsWith('竖')&&Math.abs(a.y-b.y)<a.h+b.h)return 'Ngang trước, sổ sau (横 rồi 竖).';
+  if(i===d.medians.length-1&&kb==='横'&&b.y>a.y)return 'Nét ngang đáy đóng khung viết sau cùng.';
+  if(b.y-a.y>Math.max(a.h,b.h)*.45)return 'Trên trước, dưới sau.';
+  if(b.x-a.x>Math.max(a.w,b.w)*.45)return 'Trái trước, phải sau.';
+  if(a.x-b.x>Math.max(a.w,b.w)*.45&&b.y>a.y)return 'Giữa trước, hai bên sau.';
+  if(b.w<a.w*.6&&b.h<a.h*.6&&b.x>a.x-a.w/2&&b.x<a.x+a.w/2&&b.y>a.y-a.h/2&&b.y<a.y+a.h/2)return 'Ngoài trước, trong sau.';
+  return 'Viết tiếp theo thứ tự nét chuẩn.';}
+function hzStrokeSVG(ch,upto,hl,cols){const d=STROKES[ch];if(!d)return '';const n=d.strokes.length;const col=i=>cols?cols(i):(i===upto-1&&hl?'var(--jade)':i<upto?'var(--ink)':'none');
+  const m=d.medians[Math.max(0,upto-1)];const st=m&&m[0]?[m[0][0],-m[0][1]+900]:null;
+  return `<svg viewBox="0 0 1024 1024" class="hzs" aria-hidden="true"><g stroke="var(--grid)" stroke-width="3" stroke-dasharray="12 12"><path d="M0 0 L1024 1024 M1024 0 L0 1024 M512 0 V1024 M0 512 H1024"/></g><g transform="translate(0,900) scale(1,-1)">${d.strokes.map((p,i)=>`<path d="${p}" fill="${col(i)==='none'?'var(--line)':col(i)}" opacity="${col(i)==='none'?.45:1}"/>`).join('')}</g>${hl&&st?`<circle cx="${st[0]}" cy="${st[1]}" r="34" fill="#c3402b" opacity=".9"/><text x="${st[0]}" y="${st[1]+16}" text-anchor="middle" font-size="46" font-weight="700" fill="#fff" font-family="sans-serif">${upto}</text>`:''}</svg>`;}
+/* bảng hướng dẫn từng nét */
+function hzStepsHTML(ch){const d=STROKES[ch];if(!d)return '<p class="small muted">Chưa có dữ liệu nét cho chữ này.</p>';const n=d.strokes.length;
+  return `<div class="hzst" data-hzst="${esc(ch)}" data-i="1"><div class="hzsv">${hzStrokeSVG(ch,1,true)}</div><div class="hzsi"><div class="hzsn">Nét <b>1</b>/${n}</div><div class="hzsk" id="hzsk"></div><div class="small hzsr"></div>
+    <div class="hzchips">${d.strokes.map((_,i)=>`<button class="hzch${i===0?' on':''}" data-s="${i+1}">${i+1}</button>`).join('')}</div>
+    <div class="row" style="gap:6px"><button class="btn sm" data-hzp>◀ Trước</button><button class="btn sm pri" data-hzn>Sau ▶</button><button class="btn sm" data-hza>▶ Tự chạy</button></div></div></div>`;}
+function hzStepsBind(box,ch){const d=STROKES[ch];if(!d)return;const n=d.strokes.length;let i=1,tm=0;const sv=box.querySelector('.hzsv'),sn=box.querySelector('.hzsn b'),sk=box.querySelector('.hzsk'),sr=box.querySelector('.hzsr');
+  const show=()=>{sv.innerHTML=hzStrokeSVG(ch,i,true);sn.textContent=i;const k=strokeKind(d.medians[i-1]);sk.innerHTML=`<span class="han">${esc(k)}</span> <b>${esc(strokeVi(k))}</b>`;sr.textContent=strokeRule(d,i-1);box.querySelectorAll('.hzch').forEach(b=>b.classList.toggle('on',+b.dataset.s===i));box.dataset.i=i;};
+  const stop=()=>{clearInterval(tm);tm=0;const a=box.querySelector('[data-hza]');if(a)a.textContent='▶ Tự chạy';};
+  box.querySelector('[data-hzp]').onclick=()=>{stop();i=i>1?i-1:n;show();};box.querySelector('[data-hzn]').onclick=()=>{stop();i=i<n?i+1:1;show();};
+  box.querySelectorAll('.hzch').forEach(b=>b.onclick=()=>{stop();i=+b.dataset.s;show();});
+  box.querySelector('[data-hza]').onclick=e=>{if(tm){stop();return;}e.target.textContent='⏸ Dừng';i=0;tm=setInterval(()=>{if(!box.isConnected){stop();return;}i=i<n?i+1:1;show();if(i===n){setTimeout(stop,900);}},900);};
+  show();}
+/* bảng phân tích thành phần */
+function hzCompHTML(ch){const C=window.COMP&&window.COMP[ch];const d=STROKES[ch];if(!C||C.d==='？'||!/[⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻]/.test(C.d))return `<p class="small muted">${C&&C.r?`Chữ <span class="han">${esc(ch)}</span> là chữ độc thể, bộ thủ: <span class="han">${esc(C.r)}</span> ${compName(C.r).filter(Boolean).join(' – ')}.`:'Chưa có dữ liệu phân tích cho chữ này.'}</p>`;
+  const idc=C.d[0],parts=[...C.d].filter(c=>!/[⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻]/.test(c)&&c!=='？');
+  const colOf=i=>COMP_COL[i%COMP_COL.length];
+  const svg=d?hzStrokeSVG(ch,d.strokes.length,false,i=>{const k=C.m[i];return k&&k!=='-'?colOf(+k):'var(--ink)';}):`<div class="han" style="font-size:96px;text-align:center">${esc(ch)}</div>`;
+  const role=c=>c===C.s||(!C.s&&c===C.r)?'chỉ nghĩa':c===C.p?'gợi âm':c===C.r?'bộ thủ':'';
+  const typ=C.t==='h'?`<b>Chữ hình thanh</b>: <span class="han" style="color:${colOf(parts.indexOf(C.s))}">${esc(C.s||'')}</span> chỉ nghĩa, <span class="han" style="color:${colOf(parts.indexOf(C.p))}">${esc(C.p||'')}</span> gợi âm đọc${C.y?` (${esc(C.y)})`:''}.`:C.t==='i'?'<b>Chữ hội ý</b>: ghép nghĩa các phần lại với nhau.':C.t==='p'?'<b>Chữ tượng hình</b>: vẽ lại hình dáng sự vật.':'';
+  return `<div class="hzcp"><div class="hzcv">${svg}</div><div class="hzci"><div class="small muted hzkc">${idcSVG(idc,colOf)} Kết cấu ${IDC_VI[idc]||''}</div>
+    <div class="hzcl">${parts.map((c,i)=>{const [hv,vi]=compName(c);const r=role(c);return `<div class="hzcr" style="--c:${colOf(i)}"><span class="han hzcg">${esc(c)}</span><div><b>${esc(hv||'')}</b>${vi?` · ${esc(vi)}`:''}${r?`<i class="hzrole">${r}</i>`:''}</div></div>`;}).join('')}</div>
+    ${typ?`<div class="small hztyp">${typ}</div>`:''}${C.r&&!parts.includes(C.r)?`<div class="small muted">Bộ thủ tra từ điển: <span class="han">${esc(C.r)}</span> ${compName(C.r).filter(Boolean).join(' – ')}</div>`:''}</div></div>`;}
+/* gắn vào thẻ tập viết */
+(function(){const base=wireWriters;wireWriters=function(root,onPass){base.apply(this,arguments);
+  root.querySelectorAll('.wcard').forEach(card=>{if(card.querySelector('.hzx'))return;const ch=card.querySelector('.mizi')&&card.querySelector('.mizi').dataset.ch;if(!ch)return;
+    card.insertAdjacentHTML('beforeend',`<div class="row hzx" style="justify-content:center"><button class="btn sm" data-hzs>✍️ Từng nét</button><button class="btn sm" data-hzc>🧩 Bộ thủ</button></div><div class="hzxp" hidden></div>`);
+    const pn=card.querySelector('.hzxp');const open=(k,html)=>{if(pn.dataset.k===k&&!pn.hidden){pn.hidden=true;card.classList.remove('hzopen');pn.dataset.k='';card.querySelectorAll('.hzx .btn').forEach(b=>b.classList.remove('pri'));return;}pn.dataset.k=k;pn.hidden=false;card.classList.add('hzopen');pn.innerHTML=html;card.querySelectorAll('.hzx .btn').forEach(b=>b.classList.toggle('pri',b.hasAttribute('data-'+k)));};
+    card.querySelector('[data-hzs]').onclick=()=>{open('hzs',hzStepsHTML(ch));const b=pn.querySelector('.hzst');if(b)hzStepsBind(b,ch);try{sfx('tap');}catch(e){}};
+    card.querySelector('[data-hzc]').onclick=()=>{open('hzc','<p class="small muted">Đang tải phân tích…</p>');try{sfx('tap');}catch(e){}compLoad().then(()=>{if(pn.dataset.k==='hzc'&&!pn.hidden)pn.innerHTML=hzCompHTML(ch);});};});};})();
+/* sửa chữ dự phòng (khi gói nét chưa tải xong) rơi ra ngoài ô */
+(function(){const base=makeWriter;makeWriter=function(el,ch,opts){const w=base.apply(this,arguments);if(!el)return w;
+  const fix=()=>{el.querySelectorAll('.wfb').forEach(x=>{if(el.querySelector('path'))x.remove();});};
+  try{const mo=new MutationObserver(()=>{if(!el.isConnected){mo.disconnect();return;}fix();});mo.observe(el,{childList:true,subtree:true});setTimeout(()=>mo.disconnect(),20000);}catch(e){}
+  return w;};})();
+if(window.__T)window.__u87={strokeKind,strokeRule,compName,compLoad,hzCompHTML,hzStepsHTML};
+
+
+/* ===== 5.41 Ngữ pháp: âm thanh đúng/sai rõ, công thức to, mổ xẻ 2 câu có pinyin + nghĩa, máy đổi câu có nghĩa, bài khóa có pinyin + nghĩa ===== */
+const gStrip=t=>String(t).replace(/[，。！？、；：,.!?\s]/g,'');
+function gWordVi(t){const z=gStrip(t);if(!z)return '';try{const w=(typeof ALLW!=='undefined'?ALLW:WORDS).find(x=>x.zh===z);if(w)return w.vi.split(/[;,]/)[0].trim();}catch(e){}
+  try{if(typeof DICT!=='undefined'&&DICT&&DICT.length){const e=DICT.find(x=>x.zh===z);if(e)return String(e.vi||'').split(/[;(]/)[0].trim().slice(0,30);}}catch(e){}return '';}
+/* khối mổ xẻ có pinyin dưới từng ô */
+function gBlocksPy(arr,cls){return `<div class="gblocks gpyb ${cls||''}">${arr.map(([t,r])=>{const R=GROLE[r]||GROLE.X;const han=/\p{Script=Han}/u.test(t);return `<span class="gb" style="--c:var(${R[1]})"><b class="${han?'han':''}">${esc(t)}</b>${han?`<i class="gpy">${esc(sentPy(gStrip(t)))}</i>`:''}${R[0]?`<small>${R[0]}</small>`:''}</span>`;}).join('')}</div>`;}
+/* gán vai cho từng từ của câu ví dụ dựa trên câu mổ xẻ mẫu và từ khóa */
+function gRoles(g,tokens){const an=g.an||[];const roleOf=t=>{const z=gStrip(t);let f=an.find(x=>gStrip(x[0])===z);if(f)return f[1];f=an.find(x=>z&&(gStrip(x[0]).includes(z)||z.includes(gStrip(x[0])))&&gStrip(x[0]).length>=1&&z.length>=1&&Math.abs(gStrip(x[0]).length-z.length)<=1);if(f)return f[1];
+    if(g.kw.some(k=>z.includes(k))){const kf=an.find(x=>g.kw.some(k=>gStrip(x[0]).includes(k)));return kf?kf[1]:'G';}if(/^(今|明|昨|前|后)天$|^(早上|上午|中午|下午|晚上|现在|每天|以前|以后|周末|以后)$|星期|^[一二三四五六七八九十两\d]+(点|号|月|年)$/.test(z))return 'T';return 'X';};
+  return tokens.map(t=>[t,roleOf(t)]);}
+function gAnEx(g){const sents=[];const anTxt=g.an?g.an.map(x=>x[0]).join(''):'';
+  if(g.an)sents.push({blocks:g.an,zh:anTxt,vi:g.anvi});
+  const exs=g.ex.filter(e=>join(e[0])!==join(anTxt));
+  const e2=exs[0];if(e2){const toks=e2[0].trim().split(/\s+/).filter(Boolean);sents.push({blocks:gRoles(g,toks),zh:join(e2[0]),vi:e2[1]});}
+  if(!sents.length&&g.ex[0]){const toks=g.ex[0][0].trim().split(/\s+/);sents.push({blocks:gRoles(g,toks),zh:join(g.ex[0][0]),vi:g.ex[0][1]});}
+  const rest=exs.slice(1);
+  return `<section class="gan gan2"><div class="row" style="justify-content:space-between"><div class="label">Mổ xẻ câu</div><span class="small muted">${sents.length} câu · chạm 🔊 để nghe</span></div>
+    ${sents.map((s,i)=>`<div class="gan1"><div class="row" style="justify-content:space-between;align-items:center"><span class="gann">Câu ${i+1}</span>${speakBtn(s.zh)}</div>${gBlocksPy(s.blocks)}<div class="dvi gvi">${esc(s.vi||'')}</div></div>`).join('')}
+    ${rest.length?`<details class="gmore"><summary class="small">Thêm ${rest.length} ví dụ</summary><div class="stack" style="gap:8px;margin-top:6px">${rest.map(x=>`<div class="ex">${speakBtn(join(x[0]))}<div style="min-width:0"><div class="zh han">${hlKw(join(x[0]),g.kw)}</div><div class="dpy">${esc(sentPy(x[0]))}</div><div class="dvi">${esc(x[1])}</div></div></div>`).join('')}</div></details>`:''}</section>`;}
+/* nghĩa cho câu của máy đổi câu */
+function gSwVi(g,toks){const s=join(toks.join(''));const an=g.an?join(g.an.map(x=>x[0]).join('')):'';if(an&&gStrip(an)===gStrip(s)&&g.anvi)return esc(g.anvi);
+  const e=g.ex.find(x=>gStrip(join(x[0]))===gStrip(s));if(e)return esc(e[1]);
+  const gl=toks.map(t=>{const v=gWordVi(t);return v?`<span class="gsg"><span class="han">${esc(gStrip(t))}</span> ${esc(v)}</span>`:'';}).filter(Boolean);
+  return gl.length?`<span class="small muted">Nghĩa từng từ:</span> ${gl.join(' · ')}`:'';}
+/* âm thanh đúng / sai rõ ràng hơn cho phần Thử */
+function gSound(ok){try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC||(S.set&&S.set.sfx===false))return;if(!window.SFXAC)window.SFXAC=new AC();const ac=SFXAC;if(ac.state==='suspended')ac.resume();const t0=ac.currentTime;
+  const tone=(f,st,d,v,type)=>{const o=ac.createOscillator(),gn=ac.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,t0+st);gn.gain.setValueAtTime(0.0001,t0+st);gn.gain.exponentialRampToValueAtTime(v,t0+st+0.015);gn.gain.exponentialRampToValueAtTime(0.0001,t0+st+d);o.connect(gn);gn.connect(ac.destination);o.start(t0+st);o.stop(t0+st+d+.05);};
+  if(ok){[[659,0],[784,.1],[1047,.2],[1319,.32]].forEach(([f,st])=>{tone(f,st,.35,.16,'triangle');tone(f*2,st,.2,.05);});}
+  else{tone(220,0,.3,.14,'sawtooth');tone(185,.14,.4,.13,'sawtooth');tone(110,.14,.4,.08,'square');}}catch(e){}
+  try{if(navigator.vibrate)navigator.vibrate(ok?30:[60,40,60]);}catch(e){}}
+function gAnswerFx(ok){gSound(ok);try{const p=app.querySelector('.gpanel');if(p){p.classList.remove('gokfx','gnofx');void p.offsetWidth;p.classList.add(ok?'gokfx':'gnofx');setTimeout(()=>p.classList.remove('gokfx','gnofx'),700);}}catch(e){}}
+if(window.__T)window.__u88={gAnEx,gSwVi,gRoles,gSound};
+
+
+/* ===== 5.41 Từ mới: vuốt lên để đặt thẻ nhanh lên bàn; lật hết thì thẻ bay về Tiểu Long Hổ hấp thụ ===== */
+function fwSwipe(big,can,act){let y0=null,x0=0,dy=0,moved=false;const reset=()=>{big.style.transition='transform .3s cubic-bezier(.2,1.4,.4,1)';big.style.transform='';big.classList.remove('fwlift');};
+  big.addEventListener('pointerdown',e=>{if(!can())return;y0=e.clientY;x0=e.clientX;dy=0;moved=false;try{big.setPointerCapture(e.pointerId);}catch(_){}big.style.transition='none';},{passive:true});
+  big.addEventListener('pointermove',e=>{if(y0===null)return;dy=e.clientY-y0;if(Math.abs(dy)>8||Math.abs(e.clientX-x0)>8)moved=true;if(!moved)return;if(dy<0){big.style.transform=`translateY(${dy*.9}px) rotate(${dy/40}deg)`;big.classList.toggle('fwlift',dy<-60);}});
+  const up=e=>{if(y0===null)return;y0=null;const d=dy;if(moved&&d<-70){big.classList.remove('fwlift');big.style.transition='';big.style.transform='';act();return;}reset();};
+  big.addEventListener('pointerup',up);big.addEventListener('pointercancel',up);}
+function fwAbsorb(el,cb){let done=false;const go=()=>{if(done)return;done=true;try{cb();}catch(e){console.warn(e);}};
+  try{const pet=el.querySelector('.fwpet img.bao')||el.querySelector('.fwpet .bao');const cards=[...el.querySelectorAll('.fwtable .fwc')];const big=el.querySelector('#fwbig');
+    if(!pet||!cards.length||matchMedia('(prefers-reduced-motion: reduce)').matches){go();return;}
+    const pr=pet.getBoundingClientRect();if(big)big.style.opacity='0';const say=el.querySelector('#fwsay');if(say)say.innerHTML='Hấp thu từ mới… 🌟';
+    cards.forEach((m,k)=>{const r=m.getBoundingClientRect();m.style.transition=`transform .7s cubic-bezier(.5,-0.1,.3,1) ${k*60}ms, opacity .5s ${k*60+300}ms`;m.style.transform=`translate(${pr.left+pr.width/2-(r.left+r.width/2)}px,${pr.top+pr.height/2-(r.top+r.height/2)}px) scale(.15) rotate(${(k%2?1:-1)*40}deg)`;m.style.opacity='0';m.classList.add('fwfly');});
+    setTimeout(()=>{try{pet.classList.add('fcglow');sfx('win');}catch(e){}},cards.length*60+500);
+    setTimeout(go,cards.length*60+1500);setTimeout(go,6000);}
+  catch(e){go();}}
+if(window.__T)window.__u89={fwSwipe,fwAbsorb};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
