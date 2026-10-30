@@ -3233,6 +3233,48 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .msbud{margin-top:8px;background:linear-gradient(90deg,color-mix(in srgb,#e07a10 14%,var(--card)),color-mix(in srgb,#8bc34a 14%,var(--card)))}
 @media (max-width:520px){.fxgrid{grid-template-columns:1fr}.fxgifts{grid-template-columns:repeat(2,1fr)}}
 @media (prefers-reduced-motion:reduce){.fxstreak.lit span,.fxgic.wa-bob,.fxchest.wa-bob,.fxtree *{animation:none!important}}
+
+/* 5.40 Mời bạn có thưởng */
+.rfhero{background:linear-gradient(135deg,#fff4d6,var(--card) 70%);border-color:#c87a14}
+.rfsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.rfsteps>div{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding:12px 8px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.rfsteps span{font-size:26px;line-height:1.2}.rfsteps span .ybi{width:28px;height:28px}.rfsteps b{font-size:13.5px}.rfsteps small{font-size:12px;color:var(--muted);line-height:1.35}
+.rflink{border:2px solid #c87a14;background:linear-gradient(135deg,#fffaf0,var(--card))}
+.rfurl{display:flex;gap:8px}.rfurl input{flex:1;min-width:0;font-weight:600;font-size:15px}
+.rfcode{letter-spacing:2px;color:#c87a14}
+.rfstats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.rfstats>div{display:flex;flex-direction:column;align-items:center;padding:10px 6px;border-radius:14px;background:var(--card);border:1px solid var(--line);text-align:center}
+.rfstats b{font-size:22px;color:#c87a14}.rfstats small{font-size:12px;color:var(--muted)}
+.rfme{background:color-mix(in srgb,#ffd166 12%,var(--card))}
+.rfprog{display:grid;gap:6px}.rfprog span{display:flex;flex-direction:column;padding:8px 12px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-weight:600}
+.rfprog span.ok{border-color:var(--jade);color:var(--jade)}.rfprog small{font-weight:400;color:var(--muted);font-size:12px}
+.rflist{display:grid;gap:6px}.rfrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:6px 8px;border-radius:12px}.rfrow:nth-child(odd){background:color-mix(in srgb,var(--line) 25%,transparent)}
+.rfn{flex:1 1 110px;min-width:90px;display:flex;flex-direction:column}.rfn b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rfn small{color:var(--muted);font-size:12px}
+.rfchips{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}.rfchips i{font-style:normal;font-size:11.5px;padding:2px 8px;border-radius:99px;background:var(--line);color:var(--muted)}.rfchips i.ok{background:color-mix(in srgb,var(--jade) 15%,var(--card));color:var(--jade);font-weight:700}
+.rfrules ul{margin:4px 0 0;padding-left:18px}
+.msref{margin-top:8px;background:linear-gradient(90deg,color-mix(in srgb,#f5b800 18%,var(--card)),color-mix(in srgb,#c87a14 10%,var(--card)))}
+@media (max-width:560px){.rfsteps,.rfstats{grid-template-columns:repeat(2,1fr)}.rfurl{flex-direction:column}}
+
+/* 5.40 Nhà: đồ đặt thẳng vào sảnh */
+.hallsvg .hfi,.hallsvg .hempty{cursor:pointer}
+.hallsvg .hfi.act:hover{filter:drop-shadow(0 0 6px #ffd166)}
+.hallsvg .hempty:hover rect{fill-opacity:.3}
+.hallsvg .hfnew{animation:hfdrop 1s cubic-bezier(.3,1.5,.5,1) both;transform-box:fill-box;transform-origin:50% 100%}
+.hallsvg .hfnew>svg,.roomsvg .hfnew>svg{filter:drop-shadow(0 0 10px #ffd166)}
+.roomsvg .hfnew{animation:hfdrop 1s cubic-bezier(.3,1.5,.5,1) both;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes hfdrop{0%{transform:translateY(-70px) scale(.5);opacity:0}55%{transform:translateY(4px) scale(1.06,.94);opacity:1}100%{transform:none;opacity:1}}
+.hcap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:8px;padding:10px 12px}
+.hcapt{display:flex;flex-direction:column;gap:3px;flex:1 1 220px;min-width:0}
+.hcapb{display:flex;gap:8px;flex-wrap:wrap}
+.hcapbar{height:8px;margin:2px 0}
+.hcaped{margin-top:6px}
+.fcap{display:flex;flex-direction:column;gap:3px;margin-top:8px;padding:8px 12px;border-radius:14px;background:color-mix(in srgb,var(--card) 80%,transparent);border:1px solid var(--line)}
+.fcap span{font-size:13px;color:var(--muted)}
+.furncard{position:relative}
+.furncard.ess{border-color:color-mix(in srgb,#c87a14 45%,var(--line))}
+.fess{position:absolute;top:6px;left:6px;font-style:normal;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:99px;background:#c87a14;color:#fff}
+.btn.warn{background:color-mix(in srgb,#e5383b 12%,var(--card));color:#c3402b;border-color:color-mix(in srgb,#e5383b 40%,var(--line))}
+@media (prefers-reduced-motion:reduce){.hallsvg .hfnew,.roomsvg .hfnew{animation:none}}
 </style>
 </head><body>
 
@@ -3259,11 +3301,11 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
 (function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;
-document.write('<script src="packs/hsk'+L+'.js?v=f0480da3"><\/script>');
+document.write('<script src="packs/hsk'+L+'.js?v=a2ca72ab"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f0480da3','strokes-file');A('packs/dict.js?v=f0480da3','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a2ca72ab','strokes-file');A('packs/dict.js?v=a2ca72ab','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -9275,7 +9317,7 @@ const NAVG={
  dict:{t:'Từ điển',ic:'典',home:'#tudien',items:[['tudien','Tra cứu'],['dict','Sổ từ'],['tree','Cây Hán-Việt'],['radicals','Bộ thủ'],['evo','Chữ biến hình'],['pinyin','Bảng pinyin'],['sheet','Phiếu tập viết']]},
  game:{t:'Trò chơi',ic:'戏',home:'#games',items:[['games','Tất cả'],['race','Đua xe'],['league','Giải đấu'],['garden','Khu vườn'],['travel','Du lịch'],['wall','Vạn Lý'],['defense','Thủ thành'],['duel','Thách đấu'],['chat','WeChat'],['blocks','Xếp chữ'],['puzzle','Ghép chữ'],['hv','Thám tử HV'],['friends','Bạn bè'],['achievements','Thành tích']]},
  more:{t:'Mở rộng',ic:'练',home:'#more',items:[['more','Tất cả'],['speak','Luyện nói'],['listen','Luyện nghe'],['tone','Thanh điệu'],['pron','Phát âm'],['read','Truyện đọc'],['num','Máy số'],['handsfree','Rảnh tay'],['focus','Tự học'],['name','Tên tiếng Trung'],['deck','Gửi thẻ'],['culture','Văn hóa'],['shop','Cửa hàng'],['settings','Cài đặt']]},
- house:{t:'Nhà',ic:'家',home:'#house',items:[['house','Ngôi nhà'],['furn','Nội thất'],['trophy','Trưng bày'],['wardrobe','Tủ đồ']]}};
+ house:{t:'Nhà',ic:'家',home:'#house',items:[['house','Ngôi nhà'],['furn','Cửa hàng'],['trophy','Trưng bày'],['wardrobe','Tủ đồ']]}};
 
 const NAV_ART={
  hsk:['#0d7a63',`<path d="M8 22 Q20 17 32 23 Q44 17 56 22 V52 Q44 47 32 53 Q20 47 8 52z" fill="#dcefe7" stroke="#0d7a63" stroke-width="2.5" stroke-linejoin="round"/><path d="M32 23 V53" stroke="#0d7a63" stroke-width="2"/><path d="M12 28 Q20 25 28 29 M12 34 Q20 31 28 35 M12 40 Q20 37 28 41" stroke="#8cc5b2" stroke-width="2" stroke-linecap="round" fill="none"/><text x="44" y="44" text-anchor="middle" font-size="15" class="han" fill="#0d7a63" font-weight="700">学</text><path d="M32 4 L50 11 L32 18 L14 11z" fill="#1b2826"/><path d="M22 14 V19 Q32 24 42 19 V14" fill="#1b2826"/><path d="M50 11 V20" stroke="#f5b041" stroke-width="2"/><circle cx="50" cy="21.5" r="2.5" fill="#f5b041"/>`],
@@ -15797,6 +15839,137 @@ try{MORE_TILES.push(['#buddy','伴','Bạn học & Nhóm','Chuỗi học đôi, 
 (function(){const base=viewFriends;viewFriends=function(){const r=base.apply(this,arguments);try{const t=setInterval(()=>{if(location.hash!=='#friends'){clearInterval(t);return;}const hero=app.querySelector('.addhero');if(hero&&!app.querySelector('.fxfrlink')){hero.insertAdjacentHTML('afterend','<a class="panel row fxfrlink" href="#buddy"><span>🤝 <b>Bạn học & Nhóm</b>: giữ chuỗi ngày học cùng bạn, trồng cây tình bạn, lập nhóm tuần, đố nhau thẻ từ.</span><b class="prgo">Mở →</b></a>');clearInterval(t);}},300);setTimeout(()=>clearInterval(t),6000);}catch(e){}return r;};})();
 if(window.__T)window.__u84={cheerReset:()=>{FXC.cheerAt=0;},openWord:z=>openWordAny(z),giftTo:i=>fxGiftDlg(SOC.friends[i||0]),viewBuddy,fxBar,fxCardOf,fxSendCard,fxTreeSVG,fxCheckin,fxDayXp,fxGiftDlg,fxGiftsPanel,fxCheerXp};
 
+/* ===== 5.40: Mời bạn có thưởng — link mời riêng; bạn mới học xong Từ mới 1 bài: người mời +50 NB; bạn mới lên cấp 5: tự nhận Gói Plus 1 tháng ===== */
+const REFC={busy:0,tries:0};
+const refApi=(m,p,b)=>frApi(m,'/v1/ref/'+p,b);
+const refGet=k=>{try{return localStorage.getItem(k)||'';}catch(e){return '';}};
+const refSet=(k,v)=>{try{if(v==null)localStorage.removeItem(k);else localStorage.setItem(k,v);}catch(e){}};
+/* nhận mã mời từ link ?ref=MÃ hoặc #ref-MÃ */
+(function(){try{const u=new URL(location.href);let c=u.searchParams.get('ref')||'';const m=location.hash.match(/^#ref-([A-Za-z0-9]{4,12})$/);if(m)c=m[1];
+  if(c&&/^[A-Za-z0-9]{4,12}$/.test(c)){if(!refGet('ref-st')){refSet('ref-code',c.toUpperCase());setTimeout(()=>{try{if(!(typeof SOC!=='undefined'&&SOC.auth))gardenToast('👋 Bạn được bạn bè mời học tiếng Trung! Tạo tài khoản và học 1 bài để bạn ấy nhận quà; lên cấp 5 bạn được tặng <b>Gói Plus 1 tháng</b>.');}catch(e){}},2500);}
+    u.searchParams.delete('ref');history.replaceState(null,'',u.pathname+u.search+(m?'#home':location.hash));}}catch(e){}})();
+async function refClaim(){const code=refGet('ref-code');if(!code||refGet('ref-st')||REFC.busy||!(typeof SOC!=='undefined'&&SOC.auth))return;REFC.busy=1;
+  try{const j=await refApi('POST','claim',{code});refSet('ref-st','linked');refSet('ref-code',null);
+    gardenToast(`🤝 Bạn tham gia qua lời mời của <b>${showName(j.from.handle,j.from.name,j.from.idn)}</b>. Học xong phần Từ mới của 1 bài để bạn ấy nhận quà; lên cấp 5 bạn được tặng <b>Gói Plus 1 tháng</b>!`);setTimeout(refCheck,3000);}
+  catch(e){const m=(e&&e.message)||'';if(/NEED_ACCOUNT/.test(m)){/* chờ tạo tài khoản thật */}else if(/INVALID_CODE|SELF_REFERRAL|ALREADY_REFERRED|NOT_NEW_ACCOUNT|CIRCULAR/.test(m)){refSet('ref-st',/ALREADY_REFERRED/.test(m)?'linked':'x');refSet('ref-code',null);}}
+  finally{REFC.busy=0;}}
+/* kiểm tra mốc (đẩy bản lưu lên máy chủ trước để máy chủ đọc đúng tiến độ) */
+async function refCheck(){if(refGet('ref-st')!=='linked'||refGet('ref-done')||REFC.ck||!(typeof SOC!=='undefined'&&SOC.auth))return;REFC.ck=1;
+  try{try{if(accCloud())await cloudSync();}catch(e){}const j=await refApi('POST','check',{});if(!j.linked){refSet('ref-st','x');return;}
+    if(j.lv5&&!refGet('ref-lv5')){refSet('ref-lv5','1');try{await meFetch();}catch(e){}try{confetti(90);sfx('win');}catch(e){}gardenToast('🎁 <b>Lên cấp 5!</b> Quà mời bạn: bạn được tặng <b>Gói Plus 1 tháng</b>. Tiểu Long Hổ sẽ tự thu hoạch vườn giúp bạn.');}
+    if(j.words&&!refGet('ref-words')){refSet('ref-words','1');}
+    if(j.words&&j.lv5)refSet('ref-done','1');}catch(e){}finally{REFC.ck=0;}}
+(function(){const base=markStage;markStage=function(n,st){const r=base.apply(this,arguments);try{if(st==='words'&&refGet('ref-st')==='linked'&&!refGet('ref-words'))setTimeout(refCheck,2500);}catch(e){}return r;};})();
+(function(){const base=addXp;let t=0;addXp=function(){const r=base.apply(this,arguments);try{if(refGet('ref-st')==='linked'&&!refGet('ref-lv5')&&pLevel()>=5){clearTimeout(t);t=setTimeout(refCheck,4000);}}catch(e){}return r;};})();
+setTimeout(()=>{refClaim();refCheck();},4000);
+setInterval(()=>{if(document.hidden)return;if(refGet('ref-code')&&!refGet('ref-st'))refClaim();else if(refGet('ref-st')==='linked'&&!refGet('ref-done')&&++REFC.tries%3===0)refCheck();},60000);
+/* ---------- Trang Mời bạn ---------- */
+async function refCopy(t){try{await navigator.clipboard.writeText(t);return true;}catch(e){try{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok;}catch(x){return false;}}}
+async function viewInvite(){stopGames();
+  const head=`<section class="addhero rfhero"><div class="addicon han" aria-hidden="true">邀</div><div style="min-width:0"><div class="label">Bạn bè</div><h1>Mời bạn có thưởng</h1><p>Gửi link mời riêng của bạn. Mỗi người mới tạo tài khoản và học xong phần Từ mới của 1 bài bất kỳ: <b>bạn nhận 50 ${YB}</b>. Người mới lên cấp 5: <b>được tặng Gói Plus 1 tháng</b>.</p></div></section>`;
+  const steps=`<div class="rfsteps"><div><span>🔗</span><b>1. Gửi link</b><small>Chia sẻ link mời của bạn qua Zalo, Messenger…</small></div><div><span>📝</span><b>2. Bạn mới học</b><small>Tạo tài khoản, học xong phần Từ mới của 1 bài</small></div><div><span>${YB}</span><b>3. Bạn nhận 50</b><small>Nguyên bảo vào ví ngay</small></div><div><span>⭐</span><b>4. Bạn mới lên cấp 5</b><small>Tự nhận Gói Plus 1 tháng</small></div></div>`;
+  if(!(typeof SOC!=='undefined'&&SOC.auth)){app.innerHTML=`<div class="stack">${head}${steps}<div class="panel stack"><h3>Đăng nhập để lấy link mời</h3><p class="muted" style="margin:0">Link mời gắn với tài khoản của bạn, để Nguyên bảo vào đúng ví.</p><div class="row"><a class="btn pri" href="#friends">Đăng nhập / Tạo hồ sơ</a></div></div></div>`;return;}
+  app.innerHTML=`<div class="stack rfpage">${head}${steps}<div id="rfbody"><div class="panel"><p class="muted" style="margin:0">Đang tải…</p></div></div></div>`;
+  let j;try{j=await refApi('GET','info');}catch(e){const b=app.querySelector('#rfbody');if(b)b.innerHTML=`<div class="panel"><p style="color:var(--seal);margin:0">${esc(typeof netMsg==='function'?netMsg(e):e.message)}</p></div>`;return;}
+  if(location.hash!=='#invite')return;const body=app.querySelector('#rfbody');if(!body)return;
+  const msg=`Mình đang học tiếng Trung miễn phí trên Tâm HSK, có trò chơi, vườn cây và bạn học cùng. Vào học với mình nhé: ${j.link}`;
+  const me=j.me,lv=pLevel();
+  body.innerHTML=`<div class="stack">
+    <div class="panel stack rflink"><div class="label">Link mời của bạn</div><div class="rfurl"><input id="rfurl" readonly value="${esc(j.link)}" aria-label="Link mời"><button class="btn pri" id="rfcopy">📋 Sao chép</button></div>
+      <div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn" id="rfshare">📤 Chia sẻ</button><button class="btn ghost" id="rfmsg">💬 Sao chép lời mời</button><span class="small muted">Mã mời: <b class="rfcode">${esc(j.code)}</b></span></div></div>
+    <div class="rfstats"><div><b>${j.list.length}</b><small>bạn đã tham gia</small></div><div><b>${j.list.filter(x=>x.words).length}</b><small>đã học xong Từ mới</small></div><div><b>${j.earned}</b><small>${YB} đã nhận</small></div><div><b>${j.month}/${j.monthMax}</b><small>lượt thưởng tháng này</small></div></div>
+    ${me?`<div class="panel stack rfme"><h3 style="margin:0">🤝 Bạn được ${showName(me.from.handle,me.from.name,me.from.idn)} mời</h3>
+      <div class="rfprog"><span class="${me.words?'ok':''}">${me.words?'✓':'○'} Học xong Từ mới 1 bài <small>${me.words?'bạn ấy đã nhận 50 '+YB:'giúp bạn ấy nhận 50 '+YB}</small></span><span class="${me.lv5?'ok':''}">${me.lv5?'✓':'○'} Lên cấp 5 <small>${me.lv5?'đã nhận Gói Plus 1 tháng':`bạn đang cấp ${lv}/5 · nhận Gói Plus 1 tháng`}</small></span></div>
+      ${!me.lv5?`<div class="fxmsbar"><i style="width:${Math.min(100,Math.round(lv/5*100))}%"></i></div>`:''}</div>`:''}
+    <div class="panel stack"><h3 style="margin:0">Bạn đã mời</h3>${j.list.length?`<div class="rflist">${j.list.map(x=>`<div class="rfrow">${avatarHTML(x.avatar,36)}<span class="rfn"><b>${showName(x.handle,x.name,x.idn)}</b><small>${new Date(x.at).toLocaleDateString('vi-VN')}</small></span><span class="rfchips"><i class="ok">✓ Tham gia</i><i class="${x.words?'ok':''}">${x.words?'✓':'○'} Từ mới${x.paid?` · +${j.nb} ${YB}`:''}</i><i class="${x.lv5?'ok':''}">${x.lv5?'✓':'○'} Cấp 5</i></span></div>`).join('')}</div>`:'<p class="small muted" style="margin:0">Chưa có ai tham gia qua link của bạn. Gửi link cho bạn bè ngay nhé!</p>'}</div>
+    <div class="panel small muted rfrules"><b>Lưu ý</b><ul><li>Chỉ tính tài khoản mới (tạo trong vòng 7 ngày) có email, Google, Facebook hoặc ID Kasser; mỗi người chỉ được mời một lần, không tự mời chính mình.</li><li>Mỗi tháng nhận thưởng tối đa cho ${j.monthMax} người.</li><li>Người mới cần đăng nhập để tiến độ học được ghi nhận; thưởng tự cộng trong vài phút.</li></ul></div></div>`;
+  const cp=body.querySelector('#rfcopy');cp.onclick=async()=>{if(await refCopy(j.link)){cp.textContent='✓ Đã sao chép';gardenToast('📋 Đã sao chép link mời');setTimeout(()=>{cp.textContent='📋 Sao chép';},2000);}else body.querySelector('#rfurl').select();};
+  body.querySelector('#rfmsg').onclick=async()=>{if(await refCopy(msg))gardenToast('💬 Đã sao chép lời mời kèm link, dán vào tin nhắn là xong!');};
+  body.querySelector('#rfshare').onclick=async()=>{if(navigator.share){try{await navigator.share({title:'Học tiếng Trung cùng mình trên Tâm HSK',text:'Mình đang học tiếng Trung trên Tâm HSK, vào học cùng mình nhé!',url:j.link});}catch(e){}}else if(await refCopy(msg))gardenToast('💬 Đã sao chép lời mời kèm link.');};
+  body.querySelector('#rfurl').onclick=e=>e.target.select();
+  if(me&&(!me.words||!me.lv5))refCheck();}
+try{MORE_TILES.push(['#invite','邀','Mời bạn có thưởng','Mỗi bạn mới học xong 1 bài: +50 Nguyên bảo']);const g=TILE_GROUPS.find(x=>x[0]==='Mở rộng');if(g&&!g[1].includes('#invite'))g[1].unshift('#invite');
+  TILE_ART['#invite']=['#fff4d6','#c87a14',`<rect x="10" y="20" width="44" height="32" rx="5" fill="#fff" stroke="#c87a14" stroke-width="2.5"/><path d="M10 24 L32 40 L54 24" fill="none" stroke="#c87a14" stroke-width="2.5"/><circle cx="48" cy="18" r="11" fill="#f5b800" stroke="#a8670c" stroke-width="2"/><text x="48" y="22.5" text-anchor="middle" font-size="12" font-weight="800" fill="#7a4a00">50</text>`];}catch(e){}
+(function(){const base=msheetOpen;msheetOpen=function(k){base.apply(this,arguments);if(k!=='explore'||MSHEET.open!=='explore')return;if(document.querySelector('#msheet .msref'))return;const at=document.querySelector('#msheet .msbud')||document.querySelector('#msheet .msevq')||document.querySelector('#msheet .msgrid');if(!at)return;
+  at.insertAdjacentHTML('afterend',`<a class="msevq msref" href="#invite"><span class="msevi">💌</span><span class="msevt"><b>Mời bạn có thưởng</b><small>Mỗi bạn mới học xong 1 bài: +50 Nguyên bảo</small></span><span class="evgo">→</span></a>`);};})();
+(function(){const base=viewBuddy;viewBuddy=async function(){const r=await base.apply(this,arguments);try{const st=app.querySelector('.fxpage #fxbody > .stack');if(st&&!st.querySelector('.rfbuddy'))st.insertAdjacentHTML('afterbegin','<a class="panel row rfbuddy fxfrlink" href="#invite"><span>💌 <b>Mời bạn có thưởng</b>: mỗi bạn mới học xong 1 bài, bạn nhận 50 Nguyên bảo.</span><b class="prgo">Lấy link →</b></a>');}catch(e){}return r;};})();
+if(window.__T)window.__u85={mark:n=>markStage(n,'words'),setPxp:v=>{SHOP().pxp=v;shSave();},lv:()=>pLevel(),viewInvite,refClaim,refCheck,refGet,refSet};
+
+
+/* ===== 5.40 Nhà mới: đồ mua về đặt thẳng vào nhà, mỗi cấp nhà có sức chứa riêng =====
+   Sảnh chỉ còn: cửa ra vườn, kệ thành tựu, tủ đồ. Phòng khách (phòng 0) chính là sảnh. */
+Object.assign(FURN,{
+ tugiay:['Tủ giày','鞋',80,'f',`<ellipse cx="50" cy="98" rx="40" ry="3" fill="#000" opacity=".1"/><rect x="12" y="46" width="76" height="52" rx="4" fill="#b07a4a" stroke="#6b4428" stroke-width="3"/><rect x="8" y="42" width="84" height="8" rx="3" fill="#8a5a3b"/><rect x="18" y="54" width="30" height="40" rx="2" fill="#c8925a" stroke="#6b4428" stroke-width="2"/><rect x="52" y="54" width="30" height="40" rx="2" fill="#c8925a" stroke="#6b4428" stroke-width="2"/><path d="M22 64 h22 M22 74 h22 M22 84 h22 M56 64 h22 M56 74 h22 M56 84 h22" stroke="#8a5a3b" stroke-width="2"/><circle cx="45" cy="74" r="2.5" fill="#f7c935"/><circle cx="55" cy="74" r="2.5" fill="#f7c935"/><path d="M18 42 q0 -12 10 -12 h6 q5 0 5 6 v6z" fill="#e5383b" stroke="#9b1c1c" stroke-width="2"/><path d="M50 42 q0 -9 9 -9 h4 l6 5 h10 q6 0 6 4z" fill="#3a86ff" stroke="#1d4fa0" stroke-width="2"/><path d="M58 36 l3 3 M62 35 l3 3" stroke="#fff" stroke-width="1.5"/>`],
+ banan:['Bàn ăn & ghế','饭',150,'f',`<ellipse cx="50" cy="98" rx="44" ry="3" fill="#000" opacity=".1"/><path d="M8 100 V60 M8 70 h12 V100" stroke="#8a5a3b" stroke-width="4" fill="none"/><rect x="4" y="48" width="8" height="24" rx="3" fill="#a0673d"/><path d="M92 100 V60 M92 70 h-12 V100" stroke="#8a5a3b" stroke-width="4" fill="none"/><rect x="88" y="48" width="8" height="24" rx="3" fill="#a0673d"/><rect x="18" y="58" width="64" height="8" rx="3" fill="#c8925a" stroke="#6b4428" stroke-width="2"/><path d="M26 66 V100 M74 66 V100" stroke="#6b4428" stroke-width="5"/><path d="M30 58 q0 -10 10 -10 q10 0 10 10z" fill="#fff" stroke="#2f6fb3" stroke-width="2"/><path d="M33 48 q2 -6 0 -10 M40 46 q2 -6 0 -10" stroke="#9aa5ad" stroke-width="1.5" fill="none"/><path d="M54 58 q0 -8 8 -8 q8 0 8 8z" fill="#fff" stroke="#c3402b" stroke-width="2"/><path d="M60 46 L74 38 M62 47 L76 40" stroke="#6b4428" stroke-width="1.6"/>`],
+ maygiat:['Máy giặt','洗',170,'f',`<ellipse cx="50" cy="98" rx="34" ry="3" fill="#000" opacity=".1"/><rect x="18" y="14" width="64" height="84" rx="8" fill="#f4f6f8" stroke="#7d8b95" stroke-width="3"/><path d="M18 30 H82" stroke="#7d8b95" stroke-width="2"/><rect x="24" y="19" width="22" height="7" rx="2" fill="#cfd8dc"/><circle cx="70" cy="22" r="4" fill="#2bb673"/><circle cx="50" cy="62" r="24" fill="#cfe9f7" stroke="#7d8b95" stroke-width="4"/><circle cx="50" cy="62" r="16" fill="#9fd3f0"/><path d="M38 64 q6 -6 12 0 t12 0" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="44" cy="56" r="3" fill="#fff" opacity=".8"/>`],
+ quatdien:['Quạt điện','风',50,'f',`<ellipse cx="50" cy="98" rx="20" ry="3" fill="#000" opacity=".1"/><path d="M50 52 V94" stroke="#5c6b73" stroke-width="5"/><ellipse cx="50" cy="95" rx="18" ry="4" fill="#5c6b73"/><circle cx="50" cy="34" r="26" fill="#e8f4fb" stroke="#5c6b73" stroke-width="3"/><g fill="#3a86ff" opacity=".85"><ellipse cx="50" cy="22" rx="6" ry="11"/><ellipse cx="61" cy="40" rx="6" ry="11" transform="rotate(120 61 40)"/><ellipse cx="39" cy="40" rx="6" ry="11" transform="rotate(-120 39 40)"/></g><circle cx="50" cy="34" r="5" fill="#5c6b73"/><path d="M28 24 q22 -16 44 0 M26 34 h48 M28 44 q22 16 44 0" stroke="#5c6b73" stroke-width="1.2" fill="none" opacity=".5"/>`],
+ dieuhoa:['Điều hòa','空',160,'w',`<rect x="6" y="28" width="88" height="34" rx="9" fill="#fbfcfd" stroke="#7d8b95" stroke-width="3"/><path d="M14 50 H86" stroke="#cfd8dc" stroke-width="3"/><path d="M14 56 H86" stroke="#9aa5ad" stroke-width="2"/><circle cx="80" cy="38" r="2.6" fill="#2bb673"/><path d="M24 70 q4 8 0 16 M44 70 q4 8 0 16 M64 70 q4 8 0 16" stroke="#7cc8f2" stroke-width="3" stroke-linecap="round" fill="none"/>`]
+});
+Object.assign(FURN_ZH,{tugiay:['鞋柜','xiéguì','tủ giày'],banan:['餐桌','cānzhuō','bàn ăn'],maygiat:['洗衣机','xǐyījī','máy giặt'],quatdien:['电风扇','diànfēngshàn','quạt điện'],dieuhoa:['空调','kōngtiáo','điều hòa']});
+const FURN_ESS=['banhoc','sofa','tivi','kesach','tugiay','giuong','banan','tulanh','maygiat','quatdien','dieuhoa','dencay','donghotuong','ghetre'];
+/* Bỏ catalog nội thất, từ điển, học bài, đồng hồ khỏi sảnh */
+for(let i=HALL_SPOTS.length-1;i>=0;i--)if(['furn','dict','study','clock'].includes(HALL_SPOTS[i][0]))HALL_SPOTS.splice(i,1);
+/* Vị trí bày đồ phòng khách ngay trong sảnh (khung 640×400) */
+const HALL_POS={4:{w0:[412,108,62],w1:[496,108,62],f0:[238,318,116],f1:[452,318,116]},
+ 6:{w0:[392,108,58],w1:[458,108,58],w2:[524,108,58],f0:[214,320,112],f1:[338,268,96],f2:[470,320,112]}};
+function hSlots(t){const out=[];for(let r=0;r<HT[t][2];r++)roomSlots(HT[t][3]).forEach(s=>out.push([r+'-'+s[3],s[0],r]));return out;}
+function hStat(){const h=HS(),t=tierOf(luxury()),all=hSlots(t);const used=all.filter(([k])=>h.place[k]&&FURN[h.place[k]]);
+  const free=kd=>all.filter(([k,x])=>x===kd&&!(h.place[k]&&FURN[h.place[k]])).length;
+  const placed=Object.entries(h.place).filter(([k,id])=>FURN[id]&&all.some(a=>a[0]===k));const stored=Object.keys(h.furn).reduce((a,id)=>a+Math.max(0,(h.furn[id]||0)-placed.filter(x=>x[1]===id).length),0);
+  return {t,cap:all.length,used:used.length,freeF:free('f'),freeW:free('w'),stored};}
+function hPlace(id){const h=HS(),t=tierOf(luxury()),kd=FURN[id][3];const s=hSlots(t).find(([k,x])=>x===kd&&!(h.place[k]&&FURN[h.place[k]]));if(!s)return null;h.place[s[0]]=id;shSave();return s;}
+let hfNew='';
+(function(){const base=hallSVG;hallSVG=function(t){let s=base(t);
+  try{const tp=document.createElement('template');tp.innerHTML=s;tp.content.querySelectorAll('[data-hs="furn"],[data-hs="dict"],[data-hs="study"],[data-hs="clock"]').forEach(e=>e.remove());s=tp.innerHTML;}catch(e){}
+  const h=HS(),n=HT[t][3],P=HALL_POS[n===4?4:6];const edit=typeof houseEdit!=='undefined'&&houseEdit;
+  const items=Object.entries(P).sort((a,b)=>(a[0][0]==='w'?0:1)-(b[0][0]==='w'?0:1)||a[1][1]-b[1][1]).map(([sid,[x,y,sz]])=>{const key='0-'+sid,kd=sid[0],id=h.place[key];
+    const bx=kd==='w'?x-sz/2:x-sz/2,by=kd==='w'?y-sz/2:y-sz,bh=sz;
+    if(id&&FURN[id])return `<g class="slot hfi${edit?' ed':' act'}${key===hfNew?' hfnew':''}" data-slot="${key}" data-fid="${id}">${kd==='f'?`<ellipse cx="${x}" cy="${y-2}" rx="${sz*.42}" ry="7" fill="#000" opacity=".13"/>`:''}${furnSVG(id,x,y,sz,kd)}${edit?`<g class="hfx"><circle cx="${bx+sz-4}" cy="${by+6}" r="11" fill="#c3402b" stroke="#fff" stroke-width="2"/><path d="M${bx+sz-9} ${by+6} h10" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g>`:''}</g>`;
+    return `<g class="${edit?'slot ed empty':'hempty'}" data-slot="${key}" data-kind="${kd}"><rect x="${bx}" y="${by}" width="${sz}" height="${bh}" rx="12" fill="#fff" fill-opacity="${edit?.5:.14}" stroke="${edit?'#0d7a63':'#fff'}" stroke-opacity="${edit?1:.55}" stroke-width="2.5" stroke-dasharray="7 6"/><text x="${x}" y="${by+bh/2+8}" text-anchor="middle" font-size="${edit?24:20}" font-weight="700" fill="${edit?'#0d7a63':'#fff'}" fill-opacity="${edit?1:.8}">+</text></g>`;}).join('');
+  return s.replace(/<\/svg>\s*$/,`<g class="hfurn">${items}</g></svg>`);};})();
+(function(){const base=viewHouse;viewHouse=function(){const r=base.apply(this,arguments);try{houseFix();}catch(e){console.warn(e);}return r;};})();
+function houseFix(){if(!/^#house/.test(location.hash||'#house')&&!app.querySelector('#hscene'))return;const hall=app.querySelector('.house .hall');if(!hall)return;const st=hStat(),t=st.t;
+  const hint=hall.querySelector('.small.muted');if(hint)hint.innerHTML='Đồ mua ở <b>Cửa hàng nội thất</b> được đặt thẳng vào nhà. Chạm đồ vật để nghe tên tiếng Trung, mở <b>cửa 花园</b> để ra Khu vườn, chạm <b>Tủ đồ</b> để thay trang phục.';
+  if(!hall.querySelector('.hcap')){const pct=Math.round(st.used/st.cap*100);
+    hall.insertAdjacentHTML('beforeend',`<div class="hcap panel"><div class="hcapt"><b>🏠 Sức chứa ${esc(HT[t][0])}: ${st.used}/${st.cap} món</b><span class="small muted">Còn ${st.freeF} chỗ đặt sàn · ${st.freeW} chỗ treo tường${st.stored?` · ${st.stored} món trong kho`:''}</span><div class="goalbar hcapbar"><i style="width:${pct}%"></i></div>${HT[t+1]?`<span class="small muted">Lên <b>${esc(HT[t+1][0])}</b> để có ${houseCap(t+1)} chỗ.</span>`:''}</div>
+     <div class="hcapb"><a class="btn pri sm" href="#furn">🛒 Mua đồ</a><button class="btn sm${houseEdit?' pri':''}" id="hedit2">${houseEdit?'✓ Xong':'✏️ Sắp xếp'}</button></div></div>`);
+    if(houseEdit)hall.querySelector('.hcap').insertAdjacentHTML('afterend','<div class="small muted hcaped">Chạm ô trống để bày đồ từ kho, chạm dấu đỏ trên món đồ để cất vào kho.</div>');
+    hall.querySelector('#hedit2').onclick=()=>{houseEdit=!houseEdit;viewHouse();};}
+  hall.querySelectorAll('.hempty').forEach(g=>g.addEventListener('click',e=>{e.stopPropagation();try{sfx('tap');}catch(_){}const kd=g.dataset.kind;
+    houseSay(g,`Chỗ này còn trống, hợp để ${kd==='w'?'treo một món lên tường':'đặt một món đồ'}. Mua đồ ở cửa hàng là mình đặt vào đây ngay!`,['Mua đồ',()=>{furnCat=kd==='w'?'w':'ess';location.hash='#furn';}],null);}));
+  /* phòng 0 đã ở sảnh: chỉ liệt kê các phòng khác */
+  const rooms=app.querySelector('.house .rooms');if(rooms){const first=rooms.querySelector('.room');if(first)first.remove();const sec=rooms.closest('section');const hd=sec&&sec.querySelector('h2');
+    if(!rooms.querySelector('.room')){if(sec){const row=hd&&hd.parentElement;if(row)row.remove();rooms.remove();sec.querySelectorAll(':scope > .small.muted').forEach(x=>x.remove());}}
+    else if(hd)hd.textContent='Các phòng khác';}
+  if(hfNew){const el=app.querySelector(`[data-slot="${hfNew}"]`);if(el){el.classList.add('hfnew');setTimeout(()=>{try{el.scrollIntoView({block:'center',behavior:'smooth'});}catch(_){}},60);}
+    const k=hfNew;hfNew='';setTimeout(()=>{const e2=app.querySelector(`[data-slot="${k}"]`);if(e2)e2.classList.remove('hfnew');},2600);}}
+/* Cửa hàng nội thất: đồ thiết yếu lên đầu, mua xong đặt thẳng vào nhà */
+furnCat='ess';
+viewFurn=function(){const h=HS(),s=SHOP(),p=luxury(),st=hStat(),t=st.t;const ess=id=>FURN_ESS.includes(id);
+  const ids=Object.keys(FURN).filter(id=>furnCat==='all'||(furnCat==='ess'?ess(id):furnCat==='deco'?!ess(id):FURN[id][3]===furnCat)).sort((a,b)=>furnCat==='ess'?FURN_ESS.indexOf(a)-FURN_ESS.indexOf(b):FURN[a][2]-FURN[b][2]);
+  app.innerHTML=`<div class="stack"><section class="hhero furnhero" style="--hc:#c87a14"><div class="hinfo"><div class="label">Cửa hàng nội thất</div><h1 style="margin:2px 0">Sắm đồ cho ${esc(houseTitle().replace('Nhà của ','nhà '))}</h1>
+     <div class="row" style="gap:10px;flex-wrap:wrap"><span class="ybpill" style="cursor:default">${YB}<b>${s.coins}</b></span><span class="luxpt">✨ <b>${p.toLocaleString('vi-VN')}</b> · ${esc(HT[t][0])}</span></div>
+     <div class="fcap"><b>🏠 Nhà đang bày ${st.used}/${st.cap} món</b><span>Còn <b>${st.freeF}</b> chỗ đặt sàn · <b>${st.freeW}</b> chỗ treo tường</span><div class="goalbar hcapbar"><i style="width:${Math.round(st.used/st.cap*100)}%"></i></div></div>
+     <p class="small muted" style="margin:4px 0 0">Mua xong, đồ được <b>đặt thẳng vào nhà</b>. Mỗi cấp nhà có sức chứa riêng; mỗi món cộng điểm Sang Trọng bằng giá, đủ điểm nhà tự nâng cấp và rộng thêm.</p></div><span class="hdart big">${furnIcon('sofa')}</span></section>
+   <div class="shslots">${[['ess','⭐ Thiết yếu'],['deco','🏮 Trang trí'],['f','🛋 Đặt sàn'],['w','🖼 Treo tường'],['all','Tất cả']].map(([k,n])=>`<button class="fchip${furnCat===k?' on':''}" data-fc="${k}">${n}</button>`).join('')}</div>
+   <div class="furngrid">${ids.map(id=>{const [n,ch,pr,k]=FURN[id],own=h.furn[id]||0,full=(k==='w'?st.freeW:st.freeF)<=0;return `<div class="furncard${own?' own':''}${ess(id)?' ess':''}">${ess(id)?'<i class="fess">Thiết yếu</i>':''}<span class="furnart">${furnIcon(id)}</span><b>${esc(n)} <span class="han small muted">${ch}</span></b><small>${k==='w'?'Treo tường':'Đặt sàn'} · ✨ +${pr}${own?` · có ${own}`:''}</small><button class="btn sm${own>=5?'':full?' warn':s.coins>=pr?' pri':''}" data-fb="${id}" ${own>=5?'disabled':''}>${own>=5?'Tối đa 5':full?'Hết chỗ':`${YB} ${pr}`}</button></div>`;}).join('')}</div></div>`;
+  app.querySelectorAll('[data-fc]').forEach(b=>b.onclick=()=>{furnCat=b.dataset.fc;viewFurn();});
+  app.querySelectorAll('[data-fb]').forEach(b=>b.onclick=()=>furnBuy(b.dataset.fb));};
+function furnFullDlg(id){const st=hStat(),k=FURN[id][3],t=st.t;const d=document.createElement('dialog');d.className='stkdlg';
+  d.innerHTML=`<div class="in stack" style="text-align:center;align-items:center"><button class="petx" aria-label="Đóng">×</button><span class="hdart big">${furnIcon(id)}</span><h3 style="margin:0">Nhà hết chỗ ${k==='w'?'treo tường':'đặt sàn'}</h3>
+   <p class="muted" style="margin:0">${esc(HT[t][0])} chứa tối đa <b>${st.cap}</b> món (đang bày ${st.used}). Cất bớt một món vào kho để lấy chỗ${HT[t+1]?`, hoặc lên <b>${esc(HT[t+1][0])}</b> để có ${houseCap(t+1)} chỗ`:''}.</p>
+   <div class="row" style="gap:8px;justify-content:center"><button class="btn pri" data-go="edit">✏️ Sắp xếp đồ</button><button class="btn" data-go="x">Để sau</button></div></div>`;
+  document.body.appendChild(d);d.showModal();d.addEventListener('close',()=>d.remove());d.querySelector('.petx').onclick=()=>d.close();d.querySelector('[data-go="x"]').onclick=()=>d.close();
+  d.querySelector('[data-go="edit"]').onclick=()=>{d.close();houseEdit=true;location.hash='#house';window.scrollTo({top:0});};}
+function furnBuy(id){const h=HS(),f=FURN[id];if(!f||(h.furn[id]||0)>=5)return;const st=hStat(),k=f[3];
+  const upg=tierOf(luxury()+f[2])>st.t;if((k==='w'?st.freeW:st.freeF)<=0&&!upg){furnFullDlg(id);return;}
+  if(!spend(f[2],'Mua '+f[0]))return;h.furn[id]=(h.furn[id]||0)+1;shSave();let s=hPlace(id);
+  if(!s){gardenToast(`🛋 Đã mua <b>${esc(f[0])}</b>, cất trong kho vì nhà hết chỗ.`);viewFurn();return;}
+  try{sfx('pair');confetti(30);}catch(e){}if(s[2]>=4)houseAll=true;houseEdit=false;hfNew=s[0];
+  gardenToast(`🛋 <b>${esc(f[0])}</b> đã được đặt vào ${esc(s[2]===0?'phòng khách':ROOM_NAMES[s[2]%ROOM_NAMES.length].toLowerCase())} · ✨ +${f[2]}`);
+  if(location.hash==='#house')viewHouse();else location.hash='#house';window.scrollTo({top:0});}
+if(window.__T)window.__u86={hStat,hPlace,furnBuy,HALL_POS,FURN_ESS,spots:()=>HALL_SPOTS.map(x=>x[0]),edit:v=>{houseEdit=!!v;}};
+
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
 function hzPanel(l){const z=l.hz;if(!z)return '';const wl=w=>`<a class="hzw han" href="${typeof wpURL==='function'?wpURL(w):'#'}" target="_blank" rel="noopener">${esc(w)}</a>`;
@@ -15818,7 +15991,7 @@ function route(){
   if(ttsOK)try{speechSynthesis.cancel();}catch(e){}
   if(sttStop){try{sttStop();}catch(e){}sttStop=null;}
   {const wg=document.getElementById('wdg');if(wg&&wg.open)wg.close();}
-  const MORE=['buddy','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
+  const MORE=['invite','buddy','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
   navUpdate(h);if(typeof navGroup==='function'&&navGroup(navKey(h))==='game'&&h!=='games'&&h!=='friends'&&h!=='achievements'){const q=QD();if(!q.gv){q.gv=1;qTick('game');save();}}
   const m=h.match(/^l(\d{1,2})$/);
   if(m&&+m[1]>=1&&+m[1]<=NL){const n=+m[1];if(cur.n!==n){cur={n,stage:'words'};}viewLesson(n,cur.stage);}
@@ -15827,7 +16000,7 @@ function route(){
   else if(h==='more')viewMore();else if(h==='pron')viewPron();else if(h==='listen')viewListen();else if(h==='culture')viewCulture();
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
-  else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
+  else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
   else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(/^duo-(race|defense)$/.test(h))viewDuo(h.slice(4));else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
