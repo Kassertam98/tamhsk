@@ -3413,6 +3413,19 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 @media (max-width:620px){.dfxhero{min-height:0;flex-direction:column}.dfxsvg{position:relative;height:170px}.dfxtxt{max-width:none;background:#141a3e;padding:18px}.dfxhero h1{font-size:28px}.deflv.dfxlv{grid-template-columns:repeat(auto-fill,minmax(74px,1fr))}.dfxn{font-size:22px}}
 @media (prefers-reduced-motion:reduce){.dfxmon,.dfxar,.dfxglow,.dfxspark,.dfxlv .dlv.cur{animation:none}}
 .dfxtxt{max-width:430px}
+
+/* 5.45 Đếm ngược chơi tiếp */
+.gmcd{position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;background:rgba(10,14,30,.62);backdrop-filter:blur(2px)}
+.gmcdin{display:flex;flex-direction:column;align-items:center;gap:8px;padding:26px 34px;border-radius:24px;background:var(--card);border:2px solid var(--jade);box-shadow:0 24px 50px -20px rgba(0,0,0,.6);min-width:240px}
+.gmcdl{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center}
+.gmcdn{font-size:96px;line-height:1;font-weight:800;color:var(--jade);min-height:96px;font-variant-numeric:tabular-nums}
+.gmcdn.go{color:#c87a14;font-size:72px}
+.gmcdn.pop{animation:gmcdPop .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes gmcdPop{0%{transform:scale(1.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.gmcdt{font-size:15px;font-weight:600}
+.gmcdbar{width:200px;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.gmcdbar i{display:block;height:100%;width:100%;background:var(--jade);border-radius:99px}
+@media (prefers-reduced-motion:reduce){.gmcdn.pop{animation:none}}
 </style>
 </head><body>
 
@@ -3438,12 +3451,12 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='dd6f9655';
-document.write('<script src="packs/hsk'+L+'.js?v=dd6f9655"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='8431bcd6';
+document.write('<script src="packs/hsk'+L+'.js?v=8431bcd6"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=dd6f9655','strokes-file');A('packs/dict.js?v=dd6f9655','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=8431bcd6','strokes-file');A('packs/dict.js?v=8431bcd6','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -13279,12 +13292,12 @@ Object.assign(PLAN_FEAT,{
   life:['♾️ Mọi quyền lợi Pro Năm, trả một lần dùng mãi','🆕 Gồm cả các cấp ra sau này (HSK3, HSK4…)','🏅 Huy hiệu PRO trên hồ sơ'],
   plus:['🐉 Tiểu Long Hổ tự thu hoạch ngay khi cây chín','🛡️ Không lo cây héo, không bị bạn bè trộm','🧺 Đã gồm gieo và thu hàng loạt'],
   plus_life:['🐉 Mọi quyền lợi Plus, trả một lần dùng mãi','🧺 Gieo và thu hàng loạt trọn đời'],
-  replay:['🔁 Mỗi ván thua được chơi tiếp 2 lượt miễn phí','🪙 Không tốn 50–100 Nguyên bảo mỗi lượt'],
+  replay:['🔁 Mỗi ván thua được chơi tiếp 1 lượt miễn phí','➕ Mua thêm được 2 lượt nữa (tối đa 3 lượt mỗi ván)'],
   replay_year:['🔁 Mọi quyền lợi Chơi Tiếp Tháng','💸 Tiết kiệm 49% so với mua từng tháng'],
   coins1000:['🪙 Cộng ngay 1.000 Nguyên bảo vào ví','🏺 Mua chậu, hạt giống, trang phục, chơi tiếp…','♻️ Mua được nhiều lần']});
 const PLAN_GROUPS=[['pro','⭐ Gói Pro','Học bài mới và chơi trò chơi không tốn năng lượng, ôn không giới hạn. Gói Năm và Trọn đời kèm luyện thi.',['month','year','life']],
   ['plus','🐉 Gói Plus','Tiểu Long Hổ tự thu hoạch cây chín trong vườn, kèm gieo và thu hàng loạt.',['plus','plus_life']],
-  ['replay','🔁 Gói Chơi Tiếp','Thua ván nào được chơi tiếp 2 lượt miễn phí, không mất Nguyên bảo.',['replay','replay_year']],
+  ['replay','🔁 Gói Chơi Tiếp','Thua ván nào cũng được chơi tiếp 1 lượt miễn phí, rồi mua thêm tối đa 2 lượt (3 lượt mỗi ván).',['replay','replay_year']],
   ['teacher','👩‍🏫 Gói Giáo viên','Tạo lớp, giao bài, bảng xếp hạng lớp, xuất CSV. Dành cho giáo viên và trung tâm.',['teacher']],
   ['coins','🪙 Nguyên bảo','Nạp Nguyên bảo để mua chậu, hạt giống, trang phục hoặc chơi tiếp.',['coins1000']]];
 Object.assign(GPB_IDS,{plus:'tamhsk_plus',plus_life:'tamhsk_plus_life',replay:'tamhsk_replay',replay_year:'tamhsk_replay_year',coins1000:'tamhsk_coins1000'});
@@ -16324,6 +16337,30 @@ function dfxRestyle(){const st=app.querySelector('.stack');const hero=app.queryS
   const gm=app.querySelector('.gmodes');if(gm)gm.classList.add('dfxmodes');
 }
 if(window.__T)window.__u90={dfxRestyle};
+
+
+/* ===== 5.45 Chơi tiếp khi thua: đếm ngược 5 giây rồi chơi tiếp bình thường
+   Không có gói: mua tối đa 2 lượt mỗi ván (50, 100 Nguyên bảo).
+   Gói Chơi Tiếp: lượt 1 miễn phí, sau đó mua thêm 2 lượt (50, 100) → tối đa 3 lượt mỗi ván. */
+const GM_CD=5;
+const gmMax=()=>(typeof replayActive==='function'&&replayActive())?3:2;
+function gmCost(n){const pk=typeof replayActive==='function'&&replayActive();if(pk)return n===0?0:50*n;return 50*(n+1);}
+function gmCountdown(key,lap,max,done){let ov=document.getElementById('gmcd');if(ov)ov.remove();ov=document.createElement('div');ov.id='gmcd';ov.className='gmcd';ov.setAttribute('role','status');ov.setAttribute('aria-live','assertive');
+  ov.innerHTML=`<div class="gmcdin"><div class="gmcdl">Chơi tiếp ${esc(GM_NAME[key]||'')} · lượt ${lap}/${max}</div><div class="gmcdn" id="gmcdn">${GM_CD}</div><div class="gmcdt">Chuẩn bị nhé!</div><div class="gmcdbar"><i id="gmcdbar"></i></div></div>`;
+  document.body.appendChild(ov);let t=GM_CD;const num=ov.querySelector('#gmcdn'),bar=ov.querySelector('#gmcdbar');requestAnimationFrame(()=>{bar.style.transition=`width ${GM_CD}s linear`;bar.style.width='0%';});
+  const pop=()=>{num.classList.remove('pop');void num.offsetWidth;num.classList.add('pop');};pop();try{sfx('boop');}catch(e){}
+  const iv=setInterval(()=>{t--;if(t>0){num.textContent=t;pop();try{sfx('boop');}catch(e){}return;}clearInterval(iv);num.textContent='Đi!';num.classList.add('go');pop();try{sfx('pair');}catch(e){}
+    setTimeout(()=>{ov.remove();try{done();}catch(e){console.warn(e);}},450);},1000);
+  if(window.__T)window.__gmcd={skip:()=>{clearInterval(iv);ov.remove();done();}};}
+gmLose=function(key,revive,giveUp){try{if(typeof duoOn==='function'&&duoOn())return false;if(GM_RUN.key!==key)GM_RUN={key,n:0};
+  const n=GM_RUN.n,max=gmMax();if(n>=max)return false;const cost=gmCost(n),pk=gmMax()===3;if(cost>0&&SHOP().coins<cost)return false;
+  const note=pk?(n===0?'<b>Miễn phí</b> nhờ Gói Chơi Tiếp.':`tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins}). Gói Chơi Tiếp đã dùng lượt miễn phí của ván này.`)
+    :`tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins}). <a href="#premium">Gói Chơi Tiếp</a>: lượt đầu mỗi ván miễn phí, mua thêm được tới 3 lượt.`;
+  gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Chơi tiếp ${esc(GM_NAME[key]||'')}?</h3><p class="small muted" style="margin:0">Giữ nguyên điểm, sau <b>${GM_CD} giây</b> đếm ngược sẽ chơi tiếp từ chỗ vừa thua. Lượt chơi tiếp <b>${n+1}/${max}</b> của ván này, ${note}</p>`,
+    cost?`Chơi tiếp · ${cost} ${YB}`:'Chơi tiếp miễn phí',()=>{
+    if(cost>0&&!spend(cost,'Chơi tiếp '+(GM_NAME[key]||'trò chơi')))return giveUp&&giveUp();GM_RUN.n=n+1;try{sfx('win');}catch(e){}gmCountdown(key,n+1,max,revive);},giveUp);
+  return true;}catch(e){return false;}};
+if(window.__T)window.__u91={gmCost,gmMax,run:()=>GM_RUN,lose:(k,r,g)=>gmLose(k,r,g)};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
