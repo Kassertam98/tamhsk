@@ -3334,6 +3334,85 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 .fwbig.fwlift::after{content:'⬆ Thả để đặt lên bàn';position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);font-size:13px;font-weight:700;color:var(--jade);white-space:nowrap}
 .fwtable .fwc.fwfly{pointer-events:none;z-index:5}
 .fwpet img.bao{transition:transform .5s,filter .5s}
+
+/* 5.44 Sảnh Thủ thành chữ Hán */
+.dfxhero{position:relative;overflow:hidden;border-radius:22px;min-height:300px;background:#1d2550;color:#fff;display:flex;align-items:stretch;box-shadow:0 18px 36px -24px rgba(20,24,60,.9);border:1.5px solid #3a4688}
+.dfxsvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.dfxtxt{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;padding:24px 26px;max-width:470px;background:linear-gradient(90deg,rgba(18,22,52,.92) 0,rgba(18,22,52,.78) 70%,rgba(18,22,52,0) 100%)}
+.dfxlab{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a9b6ff;display:flex;align-items:center;gap:8px}
+.dfxlab .han{letter-spacing:0;font-size:15px;padding:2px 8px;border-radius:8px;background:#c3402b;color:#ffe08a}
+.dfxhero h1{margin:0;font-size:36px;line-height:1.08;font-weight:800;letter-spacing:-.01em;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.25)}
+.dfxhero p{margin:0;font-size:14.5px;line-height:1.55;color:#d8ddff}
+.dfxhero p b{color:#ffd98a}
+.dfxstats{display:flex;flex-wrap:wrap;gap:6px}
+.dfxstats span{display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-size:13px;color:#e6e9ff}
+.dfxstats b{color:#fff}
+.dfxstats svg{width:16px;height:16px;color:#ffd98a}
+.dfxcoin{display:inline-block;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffe9a0,#f5b041 60%,#b97a10);box-shadow:inset 0 0 0 1.5px #a86610;flex:none}
+.dfxcta{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.dfxcta .btn{min-height:44px;border-radius:14px;font-weight:800;font-size:15px;display:inline-flex;align-items:center;gap:8px;padding:0 18px}
+.dfxgo{background:#ffd166;color:#3b2a00;border:0;box-shadow:0 5px 0 #c7951f}
+.dfxgo:hover{background:#ffdc85}
+.dfxgo:active{transform:translateY(3px);box-shadow:0 2px 0 #c7951f}
+.dfxgo svg{width:18px;height:18px}
+.dfxduo{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.dfxduo:hover{background:rgba(255,255,255,.2)}
+.dfxmon{animation:dfxBob 1.6s ease-in-out infinite;transform-box:fill-box}
+@keyframes dfxBob{0%,100%{translate:0 0}50%{translate:4px -5px}}
+.dfxar{stroke-dasharray:14 200;animation:dfxShoot 1.8s linear infinite}
+.dfxar.a2{animation-delay:.9s}
+@keyframes dfxShoot{0%{stroke-dashoffset:0;opacity:0}10%{opacity:1}80%{opacity:1}100%{stroke-dashoffset:-200;opacity:0}}
+.dfxglow{animation:dfxGlow 2.2s ease-in-out infinite}
+@keyframes dfxGlow{0%,100%{opacity:.55}50%{opacity:1}}
+.dfxspark{animation:dfxGlow 1s ease-in-out infinite}
+/* tiêu đề khối */
+.dfxpanel{border-top:4px solid #5b6bd6}
+.dfxpanel>.row h3,.dfxpanel>h3{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin:0}
+.dfxh{display:inline-flex;align-items:center;gap:8px;font-size:18px}
+.dfxh .han{width:30px;height:30px;border-radius:9px;background:#5b6bd6;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:17px}
+.dfxwallet{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;padding:5px 11px;border-radius:999px;background:color-mix(in srgb,#f5b041 16%,var(--card));color:var(--ink);border:1px solid color-mix(in srgb,#f5b041 45%,var(--line))}
+/* ô màn chơi kiểu tháp canh */
+.deflv.dfxlv{grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:12px;padding-top:10px}
+.dfxlv .dlv{position:relative;padding:16px 6px 10px;border-radius:6px 6px 14px 14px;border:2px solid color-mix(in srgb,#5b6bd6 40%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,#5b6bd6 14%,var(--card)),var(--card));gap:0;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+.dfxlv .dlv:not(:disabled):hover{transform:translateY(-3px);box-shadow:0 10px 18px -12px rgba(40,50,120,.6);border-color:#5b6bd6}
+.dfxtw{position:absolute;left:8px;right:8px;top:-10px;height:10px;background:repeating-linear-gradient(90deg,color-mix(in srgb,#5b6bd6 40%,var(--line)) 0 12px,transparent 12px 20px);border-radius:3px 3px 0 0}
+.dfxlv .dlv small{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dfxn{font-size:26px;line-height:1.1;font-weight:800;color:var(--ink)}
+.dfxbn{font-size:15px;line-height:1.3;margin:4px 0}
+.dfxlv .dstar{font-size:14px;margin-top:2px}
+.dfxlv .dlv.full{border-color:#f5b041;background:linear-gradient(180deg,color-mix(in srgb,#f5b041 20%,var(--card)),var(--card))}
+.dfxlv .dlv.full .dfxtw{background:repeating-linear-gradient(90deg,#f5b041 0 12px,transparent 12px 20px)}
+.dfxlv .dlv.cur{border-color:#5b6bd6;box-shadow:0 0 0 4px color-mix(in srgb,#5b6bd6 25%,transparent);animation:dfxPulse 1.8s ease-in-out infinite}
+.dfxlv .dlv.cur::after{content:'Đánh tiếp';position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:#5b6bd6;color:#fff;white-space:nowrap}
+@keyframes dfxPulse{0%,100%{box-shadow:0 0 0 4px color-mix(in srgb,#5b6bd6 25%,transparent)}50%{box-shadow:0 0 0 8px color-mix(in srgb,#5b6bd6 10%,transparent)}}
+.dfxlv .dlv.lock{opacity:1;filter:grayscale(1);background:var(--paper);cursor:not-allowed}
+.dfxlv .dlv.lock .dfxn,.dfxlv .dlv.lock .dstar{opacity:.35}
+.dfxlock{display:flex;align-items:center;justify-content:center;height:29px;color:var(--muted)}
+.dfxlock svg{width:22px;height:22px;opacity:.9}
+.dfxlv .dlv.boss{grid-column:span 2;border-color:#c3402b;background:linear-gradient(180deg,color-mix(in srgb,#c3402b 16%,var(--card)),var(--card))}
+.dfxlv .dlv.boss .dfxtw{background:repeating-linear-gradient(90deg,#c3402b 0 12px,transparent 12px 20px)}
+.dfxlv .dlv.boss small{color:#c3402b}
+/* kho vũ khí */
+.dfxups{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.dfxups .defup{position:relative;grid-template-columns:52px minmax(0,1fr);column-gap:12px;row-gap:4px;align-items:start;padding:14px;border-radius:16px;border:1.5px solid color-mix(in srgb,var(--wc) 40%,var(--line));background:linear-gradient(160deg,color-mix(in srgb,var(--wc) 12%,var(--card)),var(--card) 60%)}
+.dfxups .defup>*{grid-column:2}
+.dfxic{grid-column:1!important;grid-row:1/span 4;width:52px;height:52px;border-radius:14px;background:color-mix(in srgb,var(--wc) 18%,var(--card));border:1.5px solid color-mix(in srgb,var(--wc) 50%,transparent);display:flex;align-items:center;justify-content:center}
+.dfxic svg{width:36px;height:36px}
+.dfxups .defup>b{font-size:15.5px}
+.dfxpips{display:flex;align-items:center;gap:4px}
+.dfxpips i{width:22px;height:8px;border-radius:4px;background:var(--line)}
+.dfxpips i.on{background:var(--wc)}
+.dfxpips small{margin-left:6px;color:var(--muted);font-size:12px}
+.dfxups .defup .btn{justify-self:start;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;min-height:36px;margin-top:4px}
+.dfxups .defup.max{border-color:#f5b041}
+.dfxups .defup.max::after{content:'TỐI ĐA';position:absolute;top:10px;right:10px;font-size:10px;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:999px;background:#f5b041;color:#3b2a00}
+/* chế độ chơi */
+.dfxmodes .gmode{border-radius:18px}
+.dfxmodes .gmode.on{border-color:#5b6bd6;background:color-mix(in srgb,#5b6bd6 10%,var(--card))}
+.dfxmodes .gmode:last-child{border-color:color-mix(in srgb,#8e5cc7 45%,var(--line))}
+@media (max-width:620px){.dfxhero{min-height:0;flex-direction:column}.dfxsvg{position:relative;height:170px}.dfxtxt{max-width:none;background:#141a3e;padding:18px}.dfxhero h1{font-size:28px}.deflv.dfxlv{grid-template-columns:repeat(auto-fill,minmax(74px,1fr))}.dfxn{font-size:22px}}
+@media (prefers-reduced-motion:reduce){.dfxmon,.dfxar,.dfxglow,.dfxspark,.dfxlv .dlv.cur{animation:none}}
+.dfxtxt{max-width:430px}
 </style>
 </head><body>
 
@@ -3359,12 +3438,12 @@ dialog#gmdlg::backdrop{background:rgba(0,0,0,.45)}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='a4cc02b3';
-document.write('<script src="packs/hsk'+L+'.js?v=a4cc02b3"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='dd6f9655';
+document.write('<script src="packs/hsk'+L+'.js?v=dd6f9655"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a4cc02b3','strokes-file');A('packs/dict.js?v=a4cc02b3','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=dd6f9655','strokes-file');A('packs/dict.js?v=dd6f9655','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -16176,6 +16255,75 @@ function fwAbsorb(el,cb){let done=false;const go=()=>{if(done)return;done=true;t
     setTimeout(go,cards.length*60+1500);setTimeout(go,6000);}
   catch(e){go();}}
 if(window.__T)window.__u89={fwSwipe,fwAbsorb};
+
+
+/* ===== 5.44 Sảnh Thủ thành chữ Hán: thiết kế lại cho bắt mắt ===== */
+const DFX_MON=[['#e05d5d','#a83636','nǐ hǎo'],['#7c5cff','#4e35c9','xuéxí'],['#3fb37f','#23805a','péngyou'],['#f0a03c','#b66f17','chī fàn']];
+function dfxMonster(x,y,s,c,c2,tag,delay){return `<g class="dfxmon" style="animation-delay:${delay}s" transform="translate(${x} ${y}) scale(${s})">
+  <ellipse cx="0" cy="34" rx="26" ry="5" fill="#000" opacity=".25"/>
+  <path d="M-24 30 Q-28 -6 0 -14 Q28 -6 24 30 Q12 24 0 30 Q-12 24 -24 30z" fill="${c}" stroke="${c2}" stroke-width="3"/>
+  <path d="M-14 -10 L-20 -26 L-6 -14z M14 -10 L20 -26 L6 -14z" fill="${c2}"/>
+  <circle cx="-9" cy="4" r="6" fill="#fff"/><circle cx="9" cy="4" r="6" fill="#fff"/><circle cx="-8" cy="5" r="3" fill="#1b1b2e"/><circle cx="10" cy="5" r="3" fill="#1b1b2e"/>
+  <path d="M-8 18 Q0 23 8 18" stroke="#1b1b2e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <g transform="translate(0 -46)"><rect x="-34" y="-13" width="68" height="24" rx="12" fill="#fff" stroke="${c2}" stroke-width="2"/><text x="0" y="5" text-anchor="middle" font-size="13" font-weight="700" fill="${c2}" font-family="Be Vietnam Pro,system-ui,sans-serif">${tag}</text></g></g>`;}
+function dfxHeroSVG(){
+  const stars=Array.from({length:34},(_,i)=>{const x=(i*97)%800,y=(i*53)%130+8,r=(i%3)+1;return `<circle cx="${x}" cy="${y}" r="${r*.7}" fill="#fff" opacity="${.35+((i*7)%5)/10}"/>`;}).join('');
+  const brick=(x,y,w,h)=>{let o='';for(let r=0;r<Math.floor(h/18);r++)for(let c=0;c<Math.ceil(w/36)+1;c++){const bx=x+c*36-(r%2?18:0);if(bx>=x+w||bx+36<=x)continue;o+=`<rect x="${Math.max(x,bx)}" y="${y+r*18}" width="${Math.min(bx+36,x+w)-Math.max(x,bx)}" height="18" fill="none" stroke="#000" stroke-opacity=".14" stroke-width="1.5"/>`;}return o;};
+  const cren=(x,y,w)=>Array.from({length:Math.floor(w/26)},(_,i)=>`<rect x="${x+i*26}" y="${y-16}" width="16" height="18" fill="#7d84b8" stroke="#4b5187" stroke-width="2"/>`).join('');
+  return `<svg class="dfxsvg" viewBox="0 0 800 300" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+  <rect width="800" height="300" fill="#1d2550"/><rect y="150" width="800" height="150" fill="#232c5e"/>${stars}
+  <circle cx="610" cy="58" r="30" fill="#fff4c8"/><circle cx="622" cy="50" r="28" fill="#1d2550"/>
+  <path d="M0 210 L90 150 L170 196 L260 132 L360 200 L450 160 L560 205 L800 170 V300 H0z" fill="#2c3672"/>
+  <path d="M0 246 Q200 222 420 240 T800 236 V300 H0z" fill="#3a3157"/>
+  <path d="M0 262 Q260 246 520 258 T800 252 V300 H0z" fill="#4a3d63"/>
+  <g class="dfxarrows"><path class="dfxar a1" d="M560 128 L470 186" stroke="#ffd98a" stroke-width="3" stroke-linecap="round"/><path class="dfxar a2" d="M690 120 L520 200" stroke="#ffd98a" stroke-width="3" stroke-linecap="round"/></g>
+  <g transform="translate(520 0)">
+    <rect x="20" y="132" width="250" height="130" fill="#9aa1d1" stroke="#4b5187" stroke-width="3"/>${brick(20,132,250,126)}${cren(24,132,250)}
+    <rect x="0" y="92" width="64" height="170" fill="#a9b0dc" stroke="#4b5187" stroke-width="3"/>${brick(0,92,64,168)}${cren(2,92,64)}
+    <rect x="226" y="92" width="64" height="170" fill="#a9b0dc" stroke="#4b5187" stroke-width="3"/>${brick(226,92,64,168)}${cren(228,92,64)}
+    <path d="M32 74 V40 M258 74 V40" stroke="#4b5187" stroke-width="3"/><path d="M32 40 L60 48 L32 56z M258 40 L286 48 L258 56z" fill="#e5383b"/>
+    <path d="M110 262 V196 Q145 160 180 196 V262z" fill="#3b2a20" stroke="#4b5187" stroke-width="3"/><path d="M120 262 V200 M134 262 V188 M148 262 V184 M162 262 V188 M174 262 V200" stroke="#5c4330" stroke-width="3"/>
+    <rect x="106" y="146" width="78" height="30" rx="4" fill="#c3402b" stroke="#7a2617" stroke-width="2"/><text x="145" y="168" text-anchor="middle" font-size="20" font-weight="700" fill="#ffe08a" font-family="Noto Serif SC,serif">守城</text>
+    <rect x="18" y="104" width="28" height="28" rx="3" fill="#1d2550"/><rect x="244" y="104" width="28" height="28" rx="3" fill="#1d2550"/>
+    <circle cx="32" cy="118" r="8" fill="#ffd98a" class="dfxglow"/><circle cx="258" cy="118" r="8" fill="#ffd98a" class="dfxglow"/>
+  </g>
+  ${dfxMonster(352,236,.62,...DFX_MON[3],1.2)}${dfxMonster(404,214,.74,...DFX_MON[1],.4)}${dfxMonster(476,238,.8,...DFX_MON[2],.8)}${dfxMonster(560,272,0,...DFX_MON[0],0)}
+  <path d="M440 236 l10 -8 l4 12z" fill="#ffd98a" class="dfxspark"/></svg>`;}
+const DFX_ICON={
+ wall:'<svg viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="14" width="28" height="20" rx="2" fill="#a9b0dc" stroke="#4b5187" stroke-width="2"/><path d="M6 14 v-6 h6 v6 M17 14 v-6 h6 v6 M28 14 v-6 h6 v6" fill="#a9b0dc" stroke="#4b5187" stroke-width="2"/><path d="M6 21 H34 M6 27 H34 M14 14 v7 M26 14 v7 M20 21 v6 M10 27 v7 M30 27 v7" stroke="#4b5187" stroke-width="1.5"/></svg>',
+ ice:'<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 V36 M6 12 L34 28 M6 28 L34 12" stroke="#5ec8f2" stroke-width="3" stroke-linecap="round"/><path d="M16 7 L20 11 L24 7 M16 33 L20 29 L24 33 M7 17 L12 15 L10 10 M33 23 L28 25 L30 30 M7 23 L12 25 L10 30 M33 17 L28 15 L30 10" stroke="#5ec8f2" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
+ bomb:'<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="5" fill="#ffd166"/>'+[0,45,90,135,180,225,270,315].map((a,i)=>`<path d="M20 20 L${(20+15*Math.cos(a*Math.PI/180)).toFixed(1)} ${(20+15*Math.sin(a*Math.PI/180)).toFixed(1)}" stroke="${['#e5383b','#ffd166','#5ec8f2','#7c5cff'][i%4]}" stroke-width="3" stroke-linecap="round"/>`).join('')+'</svg>',
+ crit:'<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34 L30 10" stroke="#c87a14" stroke-width="3" stroke-linecap="round"/><path d="M30 10 L22 10 L30 4 L34 6 L36 10 L30 18z" fill="#ffd166" stroke="#a86610" stroke-width="1.5"/><path d="M6 34 L4 26 M6 34 L14 36 M9 31 L6 24 M9 31 L16 33" stroke="#e5383b" stroke-width="2" stroke-linecap="round"/></svg>'};
+const DFX_COL={wall:'#7d84b8',ice:'#3ba7d6',bomb:'#e5383b',crit:'#c87a14'};
+(function(){const base=viewDefense;viewDefense=function(){const r=base.apply(this,arguments);try{dfxRestyle();}catch(e){console.warn(e);}return r;};})();
+function dfxRestyle(){const st=app.querySelector('.stack');const hero=app.querySelector('.defhero');if(!st||!hero||st.classList.contains('dfxpage'))return;st.classList.add('dfxpage');
+  const d=DF(),g=G(),maxL=Math.max(1,Math.min(NL,g.unlocked||1));
+  let got=0;for(let l=1;l<=NL;l++)got+=Math.min(3,d.stars[l]||0);const tot=NL*3;
+  const open=l=>!(l>maxL+1&&!(d.stars[l]||0));
+  let nx=0;for(let l=1;l<=NL;l++){if(open(l)&&(d.stars[l]||0)<3){nx=l;break;}}if(!nx)nx=0;
+  hero.outerHTML=`<section class="dfxhero">${dfxHeroSVG()}<div class="dfxtxt"><div class="dfxlab"><span class="han">守城</span> Thủ thành chữ Hán</div><h1>Giữ cổng thành!</h1>
+    <p>Quái mang <b>pinyin</b> hoặc <b>nghĩa tiếng Việt</b> tiến về cổng. Chạm đúng chữ Hán để bắn hạ. 5 đợt quái, đợt cuối có <b>boss</b>.</p>
+    <div class="dfxstats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z M7 6H4a3 3 0 0 0 3 4 M17 6h3a3 3 0 0 1-3 4 M12 13v4 M8 20h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Kỷ lục <b>${(d.best||0).toLocaleString('vi-VN')}</b></span><span><i class="dfxcoin"></i>Xu <b>${d.coins}</b></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" fill="#f5b041"/></svg>Sao <b>${got}/${tot}</b></span></div>
+    <div class="dfxcta"><button class="btn dfxgo" id="dfxgo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M14 5h5v5M5 14l5 5M3 21l3-3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${nx?`Vào trận Bài ${nx}`:'Vào trận Tổng hợp'}</button><button class="btn dfxduo" id="dfxduo">Thủ thành đôi</button></div></div></section>`;
+  app.querySelector('#dfxgo').onclick=()=>{try{sfx('tap');}catch(e){}defPlay(nx);};
+  app.querySelector('#dfxduo').onclick=()=>{location.hash='#duo-defense';};
+  /* ô chọn màn kiểu tháp canh */
+  const lv=app.querySelector('.deflv');if(lv){lv.classList.add('dfxlv');
+    lv.querySelectorAll('.dlv').forEach(b=>{const l=+b.dataset.l,s=d.stars[l]||0;
+      if(l>=1&&l<=NL){b.innerHTML=`<span class="dfxtw" aria-hidden="true"></span><small>Bài ${b.disabled?l:''}</small>${b.disabled?'<span class="dfxlock" aria-label="Chưa mở"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></span>':`<b class="dfxn">${l}</b>`}<span class="dstar">${'★'.repeat(s)}<i>${'★'.repeat(3-s)}</i></span>`;
+        if(s>=3)b.classList.add('full');if(l===nx)b.classList.add('cur');}
+      else{b.classList.add('boss');const nm=l===0?'Tổng hợp':'HSK 3.0';b.innerHTML=`<span class="dfxtw" aria-hidden="true"></span><small>Màn boss</small><b class="dfxn dfxbn">${nm}</b>${l===0?`<span class="small">${NL} bài</span>`:`<span class="dstar">${'★'.repeat(s)}<i>${'★'.repeat(3-s)}</i></span>`}`;}});
+    const pnl=lv.closest('.panel');if(pnl){pnl.classList.add('dfxpanel');const h=pnl.querySelector('h3');if(h){h.innerHTML='<span class="dfxh"><span class="han">关</span>Chọn màn</span>';const sib=h.nextElementSibling;if(sib&&/Xu thủ thành/.test(sib.textContent))sib.innerHTML=`<span class="dfxwallet"><i class="dfxcoin"></i>${d.coins} xu</span>`;}}}
+  /* kho vũ khí */
+  const ups=app.querySelector('.defups');if(ups){ups.classList.add('dfxups');const pnl=ups.closest('.panel');if(pnl){pnl.classList.add('dfxpanel');const h=pnl.querySelector('h3');if(h)h.innerHTML=`<span class="dfxh"><span class="han">器</span>Kho vũ khí</span><span class="dfxwallet"><i class="dfxcoin"></i>${d.coins} xu</span>`;}
+    ups.querySelectorAll('.defup').forEach((c,i)=>{const it=DEF_UP[i];if(!it)return;const k=it[0],lv2=d.up[k]||0,n=it[3].length;c.style.setProperty('--wc',DFX_COL[k]||'#5b6bd6');
+      c.insertAdjacentHTML('afterbegin',`<span class="dfxic">${DFX_ICON[k]||''}</span>`);
+      const sp=[...c.querySelectorAll('.small')].find(x=>/^Cấp /.test(x.textContent));if(sp)sp.outerHTML=`<span class="dfxpips" aria-label="Cấp ${lv2}/${n}">${Array.from({length:n},(_,j)=>`<i class="${j<lv2?'on':''}"></i>`).join('')}<small>Cấp ${lv2}/${n}</small></span>`;
+      const bt=c.querySelector('[data-up]');if(bt&&!bt.disabled)bt.innerHTML=`<i class="dfxcoin"></i>Nâng cấp · ${bt.textContent.replace(' xu','')}`;if(lv2>=n)c.classList.add('max');});}
+  /* chế độ chơi */
+  const gm=app.querySelector('.gmodes');if(gm)gm.classList.add('dfxmodes');
+}
+if(window.__T)window.__u90={dfxRestyle};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
