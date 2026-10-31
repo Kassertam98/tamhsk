@@ -3563,6 +3563,56 @@ body:has(.bmplay) #fab{display:none}
  .bmdpad{grid-template-columns:repeat(3,46px);grid-template-rows:repeat(3,46px)}.bmdk{border-radius:13px}.bmbomb{width:84px;height:84px;font-size:12.5px}.bmbomb .han{font-size:28px}
  .bmplay{gap:6px;padding:8px 10px 10px}.bmhc{padding:4px 8px}.bmib{width:36px;height:36px}}
 .bmtoast{top:auto;bottom:12px}
+
+/* 5.48 Khu trò chơi theo thể loại */
+.hubcats .hcat{--tone:var(--ink)}
+.hubcats .hcat.on{background:var(--tone);border-color:var(--tone);color:#fff}
+.hsx{position:relative;padding:14px 14px 16px;border-radius:20px;background:color-mix(in srgb,var(--tone) 6%,var(--card));border:1.5px solid color-mix(in srgb,var(--tone) 28%,var(--line))}
+.hsx>.hsech{margin-bottom:10px}
+.hsx>.hsech h2{display:inline-flex;align-items:center;gap:8px;color:var(--tone)}
+.hsxic{width:30px;height:30px;border-radius:10px;background:var(--tone);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px}
+.hsx .hcard{border-color:color-mix(in srgb,var(--tone) 35%,var(--line))}
+.hsx .hcard:hover{border-color:var(--tone)}
+.hsx[data-sec="versus"]>.hsech h2{color:#a87700}
+@media (prefers-color-scheme:dark){.hsx[data-sec="versus"]>.hsech h2{color:#f2c443}}
+/* sảnh Lật thẻ */
+.mdhero{position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(135deg,#7a4b00,#b8860b 55%,#e0a106);color:#fff;display:flex;align-items:center;gap:16px;padding:22px 24px;min-height:200px;box-shadow:0 18px 36px -24px rgba(90,60,0,.9)}
+.mdhtxt{display:flex;flex-direction:column;gap:8px;min-width:0;flex:1}
+.mdhero h1{margin:0;font-size:32px;line-height:1.1;font-weight:800;color:#fff}
+.mdhero h1 .han{font-size:22px;opacity:.85}
+.mdhero p{margin:0;color:#fff6dc;line-height:1.55}.mdhero p b{color:#fff}
+.mdbest{display:flex;flex-wrap:wrap;gap:6px}.mdbest span{padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font-size:13px}
+.mdhart{position:relative;width:190px;height:150px;flex:none}
+.mdk{position:absolute;width:70px;height:94px;border-radius:12px;background:#fff;color:#1b2826;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 10px 18px -10px rgba(0,0,0,.5);text-align:center;font-size:13px;padding:4px}
+.mdk.han{font-size:34px;color:#c3402b}
+.mdk.k1{left:6px;top:20px;transform:rotate(-12deg);border:3px solid #ffd166}.mdk.k2{left:62px;top:6px;transform:rotate(3deg);border:3px solid #7cc8f2}.mdk.k3{left:128px;top:26px;transform:rotate(14deg);background:#2f6fd6;color:#fff}
+.mdk.k3{font-size:0}.mdk.k3::after{content:'翻';font-size:30px;color:#ffe7a3}
+.mdvs{position:absolute;left:76px;bottom:0;width:40px;height:40px;border-radius:50%;background:#d7261e;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(255,255,255,.4)}
+@media (max-width:620px){.mdhero{flex-direction:column;align-items:flex-start}.mdhart{align-self:center}.mdhero h1{font-size:26px}}
+/* ván đấu */
+.mdv{max-width:600px;margin:0 auto}
+.mdhud{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+.mdp{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:14px;background:var(--card);border:2px solid var(--line);min-width:0}
+.mdp.me{border-color:#2e9a5c}.mdp.opp{border-color:#d7261e;justify-content:flex-end}
+.mdp>span{display:flex;flex-direction:column;min-width:0}.mdp small{font-size:11px;color:var(--muted)}
+.mdn{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mdsc{font-size:26px;line-height:1;margin-left:auto}.mdp.opp .mdsc{margin-left:0;margin-right:auto}
+.mdp.me .mdsc{color:#2e9a5c}.mdp.opp .mdsc{color:#d7261e}
+.mdmid{display:flex;flex-direction:column;align-items:center;font-size:11px;color:var(--muted)}.mdmid b{font-size:22px;color:var(--ink)}
+.mdbar{position:relative;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.mdbar i{position:absolute;top:0;bottom:0;transition:width .4s}.mdbar .me{left:0;background:#2e9a5c}.mdbar .op{right:0;background:#d7261e}
+.mm.md{gap:8px;width:100%;max-width:560px}
+.md .mmc .mdtag{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:999px;white-space:nowrap;max-width:94%;overflow:hidden;text-overflow:ellipsis;pointer-events:none;opacity:0}
+.md .mmc.md-me,.md .mmc.md-op{cursor:default}
+.md .mmc.md-me .mmt{box-shadow:inset 0 0 0 3px #2e9a5c;background:color-mix(in srgb,#2e9a5c 12%,var(--card))}
+.md .mmc.md-op .mmt{box-shadow:inset 0 0 0 3px #d7261e;background:color-mix(in srgb,#d7261e 10%,var(--card));opacity:.75}
+.md .mmc.md-me .mdtag{opacity:1;background:#2e9a5c;color:#fff}.md .mmc.md-op .mdtag{opacity:1;background:#d7261e;color:#fff}
+.md .mmc.mdpend .mmt{box-shadow:inset 0 0 0 3px #e0a106}
+.mdlog{min-height:22px;text-align:center;color:var(--muted)}.mdlog b{color:var(--ink)}
+.mdwl{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+.mdw{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:12px;background:var(--paper)}
+.mdw .han{font-size:22px;min-width:40px}.mdw>span:nth-child(2){display:flex;flex-direction:column;flex:1;min-width:0}.mdw small{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#duobot{min-height:44px}
 </style>
 </head><body>
 
@@ -3588,12 +3638,12 @@ body:has(.bmplay) #fab{display:none}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='338c30cc';
-document.write('<script src="packs/hsk'+L+'.js?v=338c30cc"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='decc2917';
+document.write('<script src="packs/hsk'+L+'.js?v=decc2917"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=338c30cc','strokes-file');A('packs/dict.js?v=338c30cc','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=decc2917','strokes-file');A('packs/dict.js?v=decc2917','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -16346,13 +16396,13 @@ const hzDrawn=el=>!!(el.querySelector('svg path[clip-path]')||el.querySelector('
 (function(){const base=makeWriter;makeWriter=function(el,ch,opts0){const opts=Object.assign(hzCols(),opts0||{});let cur=base(el,ch,opts);if(!el||!cur)return cur;
   const glyph=()=>{if(hzDrawn(el)||el.querySelector('.wfb2')||el.querySelector(':scope>.han:not(.wfb)'))return;el.querySelectorAll('.wfb').forEach(x=>x.remove());el.insertAdjacentHTML('beforeend',`<div class="han wfb2" aria-hidden="true">${esc(ch)}</div>`);};
   const clean=()=>el.querySelectorAll('.wfb,.wfb2').forEach(x=>x.remove());
-  const redraw=()=>{if(!el.isConnected||hzDrawn(el)||!STROKES[ch])return false;try{const w=base(el,ch,opts);if(w)cur=w;}catch(e){}return true;};
+  let last=null;const redraw=()=>{if(!el.isConnected||hzDrawn(el)||!STROKES[ch])return false;try{const w=base(el,ch,opts);if(w){cur=w;if(last&&typeof w[last.k]==='function')setTimeout(()=>{try{if(cur===w)w[last.k].apply(w,last.a);}catch(e){}},60);}}catch(e){}return true;};
   const heal=()=>{if(!el.isConnected)return;if(hzDrawn(el)){clean();return;}if(redraw())return;hzEnsurePack();glyph();};
   [1200,3500,7000,12000,20000].forEach(t=>setTimeout(heal,t));
   const on=e=>{if(!el.isConnected){removeEventListener('hsk-pack',on);return;}if(e.detail==='strokes'&&STROKES[ch]&&!hzDrawn(el)){setTimeout(()=>{redraw();setTimeout(()=>{if(hzDrawn(el))clean();},400);},30);}};addEventListener('hsk-pack',on);
   try{const mo=new MutationObserver(()=>{if(!el.isConnected){mo.disconnect();return;}if(hzDrawn(el))clean();});mo.observe(el,{childList:true,subtree:true});setTimeout(()=>mo.disconnect(),30000);}catch(e){}
   /* các nút Xem nét / Tập viết luôn điều khiển bản vẽ mới nhất */
-  return new Proxy({},{get:(_,k)=>{const v=cur&&cur[k];return typeof v==='function'?v.bind(cur):v;}});};})();
+  return new Proxy({},{get:(_,k)=>{const v=cur&&cur[k];if(typeof v!=='function')return v;if(k==='animateCharacter'||k==='quiz')return (...a)=>{last={k,a};return cur[k].apply(cur,a);};if(k==='cancelQuiz'||k==='hideCharacter')return (...a)=>{if(k==='cancelQuiz')last=null;return cur[k].apply(cur,a);};return v.bind(cur);}});};})();
 if(window.__T)window.__u87={hzCols,hzRGB,strokeKind,strokeRule,compName,compLoad,hzCompHTML,hzStepsHTML};
 
 
@@ -16592,7 +16642,7 @@ function prHanziIntroHTML(){const ord=PR_ORDER.map(([r,ch])=>`<button class="pro
 if(window.__T)window.__u92={prMount,prQuiz,PRS,prDone};
 
 
-/* ===== 5.47 Hán Tự Đại Chiến (Bomber HSK): đặt bom chữ Hán, bong bóng câu hỏi, đấu với Tiểu Sư Đệ / Lão Sư ===== */
+/* ===== 5.47 Đặt Bom HSK (Bomber HSK): đặt bom chữ Hán, bong bóng câu hỏi, đấu với Tiểu Sư Đệ / Lão Sư ===== */
 const BM=(function(){
 'use strict';
 const VOCAB=[['苹果','píngguǒ','quả táo'],['米饭','mǐfàn','cơm'],['朋友','péngyou','bạn bè'],['老师','lǎoshī','giáo viên'],['学生','xuésheng','học sinh'],['医生','yīshēng','bác sĩ'],
@@ -16807,7 +16857,7 @@ const heroSVG=()=>`<svg class="bmsvg" viewBox="0 0 320 200" preserveAspectRatio=
 </svg>`;
 function view(){stopGames();TOK++;G=null;running=false;paused=false;const st=ST();
   const opt=(attr,v,on,t,s)=>`<button class="bmopt${on?' on':''}" data-${attr}="${v}" aria-pressed="${on}"><b>${t}</b><small>${s}</small></button>`;
-  app.innerHTML=`<div class="stack bmv"><section class="bmhero">${heroSVG()}<div class="bmtxt"><div class="bmlab"><span class="han">炸</span>Trò chơi mới · Bomber HSK</div><h1>Hán Tự Đại Chiến</h1>
+  app.innerHTML=`<div class="stack bmv"><section class="bmhero">${heroSVG()}<div class="bmtxt"><div class="bmlab"><span class="han">炸</span>Trò chơi mới · Hành động</div><h1>Đặt Bom HSK</h1>
       <p>Đặt bom phá thùng, <b>chọn đúng nghĩa</b> để bom nổ sớm và mạnh hơn. Trúng lửa thì bị nhốt trong <b>bong bóng</b>: trả lời đúng mới thoát!</p>
       <div class="bmstats"><span>🏆 Kỷ lục <b>${st.best||0}</b> điểm</span><span>⚔️ Thắng <b>${st.wins||0}</b>/${st.games||0} ván</span><span>👴 Hạ Lão Sư <b>${st.hardWins||0}</b> lần</span></div>
       <div class="bmcta"><button class="btn bmgo" id="bmgo"><span class="han">炸</span> Vào trận</button></div></div></section>
@@ -16824,7 +16874,7 @@ function view(){stopGames();TOK++;G=null;running=false;paused=false;const st=ST(
 const ARW={up:'M12 5l7 9H5z',left:'M5 12l9-7v14z',right:'M19 12l-9 7V5z',down:'M12 19l-7-9h14z'},ARL={up:'Lên',left:'Trái',right:'Phải',down:'Xuống'};
 function start(){if(typeof gmGate==='function'&&!gmGate('bomber',start))return;try{gmReset('bomber');}catch(e){}stopGames();TOK++;const tk=TOK;POOL=buildPool();const nm=DIFF[CFG.bot].name;
   app.innerHTML=`<div class="bmv bmplay" id="bmplay">
-    <div class="bmtop"><button class="bmib" id="bmback" aria-label="Tạm dừng" title="Tạm dừng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor"/></svg></button><b class="bmtt"><span class="han">炸</span>Hán Tự Đại Chiến</b><span class="bmsp"></span><span class="bmsc"><span id="bmscore">0</span><small>điểm</small></span></div>
+    <div class="bmtop"><button class="bmib" id="bmback" aria-label="Tạm dừng" title="Tạm dừng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor"/></svg></button><b class="bmtt"><span class="han">炸</span>Đặt Bom HSK</b><span class="bmsp"></span><span class="bmsc"><span id="bmscore">0</span><small>điểm</small></span></div>
     <div class="bmhud"><div class="bmhc me"><span class="bmav me han">我</span><span class="bmhn"><b>Bạn</b><span class="bmhearts" id="bmhme"></span><span class="bmst" id="bmsme"></span></span></div>
       <div class="bmhc bot"><span class="bmhn" style="text-align:right;align-items:flex-end"><b>${esc(nm)}</b><span class="bmhearts" id="bmhbot"></span><span class="bmst" id="bmsbot"></span></span><span class="bmav bot han">师</span></div></div>
     <div class="bmstage"><canvas id="bmcv" width="448" height="448" aria-label="Bản đồ trò chơi"></canvas><div class="bmtoast" id="bmtoast" style="opacity:0" aria-live="polite"></div></div>
@@ -16868,18 +16918,178 @@ function viewBomber(){BM.view();}
 if(window.__T)window.__u93=BM;
 /* đăng ký vào danh sách trò chơi */
 try{XP_GAME_RT.add('bomber');}catch(e){}
-try{GAME_NAMES.bomber='Hán Tự Đại Chiến';}catch(e){}
-try{GM_NAME.bomber='Hán Tự Đại Chiến';}catch(e){}
-try{NAVG.game.items.splice(2,0,['bomber','Đại chiến']);}catch(e){}
-try{HUB.unshift({k:'bomber',cat:'action',ic:'炸',col:'#c3402b',name:'Hán Tự Đại Chiến',d:'Đặt bom chữ Hán, chọn đúng nghĩa để nổ sớm, thoát bong bóng câu hỏi và hạ Lão Sư.',meta:()=>{const s=S.bomber||{};return `Kỷ lục ${s.best||0} điểm · thắng ${s.wins||0} ván`;},isNew:1});}catch(e){}
+try{GAME_NAMES.bomber='Đặt Bom HSK';}catch(e){}
+try{GM_NAME.bomber='Đặt Bom HSK';}catch(e){}
+try{NAVG.game.items.splice(2,0,['bomber','Đặt bom']);}catch(e){}
+try{HUB.unshift({k:'bomber',cat:'action',ic:'炸',col:'#c3402b',name:'Đặt Bom HSK',d:'Đặt bom chữ Hán, chọn đúng nghĩa để nổ sớm, thoát bong bóng câu hỏi và hạ Lão Sư.',meta:()=>{const s=S.bomber||{};return `Kỷ lục ${s.best||0} điểm · thắng ${s.wins||0} ván`;},isNew:1});}catch(e){}
 try{GA_BG.bomber=['#dff3e6','#f4fbf6'];GA_ART.bomber=`<rect x="0" y="40" width="160" height="60" fill="#93d38b"/>${[0,1,2,3,4,5,6].map(i=>`<rect x="${i*24-4}" y="${i%2?64:40}" width="24" height="24" fill="#86c97f"/>`).join('')}
 <rect x="18" y="58" width="22" height="22" rx="4" fill="#8b93a8"/><rect x="118" y="58" width="22" height="22" rx="4" fill="#8b93a8"/><rect x="96" y="44" width="20" height="20" rx="3" fill="#c8925a" stroke="#7a4f2a" stroke-width="2"/>
 <rect x="44" y="70" width="22" height="22" rx="7" fill="#ff8a2a"/><rect x="66" y="70" width="22" height="22" rx="7" fill="#ff8a2a"/><rect x="88" y="70" width="22" height="22" rx="7" fill="#ff8a2a"/><circle cx="77" cy="81" r="7" fill="#ffd166"/>
 <rect x="128" y="76" width="22" height="22" rx="5" fill="#c3402b"/><text x="139" y="92" text-anchor="middle" font-size="13" font-weight="900" fill="#ffe08a">字</text>
 <circle cx="74" cy="30" r="18" fill="#1d1d2b"/><circle cx="68" cy="24" r="5" fill="rgba(255,255,255,.35)"/><path d="M84 16 q6 -9 12 -6" stroke="#8a5a3b" stroke-width="3" fill="none"/><circle cx="97" cy="10" r="4" fill="#ffd166"/>`;}catch(e){}
-try{if(typeof GUIDES==='object')GUIDES.bomber=['Hán Tự Đại Chiến',[['🕹️','Di chuyển','Giữ nút mũi tên trên màn hình (máy tính: phím mũi tên hoặc WASD).'],['💣','Đặt bom chữ Hán','Bom mang 1 từ HSK, tự nổ sau 3 giây. Chọn đúng nghĩa: bom nổ ngay và xa thêm 1 ô.'],['字','Ô chữ Hán đỏ','Chỉ bom nổ nhờ đáp án đúng mới phá được, phá xong +30 điểm và hay rơi vật phẩm.'],['🫧','Bong bóng','Trúng lửa bị nhốt: trả lời đúng là thoát, sai hoặc hết giờ mất 1 máu.'],['🎁','Vật phẩm','👟 chạy nhanh · 💣 thêm bom · 📜 nổ xa · 🛡️ đỡ 1 lần trả lời sai.'],['🏆','Thắng','Hạ hết 3 máu của đối thủ. Hết máu có thể chơi tiếp sau 5 giây đếm ngược.']]];}catch(e){}
-try{MORE_TILES.unshift(['#bomber','炸','Hán Tự Đại Chiến','Đặt bom chữ Hán, trả lời đúng để nổ sớm và hạ Lão Sư']);}catch(e){}
+try{if(typeof GUIDES==='object')GUIDES.bomber=['Đặt Bom HSK',[['🕹️','Di chuyển','Giữ nút mũi tên trên màn hình (máy tính: phím mũi tên hoặc WASD).'],['💣','Đặt bom chữ Hán','Bom mang 1 từ HSK, tự nổ sau 3 giây. Chọn đúng nghĩa: bom nổ ngay và xa thêm 1 ô.'],['字','Ô chữ Hán đỏ','Chỉ bom nổ nhờ đáp án đúng mới phá được, phá xong +30 điểm và hay rơi vật phẩm.'],['🫧','Bong bóng','Trúng lửa bị nhốt: trả lời đúng là thoát, sai hoặc hết giờ mất 1 máu.'],['🎁','Vật phẩm','👟 chạy nhanh · 💣 thêm bom · 📜 nổ xa · 🛡️ đỡ 1 lần trả lời sai.'],['🏆','Thắng','Hạ hết 3 máu của đối thủ. Hết máu có thể chơi tiếp sau 5 giây đếm ngược.']]];}catch(e){}
+try{MORE_TILES.unshift(['#bomber','炸','Đặt Bom HSK','Đặt bom chữ Hán, trả lời đúng để nổ sớm và hạ Lão Sư']);}catch(e){}
 try{const g=TILE_GROUPS.find(x=>x[0]==='Trò chơi');if(g&&!g[1].includes('#bomber'))g[1].unshift('#bomber');}catch(e){}
+
+
+/* ===== 5.48 Khu trò chơi xếp lại theo thể loại · Lật thẻ đối kháng (máy / ghép tự do / mời bạn) · cấp mở khóa chỉnh từ trang quản lý ===== */
+/* ---------- 1. Cấp mở khóa lấy từ máy chủ (trang quản lý → Trò chơi) ---------- */
+const GLOCK_DEF=Object.assign({},GLOCK);
+function glockApply(o){Object.keys(GLOCK).forEach(k=>delete GLOCK[k]);Object.assign(GLOCK,GLOCK_DEF);
+  if(o&&typeof o==='object')Object.keys(o).forEach(k=>{const v=Math.round(+o[k]);if(v>=1&&v<=99){if(v<=1)delete GLOCK[k];else GLOCK[k]=v;}});}
+try{glockApply(JSON.parse(localStorage.getItem('hsk-glock')||'null'));}catch(e){}
+async function glockSync(){try{const r=await fetch(API_BASE+'/v1/config',{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(!j||!('glock' in j))return;
+  const before=JSON.stringify(GLOCK);try{localStorage.setItem('hsk-glock',JSON.stringify(j.glock||null));}catch(e){}glockApply(j.glock);
+  if(JSON.stringify(GLOCK)!==before&&location.hash==='#games')viewGames();}catch(e){}}
+setTimeout(glockSync,1500);setInterval(()=>{if(!document.hidden)glockSync();},3600e3);
+
+/* ---------- 2. Khu trò chơi: Hành động · Thế giới · Đối kháng · Câu chuyện · Mini game · Thành tựu (cuối) ---------- */
+HUB_CATS.splice(0,HUB_CATS.length,['all','Tất cả'],['action','Hành động'],['world','Thế giới'],['versus','Đối kháng'],['story','Câu chuyện'],['mini','Mini game'],['social','Thành tựu']);
+Object.assign(HUB_SEC,{action:['Hành động','Phản xạ nhanh, nhận mặt chữ tức thì'],world:['Thế giới','Chơi dài ngày, cùng mọi người xây dựng'],versus:['Đối kháng','Đấu trực tiếp với bạn bè, người chơi khác hoặc máy'],
+  story:['Câu chuyện','Đọc hiểu và hội thoại như đang sống ở Trung Quốc'],mini:['Mini game','Chơi nhanh 1–3 phút với từ đã học'],social:['Thành tựu','Bảng xếp hạng, bạn bè và huy hiệu']});
+const HUB_TONE={action:'#d7261e',world:'#2f6fd6',versus:'#e0a106',story:'#8e5cc7',mini:'#0d7a63',social:'#7a5a3a'};
+const HUB_ICO={action:'⚡',world:'🌏',versus:'⚔️',story:'💬',mini:'🎲',social:'🏆'};
+const HUB_CAT2={race:'action',bomber:'action',defense:'action',blocks:'action',wall:'world',garden:'world',travel:'world',duel:'versus','duo-memory':'versus',chat:'story',rank:'social',friends:'social',achievements:'social'};
+const HUB_ORDER=['race','bomber','defense','blocks','wall','garden','travel','duel','duo-memory','chat','rank','friends','achievements'];
+HUB.push({k:'duo-memory',cat:'versus',ic:'翻',col:'#e0a106',name:'Lật thẻ đối kháng',d:'Hai người cùng một bộ 16 thẻ. Ai lật trúng cặp chữ Hán – nghĩa trước sẽ lấy cặp đó.',meta:()=>'Online · đấu với máy, ghép tự do hoặc mời bạn',isNew:1,net:1});
+HUB.forEach(x=>{if(HUB_CAT2[x.k])x.cat=HUB_CAT2[x.k];});
+{const ix=k=>{const i=HUB_ORDER.indexOf(k);return i<0?99:i;};HUB.sort((a,b)=>ix(a.k)-ix(b.k));}
+try{GA_BG['duo-memory']=['#fff1c9','#fffaf0'];GA_ART['duo-memory']=`<rect x="0" y="0" width="160" height="100" fill="#ffe7a3" opacity=".5"/>
+<g transform="rotate(-10 48 52)"><rect x="24" y="18" width="46" height="62" rx="8" fill="#fff" stroke="#e0a106" stroke-width="3"/><text x="47" y="58" text-anchor="middle" font-size="26" font-weight="700" fill="#c3402b">猫</text></g>
+<g transform="rotate(10 112 52)"><rect x="90" y="18" width="46" height="62" rx="8" fill="#fff" stroke="#2f6fd6" stroke-width="3"/><text x="113" y="46" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2826">con</text><text x="113" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2826">mèo</text></g>
+<circle cx="80" cy="50" r="15" fill="#e0a106"/><text x="80" y="55" text-anchor="middle" font-size="13" font-weight="900" fill="#fff">VS</text>`;}catch(e){}
+try{const it=NAVG.game.items,ord=['games','race','bomber','defense','wall','garden','travel','duel','memory','chat','blocks','puzzle','hv','league','friends','achievements'];
+  if(!it.some(x=>x[0]==='memory'))it.push(['memory','Lật thẻ']);const ix=k=>{const i=ord.indexOf(k);return i<0?50:i;};it.sort((a,b)=>ix(a[0])-ix(b[0]));}catch(e){}
+try{XP_GAME_RT.add('memory');XP_GAME_RT.add('duo-memory');}catch(e){}
+try{GM_NAME.memory='Lật thẻ đối kháng';}catch(e){}
+try{DUO_NAME.memory='Lật thẻ đối kháng';DUO_HAN.memory='翻牌对战';}catch(e){}
+function hubSecHTML(c,inner,sub){const t=HUB_SEC[c]||[c,''];return `<section class="hsec hsx" data-sec="${c}" style="--tone:${HUB_TONE[c]||'var(--jade)'}"><div class="hsech"><h2><span class="hsxic" aria-hidden="true">${HUB_ICO[c]||''}</span>${esc(t[0])}</h2><span class="small muted">${esc(sub||t[1])}</span></div>${inner}</section>`;}
+function viewGames(){
+  if(!HUB_CATS.some(c=>c[0]===hubCat))hubCat='all';
+  const g=G(),wk=g.weekId===weekId()?(g.weekXp||0):0,lv=pLevel();
+  const cats=hubCat==='all'?['action','world','versus','story','mini','social']:[hubCat];
+  const inC=(x,c)=>x.cat.split(' ').includes(c);
+  const hLock=[],mLock=[];let main='',social='';
+  cats.forEach(c=>{
+    if(c==='mini'){const op=GAMES.filter(m=>glOpen('mini:'+m.k));GAMES.filter(m=>!glOpen('mini:'+m.k)).forEach(m=>mLock.push(m));
+      if(op.length)main+=hubSecHTML('mini',`<div class="gamecards">${op.map(m=>miniCard(m,false)).join('')}</div>`);return;}
+    const items=HUB.filter(x=>inC(x,c));const op=c==='social'?items:items.filter(x=>glOpen(x.k));if(c!=='social')items.filter(x=>!glOpen(x.k)).forEach(x=>hLock.push(x));
+    if(!op.length)return;const h=hubSecHTML(c,`<div class="hcards">${op.map(x=>hubCardL(x,false)).join('')}</div>`);if(c==='social')social=h;else main+=h;});
+  hLock.sort((a,b)=>glNeed(a.k)-glNeed(b.k));mLock.sort((a,b)=>glNeed('mini:'+a.k)-glNeed('mini:'+b.k));const nLock=hLock.length+mLock.length;
+  app.innerHTML=`<div class="stack"><section class="hubhero"><div><div class="label">Khu trò chơi</div><h1>Học tiếng Trung bằng trò chơi</h1><p class="muted" style="margin:0">Mọi câu trả lời đúng đều cộng XP. Lên cấp để mở thêm trò mới.</p></div>
+    <div class="hubstats"><div><b>${lv}</b><span>Cấp</span></div><div><b>${wk}</b><span>XP tuần</span></div><div><b>${g.water}</b><span>Giọt nước</span></div><div><b>${g.coins}</b><span>Nguyên bảo</span></div></div></section>
+    <div class="hubcats" role="tablist">${HUB_CATS.map(([k,n])=>`<button role="tab" aria-selected="${k===hubCat}" class="hcat${k===hubCat?' on':''}" data-cat="${k}" style="--tone:${HUB_TONE[k]||'var(--ink)'}">${n}</button>`).join('')}</div>
+    <div id="gm"></div>${main}
+    ${nLock?`<section class="hsec glsec"><div class="hsech"><h2>🔒 Mở khóa khi lên cấp</h2><span class="small muted">Bạn đang cấp ${lv}</span></div>
+      ${hLock.length?`<div class="hcards">${hLock.map(x=>hubCardL(x,true)).join('')}</div>`:''}${mLock.length?`<div class="gamecards" style="margin-top:12px">${mLock.map(m=>miniCard(m,true)).join('')}</div>`:''}</section>`:''}
+    ${social}${!main&&!social&&!nLock?'<div class="panel muted">Chưa có trò chơi nào trong mục này.</div>':''}</div>`;
+  app.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{hubCat=b.dataset.cat;viewGames();});
+  app.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(b.dataset.lock){gameLockGate('mini:'+b.dataset.game);return;}if(b.dataset.game==='mem'){location.hash='#memory';return;}
+    startGame(b.dataset.game);const gm=app.querySelector('#gm');if(gm)gm.scrollIntoView({block:'start',behavior:'smooth'});});
+  app.querySelectorAll('a.glk').forEach(a=>a.onclick=e=>{e.preventDefault();gardenToast(`🔒 Mở ở cấp ${a.dataset.lock}. Bạn đang cấp ${lv}.`);try{sfx('no');}catch(_){}});
+  if(pendMini&&GAMES.some(x=>x.k===pendMini)){const k=pendMini;pendMini=null;startGame(k);}else pendMini=null;
+}
+
+/* ---------- 3. Lật thẻ ghép đôi: sảnh chọn chế độ ---------- */
+const MD_PAIRS=8;
+try{if(typeof GUIDES==='object')GUIDES.memory=['Lật thẻ ghép đôi',[['🃏','Lật 2 thẻ','Mỗi lượt lật 2 thẻ: một mặt chữ Hán, một mặt nghĩa tiếng Việt.'],['✅','Trùng cặp','Chữ Hán khớp với nghĩa là ghép được cặp, thẻ được giữ lại.'],['⚔️','Đấu đối kháng','Hai người cùng một bộ 16 thẻ. Ai lật trúng cặp trước thì cặp đó thuộc về người đó.'],['🤖','Chọn đối thủ','Đấu với máy (Rồng Máy), ghép tự do với người chơi khác hoặc mời bạn bè.'],['🏆','Thắng','Hết thẻ, ai giữ nhiều cặp hơn là thắng. Thắng +10 Nguyên bảo (đấu với máy +5).']]];}catch(e){}
+function viewMemory(){stopGames();if(typeof gameLockGate==='function'&&gameLockGate('mini:mem')){viewGames();return;}
+  const b=bestOf('mem'),gm=GAMES.find(x=>x.k==='mem')||{name:'Lật thẻ ghép đôi'};
+  const card=(k,ic,t,d,chips,go)=>`<button class="gmode${k==='solo'?' on':''}" data-mdm="${k}"><span class="gmart">${ic}</span><span class="gmtx"><b>${t}</b><small>${d}</small><span class="gmchips">${chips.map(c=>`<i>${c}</i>`).join('')}</span></span>${go?'<span class="gmgo">→</span>':''}</button>`;
+  app.innerHTML=`<div class="stack mdlobby"><section class="mdhero"><div class="mdhtxt"><div class="label" style="color:#ffe7a3">Mini game · Đối kháng</div><h1>${esc(gm.name)} <span class="han">翻牌</span></h1>
+      <p>Lật thẻ, ghép chữ Hán với nghĩa. Chơi một mình để luyện trí nhớ, hoặc <b>đấu trên cùng một bộ thẻ</b>: ai lật trúng cặp trước sẽ lấy cặp đó!</p>
+      <div class="mdbest"><span>🏅 Kỷ lục một mình: <b>${b!=null?b+' lượt':'chưa có'}</b></span></div></div>
+      <div class="mdhart" aria-hidden="true"><span class="mdk k1 han">猫</span><span class="mdk k2">con mèo</span><span class="mdk k3 han">书</span><span class="mdvs">VS</span></div></section>
+    <div class="panel stack"><h3 style="margin:0">Chọn chế độ <small class="muted" style="font-weight:500">· 3 kiểu chơi</small></h3><div class="gmodes three">
+      ${card('solo','🃏','Một mình','Lật 12 thẻ, ghép 6 cặp. Càng ít lượt càng tốt.',['Kỷ lục','XP'],false)}
+      ${card('bot','🤖','Đấu với máy','16 thẻ chung với Rồng Máy. Ai lật trúng cặp trước lấy cặp đó.',['Online','Thắng +5 '+YB],true)}
+      ${card('duo','👥','Ghép tự do / Mời bạn','Đấu người thật trên cùng bộ thẻ. Tìm đối thủ hoặc mời bạn bè.',['Online','Thắng +10 '+YB],true)}</div></div>
+    <div id="gm"></div>${typeof guideHTML==='function'?`<div class="panel">${guideHTML('memory')}</div>`:''}</div>`;
+  app.querySelector('[data-mdm="solo"]').onclick=()=>{startGame('mem');const c=app.querySelector('#gclose');if(c)c.onclick=()=>{stopGames();viewMemory();};const g2=app.querySelector('#gm');if(g2)g2.scrollIntoView({block:'start',behavior:'smooth'});};
+  app.querySelector('[data-mdm="bot"]').onclick=()=>mdBotStart();
+  app.querySelector('[data-mdm="duo"]').onclick=()=>{location.hash='#duo-memory';};
+  try{if(typeof ggMark==='function')ggMark('memory');}catch(e){}}
+async function mdBotStart(){if(SOC.auth&&!SOC.me){try{SOC.me=await fsGet('users/'+SOC.auth.uid);}catch(e){}}if(!SOC.auth||!SOC.me){location.hash='#duo-memory';return;}
+  const run=()=>{window.__gmPaid='memory';duoLaunch(duoBotMatch('memory'));};if(typeof gmGate==='function'&&!gmGate('memory',run))return;run();}
+/* Rồng Máy cho Lật thẻ: lấy cặp theo thời gian (trung bình ~6,5 giây/cặp) */
+(function(){const base=duoBotMatch;duoBotMatch=function(game){if(game!=='memory')return base.apply(this,arguments);
+  const seed=(Math.floor(Math.random()*2**31))|1;DUO.offs=0;
+  const m={id:'bot-'+Date.now().toString(36),game,lv:LEVEL,nl:duoNl(),seed,start:Date.now()+4000,role:'a',me:(SOC.auth&&SOC.auth.uid)||'me',opp:{uid:'bot',name:DUO_BOT.name,avatar:DUO_BOT.avatar},st:{},ev:[],n:0,ended:false,winner:'',bot:1};
+  const r=duoRng(seed^0x9e3779b9),B={ev:[],n:0,st:{a:{},b:{}},taken:new Set(),leaks:0,kills:0,outT:Infinity};
+  const ord=[...Array(MD_PAIRS).keys()];for(let i=ord.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[ord[i],ord[j]]=[ord[j],ord[i]];}
+  let t=2500;B.plan=ord.map(f=>{t+=4000+r()*5000;return {f,t};});m.B=B;return m;};})();
+/* sảnh chơi đôi: nội dung riêng cho Lật thẻ + nút "Đấu với máy ngay" cho mọi trò */
+(function(){const base=viewDuo;viewDuo=async function(g){await base.apply(this,arguments);if(location.hash!=='#duo-'+g)return;
+  if(g==='memory'){const h=app.querySelector('.duohero');if(h){const ic=h.querySelector('.addicon');if(ic)ic.textContent='翻';const lb=h.querySelector('.label');if(lb)lb.style.color='#b8860b';
+      const h1=h.querySelector('h1');if(h1)h1.innerHTML='Lật thẻ đối kháng <span class="han">翻牌对战</span>';const p=h.querySelector('p');if(p)p.innerHTML='Hai người cùng một bộ <b>16 thẻ</b>: 8 chữ Hán và 8 nghĩa. <b>Ai lật trúng cặp trước sẽ lấy cặp đó.</b> Hết thẻ, ai giữ nhiều cặp hơn là thắng.';}
+    const how=app.querySelector('.duohow');if(how)how.innerHTML=`<h3 style="margin:0">Luật chơi</h3><div><span>🃏</span><p><b>Cùng một bộ thẻ</b><small>Hai bên thấy cùng 16 thẻ úp. Mỗi lượt lật 2 thẻ, khớp chữ Hán với nghĩa là ghép được.</small></p></div><div><span>⚡</span><p><b>Ai nhanh tay hơn</b><small>Cặp nào bị đối thủ lấy trước sẽ đổi màu đỏ trên bàn của bạn. Lật sai không bị loại, chỉ mất thời gian.</small></p></div><div><span>🏆</span><p><b>Nhiều cặp hơn là thắng</b><small>Thắng +10 ${YB}, hòa +5 ${YB} (đấu với máy được một nửa). Cặp nào cũng được XP.</small></p></div>`;
+    const bk=app.querySelector('.duoback a');if(bk){bk.textContent='← Lật thẻ ghép đôi';bk.setAttribute('href','#memory');}}
+  const q=app.querySelector('#duoq');if(q&&!app.querySelector('#duobot')){q.insertAdjacentHTML('afterend',`<button class="btn" id="duobot">🤖 Đấu với máy ngay</button>`);
+    app.querySelector('#duobot').onclick=()=>{if(duoQueueing)duoCancel(g);const run=()=>{window.__gmPaid=g;duoLaunch(duoBotMatch(g));};if(typeof gmGate==='function'&&!gmGate(g,run))return;run();};}};})();
+(function(){const base=duoLaunch;duoLaunch=function(m){base.apply(this,arguments);if(m.game!=='memory')return;const r=app.querySelector('.duorule');if(r)r.textContent='⚡ Ai lật trúng cặp trước sẽ lấy cặp đó';
+  const s=app.querySelector('.duocd > .small.muted');if(s)s.textContent=`Cùng 16 thẻ · từ bài 1–${m.nl}`;};})();
+(function(){const base=defDuoPlay;defDuoPlay=function(m){if(m&&m.game==='memory')return mdPlay(m);return base.apply(this,arguments);};})();
+function duoInviteDlg(fid){const f=SOC.friends.find(x=>x.id===fid);gmDlg(`<div class="label" style="color:var(--jade)">Chơi đôi</div><h3 style="margin:4px 0">Mời ${esc(f?f.name:'bạn')} chơi trò nào?</h3><div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn" id="duog-race">🏎️ Đua xe đôi</button><button class="btn" id="duog-defense">🏰 Thủ thành đôi</button><button class="btn" id="duog-memory">🃏 Lật thẻ đối kháng</button></div><p class="small muted" style="margin:0">Khác cấp HSK vẫn đấu được, bạn ấy sẽ được hỏi xác nhận. Lời mời có hiệu lực 2 phút.</p>`,'Đóng',()=>{},null);
+  const d=document.getElementById('gmdlg');d.querySelector('#gmyes').style.display='none';['race','defense','memory'].forEach(g=>d.querySelector('#duog-'+g).onclick=()=>{d.onclose=null;d.close();duoInvite(fid,g);});}
+
+/* ---------- 4. Ván Lật thẻ đối kháng ---------- */
+function mdDeck(m){const r=duoRng(m.seed^0x2545f491);let pool=WORDS.filter(w=>!w.custom&&w.l>=1&&w.l<=m.nl);if(pool.length<MD_PAIRS*2)pool=WORDS.filter(w=>!w.custom);
+  const pk=pool.slice();for(let i=pk.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pk[i],pk[j]]=[pk[j],pk[i]];}
+  const vi=w=>(typeof vi1==='function'?vi1(w):w.vi.split(/[;,]/)[0]).trim();const ws=[],sz=new Set(),sv=new Set();
+  for(const w of pk){const v=vi(w);if(!v||sz.has(w.zh)||sv.has(v))continue;sz.add(w.zh);sv.add(v);ws.push(w);if(ws.length===MD_PAIRS)break;}
+  const cards=[];ws.forEach((w,f)=>{cards.push({f,w,han:true,vi:vi(w)},{f,w,han:false,vi:vi(w)});});
+  for(let i=cards.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[cards[i],cards[j]]=[cards[j],cards[i]];}return {ws,cards};}
+function mdPlay(m){stopGames();const {ws,cards}=mdDeck(m),role=m.role,myName=typeof idDisplay==='function'?idDisplay():(SOC.me&&SOC.me.name)||'Bạn';
+  const st={kills:0,opp:0,over:false,flips:0,miss:0,correct:0};const taken=new Map(),pend=new Set();let open=[],lock=false;
+  app.innerHTML=`<div class="stack mdv"><div class="mdhud"><div class="mdp me">${SOC.me?avatarHTML(SOC.me.avatar,34,SHOP().frame):''}<span><small>Bạn</small><b class="mdn">${esc(myName)}</b></span><b class="mdsc" id="mdme">0</b></div>
+      <div class="mdmid"><b id="mdleft">${MD_PAIRS}</b><small>cặp còn lại</small></div>
+      <div class="mdp opp"><b class="mdsc" id="mdop">0</b><span style="text-align:right"><small>Đối thủ</small><b class="mdn">${esc(m.opp.name||'Đối thủ')}</b></span>${avatarHTML(m.opp.avatar,34)}</div></div>
+    <div class="mdbar" aria-hidden="true"><i class="me" id="mdbme"></i><i class="op" id="mdbop"></i></div>
+    <div class="mm md" id="mdgrid">${cards.map((c,i)=>`<button class="mmc" data-i="${i}" aria-label="Thẻ ${i+1}"><span class="mmi"><span class="mmf mmb"><b class="han">翻</b></span><span class="mmf mmt${c.han?' han':''}">${c.han?esc(c.w.zh):esc(c.vi)}</span></span><span class="mdtag"></span></button>`).join('')}<div class="mmfx" aria-live="polite"></div></div>
+    <div class="mdlog small" id="mdlog" role="status">Lật 2 thẻ để tìm cặp chữ Hán – nghĩa. Nhanh tay lên!</div>
+    <div class="row" style="justify-content:center"><button class="btn sm ghost" id="mdquit">Bỏ cuộc</button></div></div>`;
+  const grid=app.querySelector('#mdgrid'),btn=i=>grid.querySelector(`.mmc[data-i="${i}"]`),log=t=>{const e=app.querySelector('#mdlog');if(e)e.innerHTML=t;};
+  const hud=()=>{const e=id=>app.querySelector(id);if(!e('#mdme'))return;e('#mdme').textContent=st.kills;e('#mdop').textContent=st.opp;e('#mdleft').textContent=MD_PAIRS-taken.size;
+    e('#mdbme').style.width=(st.kills/MD_PAIRS*100)+'%';e('#mdbop').style.width=(st.opp/MD_PAIRS*100)+'%';};
+  const flip=(i,up)=>{cards[i].up=up;const b=btn(i);if(b)b.classList.toggle('up',up);};
+  const claim=(f,who)=>{if(taken.has(f))return;taken.set(f,who);pend.delete(f);if(who==='me'){st.kills++;}else st.opp++;
+    cards.forEach((c,i)=>{if(c.f!==f)return;flip(i,true);const b=btn(i);if(b){b.classList.remove('nope','mdpend');b.classList.add(who==='me'?'md-me':'md-op');b.querySelector('.mdtag').textContent=who==='me'?'✓ Bạn':'✗ '+(m.opp.name||'Đối thủ');}});
+    if(open.some(i=>cards[i].f===f)){open=open.filter(i=>cards[i].f!==f);}
+    const w=ws[f];if(who==='me'){try{sfx('pair');}catch(e){}log(`✅ Bạn lấy cặp <b class="han">${esc(w.zh)}</b> ${esc(w.py)} · ${esc(cards.find(c=>c.f===f).vi)}`);}
+    else{try{sfx('no');}catch(e){}log(`⚡ ${esc(m.opp.name||'Đối thủ')} vừa lấy cặp <b class="han">${esc(w.zh)}</b> · ${esc(cards.find(c=>c.f===f).vi)}`);}
+    hud();if(taken.size>=MD_PAIRS)timers.push(setTimeout(()=>finish(false),700));};
+  const apply=j=>{if(!j)return;(j.ev||[]).forEach(e=>{if(e.k==='kill'&&Number.isInteger(e.f)&&e.f>=0&&e.f<MD_PAIRS)claim(e.f,e.by===role?'me':'opp');});
+    [...pend].forEach(f=>{if(taken.get(f)==='opp'){pend.delete(f);log('😮 Chậm hơn đối thủ một chút! Cặp đó đã bị lấy.');}});if(j.ended&&!st.over&&taken.size<MD_PAIRS)finish(false);};
+  const sync=async force=>{if(st.over)return;const j=await duoPush({kills:st.kills,correct:st.correct,total:st.flips},[],force);apply(j);};
+  grid.addEventListener('click',e=>{const b=e.target.closest('.mmc');if(!b||lock||st.over)return;const i=+b.dataset.i,c=cards[i];if(c.up||taken.has(c.f)||pend.has(c.f))return;
+    flip(i,true);try{sfx('tap');}catch(_){}if(c.han)speak(c.w.zh);open.push(i);if(open.length<2)return;st.flips++;const [a,b2]=open;open=[];
+    if(cards[a].f===cards[b2].f&&cards[a].han!==cards[b2].han){const f=cards[a].f;st.correct++;pend.add(f);[a,b2].forEach(x=>{const bb=btn(x);if(bb)bb.classList.add('mdpend');});DUO.pend.push({k:'kill',f});sync(true);}
+    else{st.miss++;lock=true;timers.push(setTimeout(()=>{[a,b2].forEach(x=>{const bb=btn(x);if(bb&&!taken.has(cards[x].f))bb.classList.add('nope');});try{sfx('no');}catch(e){}},300));
+      timers.push(setTimeout(()=>{[a,b2].forEach(x=>{const bb=btn(x);if(bb)bb.classList.remove('nope');if(!taken.has(cards[x].f))flip(x,false);});lock=false;},900));}});
+  app.querySelector('#mdquit').onclick=()=>askConfirm('<b>Bỏ cuộc?</b><div class="small muted" style="margin-top:4px">Bỏ cuộc là thua, đối thủ thắng ván này.</div>','Bỏ cuộc',()=>finish(true));
+  const finish=quit=>{if(st.over)return;st.over=true;stopGames();mdAfter(m,st,quit,ws);};
+  timers.push(setInterval(()=>{if(!document.body.contains(grid)){st.over=true;return;}sync(false);},1000));
+  if(window.__T)window.__md={st,cards,taken,pend,sync,finish,claim,ws};hud();sync(true);}
+function mdAfter(m,st,quit,ws){DUO.live=false;clearInterval(DUO.poll);
+  const out=!!quit,mine={kills:st.kills,correct:st.correct,total:st.flips,done:1,out:out?1:0};const xp=st.kills*3+st.correct;if(xp)addXp(xp);touch();save();
+  app.innerHTML=`<div class="stack mdv"><section class="mdhero end"><div class="mdhtxt"><div class="label" style="color:#ffe7a3">Lật thẻ đối kháng${m.bot?' · đấu với máy':''}</div><h1 id="duores">${quit?'Bạn đã bỏ cuộc':'Hết thẻ!'}</h1><div class="mdbest" id="duoresm"><span>⏳ Đang chờ kết quả…</span></div></div></section>
+    <div class="panel stack"><h3 style="margin:0">Các cặp trong ván</h3><div class="mdwl">${ws.map(w=>`<div class="mdw"><span class="han">${esc(w.zh)}</span><span><b>${esc(w.py)}</b><small>${esc((typeof vi1==='function'?vi1(w):w.vi))}</small></span>${speakBtn(w.zh)}${favBtn(w)}</div>`).join('')}</div></div>
+    <div class="row" style="gap:8px;justify-content:center;flex-wrap:wrap"><span id="duobrag"></span><button class="btn" id="duonew">${m.bot?'🤖 Đấu lại với máy':'👥 Ván mới'}</button><a class="btn ghost" href="#memory">Về Lật thẻ</a></div></div>`;
+  app.querySelector('#duonew').onclick=()=>{if(m.bot)mdBotStart();else if(location.hash==='#duo-memory')viewDuo('memory');else location.hash='#duo-memory';};
+  const show=j=>{const win=j.winner===m.role,draw=j.winner==='draw';const a=(j.st||{})[m.role]||{},b=(j.st||{})[m.role==='a'?'b':'a']||{};const coins=(win?10:draw?5:0)*(m.bot?.5:1);
+    if(coins)earn(coins,'Lật thẻ đối kháng'+(win?' · thắng':' · hòa'),{delay:500,once:'duo:'+m.id});
+    const h=document.getElementById('duores'),mm=document.getElementById('duoresm');if(!h)return;
+    h.innerHTML=(win?'🏆 Bạn thắng!':draw?'🤝 Hòa!':'Đối thủ thắng')+(win&&b.out?'<small class="duowhy">Đối thủ đã bỏ cuộc</small>':!win&&!draw&&a.out?'<small class="duowhy">Bạn đã bỏ cuộc</small>':'');
+    mm.innerHTML=`<span>🃏 Bạn <b>${a.kills||0}</b> cặp</span><span>🃏 ${esc(m.opp.name||'Đối thủ')} <b>${b.kills||0}</b> cặp</span>${coins?`<span>${YB} +${coins}</span>`:''}<span>⭐ +${Math.round(xp*0.7)} XP</span>`;
+    if(win)try{confetti(60);}catch(e){}
+    const box=document.getElementById('duobrag');if(box){const res=win?'win':draw?'draw':'lose',sc=`${a.kills||0} – ${b.kills||0} cặp`;box.innerHTML=`<button class="btn pri" id="duobragb">📣 ${m.bot?'Khoe lên tường':'Khoe lên tường mình và đối thủ'}</button>`;
+      box.querySelector('#duobragb').onclick=async e=>{const bt=e.currentTarget;bt.disabled=true;bt.textContent='Đang đăng…';
+        try{const r=await duoApi('POST','/v1/duo/brag',m.bot?{bot:1,game:'memory',res,sc}:{id:m.id});bt.textContent=r.walls>1?'✓ Đã đăng lên 2 tường':'✓ Đã đăng lên tường';try{sfx('coin');}catch(x){}}
+        catch(x){bt.textContent=/ALREADY_POSTED/.test(x.message)?'✓ Đã đăng rồi':'Chưa đăng được, thử lại';if(!/ALREADY_POSTED/.test(x.message))bt.disabled=false;}};}
+    DUO.m=null;};
+  (async()=>{let j=await duoPush(mine,[{k:out?'out':'done'}],true);let n=0;while(j&&!j.ended&&n++<400&&document.getElementById('duores')){await new Promise(r=>setTimeout(r,1500));j=await duoPush({},[],true);}
+    if(j&&j.ended)show(j);else{const mm=document.getElementById('duoresm');if(mm)mm.innerHTML='<span>Không nhận được kết quả (mất mạng hoặc quá 15 phút).</span>';}})();}
+if(window.__T)window.__u94={GLOCK,SOC,glockApply,glockSync,GLOCK_DEF,mdDeck,mdPlay,viewMemory,mdBotStart,MD_PAIRS};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
@@ -16902,7 +17112,7 @@ function route(){
   if(ttsOK)try{speechSynthesis.cancel();}catch(e){}
   if(sttStop){try{sttStop();}catch(e){}sttStop=null;}
   {const wg=document.getElementById('wdg');if(wg&&wg.open)wg.close();}
-  const MORE=['invite','buddy','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
+  const MORE=['invite','buddy','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber','memory','duo-memory'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
   navUpdate(h);if(typeof navGroup==='function'&&navGroup(navKey(h))==='game'&&h!=='games'&&h!=='friends'&&h!=='achievements'){const q=QD();if(!q.gv){q.gv=1;qTick('game');save();}}
   const m=h.match(/^l(\d{1,2})$/);
   if(m&&+m[1]>=1&&+m[1]<=NL){const n=+m[1];if(cur.n!==n){cur={n,stage:'words'};}viewLesson(n,cur.stage);}
@@ -16913,7 +17123,7 @@ function route(){
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
   else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
   else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
-  else if(h==='race')viewRace();else if(h==='bomber')viewBomber();else if(/^duo-(race|defense)$/.test(h))viewDuo(h.slice(4));else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
+  else if(h==='race')viewRace();else if(h==='bomber')viewBomber();else if(/^duo-(race|defense|memory)$/.test(h))viewDuo(h.slice(4));else if(h==='memory')viewMemory();else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
   else if(h.startsWith('d='))viewDeckOpen(h.slice(2));else if(h==='evo')viewEvo();else if(h.startsWith('evo-'))viewEvo(decodeURIComponent(h.slice(4)));else if(h==='puzzle')viewPuzzle();else if(h==='focus')viewFocus();else if(h==='deck')viewDeckMake();else if(h==='name')viewName();else if(h==='hv')viewHvDetective();else if(h==='num')viewNumbers();else if(h==='handsfree')viewHandsfree();else if(h==='sheet')viewWorksheet();else if(h==='plan')viewPlan();
   else if(h==='tone')viewTone();else if(h.startsWith('tone-'))viewTone(decodeURIComponent(h.slice(5)));
