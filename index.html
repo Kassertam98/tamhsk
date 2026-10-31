@@ -3695,6 +3695,15 @@ body:has(.bmplay) #fab{display:none}
 @media (max-width:560px){.gmx .gmart{max-height:120px}.bmopt.bmx{min-height:84px;padding:10px;gap:10px}.bmxart{width:58px;height:58px}.bmx .bmxtx b{font-size:15.5px}.bmseg{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.gmx .gxfl,.gmx .gxping,.gmx .gxar,.gmx .gxmon,.gmx .gxsp,.gmx .gxeye,.btn.gmxgo::before{animation:none}}
 @media (max-width:560px){.gxsw{flex-wrap:wrap;row-gap:2px}.gxsw small{flex-basis:100%;padding-left:50px}}
+
+/* 5.50 Nhà có chiều sâu */
+.hallwrap.hall2{border:0;border-radius:22px;box-shadow:0 0 0 3px color-mix(in srgb,var(--ink) 18%,transparent),inset 0 0 0 1px rgba(255,255,255,.2),0 26px 40px -24px rgba(0,0,0,.65)}
+.hallsvg .h3lampg{transform-box:fill-box;transform-origin:50% 0;animation:h3sway 4s ease-in-out infinite}
+@keyframes h3sway{0%,100%{rotate:-2deg}50%{rotate:2deg}}
+.hallsvg .h3beam{animation:h3beam 6s ease-in-out infinite}
+@keyframes h3beam{0%,100%{opacity:.85}50%{opacity:1}}
+.hallpet{filter:drop-shadow(0 10px 6px rgba(0,0,0,.28))}
+@media (prefers-reduced-motion:reduce){.hallsvg .h3lampg,.hallsvg .h3beam{animation:none}}
 </style>
 </head><body>
 
@@ -3720,12 +3729,12 @@ body:has(.bmplay) #fab{display:none}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='dbd14242';
-document.write('<script src="packs/hsk'+L+'.js?v=dbd14242"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='dcf92096';
+document.write('<script src="packs/hsk'+L+'.js?v=dcf92096"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=dbd14242','strokes-file');A('packs/dict.js?v=dbd14242','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=dcf92096','strokes-file');A('packs/dict.js?v=dcf92096','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -17235,6 +17244,54 @@ function gmxDecorate(){const box=app.querySelector('.gmodes');if(!box||box.class
 (function(){const base=viewDefense;viewDefense=function(){base.apply(this,arguments);gmxDecorate();};})();
 (function(){const base=viewMemory;viewMemory=function(){base.apply(this,arguments);gmxDecorate();};})();
 if(window.__T)window.__u95={GMX_ART,gmxDecorate,memHubCard};
+
+
+/* ===== 5.50 Nhà Tiểu Long Hổ có chiều sâu 3D: trần, tường hai bên, sàn phối cảnh, đèn treo, ánh sáng từ cửa vườn, bóng đổ ===== */
+(function(){const base=hallSVG;hallSVG=function(t){let s=base(t);try{
+  s=s.replace(/><\/(rect|ellipse|path|circle|line|polygon|stop)>/g,'/>');
+  const VP=[320,150];
+  /* sàn phối cảnh: ván hội tụ về điểm tụ, mạch ngang dày dần về phía trước */
+  let fl='';for(let i=-6;i<=18;i++){const xb=40+i*40,xf=VP[0]+(xb-VP[0])*((400-VP[1])/(216-VP[1]));fl+=`<path d="M${xb} 216 L${xf.toFixed(1)} 400" stroke="#000" stroke-opacity=".10" stroke-width="1.6"/>`;}
+  [222,231,244,262,286,318,358].forEach((y,i)=>{fl+=`<path d="M0 ${y} H640" stroke="#000" stroke-opacity="${(.05+i*.012).toFixed(3)}" stroke-width="${(1+i*.25).toFixed(2)}"/>`;});
+  const defs=`<defs>
+    <linearGradient id="h3wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>
+    <linearGradient id="h3side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset=".12" stop-color="#000" stop-opacity="0"/><stop offset=".88" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></linearGradient>
+    <linearGradient id="h3floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".30"/><stop offset=".35" stop-color="#000" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity=".10"/></linearGradient>
+    <radialGradient id="h3lamp" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#fff3c4" stop-opacity=".55"/><stop offset=".55" stop-color="#fff3c4" stop-opacity=".12"/><stop offset="1" stop-color="#fff3c4" stop-opacity="0"/></radialGradient>
+    <radialGradient id="h3pool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6d6" stop-opacity=".38"/><stop offset="1" stop-color="#fff6d6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="h3beam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffbe6" stop-opacity=".42"/><stop offset="1" stop-color="#fffbe6" stop-opacity="0"/></linearGradient>
+    <radialGradient id="h3vig" cx=".5" cy=".55" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".32"/></radialGradient>
+    <linearGradient id="h3base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".25" stop-color="#e8dccb"/><stop offset="1" stop-color="#b9a58c"/></linearGradient>
+    <filter id="h3blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter></defs>`;
+  /* tường: đổ bóng trên/dưới, hai góc tối dần như tường bên, trần nhà và đèn treo */
+  const wall=`<g class="h3wall" pointer-events="none"><rect x="0" y="0" width="640" height="216" fill="url(#h3wall)"/><rect x="0" y="0" width="640" height="216" fill="url(#h3side)"/>
+    <path d="M0 0 H640 L600 20 H40Z" fill="#fffaf0"/><path d="M0 0 H640 L600 20 H40Z" fill="#000" opacity=".06"/><path d="M40 20 H600" stroke="#000" stroke-opacity=".18" stroke-width="2"/><path d="M40 22 H600" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/>
+    <path d="M0 0 L40 20 V206 L0 234Z" fill="#000" opacity=".16"/><path d="M640 0 L600 20 V206 L640 234Z" fill="#000" opacity=".16"/><path d="M40 20 V206 M600 20 V206" stroke="#000" stroke-opacity=".18" stroke-width="1.5"/>
+    <ellipse cx="320" cy="20" rx="240" ry="150" fill="url(#h3lamp)"/>
+    <g class="h3lampg"><path d="M320 20 V40" stroke="#5b4636" stroke-width="2"/><path d="M300 54 Q320 30 340 54Z" fill="#e0a106"/><path d="M300 54 H340" stroke="#a87700" stroke-width="2.5"/><ellipse cx="320" cy="56" rx="7" ry="4" fill="#fff6c8"/></g></g>`;
+  /* sàn: tối dần về phía tường, chân tường nổi khối, góc tường hai bên chạm sàn, vũng sáng đèn và vệt nắng từ cửa vườn */
+  const floor=`<g class="h3floor" pointer-events="none">${fl}<rect x="0" y="216" width="640" height="184" fill="url(#h3floor)"/>
+    <path d="M0 234 L40 206 V216 L0 256Z" fill="#000" opacity=".22"/><path d="M640 234 L600 206 V216 L640 256Z" fill="#000" opacity=".22"/>
+    <rect x="40" y="206" width="560" height="12" fill="url(#h3base)"/><path d="M40 218 H600" stroke="#000" stroke-opacity=".25" stroke-width="2"/><rect x="40" y="218" width="560" height="10" fill="#000" opacity=".10" filter="url(#h3blur)"/>
+    <ellipse cx="320" cy="300" rx="230" ry="70" fill="url(#h3pool)"/>
+    <path class="h3beam" d="M30 220 L132 220 L300 360 L120 372Z" fill="url(#h3beam)"/></g>`;
+  const rugThick=`<ellipse cx="330" cy="323" rx="171" ry="47" fill="#000" opacity=".22"/><ellipse cx="330" cy="321" rx="170" ry="46" fill="#000" opacity=".12"/>`;
+  s=s.replace(/(<svg[^>]*class="hallsvg"[^>]*>)/,'$1'+defs);
+  s=s.replace(/(<g transform="scale\(2\.1333 1\.6667\)">[\s\S]*?<\/g>)/,'$1'+wall);
+  s=s.replace('<rect x="0" y="212" width="640" height="8" fill="#000" opacity=".12"/>','<rect x="0" y="212" width="640" height="8" fill="#000" opacity=".12"/>'+floor);
+  s=s.replace('<ellipse cx="330" cy="318" rx="170" ry="46"',rugThick+'<ellipse cx="330" cy="318" rx="170" ry="46"');
+  /* kệ cúp: mặt trên sáng, bóng đổ dưới kệ */
+  s=s.replace('<rect x="168" y="90" width="190" height="9" rx="3" fill="#9a6b3c"/>','<rect x="172" y="100" width="186" height="10" fill="#000" opacity=".16" filter="url(#h3blur)"/><rect x="168" y="90" width="190" height="9" rx="3" fill="#9a6b3c"/><rect x="170" y="90" width="186" height="3" rx="1.5" fill="#fff" opacity=".28"/>');
+  s=s.replace('<rect x="168" y="142" width="190" height="9" rx="3" fill="#9a6b3c"/>','<rect x="172" y="152" width="186" height="10" fill="#000" opacity=".16" filter="url(#h3blur)"/><rect x="168" y="142" width="190" height="9" rx="3" fill="#9a6b3c"/><rect x="170" y="142" width="186" height="3" rx="1.5" fill="#fff" opacity=".28"/>');
+  /* cửa vườn và tủ đồ: khung có chiều dày + bóng đổ lên tường */
+  s=s.replace('<g class="hs hdoorg" data-hs="garden"><rect x="18" y="38" width="118" height="182" rx="8" fill="#6b4428"/>','<g class="hs hdoorg" data-hs="garden"><rect x="26" y="44" width="122" height="180" rx="8" fill="#000" opacity=".22" filter="url(#h3blur)"/><rect x="18" y="38" width="118" height="182" rx="8" fill="#6b4428"/><rect x="18" y="38" width="118" height="5" rx="2" fill="#fff" opacity=".18"/>');
+  s=s.replace('<rect x="556" y="50" width="78" height="234" rx="6" fill="#7a4a24"/>','<rect x="546" y="56" width="84" height="232" rx="6" fill="#000" opacity=".25" filter="url(#h3blur)"/><rect x="556" y="50" width="78" height="234" rx="6" fill="#7a4a24"/><path d="M556 56 L548 64 V282 L556 284Z" fill="#5a3418"/>');
+  /* đồ đạc đặt sàn: bóng đổ mềm */
+  s=s.replace(/ry="7" fill="#000" opacity="\.13"\/>/g,'ry="10" fill="#000" opacity=".26" filter="url(#h3blur)"/>');
+  /* lớp viền tối mép khung cho cảm giác nhìn vào trong phòng (không chặn bấm) */
+  s=s.replace(/<\/svg>\s*$/,'<rect class="h3vig" x="0" y="0" width="640" height="400" fill="url(#h3vig)" pointer-events="none"/></svg>');
+}catch(e){console.warn(e);}return s;};})();
+if(window.__T)window.__u96={hall:t=>hallSVG(t)};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
