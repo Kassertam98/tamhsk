@@ -3821,6 +3821,91 @@ img.bao:not(.hallpet){filter:drop-shadow(0 6px 5px rgba(0,0,0,.18))}
 @keyframes dkPulse{50%{opacity:.4;transform:scale(.94)}}
 .dkcbox .dkimg{max-width:100%;max-height:68vh;width:auto}
 .dkcmore{text-align:center}
+
+/* ===== 5.54 Vườn 3D: 15 chậu (5/luống), luống gỗ nổi khối, thú túc trực ===== */
+.g3scene.g3d{padding-top:100px;padding-bottom:104px}
+.gplane{position:absolute;z-index:2;left:0;right:0;bottom:0;height:96px;pointer-events:none;background:linear-gradient(#5e9a3e 0,#6fae47 14px,#c9a46b 15px,#d8b47a 40%,#c49a5e 100%);box-shadow:inset 0 6px 8px -4px rgba(0,0,0,.35)}
+.gplane i{position:absolute;inset:18px 0 0;background:radial-gradient(14px 6px at 8% 40%,#e9d3a6 60%,transparent 64%),radial-gradient(18px 7px at 22% 70%,#e3c896 60%,transparent 64%),radial-gradient(12px 5px at 37% 35%,#ead6ac 60%,transparent 64%),radial-gradient(16px 6px at 53% 66%,#e3c896 60%,transparent 64%),radial-gradient(13px 5px at 68% 38%,#ead6ac 60%,transparent 64%),radial-gradient(18px 7px at 82% 68%,#e3c896 60%,transparent 64%),radial-gradient(12px 5px at 94% 36%,#ead6ac 60%,transparent 64%)}
+:root[data-theme="dark"] .gplane{filter:brightness(.6) saturate(.8)}
+.g3scene.g3d::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 80% at 18% 0%,rgba(255,244,200,.38),transparent 55%),linear-gradient(115deg,transparent 30%,rgba(255,250,220,.16) 38%,transparent 46%,transparent 58%,rgba(255,250,220,.12) 64%,transparent 70%)}
+.g3scene.g3d::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 80px rgba(20,30,10,.38),inset 0 -40px 60px -30px rgba(30,20,8,.45);border-radius:inherit}
+:root[data-theme="dark"] .g3scene.g3d::before{background:radial-gradient(90% 60% at 80% 0%,rgba(190,210,255,.18),transparent 60%)}
+.g3d .g3beds{gap:0;perspective:900px}
+.g3d .g3row{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:0 14px 22px}
+.g3d .g3row::before,.g3d .g3row::after{display:none}
+.g3d .g3row.r0{width:80%}.g3d .g3row.r1{width:90%}.g3d .g3row.r2{width:100%}
+.g3d .g3row.r0 .g3pot{--ps:.8}.g3d .g3row.r1 .g3pot{--ps:.9}
+.g3d .g3row.r0{filter:saturate(.92) brightness(.97)}
+/* luống gỗ: mặt đất phía trên + mặt gỗ phía trước, nổi khối */
+.g3bed{position:absolute;z-index:-1;left:0;right:0;bottom:0;height:62px;pointer-events:none}
+.g3bed .g3soil{position:absolute;left:0;right:0;top:0;height:34px;clip-path:polygon(3% 0,97% 0,100% 100%,0 100%);
+  background:radial-gradient(4px 3px at 12% 40%,#2c1a0e 60%,transparent 62%),radial-gradient(3px 2px at 38% 62%,#2c1a0e 60%,transparent 62%),radial-gradient(4px 3px at 66% 35%,#2c1a0e 60%,transparent 62%),radial-gradient(3px 2px at 88% 66%,#2c1a0e 60%,transparent 62%),linear-gradient(#5a3a22,#6e4729 55%,#7b512f);
+  box-shadow:inset 0 3px 6px rgba(0,0,0,.45)}
+.g3bed .g3soil::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(120,190,80,.0) 0,rgba(110,180,70,.35) 1px,transparent 3px) 0 0/22px 100%;opacity:.0}
+.g3bed .g3face{position:absolute;left:0;right:0;top:32px;bottom:0;border-radius:4px 4px 12px 12px;
+  background:repeating-linear-gradient(90deg,transparent 0 calc(20% - 2px),rgba(60,34,14,.55) calc(20% - 2px) 20%),linear-gradient(#b07a4c,#93623a 40%,#74492a 100%);
+  box-shadow:inset 0 3px 0 #d6a576,inset 0 -6px 10px rgba(0,0,0,.28),0 10px 14px -6px rgba(0,0,0,.55),0 4px 0 #4a2c16}
+.g3bed .g3face::before{content:'';position:absolute;left:0;right:0;top:46%;height:2px;background:rgba(60,34,14,.35)}
+.g3bed .g3face::after{content:'';position:absolute;inset:2px 6px auto;height:7px;border-radius:6px;background:linear-gradient(rgba(255,255,255,.28),transparent)}
+:root[data-theme="dark"] .g3bed .g3face{filter:brightness(.78)}
+.g3d .g3pot{padding-bottom:0;z-index:1}
+.g3d .g3pot .g3art{filter:drop-shadow(0 8px 6px rgba(0,0,0,.35))}
+.g3d .g3pot.ripe .g3art{filter:drop-shadow(0 0 10px #ffe08a) drop-shadow(0 8px 6px rgba(0,0,0,.3))}
+.g3d .g3pot::before{content:'';position:absolute;left:18%;right:18%;bottom:30px;height:10px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.45),transparent);z-index:-1}
+.g3d .g3tag{min-width:0;width:100%;padding:3px 4px 4px;font-size:11px;border-radius:10px;box-shadow:0 6px 12px -6px rgba(0,0,0,.6),inset 0 -2px 0 rgba(0,0,0,.06)}
+.g3d .g3tag b{font-size:12px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.g3d .g3tag small{font-size:10px;white-space:normal;text-align:center;line-height:1.2}
+.g3d .g3tag .gbbar{width:88%}
+.g3d .g3pot.g3lock{min-height:72px;border-radius:12px;margin-bottom:30px}
+.g3d .g3pot.g3buy{margin-bottom:30px}
+.g3d .g3pot.g3lock .g3art,.g3d .g3pot.g3buy .g3art{font-size:26px;margin:8px 0 4px}
+/* nút bật/tắt tiếng thú */
+.gpvoice{position:absolute;z-index:6;left:50%;transform:translateX(-50%);top:10px;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1.5px solid rgba(255,255,255,.7);background:rgba(20,30,20,.55);color:#fff;font:600 12px/1 inherit;cursor:pointer;backdrop-filter:blur(4px)}
+.gpvoice[aria-pressed="false"]{opacity:.75}
+/* thú đi lại trong vườn */
+.gpx{position:absolute;z-index:5;width:66px;margin-left:-33px;padding:0;border:0;background:none;cursor:pointer;transition-property:left;transition-timing-function:linear;font:inherit;display:grid;justify-items:center}
+.gpx .gpbody{display:block;width:100%;transform-origin:50% 100%}
+.gpx .gpbody svg{display:block;width:100%;height:auto;filter:drop-shadow(0 3px 2px rgba(0,0,0,.25))}
+.gpx.flip .gpbody svg{transform:scaleX(-1)}
+.gpx.gp-dove{width:54px;margin-left:-27px}
+.gpx.gp-monkey{width:68px;margin-left:-34px}
+.gpx .gpbody{animation:gpIdle 2.6s ease-in-out infinite}
+.gpx.walk .gpbody{animation:gpWalk .42s ease-in-out infinite}
+.gpx.gp-dove.walk .gpbody{animation:gpHop .36s ease-in-out infinite}
+.gpx.walk .gpleg{animation:gpLeg .42s ease-in-out infinite;transform-origin:50% 0;transform-box:fill-box}
+.gpx .gpwing{transform-origin:20% 60%;transform-box:fill-box;animation:gpWing 1.6s ease-in-out infinite}
+.gpx.walk .gpwing{animation-duration:.3s}
+.gpx .gptail{transform-origin:90% 90%;transform-box:fill-box;animation:gpTail 1.8s ease-in-out infinite}
+.gpx.hop .gpbody{animation:gpJump .5s ease-out}
+@keyframes gpIdle{50%{transform:translateY(-2px) scaleY(1.02)}}
+@keyframes gpWalk{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
+@keyframes gpHop{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes gpLeg{50%{transform:scaleY(.7)}}
+@keyframes gpWing{50%{transform:rotate(-14deg)}}
+@keyframes gpTail{50%{transform:rotate(12deg)}}
+@keyframes gpJump{40%{transform:translateY(-16px) scale(1.06)}}
+.gpname{margin-top:-2px;padding:1px 7px;border-radius:999px;background:var(--pc,#555);color:#fff;font-size:10px;font-weight:700;white-space:nowrap;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.gpbub{position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);display:grid;gap:1px;min-width:120px;max-width:190px;padding:6px 10px;border-radius:14px;background:#fff;color:#1b2826;border:2px solid var(--pc,#888);box-shadow:0 8px 16px -8px rgba(0,0,0,.5);text-align:center;animation:gpBub .35s cubic-bezier(.3,1.6,.5,1);pointer-events:none;z-index:7}
+.gpbub::after{content:'';position:absolute;top:100%;left:50%;margin-left:-7px;border:7px solid transparent;border-top-color:var(--pc,#888)}
+.gpbub{width:max-content}.gpbub b{font-size:15px;font-weight:700;line-height:1.3;white-space:nowrap}.gpbub small{font-size:11px;color:#55605c;line-height:1.25}
+.gpbub.out{opacity:0;transform:translateX(-50%) translateY(-6px);transition:.35s}
+@keyframes gpBub{from{opacity:0;transform:translateX(-50%) scale(.6) translateY(8px)}}
+:root[data-theme="dark"] .gpbub{background:#2a2b26;color:#f1efe6}:root[data-theme="dark"] .gpbub small{color:#b9b6ab}
+@media (max-width:768px){.g3scene.g3d{padding-top:76px;padding-bottom:78px}.gplane{height:72px}.g3d .g3row{gap:2px;padding:0 5px 16px}.g3d .g3row.r0{width:84%}.g3d .g3row.r1{width:92%}
+  .g3bed{height:48px}.g3bed .g3soil{height:26px}.g3bed .g3face{top:24px}.g3d .g3pot::before{bottom:24px}
+  .g3d .g3tag{padding:2px 2px 3px;border-radius:8px}.g3d .g3tag b{font-size:9.5px}.g3d .g3tag small{font-size:8px}.g3d .g3pot .g3tier{font-size:7px}
+  .g3d .g3pot.g3lock{min-height:56px;margin-bottom:24px}.g3d .g3pot.g3buy{margin-bottom:24px}
+  .gpx{width:48px;margin-left:-24px}.gpx.gp-dove{width:40px;margin-left:-20px}.gpx.gp-monkey{width:50px;margin-left:-25px}.gpname{font-size:8.5px;padding:1px 5px}
+  .gpbub{min-width:100px;max-width:150px;padding:4px 8px}.gpbub b{font-size:13px}.gpbub small{font-size:10px}
+  .gpvoice span{display:none}}
+@media (prefers-reduced-motion:reduce){.gpx{transition:none}.gpx .gpbody,.gpx .gpleg,.gpx .gpwing,.gpx .gptail{animation:none!important}}
+.gpx{width:80px;margin-left:-40px}.gpx.gp-dove{width:64px;margin-left:-32px}.gpx.gp-monkey{width:82px;margin-left:-41px}
+@media (max-width:768px){.gpx{width:52px;margin-left:-26px}.gpx.gp-dove{width:42px;margin-left:-21px}.gpx.gp-monkey{width:54px;margin-left:-27px}}
+@media (max-width:520px){.g3d .g3pot .g3tier{display:none}.g3d .g3tag small{font-size:7.5px;line-height:1.15;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.g3d .g3tag .gbbar{width:92%;margin:2px 0 1px}
+  .g3d .g3pot .g3ripe{font-size:8.5px;padding:2px 5px;white-space:nowrap}.g3d .g3pot.ripe .g3tier{display:none}}
+.g3scene[data-sky="night"] .gplane{filter:brightness(.55) saturate(.75) hue-rotate(-8deg)}
+.g3scene[data-sky="dusk"] .gplane,.g3scene[data-sky="dawn"] .gplane{filter:brightness(.85) sepia(.15)}
+.g3scene[data-sky="night"] .g3bed .g3face{filter:brightness(.8)}
 </style>
 </head><body>
 
@@ -3846,12 +3931,12 @@ img.bao:not(.hallpet){filter:drop-shadow(0 6px 5px rgba(0,0,0,.18))}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='9ad774c6';
-document.write('<script src="packs/hsk'+L+'.js?v=9ad774c6"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='0740de90';
+document.write('<script src="packs/hsk'+L+'.js?v=0740de90"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=9ad774c6','strokes-file');A('packs/dict.js?v=9ad774c6','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=0740de90','strokes-file');A('packs/dict.js?v=0740de90','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -13632,11 +13717,11 @@ if(window.__T)window.__gpbT={GPB,gpbOK,GPB_IDS};
 const GSH_KEY='hsk-garden';let GSH=null;
 function gshPlain(g){const o={};for(const k in g)if(k!=='water'&&k!=='coins')o[k]=g[k];if(g.wv!=null)o.wv=g.wv;return o;}
 function gshMergeAll(list){const m={plots:[],xp:0,harvest:{},decor:[],correct:0,planted:0,helped:0,wilted:0,cans:0,unlocked:1,wv:0,wt:0};
-  list.forEach(g=>{if(!g)return;(g.plots||[]).forEach(p=>{if(p&&p.l&&m.plots.length<9)m.plots.push(Object.assign({},p));});
+  list.forEach(g=>{if(!g)return;(g.plots||[]).forEach(p=>{if(p&&p.l&&m.plots.length<15)m.plots.push(Object.assign({},p));});
     m.xp+=+g.xp||0;Object.keys(g.harvest||{}).forEach(k=>m.harvest[k]=(m.harvest[k]||0)+(+g.harvest[k]||0));(g.decor||[]).forEach(d=>{if(!m.decor.includes(d))m.decor.push(d);});
     ['correct','planted','helped','wilted','cans'].forEach(k=>m[k]+=+g[k]||0);m.unlocked=Math.max(m.unlocked,+g.unlocked||1);m.wv=Math.max(m.wv,g.wv==null?5:+g.wv||0);
     ['gq','gqo','wday','weekId','weekXp','duelWins','friendCount','rent','daily'].forEach(k=>{if(g[k]!=null&&m[k]==null)m[k]=g[k];});});
-  list.forEach(g=>{(g&&g.plots||[]).forEach(p=>{if(p&&!p.l&&m.plots.length<9)m.plots.push({pot:p.pot||0});});});
+  list.forEach(g=>{(g&&g.plots||[]).forEach(p=>{if(p&&!p.l&&m.plots.length<15)m.plots.push({pot:p.pot||0});});});
   while(m.plots.length<4)m.plots.push({});m.sh=1;m.ut=Date.now();return m;}
 function gshLoad(){if(GSH)return GSH;let shared=null;try{shared=JSON.parse(localStorage.getItem(GSH_KEY)||'null');}catch(e){}
   const lv=[1,2].map(l=>{const d=l===LEVEL?S:lvData(l);return d&&d.garden&&d.garden.plots?d.garden:null;});
@@ -13685,13 +13770,13 @@ Object.assign(PLAN_FEAT,{
   month:['⚡ Học bài mới, chơi trò chơi không tốn năng lượng','📚 Ôn từ hay sai không giới hạn','☁️ Gắn với tài khoản, đổi máy vẫn giữ'],
   year:['⚡ Mọi quyền lợi Pro Tháng','📝 Gói luyện thi: đề đầy đủ không giới hạn, dự đoán điểm, phân tích phần yếu','🪙 Tặng 300 Nguyên bảo','💸 Rẻ hơn 50% so với mua từng tháng'],
   life:['♾️ Mọi quyền lợi Pro Năm, trả một lần dùng mãi','🆕 Gồm cả các cấp ra sau này (HSK3, HSK4…)','🏅 Huy hiệu PRO trên hồ sơ'],
-  plus:['🐉 Tiểu Long Hổ tự thu hoạch ngay khi cây chín','🛡️ Không lo cây héo, không bị bạn bè trộm','🧺 Đã gồm gieo và thu hàng loạt'],
-  plus_life:['🐉 Mọi quyền lợi Plus, trả một lần dùng mãi','🧺 Gieo và thu hàng loạt trọn đời'],
+  plus:['🐒 Khỉ Thông Thái tự thu hoạch ngay khi cây chín','🛡️ Không lo cây héo, không bị bạn bè trộm','🕊️ Kèm Tiểu Bồ Câu gieo hạt và Tiểu Mao thu hoạch'],
+  plus_life:['🐉 Mọi quyền lợi Plus, trả một lần dùng mãi','🕊️ Tiểu Bồ Câu và Tiểu Mao trọn đời'],
   replay:['🔁 Mỗi ván thua được chơi tiếp 1 lượt miễn phí','➕ Mua thêm được 2 lượt nữa (tối đa 3 lượt mỗi ván)'],
   replay_year:['🔁 Mọi quyền lợi Chơi Tiếp Tháng','💸 Tiết kiệm 49% so với mua từng tháng'],
   coins1000:['🪙 Cộng ngay 1.000 Nguyên bảo vào ví','🏺 Mua chậu, hạt giống, trang phục, chơi tiếp…','♻️ Mua được nhiều lần']});
 const PLAN_GROUPS=[['pro','⭐ Gói Pro','Học bài mới và chơi trò chơi không tốn năng lượng, ôn không giới hạn. Gói Năm và Trọn đời kèm luyện thi.',['month','year','life']],
-  ['plus','🐉 Gói Plus','Tiểu Long Hổ tự thu hoạch cây chín trong vườn, kèm gieo và thu hàng loạt.',['plus','plus_life']],
+  ['plus','🐉 Gói Plus','Khỉ Thông Thái tự thu hoạch cây chín trong vườn, kèm Tiểu Bồ Câu gieo hạt và Tiểu Mao thu hoạch.',['plus','plus_life']],
   ['replay','🔁 Gói Chơi Tiếp','Thua ván nào cũng được chơi tiếp 1 lượt miễn phí, rồi mua thêm tối đa 2 lượt (3 lượt mỗi ván).',['replay','replay_year']],
   ['teacher','👩‍🏫 Gói Giáo viên','Tạo lớp, giao bài, bảng xếp hạng lớp, xuất CSV. Dành cho giáo viên và trung tâm.',['teacher']],
   ['coins','🪙 Nguyên bảo','Nạp Nguyên bảo để mua chậu, hạt giống, trang phục hoặc chơi tiếp.',['coins1000']]];
@@ -13702,14 +13787,14 @@ const PLAN_FALLBACK={plus:{name:'Gói Plus',price:15000,days:30,plan:'plus'},plu
 const RENT_COST=50,RENT_DAYS=30;
 function rentOn(k){if(plusActive())return true;const g=G();return !!(g.rent&&g.rent[k]&&g.rent[k]>Date.now());}
 function rentLeft(k){const g=G();return g.rent&&g.rent[k]?Math.max(0,g.rent[k]-Date.now()):0;}
-function rentBuy(k,after){const nm=k==='sow'?'Gieo hàng loạt':'Thu hàng loạt';
-  askConfirm(`<b>Thuê ${nm} ${RENT_COST} ${YB} / ${RENT_DAYS} ngày?</b><div class="small muted" style="margin-top:4px">${k==='sow'?'Gieo một loại hạt vào tất cả chậu trống chỉ bằng một chạm.':'Thu hoạch tất cả cây chín chỉ bằng một chạm.'} Gói Plus có sẵn cả hai và Tiểu Long Hổ tự thu hoạch.</div>`,'Thuê '+RENT_COST+' '+YB,()=>{
+function rentBuy(k,after){const nm=k==='sow'?'Tiểu Bồ Câu gieo hạt':'Tiểu Mao thu hoạch';
+  askConfirm(`<b>Thuê ${nm} ${RENT_COST} ${YB} / ${RENT_DAYS} ngày?</b><div class="small muted" style="margin-top:4px">${k==='sow'?'Tiểu Bồ Câu gieo một loại hạt vào tất cả chậu trống chỉ bằng một chạm.':'Tiểu Mao thu hoạch tất cả cây chín chỉ bằng một chạm.'} Thú sẽ túc trực trong vườn, chạm vào thú để sai việc. Gói Plus có sẵn cả hai và thêm Khỉ Thông Thái tự thu hoạch.</div>`,'Thuê '+RENT_COST+' '+YB,()=>{
     if(!spend(RENT_COST,'Thuê '+nm))return;const g=G();g.rent=g.rent||{};g.rent[k]=Math.max(Date.now(),g.rent[k]||0)+RENT_DAYS*86400e3;save();queueSync();try{sfx('win');}catch(e){}gardenToast(`✅ Đã thuê <b>${nm}</b> đến ${new Date(g.rent[k]).toLocaleDateString('vi-VN')}.`);if(after)after();});}
 function bulkSow(){const g=G();const empty=g.plots.map((p,i)=>(!p||!p.l)?i:-1).filter(i=>i>=0);if(!empty.length){gardenToast('Không còn chậu trống để gieo.');return;}
   if(!rentOn('sow')){rentBuy('sow',bulkSow);return;}
   let d=document.getElementById('gdlg');if(!d){d=document.createElement('dialog');d.id='gdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
   const opts=Object.keys(PLANTS).map(Number).filter(l=>l!==XPID||HASX);
-  d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🌱 Gieo hàng loạt · ${empty.length} chậu trống</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div><div class="small muted">Bạn có <b>${g.coins} ${YB}</b>. Chọn một loại hạt, gieo vào tất cả chậu trống (tối đa theo số Nguyên bảo).</div>
+  d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🕊️ Tiểu Bồ Câu gieo hạt · ${empty.length} chậu trống</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div><div class="small muted">Bạn có <b>${g.coins} ${YB}</b>. Chọn một loại hạt, gieo vào tất cả chậu trống (tối đa theo số Nguyên bảo).</div>
     <div class="g3pick">${opts.map(l=>{const ok=seedOk(l),[nm,ch]=PLANTS[l],c=SEED_PRICE[l],n=Math.min(empty.length,Math.floor(g.coins/c)),can=ok&&n>0;return `<button class="g3seed pick${ok?'':' locked'}" data-seed="${l}"${can?'':' disabled'}><span class="seedic">${plantSVG(l,4,52)}</span><span class="g3sd"><b>${esc(nm)} <span class="han small muted">${ch}</span></b><small>${l<=NL?seedLsTxt(l):l===XPID?'HSK 3.0':'Từ tự thêm'} · ⏳ ${PLANT_HOURS[l]} giờ</small>
       <span class="g3price"><em>${ok?`${n} chậu × ${c} = ${n*c} ${YB}`:seedLockTxt(l)}</em><em class="up">Thu ${HARV_PRICE[l]} ${YB}/cây</em></span></span></button>`;}).join('')}</div></div>`;
   d.querySelector('[data-x]').onclick=()=>d.close();
@@ -13720,14 +13805,14 @@ function bulkSow(){const g=G();const empty=g.plots.map((p,i)=>(!p||!p.l)?i:-1).f
   if(!d.open)d.showModal();}
 function bulkHarvest(){const g=G();const ripe=g.plots.map((p,i)=>p&&p.l&&!p.wilt&&(p.gr||0)>=100?i:-1).filter(i=>i>=0);if(!ripe.length){gardenToast('Chưa có cây nào chín.');return;}
   if(!rentOn('harv')){rentBuy('harv',bulkHarvest);return;}
-  harvestMany(ripe,'🧺 Thu hàng loạt');}
+  harvestMany(ripe,'🐱 Tiểu Mao đã thu hoạch');}
 async function harvestMany(idx,label,byPet){const g=G();if(gOnline())try{await Promise.race([gPublish(),new Promise(r=>setTimeout(r,2500))]);}catch(e){}
   let sum=0,n=0,unlock='';const names=[];idx.forEach(i=>{const p=g.plots[i];if(!p||!p.l||p.wilt||stageOf(p.gr||0)<4)return;const l=p.l,coins=byPet?HARV_PRICE[l]:harvVal(p);sum+=coins;n++;g.coins+=coins;g.harvest[l]=(g.harvest[l]||0)+1;g.plots[i]={pot:p.pot||0};gqTick('harv1');if(!names.includes(PLANTS[l][0]))names.push(PLANTS[l][0]);});
   if(!n)return 0;touch();save();queueSync();gPublishSoon();try{confetti(70);sfx('coin');}catch(e){}
   gardenToast(`${label}: <b>${n} cây</b> (${names.slice(0,4).join(', ')}${names.length>4?'…':''}) <b>+${sum} ${YB}</b>`);if(location.hash==='#garden'&&!document.querySelector('#gscene.play'))viewGarden();return n;}
 /* Tiểu Long Hổ (Plus): tự thu hoạch mọi cây chín khi mở app hoặc đang ở vườn */
 let petHarvBusy=false;
-async function petAutoHarvest(){if(petHarvBusy||!plusActive())return;const g=G();const ripe=g.plots.map((p,i)=>p&&p.l&&!p.wilt&&(p.gr||0)>=100?i:-1).filter(i=>i>=0);if(!ripe.length)return;petHarvBusy=true;try{await harvestMany(ripe,'🐉 Tiểu Long Hổ đã thu hoạch giúp bạn',true);}finally{petHarvBusy=false;}}
+async function petAutoHarvest(){if(petHarvBusy||!plusActive())return;const g=G();const ripe=g.plots.map((p,i)=>p&&p.l&&!p.wilt&&(p.gr||0)>=100?i:-1).filter(i=>i>=0);if(!ripe.length)return;petHarvBusy=true;try{await harvestMany(ripe,'🐒 Khỉ Thông Thái đã thu hoạch giúp bạn',true);}finally{petHarvBusy=false;}}
 setTimeout(()=>{try{petAutoHarvest();}catch(e){}},5000);setInterval(()=>{try{if(!document.hidden)petAutoHarvest();}catch(e){}},60000);
 /* ---------- F. Vườn: chậu hiện mức héo, bảng thao tác, hạt giống ---------- */
 function potBed(p,i,g){const st=p.l?stageOf(p.gr||0):-1,nm=p.l?PLANTS[p.l][0]:'',wl=!!(p.l&&p.wilt),ripe=st===4&&!wl,dc=ripe?gDecay(p):1,urg=ripe&&(dc<1||gRipeLeft2(p)<2*3600e3),tier=p.pot||0;
@@ -13761,15 +13846,15 @@ function clearWilted(i){const g=G(),p=g.plots[i];if(!p||!p.wilt)return;const [nm
   const sp=info.querySelector('span');if(sp)sp.innerHTML=`🌸 Đã chín · ${gRipeText(p)}`;const hb=d.querySelector('[data-ga="harv"]');if(hb)hb.innerHTML=`🧺 Thu hoạch +${harvVal(p)} ${YB}${dc<1?` <small>(héo còn ${Math.round(dc*100)}%)</small>`:''}`;};})();
 (function(){const base=viewGarden;viewGarden=function(){base.apply(this,arguments);const row=app.querySelector('.garden3 > .row');if(!row||row.querySelector('#gbulk'))return;const g=G();
   const ripe=g.plots.filter(p=>p&&p.l&&!p.wilt&&(p.gr||0)>=100).length,empty=g.plots.filter(p=>!p||!p.l).length;
-  row.insertAdjacentHTML('afterbegin',`<button class="btn sm${rentOn('sow')?' pri':''}" id="gbulk" title="${rentOn('sow')?'Đã thuê đến '+(plusActive()?'khi hết Plus':new Date(G().rent.sow).toLocaleDateString('vi-VN')):RENT_COST+' Nguyên bảo / '+RENT_DAYS+' ngày'}">🌱 Gieo hàng loạt${empty?` (${empty})`:''}${rentOn('sow')?'':' · '+RENT_COST+' '+YB}</button><button class="btn sm${rentOn('harv')?' pri':''}" id="gbulkh" title="${rentOn('harv')?'Đã thuê':RENT_COST+' Nguyên bảo / '+RENT_DAYS+' ngày'}">🧺 Thu hàng loạt${ripe?` (${ripe})`:''}${rentOn('harv')?'':' · '+RENT_COST+' '+YB}</button>${plusActive()?'<span class="gchip plus" title="Gói Plus: Tiểu Long Hổ tự thu hoạch cây chín">🐉 Long Hổ tự thu</span>':'<a class="btn sm ghost" href="#premium" title="Gói Plus 15.000đ/tháng">🐉 Thuê Long Hổ tự thu</a>'}`);
+  row.insertAdjacentHTML('afterbegin',`<button class="btn sm${rentOn('sow')?' pri':''}" id="gbulk" title="${rentOn('sow')?'Đã thuê đến '+(plusActive()?'khi hết Plus':new Date(G().rent.sow).toLocaleDateString('vi-VN')):RENT_COST+' Nguyên bảo / '+RENT_DAYS+' ngày'}">🕊️ Tiểu Bồ Câu gieo hạt${empty?` (${empty})`:''}${rentOn('sow')?'':' · '+RENT_COST+' '+YB}</button><button class="btn sm${rentOn('harv')?' pri':''}" id="gbulkh" title="${rentOn('harv')?'Đã thuê':RENT_COST+' Nguyên bảo / '+RENT_DAYS+' ngày'}">🐱 Tiểu Mao thu hoạch${ripe?` (${ripe})`:''}${rentOn('harv')?'':' · '+RENT_COST+' '+YB}</button>${plusActive()?'<span class="gchip plus" title="Gói Plus: Khỉ Thông Thái tự thu hoạch cây chín">🐒 Khỉ Thông Thái tự thu</span>':'<a class="btn sm ghost" href="#premium" title="Gói Plus 15.000đ/tháng">🐒 Thuê Khỉ Thông Thái tự thu</a>'}`);
   row.querySelector('#gbulk').onclick=bulkSow;row.querySelector('#gbulkh').onclick=bulkHarvest;
   const hint=row.querySelector('.small.muted');if(hint)hint.textContent='Hạt giống mở theo cấp người chơi và bài đã qua. Cây chín giữ được 50% thời gian trồng, sau đó héo dần và mất trắng sau 100% thời gian trồng nữa.';
   const chips=app.querySelector('.gchips');if(chips&&!chips.querySelector('.gshared'))chips.insertAdjacentHTML('beforeend','<span class="gchip gshared" title="Một vườn chung cho HSK1 và HSK2">🌏 Vườn chung HSK1–2</span>');
   petAutoHarvest();};})();
 (function(){const base=viewShop;viewShop=function(){base.apply(this,arguments);const root=app.querySelector('.shop2');if(!root||root.querySelector('#shgarden'))return;const g=G();
   const it=(k,ic,n,d)=>{const on=rentOn(k);return `<div class="panel helpit" id="sh-${k}"><span class="helpic">${ic}</span><div><b>${n}</b> <span class="acctag">${on?(plusActive()?'Có sẵn (Plus)':'Đến '+new Date(g.rent[k]).toLocaleDateString('vi-VN')):'Chưa thuê'}</span><div class="small muted">${d}</div></div><button class="btn sm${on?'':' pri'}" data-rent="${k}"${plusActive()?' disabled':''}>${on?'Gia hạn':'Thuê'} · ${RENT_COST} ${YB}/${RENT_DAYS} ngày</button></div>`;};
-  root.insertAdjacentHTML('beforeend',`<section class="panel stack" id="shgarden"><h3 style="margin:0">🌿 Dịch vụ khu vườn</h3><div class="helpgrid">${it('sow','🌱','Gieo hàng loạt','Gieo một loại hạt vào tất cả chậu trống bằng một chạm.')}${it('harv','🧺','Thu hàng loạt','Thu hoạch tất cả cây chín bằng một chạm.')}
-    <div class="panel helpit"><span class="helpic">🐉</span><div><b>Tiểu Long Hổ tự thu hoạch</b> <span class="acctag">${plusActive()?'Đang bật':'Gói Plus'}</span><div class="small muted">Cây chín là Long Hổ thu ngay, không héo, không bị trộm. Kèm gieo và thu hàng loạt.</div></div><a class="btn sm${plusActive()?'':' pri'}" href="#premium">${plusActive()?'Đang dùng':'15.000đ/tháng →'}</a></div></div></section>`);
+  root.insertAdjacentHTML('beforeend',`<section class="panel stack" id="shgarden"><h3 style="margin:0">🌿 Dịch vụ khu vườn</h3><div class="helpgrid">${it('sow','🕊️','Tiểu Bồ Câu gieo hạt','Chú bồ câu trắng túc trực trong vườn, gieo một loại hạt vào tất cả chậu trống bằng một chạm.')}${it('harv','🐱','Tiểu Mao thu hoạch','Chú mèo nhỏ túc trực trong vườn, thu hoạch tất cả cây chín bằng một chạm.')}
+    <div class="panel helpit"><span class="helpic">🐒</span><div><b>Khỉ Thông Thái tự thu hoạch</b> <span class="acctag">${plusActive()?'Đang bật':'Gói Plus'}</span><div class="small muted">Cây chín là Khỉ Thông Thái thu ngay, không héo, không bị trộm. Kèm Tiểu Bồ Câu và Tiểu Mao.</div></div><a class="btn sm${plusActive()?'':' pri'}" href="#premium">${plusActive()?'Đang dùng':'15.000đ/tháng →'}</a></div></div></section>`);
   root.querySelectorAll('[data-rent]').forEach(b=>b.onclick=()=>rentBuy(b.dataset.rent,viewShop));};})();
 /* ---------- G. Năng lượng trò chơi: 1 năng lượng / ván; hết năng lượng trả 50/100/150 NB; thua được chơi tiếp 50/100 NB (Chơi Tiếp: 2 lượt miễn phí) ---------- */
 const GM_NAME={'mini:mem':'Lật thẻ','mini:rain':'Mưa chữ','mini:tone':'Đua thanh điệu','mini:tf':'Đúng hay sai','mini:order':'Xếp câu','mini:rad':'Săn bộ thủ','mini:lego':'Lò ghép chữ','mini:write':'Viết nhanh',defense:'Thủ thành',blocks:'Xếp chữ rơi',race:'Đua xe',wall:'Vạn Lý Trường Thành',puzzle:'Ghép chữ',hv:'Thám tử Hán Việt',duel:'Thách đấu'};
@@ -13806,7 +13891,7 @@ function planCard2(k,P,chosen,quote,price){const early=P.early&&P.early.left>0;c
     <b class="plname">${esc(PLAN_NAME[k]||P.name)}</b><span class="plprice">${typeof shown==='number'?vnd(shown):shown}${(early&&!(quote&&quote.product===k))||(quote&&quote.product===k&&quote.discount)?`<s>${vnd(quote&&quote.product===k?quote.base||P.price:P.price)}</s>`:''}</span>${per}
     <ul class="plfeat">${(PLAN_FEAT[k]||[]).map(f=>`<li>${f}</li>`).join('')}</ul></button>`;}
 viewPremium=async function(){
-  const head=`<section class="addhero prhero"><div class="addicon" aria-hidden="true">⭐</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Học và chơi thoải mái</h1><p><b>Pro</b>: không tốn năng lượng, ôn không giới hạn. <b>Plus</b>: Tiểu Long Hổ tự thu hoạch vườn. <b>Chơi Tiếp</b>: thua được chơi tiếp miễn phí. Hoặc nạp <b>Nguyên bảo</b>.</p></div></section>`;
+  const head=`<section class="addhero prhero"><div class="addicon" aria-hidden="true">⭐</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Học và chơi thoải mái</h1><p><b>Pro</b>: không tốn năng lượng, ôn không giới hạn. <b>Plus</b>: Khỉ Thông Thái tự thu hoạch vườn. <b>Chơi Tiếp</b>: thua được chơi tiếp miễn phí. Hoặc nạp <b>Nguyên bảo</b>.</p></div></section>`;
   app.innerHTML=`<div class="stack">${head}<div class="panel muted">Đang tải bảng giá…</div></div>`;
   try{await meFetch();}catch(e){}
   const app_=gpbOK();if(isApp()&&!app_){app.innerHTML=`<div class="stack">${head}${planStatusHTML()||'<div class="panel"><p class="muted" style="margin:0">Tài khoản này chưa có gói trả phí.</p></div>'}<div class="panel small muted">Hãy cập nhật app lên bản mới nhất trên Google Play để mua gói.</div></div>`;return;}
@@ -17624,6 +17709,74 @@ function setGroupOf2(t){
   used.forEach(([k,ic,t,col])=>{const sec=document.createElement('section');sec.className='setgrp';sec.id='setg-'+k;sec.style.setProperty('--gc',col);sec.innerHTML=`<div class="setgh"><span class="setgi">${ic}</span><h2>${t}</h2></div>`;groups[k].forEach(p=>{p.classList.add('setp');sec.appendChild(p);});st.appendChild(sec);});
   st.querySelectorAll('[data-sgo]').forEach(a=>a.onclick=e=>{e.preventDefault();const s=document.getElementById('setg-'+a.dataset.sgo);if(s){const hd=document.querySelector('header.top');window.scrollTo({top:s.getBoundingClientRect().top+scrollY-(hd?hd.offsetHeight:0)-12,behavior:'smooth'});}});}catch(e){console.warn(e);}};})();
 if(window.__T)window.__u99={PGX,pgxHero,setGroupOf};
+
+
+/* ===== 5.54 Khu vườn 3D: tối đa 15 chậu (5 chậu mỗi luống), luống gỗ nổi khối;
+   thú túc trực trong vườn: Tiểu Bồ Câu (gieo hạt), Tiểu Mao (thu hoạch), Khỉ Thông Thái (tự thu, Gói Plus) ===== */
+try{if(PLOT_COST.length<15)PLOT_COST.push(250,350,480,640,850,1100);}catch(e){}
+try{GQ_ONCE.push(['plot15','Mở đủ 15 ô đất',g=>g.plots.length>=15,200]);}catch(e){}
+/* 3 luống × 5 chậu: luống sau cùng (xa) ở trên */
+function g3Rows(plots,mk,extra){const rows=[[10,11,12,13,14],[5,6,7,8,9],[0,1,2,3,4]];
+  return rows.map((r,ri)=>`<div class="g3row r${ri}"><div class="g3bed" aria-hidden="true"><i class="g3soil"></i><i class="g3face"></i></div>${r.map(i=>i<plots.length?mk(plots[i],i):extra(i)).join('')}</div>`).join('');}
+/* ---------- Thú trong vườn ---------- */
+const GPET={
+ dove:{n:'Tiểu Bồ Câu',vi:'gieo hạt',col:'#7cc8f2',svg:`<svg viewBox="0 0 80 64" aria-hidden="true"><ellipse cx="40" cy="60" rx="20" ry="3.5" fill="#000" opacity=".18"/>
+   <g class="gpleg"><path d="M34 50 v8 M44 50 v8" stroke="#ff8fab" stroke-width="3" stroke-linecap="round"/></g>
+   <path d="M16 36 q-10 -2 -12 6 q8 2 14 0z" fill="#e9eef3" stroke="#b9c4cf" stroke-width="1.4"/>
+   <ellipse cx="38" cy="38" rx="22" ry="15" fill="#fff" stroke="#c9d3dc" stroke-width="1.6"/>
+   <path class="gpwing" d="M26 34 q12 -10 24 2 q-10 8 -24 -2z" fill="#eef3f7" stroke="#b9c4cf" stroke-width="1.4"/>
+   <circle cx="56" cy="24" r="11" fill="#fff" stroke="#c9d3dc" stroke-width="1.6"/><circle cx="59" cy="22" r="2.2" fill="#1b2826"/><circle cx="59.8" cy="21.2" r=".7" fill="#fff"/>
+   <path d="M66 24 l7 2 l-7 3z" fill="#f5a623"/><circle cx="55" cy="28" r="2.6" fill="#ffb3c1" opacity=".8"/>
+   <path d="M30 44 q4 6 12 4" stroke="#5aab51" stroke-width="2" fill="none"/><ellipse cx="44" cy="50" rx="6" ry="4.5" fill="#c8925a" stroke="#7a4f2a" stroke-width="1.2"/><path d="M41 48 h6" stroke="#7a4f2a" stroke-width="1"/></svg>`,
+  say:[['咕咕！我来种花。','Gù gù! Để tớ gieo hạt nào.'],['今天天气很好！','Hôm nay trời đẹp quá!'],['种子都准备好了。','Hạt giống chuẩn bị xong rồi.'],['你学习了吗？','Bạn học bài chưa đó?'],['我喜欢这个花园。','Tớ thích khu vườn này lắm.']]},
+ cat:{n:'Tiểu Mao',vi:'thu hoạch',col:'#f5a623',svg:`<svg viewBox="0 0 80 64" aria-hidden="true"><ellipse cx="40" cy="60" rx="22" ry="3.5" fill="#000" opacity=".18"/>
+   <path class="gptail" d="M14 40 q-12 -6 -6 -20 q4 -4 6 2 q-4 10 6 14z" fill="#f5a623" stroke="#b86e10" stroke-width="1.4"/>
+   <g class="gpleg"><rect x="22" y="46" width="7" height="12" rx="3.5" fill="#f5a623" stroke="#b86e10" stroke-width="1.2"/><rect x="44" y="46" width="7" height="12" rx="3.5" fill="#f5a623" stroke="#b86e10" stroke-width="1.2"/></g>
+   <ellipse cx="36" cy="40" rx="20" ry="13" fill="#f7b548" stroke="#b86e10" stroke-width="1.5"/><path d="M26 32 q4 6 0 12 M34 30 q4 6 0 12" stroke="#d4831a" stroke-width="2.4" fill="none"/>
+   <ellipse cx="38" cy="45" rx="10" ry="6" fill="#fff3dc"/>
+   <rect x="16" y="22" width="18" height="12" rx="3" fill="#c8925a" stroke="#7a4f2a" stroke-width="1.4" transform="rotate(-8 25 28)"/><path d="M18 22 q7 -9 14 0" stroke="#7a4f2a" stroke-width="1.6" fill="none" transform="rotate(-8 25 28)"/><circle cx="21" cy="22" r="3" fill="#e5383b"/><circle cx="27" cy="21" r="3" fill="#ffd166"/>
+   <path d="M48 16 l3 -10 l7 8z M62 14 l6 -8 l2 11z" fill="#f7b548" stroke="#b86e10" stroke-width="1.3"/><circle cx="58" cy="26" r="13" fill="#f7b548" stroke="#b86e10" stroke-width="1.5"/>
+   <circle cx="54" cy="25" r="2.3" fill="#1b2826"/><circle cx="63" cy="25" r="2.3" fill="#1b2826"/><path d="M57 29 l1.5 1.5 l1.5 -1.5" stroke="#1b2826" stroke-width="1.2" fill="none"/><path d="M66 28 h8 M66 31 l7 2 M50 28 h-8" stroke="#7a4f2a" stroke-width="1"/><circle cx="52" cy="30" r="2.4" fill="#ffb3c1" opacity=".8"/></svg>`,
+  say:[['喵～花开了吗？','Meo~ Hoa nở chưa nhỉ?'],['我来帮你收！','Để tớ thu hoạch giúp nhé!'],['我有一点儿累。','Tớ hơi mệt một chút.'],['这个苹果很好吃！','Quả táo này ngon lắm!'],['喵，我想睡觉。','Meo, tớ buồn ngủ quá.']]},
+ monkey:{n:'Khỉ Thông Thái',vi:'tự thu hoạch',col:'#8a5a3b',svg:`<svg viewBox="0 0 80 72" aria-hidden="true"><ellipse cx="40" cy="68" rx="20" ry="3.5" fill="#000" opacity=".18"/>
+   <path class="gptail" d="M22 52 q-16 0 -14 -16 q2 -8 8 -4 q-6 4 -2 10 q4 6 10 4z" fill="#8a5a3b" stroke="#5a3418" stroke-width="1.4"/>
+   <g class="gpleg"><rect x="28" y="54" width="8" height="12" rx="4" fill="#8a5a3b" stroke="#5a3418" stroke-width="1.2"/><rect x="44" y="54" width="8" height="12" rx="4" fill="#8a5a3b" stroke="#5a3418" stroke-width="1.2"/></g>
+   <ellipse cx="40" cy="48" rx="15" ry="12" fill="#8a5a3b" stroke="#5a3418" stroke-width="1.5"/><ellipse cx="40" cy="50" rx="9" ry="7.5" fill="#e8c9a0"/>
+   <rect x="44" y="40" width="16" height="12" rx="2" fill="#2f6fd6" stroke="#1d4fa0" stroke-width="1.3" transform="rotate(10 52 46)"/><path d="M52 41 v11" stroke="#fff" stroke-width="1" transform="rotate(10 52 46)"/>
+   <circle cx="24" cy="26" r="7" fill="#e8c9a0" stroke="#5a3418" stroke-width="1.4"/><circle cx="56" cy="26" r="7" fill="#e8c9a0" stroke="#5a3418" stroke-width="1.4"/>
+   <circle cx="40" cy="26" r="15" fill="#8a5a3b" stroke="#5a3418" stroke-width="1.5"/><ellipse cx="40" cy="30" rx="11" ry="9" fill="#e8c9a0"/>
+   <circle cx="35" cy="25" r="5" fill="none" stroke="#1b2826" stroke-width="1.6"/><circle cx="45" cy="25" r="5" fill="none" stroke="#1b2826" stroke-width="1.6"/><path d="M40 25 h0" stroke="#1b2826"/><circle cx="35" cy="25" r="1.8" fill="#1b2826"/><circle cx="45" cy="25" r="1.8" fill="#1b2826"/>
+   <path d="M36 34 q4 3 8 0" stroke="#5a3418" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+   <path d="M26 12 l14 -6 l14 6 l-14 6z" fill="#1b2826"/><rect x="33" y="12" width="14" height="5" fill="#1b2826"/><path d="M52 11 v8" stroke="#ffd166" stroke-width="1.6"/><circle cx="52" cy="20" r="2" fill="#ffd166"/></svg>`,
+  say:[['我是聪明的猴子。','Tớ là chú khỉ thông thái.'],['好好学习，天天向上！','Chăm học, mỗi ngày một tiến bộ!'],['花熟了我就来收。','Cây chín là tớ thu ngay.'],['你今天学了几个字？','Hôm nay bạn học được mấy chữ rồi?'],['书里有很多好东西。','Trong sách có nhiều điều hay lắm.']]}};
+const gpVoiceOn=()=>{try{return localStorage.getItem('hsk-gpv')!=='0';}catch(e){return true;}};
+function gpOwned(){const out=[];try{if(plusActive()||(window.__T&&window.__gpPlus))return ['dove','cat','monkey'];if(rentOn('sow'))out.push('dove');if(rentOn('harv'))out.push('cat');}catch(e){}return out;}
+let GP={t:0,tk:0,talk:0};
+function gpSay(el,k,line){if(!el||!el.isConnected)return;const P=GPET[k],L=line||P.say[Math.floor(Math.random()*P.say.length)];el.querySelectorAll('.gpbub').forEach(x=>x.remove());
+  el.insertAdjacentHTML('beforeend',`<span class="gpbub" role="status"><b class="han">${esc(L[0])}</b><small>${esc(L[1])}</small></span>`);
+  if(gpVoiceOn())try{speak(L[0],k==='monkey'?.85:1.05);}catch(e){}const b=el.querySelector('.gpbub');setTimeout(()=>{if(b)b.classList.add('out');setTimeout(()=>b&&b.remove(),400);},3800);}
+function gpMove(el){if(!el||!el.isConnected||el.classList.contains('busy'))return;const x0=parseFloat(el.style.left)||50,x=8+Math.random()*80;el.classList.toggle('flip',x<x0);el.classList.add('walk');
+  const dur=Math.max(1.2,Math.abs(x-x0)/14);el.style.transitionDuration=dur+'s';el.style.left=x+'%';setTimeout(()=>el.classList.remove('walk'),dur*1000);}
+function gpMount(){const sc=document.getElementById('gscene');if(!sc||sc.classList.contains('play'))return;sc.querySelectorAll('.gpx,#gpvoice,.gplane').forEach(x=>x.remove());
+  sc.insertAdjacentHTML('beforeend','<div class="gplane" aria-hidden="true"><i></i></div>');const own=gpOwned();
+  sc.insertAdjacentHTML('beforeend',`<button type="button" class="gpvoice" id="gpvoice" aria-pressed="${gpVoiceOn()}" title="Bật/tắt tiếng thú trong vườn">${gpVoiceOn()?'🔊':'🔇'} <span>Tiếng thú</span></button>`);
+  sc.querySelector('#gpvoice').onclick=e=>{e.stopPropagation();const on=!gpVoiceOn();try{localStorage.setItem('hsk-gpv',on?'1':'0');}catch(_){}const b=e.currentTarget;b.innerHTML=`${on?'🔊':'🔇'} <span>Tiếng thú</span>`;b.setAttribute('aria-pressed',on);if(!on)try{speechSynthesis.cancel();}catch(_){}};
+  own.forEach((k,i)=>{const P=GPET[k];const mob=innerWidth<=768,lane=(mob?[6,14,22]:[10,22,34])[i%3];
+    sc.insertAdjacentHTML('beforeend',`<button type="button" class="gpx gp-${k}" data-gp="${k}" style="left:${15+i*28+Math.random()*10}%;bottom:${lane}px;z-index:${9-i%3};--pc:${P.col}" aria-label="${P.n}: ${P.vi}"><span class="gpbody">${P.svg}</span><span class="gpname">${P.n}</span></button>`);});
+  sc.querySelectorAll('.gpx').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();const k=el.dataset.gp;el.classList.add('hop');setTimeout(()=>el.classList.remove('hop'),500);
+    if(k==='dove'){gpSay(el,k,['咕咕！我来播种！','Gù gù! Để tớ gieo hạt!']);setTimeout(()=>bulkSow(),500);}
+    else if(k==='cat'){const g=G();const ripe=g.plots.some(p=>p&&p.l&&!p.wilt&&(p.gr||0)>=100);gpSay(el,k,ripe?['喵！我来收果子！','Meo! Tớ thu hoạch đây!']:['喵～还没熟呢。','Meo~ Cây chưa chín đâu.']);if(ripe)setTimeout(()=>bulkHarvest(),600);}
+    else{gpSay(el,k);try{petAutoHarvest();}catch(_){}}}));
+  clearInterval(GP.t);GP.t=setInterval(()=>{const s2=document.getElementById('gscene');if(!s2||s2.classList.contains('play')){clearInterval(GP.t);return;}if(document.hidden)return;
+    s2.querySelectorAll('.gpx').forEach(el=>{if(Math.random()<.55)gpMove(el);});
+    GP.tk++;if(GP.tk%4===0){const ps=[...s2.querySelectorAll('.gpx')];if(ps.length){const el=ps[Math.floor(Math.random()*ps.length)];gpSay(el,el.dataset.gp);}}},3200);
+  setTimeout(()=>sc.querySelectorAll('.gpx').forEach(gpMove),400);
+  if(own.length&&!GP.talk){GP.talk=1;setTimeout(()=>{const el=sc.querySelector('.gpx');if(el)gpSay(el,el.dataset.gp);},1600);}}
+(function(){const base=viewGarden;viewGarden=function(){const r=base.apply(this,arguments);try{gpMount();
+  const sc=document.getElementById('gscene');if(sc){sc.classList.add('g3d');sc.dataset.sky=gSky();}}catch(e){console.warn(e);}return r;};})();
+/* thuê xong: cho thú xuất hiện ngay và chào */
+(function(){const base=rentBuy;rentBuy=function(k,after){return base.call(this,k,()=>{try{if(location.hash==='#garden'){viewGarden();const el=document.querySelector(`.gpx[data-gp="${k==='sow'?'dove':'cat'}"]`);if(el)setTimeout(()=>gpSay(el,el.dataset.gp,k==='sow'?['你好！我是小鸽子。','Xin chào! Tớ là Tiểu Bồ Câu.']:['你好！我是小猫。','Xin chào! Tớ là Tiểu Mao.']),500);}}catch(e){}if(after)after();});};})();
+if(window.__T)window.__u100={GPET,gpOwned,gpMount,gpSay,g3Rows};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
