@@ -3810,6 +3810,17 @@ img.bao:not(.hallpet){filter:drop-shadow(0 6px 5px rgba(0,0,0,.18))}
 @media (max-width:720px){.pgxhero.pgxhero{grid-template-columns:1fr;padding:20px}.pgxart{order:-1;height:120px}.pgxart svg{max-width:200px}.pgxhero h1{font-size:26px}.pgxsteps{grid-template-columns:1fr 1fr}.pgxsteps::before{display:none}.pgxlinks{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.pgxfloat,.pgxspin,.pgxtw,.pgxswing,.pgxconf,.pgxstamp{animation:none}}
 .dkw{color:var(--ink)}.dkw.on{background:color-mix(in srgb,var(--jade) 14%,var(--card))!important;border-color:var(--jade)!important;color:var(--ink)!important}.dkw.on .han{color:var(--ink)}
+/* 5.53 nút 📸 và hộp thẻ */
+.dkcam{font-size:17px;line-height:1}
+.dkcdlg{border:0;border-radius:22px;padding:0;width:min(560px,94vw);max-height:94vh;background:var(--card);color:var(--ink);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.dkcdlg::backdrop{background:rgba(10,20,18,.6);backdrop-filter:blur(2px)}
+.dkcin{display:flex;flex-direction:column;gap:12px;padding:16px;max-height:94vh;overflow:auto;box-sizing:border-box}
+.dkchd{display:flex;align-items:center;justify-content:space-between;gap:10px}.dkchd b{font-size:17px}.dkchd .han{color:#c3402b}
+.dkcbox{min-height:220px;display:flex;align-items:center;justify-content:center}
+.dkcwait{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted)}.dkcwait .han{font-size:64px;color:#c3402b;animation:dkPulse 1s ease-in-out infinite}
+@keyframes dkPulse{50%{opacity:.4;transform:scale(.94)}}
+.dkcbox .dkimg{max-width:100%;max-height:68vh;width:auto}
+.dkcmore{text-align:center}
 </style>
 </head><body>
 
@@ -3835,12 +3846,12 @@ img.bao:not(.hallpet){filter:drop-shadow(0 6px 5px rgba(0,0,0,.18))}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='57cd1451';
-document.write('<script src="packs/hsk'+L+'.js?v=57cd1451"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='9ad774c6';
+document.write('<script src="packs/hsk'+L+'.js?v=9ad774c6"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=57cd1451','strokes-file');A('packs/dict.js?v=57cd1451','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=9ad774c6','strokes-file');A('packs/dict.js?v=9ad774c6','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -17457,9 +17468,9 @@ async function dkBrand(x,W,H,dark){qrDraw(x,W-40-150,34,150,'#1b2826','#fff');x.
   const im=await dkLoad(dkMascot());const mw=170,mh=im?mw*im.height/im.width:0;if(im)x.drawImage(im,W-30-mw,H-24-mh,mw,mh);
   x.fillStyle=dark?'#fff':'#0d7a63';x.font=`800 30px ${DK_UI}`;x.textAlign='right';x.fillText(SITE_HOST,W-30-mw-14,H-46);x.textAlign='left';
   x.fillStyle=dark?'#cfe9df':'#5b6a66';x.font=`500 22px ${DK_UI}`;x.fillText('Tâm HSK · học tiếng Trung miễn phí',40,H-46);}
-function dkShow(c,name,title){c.toBlob(async b=>{const f=new File([b],name,{type:'image/png'});const out=app.querySelector('#dkout');if(!out)return;const url=URL.createObjectURL(b);
+function dkShow(c,name,title,box){return new Promise(res=>c.toBlob(async b=>{const f=new File([b],name,{type:'image/png'});const out=box||app.querySelector('#dkout');if(!out)return res();const url=URL.createObjectURL(b);
   out.innerHTML=`<div class="dkres"><img src="${url}" alt="Ảnh thẻ từ vựng" class="dkimg"><div class="row">${navigator.canShare&&navigator.canShare({files:[f]})?'<button class="btn pri" id="dkis">📤 Chia sẻ ảnh</button>':''}<a class="btn${navigator.canShare?'':' pri'}" href="${url}" download="${name}">⬇️ Tải ảnh</a></div></div>`;
-  const s=out.querySelector('#dkis');if(s)s.onclick=()=>navigator.share({files:[f],title}).catch(()=>{});out.scrollIntoView({behavior:'smooth',block:'nearest'});},'image/png');}
+  const s=out.querySelector('#dkis');if(s)s.onclick=()=>navigator.share({files:[f],title}).catch(()=>{});if(!box)out.scrollIntoView({behavior:'smooth',block:'nearest'});res();},'image/png'));}
 /* ảnh bộ thẻ nhiều từ (vẽ lại, có QR + logo) */
 async function deckImage(d){try{await document.fonts.ready;}catch(e){}const ws=d.w.slice(0,12),cols=ws.length>6?3:2,rows=Math.ceil(ws.length/cols),W=1080,cw=(W-80-(cols-1)*20)/cols,ch=230,H=290+rows*(ch+20)+150;
   const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
@@ -17484,7 +17495,7 @@ function dkGlyph(x,ch,X,Y,S){x.save();x.fillStyle='#fffdf7';x.strokeStyle='#e2b9
   x.restore();}
 function dkWrap(x,t,w){const out=[];let line='';for(const ch of t){const tt=line+ch;if(x.measureText(tt).width>w&&line){const sp=line.lastIndexOf(' ');if(sp>8&&/\s/.test(ch)===false&&!/\p{Script=Han}/u.test(ch)){out.push(line.slice(0,sp));line=line.slice(sp+1)+ch;}else{out.push(line);line=ch;}}else line=tt;}if(line)out.push(line);return out;}
 async function dkArtImg(w){if(typeof WART==='undefined'||!WART[w.zh])return null;try{const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" width="600" height="420">${WART[w.zh]()}</svg>`;return await dkLoad('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg));}catch(e){return null;}}
-async function dkOneImage(w){try{await document.fonts.ready;}catch(e){}try{if(typeof hzEnsurePack==='function')hzEnsurePack();}catch(e){}
+async function dkOneImage(w,outBox){try{await document.fonts.ready;}catch(e){}try{if(typeof hzEnsurePack==='function')hzEnsurePack();}catch(e){}
   const chars=[...w.zh].filter(ch=>/\p{Script=Han}/u.test(ch)).slice(0,4);const exs=(typeof examplesFor==='function'?examplesFor(w):[]).slice(0,2);const art=await dkArtImg(w);
   const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
   const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#fff6ec');g.addColorStop(1,'#eef7f2');x.fillStyle=g;x.fillRect(0,0,W,H);x.fillStyle='#c3402b';x.fillRect(0,0,W,14);
@@ -17506,7 +17517,7 @@ async function dkOneImage(w){try{await document.fonts.ready;}catch(e){}try{if(ty
     x.fillStyle='#1b2826';x.font=`600 40px ${DK_HAN}`;zl.forEach(l=>{const parts=l.split(w.zh);let xx=74;parts.forEach((pt,k)=>{x.fillStyle='#1b2826';x.fillText(pt,xx,yy);xx+=x.measureText(pt).width;if(k<parts.length-1){x.fillStyle='#c3402b';x.fillText(w.zh,xx,yy);xx+=x.measureText(w.zh).width;}});yy+=50;});
     x.fillStyle='#0d7a63';x.font=`600 24px ${DK_UI}`;pl.forEach(l=>{x.fillText(l,74,yy-8);yy+=32;});x.fillStyle='#5b6a66';x.font=`400 26px ${DK_UI}`;vlines.forEach(l=>{x.fillText(l,74,yy-2);yy+=34;});y+=h+16;};
   if(exs.length)exs.forEach(box);else{x.fillStyle='#5b6a66';x.font=`400 26px ${DK_UI}`;x.fillText('Chưa có câu ví dụ cho từ này trong giáo trình.',40,y+40);}
-  await dkBrand(x,W,H);dkShow(c,`the-tu-${w.zh}.png`,w.zh+' · '+w.vi);}
+  await dkBrand(x,W,H);await dkShow(c,`the-tu-${w.zh}.png`,w.zh+' · '+w.vi,outBox);}
 /* giao diện: 2 chế độ */
 let dkMode='multi',dkOneId='';
 (function(){const base=viewDeckMake;viewDeckMake=function(){
@@ -17526,6 +17537,23 @@ let dkMode='multi',dkOneId='';
 try{const t=MORE_TILES.find(x=>x[0]==='#deck');if(t){t[2]='Tạo Thẻ Từ Vựng';t[3]='Ảnh thẻ có QR, thẻ 1 từ có nét vẽ tay, hoặc link bộ thẻ cho bạn bè';}}catch(e){}
 try{NAVG.more.items.forEach(i=>{if(i[0]==='deck')i[1]='Tạo thẻ';});}catch(e){}
 if(window.__T)window.__u98={dkOneImage,deckImage,qrDraw,SITE_QR};
+/* ===== 5.53 Nút 📸 Tạo thẻ ngay cạnh từ: bảng chi tiết từ, thẻ lật Từ mới / Ôn tập, Sổ từ, kết quả trò chơi ===== */
+function dkWordOf(id,zh){let w=id&&ALLW.find(x=>x.id===id);if(!w&&zh)w=ALLW.find(x=>x.zh===zh&&!x.custom)||ALLW.find(x=>x.zh===zh);if(w)return w;
+  try{buildIdx();const e=(BYZH.get(zh)||[])[0];if(e)return {zh:e.zh,py:e.py||'',vi:e.vi||'',hv:typeof hvOf==='function'?hvOf(e.zh):'',l:0};}catch(e){}return zh?{zh,py:'',vi:'',l:0}:null;}
+function dkCardOpen(w){let d=document.getElementById('dkcdlg');
+  if(!d){d=document.createElement('dialog');d.id='dkcdlg';d.className='dkcdlg';d.setAttribute('aria-label','Ảnh thẻ từ');document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-dkclose]'))d.close();});}
+  d.innerHTML=`<div class="dkcin"><div class="dkchd"><b>📸 Thẻ từ <span class="han">${esc(w.zh)}</span></b><button type="button" class="icon-btn" data-dkclose aria-label="Đóng">✕</button></div>
+    <div id="dkcbox" class="dkcbox"><div class="dkcwait"><span class="han">${esc(w.zh)}</span><span>Tiểu Long Hổ đang vẽ thẻ…</span></div></div>
+    <a class="small dkcmore" href="#deck" data-dkclose>🗂️ Làm bộ thẻ nhiều từ trong Tạo Thẻ Từ Vựng →</a></div>`;
+  try{if(!d.open)d.showModal();}catch(e){d.setAttribute('open','');}
+  setTimeout(async()=>{try{await dkOneImage(w,d.querySelector('#dkcbox'));}catch(e){console.warn(e);const b=d.querySelector('#dkcbox');if(b)b.innerHTML='<p class="muted">Chưa tạo được ảnh, thử lại nhé.</p>';}},40);}
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-dkcam]');if(!b)return;e.preventDefault();e.stopPropagation();const w=dkWordOf(b.dataset.dkid,b.dataset.dkzh);if(w)dkCardOpen(w);},true);
+const dkCam=(id,zh)=>`<button type="button" class="icon-btn dkcam" data-dkcam${id?` data-dkid="${esc(id)}"`:''} data-dkzh="${esc(zh)}" aria-label="Tạo ảnh thẻ từ ${esc(zh)}" title="Tạo ảnh thẻ từ">📸</button>`;
+function dkCamScan(){try{const idmap=new Map();document.querySelectorAll('button[data-fav]').forEach(f=>{const nx=f.nextElementSibling;if(nx&&nx.matches('[data-dkcam]'))return;if(f.closest('.dkcdlg,.dkone,.dkwords'))return;
+    const id=f.dataset.fav;let w=idmap.get(id);if(w===undefined){w=ALLW.find(x=>x.id===id)||null;idmap.set(id,w);}if(!w)return;f.insertAdjacentHTML('afterend',dkCam(id,w.zh));});
+  const wd=document.getElementById('wdg');if(wd&&wd.open&&wd.dataset.zh&&!wd.querySelector('[data-dkcam]')){const sp=wd.querySelector('[data-speak]');if(sp)sp.insertAdjacentHTML('afterend',dkCam('',wd.dataset.zh));}}catch(e){}}
+let dkCamT=0;try{new MutationObserver(()=>{if(dkCamT)return;dkCamT=setTimeout(()=>{dkCamT=0;dkCamScan();},180);}).observe(document.body,{childList:true,subtree:true});}catch(e){}
+if(window.__T)window.__u98b={dkWordOf,dkCardOpen,dkCamScan};
 
 
 /* ===== 5.52 Thiết kế lại: Mời bạn, Bạn học & Nhóm, Sự kiện & Nhiệm vụ, Tên tiếng Trung, Gói HSK 3.0, Kasser English, Cài đặt ===== */
