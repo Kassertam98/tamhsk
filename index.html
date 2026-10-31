@@ -3613,6 +3613,88 @@ body:has(.bmplay) #fab{display:none}
 .mdw{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:12px;background:var(--paper)}
 .mdw .han{font-size:22px;min-width:40px}.mdw>span:nth-child(2){display:flex;flex-direction:column;flex:1;min-width:0}.mdw small{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #duobot{min-height:44px}
+
+/* 5.49 Sảnh vào trò chơi: thẻ chế độ có tranh, nút vào trận nổi khối */
+.gmxpanel{position:relative;overflow:hidden;border-radius:22px;padding:18px;background:radial-gradient(120% 90% at 0% 0%,color-mix(in srgb,var(--jade) 10%,var(--card)) 0,var(--card) 55%),var(--card);border:1.5px solid color-mix(in srgb,var(--jade) 22%,var(--line));box-shadow:0 18px 36px -28px rgba(0,0,0,.6)}
+.gmxpanel>h3{font-size:19px;display:flex;align-items:baseline;gap:6px}
+.gmodes.gmx{gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.gmx .gmode{--mc:var(--jade);flex-direction:column;align-items:stretch;gap:0;padding:0;overflow:hidden;border-radius:20px;border:2px solid color-mix(in srgb,var(--mc) 30%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,var(--mc) 10%,var(--card)),var(--card) 70%);box-shadow:0 6px 0 color-mix(in srgb,var(--mc) 30%,transparent),0 16px 26px -18px rgba(0,0,0,.55);transition:transform .18s,box-shadow .18s,border-color .18s}
+.gmx .gmode:hover{transform:translateY(-4px);border-color:var(--mc);box-shadow:0 10px 0 color-mix(in srgb,var(--mc) 35%,transparent),0 22px 30px -18px rgba(0,0,0,.6)}
+.gmx .gmode:active{transform:translateY(2px);box-shadow:0 2px 0 color-mix(in srgb,var(--mc) 35%,transparent)}
+.gmx .gmode.on{border-color:var(--mc);background:linear-gradient(180deg,color-mix(in srgb,var(--mc) 18%,var(--card)),var(--card) 75%);box-shadow:0 0 0 4px color-mix(in srgb,var(--mc) 25%,transparent),0 6px 0 color-mix(in srgb,var(--mc) 45%,transparent),0 18px 30px -16px color-mix(in srgb,var(--mc) 60%,transparent)}
+.gmx .gmode:last-child{border-color:color-mix(in srgb,var(--mc) 30%,var(--line))}
+.gmx .gmode.on:last-child,.gmx .gmode:last-child:hover{border-color:var(--mc)}
+.gmx .gmart{width:auto;height:auto;aspect-ratio:220/100;max-height:150px;border-radius:0;background:none;display:block;font-size:0;overflow:hidden;position:relative}
+.gmx .gmart svg{display:block;width:100%;height:100%;transition:transform .35s}
+.gmx .gmode:hover .gmart svg{transform:scale(1.05)}
+.gmx .gmart::after{content:'';position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(transparent,color-mix(in srgb,var(--mc) 10%,var(--card)))}
+.gmx .gmode.on .gmart::after{background:linear-gradient(transparent,color-mix(in srgb,var(--mc) 18%,var(--card)))}
+.gmx .gmtx{padding:10px 14px 14px;gap:5px}
+.gmx .gmtx b{font-size:17px;font-weight:800;color:var(--ink)}
+.gmx .gmode.on .gmtx b{color:var(--mc)}
+.gmx .gmtx small{font-size:13px}
+.gmx .gmchips i{background:color-mix(in srgb,var(--mc) 12%,var(--card));border-color:color-mix(in srgb,var(--mc) 35%,var(--line));font-size:11.5px;padding:3px 9px}
+.gmx .gmgo{top:10px;right:10px;font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;backdrop-filter:blur(3px)}
+.gmx .gmsel{position:absolute;top:10px;right:10px;font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:999px;background:var(--mc);color:#fff;opacity:0;transform:scale(.7);transition:opacity .2s,transform .2s;box-shadow:0 4px 10px -4px rgba(0,0,0,.5)}
+.gmx .gmode.on .gmsel{opacity:1;transform:none}
+.gmx .gxfl{animation:gxFl .5s ease-in-out infinite alternate}
+@keyframes gxFl{from{opacity:.6}to{opacity:1}}
+.gmx .gxping{animation:gxPing 1.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes gxPing{from{transform:scale(.6);opacity:.9}to{transform:scale(1.8);opacity:0}}
+.gmx .gxar{stroke-dasharray:14 120;animation:gxShot 1.6s linear infinite}.gmx .gxar.a2{animation-delay:.8s}
+@keyframes gxShot{from{stroke-dashoffset:0}to{stroke-dashoffset:-134}}
+.gmx .gxmon{animation:gxBob 1.4s ease-in-out infinite}
+.gmx .gxsp,.gmx .gxeye{animation:gxTw 1.2s ease-in-out infinite}
+@keyframes gxBob{0%,100%{translate:0 0}50%{translate:0 -4px}}
+@keyframes gxTw{0%,100%{opacity:1}50%{opacity:.35}}
+/* công tắc + vé */
+.gxsw{position:relative;padding:10px 14px;border-radius:14px;background:color-mix(in srgb,var(--ink) 4%,var(--card));border:1px solid var(--line);cursor:pointer}
+.gxsw input{appearance:none;-webkit-appearance:none;width:42px;height:24px;border-radius:999px;background:var(--line);position:relative;flex:none;margin:0;cursor:pointer;transition:background .2s}
+.gxsw input::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.4);transition:transform .2s}
+.gxsw input:checked{background:var(--jade)}.gxsw input:checked::after{transform:translateX(18px)}
+.gxsw input:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+.gxtk{padding:10px 14px;border-radius:14px;background:repeating-linear-gradient(90deg,color-mix(in srgb,#d7261e 10%,var(--card)) 0 12px,color-mix(in srgb,#d7261e 6%,var(--card)) 12px 24px);border:1.5px dashed color-mix(in srgb,#d7261e 45%,var(--line))}
+.gxtk b{color:#d7261e;font-size:16px}
+/* nút vào trận nổi khối */
+.btn.gmxgo{--g1:#3dbf9a;--g2:#0d7a63;--gs:#08513f;min-height:58px;border-radius:18px;border:0;font-size:18px;font-weight:800;color:#fff;background:linear-gradient(180deg,var(--g1),var(--g2));box-shadow:0 6px 0 var(--gs),0 16px 26px -12px color-mix(in srgb,var(--g2) 70%,transparent);text-shadow:0 2px 0 rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;gap:10px;width:100%;position:relative;overflow:hidden;transition:transform .12s,box-shadow .12s,filter .2s}
+.btn.gmxgo.red{--g1:#ff6b4a;--g2:#d7261e;--gs:#7a1410}
+.btn.gmxgo:hover{filter:brightness(1.07)}
+.btn.gmxgo:active{transform:translateY(4px);box-shadow:0 2px 0 var(--gs)}
+.btn.gmxgo::before{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);animation:gxShine 3s ease-in-out infinite}
+@keyframes gxShine{0%,60%{left:-60%}100%{left:130%}}
+.btn.gmxgo:disabled{filter:grayscale(1);opacity:.6;box-shadow:0 4px 0 #555}
+.btn.gmxgo:disabled::before{display:none}
+.btn.gmxgo .han{font-size:26px;line-height:1}
+.btn.gmxgo>span:not(.han){display:flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+.btn.gmxgo small{font-size:12px;font-weight:700;opacity:.9;text-shadow:none}
+/* Đặt Bom: chọn trận */
+.bmpanel{border-top:0;border-radius:22px;padding:18px;background:radial-gradient(120% 90% at 100% 0%,color-mix(in srgb,#d7261e 10%,var(--card)) 0,var(--card) 55%);border:1.5px solid color-mix(in srgb,#d7261e 22%,var(--line));box-shadow:0 18px 36px -28px rgba(0,0,0,.6)}
+.bmph{display:flex;align-items:center;gap:12px}
+.bmphic{width:44px;height:44px;border-radius:14px;background:linear-gradient(180deg,#ff6b4a,#c3402b);color:#ffe08a;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 0 #7a1410}
+.bmph h3{font-size:19px}
+.bmstep{display:flex;flex-direction:column;gap:8px}
+.bmsub{display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px;margin:0}
+.bmsub i{font-style:normal;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--card);display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+.bmseg{gap:12px}
+.bmopt.bmx{flex-direction:row;align-items:center;gap:14px;padding:12px 14px;min-height:96px;position:relative;border-radius:18px;border:2px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--ink) 3%,var(--card)),var(--card));box-shadow:0 5px 0 color-mix(in srgb,var(--ink) 12%,transparent);transition:transform .15s,box-shadow .15s,border-color .15s}
+.bmopt.bmx:hover{transform:translateY(-3px);border-color:color-mix(in srgb,#d7261e 55%,var(--line))}
+.bmopt.bmx:active{transform:translateY(2px);box-shadow:0 2px 0 color-mix(in srgb,var(--ink) 12%,transparent)}
+.bmopt.bmx.on{border-color:#d7261e;background:linear-gradient(180deg,color-mix(in srgb,#d7261e 14%,var(--card)),var(--card));box-shadow:0 0 0 4px color-mix(in srgb,#d7261e 20%,transparent),0 5px 0 color-mix(in srgb,#d7261e 45%,transparent)}
+.bmxart{flex:none;width:72px;height:72px;border-radius:16px;overflow:hidden;display:block;box-shadow:0 6px 12px -8px rgba(0,0,0,.6)}
+.bmxart svg{width:100%;height:100%;display:block}
+.bmxtx{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bmx .bmxtx b{font-size:17px;font-weight:800}.bmx.on .bmxtx b{color:#d7261e}
+.bmx .bmxtx small{font-size:12.5px}
+.bmchip{align-self:flex-start;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--ink) 6%,var(--card));border:1px solid var(--line)}
+.bmchip.hot{background:color-mix(in srgb,#f5b041 18%,var(--card));border-color:color-mix(in srgb,#f5b041 50%,var(--line))}
+.bmpips{display:flex;gap:3px}.bmpips i{width:14px;height:6px;border-radius:3px;background:var(--line)}.bmpips i.on{background:linear-gradient(90deg,#ff8a2a,#d7261e)}
+.bmxck{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:#d7261e;color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.5);transition:opacity .2s,transform .2s}
+.bmx.on .bmxck{opacity:1;transform:none}
+.bmnote{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:14px;background:color-mix(in srgb,var(--ink) 4%,var(--card));font-size:13px;color:var(--muted);line-height:1.5}
+.bmstart.gmxgo{min-height:62px}
+@media (max-width:560px){.gmx .gmart{max-height:120px}.bmopt.bmx{min-height:84px;padding:10px;gap:10px}.bmxart{width:58px;height:58px}.bmx .bmxtx b{font-size:15.5px}.bmseg{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.gmx .gxfl,.gmx .gxping,.gmx .gxar,.gmx .gxmon,.gmx .gxsp,.gmx .gxeye,.btn.gmxgo::before{animation:none}}
+@media (max-width:560px){.gxsw{flex-wrap:wrap;row-gap:2px}.gxsw small{flex-basis:100%;padding-left:50px}}
 </style>
 </head><body>
 
@@ -3638,12 +3720,12 @@ body:has(.bmplay) #fab{display:none}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='decc2917';
-document.write('<script src="packs/hsk'+L+'.js?v=decc2917"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='dbd14242';
+document.write('<script src="packs/hsk'+L+'.js?v=dbd14242"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=decc2917','strokes-file');A('packs/dict.js?v=decc2917','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=dbd14242','strokes-file');A('packs/dict.js?v=dbd14242','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -16844,7 +16926,7 @@ function finish(win,quit){if(!G||G.over)return;G.over=true;running=false;held=nu
     q('#bmendwl').innerHTML=words.length?words.map(w=>`<div class="bmw${w.miss?' miss':''}"><span class="han">${esc(w.zh)}</span><span><b>${esc(w.py)}</b><small>${esc(w.vi)}</small></span>${speakBtn(w.zh)}${w.id?favBtn(w):''}</div>`).join(''):'<div class="muted small">Chưa gặp từ nào.</div>';
     ov.hidden=false;const b=q('#bmagain');if(b)b.focus({preventScroll:true});},quit?0:700);}
 /* ================= GIAO DIỆN ================= */
-const heroSVG=()=>`<svg class="bmsvg" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="bmsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3d35"/><stop offset="1" stop-color="#0f2621"/></linearGradient></defs>
+const heroSVG=()=>`<svg class="bmsvg" viewBox="0 0 320 200" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><defs><linearGradient id="bmsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3d35"/><stop offset="1" stop-color="#0f2621"/></linearGradient></defs>
   <rect width="320" height="200" fill="url(#bmsky)"/>
   ${Array.from({length:5},(_,y)=>Array.from({length:8},(_,x)=>`<rect x="${130+x*24}" y="${80+y*24}" width="24" height="24" fill="${(x+y)%2?'#86c97f':'#93d38b'}" opacity=".9"/>`).join('')).join('')}
   <rect x="154" y="104" width="24" height="24" rx="5" fill="#8b93a8"/><rect x="202" y="104" width="24" height="24" rx="5" fill="#8b93a8"/><rect x="250" y="104" width="24" height="24" rx="5" fill="#8b93a8"/><rect x="154" y="152" width="24" height="24" rx="5" fill="#8b93a8"/><rect x="250" y="152" width="24" height="24" rx="5" fill="#8b93a8"/>
@@ -16856,19 +16938,26 @@ const heroSVG=()=>`<svg class="bmsvg" viewBox="0 0 320 200" preserveAspectRatio=
   <g class="bmbob b3"><circle cx="70" cy="70" r="26" fill="#1d1d2b"/><circle cx="62" cy="62" r="7" fill="rgba(255,255,255,.35)"/><path d="M84 50 q8 -12 16 -8" stroke="#8a5a3b" stroke-width="4" fill="none"/><circle class="bmfuse" cx="100" cy="42" r="6" fill="#ffd166"/><rect x="50" y="94" width="40" height="20" rx="10" fill="#fff"/><text x="70" y="109" text-anchor="middle" font-size="14" font-weight="900" fill="#c3402b" font-family='${HANF}'>炸</text></g>
 </svg>`;
 function view(){stopGames();TOK++;G=null;running=false;paused=false;const st=ST();
-  const opt=(attr,v,on,t,s)=>`<button class="bmopt${on?' on':''}" data-${attr}="${v}" aria-pressed="${on}"><b>${t}</b><small>${s}</small></button>`;
+  const mapArt=n=>{const c=78/n;let g='';for(let y=0;y<n;y++)for(let x=0;x<n;x++){const v=x%2&&y%2?1:((x*7+y*3+n)%5<2&&x+y>2&&(n-1-x)+(n-1-y)>2)?2:((x*5+y*11)%13===0&&x+y>3)?3:0;
+      g+=`<rect x="${11+x*c}" y="${11+y*c}" width="${c-1.2}" height="${c-1.2}" rx="${c*.22}" fill="${v===1?'#8b93a8':v===2?'#c8925a':v===3?'#c3402b':(x+y)%2?'#86c97f':'#93d38b'}"/>`;}
+    return `<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="6" y="6" width="88" height="88" rx="12" fill="#0b241e"/>${g}<circle cx="${11+c/2}" cy="${11+c/2}" r="${c*.32}" fill="#0d7a63" stroke="#fff" stroke-width="1"/><circle cx="${11+(n-.5)*c}" cy="${11+(n-.5)*c}" r="${c*.32}" fill="#c3402b" stroke="#fff" stroke-width="1"/></svg>`;};
+  const foeArt=k=>k==='easy'?`<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#ffe1d6"/><rect x="28" y="62" width="44" height="34" rx="14" fill="#ff8c7a"/><circle cx="50" cy="44" r="22" fill="#ffe0c2"/><path d="M28 42 Q30 18 50 18 Q72 18 72 42 Q64 30 50 32 Q38 30 28 42Z" fill="#3b2a20"/><circle cx="42" cy="46" r="2.8" fill="#1b2826"/><circle cx="58" cy="46" r="2.8" fill="#1b2826"/><path d="M43 55 Q50 61 57 55" stroke="#1b2826" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="36" cy="53" r="3.5" fill="#ff9a8a" opacity=".6"/><circle cx="64" cy="53" r="3.5" fill="#ff9a8a" opacity=".6"/><text x="50" y="86" text-anchor="middle" font-size="12" font-weight="900" fill="#fff" font-family="'Noto Serif SC',serif">弟</text></svg>`
+    :`<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#ffe7c2"/><rect x="26" y="64" width="48" height="32" rx="14" fill="#c3402b"/><circle cx="50" cy="44" r="21" fill="#f3d2b0"/><path d="M26 34 Q50 4 74 34 Z" fill="#3b2a20"/><rect x="24" y="30" width="52" height="6" rx="3" fill="#3b2a20"/><path d="M36 50 Q50 86 64 50 Q58 58 50 58 Q42 58 36 50Z" fill="#f4f1ea"/><path d="M40 44 h6 M54 44 h6" stroke="#1b2826" stroke-width="2.6" stroke-linecap="round"/><path d="M38 38 h9 M53 38 h9" stroke="#f4f1ea" stroke-width="3" stroke-linecap="round"/><text x="50" y="88" text-anchor="middle" font-size="12" font-weight="900" fill="#ffe08a" font-family="'Noto Serif SC',serif">师</text></svg>`;
+  const pips=n=>`<span class="bmpips" aria-label="Độ khó ${n}/5">${[1,2,3,4,5].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
+  const opt=(attr,v,on,t,s,art,extra)=>`<button class="bmopt bmx${on?' on':''}" data-${attr}="${v}" aria-pressed="${on}"><span class="bmxart">${art}</span><span class="bmxtx"><b>${t}</b><small>${s}</small>${extra||''}</span><span class="bmxck" aria-hidden="true">✓</span></button>`;
+  const goTxt=()=>`<span class="han">炸</span><span>Vào trận<small>${CFG.map}×${CFG.map} · đấu ${DIFF[CFG.bot].name}</small></span>`;
   app.innerHTML=`<div class="stack bmv"><section class="bmhero">${heroSVG()}<div class="bmtxt"><div class="bmlab"><span class="han">炸</span>Trò chơi mới · Hành động</div><h1>Đặt Bom HSK</h1>
       <p>Đặt bom phá thùng, <b>chọn đúng nghĩa</b> để bom nổ sớm và mạnh hơn. Trúng lửa thì bị nhốt trong <b>bong bóng</b>: trả lời đúng mới thoát!</p>
       <div class="bmstats"><span>🏆 Kỷ lục <b>${st.best||0}</b> điểm</span><span>⚔️ Thắng <b>${st.wins||0}</b>/${st.games||0} ván</span><span>👴 Hạ Lão Sư <b>${st.hardWins||0}</b> lần</span></div>
       <div class="bmcta"><button class="btn bmgo" id="bmgo"><span class="han">炸</span> Vào trận</button></div></div></section>
-    <div class="panel stack bmpanel"><h3 style="margin:0">Chọn trận đấu</h3>
-      <div><div class="small bmsub">Bản đồ</div><div class="bmseg" id="bmsegmap">${opt('map',7,CFG.map===7,'7 × 7','Nhanh, gọn cho điện thoại')}${opt('map',9,CFG.map===9,'9 × 9','Rộng hơn, nhiều thùng hơn')}</div></div>
-      <div><div class="small bmsub">Đối thủ</div><div class="bmseg" id="bmsegbot">${opt('bot','easy',CFG.bot==='easy','Tiểu Sư Đệ','Dễ · bong bóng 5 giây')}${opt('bot','hard',CFG.bot==='hard','Lão Sư','Khó · bong bóng 3 giây')}</div></div>
-      <p class="small muted" style="margin:0">Từ trong bom lấy từ các bài bạn đã học. Mỗi ván tốn 1 năng lượng; thắng được Nguyên bảo (3 lượt có thưởng mỗi ngày) và XP theo số câu đúng.</p>
-      <button class="btn pri bmstart" id="bmstart">Bắt đầu ván đấu</button></div>
+    <div class="panel stack bmpanel"><div class="bmph"><span class="bmphic han">战</span><div><h3 style="margin:0">Chọn trận đấu</h3><small class="muted">Chọn bản đồ và đối thủ rồi bấm Vào trận</small></div></div>
+      <div class="bmstep"><div class="bmsub"><i>1</i>Bản đồ</div><div class="bmseg" id="bmsegmap">${opt('map',7,CFG.map===7,'7 × 7','Nhanh, gọn cho điện thoại',mapArt(7),'<span class="bmchip">3 ô chữ Hán</span>')}${opt('map',9,CFG.map===9,'9 × 9','Rộng hơn, nhiều thùng hơn',mapArt(9),'<span class="bmchip">5 ô chữ Hán</span>')}</div></div>
+      <div class="bmstep"><div class="bmsub"><i>2</i>Đối thủ</div><div class="bmseg" id="bmsegbot">${opt('bot','easy',CFG.bot==='easy','Tiểu Sư Đệ','Dễ · bong bóng 5 giây',foeArt('easy'),pips(2)+`<span class="bmchip">Thắng +${DIFF.easy.coin} ${YB}</span>`)}${opt('bot','hard',CFG.bot==='hard','Lão Sư','Khó · bong bóng 3 giây',foeArt('hard'),pips(5)+`<span class="bmchip hot">Thắng +${DIFF.hard.coin} ${YB}</span>`)}</div></div>
+      <div class="bmnote"><span>🎯</span><span>Từ trong bom lấy từ các bài bạn đã học. Mỗi ván tốn 1 năng lượng; thắng được Nguyên bảo (3 lượt có thưởng mỗi ngày) và XP theo số câu đúng.</span></div>
+      <button class="btn bmstart gmxgo red" id="bmstart">${goTxt()}</button></div>
     ${typeof guideHTML==='function'?guideHTML('bomber'):''}</div>`;
-  qa('#bmsegmap .bmopt').forEach(b=>b.onclick=()=>{CFG.map=+b.dataset.map;qa('#bmsegmap .bmopt').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b);});});
-  qa('#bmsegbot .bmopt').forEach(b=>b.onclick=()=>{CFG.bot=b.dataset.bot;qa('#bmsegbot .bmopt').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b);});});
+  qa('#bmsegmap .bmopt').forEach(b=>b.onclick=()=>{CFG.map=+b.dataset.map;qa('#bmsegmap .bmopt').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b);});q('#bmstart').innerHTML=goTxt();});
+  qa('#bmsegbot .bmopt').forEach(b=>b.onclick=()=>{CFG.bot=b.dataset.bot;qa('#bmsegbot .bmopt').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b);});q('#bmstart').innerHTML=goTxt();});
   q('#bmgo').onclick=start;q('#bmstart').onclick=start;
   try{if(typeof ggMark==='function')ggMark('bomber');}catch(e){}}
 const ARW={up:'M12 5l7 9H5z',left:'M5 12l9-7v14z',right:'M19 12l-9 7V5z',down:'M12 19l-7-9h14z'},ARL={up:'Lên',left:'Trái',right:'Phải',down:'Xuống'};
@@ -16969,19 +17058,20 @@ function viewGames(){
   const g=G(),wk=g.weekId===weekId()?(g.weekXp||0):0,lv=pLevel();
   const cats=hubCat==='all'?['action','world','versus','story','mini','social']:[hubCat];
   const inC=(x,c)=>x.cat.split(' ').includes(c);
-  const hLock=[],mLock=[];let main='',social='';
+  const hLock=[],mLock=[];let main='',social='',memLock=0;
   cats.forEach(c=>{
-    if(c==='mini'){const op=GAMES.filter(m=>glOpen('mini:'+m.k));GAMES.filter(m=>!glOpen('mini:'+m.k)).forEach(m=>mLock.push(m));
-      if(op.length)main+=hubSecHTML('mini',`<div class="gamecards">${op.map(m=>miniCard(m,false)).join('')}</div>`);return;}
+    if(c==='mini'){const mc=typeof memHubCard==='function',oth=mc?GAMES.filter(m=>m.k!=='mem'):GAMES,memOk=mc&&glOpen('mini:mem');if(mc&&!memOk)memLock=1;
+      const op=oth.filter(m=>glOpen('mini:'+m.k));oth.filter(m=>!glOpen('mini:'+m.k)).forEach(m=>mLock.push(m));
+      if(op.length||memOk)main+=hubSecHTML('mini',`${memOk?`<div class="hcards">${memHubCard(false)}</div>`:''}${op.length?`<div class="gamecards"${memOk?' style="margin-top:12px"':''}>${op.map(m=>miniCard(m,false)).join('')}</div>`:''}`);return;}
     const items=HUB.filter(x=>inC(x,c));const op=c==='social'?items:items.filter(x=>glOpen(x.k));if(c!=='social')items.filter(x=>!glOpen(x.k)).forEach(x=>hLock.push(x));
     if(!op.length)return;const h=hubSecHTML(c,`<div class="hcards">${op.map(x=>hubCardL(x,false)).join('')}</div>`);if(c==='social')social=h;else main+=h;});
-  hLock.sort((a,b)=>glNeed(a.k)-glNeed(b.k));mLock.sort((a,b)=>glNeed('mini:'+a.k)-glNeed('mini:'+b.k));const nLock=hLock.length+mLock.length;
+  hLock.sort((a,b)=>glNeed(a.k)-glNeed(b.k));mLock.sort((a,b)=>glNeed('mini:'+a.k)-glNeed('mini:'+b.k));const nLock=hLock.length+mLock.length+memLock;
   app.innerHTML=`<div class="stack"><section class="hubhero"><div><div class="label">Khu trò chơi</div><h1>Học tiếng Trung bằng trò chơi</h1><p class="muted" style="margin:0">Mọi câu trả lời đúng đều cộng XP. Lên cấp để mở thêm trò mới.</p></div>
     <div class="hubstats"><div><b>${lv}</b><span>Cấp</span></div><div><b>${wk}</b><span>XP tuần</span></div><div><b>${g.water}</b><span>Giọt nước</span></div><div><b>${g.coins}</b><span>Nguyên bảo</span></div></div></section>
     <div class="hubcats" role="tablist">${HUB_CATS.map(([k,n])=>`<button role="tab" aria-selected="${k===hubCat}" class="hcat${k===hubCat?' on':''}" data-cat="${k}" style="--tone:${HUB_TONE[k]||'var(--ink)'}">${n}</button>`).join('')}</div>
     <div id="gm"></div>${main}
     ${nLock?`<section class="hsec glsec"><div class="hsech"><h2>🔒 Mở khóa khi lên cấp</h2><span class="small muted">Bạn đang cấp ${lv}</span></div>
-      ${hLock.length?`<div class="hcards">${hLock.map(x=>hubCardL(x,true)).join('')}</div>`:''}${mLock.length?`<div class="gamecards" style="margin-top:12px">${mLock.map(m=>miniCard(m,true)).join('')}</div>`:''}</section>`:''}
+      ${hLock.length||memLock?`<div class="hcards">${hLock.map(x=>hubCardL(x,true)).join('')}${memLock?memHubCard(true):''}</div>`:''}${mLock.length?`<div class="gamecards" style="margin-top:12px">${mLock.map(m=>miniCard(m,true)).join('')}</div>`:''}</section>`:''}
     ${social}${!main&&!social&&!nLock?'<div class="panel muted">Chưa có trò chơi nào trong mục này.</div>':''}</div>`;
   app.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{hubCat=b.dataset.cat;viewGames();});
   app.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(b.dataset.lock){gameLockGate('mini:'+b.dataset.game);return;}if(b.dataset.game==='mem'){location.hash='#memory';return;}
@@ -17090,6 +17180,61 @@ function mdAfter(m,st,quit,ws){DUO.live=false;clearInterval(DUO.poll);
   (async()=>{let j=await duoPush(mine,[{k:out?'out':'done'}],true);let n=0;while(j&&!j.ended&&n++<400&&document.getElementById('duores')){await new Promise(r=>setTimeout(r,1500));j=await duoPush({},[],true);}
     if(j&&j.ended)show(j);else{const mm=document.getElementById('duoresm');if(mm)mm.innerHTML='<span>Không nhận được kết quả (mất mạng hoặc quá 15 phút).</span>';}})();}
 if(window.__T)window.__u94={GLOCK,SOC,glockApply,glockSync,GLOCK_DEF,mdDeck,mdPlay,viewMemory,mdBotStart,MD_PAIRS};
+
+
+/* ===== 5.49 Sảnh vào trò chơi: thẻ chế độ có tranh minh họa, nút vào trận nổi khối · Lật thẻ dùng thiết kế đối kháng làm thẻ chính ===== */
+/* --- Lật thẻ: bỏ thẻ "Lật thẻ đối kháng" riêng, dùng thiết kế đó cho Lật thẻ ghép đôi --- */
+for(let k=HUB.length-1;k>=0;k--)if(HUB[k].k==='duo-memory')HUB.splice(k,1);
+try{GA_ART.memory=GA_ART['duo-memory'];GA_BG.memory=GA_BG['duo-memory'];GA_ART.mem=GA_ART['duo-memory'];GA_BG.mem=GA_BG['duo-memory'];}catch(e){}
+const MEM_CARD={k:'memory',cat:'mini',ic:'翻',col:'#e0a106',name:'Lật thẻ ghép đôi',d:'Lật thẻ, ghép chữ Hán với nghĩa. Chơi một mình, đấu với máy hoặc đấu bạn trên cùng một bộ thẻ: ai lật trúng cặp trước lấy cặp đó.',
+  meta:()=>{const b=bestOf('mem');return `${b!=null?'Kỷ lục '+b+' lượt':'Chưa có kỷ lục'} · 3 chế độ: một mình, máy, online`;},isNew:1,net:1};
+function memHubCard(lock){const need=glNeed('mini:mem');let h=hubCard(MEM_CARD);if(lock)h=h.replace('<a class="hcard"',`<a class="hcard glk" data-lock="${need}"`).replace('<span class="hcbody">',`<span class="glock">🔒 Cấp ${need}</span><span class="hcbody">`);return h;}
+
+/* --- Tranh cho từng chế độ (SVG, tự co giãn) --- */
+const GMX_CAR=(x,y,c,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><ellipse cx="0" cy="17" rx="24" ry="4" fill="#000" opacity=".25"/><path d="M-22 10 Q-22 -2 -12 -4 L-8 -14 Q-6 -18 0 -18 Q6 -18 8 -14 L12 -4 Q22 -2 22 10 L22 14 H-22Z" fill="${c}"/><path d="M-7 -13 H7 L10 -4 H-10Z" fill="#bfe6ff" opacity=".9"/><rect x="-18" y="2" width="8" height="4" rx="2" fill="#fff6c8"/><rect x="10" y="2" width="8" height="4" rx="2" fill="#fff6c8"/><rect x="-23" y="11" width="9" height="8" rx="3" fill="#1b1d24"/><rect x="14" y="11" width="9" height="8" rx="3" fill="#1b1d24"/></g>`;
+const GMX_ROAD=(c1,c2)=>`<path d="M70 100 L100 30 H120 L150 100Z" fill="${c1}"/><path d="M110 34 V100" stroke="${c2}" stroke-width="3" stroke-dasharray="9 8"/>`;
+const GMX_CARD=(x,y,r,fill,stroke,txt,fs,tc)=>`<g transform="translate(${x} ${y}) rotate(${r})"><rect x="-17" y="-23" width="34" height="46" rx="6" fill="${fill}" stroke="${stroke}" stroke-width="2.5"/><text x="0" y="${fs>14?7:4}" text-anchor="middle" font-size="${fs}" font-weight="800" fill="${tc}" font-family="'Noto Serif SC','Noto Sans SC',serif">${txt}</text></g>`;
+const GMX_FACE=(x,y,skin,hair,shirt,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-13" y="8" width="26" height="20" rx="8" fill="${shirt}"/><circle cx="0" cy="0" r="12" fill="${skin}"/><path d="M-12 -1 A12 12 0 0 1 12 -1 Q6 -8 -12 -1Z" fill="${hair}"/><circle cx="-4" cy="1" r="1.6" fill="#1b2826"/><circle cx="4" cy="1" r="1.6" fill="#1b2826"/><path d="M-3 6 Q0 8 3 6" stroke="#1b2826" stroke-width="1.4" fill="none" stroke-linecap="round"/></g>`;
+const GMX_ART={
+  surv:['#d7261e',`<defs><linearGradient id="gxa1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a0b10"/><stop offset="1" stop-color="#7a1414"/></linearGradient></defs><rect width="220" height="100" fill="url(#gxa1)"/>${GMX_ROAD('#2a2d36','#ffd166')}
+    <g class="gxfl"><path d="M86 74 q-14 -6 -26 2 q10 2 14 10z" fill="#ff8a2a"/><path d="M134 74 q14 -6 26 2 q-10 2 -14 10z" fill="#ff8a2a"/></g>${GMX_CAR(110,68,'#e8352a',1.15)}
+    <g transform="translate(36 34)"><circle r="18" fill="#f2efe6"/><circle cx="-6" cy="-2" r="5" fill="#2a0b0e"/><circle cx="6" cy="-2" r="5" fill="#2a0b0e"/><path d="M-2 6 L0 2 L2 6Z" fill="#2a0b0e"/><rect x="-9" y="10" width="18" height="8" rx="2" fill="#f2efe6"/><path d="M-5 11 V17 M0 11 V17 M5 11 V17" stroke="#2a0b0e" stroke-width="1.4"/></g>
+    <g transform="translate(182 66)"><rect x="-22" y="-12" width="44" height="24" rx="12" fill="#ffd166"/><text x="0" y="5" text-anchor="middle" font-size="14" font-weight="900" fill="#5a1a10">×1.5</text></g>`],
+  duorace:['#8e5cc7',`<defs><linearGradient id="gxa2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b1850"/><stop offset="1" stop-color="#5a2f8e"/></linearGradient></defs><rect width="220" height="100" fill="url(#gxa2)"/>
+    <path d="M30 100 L74 26 H96 L92 100Z" fill="#2a2d36"/><path d="M128 100 L124 26 H146 L190 100Z" fill="#2a2d36"/><path d="M84 30 V100 M136 30 V100" stroke="#fff" stroke-width="2" stroke-dasharray="7 7" opacity=".7"/>
+    ${GMX_CAR(76,72,'#e8352a',.95)}${GMX_CAR(146,62,'#2f6fd6',.95)}<g transform="translate(110 40)"><circle r="16" fill="#ffd166"/><text y="5" text-anchor="middle" font-size="13" font-weight="900" fill="#5a1a10">VS</text></g>
+    <g transform="translate(22 20)"><circle r="5" fill="#3dbf9a"/><circle r="9" fill="none" stroke="#3dbf9a" stroke-width="2" opacity=".6" class="gxping"/></g>`],
+  train:['#2e9a5c',`<defs><linearGradient id="gxa3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe8ff"/><stop offset="1" stop-color="#e6f7ec"/></linearGradient></defs><rect width="220" height="100" fill="url(#gxa3)"/><path d="M0 70 Q60 52 110 62 T220 58 V100 H0Z" fill="#9ed98b"/>${GMX_ROAD('#5d6168','#fff')}
+    ${[[82,84],[140,84],[96,56],[124,56]].map(([x,y],i)=>`<g transform="translate(${x} ${y}) scale(${i>1?.6:1})"><path d="M-7 8 L0 -12 L7 8Z" fill="#ff8a2a"/><rect x="-4.5" y="-3" width="9" height="3" fill="#fff"/><rect x="-9" y="8" width="18" height="3" rx="1" fill="#ff8a2a"/></g>`).join('')}${GMX_CAR(110,70,'#2f9e6a',.95)}
+    <g transform="translate(184 36)"><path d="M0 -20 L16 -14 V0 Q16 14 0 22 Q-16 14 -16 0 V-14Z" fill="#2f6fd6" stroke="#fff" stroke-width="3"/><path d="M-6 0 L-1 6 L8 -6" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>`],
+  defsolo:['#5b6bd6',`<rect width="220" height="100" fill="#1d2550"/><circle cx="186" cy="22" r="11" fill="#ffe7a3"/><path d="M0 80 H220 V100 H0Z" fill="#2c3a2c"/>
+    <g transform="translate(40 30)"><rect x="0" y="12" width="56" height="58" fill="#6f7fd8"/><path d="M0 12 V2 H8 V8 H16 V2 H24 V8 H32 V2 H40 V8 H48 V2 H56 V12Z" fill="#6f7fd8"/><path d="M18 70 V48 Q28 38 38 48 V70Z" fill="#2a2f5a"/><path d="M28 2 V-20" stroke="#ddd" stroke-width="2"/><path d="M28 -20 L46 -14 L28 -8Z" fill="#c3402b"/></g>
+    <path class="gxar" d="M100 52 L170 40" stroke="#fff6dc" stroke-width="2.5" stroke-linecap="round"/><g class="gxmon"><circle cx="180" cy="60" r="13" fill="#8e5cc7"/><circle cx="175" cy="57" r="3" fill="#fff"/><circle cx="185" cy="57" r="3" fill="#fff"/><path d="M174 66 Q180 70 186 66" stroke="#fff" stroke-width="2" fill="none"/></g>`],
+  duodef:['#8e5cc7',`<rect width="220" height="100" fill="#24183f"/><path d="M0 82 H220 V100 H0Z" fill="#2c3a2c"/><g transform="translate(86 30)"><rect x="0" y="10" width="48" height="52" fill="#7d6fd8"/><path d="M0 10 V0 H8 V6 H16 V0 H24 V6 H32 V0 H40 V6 H48 V0 V10Z" fill="#7d6fd8"/><path d="M14 62 V42 Q24 32 34 42 V62Z" fill="#2a2f5a"/></g>
+    ${GMX_FACE(48,48,'#ffe0c2','#1b2826','#2e9a5c',1.1)}${GMX_FACE(172,48,'#ffe0c2','#5b4636','#d7261e',1.1)}<path class="gxar" d="M64 40 L96 20" stroke="#fff6dc" stroke-width="2.5" stroke-linecap="round"/><path class="gxar a2" d="M156 40 L124 20" stroke="#fff6dc" stroke-width="2.5" stroke-linecap="round"/>`],
+  memsolo:['#e0a106',`<defs><linearGradient id="gxa4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a4b00"/><stop offset="1" stop-color="#e0a106"/></linearGradient></defs><rect width="220" height="100" fill="url(#gxa4)"/>
+    ${GMX_CARD(80,54,-14,'#fff','#ffd166','猫',22,'#c3402b')}${GMX_CARD(110,48,0,'#2f6fd6','#bcd3ff','翻',20,'#ffe7a3')}${GMX_CARD(140,54,14,'#fff','#7cc8f2','mèo',11,'#1b2826')}
+    <g class="gxsp"><path d="M170 24 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3z" fill="#fff6dc"/><path d="M44 30 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2 l5 -2z" fill="#fff6dc"/></g>`],
+  membot:['#2f6fd6',`<defs><linearGradient id="gxa5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#132a5c"/><stop offset="1" stop-color="#2f6fd6"/></linearGradient></defs><rect width="220" height="100" fill="url(#gxa5)"/>
+    <g transform="translate(62 50)"><rect x="-26" y="-22" width="52" height="42" rx="12" fill="#cfe0ff"/><rect x="-18" y="-12" width="36" height="20" rx="8" fill="#132a5c"/><circle class="gxeye" cx="-8" cy="-2" r="4" fill="#3dbf9a"/><circle class="gxeye" cx="8" cy="-2" r="4" fill="#3dbf9a"/><path d="M0 -22 V-32" stroke="#cfe0ff" stroke-width="3"/><circle cx="0" cy="-34" r="4" fill="#ffd166"/><rect x="-30" y="-6" width="5" height="12" rx="2" fill="#9db7f0"/><rect x="25" y="-6" width="5" height="12" rx="2" fill="#9db7f0"/></g>
+    ${GMX_CARD(140,52,-8,'#fff','#ffd166','书',20,'#c3402b')}${GMX_CARD(176,50,10,'#fff','#ffd166','sách',11,'#1b2826')}`],
+  memduo:['#d7261e',`<defs><linearGradient id="gxa6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a0e14"/><stop offset="1" stop-color="#d7261e"/></linearGradient></defs><rect width="220" height="100" fill="url(#gxa6)"/>
+    ${GMX_FACE(38,46,'#ffe0c2','#1b2826','#2e9a5c',1.25)}${GMX_FACE(182,46,'#ffe0c2','#5b4636','#2f6fd6',1.25)}${GMX_CARD(92,52,-10,'#fff','#3dbf9a','茶',20,'#c3402b')}${GMX_CARD(128,52,10,'#fff','#ff8c7a','trà',12,'#1b2826')}
+    <g transform="translate(110 22)"><circle r="14" fill="#ffd166"/><text y="5" text-anchor="middle" font-size="12" font-weight="900" fill="#5a1a10">VS</text></g>`]};
+function gmxKey(b){const d=b.dataset;if(d.rm)return d.rm==='surv'?'surv':'train';if(d.duogo)return d.duogo==='race'?'duorace':'duodef';if(d.dfm)return 'defsolo';if(d.mdm)return {solo:'memsolo',bot:'membot',duo:'memduo'}[d.mdm];return null;}
+function gmxDecorate(){const box=app.querySelector('.gmodes');if(!box||box.classList.contains('gmx'))return;box.classList.add('gmx');
+  box.querySelectorAll('.gmode').forEach(b=>{const k=gmxKey(b),a=GMX_ART[k];if(!a)return;b.style.setProperty('--mc',a[0]);b.dataset.gx=k;
+    const art=b.querySelector('.gmart');if(art)art.innerHTML=`<svg viewBox="0 0 220 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${a[1]}</svg>`;
+    const go=b.querySelector('.gmgo');if(go)go.innerHTML='Vào sảnh →';else b.insertAdjacentHTML('beforeend','<span class="gmsel" aria-hidden="true">✓ Đã chọn</span>');
+    b.setAttribute('aria-pressed',b.classList.contains('on')?'true':'false');});
+  const pn=box.closest('.panel');if(pn)pn.classList.add('gmxpanel');}
+(function(){const base=viewRace;viewRace=function(){base.apply(this,arguments);gmxDecorate();
+  const go=app.querySelector('#rcgo');if(go)go.classList.add('gmxgo','red');
+  const op=app.querySelector('.rcopt');if(op&&!op.classList.contains('gxsw'))op.classList.add('gxsw');
+  const rn=app.querySelector('.rcruns');if(rn)rn.classList.add('gxtk');};})();
+(function(){const base=viewDefense;viewDefense=function(){base.apply(this,arguments);gmxDecorate();};})();
+(function(){const base=viewMemory;viewMemory=function(){base.apply(this,arguments);gmxDecorate();};})();
+if(window.__T)window.__u95={GMX_ART,gmxDecorate,memHubCard};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
