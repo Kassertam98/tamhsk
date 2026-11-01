@@ -3950,6 +3950,51 @@ img.bao:not(.hallpet){filter:drop-shadow(0 6px 5px rgba(0,0,0,.18))}
 .dbdog{position:relative;width:120px;margin:-60px auto 0;animation:gpBite .35s ease-in-out 4}.dbdog svg{width:100%;height:auto;display:block}.dbmark{position:absolute;right:-6px;top:0;font-size:30px}
 body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transform:translateX(-8px)}30%,70%{transform:translateX(8px)}}
 @media (prefers-reduced-motion:reduce){body.dbshake,.dbdog,.dqdog,.dbcard{animation:none}}
+
+/* ===== 5.56 điện thoại tinh gọn ===== */
+.gmplay{position:absolute;right:12px;bottom:12px;z-index:3;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font:700 13px/1 var(--f-ui,inherit);letter-spacing:.3px;backdrop-filter:blur(4px);pointer-events:none}
+.gmx,.rcmodes [data-rm],.rcmodes [data-duogo],[data-dfm],[data-duogo="defense"],[data-mdm]{position:relative}
+.gmx .gmsel{display:none!important}
+.msrow .msbadge{margin-left:auto;margin-right:6px;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:#e5383b;color:#fff;font:700 12px/22px inherit;text-align:center}
+#tabbar .tbic{position:relative}
+.tbbadge{position:absolute;top:-2px;right:2px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:#e5383b;color:#fff;font:700 10px/17px inherit;text-align:center;box-shadow:0 0 0 2px var(--card,#fff)}
+.notipanel.npmob{top:auto!important;bottom:76px;left:10px!important;right:10px!important;width:auto!important;max-height:62vh}
+@media (max-width:768px){
+  /* thanh trên: bỏ ngôi sao Pro + chuông (đã ở mục Tôi), thu gọn các chip */
+  header.top #plansbtn,header.top #bellbtn{display:none!important}
+  header.top .stat{gap:5px!important}
+  header.top .enpill2,header.top .ybpill,header.top .streakpill{height:28px;padding:0 8px!important;font-size:13px!important;gap:3px!important;border-radius:999px}
+  header.top .enpill2 svg,header.top .ybpill svg,header.top .ybpill img,header.top .streakpill svg{width:15px!important;height:15px!important}
+  header.top .enpill2 small,header.top .enpill2 .enmax{display:none!important}
+  header.top .sbtn{width:30px!important;height:30px!important;border-radius:50%!important;border:0!important;background:var(--line-soft,rgba(0,0,0,.05))!important;display:grid;place-items:center}
+  /* bảng tin thế giới chạy chữ + lời nhắc linh vật: rời màn hình nhỏ (xem trong Khám phá > Bảng tin) */
+  header.top #wtick{display:none!important}
+  #pmsay{display:none!important}
+  /* Trang Học: bỏ dải Khám phá (đã có ở thanh dưới) */
+  #app .hello+.disc,#app section.disc{display:none!important}
+  /* Khu trò chơi: bỏ Sự kiện & Nhiệm vụ (đã có trong Khám phá > Mở rộng), gọn phần đầu */
+  #app .gevq{display:none!important}
+  #app .hubhero{padding:14px 14px 12px;gap:10px}
+  #app .hubhero p{display:none}
+  #app .hubhero h1{font-size:22px;margin:2px 0 0}
+  #app .hubstats{gap:6px;width:100%}
+  #app .hubstats>div{padding:6px 4px!important;min-width:0;flex:1}
+  #app .hubstats b{font-size:18px!important}
+  #app .hubstats span{font-size:11px!important}
+  #app .hubcats{gap:6px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+  #app .hubcats::-webkit-scrollbar{display:none}
+  #app .hubcats .hcat{flex:none}
+  /* sảnh trò chơi: phần giới thiệu gọn lại để thấy ngay các chế độ */
+  #app .rchero p,#app .dfxhero p,#app .mdhero p,#app .bmhero p{display:none}
+  #app .rchero,#app .dfxhero,#app .mdhero{min-height:0!important}
+  #app .rchero h1,#app .dfxhero h1,#app .mdhero h1,#app .bmhero h1{font-size:26px!important;margin:2px 0 6px!important}
+}
+@media (max-width:768px){
+  html.gameroute #fab{display:none!important}
+  #app .rchero{padding-bottom:8px!important}
+  #app .rchero svg,#app .rchero .rcart,#app .rchero .rccar{max-height:150px}
+  #app .gmplay{bottom:10px;right:10px;font-size:12px;padding:5px 10px}
+}
 </style>
 </head><body>
 
@@ -3975,12 +4020,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='4a1250cf';
-document.write('<script src="packs/hsk'+L+'.js?v=4a1250cf"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='fad3c091';
+document.write('<script src="packs/hsk'+L+'.js?v=fad3c091"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=4a1250cf','strokes-file');A('packs/dict.js?v=4a1250cf','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=fad3c091','strokes-file');A('packs/dict.js?v=fad3c091','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -17905,6 +17950,38 @@ async function fgSteal(uid,i,p,dogOk){const body={u:uid,plot:i,pk:p.pk,kind:'ste
   if(gd.dogOn&&box&&!document.querySelector('.fgdog'))box.insertAdjacentHTML('afterend',`<div class="panel fgdog"><span class="fgdic">🐶</span><div><b>Vườn này có Tiểu Cẩu canh.</b><div class="small">Muốn trộm phải trả lời đúng 1 câu tiếng Trung khó trong 10 giây. Sai sẽ bị cắn: trọng thương 3 ngày, mất 30 × cấp Nguyên bảo, −10 điểm tốt bụng.${(t.k||0)<0?' <b class="fgbad">Điểm tốt bụng của bạn đang âm: Tiểu Cẩu sẽ cắn ngay!</b>':''}</div></div></div>`);
   if(t.hurt>Date.now()&&box)box.querySelectorAll('.g3do.s').forEach(x=>{x.textContent='🤕 Trọng thương';x.classList.add('off');});}}catch(e){console.warn(e);}return r;};})();
 if(window.__T)window.__u100={GPET,gpOwned,gpMount,gpSay,g3Rows,doveFly,dogQ,dogQuiz,dogGuard,dogBite,fgSteal,dogBuy,dogOn,G:()=>G()};
+
+
+/* ===== 5.56 Giao diện điện thoại tinh gọn:
+   - Thanh trên chỉ còn năng lượng, Nguyên bảo, chuỗi, tìm kiếm (gọn); chuông thông báo + Gói Pro chuyển xuống mục "Tôi" ở thanh dưới
+   - Sự kiện, nhiệm vụ, bảng tin thế giới, lời nhắc của linh vật rời trang Học / Trò chơi (đã có trong Khám phá > Mở rộng)
+   - Bấm chế độ chơi là vào chơi luôn (Đua xe, Thủ thành) ===== */
+const MOB=()=>window.matchMedia('(max-width:768px)').matches;
+/* ---- mục "Tôi": thêm Thông báo + Gói Pro ---- */
+function meExtraRows(){const n=notiUnread();let pro=false;try{const pm=PM();pro=!!(pm&&(pm.active||(pm.pro&&(pm.pro.life||pm.pro.until>Date.now()))))||plusActive();}catch(e){}
+  return `<a class="msrow msnoti" href="#" data-msnoti><span class="msic">🔔</span><span><b>Thông báo</b><small>${n?`${n} tin chưa đọc`:'Không có tin mới'}</small></span>${n?`<b class="msbadge">${n>9?'9+':n}</b>`:''}<span class="msgo">›</span></a>
+   <a class="msrow mspro" href="#premium"><span class="msic">⭐</span><span><b>${pro?'Gói của bạn':'Gói Pro / Plus'}</b><small>${pro?'Đang dùng · xem quyền lợi':'Học không giới hạn, Khỉ Thông Thái tự thu…'}</small></span><span class="msgo">›</span></a>`;}
+(function(){const base=msheetOpen;msheetOpen=function(k){base.apply(this,arguments);if(k!=='me'||MSHEET.open!=='me')return;const L=document.querySelector('#msheet .mslist');if(!L||L.querySelector('.msnoti'))return;
+  L.insertAdjacentHTML('afterbegin',meExtraRows());const a=L.querySelector('[data-msnoti]');
+  if(a)a.onclick=e=>{e.preventDefault();e.stopPropagation();try{msheetClose();}catch(_){}setTimeout(()=>{notiOpen();const pn=document.getElementById('notipanel');if(pn&&MOB()){pn.style.top='';pn.classList.add('npmob');}},60);};};})();
+/* chấm đỏ trên nút "Tôi" khi có thông báo chưa đọc */
+function meBadge(){const t=document.querySelector('#tabbar a[href="#me"] .tbic');if(!t)return;const n=notiUnread();let b=t.querySelector('.tbbadge');
+  if(!n){if(b)b.remove();return;}if(!b){t.insertAdjacentHTML('beforeend','<b class="tbbadge"></b>');b=t.querySelector('.tbbadge');}b.textContent=n>9?'9+':n;}
+(function(){const base=bellRender;bellRender=function(){base.apply(this,arguments);try{meBadge();}catch(e){}};})();
+setTimeout(meBadge,1500);setInterval(()=>{if(!document.hidden)meBadge();},4000);window.addEventListener('hashchange',()=>setTimeout(meBadge,300));
+/* ---- Bấm chế độ là chơi luôn ---- */
+(function(){const base=viewRace;viewRace=function(){base.apply(this,arguments);try{
+  app.querySelectorAll('[data-rm]').forEach(b=>{b.onclick=()=>{rcMode=b.dataset.rm;viewRace();const go=app.querySelector('#rcgo');
+    if(go&&!go.disabled)go.click();else gardenToast('Hôm nay đã hết lượt Đua Sinh Tử. Mua thêm lượt ở dưới, hoặc chọn Đua Tập Lái.');};});
+  app.querySelectorAll('.rcmodes .gmx, .rcmodes [data-rm], .rcmodes [data-duogo]').forEach(c=>{if(c.querySelector('.gmplay'))return;c.insertAdjacentHTML('beforeend','<span class="gmplay">▶ Chơi</span>');});}catch(e){console.warn(e);}};})();
+(function(){const base=viewDefense;viewDefense=function(){base.apply(this,arguments);try{const s=app.querySelector('[data-dfm="solo"]');
+  if(s)s.onclick=()=>{const go=app.querySelector('#dfxgo');if(go)go.click();};
+  app.querySelectorAll('[data-dfm],[data-duogo="defense"]').forEach(c=>{if(c.querySelector('.gmplay'))return;c.insertAdjacentHTML('beforeend','<span class="gmplay">▶ Chơi</span>');});}catch(e){console.warn(e);}};})();
+(function(){const base=viewMemory;viewMemory=function(){base.apply(this,arguments);try{app.querySelectorAll('[data-mdm]').forEach(c=>{if(c.querySelector('.gmplay'))return;c.insertAdjacentHTML('beforeend','<span class="gmplay">▶ Chơi</span>');});}catch(e){}};})();
+if(window.__T)window.__u101={meExtraRows,meBadge,MOB};
+/* trang trò chơi trên điện thoại: ẩn nút + thêm từ cho đỡ che */
+function gameRouteMark(){const h=location.hash;document.documentElement.classList.toggle('gameroute',/^#(games|race|defense|bomber|memory|garden|wall|duel|blocks|chat|puzzle|evo|vg-|duo-)/.test(h));}
+window.addEventListener('hashchange',gameRouteMark);gameRouteMark();
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
