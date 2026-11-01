@@ -4078,6 +4078,24 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
   .garden3 .gbtnrow .gcan .ybi{width:14px;height:14px;vertical-align:-2px}
 }
 .msit.mstop .n1art b.han{font-size:26px;color:var(--nc)}
+
+/* ===== 5.61 quà tặng ===== */
+.gfgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.gfit{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding:12px 8px 10px;border:1px solid var(--line,#e6e0d6);border-radius:16px;background:var(--card,#fff)}
+.gfit .gfic{font-size:34px;line-height:1.1}
+.gfit b{font-size:14px}
+.gfit small{font-size:11.5px;line-height:1.3}
+.gfit .gfb{color:#d6457a;font-weight:700}
+.gfit .gfown{font-size:11.5px;font-weight:700;color:var(--jade,#2f8f6b);min-height:15px}
+.gfit .btn{margin-top:4px;width:100%;justify-content:center}
+.gfdlg .gfgrid{margin:10px 0;max-height:52vh;overflow:auto}
+.gfmore{gap:8px;flex-wrap:wrap;margin-top:8px}
+.gfmore .btn{flex:1;justify-content:center}
+@media (max-width:480px){.gfgrid{grid-template-columns:repeat(2,1fr)}}
+.gfit .btn{white-space:nowrap;font-size:12.5px;padding:7px 8px;min-height:0;border-radius:999px}
+.gfit .btn .ybi{width:13px;height:13px;vertical-align:-2px}
+.gfdlg #fxgmsg{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line,#e6e0d6);border-radius:12px;font:inherit;background:var(--paper,#fff);color:inherit}
+.gfmore .btn{white-space:nowrap;font-size:14px;padding:10px 12px}
 </style>
 </head><body>
 
@@ -4103,12 +4121,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='32efb61e';
-document.write('<script src="packs/hsk'+L+'.js?v=32efb61e"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='f980a0ea';
+document.write('<script src="packs/hsk'+L+'.js?v=f980a0ea"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=32efb61e','strokes-file');A('packs/dict.js?v=32efb61e','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f980a0ea','strokes-file');A('packs/dict.js?v=f980a0ea','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -7063,10 +7081,10 @@ function frCardHTML(f){const on=isOnline(f),sc=FR.bonds[f.id]||0,L=bondLv(sc),un
     <div class="frbar"><i style="width:${L.pct}%"></i></div>
     ${miniGarden(f.garden,26)}
     <div class="fracts">
-      <button data-a="house" title="Thăm nhà"><span>🏠</span>Thăm nhà</button><button data-a="garden" title="Thăm vườn"><span>🌱</span>Thăm vườn</button>
+      <button data-a="house" title="Thăm nhà"><span>🏠</span>Thăm nhà</button>
       <button data-a="visit" title="Thăm vườn, tưới hộ hoặc trộm cây"><span>🌱</span>Vườn</button><button data-a="wall" title="Xem tường, viết lời nhắn"><span>📌</span>Tường</button><button data-a="chat" title="Nhắn tin"><span>💬</span>Chat${un?` <b>${un}</b>`:''}</button>
       <button data-a="duel" class="hot" title="Thách đấu"><span>⚔️</span>Thách đấu</button><button data-duo="${f.id}" class="hot" title="Chơi đôi online"><span>👥</span>Chơi đôi</button><button data-a="play" class="${on?'hot2':''}" title="Rủ chơi"><span>🎮</span>${on?'Rủ chơi ngay':'Rủ chơi'}</button>
-      <button data-a="cheer" title="Cổ vũ"><span>📣</span>Cổ vũ</button><button data-a="lixi" title="Lì xì"><span>🧧</span>Lì xì</button></div></div>`;}
+      <button data-a="cheer" title="Cổ vũ"><span>📣</span>Cổ vũ</button><button data-a="gift" title="Tặng quà, lì xì"><span>🎁</span>Tặng quà</button></div></div>`;}
 async function renderFriends(){
   if(!FR.at||Date.now()-FR.at>3000)await frLoadExtra();if(location.hash!=="#friends")return;
   const me=SOC.me,g=G(),wk=weekId(),h=myHandle(),lvl=pLevel();
@@ -18159,6 +18177,48 @@ function msTopTile(h){const t=MORE_TILES.find(x=>x[0]===h);if(!t)return '';const
     grid.insertAdjacentHTML('afterbegin',MS_TOP.map(msTopTile).join(''));}
   P.querySelectorAll('.msxg .msx').forEach(a=>{if(MS_TOP.includes(a.getAttribute('href')))a.remove();});};})();
 if(window.__T)window.__u104={gardenTidy,MS_TOP};
+
+
+/* ===== 5.61 Bạn bè: bỏ nút "Thăm vườn" cũ (giữ nút Vườn), "Lì xì" thành "Tặng quà";
+   Cửa hàng có quầy Quà tặng giá rẻ, tặng bạn bè để tăng điểm thân thiện ===== */
+FX_GIFTS.unshift(['keo','🍡','Kẹo hồ lô',5]);FX_GIFTS.push(['gau','🧸','Gấu bông',50]);
+const GIFT_BOND={keo:1,hoa:2,tra:3,banh:4,den:6,gau:10};
+const GIFT_TXT={keo:'Ngọt ngào mỗi ngày',hoa:'Lời chào thân mến',tra:'Mời bạn chén trà',banh:'Chia nhau hộp bánh',den:'Thắp sáng tình bạn',gau:'Món quà đặc biệt'};
+function giftInv(){const s=SHOP();if(!s.ginv||typeof s.ginv!=='object')s.ginv={};return s.ginv;}
+const giftN=k=>+giftInv()[k]||0;
+function giftBuy(k,n){n=n||1;const g=FX_GIFTS.find(x=>x[0]===k);if(!g)return false;if(!spend(g[3]*n,'Mua quà '+g[2]))return false;const v=giftInv();v[k]=(+v[k]||0)+n;shSave();try{sfx('coin');}catch(e){}return true;}
+function giftCardHTML(g,mode){const [k,ic,n,c]=g,own=giftN(k);
+  return `<div class="gfit" data-gk="${k}"><span class="gfic">${ic}</span><b>${esc(n)}</b><small class="gfb">💗 +${GIFT_BOND[k]||1} thân thiện</small><small class="muted">${esc(GIFT_TXT[k]||'')}</small>
+    <span class="gfown">${own?`Có ${own}`:'&nbsp;'}</span>
+    ${mode==='shop'?`<button class="btn sm pri" data-gbuy="${k}">${c} ${YB}</button>`:own?`<button class="btn sm pri" data-gsend="${k}">Tặng</button>`:`<button class="btn sm" data-gsend="${k}">Mua &amp; tặng · ${c} ${YB}</button>`}</div>`;}
+/* hộp thoại Tặng quà (dùng chung cho thẻ bạn bè và khi ghé nhà) */
+fxGiftDlg=function(f){if(!f)return;const draw=()=>{const s=SHOP();const d=frDialog(`<div class="row" style="justify-content:space-between"><b style="font-size:18px">🎁 Tặng quà cho ${esc(f.name||'bạn')}</b><button class="icon-btn" data-x aria-label="Đóng">✕</button></div>
+  <p class="small muted" style="margin:0">Quà để trên bàn nhà bạn ấy kèm lời nhắn. Mỗi ngày tặng tối đa 5 món, mỗi bạn được cộng điểm thân thiện 2 lần/ngày. Bạn có ${s.coins} ${YB}.</p>
+  <div class="gfgrid">${FX_GIFTS.map(g=>giftCardHTML(g,'send')).join('')}</div>
+  <input id="fxgmsg" maxlength="80" placeholder="Lời nhắn (không bắt buộc): 送你一点小礼物！" aria-label="Lời nhắn">
+  <div class="row gfmore"><button class="btn" data-lixi>🧧 Lì xì Nguyên bảo</button><a class="btn ghost" href="#shop" data-gshop>🛍️ Mua thêm quà</a></div>`,'fxgiftdlg gfdlg');
+  d.querySelector('[data-x]').onclick=()=>d.close();
+  d.querySelector('[data-lixi]').onclick=()=>{d.close();lixiSend(f.id);};
+  d.querySelector('[data-gshop]').onclick=()=>{shopTab='lixi';d.close();};
+  d.querySelectorAll('[data-gsend]').forEach(b=>b.onclick=async()=>{const k=b.dataset.gsend,g=FX_GIFTS.find(x=>x[0]===k);const had=giftN(k)>0;
+    if(!had&&SHOP().coins<g[3]){gardenToast(`Cần ${g[3]} Nguyên bảo để mua ${esc(g[2].toLowerCase())}.`);return;}
+    d.querySelectorAll('[data-gsend]').forEach(x=>x.disabled=true);
+    try{const msg=(d.querySelector('#fxgmsg').value||'').trim();const r=await fxApi('POST','gift/send',{to:f.id,kind:k,msg});
+      if(had){giftInv()[k]=giftN(k)-1;shSave();}else spend(g[3],'Quà tặng '+g[2]+' cho '+(f.name||'bạn'));
+      if(r&&r.score!=null)FR.bonds[f.id]=r.score;d.close();
+      gardenToast(`${g[1]} Đã tặng ${esc(g[2].toLowerCase())} cho <b>${esc(f.name||'bạn')}</b>!${r&&r.bond?` 💗 +${r.bond} điểm thân thiện`:' (hôm nay đã đủ điểm thân thiện từ quà cho bạn này)'}`);
+      try{sfx('coin');confetti(30);}catch(x){}if(location.hash==='#friends')setTimeout(()=>renderFriends(),300);}
+    catch(x){d.querySelectorAll('[data-gsend]').forEach(y=>y.disabled=false);gardenToast(esc(/GIFT_LIMIT/.test(x.message||'')?'Hôm nay bạn đã tặng đủ 5 món quà rồi, mai tặng tiếp nhé.':/INVALID_GIFT/.test(x.message||'')?'Máy chủ chưa có món quà này, vui lòng thử lại sau.':fxErr(x)));}});};draw();};
+/* thẻ bạn bè: nút Tặng quà */
+(function(){const base=renderFriends;renderFriends=async function(){const r=await base.apply(this,arguments);try{app.querySelectorAll('.frcard [data-a="gift"]').forEach(b=>{const c=b.closest('.frcard');const f=SOC.friends.find(x=>x.id===c.dataset.f);if(f)b.onclick=()=>{try{sfx('tap');}catch(e){}fxGiftDlg(f);};});}catch(e){console.warn(e);}return r;};})();
+/* Cửa hàng: quầy Quà tặng (tab Lì xì cũ) */
+(function(){const base=shopBody;shopBody=function(body){const r=base.apply(this,arguments);try{if(shopTab!=='lixi')return r;
+  body.insertAdjacentHTML('afterbegin',`<div class="panel stack gfshop"><div class="row" style="justify-content:space-between;align-items:center"><h3 style="margin:0">🎁 Quà tặng bạn bè</h3><span class="small muted">Đã có ${FX_GIFTS.reduce((a,g)=>a+giftN(g[0]),0)} món</span></div>
+    <p class="small muted" style="margin:0">Mua quà giá rẻ, vào <b>Bạn bè › Tặng quà</b> để tặng. Mỗi món tăng điểm thân thiện, giúp hai bạn lên Bạn bè, Bạn thân, Tri kỷ…</p>
+    <div class="gfgrid">${FX_GIFTS.map(g=>giftCardHTML(g,'shop')).join('')}</div></div>`);
+  body.querySelectorAll('[data-gbuy]').forEach(b=>b.onclick=()=>{if(giftBuy(b.dataset.gbuy)){const g=FX_GIFTS.find(x=>x[0]===b.dataset.gbuy);gardenToast(`${g[1]} Đã mua ${esc(g[2].toLowerCase())}. Vào Bạn bè › Tặng quà để tặng nhé!`);viewShop();}});}catch(e){console.warn(e);}return r;};})();
+(function(){const base=viewShop;viewShop=function(){const r=base.apply(this,arguments);try{const t=app.querySelector('.shtabs [data-st="lixi"]');if(t)t.innerHTML='🎁 Quà tặng';}catch(e){}return r;};})();
+if(window.__T)window.__u105={giftInv,giftBuy,GIFT_BOND};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
