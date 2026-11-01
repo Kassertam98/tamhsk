@@ -4065,6 +4065,8 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 .mspanel.mswide{max-height:88vh;overflow-y:auto;overscroll-behavior:contain}
 .msx .msxa{width:56px;height:56px;overflow:hidden;border-radius:14px;margin-bottom:6px}
 .msx .msxa>*{transform-origin:0 0}
+/* 5.59: Khu trò chơi không lặp lại Sự kiện & Nhiệm vụ (đã có ở cột hai bên / Khám phá) */
+#app .gevq{display:none!important}
 </style>
 </head><body>
 
@@ -4090,12 +4092,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='a4228362';
-document.write('<script src="packs/hsk'+L+'.js?v=a4228362"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='8a000af6';
+document.write('<script src="packs/hsk'+L+'.js?v=8a000af6"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a4228362','strokes-file');A('packs/dict.js?v=a4228362','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=8a000af6','strokes-file');A('packs/dict.js?v=8a000af6','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -14652,10 +14654,8 @@ async function viewRank(){stopGames();const b=RK.board,p=RK.period,B=RK_B.find(x
   app.querySelectorAll('[data-rkb]').forEach(x=>x.onclick=()=>{RK.board=x.dataset.rkb;viewRank();});
   app.querySelectorAll('[data-rkp]').forEach(x=>x.onclick=()=>{RK.period=x.dataset.rkp;viewRank();});
   const box=app.querySelector('#rkboard');let prev=false;
-  const load=async()=>{const per=prev?'p'+p:p;box.innerHTML='<div class="small muted">Đang tải bảng…</div>';if(gOnline())await rankSync(true);let j;
-    try{const r=await netFetch('GET',API_BASE+'/v1/rank?board='+b+'&period='+per,gOnline()?{'Authorization':'Bearer '+await idToken()}:{},'');j=JSON.parse(r.text||'{}');if(r.status>=400)throw new Error((j.error&&j.error.message)||'Lỗi');}
-    catch(e){if(box.isConnected)box.innerHTML=`<div class="small" style="color:var(--seal)">${esc(netMsg(e))}</div>`;return;}
-    if(!box.isConnected||location.hash!=='#rank')return;RK.cache[b+per]=j;const L=j.list||[],top=L.slice(0,3),rest=L.slice(3);
+  const load=async()=>{const per=prev?'p'+p:p;if(gOnline())rankSync(true);
+    const draw=j=>{if(!box.isConnected||location.hash!=='#rank')return;const L=j.list||[],top=L.slice(0,3),rest=L.slice(3);
     const lf=app.querySelector('#rkleft');if(lf)lf.textContent=prev?'':j.ends?'Chốt sau '+rkLeft(j.ends):'';
     const pod=i=>{const r=top[i];if(!r)return `<div class="rkpod p${i+1} empty"><div class="rkpodav">?</div><div class="rkpodbar"><span>${i+1}</span></div></div>`;
       return `<div class="rkpod p${i+1}${r.mine?' me':''}"><span class="rkcrown">${['👑','🥈','🥉'][i]}</span><div class="rkpodav">${avHTML(r.av2||r.avatar,i?54:68,r.frame)}</div><b>${r.mine?'Bạn':showName(r.handle,r.name,r.idn)}</b>${ttlChip(r.ttl)}<small>${rkFmt(r.val,b)}</small><div class="rkpodbar"><span>${i+1}</span></div></div>`;};
@@ -14664,6 +14664,10 @@ async function viewRank(){stopGames();const b=RK.board,p=RK.period,B=RK_B.find(x
       ${j.me&&!L.some(r=>r.mine)?`<div class="rkmine">${rkRowHTML(Object.assign({mine:true},j.me),b)}</div>`:''}
       ${!gOnline()?'<div class="notice small">Đăng nhập để có tên trên bảng xếp hạng và nhận thưởng. <a href="#settings">Đăng nhập</a></div>':''}`;
     const bk=box.querySelector('#rkback');if(bk)bk.onclick=()=>{prev=false;load();};};
+    const c0=RK.cache[b+per];if(c0)draw(c0);else box.innerHTML='<div class="small muted">Đang tải bảng…</div>';let j;
+    try{const r=await netFetch('GET',API_BASE+'/v1/rank?board='+b+'&period='+per,gOnline()?{'Authorization':'Bearer '+await idToken()}:{},'');j=JSON.parse(r.text||'{}');if(r.status>=400)throw new Error((j.error&&j.error.message)||'Lỗi');}
+    catch(e){if(box.isConnected&&!c0)box.innerHTML=`<div class="small" style="color:var(--seal)">${esc(netMsg(e))}</div>`;return;}
+    RK.cache[b+per]=j;draw(j);};
   const pb=app.querySelector('#rkprev');if(pb)pb.onclick=()=>{prev=true;load();box.scrollIntoView({behavior:'smooth',block:'start'});};
   load();rankMe().then(()=>{const c=app.querySelector('.cupshelf');if(c&&location.hash==='#rank')c.outerHTML=cupShelfHTML();});}
 /* thay Giải đấu bằng Bảng xếp hạng ở menu + Khu trò chơi */
@@ -18106,6 +18110,16 @@ function msExtGrid(){const g=TILE_GROUPS.find(x=>x[0]==='Mở rộng');const hs=
   P.querySelectorAll('h3').forEach(h=>{if(/Mở rộng/.test(h.textContent)){let n=h.nextElementSibling;while(n&&n.tagName!=='H3'){const x=n;n=n.nextElementSibling;x.remove();}h.remove();}});
   const grid=P.querySelector('.msgrid');(grid||P.lastElementChild).insertAdjacentHTML('afterend',msExtGrid());P.classList.add('mswide');};})();
 if(window.__T)window.__u102={lobbyFocus,msExtGrid,MEM_T};
+
+/* ===== 5.59 máy tính: không tự thu gọn 2 dòng menu (chỉ thu gọn khi bật toàn màn hình hoặc người dùng tự bấm);
+   Khu trò chơi bỏ khối Sự kiện & Nhiệm vụ trùng với cột hai bên; tải trước Bảng xếp hạng ===== */
+(function(){const base=hdrSet;hdrSet=function(c,why){try{if(c&&!MOB()&&!FSON&&why!=='manual')c=false;}catch(e){}return base.call(this,c,why);};})();
+(function(){const fix=()=>{try{if(!MOB()&&!FSON&&document.documentElement.classList.contains('hcompact')&&!(HSCR&&HSCR.manual))document.documentElement.classList.remove('hcompact');}catch(e){}};
+  window.addEventListener('hashchange',()=>setTimeout(fix,50));window.addEventListener('resize',fix);setTimeout(fix,600);})();
+/* tải trước bảng xếp hạng khi vào Khu trò chơi để mở BXH là có ngay */
+function rankPrefetch(){try{if(typeof RK!=='object'||!RK)return;const k=RK.board+RK.period;if(RK.cache[k]&&RK.cache[k].__at>Date.now()-60e3)return;
+  (async()=>{const h=gOnline()?{'Authorization':'Bearer '+await idToken()}:{};const r=await netFetch('GET',API_BASE+'/v1/rank?board='+RK.board+'&period='+RK.period,h,'');if(r.status<400){const j=JSON.parse(r.text||'{}');j.__at=Date.now();RK.cache[k]=j;}})().catch(()=>{});}catch(e){}}
+window.addEventListener('hashchange',()=>{if(/^#(games|home)$/.test(location.hash))setTimeout(rankPrefetch,1500);});
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
