@@ -4096,6 +4096,62 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 .gfit .btn .ybi{width:13px;height:13px;vertical-align:-2px}
 .gfdlg #fxgmsg{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line,#e6e0d6);border-radius:12px;font:inherit;background:var(--paper,#fff);color:inherit}
 .gfmore .btn{white-space:nowrap;font-size:14px;padding:10px 12px}
+.gfit{position:relative}
+.gfit.season{border-color:#e7a33c;background:linear-gradient(180deg,#fff7e6,var(--card,#fff) 60%)}
+.gfseason{position:absolute;top:6px;right:6px;font-size:10px;font-weight:800;color:#fff;background:#e0752d;padding:2px 6px;border-radius:999px}
+
+/* ===== 5.62 thân thiện & tốt bụng ===== */
+.kbadge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:999px;font-size:11.5px;font-weight:800;white-space:nowrap;vertical-align:middle;background:#eef6f1;color:#1f7a55}
+.kbadge.angel{background:linear-gradient(90deg,#fff3c4,#ffe2f0);color:#9a6400}
+.kbadge.good{background:#e8f7ee;color:#1f7a55}
+.kbadge.bad{background:#2b2230;color:#ffb3b3}
+.kbadge.hd{background:#3b2a1a;color:#ffd27a}
+.kbadge.tk{background:#ffe3ef;color:#c2185b}
+.frchip.bdopen{cursor:pointer}
+.frchip.bdopen:hover{filter:brightness(.97)}
+.frnext{display:block;width:100%;text-align:left;border:0;background:transparent;color:var(--muted,#7a7468);font:600 12px/1.35 inherit;padding:4px 2px 2px;cursor:pointer}
+.frnext b{color:var(--ink,#2a2520)}
+.bonddlg .in{max-width:520px}
+.bdbar{margin:10px 0 6px}
+.bdh{margin:14px 0 6px;font-size:15px}
+.bdwarn{margin:6px 0;padding:8px 10px;border-radius:12px;background:#fff4e0;color:#8a5a00;font-size:13px}
+.bdtiers{display:flex;flex-direction:column;gap:6px}
+.bdt{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:14px;border:1px solid var(--line,#e6e0d6);opacity:.65}
+.bdt.on{opacity:1;background:color-mix(in srgb,#d6457a 7%,var(--card,#fff))}
+.bdt.cur{outline:2px solid #d6457a}
+.bdt>div{flex:1;min-width:0}
+.bdic{font-size:22px;width:30px;text-align:center}
+.bdok{color:#1f7a55;font-weight:800;font-size:13px;white-space:nowrap}
+.bdlock{opacity:.6}
+.bdq{display:flex;flex-direction:column;gap:8px}
+.bdqi{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:14px;border:1px solid var(--line,#e6e0d6)}
+.bdqi.done{border-color:#7cc9a2}
+.bdqbar{height:7px;border-radius:9px;background:var(--line-soft,rgba(0,0,0,.07));overflow:hidden;margin:5px 0 3px}
+.bdqbar i{display:block;height:100%;background:linear-gradient(90deg,#f28ab2,#d6457a);border-radius:9px}
+.kindp{display:flex;flex-direction:column;gap:6px}
+.kindp.bad{background:#2b2230;color:#f3e6ff}
+.kindp.bad .muted,.kindp.bad small{color:#d9c8ea}
+.kredeem .bdqbar i{background:linear-gradient(90deg,#9be3c0,#2f8f6b)}
+/* sticker */
+.stkbtn.lock{opacity:.6}
+.stkpick{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px;padding:8px;margin:6px 0;border-radius:14px;background:var(--line-soft,rgba(0,0,0,.04));max-height:200px;overflow:auto}
+.stkpick button{display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:var(--card,#fff);border-radius:12px;padding:6px 2px;cursor:pointer}
+.stkpick i{font-style:normal;font-size:28px;line-height:1.1}
+.stkpick b{font-size:11px}
+.chm.stkm>span.stk{display:flex;flex-direction:column;align-items:center;gap:1px;background:transparent!important;box-shadow:none!important;padding:2px 6px}
+.chm.stkm>span.stk i{font-style:normal;font-size:52px;line-height:1.05;animation:stkpop .35s ease-out}
+.chm.stkm>span.stk b{font-size:14px}
+.chm.stkm>span.stk small{font-size:11px;opacity:.75}
+@keyframes stkpop{0%{transform:scale(.4)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+/* khung mới */
+.avatar.fr-triky{box-shadow:0 0 0 3px #fff,0 0 0 6px #f06292,0 0 14px 4px rgba(240,98,146,.45)}
+.avatar.fr-angel{box-shadow:0 0 0 3px #fffdf2,0 0 0 6px #f6d36b,0 0 16px 5px rgba(255,236,170,.9)}
+.avatar.fr-halo{box-shadow:0 0 0 3px #fff,0 0 0 6px #b98cff,0 0 0 9px #ffe27a,0 0 22px 8px rgba(185,140,255,.55)}
+:root[data-theme="dark"] .kbadge.good{background:#173528;color:#8fe0b5}
+:root[data-theme="dark"] .bdwarn{background:#3a2c12;color:#ffd58a}
+.chm.stkm{background:transparent!important;border-color:transparent!important;padding:2px 4px}
+.chm.stkm>span.stk b,.chm.stkm>span.stk small{color:var(--ink,#2a2520)}
+.chm.stkm>small{color:var(--muted,#7a7468)}
 </style>
 </head><body>
 
@@ -4121,12 +4177,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='f980a0ea';
-document.write('<script src="packs/hsk'+L+'.js?v=f980a0ea"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='f366d3bf';
+document.write('<script src="packs/hsk'+L+'.js?v=f366d3bf"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f980a0ea','strokes-file');A('packs/dict.js?v=f980a0ea','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f366d3bf','strokes-file');A('packs/dict.js?v=f366d3bf','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -12528,7 +12584,7 @@ let gPubT=0,gPubBusy=false;
 function gPublishSoon(){clearTimeout(gPubT);gPubT=setTimeout(gPublish,1500);}
 async function gPublish(){if(!gOnline()||gPubBusy)return null;gPubBusy=true;try{const g=G();const j=await frApi('POST','/v1/garden/sync',{snap:gSnap(g)});window.__gTools=j.tools;
     if(j.acts&&j.acts.length){let ch=false;j.acts.forEach(a=>{if(a.kind==='bite'){gardenToast(`🐶 Tiểu Cẩu đã cắn <b>${esc(a.name)}</b> khi bạn ấy lén trộm cây của bạn! Bạn ấy bị trọng thương 3 ngày.`);return;}const p=g.plots[a.plot];if(!p||!p.l||p.pk!==a.pk)return;const nm=PLANTS[p.l][0];ch=true;
-      if(a.kind==='water'){p.bst=(p.bst||0)+plotDur(p)*0.1;p.helpN=(p.helpN||0)+1;gardenToast(`💛 <b>${esc(a.name)}</b> đã tưới hộ cây ${esc(nm)} của bạn, cây lớn nhanh thêm 10%!`);}
+      if(a.kind==='water'){p.bst=(p.bst||0)+plotDur(p)*(a.bf?0.2:0.1);p.helpN=(p.helpN||0)+1;gardenToast(`💛 <b>${esc(a.name)}</b> đã tưới hộ cây ${esc(nm)} của bạn, cây lớn nhanh thêm ${a.bf?'20% (Bạn thân)':'10%'}!`);}
       else{p.st=Math.min(0.4,(p.st||0)+0.2);gardenToast(`⛏️ <b>${esc(a.name)}</b> đã lén trộm 20% cây ${esc(nm)} chín của bạn! Thu hoạch sớm kẻo bị trộm tiếp.`);}});
       if(ch){gGrowSync(g);save();if(location.hash==='#garden'&&!document.querySelector('#gscene.play'))viewGarden();setTimeout(gPublish,800);}}
     return j;}catch(e){return null;}finally{gPubBusy=false;}}
@@ -18182,19 +18238,23 @@ if(window.__T)window.__u104={gardenTidy,MS_TOP};
 /* ===== 5.61 Bạn bè: bỏ nút "Thăm vườn" cũ (giữ nút Vườn), "Lì xì" thành "Tặng quà";
    Cửa hàng có quầy Quà tặng giá rẻ, tặng bạn bè để tăng điểm thân thiện ===== */
 FX_GIFTS.unshift(['keo','🍡','Kẹo hồ lô',5]);FX_GIFTS.push(['gau','🧸','Gấu bông',50]);
-const GIFT_BOND={keo:1,hoa:2,tra:3,banh:4,den:6,gau:10};
-const GIFT_TXT={keo:'Ngọt ngào mỗi ngày',hoa:'Lời chào thân mến',tra:'Mời bạn chén trà',banh:'Chia nhau hộp bánh',den:'Thắp sáng tình bạn',gau:'Món quà đặc biệt'};
+const GIFT_BOND={keo:1,hoa:2,tra:3,banh:4,den:6,gau:10,lixido:8,socola:8,banhtt:8,trian:8,noel:8};
+const GIFT_TXT={keo:'Ngọt ngào mỗi ngày',hoa:'Lời chào thân mến',tra:'Mời bạn chén trà',banh:'Chia nhau hộp bánh',den:'Thắp sáng tình bạn',gau:'Món quà đặc biệt',lixido:'Quà Tết · chỉ tháng 1–2',socola:'Quà Valentine · tháng 2',banhtt:'Quà Trung thu · tháng 9',trian:'Ngày Nhà giáo · tháng 11',noel:'Quà Giáng sinh · tháng 12'};
 function giftInv(){const s=SHOP();if(!s.ginv||typeof s.ginv!=='object')s.ginv={};return s.ginv;}
 const giftN=k=>+giftInv()[k]||0;
+/* quà theo mùa: [mã, biểu tượng, tên, giá, tháng] — chỉ hiện và tặng được trong tháng đó */
+FX_GIFTS.push(['lixido','🧧','Bao lì xì đỏ',25,[1,2]],['socola','🍫','Hộp sô-cô-la',25,[2]],['banhtt','🥮','Bánh trung thu',25,[9]],['trian','💐','Hoa tri ân',25,[11]],['noel','🎄','Hộp quà Giáng sinh',25,[12]]);
+const giftMonth=()=>new Date(Date.now()+7*3600e3).getUTCMonth()+1;
+const giftList=()=>FX_GIFTS.filter(g=>!g[4]||g[4].includes(giftMonth()));
 function giftBuy(k,n){n=n||1;const g=FX_GIFTS.find(x=>x[0]===k);if(!g)return false;if(!spend(g[3]*n,'Mua quà '+g[2]))return false;const v=giftInv();v[k]=(+v[k]||0)+n;shSave();try{sfx('coin');}catch(e){}return true;}
 function giftCardHTML(g,mode){const [k,ic,n,c]=g,own=giftN(k);
-  return `<div class="gfit" data-gk="${k}"><span class="gfic">${ic}</span><b>${esc(n)}</b><small class="gfb">💗 +${GIFT_BOND[k]||1} thân thiện</small><small class="muted">${esc(GIFT_TXT[k]||'')}</small>
+  return `<div class="gfit${g[4]?' season':''}" data-gk="${k}">${g[4]?'<span class="gfseason">Quà mùa</span>':''}<span class="gfic">${ic}</span><b>${esc(n)}</b><small class="gfb">💗 +${GIFT_BOND[k]||1} thân thiện</small><small class="muted">${esc(GIFT_TXT[k]||'')}</small>
     <span class="gfown">${own?`Có ${own}`:'&nbsp;'}</span>
     ${mode==='shop'?`<button class="btn sm pri" data-gbuy="${k}">${c} ${YB}</button>`:own?`<button class="btn sm pri" data-gsend="${k}">Tặng</button>`:`<button class="btn sm" data-gsend="${k}">Mua &amp; tặng · ${c} ${YB}</button>`}</div>`;}
 /* hộp thoại Tặng quà (dùng chung cho thẻ bạn bè và khi ghé nhà) */
 fxGiftDlg=function(f){if(!f)return;const draw=()=>{const s=SHOP();const d=frDialog(`<div class="row" style="justify-content:space-between"><b style="font-size:18px">🎁 Tặng quà cho ${esc(f.name||'bạn')}</b><button class="icon-btn" data-x aria-label="Đóng">✕</button></div>
-  <p class="small muted" style="margin:0">Quà để trên bàn nhà bạn ấy kèm lời nhắn. Mỗi ngày tặng tối đa 5 món, mỗi bạn được cộng điểm thân thiện 2 lần/ngày. Bạn có ${s.coins} ${YB}.</p>
-  <div class="gfgrid">${FX_GIFTS.map(g=>giftCardHTML(g,'send')).join('')}</div>
+  <p class="small muted" style="margin:0">Quà để trên bàn nhà bạn ấy kèm lời nhắn. Mỗi ngày tặng tối đa 5 món, mỗi bạn được cộng điểm thân thiện 2 lần/ngày. Tặng quà còn được thêm điểm tốt bụng. Bạn có ${s.coins} ${YB}.</p>
+  <div class="gfgrid">${giftList().map(g=>giftCardHTML(g,'send')).join('')}</div>
   <input id="fxgmsg" maxlength="80" placeholder="Lời nhắn (không bắt buộc): 送你一点小礼物！" aria-label="Lời nhắn">
   <div class="row gfmore"><button class="btn" data-lixi>🧧 Lì xì Nguyên bảo</button><a class="btn ghost" href="#shop" data-gshop>🛍️ Mua thêm quà</a></div>`,'fxgiftdlg gfdlg');
   d.querySelector('[data-x]').onclick=()=>d.close();
@@ -18206,19 +18266,111 @@ fxGiftDlg=function(f){if(!f)return;const draw=()=>{const s=SHOP();const d=frDial
     try{const msg=(d.querySelector('#fxgmsg').value||'').trim();const r=await fxApi('POST','gift/send',{to:f.id,kind:k,msg});
       if(had){giftInv()[k]=giftN(k)-1;shSave();}else spend(g[3],'Quà tặng '+g[2]+' cho '+(f.name||'bạn'));
       if(r&&r.score!=null)FR.bonds[f.id]=r.score;d.close();
-      gardenToast(`${g[1]} Đã tặng ${esc(g[2].toLowerCase())} cho <b>${esc(f.name||'bạn')}</b>!${r&&r.bond?` 💗 +${r.bond} điểm thân thiện`:' (hôm nay đã đủ điểm thân thiện từ quà cho bạn này)'}`);
+      gardenToast(`${g[1]} Đã tặng ${esc(g[2].toLowerCase())} cho <b>${esc(f.name||'bạn')}</b>!${r&&r.bond?` 💗 +${r.bond} điểm thân thiện`:' (hôm nay đã đủ điểm thân thiện từ quà cho bạn này)'}${r&&r.kAdd?` · 😇 +${r.kAdd} tốt bụng`:''}`);
       try{sfx('coin');confetti(30);}catch(x){}if(location.hash==='#friends')setTimeout(()=>renderFriends(),300);}
-    catch(x){d.querySelectorAll('[data-gsend]').forEach(y=>y.disabled=false);gardenToast(esc(/GIFT_LIMIT/.test(x.message||'')?'Hôm nay bạn đã tặng đủ 5 món quà rồi, mai tặng tiếp nhé.':/INVALID_GIFT/.test(x.message||'')?'Máy chủ chưa có món quà này, vui lòng thử lại sau.':fxErr(x)));}});};draw();};
+    catch(x){d.querySelectorAll('[data-gsend]').forEach(y=>y.disabled=false);gardenToast(esc(/GIFT_LIMIT/.test(x.message||'')?'Hôm nay bạn đã tặng đủ 5 món quà rồi, mai tặng tiếp nhé.':/GIFT_OFF_SEASON/.test(x.message||'')?'Món quà này đã hết mùa.':/INVALID_GIFT/.test(x.message||'')?'Máy chủ chưa có món quà này, vui lòng thử lại sau.':fxErr(x)));}});};draw();};
 /* thẻ bạn bè: nút Tặng quà */
 (function(){const base=renderFriends;renderFriends=async function(){const r=await base.apply(this,arguments);try{app.querySelectorAll('.frcard [data-a="gift"]').forEach(b=>{const c=b.closest('.frcard');const f=SOC.friends.find(x=>x.id===c.dataset.f);if(f)b.onclick=()=>{try{sfx('tap');}catch(e){}fxGiftDlg(f);};});}catch(e){console.warn(e);}return r;};})();
 /* Cửa hàng: quầy Quà tặng (tab Lì xì cũ) */
 (function(){const base=shopBody;shopBody=function(body){const r=base.apply(this,arguments);try{if(shopTab!=='lixi')return r;
   body.insertAdjacentHTML('afterbegin',`<div class="panel stack gfshop"><div class="row" style="justify-content:space-between;align-items:center"><h3 style="margin:0">🎁 Quà tặng bạn bè</h3><span class="small muted">Đã có ${FX_GIFTS.reduce((a,g)=>a+giftN(g[0]),0)} món</span></div>
     <p class="small muted" style="margin:0">Mua quà giá rẻ, vào <b>Bạn bè › Tặng quà</b> để tặng. Mỗi món tăng điểm thân thiện, giúp hai bạn lên Bạn bè, Bạn thân, Tri kỷ…</p>
-    <div class="gfgrid">${FX_GIFTS.map(g=>giftCardHTML(g,'shop')).join('')}</div></div>`);
+    <div class="gfgrid">${giftList().map(g=>giftCardHTML(g,'shop')).join('')}</div></div>`);
   body.querySelectorAll('[data-gbuy]').forEach(b=>b.onclick=()=>{if(giftBuy(b.dataset.gbuy)){const g=FX_GIFTS.find(x=>x[0]===b.dataset.gbuy);gardenToast(`${g[1]} Đã mua ${esc(g[2].toLowerCase())}. Vào Bạn bè › Tặng quà để tặng nhé!`);viewShop();}});}catch(e){console.warn(e);}return r;};})();
 (function(){const base=viewShop;viewShop=function(){const r=base.apply(this,arguments);try{const t=app.querySelector('.shtabs [data-st="lixi"]');if(t)t.innerHTML='🎁 Quà tặng';}catch(e){}return r;};})();
-if(window.__T)window.__u105={giftInv,giftBuy,GIFT_BOND};
+if(window.__T)window.__u105={giftInv,giftBuy,GIFT_BOND,giftList};
+
+
+/* ===== 5.62 Điểm thân thiện & điểm tốt bụng
+   Thân thiện: phần thưởng theo bậc (sticker, tưới hộ +20%, khung Tri kỷ + vườn chung, danh hiệu Huynh đệ),
+     nhiệm vụ đôi hằng tuần, giảm dần khi lâu không tương tác (không rớt bậc), quà đáp lễ, quà theo mùa
+   Tốt bụng: huy hiệu, cách kiếm thêm, giảm giá hạt giống, khung độc quyền, bảng "Người tốt tuần này", chuộc lỗi ===== */
+const BOND_TIERS=[[0,'Người quen','🙂','Nhắn tin, tặng quà, rủ nhau chơi'],[10,'Bạn bè','🎴','Mở bộ sticker trong khung chat'],[30,'Bạn thân','💧','Tưới hộ nhau: cây lớn nhanh 20% (thay vì 10%)'],[70,'Tri kỷ','💞','Khung ảnh đại diện Tri kỷ + mời lập Vườn chung'],[150,'Huynh đệ','⚔️','Danh hiệu "Huynh đệ kết nghĩa" hiện trên hồ sơ']];
+FR.peak=FR.peak||{};FR.kind=FR.kind||{};FR.idle=FR.idle||{};
+frLoadExtra=async function(){try{const [b,u]=await Promise.all([frApi('GET','/v1/social/bonds'),frApi('GET','/v1/social/unread')]);FR.bonds=b.bonds||{};FR.peak=b.peak||{};FR.kind=b.kind||{};FR.idle=b.idle||{};FR.unread=u.unread||{};FR.at=Date.now();bondPerksSync();}catch(e){}};
+const bondPeak=fid=>Math.max(+FR.peak[fid]||0,+FR.bonds[fid]||0);
+const bondMaxPeak=()=>Math.max(0,...Object.keys(FR.bonds||{}).map(bondPeak));
+/* ---- điểm tốt bụng ---- */
+function kindBadge(k){k=+k||0;if(k>=70)return ['🌟','Thiên thần vườn','angel'];if(k>=30)return ['😇','Người tốt bụng','good'];if(k<0)return ['😈','Kẻ trộm khét tiếng','bad'];return null;}
+const kindChip=k=>{const b=kindBadge(k);return b?`<span class="kbadge ${b[2]}" title="Điểm tốt bụng: ${+k||0}">${b[0]} ${esc(b[1])}</span>`:'';};
+const kindDisc=k=>k>=70?0.10:k>=30?0.05:0;
+const SEED_BASE=SEED_PRICE.slice();let KIND_K=0;
+function kindApply(){const t=window.__gTools;if(!t||t.k==null)return;KIND_K=+t.k||0;const d=kindDisc(KIND_K);SEED_BASE.forEach((v,i)=>{SEED_PRICE[i]=v?Math.max(1,Math.round(v*(1-d))):v;});try{kindPanelDraw();}catch(e){}try{bondPerksSync();}catch(e){}}
+(function(){let v=window.__gTools;try{Object.defineProperty(window,'__gTools',{configurable:true,get:()=>v,set:x=>{v=x;setTimeout(kindApply,0);}});}catch(e){}if(v)kindApply();})();
+/* ---- phần thưởng bậc thân thiện ---- */
+FRAMES.push(['triky','Tri kỷ','triky'],['angel','Thiên thần','kind50'],['halo','Hào quang','kind80']);
+const FRAME_KIND={angel:[50,150],halo:[80,250]};
+function bondPerksSync(){const s=SHOP();let ch=false;if(bondMaxPeak()>=70&&!s.own['fr:triky']){s.own['fr:triky']=1;ch=true;gardenToast('💞 Bạn đã có một người <b>Tri kỷ</b>! Mở khóa khung ảnh đại diện Tri kỷ trong Cửa hàng › Giao diện.');}
+  if(ch)shSave();}
+/* danh hiệu Huynh đệ (khi chưa có danh hiệu Bảng xếp hạng) */
+(function(){const base=frExtra;frExtra=function(){const o=base.apply(this,arguments);try{if(!o.ttl&&bondMaxPeak()>=150)o.ttl='⚔️ Huynh đệ kết nghĩa';if(KIND_K>=70)o.kind='angel';}catch(e){}return o;};})();
+/* Cửa hàng › Giao diện: khung Tri kỷ (mở bằng điểm thân thiện), khung độc quyền cho người tốt bụng */
+(function(){const base=shopBody;shopBody=function(body){const r=base.apply(this,arguments);try{if(shopTab!=='look')return r;const s=SHOP();
+  body.querySelectorAll('[data-buy2="fr:triky"]').forEach(b=>b.outerHTML='<span class="acclock">💞 Có Tri kỷ (70 thân thiện)</span>');
+  Object.entries(FRAME_KIND).forEach(([k,[need,price]])=>{body.querySelectorAll(`[data-buy2="fr:${k}"]`).forEach(b=>{if(KIND_K>=need){b.dataset.p=price;b.innerHTML=`${YB} ${price}`;}else b.outerHTML=`<span class="acclock">😇 Cần ${need} tốt bụng</span>`;});});}catch(e){console.warn(e);}return r;};})();
+/* ---- sticker trong chat (mở ở bậc Bạn bè) ---- */
+const STICKERS=[['hug','🤗','抱抱','Ôm cái nào'],['love','🥰','爱你','Quý bạn lắm'],['cheer','💪','加油','Cố lên'],['lol','🤣','哈哈哈','Cười xỉu'],['cry','😭','呜呜','Huhu'],['thx','🙏','谢谢','Cảm ơn nha'],['bye','👋','拜拜','Bái bai'],['study','📚','学习吧','Học thôi'],['wow','🤩','厉害','Đỉnh quá'],['sleep','😴','晚安','Ngủ ngon'],['eat','🍜','吃饭了吗','Ăn cơm chưa'],['dragon','🐉','龙虎','Long Hổ!']];
+const stkRe=/^\[st:([a-z]+)\]$/;
+function stickerize(root){root.querySelectorAll('.chm > span:not(.stk)').forEach(sp=>{const m=stkRe.exec(sp.textContent.trim());if(!m)return;const s=STICKERS.find(x=>x[0]===m[1]);if(!s)return;sp.className='stk';sp.innerHTML=`<i>${s[1]}</i><b class="han">${s[2]}</b><small>${esc(s[3])}</small>`;sp.closest('.chm').classList.add('stkm');});}
+(function(){const base=openChat;openChat=function(f){const r=base.apply(this,arguments);try{const d=document.getElementById('frdlg');const list=d&&d.querySelector('#chlist');if(!list)return r;
+  new MutationObserver(()=>stickerize(list)).observe(list,{childList:true,subtree:true});stickerize(list);
+  const sc=bondPeak(f.id)>=10,q=d.querySelector('.chquick');if(q&&!d.querySelector('.stkbtn')){q.insertAdjacentHTML('afterbegin',`<button class="fchip stkbtn${sc?'':' lock'}" type="button">${sc?'🎴 Sticker':'🔒 Sticker'}</button>`);
+    q.insertAdjacentHTML('afterend',`<div class="stkpick" hidden>${STICKERS.map(s=>`<button type="button" data-stk="${s[0]}" title="${esc(s[3])}"><i>${s[1]}</i><b class="han">${s[2]}</b></button>`).join('')}</div>`);
+    const pick=d.querySelector('.stkpick');d.querySelector('.stkbtn').onclick=()=>{if(!sc){gardenToast(`🔒 Sticker mở khi hai bạn đạt bậc <b>Bạn bè</b> (10 điểm thân thiện). Hiện có ${+FR.bonds[f.id]||0}.`);return;}pick.hidden=!pick.hidden;};
+    pick.querySelectorAll('[data-stk]').forEach(b=>b.onclick=()=>{pick.hidden=true;const inp=d.querySelector('#chin');inp.value=`[st:${b.dataset.stk}]`;d.querySelector('.chform').requestSubmit();});}}catch(e){console.warn(e);}return r;};})();
+/* ---- hộp "Tình bạn": bậc, phần thưởng, nhiệm vụ đôi tuần ---- */
+async function bondDlg(f){const sc=+FR.bonds[f.id]||0,pk=bondPeak(f.id),L=bondLv(sc),idle=+FR.idle[f.id]||0;
+  const tiers=BOND_TIERS.map(([n,name,ic,rw],i)=>{const on=pk>=n;return `<div class="bdt${on?' on':''}${L.i===i?' cur':''}"><span class="bdic">${ic}</span><div><b>${name}</b> <small class="muted">${n} điểm</small><div class="small">${esc(rw)}</div></div>${on?'<span class="bdok">✓</span>':`<span class="bdlock">🔒</span>`}</div>`;}).join('');
+  const d=frDialog(`<div class="row" style="justify-content:space-between"><div class="row" style="gap:10px">${avatarHTML(f.avatar,44,f.frame)}<div><b style="font-size:18px">💗 Tình bạn với ${esc(f.name)}</b><div class="small muted">${esc(L.name)} · ${sc} điểm${L.next?` · còn ${L.next[0]-sc} điểm lên ${esc(L.next[1])}`:''}</div></div></div><button class="icon-btn" data-x aria-label="Đóng">✕</button></div>
+    <div class="frbar bdbar"><i style="width:${L.pct}%"></i></div>
+    ${idle>=7?`<div class="bdwarn">⏳ ${idle} ngày chưa tương tác: mỗi tuần giảm 1 điểm (không rớt khỏi bậc đã đạt). Nhắn tin hoặc tặng quà để giữ điểm nhé!</div>`:''}
+    <h3 class="bdh">📋 Nhiệm vụ đôi tuần này</h3><div class="bdq" id="bdq"><div class="small muted">Đang tải…</div></div>
+    <h3 class="bdh">🏅 Phần thưởng theo bậc</h3><div class="bdtiers">${tiers}</div>
+    ${pk>=70?`<div class="row" style="gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn sm" data-bud>🌳 Mời lập Vườn chung (Bạn học)</button><a class="btn sm ghost" href="#shop" data-frshop>💞 Đeo khung Tri kỷ</a></div>`:''}
+    <p class="small muted" style="margin:10px 0 0">Cách tăng điểm: nhắn tin, cổ vũ, thăm nhà, tưới vườn, thách đấu, rủ chơi, tặng quà. Bạn ấy mở quà và cảm ơn: +1 điểm.</p>`,'bonddlg');
+  d.querySelector('[data-x]').onclick=()=>d.close();
+  const bu=d.querySelector('[data-bud]');if(bu)bu.onclick=async()=>{bu.disabled=true;try{await fxApi('POST','bud/invite',{to:f.id});gardenToast('🤝 Đã mời '+esc(f.name)+' làm Bạn học: hai bạn sẽ có chuỗi chung, cây tình bạn và vườn chung.');}catch(e){bu.disabled=false;gardenToast(esc(fxErr(e)));}};
+  const fs=d.querySelector('[data-frshop]');if(fs)fs.onclick=()=>{shopTab='look';d.close();};
+  const box=d.querySelector('#bdq');const drawQ=j=>{box.innerHTML=j.list.map(q=>`<div class="bdqi${q.done?' done':''}"><div style="flex:1;min-width:0"><b>${esc(q.name)}</b><div class="bdqbar"><i style="width:${Math.round(q.n/q.goal*100)}%"></i></div><small class="muted">${q.n}/${q.goal} · thưởng 💗 +${j.bond} và ${j.nb} ${YB}</small></div>
+      ${q.mine?'<span class="bdok">Đã nhận</span>':q.done?`<button class="btn sm pri" data-q="${q.id}">Nhận</button>`:''}</div>`).join('');
+    box.querySelectorAll('[data-q]').forEach(b=>b.onclick=async()=>{b.disabled=true;try{const r=await frApi('POST','/v1/social/duoq',{to:f.id,q:b.dataset.q});FR.bonds[f.id]=r.score;try{confetti(40);sfx('coin');}catch(x){}
+      gardenToast(`📋 Hoàn thành nhiệm vụ đôi! ${r.bond?`💗 +${r.bond} thân thiện · `:''}+${r.nb} ${YB}`);try{walletSync();}catch(x){}load();}catch(e){b.disabled=false;gardenToast(esc(netMsg(e)));}});};
+  const load=async()=>{try{drawQ(await frApi('GET','/v1/social/duoq?with='+encodeURIComponent(f.id)));}catch(e){box.innerHTML=`<div class="small muted">${esc(netMsg(e))}</div>`;}};load();}
+/* thẻ bạn bè: huy hiệu tốt bụng, chip bấm mở hộp Tình bạn, gợi ý phần thưởng kế tiếp */
+(function(){const base=renderFriends;renderFriends=async function(){const r=await base.apply(this,arguments);try{
+  app.querySelectorAll('.frcard').forEach(c=>{const f=SOC.friends.find(x=>x.id===c.dataset.f);if(!f||c.dataset.bd)return;c.dataset.bd=1;const sc=+FR.bonds[f.id]||0,L=bondLv(sc),pk=bondPeak(f.id);
+    const st=c.querySelector('.frstats');if(st){st.insertAdjacentHTML('beforeend',kindChip(FR.kind[f.id]));if(pk>=150)st.insertAdjacentHTML('beforeend','<span class="kbadge hd">⚔️ Huynh đệ</span>');else if(pk>=70)st.insertAdjacentHTML('beforeend','<span class="kbadge tk">💞 Tri kỷ</span>');}
+    const chip=c.querySelector('.frchip.bond');if(chip){chip.setAttribute('role','button');chip.tabIndex=0;chip.classList.add('bdopen');chip.title='Xem tình bạn, phần thưởng và nhiệm vụ đôi';chip.onclick=()=>bondDlg(f);chip.onkeydown=e=>{if(e.key==='Enter')bondDlg(f);};}
+    const bar=c.querySelector('.frbar');const nx=BOND_TIERS.find(t=>t[0]>pk);const idle=+FR.idle[f.id]||0;
+    if(bar)bar.insertAdjacentHTML('afterend',`<button class="frnext" type="button">${idle>=7?`⏳ ${idle} ngày chưa tương tác · điểm đang giảm`:nx?`${nx[2]} Còn ${nx[0]-sc} điểm lên <b>${nx[1]}</b>: ${esc(nx[3].charAt(0).toLowerCase()+nx[3].slice(1))}`:'⚔️ Đã đạt bậc cao nhất'} ›</button>`);
+    const nb=c.querySelector('.frnext');if(nb)nb.onclick=()=>bondDlg(f);});}catch(e){console.warn(e);}return r;};})();
+/* tưới hộ / quà: báo điểm tốt bụng */
+(function(){const base=frApi;frApi=async function(m,path,body){const j=await base.apply(this,arguments);try{if(path==='/v1/garden/act'&&j&&j.ok&&body&&body.kind==='water'){
+  if(j.redeemed)setTimeout(()=>{gardenToast('🕊️ <b>Chuộc lỗi thành công!</b> Bạn đã tưới hộ 5 vườn tuần này: +20 điểm tốt bụng.');try{confetti(60);}catch(e){}},900);
+  else if(j.kAdd===2)setTimeout(()=>gardenToast('😇 Bạn ấy vắng nhà 2 ngày, bạn tưới giúp nên được <b>+2 tốt bụng</b>.'),900);}}catch(e){}return j;};})();
+/* ---- bảng điểm tốt bụng trong Khu vườn ---- */
+function kindPanelHTML(){const t=window.__gTools;if(!t||t.k==null)return '';const k=+t.k||0,b=kindBadge(k),d=kindDisc(k);
+  return `<div class="panel kindp ${b?b[2]:''}"><div class="row" style="justify-content:space-between;align-items:center;gap:8px"><b>💗 Điểm tốt bụng: ${k}</b>${b?kindChip(k):'<span class="small muted">Chưa có huy hiệu</span>'}</div>
+    ${k<0?`<div class="kredeem"><b>🕊️ Chuộc lỗi:</b> tưới hộ ${t.rdN||5} vườn bạn bè khác nhau trong tuần để được +20 điểm.<div class="bdqbar"><i style="width:${Math.min(100,Math.round((t.rd||0)/(t.rdN||5)*100))}%"></i></div><small>${t.rd||0}/${t.rdN||5} vườn · Khi điểm âm, Tiểu Cẩu nhà bạn bè sẽ cắn ngay khi bạn lại gần.</small></div>`
+      :`<div class="small muted">${d?`🌱 Đang được giảm ${Math.round(d*100)}% giá hạt giống. `:''}Kiếm điểm: tưới hộ (+1, vườn bạn vắng nhà +2), tặng quà (+1, cho bạn mới +2), bạn đoán đúng thẻ từ bạn gửi (+1). ${k<30?'Đạt 30 điểm: giảm 5% giá hạt giống.':k<70?'Đạt 70 điểm: giảm 10% giá hạt giống.':''} <a href="#rank" data-kt>Xem Người tốt tuần này ›</a></div>`}</div>`;}
+function kindPanelDraw(){const sc=document.querySelector('.garden3:not(.fgarden) #gscene');if(!sc)return;const h=kindPanelHTML();let p=document.querySelector('.garden3:not(.fgarden) .kindp');
+  if(!h){if(p)p.remove();return;}if(p){p.outerHTML=h;}else{const row=document.querySelector('.garden3:not(.fgarden) .gbtnrow')||sc;row.insertAdjacentHTML('afterend',h);}
+  const a=document.querySelector('.kindp [data-kt]');if(a)a.onclick=()=>{RK_KT=1;};}
+(function(){const base=viewGarden;viewGarden=function(){const r=base.apply(this,arguments);try{kindPanelDraw();}catch(e){}return r;};})();
+/* vườn bạn bè: huy hiệu tốt bụng của chủ vườn */
+(function(){const base=viewFriendGarden;viewFriendGarden=async function(uid){const r=await base.apply(this,arguments);try{if(typeof uid==='string'&&FG&&FG.kind!=null){const h=document.querySelector('.fgarden .gtop h1');if(h&&!h.querySelector('.kbadge'))h.insertAdjacentHTML('beforeend',' '+kindChip(FG.kind));}}catch(e){}return r;};})();
+/* ---- Bảng xếp hạng: Người tốt tuần này ---- */
+let RK_KT=0;
+async function kindTopDraw(){const host=app.querySelector('.rankv');if(!host||host.querySelector('#kindtop'))return;host.insertAdjacentHTML('beforeend','<div class="panel stack" id="kindtop"><h3 style="margin:0">😇 Người tốt tuần này</h3><div class="small muted">Đang tải…</div></div>');
+  const box=host.querySelector('#kindtop');if(RK_KT){RK_KT=0;setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'start'}),300);}
+  if(!(typeof gOnline==='function'&&gOnline())){box.innerHTML='<h3 style="margin:0">😇 Người tốt tuần này</h3><div class="small muted">Đăng nhập để xem bảng điểm tốt bụng.</div>';return;}
+  try{const j=await frApi('GET','/v1/garden/kindtop');const L=j.list||[];
+    box.innerHTML=`<div class="row" style="justify-content:space-between;align-items:center"><h3 style="margin:0">😇 Người tốt tuần này</h3><span class="small muted">Bạn: +${j.me.n} tuần này</span></div>
+      <div class="small muted">Điểm tốt bụng kiếm được trong tuần: tưới hộ, tặng quà, giúp bạn học thẻ từ.</div>
+      ${L.length?L.map((x,i)=>`<div class="lbrow${x.uid===(SOC.auth&&SOC.auth.uid)?' me':''}"><span class="lbn">${i<3?['🥇','🥈','🥉'][i]:i+1}</span><span style="min-width:0;flex:1">${esc(x.name)} ${kindChip(x.k)}</span><b>+${x.n}</b></div>`).join(''):'<div class="small muted">Tuần này chưa có ai. Tưới hộ vườn bạn bè để đứng đầu bảng!</div>'}`;}
+  catch(e){box.innerHTML=`<h3 style="margin:0">😇 Người tốt tuần này</h3><div class="small muted">${esc(netMsg(e))}</div>`;}}
+(function(){const base=viewRank;viewRank=async function(){const r=await base.apply(this,arguments);try{kindTopDraw();}catch(e){}return r;};})();
+if(window.__T)window.__u106={kindBadge,kindDisc,bondDlg,SEED_BASE,stickerize,kindApply,bondPerksSync,STICKERS};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
