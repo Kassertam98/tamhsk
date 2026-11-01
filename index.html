@@ -4067,6 +4067,17 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 .msx .msxa>*{transform-origin:0 0}
 /* 5.59: Khu trò chơi không lặp lại Sự kiện & Nhiệm vụ (đã có ở cột hai bên / Khám phá) */
 #app .gevq{display:none!important}
+
+/* ===== 5.60 ===== */
+@media (max-width:768px){
+  .garden3 .gtop{flex-direction:column;align-items:stretch;gap:8px}
+  .garden3 .gchips.gchrow{flex-wrap:nowrap!important;justify-content:flex-start!important;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:2px 4px}
+  .garden3 .gchips.gchrow::-webkit-scrollbar{display:none}
+  .garden3 .gchips.gchrow .gchip{flex:none;white-space:nowrap}
+  .garden3 .gbtnrow .gshared{cursor:default}
+  .garden3 .gbtnrow .gcan .ybi{width:14px;height:14px;vertical-align:-2px}
+}
+.msit.mstop .n1art b.han{font-size:26px;color:var(--nc)}
 </style>
 </head><body>
 
@@ -4092,12 +4103,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='8a000af6';
-document.write('<script src="packs/hsk'+L+'.js?v=8a000af6"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='32efb61e';
+document.write('<script src="packs/hsk'+L+'.js?v=32efb61e"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=8a000af6','strokes-file');A('packs/dict.js?v=8a000af6','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=32efb61e','strokes-file');A('packs/dict.js?v=32efb61e','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -4138,7 +4149,7 @@ const isFav=w=>!!(S.fav&&S.fav[w.id]);
 const HANZII=zh=>'https://hanzii.net/search/word/'+encodeURIComponent(zh)+'?hl=vi';
 const dictLinkHz=(zh,big)=>`<a class="${big?'btn sm dictbtn':'icon-btn dictlink'}" href="${HANZII(zh)}" target="_blank" rel="noopener noreferrer" title="Tra “${esc(zh)}” trên từ điển Hanzii" aria-label="Tra ${esc(zh)} trên từ điển Hanzii (mở tab mới)">${big?'Tra trên Hanzii ':''}<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>`;
 const favBtn=w=>`<button class="fav${isFav(w)?' on':''}" data-fav="${w.id}" aria-pressed="${isFav(w)}" aria-label="Đánh dấu từ quan trọng" title="Từ quan trọng">${ICON.star}</button>`;
-const save=()=>{try{if(window.GSH){GSH.ut=Date.now();localStorage.setItem('hsk-garden',JSON.stringify(GSH));}localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const save=()=>{try{if(typeof GSH!=='undefined'&&GSH){GSH.ut=Date.now();localStorage.setItem('hsk-garden',JSON.stringify(GSH));}localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const L=n=>(S.lessons[n]=S.lessons[n]||{stages:{},boss:0});
 function markStage(n,st){L(n).stages[st]=true;touch();save();const b=document.querySelector('.steps [data-stage="'+st+'"]');if(b){b.classList.add('done');const d=b.querySelector('.dot');if(d)d.textContent='✓';}}
 function touch(){const t=today();S.days=S.days||{};if(!S.days[t])S.days[t]=0;if(S.streak.last===t)return;S.streak.count=(S.streak.last===addDays(t,-1))?S.streak.count+1:1;S.streak.last=t;S.streakBest=Math.max(S.streakBest||0,S.streak.count);if(S.streak.count>=7)S.best7=true;try{stkDaily(S.streak.count);}catch(e){}try{petCelebrate(S.streak.count);pushSeen();setTimeout(petCache,500);}catch(e){}if(S.streak.count%7===0){try{earn(50,'Mốc chuỗi '+S.streak.count+' ngày',{once:'stk'+LEVEL+'-'+t,delay:2400});}catch(e){}}if(S.streak.count%7===0&&(S.freeze||0)<3){S.freeze=(S.freeze||0)+1;setTimeout(()=>{try{gardenToast('🔥 Chuỗi '+S.streak.count+' ngày! Tiểu Long Hổ tặng bạn 1 băng chuỗi ❄️');}catch(e){}},700);}save();renderStat();if(typeof rmSync==='function')rmSync();}
@@ -18109,7 +18120,7 @@ function msExtGrid(){const g=TILE_GROUPS.find(x=>x[0]==='Mở rộng');const hs=
 (function(){const base=msheetOpen;msheetOpen=function(k){base.apply(this,arguments);if(k!=='explore'||MSHEET.open!=='explore')return;const P=document.querySelector('#msheet .mspanel');if(!P||P.querySelector('.msxg'))return;
   P.querySelectorAll('h3').forEach(h=>{if(/Mở rộng/.test(h.textContent)){let n=h.nextElementSibling;while(n&&n.tagName!=='H3'){const x=n;n=n.nextElementSibling;x.remove();}h.remove();}});
   const grid=P.querySelector('.msgrid');(grid||P.lastElementChild).insertAdjacentHTML('afterend',msExtGrid());P.classList.add('mswide');};})();
-if(window.__T)window.__u102={lobbyFocus,msExtGrid,MEM_T};
+if(window.__T)window.__u102={lobbyFocus,msExtGrid,MEM_T,TG:TILE_GROUPS,MT:MORE_TILES};
 
 /* ===== 5.59 máy tính: không tự thu gọn 2 dòng menu (chỉ thu gọn khi bật toàn màn hình hoặc người dùng tự bấm);
    Khu trò chơi bỏ khối Sự kiện & Nhiệm vụ trùng với cột hai bên; tải trước Bảng xếp hạng ===== */
@@ -18120,6 +18131,34 @@ if(window.__T)window.__u102={lobbyFocus,msExtGrid,MEM_T};
 function rankPrefetch(){try{if(typeof RK!=='object'||!RK)return;const k=RK.board+RK.period;if(RK.cache[k]&&RK.cache[k].__at>Date.now()-60e3)return;
   (async()=>{const h=gOnline()?{'Authorization':'Bearer '+await idToken()}:{};const r=await netFetch('GET',API_BASE+'/v1/rank?board='+RK.board+'&period='+RK.period,h,'');if(r.status<400){const j=JSON.parse(r.text||'{}');j.__at=Date.now();RK.cache[k]=j;}})().catch(()=>{});}catch(e){}}
 window.addEventListener('hashchange',()=>{if(/^#(games|home)$/.test(location.hash))setTimeout(rankPrefetch,1500);});
+
+
+/* ===== 5.60
+   - Khu vườn: bỏ ô Nguyên bảo (đã có trên thanh trên); điện thoại: các chip 💧 💛 ⛏ 💗 thành một hàng cuộn ngang,
+     "Bình tưới" và "Vườn chung" xuống hàng nút dưới vườn, "Cách chơi" nằm dưới cảnh vườn
+   - Khám phá (điện thoại): Cài đặt + Kasser English lên lưới trên cùng, phần Mở rộng hiện đủ các mục còn lại
+   - Sửa lỗi vườn không lưu sau khi thu hoạch/gieo (ở hàm save) ===== */
+function gardenTidy(){const top=app.querySelector('.garden3 .gtop');if(!top)return;const ch=top.querySelector('.gchips');if(!ch)return;
+  ch.querySelectorAll(':scope > span.gchip').forEach(s=>{if(s.classList.length===1&&s.querySelector('.ybi'))s.remove();});
+  if(!MOB())return;const sc=app.querySelector('#gscene');if(!sc)return;
+  let row=sc.nextElementSibling;if(!row||!row.classList.contains('row')){row=document.createElement('div');row.className='row';sc.after(row);}
+  row.classList.add('gbtnrow');
+  const sh=ch.querySelector('.gshared');if(sh){sh.className='btn sm ghost gshared';row.prepend(sh);}
+  const can=ch.querySelector('#gcan');if(can){can.className='btn sm gcan';row.prepend(can);}
+  ch.classList.add('gchrow');
+  const gd=app.querySelector('.garden3 > details.gguide');if(gd&&row.nextElementSibling!==gd)row.after(gd);}
+(function(){const base=viewGarden;viewGarden=function(){base.apply(this,arguments);try{gardenTidy();}catch(e){console.warn(e);}};})();
+(function(){const base=ggInject;ggInject=function(){base.apply(this,arguments);try{if(app.querySelector('.garden3 .gbtnrow'))gardenTidy();}catch(e){}};})();
+/* chip dụng cụ (💛 ⛏ 💗) được thêm sau khi tải danh sách bạn: vẫn nằm trong hàng cuộn */
+/* ---- Khám phá (điện thoại) ---- */
+const MS_TOP=['#settings','#english'];
+function msTopTile(h){const t=MORE_TILES.find(x=>x[0]===h);if(!t)return '';const [,c,ti]=t;
+  return `<a href="${h}" class="msit mstop" title="${esc(ti)}" aria-label="${esc(ti)}"><span class="n1art" style="--nc:${(TILE_ART[h]||[])[1]||'#2f8f6b'}">${TILE_ART[h]?`<svg viewBox="0 0 64 64" aria-hidden="true">${TILE_ART[h][2]}</svg>`:`<b class="han">${c}</b>`}</span><span class="n1t">${esc(ti)}</span></a>`;}
+(function(){const base=msheetOpen;msheetOpen=function(k){base.apply(this,arguments);if(k!=='explore'||MSHEET.open!=='explore')return;const P=document.querySelector('#msheet .mspanel');if(!P)return;
+  const grid=P.querySelector('.msgrid');if(grid&&!grid.querySelector('.mstop')){const more=[...grid.querySelectorAll('a[href="#more"]')];if(more.length>1)more[0].remove();
+    grid.insertAdjacentHTML('afterbegin',MS_TOP.map(msTopTile).join(''));}
+  P.querySelectorAll('.msxg .msx').forEach(a=>{if(MS_TOP.includes(a.getAttribute('href')))a.remove();});};})();
+if(window.__T)window.__u104={gardenTidy,MS_TOP};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
