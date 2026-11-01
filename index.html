@@ -4177,12 +4177,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='f366d3bf';
-document.write('<script src="packs/hsk'+L+'.js?v=f366d3bf"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='f51bcd21';
+document.write('<script src="packs/hsk'+L+'.js?v=f51bcd21"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f366d3bf','strokes-file');A('packs/dict.js?v=f366d3bf','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f51bcd21','strokes-file');A('packs/dict.js?v=f51bcd21','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -4513,7 +4513,7 @@ function stDialogOld(el,l){
     el.querySelector('#tpy').onclick=()=>{showPy=!showPy;draw();};el.querySelector('#tvi').onclick=()=>{showVi=!showVi;draw();};el.querySelector('#tb').onclick=()=>{maskB=!maskB;draw();};
     el.querySelectorAll('[data-tx]').forEach(b=>b.onclick=()=>{if(ttsOK)speechSynthesis.cancel();txState[l.n]=+b.dataset.tx;draw();});
     const mark=i=>el.querySelectorAll('.bub').forEach((d,k)=>d.classList.toggle('playing',k===i));
-    el.querySelector('#all').onclick=()=>{qTick('listen');speakQueue(tx.d.map(d=>d[1]),.85,mark,()=>mark(-1));};
+    el.querySelector('#all').onclick=()=>{qTick('listen');speakQueue(tx.d.map(d=>d[1]),.85,mark,()=>mark(-1),tx.d.map(d=>castVP(d[0]==='A'?pa:pb)));};
     el.querySelector('#txchat').addEventListener('click',e=>{const w=e.target.closest('[data-nw]');if(w){e.stopPropagation();openWordAny(w.dataset.nw);}});
     el.querySelectorAll('[data-nwo]').forEach(b=>b.onclick=()=>openWordAny(b.dataset.nwo));
     const nx=el.querySelector('#txnext');if(nx)nx.onclick=()=>{if(ttsOK)speechSynthesis.cancel();txState[l.n]=ti+1;draw();el.scrollIntoView({behavior:'smooth',block:'start'});};
@@ -7398,7 +7398,7 @@ function stDialog(el,l){
     const go=(to)=>{if(to===ti)return;if(ttsOK)speechSynthesis.cancel();txState[l.n]=to;draw(to>ti?'up':'down');const st=el.querySelector('.txtabs');if(st)st.scrollIntoView({behavior:'smooth',block:'nearest'});};
     el.querySelectorAll('[data-tx]').forEach(b=>b.onclick=()=>go(+b.dataset.tx));
     const mark=i=>el.querySelectorAll('.bub').forEach((d,k)=>d.classList.toggle('playing',k===i));
-    el.querySelector('#all').onclick=()=>{qTick('listen');speakQueue(tx.d.map(d=>d[1]),.85,mark,()=>mark(-1));};
+    el.querySelector('#all').onclick=()=>{qTick('listen');speakQueue(tx.d.map(d=>d[1]),.85,mark,()=>mark(-1),tx.d.map(d=>castVP(d[0]==='A'?pa:pb)));};
     el.querySelector('#txchat').addEventListener('click',e=>{const w=e.target.closest('[data-nw]');if(w){e.stopPropagation();openWordAny(w.dataset.nw);}});
     el.querySelectorAll('[data-nwo]').forEach(b=>b.onclick=()=>openWordAny(b.dataset.nwo));
     const nx=el.querySelector('#txnext');if(nx)nx.onclick=()=>go(ti+1);
@@ -8916,7 +8916,7 @@ function chatPlay(i){
     if(!document.body.contains(live)){chatBusy=false;return;}
     if(j>=e.lines.length){finish();return;}
     const L=e.lines[j];
-    if(L[0]==='m'||L[0]==='v'){await typing(500+Math.min(1400,hanOnly(L[1]).length*70));live.insertAdjacentHTML('beforeend',chatBubble('l',k,L[1],L[2],L[0]==='v'));down();if(L[0]==='v')speak(chatFill(L[1]));step(j+1);}
+    if(L[0]==='m'||L[0]==='v'){await typing(500+Math.min(1400,hanOnly(L[1]).length*70));live.insertAdjacentHTML('beforeend',chatBubble('l',k,L[1],L[2],L[0]==='v'));down();if(L[0]==='v')speakAs(chatFill(L[1]),.85,CHAT_VP[k]);step(j+1);}
     else if(L[0]==='c'){const opts=shuffle(L[1].map((o,x)=>[o,x]));
       foot.innerHTML=`<div class="cchoose"><div class="row" style="justify-content:space-between"><span class="small muted">Chọn câu trả lời</span><button class="ctr" id="chint">Hiện nghĩa</button></div>${opts.map(([o,x])=>`<button class="copt" data-x="${x}"><span class="han">${esc(chatFill(o[0]))}</span><span class="small muted cvi" hidden>${esc(chatFill(o[1],1))}</span></button>`).join('')}</div>`;down();
       foot.querySelector('#chint').onclick=ev=>{const hid=foot.querySelector('.copt .cvi').hidden;foot.querySelectorAll('.copt .cvi').forEach(v=>v.hidden=!hid);ev.target.textContent=hid?'Ẩn nghĩa':'Hiện nghĩa';};
@@ -12155,7 +12155,7 @@ function lisDialog(el,l){
     el.querySelector('#lplay').onclick=()=>{
       if(playing){speechSynthesis.cancel();playing=false;mark(-1);el.querySelector('#lplay').textContent='Nghe cả bài';return;}
       if(!ttsOK)return;playing=true;el.querySelector('#lplay').textContent='Dừng';bump();touch();
-      speakQueue(l.dialog.map(d=>d[1]),lisSt.rate,mark,()=>{playing=false;mark(-1);const b=el.querySelector('#lplay');if(b)b.textContent='Nghe cả bài';});};
+      speakQueue(l.dialog.map(d=>d[1]),lisSt.rate,mark,()=>{playing=false;mark(-1);const b=el.querySelector('#lplay');if(b)b.textContent='Nghe cả bài';},l.dialog.map(d=>LIS_VP[d[0]]||'female'));};
   };
   draw();
 }
@@ -18015,7 +18015,7 @@ function gpOwned(){const out=[];try{if(plusActive()||(window.__T&&window.__gpPlu
 let GP={t:0,tk:0,talk:0};
 function gpSay(el,k,line){if(!el||!el.isConnected)return;const P=GPET[k],L=line||P.say[Math.floor(Math.random()*P.say.length)];el.querySelectorAll('.gpbub').forEach(x=>x.remove());
   el.insertAdjacentHTML('beforeend',`<span class="gpbub" role="status"><b class="han">${esc(L[0])}</b><small>${esc(L[1])}</small></span>`);
-  if(gpVoiceOn())try{speak(L[0],k==='monkey'?.85:k==='dog'?1.15:1.05);}catch(e){}const b=el.querySelector('.gpbub');setTimeout(()=>{if(b)b.classList.add('out');setTimeout(()=>b&&b.remove(),400);},3800);}
+  if(gpVoiceOn())try{speakAs(L[0],1,k);}catch(e){}const b=el.querySelector('.gpbub');setTimeout(()=>{if(b)b.classList.add('out');setTimeout(()=>b&&b.remove(),400);},3800);}
 function gpMove(el){if(!el||!el.isConnected||el.classList.contains('busy'))return;if(el.dataset.gp==='dove'){doveFly(el);return;}const x0=parseFloat(el.style.left)||50,x=8+Math.random()*84;el.classList.toggle('flip',x<x0);el.classList.add('walk');
   const dur=Math.max(1.2,Math.abs(x-x0)/(el.dataset.gp==='dog'?20:14));el.style.transitionDuration=dur+'s';el.style.left=x+'%';clearTimeout(el._wt);el._wt=setTimeout(()=>el.classList.remove('walk'),dur*1000);}
 /* Tiểu Bồ Câu: bay lên các luống trên, đậu trên thành chậu */
@@ -18371,6 +18371,43 @@ async function kindTopDraw(){const host=app.querySelector('.rankv');if(!host||ho
   catch(e){box.innerHTML=`<h3 style="margin:0">😇 Người tốt tuần này</h3><div class="small muted">${esc(netMsg(e))}</div>`;}}
 (function(){const base=viewRank;viewRank=async function(){const r=await base.apply(this,arguments);try{kindTopDraw();}catch(e){}return r;};})();
 if(window.__T)window.__u106={kindBadge,kindDisc,bondDlg,SEED_BASE,stickerize,kindApply,bondPerksSync,STICKERS};
+
+
+/* ===== 5.63 Giọng đọc theo nhân vật: bài khóa nam giọng nam, nữ giọng nữ, trẻ em, người già; trò chuyện WeChat;
+   thú cưng trong vườn mỗi con một giọng riêng (cao độ, tốc độ) ===== */
+// p: cao độ khi chỉ có 1 giọng; pv: cao độ khi tìm được giọng đúng giới tính; r: tốc độ; g: giới tính
+const VPROF={male:{p:.72,pv:.98,r:.97,g:'m'},youngm:{p:.85,pv:1.08,r:1.02,g:'m'},boy:{p:1.32,pv:1.3,r:1.06,g:'m'},old:{p:.62,pv:.85,r:.86,g:'m'},
+  female:{p:1.15,pv:1.04,r:1,g:'f'},youngf:{p:1.25,pv:1.12,r:1.03,g:'f'},oldf:{p:.98,pv:.92,r:.9,g:'f'},
+  dove:{p:1.8,pv:1.7,r:1.12,g:'f'},cat:{p:1.6,pv:1.5,r:1.08,g:'f'},monkey:{p:1.35,pv:1.3,r:1.22,g:'m'},dog:{p:.7,pv:.85,r:1.12,g:'m'},lh:{p:1.28,pv:1.25,r:1,g:'m'}};
+const CAST_VP={dawei:'male',mali:'female',liyue:'youngf',wangfang:'female',zhangdong:'youngm',laoshi:'female',mama:'female',baba:'male',xiaoming:'boy',yeye:'old',fuwu:'youngf',yisheng:'male'};
+const CHAT_VP={xm:'youngm',wang:'male',anna:'youngf',li:'oldf'};
+const vcharOn=()=>!(S.set&&S.set.vchar===false);
+const VM_RE=/kangkang|yunxi|yunjian|yunyang|yunze|yunhao|yunfeng|yunye|yunxia|male|男/i,VF_RE=/huihui|yaoyao|xiaoxiao|xiaoyi|xiaohan|xiaomo|xiaorui|xiaoshuang|xiaoxuan|xiaoyan|xiaozhen|xiaochen|xiaomeng|xiaoqiu|tingting|meijia|lili|sinji|female|女/i;
+const vGender=v=>{const n=(v&&v.name)||'';if(/female|女/i.test(n))return 'f';if(VM_RE.test(n))return 'm';if(VF_RE.test(n))return 'f';return '';};
+function vFor(g){try{const vs=zhVoices().filter(x=>!/HK|yue|TW/i.test(x.lang));if(zhVoice&&vGender(zhVoice)===g)return zhVoice;
+  const m=vs.filter(x=>vGender(x)===g);return m.length?bestVoice(m,/zh[-_]CN/i):null;}catch(e){return null;}}
+/* đọc 1 câu bằng giọng nhân vật */
+function mkUttAs(text,rate,prof){const u=mkUtt(text,rate);const P=VPROF[prof];if(!P||!vcharOn())return u;
+  const v=vFor(P.g);if(v){u.voice=v;u.pitch=P.pv;}else u.pitch=P.p;u.rate=Math.max(.4,Math.min(1.8,u.rate*P.r));return u;}
+function speakAs(text,rate,prof){if(!ttsOK)return;try{ttsUnlock();const busy=speechSynthesis.speaking||speechSynthesis.pending;if(busy)speechSynthesis.cancel();const u=mkUttAs(text,rate,prof);if(busy)setTimeout(()=>ttsGo(u),90);else ttsGo(u);}catch(e){}}
+/* hàng đợi: thêm danh sách giọng cho từng câu (tham số thứ 5) */
+speakQueue=function(texts,rate,onIdx,onEnd,profs){if(!ttsOK){if(onEnd)onEnd();return;}const _b=speechSynthesis.speaking||speechSynthesis.pending;if(_b)speechSynthesis.cancel();
+  setTimeout(()=>texts.forEach((t,i)=>{const u=profs&&profs[i]?mkUttAs(t,rate,profs[i]):mkUtt(t,rate);u.onstart=()=>{if(onIdx)onIdx(i);};if(i===texts.length-1)u.onend=()=>{if(onEnd)onEnd();};ttsGo(u);}),_b?90:0);};
+const castVP=id=>CAST_VP[id]||'female';
+/* bài khóa: nút loa của từng câu đọc bằng giọng người nói */
+function bubProf(b){const nm=(b.querySelector('.bname')||{}).textContent||'';const id=Object.keys(CAST).find(k=>CAST[k][1]===nm.trim());return id?castVP(id):b.classList.contains('B')?'female':'male';}
+document.addEventListener('click',e=>{const sp=e.target.closest&&e.target.closest('.bub [data-speak]');if(!sp||!vcharOn())return;const b=sp.closest('.bub');e.stopImmediatePropagation();e.preventDefault();
+  try{b.parentElement.querySelectorAll('.bub').forEach(x=>x.classList.toggle('playing',x===b));}catch(_){}speakAs(sp.dataset.speak,+sp.dataset.rate||.85,bubProf(b));},true);
+/* bài nghe (A/B): A giọng nam, B giọng nữ */
+const LIS_VP={A:'male',B:'female'};
+/* thú cưng trong vườn */
+if(window.__T)window.__u107={VPROF,CAST_VP,CHAT_VP,vGender,vFor,mkUttAs,speakAs,bubProf,setV:v=>{S.set=S.set||{};S.set.vchar=v;}};
+/* Cài đặt › Giọng đọc: bật/tắt giọng theo nhân vật */
+(function(){const base=viewSettings;viewSettings=function(){const r=base.apply(this,arguments);try{const t=app.querySelector('#stest');if(t&&!app.querySelector('#svchar')){const row=t.closest('.row');
+  row.insertAdjacentHTML('afterend',`<label class="tgl"><input type="checkbox" id="svchar" ${vcharOn()?'checked':''}><span><b>Giọng theo nhân vật</b><span class="small muted">Bài khóa: nam giọng nam, nữ giọng nữ, trẻ em và người già giọng riêng. Thú cưng trong vườn mỗi con một giọng.</span></span></label>
+    <div class="row" style="gap:6px;flex-wrap:wrap"><button class="btn sm ghost" data-vtest="male">👨 Nghe giọng nam</button><button class="btn sm ghost" data-vtest="female">👩 Nghe giọng nữ</button><button class="btn sm ghost" data-vtest="boy">👦 Trẻ em</button><button class="btn sm ghost" data-vtest="cat">🐱 Tiểu Mao</button></div>`);
+  app.querySelector('#svchar').onchange=e=>{S.set=S.set||{};S.set.vchar=e.target.checked;save();};
+  app.querySelectorAll('[data-vtest]').forEach(b=>b.onclick=()=>speakAs(b.dataset.vtest==='cat'?'喵～主人，我帮你收菜吧！':'你好！我叫'+({male:'大卫',female:'玛丽',boy:'小明'})[b.dataset.vtest]+'，很高兴认识你。',.9,b.dataset.vtest));}}catch(e){console.warn(e);}return r;};})();
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
