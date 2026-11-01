@@ -3961,7 +3961,9 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 .notipanel.npmob{top:auto!important;bottom:76px;left:10px!important;right:10px!important;width:auto!important;max-height:62vh}
 @media (max-width:768px){
   /* thanh trên: bỏ ngôi sao Pro + chuông (đã ở mục Tôi), thu gọn các chip */
-  header.top #plansbtn,header.top #bellbtn{display:none!important}
+  header.top #plansbtn,header.top #sbtn,header.top #sbtn2{display:none!important}
+  header.top #bellbtn{display:grid!important;width:32px;height:32px}
+  .tbbadge{display:none!important}
   header.top .stat{gap:5px!important}
   header.top .enpill2,header.top .ybpill,header.top .streakpill{height:28px;padding:0 8px!important;font-size:13px!important;gap:3px!important;border-radius:999px}
   header.top .enpill2 svg,header.top .ybpill svg,header.top .ybpill img,header.top .streakpill svg{width:15px!important;height:15px!important}
@@ -3995,6 +3997,9 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
   #app .rchero svg,#app .rchero .rcart,#app .rchero .rccar{max-height:150px}
   #app .gmplay{bottom:10px;right:10px;font-size:12px;padding:5px 10px}
 }
+@media (max-width:768px){html.fs #viewtools{top:calc(env(safe-area-inset-top,0px) + 8px)!important;bottom:auto!important;right:8px!important;left:auto!important}}
+@media (max-width:768px){#fab{display:none!important}.tdhead{flex-wrap:wrap;gap:8px}.tdhead .tdadd{order:2}}
+@media (min-width:769px){.tdhead .tdadd{display:none}}
 </style>
 </head><body>
 
@@ -4020,12 +4025,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='fad3c091';
-document.write('<script src="packs/hsk'+L+'.js?v=fad3c091"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='9befb678';
+document.write('<script src="packs/hsk'+L+'.js?v=9befb678"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=fad3c091','strokes-file');A('packs/dict.js?v=fad3c091','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=9befb678','strokes-file');A('packs/dict.js?v=9befb678','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -17982,6 +17987,19 @@ if(window.__T)window.__u101={meExtraRows,meBadge,MOB};
 /* trang trò chơi trên điện thoại: ẩn nút + thêm từ cho đỡ che */
 function gameRouteMark(){const h=location.hash;document.documentElement.classList.toggle('gameroute',/^#(games|race|defense|bomber|memory|garden|wall|duel|blocks|chat|puzzle|evo|vg-|duo-)/.test(h));}
 window.addEventListener('hashchange',gameRouteMark);gameRouteMark();
+/* ===== 5.57 (điện thoại): chuông thông báo lên thanh trên thay kính lúp (tìm kiếm nằm trong Từ điển);
+   bấm vào chơi là tự bật toàn màn hình, rời trò chơi thì tự tắt ===== */
+const FS_PLAY_SEL='[data-rm],#rcgo,#rcagain,[data-dfm],#dfxgo,#dfxduo,.dlv:not(.lock),[data-mdm],#bmstart,[data-game]:not([data-lock]),[data-duogo],#duobot';
+const FS_PLAY_RE=/^#(race|defense|bomber|memory|duo-|blocks|puzzle|evo|duel|chat|wall)/;
+let FSAUTO=false;
+document.addEventListener('click',e=>{if(!MOB())return;const b=e.target.closest&&e.target.closest(FS_PLAY_SEL);if(!b||b.disabled||!b.closest('#app'))return;
+  try{if(!FSON){fsToggle(true);FSAUTO=true;}}catch(_){}
+  [700,1500].forEach(ms=>setTimeout(()=>{const o=document.querySelector('#dopts');if(o){o.scrollIntoView({block:'end'});return;}const el=document.querySelector('#rccv,#gm .game,#gm>*');if(el&&el.scrollIntoView)el.scrollIntoView({block:'start'});},ms));},true);
+window.addEventListener('hashchange',()=>{if(!FSAUTO)return;if(FS_PLAY_RE.test(location.hash||''))return;FSAUTO=false;try{if(FSON)fsToggle(false);}catch(_){}});
+if(window.__T)Object.assign(window.__u101,{fsAuto:()=>FSAUTO});
+/* (điện thoại) bỏ nút + nổi; nút Thêm từ nằm trong Từ điển */
+(function(){const base=viewTudien;viewTudien=function(){base.apply(this,arguments);try{const h=app.querySelector('.tdhead');if(h&&!h.querySelector('.tdadd')){const a=h.querySelector('a.btn');
+  const b='<a class="btn sm pri tdadd" href="#add">＋ Thêm từ</a>';if(a)a.insertAdjacentHTML('beforebegin',b);else h.insertAdjacentHTML('beforeend',b);}}catch(e){console.warn(e);}};})();
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
