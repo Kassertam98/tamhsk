@@ -4000,6 +4000,71 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 @media (max-width:768px){html.fs #viewtools{top:calc(env(safe-area-inset-top,0px) + 8px)!important;bottom:auto!important;right:8px!important;left:auto!important}}
 @media (max-width:768px){#fab{display:none!important}.tdhead{flex-wrap:wrap;gap:8px}.tdhead .tdadd{order:2}}
 @media (min-width:769px){.tdhead .tdadd{display:none}}
+/* ===== 5.58 giao diện tối: các thẻ / khung chữ không còn sáng chói ===== */
+:root[data-theme="dark"] .fwface.fwfront,:root[data-theme="dark"] .fwfront{background:linear-gradient(160deg,#252c29,#1d2321)!important;border-color:#6b5a3a!important;color:#f1ead8!important}
+:root[data-theme="dark"] .fwcb{background:#262d2a!important;border-color:#6b5a3a!important;color:#f1ead8!important}
+:root[data-theme="dark"] .fwsay{background:#2b322f!important;color:#f3d9a8!important}
+:root[data-theme="dark"] .rcsay{background:#232a28!important;color:#f1efe6!important}
+:root[data-theme="dark"] .rcqbar{background:rgba(255,255,255,.16)!important}
+:root[data-theme="dark"] .defopts.v2 .dopt,:root[data-theme="dark"] .dopt{background:linear-gradient(180deg,#3b3023,#2a2219)!important;color:#f6e7c6!important;box-shadow:inset 0 0 0 2px #8a6a3a,0 4px 0 #1a140d,0 6px 10px rgba(0,0,0,.35)!important}
+:root[data-theme="dark"] .dopt.no{background:#4a1f1d!important}
+:root[data-theme="dark"] .bmq{background:#232a28!important;color:#eef0ea!important}
+:root[data-theme="dark"] .mmt{background:#252c2a!important;color:#eef0ea!important}
+:root[data-theme="dark"] .mmc.ok .mmt,:root[data-theme="dark"] .mmc.match .mmt{background:#173a2a!important}
+:root[data-theme="dark"] .mmc.nope .mmt{background:#3d1d1d!important}
+:root[data-theme="dark"] .wscwrap{background:#1f2b33!important}
+:root[data-theme="dark"] .hcat.on{color:#111816!important}
+:root[data-theme="dark"] .rvhero.clear{background:radial-gradient(120% 140% at 100% 0%,#8a6d13 0%,transparent 55%),linear-gradient(135deg,#0a5444,#1f6140)!important}
+:root[data-theme="dark"] .tart{filter:brightness(.82) saturate(.9)}
+:root[data-theme="dark"] .licon{filter:brightness(.85)}
+:root[data-theme="dark"] .mdk{filter:brightness(.82)}
+:root[data-theme="dark"] .rvring{background:rgba(0,0,0,.28)!important}
+:root[data-theme="dark"] .gchip.water{background:#1f3140!important;color:#cfe7ff!important}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]) .fwface.fwfront,:root:not([data-theme="light"]) .fwfront{background:linear-gradient(160deg,#252c29,#1d2321)!important;border-color:#6b5a3a!important;color:#f1ead8!important}
+:root:not([data-theme="light"]) .fwcb{background:#262d2a!important;border-color:#6b5a3a!important;color:#f1ead8!important}
+:root:not([data-theme="light"]) .fwsay{background:#2b322f!important;color:#f3d9a8!important}
+:root:not([data-theme="light"]) .rcsay{background:#232a28!important;color:#f1efe6!important}
+:root:not([data-theme="light"]) .rcqbar{background:rgba(255,255,255,.16)!important}
+:root:not([data-theme="light"]) .defopts.v2 .dopt,:root:not([data-theme="light"]) .dopt{background:linear-gradient(180deg,#3b3023,#2a2219)!important;color:#f6e7c6!important;box-shadow:inset 0 0 0 2px #8a6a3a,0 4px 0 #1a140d,0 6px 10px rgba(0,0,0,.35)!important}
+:root:not([data-theme="light"]) .dopt.no{background:#4a1f1d!important}
+:root:not([data-theme="light"]) .bmq{background:#232a28!important;color:#eef0ea!important}
+:root:not([data-theme="light"]) .mmt{background:#252c2a!important;color:#eef0ea!important}
+:root:not([data-theme="light"]) .mmc.ok .mmt,:root:not([data-theme="light"]) .mmc.match .mmt{background:#173a2a!important}
+:root:not([data-theme="light"]) .mmc.nope .mmt{background:#3d1d1d!important}
+:root:not([data-theme="light"]) .wscwrap{background:#1f2b33!important}
+:root:not([data-theme="light"]) .hcat.on{color:#111816!important}
+:root:not([data-theme="light"]) .rvhero.clear{background:radial-gradient(120% 140% at 100% 0%,#8a6d13 0%,transparent 55%),linear-gradient(135deg,#0a5444,#1f6140)!important}
+:root:not([data-theme="light"]) .tart{filter:brightness(.82) saturate(.9)}
+:root:not([data-theme="light"]) .licon{filter:brightness(.85)}
+:root:not([data-theme="light"]) .mdk{filter:brightness(.82)}
+:root:not([data-theme="light"]) .rvring{background:rgba(0,0,0,.28)!important}
+:root:not([data-theme="light"]) .gchip.water{background:#1f3140!important;color:#cfe7ff!important}
+}
+/* đang chơi: ẩn sảnh, chỉ còn game + hướng dẫn */
+#app .lobhid{display:none!important}
+#app .lobguide{display:block!important;margin-top:14px}
+#app .lobguide .gguide{display:block!important}
+/* Khu trò chơi: bỏ dòng giới thiệu đầu trang */
+#app .hubhero{display:none!important}
+/* đồng hồ lật thẻ */
+.mmtime{height:8px;border-radius:99px;background:color-mix(in srgb,var(--ink) 10%,transparent);overflow:hidden;margin:0 0 10px}
+.mmtime i{display:block;height:100%;width:100%;border-radius:inherit;background:linear-gradient(90deg,#2e9e6a,#7fd6a5);transition:width 1s linear}
+.mmtime i.low{background:linear-gradient(90deg,#e5383b,#ff8a7a)}
+/* Khám phá: lưới Mở rộng */
+.msxh{margin:16px 0 10px!important;font-size:18px}
+.msxg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.msx{position:relative;display:grid;align-content:start;gap:4px;padding:14px 12px 12px;border-radius:18px;background:var(--card);border:1.5px solid var(--line);text-decoration:none;color:var(--ink);box-shadow:0 8px 18px -14px rgba(0,0,0,.4);min-height:132px}
+.msx:active{transform:scale(.98)}
+.msx .msxa{display:block;margin-bottom:4px}
+.msx .msxa .tart,.msx .msxa .tchar{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:28px}
+.msx .msxa svg{width:40px;height:40px}
+.msx b{font-size:15px;line-height:1.25}
+.msx small{font-size:12px;color:var(--muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.msxb{position:absolute;top:10px;right:10px;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:#e5383b;color:#fff;font:700 12px/22px inherit;text-align:center}
+.mspanel.mswide{max-height:88vh;overflow-y:auto;overscroll-behavior:contain}
+.msx .msxa{width:56px;height:56px;overflow:hidden;border-radius:14px;margin-bottom:6px}
+.msx .msxa>*{transform-origin:0 0}
 </style>
 </head><body>
 
@@ -4025,12 +4090,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='9befb678';
-document.write('<script src="packs/hsk'+L+'.js?v=9befb678"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='a4228362';
+document.write('<script src="packs/hsk'+L+'.js?v=a4228362"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=9befb678','strokes-file');A('packs/dict.js?v=9befb678','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a4228362','strokes-file');A('packs/dict.js?v=a4228362','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -18000,6 +18065,47 @@ if(window.__T)Object.assign(window.__u101,{fsAuto:()=>FSAUTO});
 /* (điện thoại) bỏ nút + nổi; nút Thêm từ nằm trong Từ điển */
 (function(){const base=viewTudien;viewTudien=function(){base.apply(this,arguments);try{const h=app.querySelector('.tdhead');if(h&&!h.querySelector('.tdadd')){const a=h.querySelector('a.btn');
   const b='<a class="btn sm pri tdadd" href="#add">＋ Thêm từ</a>';if(a)a.insertAdjacentHTML('beforebegin',b);else h.insertAdjacentHTML('beforeend',b);}}catch(e){console.warn(e);}};})();
+
+
+/* ===== 5.58
+   - Đang chơi: ẩn sảnh (giới thiệu, chọn chế độ, bảng phụ), chỉ còn màn hình game + hướng dẫn chơi ở dưới
+   - Lật thẻ một mình có đồng hồ đếm ngược
+   - Khám phá (điện thoại): phần Mở rộng là lưới thẻ to, đủ các mục
+   - Khu trò chơi bỏ dòng giới thiệu đầu trang ===== */
+/* ---- 1. Đang chơi thì chỉ còn game + hướng dẫn ---- */
+let LF_RAF=0,LF_ON=false;
+function lobbyFocus(){LF_RAF=0;const root=app&&app.firstElementChild;if(!root)return;
+  const game=[...root.children].find(c=>(c.id==='gm'||c.id==='defplay')&&c.children.length&&c.offsetHeight>40);
+  if(!game){if(LF_ON){LF_ON=false;root.querySelectorAll(':scope > .lobhid').forEach(c=>c.classList.remove('lobhid'));root.querySelectorAll(':scope > .lobguide').forEach(c=>c.classList.remove('lobguide'));document.documentElement.classList.remove('inplay');}return;}
+  [...root.children].forEach(c=>{if(c===game)return;const g=c.classList.contains('gguide')||c.querySelector('.gguide');
+    if(g){c.classList.add('lobguide');c.classList.remove('lobhid');}else c.classList.add('lobhid');});
+  /* hướng dẫn luôn nằm dưới màn hình game */
+  [...root.querySelectorAll(':scope > .lobguide')].forEach(c=>{if(game.compareDocumentPosition(c)&Node.DOCUMENT_POSITION_PRECEDING)game.after(c);});
+  if(!LF_ON){LF_ON=true;document.documentElement.classList.add('inplay');setTimeout(()=>{const r=game.getBoundingClientRect();const hd=document.querySelector('header.top');const off=(hd&&getComputedStyle(hd).position!=='static'&&!document.documentElement.classList.contains('fs'))?hd.offsetHeight:0;
+    window.scrollTo({top:Math.max(0,r.top+scrollY-off-8),behavior:'smooth'});},60);}}
+new MutationObserver(()=>{if(!LF_RAF)LF_RAF=requestAnimationFrame(lobbyFocus);}).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+window.addEventListener('hashchange',()=>{LF_ON=false;document.documentElement.classList.remove('inplay');});
+/* ---- 2. Lật thẻ một mình: đồng hồ đếm ngược ---- */
+const MEM_T=60;
+(function(){const base=gMemory;gMemory=function(ctx){let left=MEM_T,done=false,iv=0,lastB='';
+  const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+  const st0=ctx.stat;ctx.stat=h=>{if(h!=null)lastB=h;return st0.call(ctx,lastB+st('Thời gian',fmt(left),left<=10?'bad':''));};
+  const en0=ctx.end;ctx.end=(score,msg)=>{if(done)return;done=true;clearInterval(iv);const used=MEM_T-left;return en0.call(ctx,score,(msg||'')+` Thời gian: ${fmt(used)}${left>0?` (còn dư ${left} giây)`:''}.`);};
+  base.apply(this,arguments);
+  const grid=ctx.body.querySelector('.mm');if(grid)grid.insertAdjacentHTML('beforebegin','<div class="mmtime" aria-hidden="true"><i></i></div>');
+  const bar=ctx.body.querySelector('.mmtime i');
+  iv=setInterval(()=>{if(done||!ctx.body.isConnected){clearInterval(iv);return;}left=Math.max(0,left-1);if(bar){bar.style.width=(left/MEM_T*100)+'%';bar.classList.toggle('low',left<=10);}ctx.stat(null);
+    if(left<=0){const got=Math.floor(ctx.body.querySelectorAll('.mmc.gone').length/2);clearInterval(iv);try{sfx('no');}catch(e){}ctx.body.querySelectorAll('.mmc').forEach(b=>b.disabled=true);
+      setTimeout(()=>ctx.end(99,`⏰ Hết giờ! Bạn ghép được ${got}/6 cặp.`),500);}},1000);try{timers.push(iv);}catch(e){}};})();
+/* ---- 3. Khám phá (điện thoại): Mở rộng thành lưới thẻ to ---- */
+function msExtGrid(){const g=TILE_GROUPS.find(x=>x[0]==='Mở rộng');const hs=g?g[1]:[];const ql=(typeof questLeft==='function')?questLeft():0;
+  return `<h3 class="msxh">Mở rộng</h3><div class="msxg">${hs.map(h=>{const t=MORE_TILES.find(x=>x[0]===h);if(!t)return '';const [,c,ti,d]=t;
+    const badge=h==='#events'&&ql?`<b class="msxb">${ql===-1?'🎁':ql}</b>`:'';
+    return `<a class="msx" href="${h}">${badge}<span class="msxa">${tileArt(h,c)}</span><b>${esc(ti)}</b><small>${esc(d||'')}</small></a>`;}).join('')}</div>`;}
+(function(){const base=msheetOpen;msheetOpen=function(k){base.apply(this,arguments);if(k!=='explore'||MSHEET.open!=='explore')return;const P=document.querySelector('#msheet .mspanel');if(!P||P.querySelector('.msxg'))return;
+  P.querySelectorAll('h3').forEach(h=>{if(/Mở rộng/.test(h.textContent)){let n=h.nextElementSibling;while(n&&n.tagName!=='H3'){const x=n;n=n.nextElementSibling;x.remove();}h.remove();}});
+  const grid=P.querySelector('.msgrid');(grid||P.lastElementChild).insertAdjacentHTML('afterend',msExtGrid());P.classList.add('mswide');};})();
+if(window.__T)window.__u102={lobbyFocus,msExtGrid,MEM_T};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
