@@ -4215,6 +4215,63 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 .fwov.big .fwmsg{font-size:18px}
 @keyframes fwin{from{transform:translate(-50%,-20px);opacity:0}}
 .luxart,.lookit{isolation:isolate}
+
+/* 5.66: Trang Học tinh gọn trên điện thoại */
+@media (max-width:768px){
+.hm-lite .hello{gap:10px}
+.hm-lite .hlg h1{font-size:21px;margin:0}
+.hm-lite .hlg .muted{font-size:13px}
+.hm-lite .hlbao img{width:46px!important;height:auto!important}
+.hm-lite .hlcard{padding:12px 14px;gap:12px}
+.hm-lite .hlcard .licon{width:48px!important;height:48px!important}
+.hm-lite .hlcard .licon svg{width:38px;height:38px}
+.hm-lite .hlmid b{font-size:19px}
+.hm-lite .hlgo{width:40px;height:40px}
+.hm-lite .hlchips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.hm-lite .hlchip{padding:5px 12px 5px 5px;font-size:14px;white-space:nowrap}
+.hm-lite .lvstrip{display:none}
+.hm-lite .plancard{padding:8px 12px;gap:10px;margin:12px 0 0;border-radius:14px}
+.hm-lite .plancard .pcd{min-width:44px}
+.hm-lite .plancard .pcd b{font-size:21px}
+.hm-lite .plancard .pcd span{font-size:10px;line-height:1.2}
+.hm-lite .plancard .label{font-size:11px}
+.hm-lite .plancard>div:not(.pcd){font-size:13px;line-height:1.35}
+.hm-lite .plancard .goalbar{height:5px!important;margin-top:4px!important}
+.hm-lite .hmrow{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.hm-lite .hmrow h2,.hm-lite .hmtl h2,.hm-lite .hmbd h2{font-size:17px;margin:0}
+.hm-lite .hmmore{border:0;background:none;color:var(--jade);font-weight:700;font-size:14px;padding:6px 0;cursor:pointer}
+.hm-lite .grid.hmls{grid-template-columns:1fr!important;gap:6px;margin-top:8px!important}
+.hm-lite .hmls:not(.hmall) .hmhide{display:none}
+.hm-lite .hmls .lcard{padding:7px 12px 7px 62px;gap:1px;min-height:54px;align-content:center}
+.hm-lite .hmls .lcard .licon{top:50%!important;left:10px;right:auto!important;transform:translateY(-50%);width:42px!important;height:42px!important}
+.hm-lite .hmls .lcard .licon svg{width:34px;height:34px}
+.hm-lite .hmls .lcard .vi,.hm-lite .hmls .lcard .lmeta{display:none}
+.hm-lite .hmls .lcard .num,.hm-lite .hmls .lcard .zh{margin-right:0!important}
+.hm-lite .hmls .lcard .num{font-size:11px}
+.hm-lite .hmls .lcard .zh{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:30px}
+.hm-lite .hmls .lcard .bar{height:4px}
+.hm-lite .hmls .lcard .stamp{top:50%!important;right:10px!important;transform:translateY(-50%) rotate(-10deg)}
+.hm-lite .hmtl{margin-top:20px!important}
+.hm-lite .hmtl>.row{margin-bottom:6px!important}
+.hm-lite .hmlink{font-weight:700;font-size:14px;color:var(--jade);text-decoration:none}
+.hm-lite .hmtl .tgroup{display:grid;gap:6px}
+.hm-lite .hmtl .tgroup+.tgroup{margin-top:10px}
+.hm-lite .hmtl .tghead{font-size:11px}
+.hm-lite .hmtl .tiles{display:flex!important;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 6px;margin:0 -2px;scrollbar-width:none}
+.hm-lite .hmtl .tiles::-webkit-scrollbar,.hm-lite .hlchips::-webkit-scrollbar{display:none}
+.hm-lite .hmtl .tile.tile2{flex:0 0 84px;display:flex!important;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:8px 4px;gap:4px;scroll-snap-align:start}
+.hm-lite .hmtl .tile.tile2>:first-child{width:46px!important;height:46px!important;flex:none}
+.hm-lite .hmtl .tile .small,.hm-lite .hmtl .tile .tgo{display:none!important}
+.hm-lite .hmtl .tile b{font-size:12px;line-height:1.25;font-weight:700}
+.hm-lite .hmbd{margin-top:16px!important}
+.hm-lite .hmbd>.row{cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:0!important;gap:8px}
+.hm-lite .hmbd>.row::after{content:'▾';color:var(--muted);font-size:13px}
+.hm-lite .hmbd.open>.row::after{content:'▴'}
+.hm-lite .hmbd>.row>span{margin-left:auto}
+.hm-lite .hmbd .badges{display:none;margin-top:8px}
+.hm-lite .hmbd.open .badges{display:grid}
+.hm-lite footer{font-size:11px;margin-top:18px}
+}
 </style>
 </head><body>
 
@@ -4240,12 +4297,12 @@ body.dbshake{animation:dbShake .5s linear}@keyframes dbShake{10%,50%,90%{transfo
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='91b9ecf7';
-document.write('<script src="packs/hsk'+L+'.js?v=91b9ecf7"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='beaedfa2';
+document.write('<script src="packs/hsk'+L+'.js?v=beaedfa2"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=91b9ecf7','strokes-file');A('packs/dict.js?v=91b9ecf7','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=beaedfa2','strokes-file');A('packs/dict.js?v=beaedfa2','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -18650,6 +18707,54 @@ function fwShow(it,mine){if(document.querySelector('.fwov'))return;const d=it.da
 try{MORE_TILES.push(['#lux','珍','Phòng Thượng Hạng','Đồ giới hạn đánh số, đấu giá tuần, thú hiếm, cây quý, pháo hoa']);const g=TILE_GROUPS.find(x=>x[0]==='Mở rộng');if(g&&!g[1].includes('#lux'))g[1].splice(1,0,'#lux');
   TILE_ART['#lux']=['#fff6dc','#b8860b','<path d="M14 26 L24 14 H40 L50 26 L32 52 Z" fill="#7fd3f7" stroke="#1d6fb8" stroke-width="2.5" stroke-linejoin="round"/><path d="M14 26 H50 M24 14 L28 26 L32 52 M40 14 L36 26 L32 52" stroke="#1d6fb8" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="48" cy="12" r="3" fill="#ffd166"/><circle cx="14" cy="44" r="2" fill="#ffd166"/>'];}catch(e){}
 if(window.__T)window.__u108={RARE_PETS,ghOn,ghBuy,fwShow,luxLoad,viewLux,LUX_FR,wt:()=>wtLoad(true)};
+
+/* ---------- 5.66: Trang Học tinh gọn trên điện thoại ---------- */
+(function(){
+  const isPhone=()=>{try{return matchMedia('(max-width:768px)').matches;}catch(e){return false;}};
+  const KEY='hsk-home-all';
+  const getAll=()=>{try{return localStorage.getItem(KEY)==='1';}catch(e){return false;}};
+  const setAll=v=>{try{localStorage.setItem(KEY,v?'1':'0');}catch(e){}};
+  const secBy=(root,title)=>[...root.children].find(s=>{if(s.tagName!=='SECTION')return false;const h=s.querySelector(':scope>.row h2');return h&&h.textContent.trim()===title;});
+  function homeLite(){
+    const a=document.getElementById('app');if(!a)return;
+    if(!isPhone()||!a.querySelector(':scope>.hello')){a.classList.remove('hm-lite');return;}
+    a.classList.add('hm-lite');
+    /* 1. Lời chào: bỏ chuỗi ngày (đã có ở thanh trên) */
+    const f=a.querySelector('.hlg .hlfire');
+    if(f){const n=f.nextSibling;if(n&&n.nodeType===3)n.textContent=n.textContent.replace(/^\s*·\s*/,'');f.remove();}
+    /* 2. Nút nhanh: bỏ Thi thử (đã có ở thanh tab) và Tra từ (đã có ở thanh dưới) */
+    a.querySelectorAll('.hlchips [data-go="#exam"],.hlchips [data-go="#tudien"]').forEach(x=>x.remove());
+    /* 3. Danh sách bài: dòng gọn, chỉ hiện 5 bài quanh bài đang học */
+    const g=[...a.children].find(x=>x.classList.contains('grid')&&x.querySelector('.lcard'));
+    if(g&&!g.dataset.lite){
+      g.dataset.lite='1';g.classList.add('hmls');
+      const cards=[...g.querySelectorAll(':scope>.lcard')];
+      const ni=Math.max(0,cards.findIndex(c=>c.classList.contains('next')));
+      const from=Math.max(0,Math.min(ni-1,cards.length-5));
+      cards.forEach((c,i)=>{if(i<from||i>=from+5)c.classList.add('hmhide');});
+      const head=document.createElement('div');head.className='hmrow';
+      head.innerHTML=`<h2>Bài học</h2>${cards.length>5?'<button class="hmmore" type="button"></button>':''}`;
+      g.before(head);
+      const b=head.querySelector('.hmmore');
+      if(b){const upd=()=>{b.textContent=g.classList.contains('hmall')?'Thu gọn ▴':`Xem cả ${cards.length} bài ▾`;};
+        if(getAll())g.classList.add('hmall');upd();
+        b.onclick=()=>{g.classList.toggle('hmall');setAll(g.classList.contains('hmall'));upd();};}
+    }
+    /* 4. Luyện thêm: hàng ô nhỏ vuốt ngang */
+    const lt=secBy(a,'Luyện thêm');
+    if(lt&&!lt.dataset.lite){lt.dataset.lite='1';lt.classList.add('hmtl');
+      lt.querySelector(':scope>.row').insertAdjacentHTML('beforeend','<a class="hmlink" href="#more">Tất cả →</a>');}
+    /* 5. Huy hiệu: thu thành một dòng, bấm để mở */
+    const hb=secBy(a,'Huy hiệu');
+    if(hb&&!hb.dataset.lite){hb.dataset.lite='1';hb.classList.add('hmbd');
+      const row=hb.querySelector(':scope>.row');row.setAttribute('role','button');row.tabIndex=0;row.setAttribute('aria-expanded','false');
+      const tg=()=>{hb.classList.toggle('open');row.setAttribute('aria-expanded',hb.classList.contains('open')?'true':'false');};
+      row.onclick=tg;row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tg();}};}
+  }
+  window.homeLite=homeLite;
+  const base=viewHome;
+  viewHome=function(){const r=base.apply(this,arguments);try{homeLite();}catch(e){}return r;};
+})();
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
