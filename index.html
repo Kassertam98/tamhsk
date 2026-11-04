@@ -4689,6 +4689,94 @@ html.tdbam .tdsearch input{border-color:var(--bamline)!important}
 @keyframes fwsh{0%{transform:translateY(16px);opacity:0}30%{opacity:1}100%{transform:translateY(-18px);opacity:0}}
 @media (max-width:480px){.fwswipe{left:auto;right:2px}}
 @media (prefers-reduced-motion:reduce){.fwsa,.fwsh{animation:none}}
+
+/* ===== 5.71 ===== */
+/* vườn: thanh trên trong bản đồ */
+.gtopui{position:absolute;left:8px;right:8px;top:8px;z-index:7;display:grid;gap:6px;pointer-events:none}
+.gtopui>*{pointer-events:auto}
+.gtrow{display:flex;align-items:flex-start;gap:6px}
+.gback{flex:none;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#1b2826;font-size:18px;font-weight:800;box-shadow:0 2px 6px rgba(0,0,0,.2);cursor:pointer}
+@media (min-width:769px){.gback{display:none}}
+.gtopui .gmapchips{position:static!important;max-width:none!important;display:flex;flex-wrap:wrap;gap:5px;flex:1;min-width:0}
+.gtopui .gchip{font-size:12px!important;padding:4px 9px!important;background:rgba(255,255,255,.93)!important;box-shadow:0 2px 6px rgba(0,0,0,.15);border-width:1.5px}
+.gtopui .gchip.water{background:#e7f3fd!important;border-color:#8cc4f2!important;color:#0d47a1!important}.gtopui .gchip.water *:not(.gcanin){color:#0d47a1!important}
+.gtopui .gchip.water.empty{border-color:#e9a03b!important;background:#fff4e2!important;animation:gwpulse 1.6s ease-in-out infinite}
+@keyframes gwpulse{50%{box-shadow:0 0 0 4px rgba(233,160,59,.35)}}
+.gtopui .gchip.kind{background:#ffeef3!important;border-color:#f3a9c0!important}
+.gtopui #gcan:not(.gcanin){display:none!important}
+.gcanin{margin-left:6px;border:0!important;border-radius:999px;padding:2px 8px!important;background:linear-gradient(150deg,#3b9be0,#1d6fb8)!important;color:#fff!important;font-weight:800;font-size:11.5px!important;cursor:pointer;box-shadow:none!important}
+.gmode{display:inline-grid;grid-template-columns:1fr 1fr;justify-self:start;padding:3px;border-radius:999px;background:rgba(20,32,26,.55);backdrop-filter:blur(4px)}
+.gmode button{border:0;border-radius:999px;padding:5px 11px;background:transparent;color:#e8f2ec;font:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}
+.gmode button.on{background:#fff;color:#0a5a49;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.gpotmode .gmode button.on{color:#8a5a12}
+.gtopui .gdock{position:static!important;display:grid!important;grid-template-columns:repeat(6,1fr)!important;gap:5px!important;padding:5px!important;border-radius:16px!important;background:rgba(20,32,26,.42)!important}
+.gtopui .gdock button{padding:4px 0 3px!important;border-radius:12px!important;min-width:0}
+.gtopui .gdock i{font-size:17px!important}.gtopui .gdock span{font-size:9px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+@media (min-width:769px){.gtopui{left:12px;right:12px;top:12px}.gtopui .gdock{max-width:460px}}
+/* chế độ nâng chậu */
+.gpotmode .g3pot{outline:2px dashed rgba(255,214,120,.8);outline-offset:3px;border-radius:14px}
+.gpotup{position:absolute;left:50%;top:-6px;transform:translateX(-50%);z-index:4;display:grid;justify-items:center;padding:3px 8px;border-radius:10px;background:linear-gradient(150deg,#ffcf6b,#e0952a);color:#3a2408;font-size:11px;font-weight:800;white-space:nowrap;box-shadow:0 3px 8px -2px rgba(0,0,0,.4);animation:gpup 1.8s ease-in-out infinite}
+.gpotup small{font-size:9.5px;font-weight:700}.gpotup.max{background:linear-gradient(150deg,#d8f3ff,#8fd0f2);animation:none}
+@keyframes gpup{50%{transform:translate(-50%,-3px)}}
+.gpotdlg .gpcmp{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center}
+.gpotdlg .gpcmp>div{display:grid;justify-items:center;gap:2px;padding:8px;border-radius:16px;background:var(--paper)}
+.gpotdlg .gpcmp>div.nx{background:linear-gradient(160deg,#fff4dc,#ffe2a8);box-shadow:0 0 0 2px #e0952a}
+:root[data-theme="dark"] .gpotdlg .gpcmp>div.nx{background:linear-gradient(160deg,#3a2c12,#4a3510)}
+.gpotdlg .gpcmp small{font-size:11px;color:var(--muted)}.gparr{font-size:24px;color:#e0952a;font-weight:800}
+/* vườn toàn màn hình trên điện thoại */
+@media (max-width:768px){
+ html.gfull header.top,html.gfull #tabbar,html.gfull .navrow,html.gfull #gpromo,html.gfull footer.site,html.gfull #viewtools,html.gfull .fab,html.gfull #wtick{display:none!important}
+ html.gfull .g5 #gscene{position:fixed!important;inset:0!important;z-index:60;min-height:0!important;height:100svh!important;border:0!important;border-radius:0!important;margin:0!important;padding-top:150px!important;padding-bottom:max(24px,env(safe-area-inset-bottom))!important}
+ html.gfull .g5 #gscene .gtopui{top:max(8px,env(safe-area-inset-top))}
+ html.gfull .g5 .gtop{display:none}
+ html.gfull .garden2 #gscene.play{position:fixed!important;inset:0!important;z-index:60;height:100svh!important;border:0!important;border-radius:0!important}
+ html.gfull main#app{padding-top:0}
+}
+/* đồ họa vườn */
+#gscene.g3d .g3tag{background:linear-gradient(170deg,rgba(32,40,30,.86),rgba(18,24,18,.9))!important;border:1.5px solid rgba(255,214,120,.55)!important;color:#f3ead2!important;backdrop-filter:blur(3px);box-shadow:0 6px 14px -6px rgba(0,0,0,.6)!important;border-radius:11px!important}
+#gscene.g3d .g3tag b{color:#ffd77a!important;letter-spacing:.02em}
+#gscene.g3d .g3tag small{color:#d9e6d9!important}
+#gscene.g3d .g3tag .gbbar{background:rgba(255,255,255,.18)!important;border-radius:6px;height:5px}
+#gscene.g3d .g3tag .gbbar i,#gscene.g3d .g3tag .gbbar b{background:linear-gradient(90deg,#5ad19b,#c9f27a)!important;box-shadow:0 0 6px rgba(160,240,140,.6)}
+#gscene.g3d .g3pot .g3art{filter:drop-shadow(0 6px 5px rgba(0,0,0,.35)) saturate(1.12)}
+#gscene.g3d .g3pot.ripe .g3art{filter:drop-shadow(0 0 10px rgba(255,220,120,.85)) drop-shadow(0 6px 5px rgba(0,0,0,.35)) saturate(1.2)}
+#gscene.g3d .g3row{filter:drop-shadow(0 10px 10px rgba(0,0,0,.35))}
+#gscene.g3d::before{background:radial-gradient(60% 40% at 82% 6%,rgba(255,246,200,.35),transparent 70%),radial-gradient(120% 70% at 50% 110%,rgba(120,200,120,.18),transparent 60%)!important}
+#gscene.g3d .gbg{filter:saturate(1.15) contrast(1.04)}
+#gscene.g3d .gstars{position:absolute;inset:0 0 55% 0;z-index:1;pointer-events:none;background-image:radial-gradient(1.4px 1.4px at 12% 18%,#fff,transparent),radial-gradient(1.2px 1.2px at 32% 8%,#fff,transparent),radial-gradient(1.6px 1.6px at 58% 22%,#fff,transparent),radial-gradient(1.1px 1.1px at 74% 12%,#fff,transparent),radial-gradient(1.3px 1.3px at 88% 30%,#fff,transparent),radial-gradient(1px 1px at 46% 34%,#fff,transparent);animation:gstar 4s ease-in-out infinite}
+@keyframes gstar{50%{opacity:.45}}
+#gscene:not([data-sky="night"]):not([data-sky="dusk"]) .gstars{display:none}
+/* thú */
+.gpx .gpbody svg,.gpet svg{filter:drop-shadow(0 5px 4px rgba(0,0,0,.35)) saturate(1.15)}
+.gpx .gpbody svg circle[fill="#1b2826"],.gpet svg circle[fill="#1b2826"]{transform-box:fill-box;transform-origin:center;animation:gpblink 4.5s infinite}
+@keyframes gpblink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.gpx .gpbody{animation:gpbreath 3.2s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes gpbreath{50%{transform:scale(1.03,.97)}}
+.gpx .gpname{background:linear-gradient(150deg,#fff2d4,#ffd98a)!important;color:#5a3b0a!important;border:1.5px solid #e0a83a;box-shadow:0 3px 8px -3px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:reduce){.gpx .gpbody,.gpx .gpbody svg circle,#gscene.g3d .gstars{animation:none}}
+/* thẻ từ: vuốt ngang trên điện thoại */
+@media (max-width:768px){#fwbig{touch-action:none}
+ #fwbig.swl{box-shadow:0 0 0 4px rgba(13,122,99,.6);border-radius:22px}#fwbig.swr{box-shadow:0 0 0 4px rgba(233,160,59,.7);border-radius:22px}}
+.fwswipe.fwsph{left:auto!important;right:4px}
+.fwsa.h{animation:fwsah 1.1s ease-in-out infinite}.fwsh.h{animation:fwshh 1.6s ease-in-out infinite}
+@keyframes fwsah{0%,100%{opacity:.2;transform:translateX(6px)}50%{opacity:1;transform:translateX(-4px)}}
+@keyframes fwshh{0%{transform:translateX(16px);opacity:0}30%{opacity:1}100%{transform:translateX(-22px);opacity:0}}
+.fwswtip{display:block;color:var(--jade);margin-bottom:4px}
+@media (min-width:769px){.fwswtip{display:none}}
+/* thanh bước bài học: gọn, dễ nhìn */
+.steps.steps2{position:relative!important;top:auto!important;gap:0!important;padding:8px 4px 6px!important;border-radius:16px!important;align-items:flex-start!important}
+.steps2 button{flex-direction:column!important;align-items:center!important;gap:3px!important;padding:2px 6px!important;min-width:64px;background:transparent!important;box-shadow:none!important;font-size:11.5px!important;font-weight:700;color:var(--muted)!important;line-height:1.2;white-space:nowrap}
+.steps2 button .dot{width:30px!important;height:30px!important;font-size:13px!important;background:var(--card);overflow:hidden;line-height:1}
+.steps2 button .dot ruby,.steps2 button .dot rt,.steps2 button .dot small{display:none}
+.steps2 button .stcost,.steps2 button .stxp{display:none!important}
+.steps2 button.on{background:transparent!important;color:var(--jade)!important}
+.steps2 button.on .dot{background:linear-gradient(150deg,#12936f,#0a5a49)!important;border-color:#0a5a49!important;color:#fff!important;box-shadow:0 0 0 4px var(--jade-soft)}
+.steps2 button.done{color:var(--ink)!important}
+.steps2 button.boss.on .dot{background:linear-gradient(150deg,#f5a33b,#d6800f)!important;border-color:#d6800f!important}
+.steps2 button.boss.on{background:transparent!important;color:#c2640c!important}
+.steps2 .stsep{align-self:flex-start;margin-top:8px;font-size:14px!important;animation:none!important;opacity:.45}
+.steps2 button.done+.stsep{opacity:.9}
+@media (max-width:768px){html.fs.learnmode #viewtools{display:none!important}html.fs .lhead{padding-right:0!important}}
 </style>
 </head><body>
 
@@ -4714,12 +4802,12 @@ html.tdbam .tdsearch input{border-color:var(--bamline)!important}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='7b2b8444';
-document.write('<script src="packs/hsk'+L+'.js?v=7b2b8444"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='a9c90d4d';
+document.write('<script src="packs/hsk'+L+'.js?v=a9c90d4d"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=7b2b8444','strokes-file');A('packs/dict.js?v=7b2b8444','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a9c90d4d','strokes-file');A('packs/dict.js?v=a9c90d4d','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -19686,6 +19774,79 @@ function fwDress(){const c=app.querySelector('.fwctl');if(!c)return;
   const stg=app.querySelector('.fwstage');if(stg&&!stg.querySelector('.fwswipe'))stg.insertAdjacentHTML('beforeend','<span class="fwswipe" aria-hidden="true"><i class="fwsa">⬆</i><i class="fwsh">👆</i><small>vuốt lên</small></span>');}
 new MutationObserver(()=>{if(!fwDress._r)fwDress._r=requestAnimationFrame(()=>{fwDress._r=0;if(/^#l\d/.test(location.hash||''))fwDress();});}).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
 if(window.__T)window.__u113={mark:(n,k)=>{markStage(n,k);save();},lessonReady,progNext,stageLocked,firstOpenStage,LSN};
+
+/* ===== 5.71
+   1. Sửa tưới cây: không gắn thanh nút tắt/chỉ số vào màn chăm cây (che câu hỏi)
+   2. Vườn trên điện thoại: toàn màn hình; nút mua bình tưới nằm trong ô nước (chỉ hiện khi hết nước);
+      điểm tốt bụng bên trái; 6 nút tắt đưa lên trên, gọn hơn
+   3. Tách chế độ Trồng & chăm / Nâng chậu
+   4. Đồ họa vườn + thú đẹp hơn
+   5. Thẻ từ mới trên điện thoại: vuốt ngang để học nhanh (máy tính giữ vuốt lên)
+   6. Thanh bước bài học gọn, dễ nhìn ===== */
+
+/* ---------- 1–3. Vườn ---------- */
+const GM={mode:'plant',fs:false};
+try{GM.mode=localStorage.getItem('hsk-gmode')==='pot'?'pot':'plant';}catch(e){}
+gardenDress=function(){const sc=document.getElementById('gscene');if(location.hash!=='#garden'||!sc){gFull(false);return;}
+  if(sc.classList.contains('play')){sc.querySelectorAll('.gtopui,.gdock,.gmapchips,.gmapkind').forEach(x=>x.remove());gFull(mhIsPhone());return;}
+  const g3=app.querySelector('.garden3');if(g3)g3.classList.add('g5');gFull(mhIsPhone());if(!sc.querySelector(':scope>.gstars'))sc.insertAdjacentHTML('afterbegin','<div class="gstars" aria-hidden="true"></div>');
+  let top=sc.querySelector('.gtopui');if(!top){top=document.createElement('div');top.className='gtopui';top.innerHTML='<div class="gtrow"><button type="button" class="gback" aria-label="Về Trò chơi">←</button><div class="gmapchips"></div></div><div class="gmode" role="tablist"><button type="button" data-gm="plant">🌱 Trồng & chăm</button><button type="button" data-gm="pot">🏺 Nâng chậu</button></div><div class="gdock"></div>';sc.appendChild(top);
+    top.querySelector('.gback').onclick=()=>{location.hash='#games';};
+    top.querySelectorAll('[data-gm]').forEach(b=>b.onclick=e=>{e.stopPropagation();GM.mode=b.dataset.gm;try{localStorage.setItem('hsk-gmode',GM.mode);}catch(x){}gModeSync();try{gardenToast(GM.mode==='pot'?'🏺 Chế độ Nâng chậu: chạm vào chậu để nâng cấp':'🌱 Chế độ Trồng & chăm: chạm chậu để gieo, tưới, thu hoạch');}catch(x){}});
+    const d=top.querySelector('.gdock');d.innerHTML=GDOCK.map(([k,ic,t])=>`<button type="button" data-gd="${k}" aria-label="${t}"><i aria-hidden="true">${ic}</i><span>${t}</span></button>`).join('');
+    d.querySelectorAll('[data-gd]').forEach(b=>b.onclick=e=>{e.stopPropagation();gSheet(b.dataset.gd);});}
+  sc.querySelectorAll(':scope>.gmapchips,:scope>.gmapkind,:scope>.gdock').forEach(x=>{if(!top.contains(x))x.remove();});
+  const box=top.querySelector('.gmapchips'),chips=app.querySelector('.gtop .gchips');
+  if(chips)[...chips.children].forEach(c=>box.appendChild(c));
+  const kind=box.querySelector('.gchip.kind');if(kind&&box.children[1]!==kind){const w=box.querySelector('.gchip.water');if(w)w.after(kind);}
+  const can=app.querySelector('#gcan'),water=box.querySelector('.gchip.water');
+  if(water&&can){const n=parseInt((water.querySelector('b')||water).textContent,10)||0;water.classList.toggle('empty',n<1);
+    if(n<1){if(!water.contains(can)){can.classList.add('gcanin');can.innerHTML=`+ 🚿 ${CAN_COST}`;can.title=`Mua bình tưới: +${CAN_N} lượt tưới (${CAN_COST} Nguyên bảo)`;water.appendChild(can);}}
+    else if(can.classList.contains('gcanin')||!box.contains(can)){can.classList.remove('gcanin');box.appendChild(can);}}
+  gModeSync();};
+function gModeSync(){const sc=document.getElementById('gscene');if(!sc)return;sc.classList.toggle('gpotmode',GM.mode==='pot');sc.querySelectorAll('[data-gm]').forEach(b=>b.classList.toggle('on',b.dataset.gm===GM.mode));
+  if(GM.mode==='pot'){const g=G();sc.querySelectorAll('.g3pot[data-plot]').forEach(b=>{const p=g.plots[+b.dataset.plot]||{},t=p.pot||0,nx=POTS[t+1];let tg=b.querySelector('.gpotup');if(!tg){tg=document.createElement('span');tg.className='gpotup';b.appendChild(tg);}
+    tg.innerHTML=nx?`⬆ ${esc(nx[1])}<small>${nx[2].toLocaleString('vi-VN')} ${YB}</small>`:'💎 Tối đa';tg.classList.toggle('max',!nx);});}
+  else sc.querySelectorAll('.gpotup').forEach(x=>x.remove());}
+function gFull(on){const R=document.documentElement;if(R.classList.contains('gfull')===!!on)return;R.classList.toggle('gfull',!!on);
+  try{if(on&&!FSON){fsToggle(true);GM.fs=true;}else if(!on&&GM.fs){if(FSON)fsToggle(false);GM.fs=false;}}catch(e){}}
+addEventListener('hashchange',()=>{if(location.hash!=='#garden')gFull(false);});
+(function(){const base=plotAction;plotAction=function(i){const g=G(),p=g.plots[i];
+  if(GM.mode==='pot'&&p&&!(location.hash||'').startsWith('#vg-')){gPotDlg(i);return;}
+  const r=base.apply(this,arguments);const d=document.getElementById('gdlg');if(d){const pb=d.querySelector('[data-ga="pot"]');if(pb){pb.remove();}
+    const hint=d.querySelector('.g3abtn');if(hint&&!d.querySelector('.gpothint')&&POTS[(p&&p.pot||0)+1])hint.insertAdjacentHTML('beforeend','<button type="button" class="btn ghost sm gpothint">🏺 Muốn nâng chậu? Chuyển sang chế độ Nâng chậu</button>');
+    const hb=d.querySelector('.gpothint');if(hb)hb.onclick=()=>{d.close();GM.mode='pot';try{localStorage.setItem('hsk-gmode','pot');}catch(e){}gModeSync();gPotDlg(i);};}
+  return r;};})();
+function gPotDlg(i){const g=G(),p=g.plots[i]||{},t=p.pot||0,cur=POTS[t],nx=POTS[t+1];let d=document.getElementById('gdlg');if(!d){d=document.createElement('dialog');d.id='gdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
+  d.innerHTML=`<div class="in stack g3act gpotdlg"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏺 Nâng cấp chậu ${i+1}</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div>
+    <div class="gpcmp"><div><svg viewBox="0 0 120 120" width="96" height="96">${potSVG(1,t)}</svg><b>${esc(cur[1])}</b><small>${cur[3]?'Lớn nhanh −'+cur[3]+'%':'Chậu cơ bản'}</small></div>${nx?`<span class="gparr">➜</span><div class="nx"><svg viewBox="0 0 120 120" width="96" height="96">${potSVG(1,t+1)}</svg><b>${esc(nx[1])}</b><small>Lớn nhanh −${nx[3]}% · héo chậm hơn</small></div>`:''}</div>
+    ${nx?`<button class="btn pri big" data-pu${g.coins<nx[2]?' disabled':''}>Nâng lên ${esc(nx[1])} · ${nx[2].toLocaleString('vi-VN')} ${YB}</button>${g.coins<nx[2]?`<div class="small muted" style="text-align:center">Bạn có ${g.coins.toLocaleString('vi-VN')} ${YB}, còn thiếu ${(nx[2]-g.coins).toLocaleString('vi-VN')}.</div>`:''}`:'<div class="small muted" style="text-align:center">💎 Chậu đã ở bậc cao nhất</div>'}
+    <button class="btn ghost sm" data-back>🌱 Về chế độ Trồng & chăm</button></div>`;
+  d.querySelector('[data-x]').onclick=()=>d.close();const pu=d.querySelector('[data-pu]');if(pu)pu.onclick=()=>{d.close();potUpgrade(i);};
+  d.querySelector('[data-back]').onclick=()=>{d.close();GM.mode='plant';try{localStorage.setItem('hsk-gmode','plant');}catch(e){}gModeSync();};if(!d.open)d.showModal();}
+/* thú: bóng đổ, ánh sáng mềm, chớp mắt */
+(function(){try{Object.keys(GPET).forEach(k=>{const s=GPET[k]&&GPET[k].svg;if(!s||s.includes('gpsheen'))return;const vb=(s.match(/viewBox="0 0 (\d+) (\d+)"/)||[0,80,64]),w=+vb[1],h=+vb[2];
+  GPET[k].svg=s.replace('</svg>',`<defs><radialGradient id="gpsh${k}" cx="35%" cy="25%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".45" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></radialGradient></defs><rect class="gpsheen" x="0" y="0" width="${w}" height="${h-6}" fill="url(#gpsh${k})" style="mix-blend-mode:soft-light;pointer-events:none"/></svg>`);});}catch(e){}})();
+
+/* ---------- 5. Thẻ từ mới: vuốt ngang trên điện thoại ---------- */
+const FWS={x:0,y:0,t:0,on:false,id:null};
+document.addEventListener('pointerdown',e=>{if(!mhIsPhone())return;const card=e.target.closest&&e.target.closest('#fwbig');if(!card)return;
+  if(e.target.closest('button,a'))return;FWS.on=true;FWS.x=e.clientX;FWS.y=e.clientY;FWS.t=Date.now();FWS.id=e.pointerId;FWS.card=card;e.stopImmediatePropagation();},true);
+document.addEventListener('pointermove',e=>{if(!FWS.on||e.pointerId!==FWS.id)return;const dx=e.clientX-FWS.x,dy=e.clientY-FWS.y;if(Math.abs(dx)>8&&Math.abs(dx)>Math.abs(dy)){FWS.card.style.transition='none';FWS.card.style.transform=`translateX(${dx}px) rotate(${dx/22}deg)`;FWS.card.classList.toggle('swl',dx<-50);FWS.card.classList.toggle('swr',dx>50);}e.stopImmediatePropagation();},true);
+const fwsEnd=e=>{if(!FWS.on||e.pointerId!==FWS.id)return;FWS.on=false;const c=FWS.card,dx=e.clientX-FWS.x,dy=e.clientY-FWS.y;e.stopImmediatePropagation();
+  const back=()=>{c.style.transition='transform .25s';c.style.transform='';c.classList.remove('swl','swr');};
+  if(Math.abs(dx)<60||Math.abs(dx)<Math.abs(dy)){back();if(Math.abs(dx)<10&&Math.abs(dy)<10)FWS.tap=Date.now();return;}
+  const flipped=c.classList.contains('flipped');
+  if(!flipped){back();c.click();return;}
+  const btn=app.querySelector(dx<0?'#fwnext':'#fwmiss');c.style.transition='transform .22s ease-in,opacity .22s';c.style.transform=`translateX(${dx<0?-520:520}px) rotate(${dx<0?-18:18}deg)`;c.style.opacity='0';
+  setTimeout(()=>{c.style.transition='';c.style.transform='';c.style.opacity='';c.classList.remove('swl','swr');if(btn&&!btn.disabled)btn.click();},200);};
+document.addEventListener('pointerup',fwsEnd,true);document.addEventListener('pointercancel',e=>{if(FWS.on&&e.pointerId===FWS.id){FWS.on=false;FWS.card.style.transform='';}},true);
+/* gợi ý vuốt: điện thoại = vuốt ngang */
+(function(){const base=fwDress;fwDress=function(){base.apply(this,arguments);const sw=app.querySelector('.fwswipe');if(!sw)return;const ph=mhIsPhone();if(sw.dataset.m===(ph?'p':'d'))return;sw.dataset.m=ph?'p':'d';
+  sw.innerHTML=ph?'<i class="fwsa h">⬅</i><i class="fwsh h">👆</i><small>vuốt sang</small>':'<i class="fwsa">⬆</i><i class="fwsh">👆</i><small>vuốt lên</small>';sw.classList.toggle('fwsph',ph);
+  const g=app.querySelector('.fwguide');if(g&&ph&&!g.dataset.sw){g.dataset.sw=1;g.insertAdjacentHTML('afterbegin','<b class="fwswtip">👉 Lật thẻ xong: vuốt sang trái = Đặt lên bàn, vuốt sang phải = Chưa nhớ. </b>');}};})();
+
+if(window.__T)window.__u114={GM,gModeSync,gPotDlg,FWS};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
