@@ -4777,6 +4777,74 @@ html.tdbam .tdsearch input{border-color:var(--bamline)!important}
 .steps2 .stsep{align-self:flex-start;margin-top:8px;font-size:14px!important;animation:none!important;opacity:.45}
 .steps2 button.done+.stsep{opacity:.9}
 @media (max-width:768px){html.fs.learnmode #viewtools{display:none!important}html.fs .lhead{padding-right:0!important}}
+
+/* ===== 5.72: khu vườn — trang riêng toàn màn hình ===== */
+html.gfull header.top,html.gfull #tabbar,html.gfull .navrow,html.gfull #gpromo,html.gfull footer.site,html.gfull #viewtools,html.gfull .fab,html.gfull #wtick,html.gfull #fspill,html.gfull .mhnav{display:none!important}
+html.gfull body{overflow:hidden}
+html.gfull main#app{padding-top:0}
+html.gfull .g5 #gscene{position:fixed!important;inset:0!important;z-index:60;min-height:0!important;height:100vh!important;height:100svh!important;border:0!important;border-radius:0!important;margin:0!important;padding:76px 112px 104px 18px!important;box-sizing:border-box}
+html.gfull .g5 #gscene .g3beds{width:min(100%,calc((100svh - 190px) * 2.7));margin:0 auto}
+html.gfull #pmsay{display:none!important}
+html.gfull .g5 .gtop{display:none}
+html.gfull .garden2 #gscene.play,html.gfull #gscene.play{position:fixed!important;inset:0!important;z-index:60;height:100vh!important;height:100svh!important;border:0!important;border-radius:0!important;margin:0!important}
+/* thanh trên + cột tính năng */
+html.gfull .g5 .gtopui{position:absolute;inset:0;display:block;pointer-events:none}
+html.gfull .g5 .gtopui>*{pointer-events:auto}
+html.gfull .g5 .gtrow{position:absolute;left:12px;right:112px;top:max(10px,env(safe-area-inset-top));display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
+.gback{display:grid!important;place-items:center}
+.gttl{flex:none;display:grid;line-height:1.15;padding:5px 14px 6px;border-radius:14px;background:rgba(14,24,20,.58);backdrop-filter:blur(6px);color:#fff;box-shadow:0 4px 12px -6px rgba(0,0,0,.5)}
+.gttl b{font-size:15px}.gttl small{font-size:10.5px;opacity:.8}
+html.gfull .g5 .gtopui .gmapchips{flex:1;flex-wrap:wrap;align-items:center}
+.gtopui .gchip{font-size:13px!important;padding:5px 11px!important}
+.gchipgo{cursor:pointer;transition:transform .15s,box-shadow .15s}.gchipgo:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.22)!important}.gchipgo:active{transform:translateY(1px)}
+.gtopui .gchip.gold{background:#eaf7ff!important;border-color:#9fd6f5!important;color:#0d4f80!important}
+.gchip.gold b,.gchip.gold small{color:#0d4f80!important;opacity:1!important;visibility:visible!important}.gchip.gold{display:inline-flex!important;align-items:center;gap:4px}
+.gdrop{position:static!important;width:auto!important;height:auto!important;display:inline-grid;flex:none;margin-right:1px;vertical-align:-4px;filter:drop-shadow(0 1px 1.5px rgba(10,80,140,.45));animation:gdrop 2.6s ease-in-out infinite}
+@keyframes gdrop{50%{transform:translateY(-1px) scale(1.06);filter:drop-shadow(0 0 4px rgba(120,210,255,.9))}}
+html.gfull .g5 .gtopui .gdock{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);display:grid!important;grid-template-columns:1fr!important;width:88px;max-width:none;gap:6px!important;padding:8px!important;border-radius:20px!important;background:rgba(14,24,20,.55)!important;backdrop-filter:blur(6px);box-shadow:0 10px 24px -12px rgba(0,0,0,.6)}
+html.gfull .g5 .gtopui .gdock button{display:grid;justify-items:center;gap:2px;padding:7px 2px 6px!important;border-radius:14px!important;border:0;background:rgba(255,255,255,.93);color:#1b2826;cursor:pointer;font:inherit}
+html.gfull .g5 .gtopui .gdock button:hover{background:#fff;transform:translateX(-2px)}
+html.gfull .g5 .gtopui .gdock i{font-size:22px!important;font-style:normal}
+html.gfull .g5 .gtopui .gdock span{font-size:10.5px!important;font-weight:800;white-space:normal!important;text-align:center;line-height:1.15}
+html.gfull .g5 .gtopui .gdock [data-gd="pot"]{background:linear-gradient(160deg,#fff4dc,#ffe0a3)}
+/* công tắc tiếng thú */
+#gscene .gpvoice.gvsw{left:14px!important;right:auto;top:68px!important;bottom:auto!important;transform:none!important;z-index:7;padding:5px 6px 5px 10px;gap:7px;font-size:12px;font-weight:800;opacity:1!important}
+#gscene .gpvoice.gvsw span{display:inline!important}
+.gvt{position:relative;width:32px;height:18px;border-radius:999px;background:rgba(255,255,255,.3);transition:background .2s;flex:none}
+.gvt::after{content:'';position:absolute;left:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.gpvoice[aria-pressed="true"] .gvt{background:#2fbf8f}.gpvoice[aria-pressed="true"] .gvt::after{transform:translateX(14px)}
+html.gfull #gscene .g3sign{top:108px!important;left:14px!important}
+/* popup tính năng */
+#gsheet{z-index:9700}
+#gsheet .gshp{max-height:min(86vh,760px)}
+@media (min-width:769px){#gsheet{display:none;position:fixed;inset:0;background:rgba(8,14,12,.55);align-items:center;justify-content:center;padding:24px}#gsheet.on{display:flex}
+ #gsheet .gshp{position:relative;inset:auto;width:min(720px,100%);border-radius:22px;transform:none;animation:gshin .25s cubic-bezier(.2,.9,.3,1.2)}
+ #gsheet .gshb{overflow:auto;max-height:calc(min(86vh,760px) - 60px)}}
+@keyframes gshin{from{transform:scale(.9);opacity:0}}
+#gsheet .gshb .g3seeds{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+/* bảng nâng chậu */
+.gpbl{display:grid;gap:8px;max-height:60vh;overflow:auto}
+.gpbrow{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:10px;padding:8px 10px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
+.gpbn{display:grid;line-height:1.25}.gpbn small{color:var(--muted);font-size:11.5px}
+.gpbrow .btn{display:grid;justify-items:center;line-height:1.15;min-width:110px}.gpbrow .btn small{font-size:10.5px;font-weight:700;opacity:.85}
+.gpbmax{font-size:12px;font-weight:800;color:#2a7fb8}
+/* điện thoại */
+@media (max-width:768px){
+ html.gfull .g5 #gscene{padding:148px 8px calc(118px + env(safe-area-inset-bottom)) 8px!important}
+ html.gfull .g5 #gscene .g3beds{width:100%}
+ html.gfull .g5 .gtrow{left:8px;right:8px;gap:6px;flex-wrap:wrap}
+ .gttl{display:none}
+ html.gfull .g5 .gtopui .gdock{top:calc(max(8px,env(safe-area-inset-top)) + 46px);left:8px;right:8px;transform:none;width:auto;grid-template-columns:repeat(7,1fr)!important;gap:4px!important;padding:5px!important;border-radius:16px!important}
+ html.gfull .g5 .gtopui .gdock button{padding:5px 0 4px!important;border-radius:11px!important}
+ html.gfull .g5 .gtopui .gdock i{font-size:17px!important}
+ html.gfull .g5 .gtopui .gdock span{font-size:8.5px!important;white-space:nowrap!important;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+ html.gfull .g5 .gtopui .gdock button:hover{transform:none}
+ .gtopui .gchip{font-size:12px!important;padding:4px 9px!important}
+ #gscene .gpvoice.gvsw{top:118px!important;left:8px!important;font-size:11px;padding:4px 5px 4px 8px}
+ html.gfull #gscene .g3sign{top:118px!important;left:auto!important;right:8px}
+}
+#gsheet .gshb>.panel{border:0!important;box-shadow:none!important;background:transparent!important;padding:0!important}
+#gsheet .gshb>.panel>h3:first-child,#gsheet .gshb>.panel>.row:first-child>h3{display:none}
 </style>
 </head><body>
 
@@ -4802,12 +4870,12 @@ html.tdbam .tdsearch input{border-color:var(--bamline)!important}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='a9c90d4d';
-document.write('<script src="packs/hsk'+L+'.js?v=a9c90d4d"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='b9effa19';
+document.write('<script src="packs/hsk'+L+'.js?v=b9effa19"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a9c90d4d','strokes-file');A('packs/dict.js?v=a9c90d4d','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=b9effa19','strokes-file');A('packs/dict.js?v=b9effa19','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -19786,11 +19854,11 @@ if(window.__T)window.__u113={mark:(n,k)=>{markStage(n,k);save();},lessonReady,pr
 
 /* ---------- 1–3. Vườn ---------- */
 const GM={mode:'plant',fs:false};
-try{GM.mode=localStorage.getItem('hsk-gmode')==='pot'?'pot':'plant';}catch(e){}
+/* 5.72: luôn là Trồng & chăm; nâng chậu là nút riêng */
 gardenDress=function(){const sc=document.getElementById('gscene');if(location.hash!=='#garden'||!sc){gFull(false);return;}
   if(sc.classList.contains('play')){sc.querySelectorAll('.gtopui,.gdock,.gmapchips,.gmapkind').forEach(x=>x.remove());gFull(mhIsPhone());return;}
   const g3=app.querySelector('.garden3');if(g3)g3.classList.add('g5');gFull(mhIsPhone());if(!sc.querySelector(':scope>.gstars'))sc.insertAdjacentHTML('afterbegin','<div class="gstars" aria-hidden="true"></div>');
-  let top=sc.querySelector('.gtopui');if(!top){top=document.createElement('div');top.className='gtopui';top.innerHTML='<div class="gtrow"><button type="button" class="gback" aria-label="Về Trò chơi">←</button><div class="gmapchips"></div></div><div class="gmode" role="tablist"><button type="button" data-gm="plant">🌱 Trồng & chăm</button><button type="button" data-gm="pot">🏺 Nâng chậu</button></div><div class="gdock"></div>';sc.appendChild(top);
+  let top=sc.querySelector('.gtopui');if(!top){top=document.createElement('div');top.className='gtopui';top.innerHTML='<div class="gtrow"><button type="button" class="gback" aria-label="Về Trò chơi">←</button><div class="gmapchips"></div></div><div class="gdock"></div>';sc.appendChild(top);
     top.querySelector('.gback').onclick=()=>{location.hash='#games';};
     top.querySelectorAll('[data-gm]').forEach(b=>b.onclick=e=>{e.stopPropagation();GM.mode=b.dataset.gm;try{localStorage.setItem('hsk-gmode',GM.mode);}catch(x){}gModeSync();try{gardenToast(GM.mode==='pot'?'🏺 Chế độ Nâng chậu: chạm vào chậu để nâng cấp':'🌱 Chế độ Trồng & chăm: chạm chậu để gieo, tưới, thu hoạch');}catch(x){}});
     const d=top.querySelector('.gdock');d.innerHTML=GDOCK.map(([k,ic,t])=>`<button type="button" data-gd="${k}" aria-label="${t}"><i aria-hidden="true">${ic}</i><span>${t}</span></button>`).join('');
@@ -19798,7 +19866,6 @@ gardenDress=function(){const sc=document.getElementById('gscene');if(location.ha
   sc.querySelectorAll(':scope>.gmapchips,:scope>.gmapkind,:scope>.gdock').forEach(x=>{if(!top.contains(x))x.remove();});
   const box=top.querySelector('.gmapchips'),chips=app.querySelector('.gtop .gchips');
   if(chips)[...chips.children].forEach(c=>box.appendChild(c));
-  const kind=box.querySelector('.gchip.kind');if(kind&&box.children[1]!==kind){const w=box.querySelector('.gchip.water');if(w)w.after(kind);}
   const can=app.querySelector('#gcan'),water=box.querySelector('.gchip.water');
   if(water&&can){const n=parseInt((water.querySelector('b')||water).textContent,10)||0;water.classList.toggle('empty',n<1);
     if(n<1){if(!water.contains(can)){can.classList.add('gcanin');can.innerHTML=`+ 🚿 ${CAN_COST}`;can.title=`Mua bình tưới: +${CAN_N} lượt tưới (${CAN_COST} Nguyên bảo)`;water.appendChild(can);}}
@@ -19814,19 +19881,15 @@ addEventListener('hashchange',()=>{if(location.hash!=='#garden')gFull(false);});
 (function(){const base=plotAction;plotAction=function(i){const g=G(),p=g.plots[i];
   if(GM.mode==='pot'&&p&&!(location.hash||'').startsWith('#vg-')){gPotDlg(i);return;}
   const r=base.apply(this,arguments);const d=document.getElementById('gdlg');if(d){const pb=d.querySelector('[data-ga="pot"]');if(pb){pb.remove();}
-    const hint=d.querySelector('.g3abtn');if(hint&&!d.querySelector('.gpothint')&&POTS[(p&&p.pot||0)+1])hint.insertAdjacentHTML('beforeend','<button type="button" class="btn ghost sm gpothint">🏺 Muốn nâng chậu? Chuyển sang chế độ Nâng chậu</button>');
-    const hb=d.querySelector('.gpothint');if(hb)hb.onclick=()=>{d.close();GM.mode='pot';try{localStorage.setItem('hsk-gmode','pot');}catch(e){}gModeSync();gPotDlg(i);};}
+    const hint=d.querySelector('.g3abtn');if(hint&&!d.querySelector('.gpothint')&&POTS[(p&&p.pot||0)+1])hint.insertAdjacentHTML('beforeend','<button type="button" class="btn ghost sm gpothint">🏺 Nâng cấp chậu này</button>');
+    const hb=d.querySelector('.gpothint');if(hb)hb.onclick=()=>{d.close();gPotDlg(i);};}
   return r;};})();
 function gPotDlg(i){const g=G(),p=g.plots[i]||{},t=p.pot||0,cur=POTS[t],nx=POTS[t+1];let d=document.getElementById('gdlg');if(!d){d=document.createElement('dialog');d.id='gdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
   d.innerHTML=`<div class="in stack g3act gpotdlg"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏺 Nâng cấp chậu ${i+1}</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div>
     <div class="gpcmp"><div><svg viewBox="0 0 120 120" width="96" height="96">${potSVG(1,t)}</svg><b>${esc(cur[1])}</b><small>${cur[3]?'Lớn nhanh −'+cur[3]+'%':'Chậu cơ bản'}</small></div>${nx?`<span class="gparr">➜</span><div class="nx"><svg viewBox="0 0 120 120" width="96" height="96">${potSVG(1,t+1)}</svg><b>${esc(nx[1])}</b><small>Lớn nhanh −${nx[3]}% · héo chậm hơn</small></div>`:''}</div>
-    ${nx?`<button class="btn pri big" data-pu${g.coins<nx[2]?' disabled':''}>Nâng lên ${esc(nx[1])} · ${nx[2].toLocaleString('vi-VN')} ${YB}</button>${g.coins<nx[2]?`<div class="small muted" style="text-align:center">Bạn có ${g.coins.toLocaleString('vi-VN')} ${YB}, còn thiếu ${(nx[2]-g.coins).toLocaleString('vi-VN')}.</div>`:''}`:'<div class="small muted" style="text-align:center">💎 Chậu đã ở bậc cao nhất</div>'}
-    <button class="btn ghost sm" data-back>🌱 Về chế độ Trồng & chăm</button></div>`;
-  d.querySelector('[data-x]').onclick=()=>d.close();const pu=d.querySelector('[data-pu]');if(pu)pu.onclick=()=>{d.close();potUpgrade(i);};
-  d.querySelector('[data-back]').onclick=()=>{d.close();GM.mode='plant';try{localStorage.setItem('hsk-gmode','plant');}catch(e){}gModeSync();};if(!d.open)d.showModal();}
-/* thú: bóng đổ, ánh sáng mềm, chớp mắt */
-(function(){try{Object.keys(GPET).forEach(k=>{const s=GPET[k]&&GPET[k].svg;if(!s||s.includes('gpsheen'))return;const vb=(s.match(/viewBox="0 0 (\d+) (\d+)"/)||[0,80,64]),w=+vb[1],h=+vb[2];
-  GPET[k].svg=s.replace('</svg>',`<defs><radialGradient id="gpsh${k}" cx="35%" cy="25%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".45" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></radialGradient></defs><rect class="gpsheen" x="0" y="0" width="${w}" height="${h-6}" fill="url(#gpsh${k})" style="mix-blend-mode:soft-light;pointer-events:none"/></svg>`);});}catch(e){}})();
+    ${nx?`<button class="btn pri big" data-pu${g.coins<nx[2]?' disabled':''}>Nâng lên ${esc(nx[1])} · ${nx[2].toLocaleString('vi-VN')} ${YB}</button>${g.coins<nx[2]?`<div class="small muted" style="text-align:center">Bạn có ${g.coins.toLocaleString('vi-VN')} ${YB}, còn thiếu ${(nx[2]-g.coins).toLocaleString('vi-VN')}.</div>`:''}`:'<div class="small muted" style="text-align:center">💎 Chậu đã ở bậc cao nhất</div>'}</div>`;
+  d.querySelector('[data-x]').onclick=()=>d.close();const pu=d.querySelector('[data-pu]');if(pu)pu.onclick=()=>{d.close();potUpgrade(i);};if(!d.open)d.showModal();}
+/* 5.72: bỏ lớp phủ sáng trên thú (gây khung vuông) */
 
 /* ---------- 5. Thẻ từ mới: vuốt ngang trên điện thoại ---------- */
 const FWS={x:0,y:0,t:0,on:false,id:null};
@@ -19847,6 +19910,78 @@ document.addEventListener('pointerup',fwsEnd,true);document.addEventListener('po
   const g=app.querySelector('.fwguide');if(g&&ph&&!g.dataset.sw){g.dataset.sw=1;g.insertAdjacentHTML('afterbegin','<b class="fwswtip">👉 Lật thẻ xong: vuốt sang trái = Đặt lên bàn, vuốt sang phải = Chưa nhớ. </b>');}};})();
 
 if(window.__T)window.__u114={GM,gModeSync,gPotDlg,FWS};
+
+/* ===== 5.72: Khu vườn thành một trang riêng toàn màn hình
+   - Máy tính + điện thoại: bấm vào vườn là vườn chiếm hết màn hình (thanh trên: ← , tên vườn, chỉ số)
+   - Máy tính: các tính năng phụ xếp dọc bên phải; điện thoại: một hàng phía trên
+   - Mọi tính năng mở dạng popup có nút đóng; bấm chỉ số cũng mở tính năng tương ứng
+   - Bỏ ô "Vườn chung HSK1–2", bỏ ô tốt bụng bị trùng, bỏ công tắc Trồng/Nâng chậu (thành nút Nâng chậu)
+   - Nước tưới hộ: giọt nước xanh trắng; Tiếng thú: công tắc ở góc trái trên vườn ===== */
+GDOCK.splice(0,GDOCK.length,['fr','👫','Thăm vườn bạn'],['seed','🌱','Hạt giống'],['pot','🏺','Nâng chậu'],['pet','🐾','Thú'],['shop','🏮','Trang trí'],['quest','📋','Nhiệm vụ'],['more','⋯','Thêm']);
+const GD_TITLE={fr:'👫 Thăm vườn bạn bè',seed:'🌱 Hạt giống',pet:'🐾 Thú trong vườn',quest:'📋 Nhiệm vụ vườn',more:'⋯ Thêm'};
+const GDROP='<i class="gdrop" aria-hidden="true"><svg viewBox="0 0 24 30" width="15" height="19"><defs><linearGradient id="gdrg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f8ff"/><stop offset=".45" stop-color="#5fc3f5"/><stop offset="1" stop-color="#1572c2"/></linearGradient></defs><path d="M12 1.5C9 7 3.5 12.5 3.5 19a8.5 8.5 0 0 0 17 0C20.5 12.5 15 7 12 1.5z" fill="url(#gdrg)" stroke="#fff" stroke-width="1.4"/><ellipse cx="8.6" cy="17" rx="2" ry="3.6" fill="#fff" opacity=".85" transform="rotate(18 8.6 17)"/><circle cx="15.4" cy="23" r="1.2" fill="#fff" opacity=".7"/></svg></i>';
+(function(){const base=gToolsChips;gToolsChips=function(){return base.apply(this,arguments).replace('💛 ',GDROP+' ');};})();
+
+/* popup tính năng: luôn là popup có nút đóng (máy tính cũng vậy) */
+gSheet=function(key){if(key==='shop'){const b=app.querySelector('#gshop');if(b)b.click();else if(typeof openShop==='function')openShop();return;}
+  if(key==='pot'){gPotBoard();return;}
+  const row=()=>app.querySelector('.gbtnrow')||app.querySelector('.garden3:not(.fgarden) > .row');
+  const map={fr:()=>[document.getElementById('g3fr')],seed:()=>[...app.querySelectorAll('.g3seeds')].map(s=>s.closest('.panel')),quest:()=>[app.querySelector('.g3quest')],
+    pet:()=>['#gbulk','#gbulkh','#gdog'].map(s=>app.querySelector(s)).concat([...(row()?row().querySelectorAll('a'):[])].filter(a=>/Khỉ/.test(a.textContent))),
+    more:()=>{const r=row();return [...(r?r.children:[])].filter(b=>!['gbulk','gbulkh','gdog','gshop','gcan'].includes(b.id)&&!/Khỉ/.test(b.textContent)&&!b.classList.contains('gshared')).concat([app.querySelector('.gguide')]);}};
+  const els=(map[key]?map[key]():[]).filter(Boolean);if(!els.length)return;
+  let ov=document.getElementById('gsheet');if(ov&&ov.classList.contains('on')&&ov._close)ov._close();
+  if(!ov){ov=document.createElement('div');ov.id='gsheet';ov.innerHTML='<div class="gshp" role="dialog" aria-modal="true"><div class="gshh"><b id="gsht"></b><button type="button" class="gshx" aria-label="Đóng">✕</button></div><div class="gshb" id="gshb"></div></div>';document.body.appendChild(ov);}
+  const body=ov.querySelector('#gshb');const back=[];els.forEach(e=>{const ph=document.createComment('gsh');e.before(ph);back.push([e,ph]);body.appendChild(e);});
+  ov.querySelector('#gsht').textContent=GD_TITLE[key]||(GDOCK.find(d=>d[0]===key)||[])[2]||'';ov.dataset.k=key;ov.classList.add('on');
+  const close=()=>{ov._close=null;ov.classList.remove('on');back.forEach(([e,ph])=>{if(ph.parentNode)ph.replaceWith(e);else e.remove();});body.innerHTML='';ov.onclick=null;removeEventListener('hashchange',close);removeEventListener('keydown',esc_);};
+  const esc_=e=>{if(e.key==='Escape')close();};ov._close=close;
+  ov.querySelector('.gshx').onclick=close;ov.onclick=e=>{if(e.target===ov)close();};addEventListener('hashchange',close,{once:true});addEventListener('keydown',esc_);};
+
+/* bảng nâng chậu: mọi chậu đang có, mỗi chậu một nút nâng */
+function gPotBoard(){const g=G();let d=document.getElementById('gdlg');if(!d){d=document.createElement('dialog');d.id='gdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
+  const idx=[...app.querySelectorAll('.g3pot[data-plot]')].map(b=>+b.dataset.plot).filter(i=>g.plots[i]);
+  const rows=idx.map(i=>{const p=g.plots[i],t=p.pot||0,nx=POTS[t+1],nm=p.l?PLANTS[p.l][0]:'Chậu trống';
+    return `<div class="gpbrow"><svg viewBox="10 70 100 52" width="64" height="34" aria-hidden="true">${potSVG(1,t)}</svg><span class="gpbn"><b>Chậu ${i+1} · ${esc(POTS[t][1])}</b><small>${esc(nm)}${POTS[t][3]?' · lớn nhanh −'+POTS[t][3]+'%':''}</small></span>${nx?`<button type="button" class="btn sm${g.coins>=nx[2]?' pri':''}" data-pb="${i}"${g.coins<nx[2]?' disabled':''}>⬆ ${esc(nx[1])}<small>${nx[2].toLocaleString('vi-VN')} ${YB}</small></button>`:'<span class="gpbmax">💎 Tối đa</span>'}</div>`;}).join('');
+  d.innerHTML=`<div class="in stack gpboard"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏺 Nâng chậu</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div>
+    <p class="small muted" style="margin:0">Chậu càng xịn cây càng lớn nhanh và héo chậm hơn. Bạn có <b>${g.coins.toLocaleString('vi-VN')} ${YB}</b>.</p>
+    <div class="gpbl">${rows||'<div class="small muted">Chưa có chậu nào. Mở ô đất trước nhé.</div>'}</div>
+    <button type="button" class="btn ghost sm" data-pt>📋 Xem bảng các loại chậu</button></div>`;
+  d.querySelector('[data-x]').onclick=()=>d.close();d.querySelector('[data-pt]').onclick=()=>potTable();
+  d.querySelectorAll('[data-pb]').forEach(b=>b.onclick=()=>{d.close();const before=(G().plots[+b.dataset.pb]||{}).pot||0;potUpgrade(+b.dataset.pb);if(((G().plots[+b.dataset.pb]||{}).pot||0)>before)setTimeout(()=>{if(location.hash==='#garden')gPotBoard();},700);});
+  if(!d.open)d.showModal();}
+
+/* bấm chỉ số → vào tính năng tương ứng */
+function gWaterGo(){const g=G();const grow=g.plots.map((p,i)=>[p,i]).filter(([p])=>p&&p.l&&!p.wilt&&stageOf(p.gr||0)<4);
+  if(!grow.length){gardenToast('🌱 Chưa có cây nào cần tưới. Gieo hạt vào ô đất trống trước nhé.');gSheet('seed');return;}
+  if(g.water<1){gardenToast(`💧 Hết nước rồi. Bấm <b>+ 🚿</b> để mua bình tưới (${CAN_COST} ${YB}), hoặc chờ nước tự hồi.`);return;}
+  grow.sort((a,b)=>(a[0].gr||0)-(b[0].gr||0));careRound(grow[0][1]);}
+function gChipGo(e){if(e.target.closest('#gcan'))return;const c=e.currentTarget;e.stopPropagation();
+  if(c.classList.contains('water'))gWaterGo();else if(c.matches('.gold,.shovel,.kind,.hurt'))gSheet('fr');else if(c.classList.contains('gcoin'))gSheet('shop');}
+
+/* vườn toàn màn hình ở mọi kích cỡ màn hình */
+gFull=function(on){const R=document.documentElement;on=!!on;if(R.classList.contains('gfull')===on)return;R.classList.toggle('gfull',on);
+  /* không gọi toàn màn hình của trình duyệt (Chrome hiện dòng thông báo); app Android thì ẩn thanh hệ thống */
+  try{if(window.AndroidApp&&AndroidApp.immersive)AndroidApp.immersive(on&&mhIsPhone());}catch(e){}};
+(function(){const base=gardenDress;gardenDress=function(){base.apply(this,arguments);const sc=document.getElementById('gscene');if(location.hash!=='#garden'||!sc)return;gFull(true);
+  if(sc.classList.contains('play'))return;
+  GM.mode='plant';sc.classList.remove('gpotmode');sc.querySelectorAll('.gpotup,.gmode').forEach(x=>x.remove());
+  app.querySelectorAll('.gshared').forEach(x=>x.remove());
+  const top=sc.querySelector('.gtopui');if(!top)return;const box=top.querySelector('.gmapchips');
+  /* tên vườn trên thanh trên */
+  const row=top.querySelector('.gtrow');if(row&&!row.querySelector('.gttl')){const h=app.querySelector('.gtop h1'),lb=app.querySelector('.gtop .label');const t=document.createElement('div');t.className='gttl';t.innerHTML=`<b>${esc(h?h.textContent:'Khu vườn')}</b><small>${esc(lb?lb.textContent:'')}</small>`;row.querySelector('.gback').after(t);}
+  if(box){/* bỏ ô trùng: giữ ô sau cùng của mỗi loại */
+    const seen=new Set();[...box.children].reverse().forEach(c=>{if(c.id==='gcan')return;const k=['water','gold','shovel','kind','hurt'].find(x=>c.classList.contains(x))||(c.querySelector('.ybi')||/Nguyên bảo|💰/.test(c.textContent)?'coin':c.textContent.trim());if(seen.has(k))c.remove();else seen.add(k);if(k==='coin')c.classList.add('gcoin');});
+    box.querySelectorAll('.gchip:not(#gcan)').forEach(c=>{if(c.dataset.go)return;c.dataset.go=1;c.classList.add('gchipgo');c.setAttribute('role','button');c.tabIndex=0;c.addEventListener('click',gChipGo);c.addEventListener('keydown',e=>{if(e.key==='Enter')gChipGo(e);});
+      if(c.classList.contains('water'))c.title='Bấm để tưới cây (trả lời câu hỏi)';else if(c.matches('.gold,.shovel,.kind,.hurt'))c.title+=' · Bấm để thăm vườn bạn bè';});}
+  /* thanh tính năng mới */
+  const d=top.querySelector('.gdock');if(d&&!d.querySelector('[data-gd="pot"]')){d.innerHTML=GDOCK.map(([k,ic,t])=>`<button type="button" data-gd="${k}" aria-label="${t}" title="${t}"><i aria-hidden="true">${ic}</i><span>${t}</span></button>`).join('');
+    d.querySelectorAll('[data-gd]').forEach(b=>b.onclick=e=>{e.stopPropagation();gSheet(b.dataset.gd);});}
+  /* công tắc tiếng thú */
+  const v=sc.querySelector('#gpvoice');if(v&&!v.classList.contains('gvsw')){v.classList.add('gvsw');v.setAttribute('role','switch');}
+  if(v){v.setAttribute('aria-checked',v.getAttribute('aria-pressed'));if(!v.querySelector('.gvt'))v.insertAdjacentHTML('beforeend','<i class="gvt" aria-hidden="true"></i>');}};})();
+addEventListener('hashchange',()=>{if(location.hash!=='#garden')gFull(false);const s=document.getElementById('gsheet');if(s&&s._close&&location.hash!=='#garden')s._close();});
+if(window.__T)window.__u115={gPotBoard,gWaterGo,gSheet:k=>gSheet(k)};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
