@@ -4970,6 +4970,11 @@ html.gfull #gscene .gpx.flip .gpbub{transform:none}
 .pnode .pl{max-width:140px}
 body:has(#app>.hdisc) #rrail section.disc{display:none!important}
 #tabbar .tbic svg{width:26px!important;height:26px!important}
+/* 5.74 */
+.accbtn.accsoon{opacity:.6;filter:grayscale(.6)}.accbtn.accsoon small{color:var(--muted)!important}
+.acctab [data-km="new"].accsoon{opacity:.55}
+.accnomail{margin:8px 0;padding:10px 12px;border-radius:12px;background:#fff6e2;border:1px solid #f0c674;color:#6b4a0c;font-size:13px;line-height:1.45}
+:root[data-theme="dark"] .accnomail{background:#3a2e14;border-color:#7a5c1e;color:#f3e2b8}
 </style>
 </head><body>
 
@@ -4995,12 +5000,12 @@ body:has(#app>.hdisc) #rrail section.disc{display:none!important}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='aaf80cc4';
-document.write('<script src="packs/hsk'+L+'.js?v=aaf80cc4"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='97fd67d8';
+document.write('<script src="packs/hsk'+L+'.js?v=97fd67d8"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=aaf80cc4','strokes-file');A('packs/dict.js?v=aaf80cc4','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=97fd67d8','strokes-file');A('packs/dict.js?v=97fd67d8','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -20210,6 +20215,20 @@ new MutationObserver(()=>{if(!tdLive._r)tdLive._r=requestAnimationFrame(()=>{tdL
 if(window.__T)window.__u116={GW,gwSet,gCanSVG,pathMapHTML,homeDress,HP};
 /* lời thú: hiện bên cạnh thú, ngang mặt đất, không che luống cây */
 (function(){const base=gpSay;gpSay=function(el){const r=base.apply(this,arguments);try{const sc=el&&el.closest('#gscene');if(sc)el.classList.toggle('gbl',el.offsetLeft>sc.clientWidth/2);}catch(e){}return r;};})();
+
+/* ===== 5.74: Khi máy chủ chưa bật Facebook / gửi mã Gmail thì báo rõ, không để người dùng bấm vào rồi lỗi ===== */
+const ACCF={st:null};
+function accFeat(){if(ACCF.st)return Promise.resolve(ACCF.st);return accCfg().then(c=>{if(c&&c.status)ACCF.st=c.status;return ACCF.st||{};}).catch(()=>({}));}
+function accGate(){const boxes=document.querySelectorAll('.acc3,.acctab');if(!boxes.length)return;accFeat().then(st=>{if(!st||!('facebook' in st))return;
+  document.querySelectorAll('.accbtn[data-ap="facebook"]').forEach(b=>{if(st.facebook){b.classList.remove('accsoon');return;}if(b.classList.contains('accsoon'))return;b.classList.add('accsoon');const s=b.querySelector('.accbt small');if(s)s.textContent='Sắp mở · tạm thời dùng Google hoặc KasserGroup';});
+  document.querySelectorAll('.acctab [data-km="new"]').forEach(b=>{b.classList.toggle('accsoon',!st.email);});});}
+document.addEventListener('click',e=>{const st=ACCF.st;if(!st||!('facebook' in st))return;
+  const f=e.target.closest&&e.target.closest('.accbtn[data-ap="facebook"]');
+  if(f&&!st.facebook){e.preventDefault();e.stopImmediatePropagation();try{gardenToast('Đăng nhập Facebook sắp mở. Bạn dùng <b>Google</b> hoặc <b>Tài khoản KasserGroup</b> trước nhé.');}catch(x){}return;}
+  const n=e.target.closest&&e.target.closest('.acctab [data-km="new"]');
+  if(n&&!st.email){e.preventDefault();e.stopImmediatePropagation();const pane=n.closest('.accpane');if(pane&&!pane.querySelector('.accnomail'))n.closest('.acctab').insertAdjacentHTML('afterend','<div class="accnomail" role="status">📮 Tạo tài khoản KasserGroup cần gửi mã xác nhận về Gmail, phần này đang được bật lại. Tạm thời bạn bấm <b>‹ Chọn cách khác</b> › <b>Tiếp tục với Google</b> để tạo tài khoản ngay.</div>');}},true);
+new MutationObserver(()=>{if(!accGate._r)accGate._r=requestAnimationFrame(()=>{accGate._r=0;accGate();});}).observe(document.body,{childList:true,subtree:true});
+if(window.__T)window.__u117={ACCF,accGate,accUI:(r,o)=>accUI(r,o)};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
