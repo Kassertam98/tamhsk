@@ -5021,6 +5021,16 @@ html.gfull #lhpet,html.fs.learnmode #lhpet,html.exmode #lhpet,html.msopen #lhpet
 @media (prefers-reduced-motion:reduce){#lhpet img,#lhpet .lhsh,.prup .prupi,#enpill.enlow,#livebar .lvic{animation:none}}
 #pmsay.lhsay{display:block!important}
 #lhpet.home.lhaway{display:none!important}
+
+/* ===== 5.78: nút kết bạn ===== */
+.frad{flex:none;border:1.5px solid var(--jade);background:var(--card);color:var(--jade);border-radius:999px;padding:3px 10px;font:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap;margin-left:6px}
+.frad:hover{background:var(--jade);color:#fff}
+.frad.st-sent,.frad.st-friend{border-color:var(--line);color:var(--muted);background:transparent;cursor:default}
+.frad.st-incoming{background:var(--jade);color:#fff}
+.frad.big{padding:8px 16px;font-size:14px}
+.frduo{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px auto 0;padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.35);max-width:560px;font-size:13.5px;text-align:center}
+.bmend .frduo,#bmend .frduo{background:var(--paper,#f6f2e7);color:var(--ink);border-color:var(--line)}
+@media (max-width:520px){.frad:not(.big){padding:3px 8px;font-size:11px}}
 </style>
 </head><body>
 
@@ -5046,12 +5056,12 @@ html.gfull #lhpet,html.fs.learnmode #lhpet,html.exmode #lhpet,html.msopen #lhpet
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='cc12f0db';
-document.write('<script src="packs/hsk'+L+'.js?v=cc12f0db"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='dcaccf2d';
+document.write('<script src="packs/hsk'+L+'.js?v=dcaccf2d"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=cc12f0db','strokes-file');A('packs/dict.js?v=cc12f0db','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=dcaccf2d','strokes-file');A('packs/dict.js?v=dcaccf2d','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -7645,7 +7655,7 @@ async function viewLeague(){
   const T=TIERS[j.tier],z=j.zones,n=j.n;const up=j.tier<4?z.up:0,down=j.tier>0?z.down:0;
   const st=j.rank<=up&&j.xp>=j.minXp?['up','Đang ở vùng lên hạng ▲']:down&&j.rank>n-down?['down','Đang ở vùng xuống hạng ▼']:j.tier>0&&j.xp===0?['down','Chưa có XP tuần này: sẽ xuống hạng nếu cả tuần không học']:['mid','Vùng an toàn'];
   const rows=j.list.map((r,i)=>{const rk=i+1,zone=rk<=up?'up':down&&rk>n-down?'down':'';
-    return `${rk===up+1&&up?'<div class="lgcut up">▲ Vùng lên hạng ở trên</div>':''}${down&&rk===n-down+1?'<div class="lgcut down">▼ Vùng xuống hạng ở dưới</div>':''}<div class="lgrow ${zone}${r.me?' me':''}"><b class="lgno">${rk<=3?['🥇','🥈','🥉'][rk-1]:rk}</b>${avatarHTML(r.avatar,34,r.frame)}<span class="lgnm">${esc(r.name)}${r.me?' <small>(bạn)</small>':''}</span><b class="lgxp">${r.xp} XP</b></div>`;}).join('');
+    return `${rk===up+1&&up?'<div class="lgcut up">▲ Vùng lên hạng ở trên</div>':''}${down&&rk===n-down+1?'<div class="lgcut down">▼ Vùng xuống hạng ở dưới</div>':''}<div class="lgrow ${zone}${r.me?' me':''}" data-fu="${r.me?'':esc(r.id||'')}" data-fn="${esc(r.name||'')}"><b class="lgno">${rk<=3?['🥇','🥈','🥉'][rk-1]:rk}</b>${avatarHTML(r.avatar,34,r.frame)}<span class="lgnm">${esc(r.name)}${r.me?' <small>(bạn)</small>':''}</span><b class="lgxp">${r.xp} XP</b></div>`;}).join('');
   app.innerHTML=`<div class="stack"><section class="panel lgtop" style="--tc:${T[1]}"><div class="lgbadge">${tierSVG(j.tier,82,'lgnow')}</div><div style="min-width:0"><div class="label">Giải đấu tuần · Hạng ${T[0]}</div><h1>Bạn đứng thứ ${j.rank}<small>/${n}</small></h1>
     <div class="lgstat"><span><b>${j.xp}</b> XP tuần này</span><span>⏳ Còn ${lgLeft(j.ends)}</span></div><div class="lgzone ${st[0]}">${st[1]}</div></div></section>
     <div class="panel">${ladder(j.tier)}<p class="small muted" style="margin:8px 0 0">${up?`Top ${up} (cần ít nhất ${j.minXp} XP) lên hạng ${TIERS[j.tier+1][0]}.`:'Bạn đang ở hạng cao nhất!'} ${down?`${down} người cuối xuống hạng ${TIERS[j.tier-1][0]}.`:''}${j.tier>0?' Cả tuần không học cũng bị xuống hạng.':''}</p></div>
@@ -8603,7 +8613,7 @@ function wallVisitor(b,n){const sv=document.querySelector('.wscwrap'),tip=docume
   const a=d.animate([{transform:`translate(${x1}px,${y1}px)`,opacity:0},{transform:`translate(${(x1+x2)/2}px,${y1-10}px)`,opacity:1,offset:.4},{transform:`translate(${x2}px,${y2}px)`,opacity:1,offset:.85},{transform:`translate(${x2}px,${y2-20}px)`,opacity:0}],{duration:2600,easing:'ease-in-out'});a.onfinish=()=>d.remove();}
 function wallFeedHTML(){const me=SOC.auth&&SOC.auth.uid;const f=WSC.feed.filter(b=>b.at&&b.last).slice(0,6);
   return f.length?f.map(b=>`<div class="wfrow${b.id===me?' me':''}">${avHTML(wAv(b),30)}<span><b class="wfn">${esc(b.name||'Bạn học')}</b>${b.id===me?' (bạn)':''} vừa đặt <b>${b.last}</b> viên gạch</span><small>${wAgo(b.at)}</small></div>`).join(''):'<div class="small muted">Chưa có ai xây gần đây. Bạn mở hàng nhé!</div>';}
-function wallBoardHTML(list,key,unit){const me=SOC.auth&&SOC.auth.uid;return list.length?list.slice(0,10).map((b,i)=>`<div class="lbrow${b.id===me?' me':''}"><span class="lbn">${i<3?['🥇','🥈','🥉'][i]:i+1}</span>${avHTML(wAv(b),30)}<span style="min-width:0;flex:1">${esc(b.name||'Bạn học')}${b.id===me?' (bạn)':''}</span><b>${b[key]} ${unit}</b></div>`).join(''):'<p class="muted" style="margin:0">Chưa có ai. Hãy là người đầu tiên!</p>';}
+function wallBoardHTML(list,key,unit){const me=SOC.auth&&SOC.auth.uid;return list.length?list.slice(0,10).map((b,i)=>`<div class="lbrow${b.id===me?' me':''}" data-fu="${b.id===me?'':esc(b.id||'')}" data-fn="${esc(b.name||'')}"><span class="lbn">${i<3?['🥇','🥈','🥉'][i]:i+1}</span>${avHTML(wAv(b),30)}<span style="min-width:0;flex:1">${esc(b.name||'Bạn học')}${b.id===me?' (bạn)':''}</span><b>${b[key]} ${unit}</b></div>`).join(''):'<p class="muted" style="margin:0">Chưa có ai. Hãy là người đầu tiên!</p>';}
 async function wallLoad(){const [w,feed,top,wk]=await Promise.all([fsGet('wall/main'),fsPost(fsBase()+'/wall/main:runQuery',{structuredQuery:{from:[{collectionId:'builders'}],orderBy:[{field:{fieldPath:'at'},direction:'DESCENDING'}],limit:8}}),wallTop(),
   fsPost(fsBase()+'/wall/main:runQuery',{structuredQuery:{from:[{collectionId:'builders'}],orderBy:[{field:{fieldPath:'weekN'},direction:'DESCENDING'}],limit:40}})]);
   const out=x=>(Array.isArray(x)?x:[]).filter(y=>y.document).map(y=>docOut(y.document));const cw=weekId();
@@ -9469,7 +9479,7 @@ async function viewWallOld(){
       <div class="wallscroll">${wallSVG(total)}</div>
       <div class="row" style="justify-content:space-between"><span class="small">Tháp canh: <b>${towers}</b> · đoạn này ${towers%WALL_SECTION}/${WALL_SECTION}</span><span class="small muted">Còn <b>${toNext}</b> viên nữa xong tháp tiếp theo</span></div>
       <div class="row"><button class="btn pri" id="wgo">Vào ca xây (8 câu)</button><span class="small muted">Bạn đã góp <b>${wl.mine}</b> viên${myRank>=0?` · hạng ${myRank+1}`:''} · tuần này ${wl.weekN}</span></div><div id="wplay"></div></div>
-    <div class="panel"><h3 style="margin-bottom:8px">Thợ xây chăm nhất</h3>${top.length?top.map((b,i)=>`<div class="lbrow${b.id===SOC.auth.uid?' me':''}"><span class="lbn">${i+1}</span>${avatarHTML(b.avatar,30)}<span style="min-width:0;flex:1">${esc(b.name||'Bạn học')}${b.id===SOC.auth.uid?' (bạn)':''}</span><b>${b.bricks} viên</b></div>`).join(''):'<p class="muted" style="margin:0">Chưa ai góp gạch. Hãy là người đầu tiên!</p>'}</div></div>`;
+    <div class="panel"><h3 style="margin-bottom:8px">Thợ xây chăm nhất</h3>${top.length?top.map((b,i)=>`<div class="lbrow${b.id===SOC.auth.uid?' me':''}" data-fu="${b.id===SOC.auth.uid?'':esc(b.id||'')}" data-fn="${esc(b.name||'')}"><span class="lbn">${i+1}</span>${avatarHTML(b.avatar,30)}<span style="min-width:0;flex:1">${esc(b.name||'Bạn học')}${b.id===SOC.auth.uid?' (bạn)':''}</span><b>${b.bricks} viên</b></div>`).join(''):'<p class="muted" style="margin:0">Chưa ai góp gạch. Hãy là người đầu tiên!</p>'}</div></div>`;
   app.querySelector('#wgo').onclick=()=>wallRound();
 }
 function wallQs(){
@@ -13912,7 +13922,7 @@ async function viewLeague(){
   const top3=list.slice(0,3),order=[1,0,2];
   const podium=`<div class="lg2pod">${order.map(i=>{const r=top3[i];if(!r)return '<div class="lg2pl empty"></div>';return `<div class="lg2pl p${i+1}${r.me?' me':''}"><span class="lg2crown">${['👑','🥈','🥉'][i]}</span>${avatarHTML(r.avatar,i?48:60,r.frame)}<b>${esc(r.name)}</b><small>${r.xp} XP</small><i class="lg2bar"></i></div>`;}).join('')}</div>`;
   const rows=list.map((r,i)=>{const rk=i+1,zone=rk<=up?'up':down&&rk>n-down?'down':'';
-    return `${rk===up+1&&up?'<div class="lgcut up">▲ Lên hạng '+TIERS[j.tier+1][0]+'</div>':''}${down&&rk===n-down+1?'<div class="lgcut down">▼ Xuống hạng '+TIERS[j.tier-1][0]+'</div>':''}<div class="lgrow lg2row ${zone}${r.me?' me':''}"><b class="lgno">${rk<=3?['🥇','🥈','🥉'][rk-1]:rk}</b>${avatarHTML(r.avatar,34,r.frame)}<span class="lgnm">${esc(r.name)}${r.me?' <small>(bạn)</small>':''}</span><span class="lg2xpw"><i style="width:${list[0].xp?Math.round(r.xp/list[0].xp*100):0}%"></i></span><b class="lgxp">${r.xp} XP</b></div>`;}).join('');
+    return `${rk===up+1&&up?'<div class="lgcut up">▲ Lên hạng '+TIERS[j.tier+1][0]+'</div>':''}${down&&rk===n-down+1?'<div class="lgcut down">▼ Xuống hạng '+TIERS[j.tier-1][0]+'</div>':''}<div class="lgrow lg2row ${zone}${r.me?' me':''}" data-fu="${r.me?'':esc(r.id||'')}" data-fn="${esc(r.name||'')}"><b class="lgno">${rk<=3?['🥇','🥈','🥉'][rk-1]:rk}</b>${avatarHTML(r.avatar,34,r.frame)}<span class="lgnm">${esc(r.name)}${r.me?' <small>(bạn)</small>':''}</span><span class="lg2xpw"><i style="width:${list[0].xp?Math.round(r.xp/list[0].xp*100):0}%"></i></span><b class="lgxp">${r.xp} XP</b></div>`;}).join('');
   app.innerHTML=`<div class="stack lg2"><section class="lg2hero" style="--tc:${T[1]}"><div class="lg2bg"></div><div class="lg2ht"><div class="label" style="color:#ffe08a">Giải đấu tuần · Hạng ${T[0]} <span class="han">${T[2]}</span></div><h1>Bạn đứng thứ ${j.rank}<small>/${n}</small></h1>
       <div class="lg2stat"><span><b>${j.xp}</b> XP tuần này</span><span>⏳ Còn ${lgLeft(j.ends)}</span></div><div class="lgzone ${st[0]}">${st[1]}</div>
       ${gapUp?`<div class="lg2gap">🔺 Còn <b>${gapUp} XP</b> để vượt ${esc(above.name)}${gapZone&&gapZone!==gapUp?` · <b>${gapZone} XP</b> để vào vùng lên hạng`:''}</div>`:j.rank===1?'<div class="lg2gap">👑 Bạn đang dẫn đầu! Giữ vững nhé.</div>':''}
@@ -15595,7 +15605,7 @@ function rkRewardsHTML(b,p){const B=RK_B.find(x=>x[0]===b);
   const w=p==='w',nb=w?[30,20,10]:[300,200,100];
   return `<div class="rkrew"><div class="rkrewrows">${nb.map((n,i)=>`<div class="rkrw p${i+1}"><span class="rkmedal">${['🥇','🥈','🥉'][i]}</span><span><b>Hạng ${i+1}: ${n} ${YB}</b><small>Danh hiệu “${['🥇','🥈','🥉'][i]} ${esc(B[4])} ${w?'tuần':'tháng'}” trong ${w?'1 tuần':'1 tháng'}${w?'':` · ${['Cúp vàng','Cúp bạc','Cúp đồng'][i]} + giấy chứng nhận mang về nhà`}</small></span>${w?'':cupSVG(['cup-gold','cup-silver','cup-bronze'][i],34)}</div>`).join('')}</div>
     <p class="small muted" style="margin:6px 0 0">Thưởng tự vào ví khi ${w?'hết tuần (0 giờ thứ Hai)':'hết tháng (0 giờ ngày 1)'}. Danh hiệu hiện cạnh tên ở Bạn bè, tường, tin nhắn và bảng xếp hạng.</p></div>`;}
-function rkRowHTML(r,b){return `<div class="rkrow${r.mine?' me':''}"><span class="rkn">${r.rank||'–'}</span>${avHTML(r.av2||r.avatar,36,r.frame)}<span class="rkwho"><b>${r.mine?'Bạn':showName(r.handle,r.name,r.idn)}</b>${ttlChip(r.ttl)}</span><b class="rkv">${rkFmt(r.val||0,b)}</b></div>`;}
+function rkRowHTML(r,b){return `<div class="rkrow${r.mine?' me':''}" data-fu="${r.mine?'':esc(r.uid||'')}" data-fn="${esc(r.name||r.handle||'')}"><span class="rkn">${r.rank||'–'}</span>${avHTML(r.av2||r.avatar,36,r.frame)}<span class="rkwho"><b>${r.mine?'Bạn':showName(r.handle,r.name,r.idn)}</b>${ttlChip(r.ttl)}</span><b class="rkv">${rkFmt(r.val||0,b)}</b></div>`;}
 async function viewRank(){stopGames();const b=RK.board,p=RK.period,B=RK_B.find(x=>x[0]===b);
   app.innerHTML=`<div class="stack rankv"><section class="rkhero"><div><div class="label">Bảng xếp hạng · 排行榜</div><h1>Ai chăm nhất Tâm HSK?</h1><p>3 bảng: kinh nghiệm, Nguyên bảo kiếm được, bài học hoàn thành. Chốt mỗi tuần, mỗi tháng, và bảng mọi thời đại.</p></div><div class="rkheroart">${cupSVG('cup-silver',46)}${cupSVG('cup-eternal',78)}${cupSVG('cup-bronze',42)}</div></section>
     <div class="rkboards" role="tablist">${RK_B.map(([k,ic,t])=>`<button role="tab" class="rkb${k===b?' on':''}" data-rkb="${k}" aria-selected="${k===b}"><span>${ic}</span><b>${t}</b></button>`).join('')}</div>
@@ -19880,7 +19890,7 @@ function wwRender(){const st=WW.st,box=app.querySelector('#wwbox');if(!box||!st)
       <div class="wwq" id="wwq"></div></div>
     <div class="wwstats"><div><b>${(me.merit+WW.pend).toLocaleString('vi-VN')}</b><small>công trạng (viên)</small></div><div><b>${Math.floor((me.merit+WW.pend)/st.rule.big)}</b><small>gạch lớn</small></div><div><b>${Math.max(st.rule.min,Math.floor((me.merit+WW.pend)/st.rule.big)*st.rule.perBig)} ${YB}</b><small>thưởng nếu phe thắng</small></div></div>
     <p class="small ${lead>=0?'wwok':'wwbad'}">${lead>0?`Phe bạn đang dẫn ${lead.toLocaleString('vi-VN')} ${k==='han'?'viên gạch':'nhát phá'}.`:lead<0?`Phe bạn đang thua ${(-lead).toLocaleString('vi-VN')}. Cố lên!`:'Hai phe đang ngang nhau!'}</p>
-    ${st.top&&st.top.length?`<div class="panel wwtop"><b>Công thần phe ${WWS[k].n}</b>${st.top.map((t,i)=>`<div class="wwtr${t.mine?' me':''}"><span>${i+1}</span><b>${t.mine?'Bạn':showName(t.handle,t.name,t.idn)}</b><span>${t.merit.toLocaleString('vi-VN')}</span></div>`).join('')}</div>`:''}`;
+    ${st.top&&st.top.length?`<div class="panel wwtop"><b>Công thần phe ${WWS[k].n}</b>${st.top.map((t,i)=>`<div class="wwtr${t.mine?' me':''}" data-fu="${t.mine?'':esc(t.uid||'')}" data-fn="${esc(showName(t.handle,t.name,t.idn))}"><span>${i+1}</span><b>${t.mine?'Bạn':showName(t.handle,t.name,t.idn)}</b><span>${t.merit.toLocaleString('vi-VN')}</span></div>`).join('')}</div>`:''}`;
   wwAsk();}
 function wwAsk(){const el=app.querySelector('#wwq');if(!el||!WW.st||!WW.st.me)return;const q=wwQuestion(),k=WW.st.me.side;WW.q=q;
   el.innerHTML=`<div class="wwqcard"><div class="wwqh"><span class="wwqk">${WWS[k].emo} ${k==='han'?'Đúng để xây 1 viên':'Đúng để bắn 1 mũi tên'}</span><span class="wwstk">🔥 ${WW.streak}</span></div>
@@ -20384,6 +20394,36 @@ function lhBind(el){let t=0,sx=0,sy=0,ox=0,oy=0,moved=false,down=false;
 addEventListener('resize',()=>{clearTimeout(lhMount._t);lhMount._t=setTimeout(lhMount,200);});addEventListener('hashchange',()=>setTimeout(lhMount,120));setTimeout(lhMount,600);
 if(window.__T)window.__u118={L:n=>L(n),save:()=>save(),pTot,pNeed,pNeedT,pOK,LIVE,liveAdd,liveTick,lhMount,LH,prHome,prPassLog};
 try{if(PLAN_FEAT&&PLAN_FEAT.month&&!PLAN_FEAT.month.some(x=>/Dự đoán điểm/.test(x)))PLAN_FEAT.month.splice(2,0,'📝 Dự đoán điểm thi thật và phần yếu sau mỗi lần thi thử');}catch(e){}
+
+/* ===== 5.78: Kết bạn từ bảng xếp hạng, giải đấu tuần, Vạn Lý Trường Thành và sau trận chơi trực tuyến ===== */
+const FRS={sent:{},set:(p,o)=>fsSet(p,o)};try{FRS.sent=JSON.parse(localStorage.getItem('hsk-frsent')||'{}');}catch(e){}
+function frState(uid){if(!uid||uid==='bot')return 'none';const me=SOC.auth&&SOC.auth.uid;if(uid===me)return 'me';
+  if((SOC.friends||[]).some(f=>f.id===uid))return 'friend';if((SOC.requests||[]).some(r=>r.id===uid))return 'incoming';
+  const t=FRS.sent[uid];if(t&&Date.now()-t<30*864e5)return 'sent';return 'none';}
+function frBtnHTML(uid,name,big){const st=frState(uid);if(st==='me'||st==='none'&&(!uid||uid==='bot'))return '';
+  const lab={none:'➕ Kết bạn',sent:'✓ Đã gửi lời mời',friend:'👫 Bạn bè',incoming:'✅ Chấp nhận'}[st];
+  return `<button type="button" class="frad${big?' big':''} st-${st}" data-fadd="${esc(uid)}" data-fname="${esc(name||'')}"${st==='sent'||st==='friend'?' disabled':''} aria-label="${esc(lab+' '+(name||''))}">${lab}</button>`;}
+async function frAddUid(uid,name){if(SOC.auth&&!SOC.me){try{await socialLoad();}catch(e){}}if(!SOC.auth){try{gardenToast('Đăng nhập để kết bạn nhé.');}catch(e){}location.hash='#friends';return false;}
+  if(!SOC.me){try{gardenToast('Tạo hồ sơ bạn bè trước (vào mục Bạn bè) rồi kết bạn nhé.');}catch(e){}location.hash='#friends';return false;}
+  const st=frState(uid);if(st==='friend'||st==='me')return false;
+  if(st==='incoming'){await acceptReq(uid);try{gardenToast(`👫 Đã kết bạn với <b>${esc(name||'bạn mới')}</b>!`);}catch(e){}try{await socialLoad();}catch(e){}return true;}
+  await FRS.set(`users/${uid}/requests/${SOC.auth.uid}`,{name:SOC.me.name,avatar:SOC.me.avatar||0,at:Date.now()});
+  FRS.sent[uid]=Date.now();try{localStorage.setItem('hsk-frsent',JSON.stringify(FRS.sent));}catch(e){}
+  try{gardenToast(`📨 Đã gửi lời mời kết bạn tới <b>${esc(name||'bạn ấy')}</b>.`);}catch(e){}return true;}
+document.addEventListener('click',async e=>{const b=e.target.closest&&e.target.closest('[data-fadd]');if(!b)return;e.preventDefault();e.stopPropagation();if(b.disabled)return;b.disabled=true;const t=b.textContent;b.textContent='Đang gửi…';
+  try{const ok=await frAddUid(b.dataset.fadd,b.dataset.fname);document.querySelectorAll(`[data-fadd="${CSS.escape(b.dataset.fadd)}"]`).forEach(x=>{x.outerHTML=frBtnHTML(b.dataset.fadd,b.dataset.fname,x.classList.contains('big'));});if(!ok){b.disabled=false;b.textContent=t;}}
+  catch(err){b.disabled=false;b.textContent=t;try{gardenToast('Chưa gửi được: '+esc(err.message||'lỗi mạng'));}catch(x){}}},true);
+/* gắn nút vào mọi dòng có data-fu (bảng xếp hạng, giải đấu, Vạn Lý) */
+function frDecorate(){if(SOC.auth&&!SOC.me&&!FRS.ld&&document.querySelector('[data-fu]:not([data-fud])')){FRS.ld=1;socialLoad().then(()=>{document.querySelectorAll('[data-fadd]').forEach(x=>{x.outerHTML=frBtnHTML(x.dataset.fadd,x.dataset.fname,x.classList.contains('big'));});}).catch(()=>{});}
+  document.querySelectorAll('[data-fu]:not([data-fud])').forEach(r=>{r.dataset.fud=1;const uid=r.dataset.fu;if(!uid)return;const h=frBtnHTML(uid,r.dataset.fn||'');if(!h)return;
+  const v=r.querySelector('.lgxp,.lg2xpw,.rkv,:scope>b:last-child');if(v)v.insertAdjacentHTML('beforebegin',h);else r.insertAdjacentHTML('beforeend',h);});}
+new MutationObserver(()=>{if(!frDecorate._r)frDecorate._r=requestAnimationFrame(()=>{frDecorate._r=0;try{frDecorate();frDuoEnd();}catch(e){}});}).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+/* sau trận chơi trực tuyến (Đua xe đôi, Thủ thành đôi, Đặt Bom online) */
+const FRDUO={opp:null};setInterval(()=>{try{if(DUO.m&&DUO.m.opp&&DUO.m.opp.uid)FRDUO.opp=DUO.m.opp;}catch(e){}},700);
+function frDuoEnd(){const o=FRDUO.opp;if(!o||!o.uid||o.uid==='bot')return;const box=document.getElementById('duoresm')||(document.getElementById('bmend')&&!document.getElementById('bmend').hidden&&document.getElementById('bmendp'));
+  if(!box||!box.textContent.trim()||/Đang chờ|Đang báo/.test(box.textContent)||box.parentElement.querySelector('.frduo'))return;const h=frBtnHTML(o.uid,o.name,true);if(!h)return;
+  box.insertAdjacentHTML('afterend',`<div class="frduo"><span>Chơi hay đấy! Kết bạn với <b>${esc(o.name||'đối thủ')}</b> để rủ chơi tiếp, nhắn tin và tưới vườn cho nhau.</span>${h}</div>`);}
+if(window.__T)window.__u119={SOC,stub:o=>{if(o.set)FRS.set=o.set;if(o.acceptReq)acceptReq=o.acceptReq;if(o.socialLoad)socialLoad=o.socialLoad;if(o.toast)gardenToast=o.toast;},FRS,frState,frBtnHTML,frAddUid,frDecorate,FRDUO};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
