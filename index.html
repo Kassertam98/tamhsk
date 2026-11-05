@@ -4705,10 +4705,10 @@ html.tdbam .tdsearch input{border-color:var(--bamline)!important}
 .gtopui .gchip.kind{background:#ffeef3!important;border-color:#f3a9c0!important}
 .gtopui #gcan:not(.gcanin){display:none!important}
 .gcanin{margin-left:6px;border:0!important;border-radius:999px;padding:2px 8px!important;background:linear-gradient(150deg,#3b9be0,#1d6fb8)!important;color:#fff!important;font-weight:800;font-size:11.5px!important;cursor:pointer;box-shadow:none!important}
-.gmode{display:inline-grid;grid-template-columns:1fr 1fr;justify-self:start;padding:3px;border-radius:999px;background:rgba(20,32,26,.55);backdrop-filter:blur(4px)}
-.gmode button{border:0;border-radius:999px;padding:5px 11px;background:transparent;color:#e8f2ec;font:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}
-.gmode button.on{background:#fff;color:#0a5a49;box-shadow:0 2px 6px rgba(0,0,0,.2)}
-.gpotmode .gmode button.on{color:#8a5a12}
+.gtopui .gmode{display:inline-grid;grid-template-columns:1fr 1fr;justify-self:start;padding:3px;border-radius:999px;background:rgba(20,32,26,.55);backdrop-filter:blur(4px)}
+.gtopui .gmode button{border:0;border-radius:999px;padding:5px 11px;background:transparent;color:#e8f2ec;font:inherit;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}
+.gtopui .gmode button.on{background:#fff;color:#0a5a49;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.gpotmode .gtopui .gmode button.on{color:#8a5a12}
 .gtopui .gdock{position:static!important;display:grid!important;grid-template-columns:repeat(6,1fr)!important;gap:5px!important;padding:5px!important;border-radius:16px!important;background:rgba(20,32,26,.42)!important}
 .gtopui .gdock button{padding:4px 0 3px!important;border-radius:12px!important;min-width:0}
 .gtopui .gdock i{font-size:17px!important}.gtopui .gdock span{font-size:9px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
@@ -4799,8 +4799,8 @@ html.gfull .g5 .gtopui .gmapchips{flex:1;flex-wrap:wrap;align-items:center}
 .gchipgo{cursor:pointer;transition:transform .15s,box-shadow .15s}.gchipgo:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.22)!important}.gchipgo:active{transform:translateY(1px)}
 .gtopui .gchip.gold{background:#eaf7ff!important;border-color:#9fd6f5!important;color:#0d4f80!important}
 .gchip.gold b,.gchip.gold small{color:#0d4f80!important;opacity:1!important;visibility:visible!important}.gchip.gold{display:inline-flex!important;align-items:center;gap:4px}
-.gdrop{position:static!important;width:auto!important;height:auto!important;display:inline-grid;flex:none;margin-right:1px;vertical-align:-4px;filter:drop-shadow(0 1px 1.5px rgba(10,80,140,.45));animation:gdrop 2.6s ease-in-out infinite}
-@keyframes gdrop{50%{transform:translateY(-1px) scale(1.06);filter:drop-shadow(0 0 4px rgba(120,210,255,.9))}}
+.gwdrop{position:static!important;width:auto!important;height:auto!important;display:inline-grid;flex:none;margin-right:1px;vertical-align:-4px;filter:drop-shadow(0 1px 1.5px rgba(10,80,140,.45));animation:gwdropk 2.6s ease-in-out infinite}
+@keyframes gwdropk{50%{transform:translateY(-1px) scale(1.06);filter:drop-shadow(0 0 4px rgba(120,210,255,.9))}}
 html.gfull .g5 .gtopui .gdock{position:absolute!important;right:12px;top:50%;transform:translateY(-50%);display:grid!important;grid-template-columns:1fr!important;width:88px;max-width:none;gap:6px!important;padding:8px!important;border-radius:20px!important;background:rgba(14,24,20,.55)!important;backdrop-filter:blur(6px);box-shadow:0 10px 24px -12px rgba(0,0,0,.6)}
 html.gfull .g5 .gtopui .gdock button{display:grid;justify-items:center;gap:2px;padding:7px 2px 6px!important;border-radius:14px!important;border:0;background:rgba(255,255,255,.93);color:#1b2826;cursor:pointer;font:inherit}
 html.gfull .g5 .gtopui .gdock button:hover{background:#fff;transform:translateX(-2px)}
@@ -5046,12 +5046,12 @@ html.gfull #lhpet,html.fs.learnmode #lhpet,html.exmode #lhpet,html.msopen #lhpet
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='a1d24289';
-document.write('<script src="packs/hsk'+L+'.js?v=a1d24289"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='cc12f0db';
+document.write('<script src="packs/hsk'+L+'.js?v=cc12f0db"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a1d24289','strokes-file');A('packs/dict.js?v=a1d24289','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=cc12f0db','strokes-file');A('packs/dict.js?v=cc12f0db','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -20097,7 +20097,7 @@ if(window.__T)window.__u114={GM,gModeSync,gPotDlg,FWS};
    - Nước tưới hộ: giọt nước xanh trắng; Tiếng thú: công tắc ở góc trái trên vườn ===== */
 GDOCK.splice(0,GDOCK.length,['fr','👫','Thăm vườn bạn'],['seed','🌱','Hạt giống'],['pot','🏺','Nâng chậu'],['pet','🐾','Thú'],['shop','🏮','Trang trí'],['quest','📋','Nhiệm vụ'],['more','⋯','Thêm']);
 const GD_TITLE={fr:'👫 Thăm vườn bạn bè',seed:'🌱 Hạt giống',pet:'🐾 Thú trong vườn',quest:'📋 Nhiệm vụ vườn',more:'⋯ Thêm'};
-const GDROP='<i class="gdrop" aria-hidden="true"><svg viewBox="0 0 24 30" width="15" height="19"><defs><linearGradient id="gdrg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f8ff"/><stop offset=".45" stop-color="#5fc3f5"/><stop offset="1" stop-color="#1572c2"/></linearGradient></defs><path d="M12 1.5C9 7 3.5 12.5 3.5 19a8.5 8.5 0 0 0 17 0C20.5 12.5 15 7 12 1.5z" fill="url(#gdrg)" stroke="#fff" stroke-width="1.4"/><ellipse cx="8.6" cy="17" rx="2" ry="3.6" fill="#fff" opacity=".85" transform="rotate(18 8.6 17)"/><circle cx="15.4" cy="23" r="1.2" fill="#fff" opacity=".7"/></svg></i>';
+const GDROP='<i class="gwdrop" aria-hidden="true"><svg viewBox="0 0 24 30" width="15" height="19"><defs><linearGradient id="gdrg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f8ff"/><stop offset=".45" stop-color="#5fc3f5"/><stop offset="1" stop-color="#1572c2"/></linearGradient></defs><path d="M12 1.5C9 7 3.5 12.5 3.5 19a8.5 8.5 0 0 0 17 0C20.5 12.5 15 7 12 1.5z" fill="url(#gdrg)" stroke="#fff" stroke-width="1.4"/><ellipse cx="8.6" cy="17" rx="2" ry="3.6" fill="#fff" opacity=".85" transform="rotate(18 8.6 17)"/><circle cx="15.4" cy="23" r="1.2" fill="#fff" opacity=".7"/></svg></i>';
 (function(){const base=gToolsChips;gToolsChips=function(){return base.apply(this,arguments).replace('💛 ',GDROP+' ');};})();
 
 /* popup tính năng: luôn là popup có nút đóng (máy tính cũng vậy) */
@@ -20135,7 +20135,7 @@ function gWaterGo(){const g=G();const grow=g.plots.map((p,i)=>[p,i]).filter(([p]
   if(g.water<1){gardenToast(`💧 Hết nước rồi. Bấm <b>+ 🚿</b> để mua bình tưới (${CAN_COST} ${YB}), hoặc chờ nước tự hồi.`);return;}
   grow.sort((a,b)=>(a[0].gr||0)-(b[0].gr||0));careRound(grow[0][1]);}
 function gChipGo(e){if(e.target.closest('#gcan'))return;const c=e.currentTarget;e.stopPropagation();
-  if(c.classList.contains('water'))gWaterGo();else if(c.matches('.gold,.shovel,.kind,.hurt'))gSheet('fr');else if(c.classList.contains('gcoin'))gSheet('shop');}
+  if(c.classList.contains('water'))gWaterGo();else if(c.matches('.gold,.shovel,.kind,.hurt'))gSheet('fr');else if(c.classList.contains('gcoinchip'))gSheet('shop');}
 
 /* vườn toàn màn hình ở mọi kích cỡ màn hình */
 gFull=function(on){const R=document.documentElement;on=!!on;if(R.classList.contains('gfull')===on)return;R.classList.toggle('gfull',on);
@@ -20149,7 +20149,7 @@ gFull=function(on){const R=document.documentElement;on=!!on;if(R.classList.conta
   /* tên vườn trên thanh trên */
   const row=top.querySelector('.gtrow');if(row&&!row.querySelector('.gttl')){const h=app.querySelector('.gtop h1'),lb=app.querySelector('.gtop .label');const t=document.createElement('div');t.className='gttl';t.innerHTML=`<b>${esc(h?h.textContent:'Khu vườn')}</b><small>${esc(lb?lb.textContent:'')}</small>`;row.querySelector('.gback').after(t);}
   if(box){/* bỏ ô trùng: giữ ô sau cùng của mỗi loại */
-    const seen=new Set();[...box.children].reverse().forEach(c=>{if(c.id==='gcan')return;const k=['water','gold','shovel','kind','hurt'].find(x=>c.classList.contains(x))||(c.querySelector('.ybi')||/Nguyên bảo|💰/.test(c.textContent)?'coin':c.textContent.trim());if(seen.has(k))c.remove();else seen.add(k);if(k==='coin')c.classList.add('gcoin');});
+    const seen=new Set();[...box.children].reverse().forEach(c=>{if(c.id==='gcan')return;const k=['water','gold','shovel','kind','hurt'].find(x=>c.classList.contains(x))||(c.querySelector('.ybi')||/Nguyên bảo|💰/.test(c.textContent)?'coin':c.textContent.trim());if(seen.has(k))c.remove();else seen.add(k);if(k==='coin')c.classList.add('gcoinchip');});
     box.querySelectorAll('.gchip:not(#gcan)').forEach(c=>{if(c.dataset.go)return;c.dataset.go=1;c.classList.add('gchipgo');c.setAttribute('role','button');c.tabIndex=0;c.addEventListener('click',gChipGo);c.addEventListener('keydown',e=>{if(e.key==='Enter')gChipGo(e);});
       if(c.classList.contains('water'))c.title='Bấm để tưới cây (trả lời câu hỏi)';else if(c.matches('.gold,.shovel,.kind,.hurt'))c.title+=' · Bấm để thăm vườn bạn bè';});}
   /* thanh tính năng mới */
