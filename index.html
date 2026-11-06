@@ -5357,6 +5357,33 @@ html.gfull .fgarden #fgq.on>.panel{position:relative;width:min(620px,100%);max-h
 .supset{align-items:center;gap:12px;text-decoration:none;color:inherit}.supi{font-size:26px}
 .supms{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding:10px 14px;border-radius:16px;background:#eef3fb;border:1px solid #c9d8f0;color:#1f4f8a;text-decoration:none}
 .supms b{font-size:15px}.supms small{flex:1;color:var(--muted);font-size:12px}
+/* 5.85 */
+.ctarow{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:12px;align-items:stretch}
+.ctarow>.cta{min-width:0}
+.ctapro{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;min-width:0;border-radius:var(--r);padding:16px 18px;background:linear-gradient(135deg,#fff4d6,#ffe3ec);border:1px solid #e6b94a}
+.ctapro b{display:block;font-size:17px;color:var(--ink)}.ctapro span{color:var(--muted)}.ctapro span b{display:inline;font-size:inherit;color:#b8860b}
+.ctapro>div{min-width:0;flex:1 1 200px}
+.ctapro-btn{background:linear-gradient(135deg,#f5b301,#e8590c);border-color:#e8590c;color:#fff;text-decoration:none;padding:11px 20px;font-size:15px;white-space:nowrap}
+.ctapro-btn:hover{filter:brightness(1.06);border-color:#e8590c}
+.ctapro.on{background:linear-gradient(135deg,#e8fff3,#fff8dd);border-color:#5cc08a}
+:root[data-theme="dark"] .ctapro{background:linear-gradient(135deg,#3a3016,#3a1e2a);border-color:#8a6a1e}
+@media (max-width:820px){.ctarow{grid-template-columns:minmax(0,1fr)}}
+html.mhome footer.site .ctarow{display:none!important}
+.frmax{font-size:13px;font-weight:600;padding:1px 8px;border-radius:99px;background:var(--jade-soft,#e3f5ec);color:var(--jade,#0d7a63);vertical-align:middle}
+.frmax.full{background:#ffe3e3;color:var(--seal,#c0392b)}
+.frlim{font-size:13px;padding:8px 10px;border-radius:10px;background:#fff6dc;border:1px solid #f0d58a;margin-bottom:8px}
+#clopen .clogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.clopen{display:flex;flex-direction:column;gap:4px;min-width:0;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.clopen.ks{border-color:var(--amber);box-shadow:0 0 0 2px var(--amber-soft) inset}
+.clohd{display:flex;gap:6px;flex-wrap:wrap}.clolv,.clok{font-size:12px;font-weight:700;padding:1px 8px;border-radius:99px;background:#e3f2ff;color:#1d6fb8}.clok{background:var(--amber-soft);color:#9a6a00}
+.cloname{font-size:16px;overflow-wrap:anywhere}.clonote{overflow-wrap:anywhere}
+.clopen .btn{margin-top:auto;align-self:flex-start}
+.crhint{padding:0 4px}
+#kpubnote{width:100%;min-width:0;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ctapro{background:linear-gradient(135deg,#3a3016,#3a1e2a);border-color:#8a6a1e}}
+/* 5.85: sửa trùng tên .prcard (thẻ phát âm) làm khung mua gói bị xếp ngang */
+.plans2 #prcard{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:16px;background:var(--card)}
+.plans2 #prcard .prvc{flex-wrap:nowrap}.plans2 #prcard .prvc input{flex:1;min-width:0}
 </style>
 </head><body>
 
@@ -5382,12 +5409,12 @@ html.gfull .fgarden #fgq.on>.panel{position:relative;width:min(620px,100%);max-h
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='da8bb1a8';
-document.write('<script src="packs/hsk'+L+'.js?v=da8bb1a8"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='0b6ab8a3';
+document.write('<script src="packs/hsk'+L+'.js?v=0b6ab8a3"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=da8bb1a8','strokes-file');A('packs/dict.js?v=da8bb1a8','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=0b6ab8a3','strokes-file');A('packs/dict.js?v=0b6ab8a3','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -15216,7 +15243,7 @@ function gSnap(g){const now=Date.now(),plus=plusActive();return {lv:LEVEL,decor:
   const ripe=p.gr>=100?(p.rp||now):now+gLeft(p);return {l:p.l,pot:p.pot||0,pk:p.pk,ripe:Math.round(ripe),wilt:plus?Math.round(ripe):Math.round((p.rp||ripe)+wiltWin(p)+decayWin(p)),gr:Math.round(p.gr||0),st:p.st||0};})};}
 /* ---------- D. Gói phụ: Plus (Tiểu Long Hổ tự thu hoạch), Chơi Tiếp ---------- */
 const subOn=k=>{const p=PM();const o=p&&p[k];return !!(o&&(o.life||(o.until&&o.until>Date.now())));};
-const plusActive=()=>subOn('plus'),replayActive=()=>subOn('replay');
+const plusActive=()=>subOn('plus')||subOn('replay')||planActiveC(PM()),replayActive=()=>subOn('replay')||planActiveC(PM());
 Object.assign(PLAN_NAME,{month:'Pro Tháng',year:'Pro Năm',life:'Pro Trọn đời',teacher:'Gói Giáo viên',plus:'Plus Tháng',plus_life:'Plus Trọn đời',replay:'Chơi Tiếp Tháng',replay_year:'Chơi Tiếp Năm',coins1000:'1.000 Nguyên bảo'});
 Object.assign(PLAN_FEAT,{
   month:['⚡ Học bài mới, chơi trò chơi không tốn năng lượng','📚 Ôn từ hay sai không giới hạn','☁️ Gắn với tài khoản, đổi máy vẫn giữ'],
@@ -15229,12 +15256,12 @@ Object.assign(PLAN_FEAT,{
   coins1000:['🪙 Cộng ngay 1.000 Nguyên bảo vào ví','🏺 Mua chậu, hạt giống, trang phục, chơi tiếp…','♻️ Mua được nhiều lần']});
 const PLAN_GROUPS=[['pro','⭐ Gói Pro','Học bài mới và chơi trò chơi không tốn năng lượng, ôn không giới hạn. Gói Năm và Trọn đời kèm luyện thi.',['month','year','life']],
   ['plus','🐉 Gói Plus','Khỉ Thông Thái tự thu hoạch cây chín trong vườn, kèm Tiểu Bồ Câu gieo hạt và Tiểu Mao thu hoạch.',['plus','plus_life']],
-  ['replay','🔁 Gói Chơi Tiếp','Thua ván nào cũng được chơi tiếp 1 lượt miễn phí, rồi mua thêm tối đa 2 lượt (3 lượt mỗi ván).',['replay','replay_year']],
+  ['replay','🔁 Gói Plus','Thua ván nào cũng được chơi tiếp 1 lượt miễn phí, rồi mua thêm tối đa 2 lượt (3 lượt mỗi ván).',['replay','replay_year']],
   ['teacher','👩‍🏫 Gói Giáo viên','Tạo lớp, giao bài, bảng xếp hạng lớp, xuất CSV. Dành cho giáo viên và trung tâm.',['teacher']],
   ['coins','🪙 Nguyên bảo','Nạp Nguyên bảo để mua chậu, hạt giống, trang phục hoặc chơi tiếp.',['coins1000']]];
 Object.assign(GPB_IDS,{plus:'tamhsk_plus',plus_life:'tamhsk_plus_life',replay:'tamhsk_replay',replay_year:'tamhsk_replay_year',coins1000:'tamhsk_coins1000'});
 Object.keys(GPB_IDS).forEach(k=>GPB_OF[GPB_IDS[k]]=k);
-const PLAN_FALLBACK={plus:{name:'Gói Plus',price:15000,days:30,plan:'plus'},plus_life:{name:'Gói Plus trọn đời',price:100000,days:0,plan:'plus'},replay:{name:'Gói Chơi Tiếp',price:49000,days:30,plan:'replay'},replay_year:{name:'Gói Chơi Tiếp 1 năm',price:299000,days:365,plan:'replay'},coins1000:{name:'1.000 Nguyên bảo',price:100000,days:0,plan:'coins',coins:1000}};
+const PLAN_FALLBACK={plus:{name:'Gói Plus',price:15000,days:30,plan:'plus'},plus_life:{name:'Gói Plus trọn đời',price:100000,days:0,plan:'plus'},replay:{name:'Gói Plus',price:49000,days:30,plan:'replay'},replay_year:{name:'Gói Plus 1 năm',price:299000,days:365,plan:'replay'},coins1000:{name:'1.000 Nguyên bảo',price:100000,days:0,plan:'coins',coins:1000}};
 /* ---------- E. Thuê gieo/thu hàng loạt (50 NB / 30 ngày), Long Hổ tự thu ---------- */
 const RENT_COST=50,RENT_DAYS=30;
 function rentOn(k){if(plusActive())return true;const g=G();return !!(g.rent&&g.rent[k]&&g.rent[k]>Date.now());}
@@ -15325,7 +15352,7 @@ function gmGate(key,run){if(window.__gmPaid===key){window.__gmPaid=null;return t
 let GM_RUN={key:'',n:0};
 function gmLose(key,revive,giveUp){try{if(GM_RUN.key!==key)GM_RUN={key,n:0};const n=GM_RUN.n;if(n>=2)return false;const free=replayActive(),cost=free?0:50*(n+1);
   if(!free&&SHOP().coins<cost)return false;
-  gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Chơi tiếp ${esc(GM_NAME[key]||'')}?</h3><p class="small muted" style="margin:0">Giữ nguyên điểm và chơi tiếp từ chỗ vừa thua. Lượt ${n+1}/2${free?' <b>miễn phí</b> (Gói Chơi Tiếp)':` tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins})`}.${free?'':' <a href="#premium">Gói Chơi Tiếp</a> 49.000đ/tháng: 2 lượt miễn phí mỗi ván.'}</p>`,free?'Chơi tiếp':`Chơi tiếp · ${cost} ${YB}`,()=>{
+  gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Chơi tiếp ${esc(GM_NAME[key]||'')}?</h3><p class="small muted" style="margin:0">Giữ nguyên điểm và chơi tiếp từ chỗ vừa thua. Lượt ${n+1}/2${free?' <b>miễn phí</b> (Gói Plus)':` tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins})`}.${free?'':' <a href="#premium">Gói Plus</a> 49.000đ/tháng: 2 lượt miễn phí mỗi ván.'}</p>`,free?'Chơi tiếp':`Chơi tiếp · ${cost} ${YB}`,()=>{
     if(!free&&!spend(cost,'Chơi tiếp '+(GM_NAME[key]||'trò chơi')))return giveUp&&giveUp();GM_RUN.n=n+1;try{sfx('win');}catch(e){}revive();},giveUp);
   return true;}catch(e){return false;}}
 function gmReset(key){GM_RUN={key,n:0};}
@@ -15333,7 +15360,7 @@ function gmReset(key){GM_RUN={key,n:0};}
 function planStatusHTML(){const p=PM();if(!SOC.auth)return '';const out=[];
   if(planActiveC(p)){const t=p.plan==='life'?'trọn đời':`đến ${fmtVN(p.until)} (còn ${daysLeft(p.until)} ngày)`;out.push(`<div class="panel row prmini pron"><span>⭐ <b>${esc(PLAN_NAME[p.plan]||'Pro')}</b> đang hoạt động · ${t}${isLegacyFan()?' · <b class="prfan">🏅 Người ủng hộ đầu tiên</b>':''}</span>${p.plan!=='life'?'<b class="prgo">Gia hạn ↓</b>':''}</div>`);}
   if(p.plus){const on=subOn('plus');out.push(`<div class="panel row prmini${on?' pron':''}"><span>🐉 <b>Gói Plus</b> ${p.plus.life?'trọn đời':on?`đến ${fmtVN(p.plus.until)} (còn ${daysLeft(p.plus.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.plus.until)}`}</span>${p.plus.life?'':'<b class="prgo">Gia hạn ↓</b>'}</div>`);}
-  if(p.replay){const on=subOn('replay');out.push(`<div class="panel row prmini${on?' pron':''}"><span>🔁 <b>Gói Chơi Tiếp</b> ${on?`đến ${fmtVN(p.replay.until)} (còn ${daysLeft(p.replay.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.replay.until)}`}</span><b class="prgo">Gia hạn ↓</b></div>`);}
+  if(p.replay){const on=subOn('replay');out.push(`<div class="panel row prmini${on?' pron':''}"><span>🔁 <b>Gói Plus</b> ${on?`đến ${fmtVN(p.replay.until)} (còn ${daysLeft(p.replay.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.replay.until)}`}</span><b class="prgo">Gia hạn ↓</b></div>`);}
   if(p.teacher){const on=p.teacher.until>Date.now();out.push(`<div class="panel row prmini${on?' pron':''}"><span>🏫 <b>Gói Giáo viên</b> ${on?`đến ${fmtVN(p.teacher.until)} (còn ${daysLeft(p.teacher.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.teacher.until)}: lớp cũ vẫn xem được, cần gia hạn để tạo lớp mới`}</span><b class="prgo">Gia hạn ↓</b></div>`);}
   return out.join('');}
 function planCard2(k,P,chosen,quote,price){const early=P.early&&P.early.left>0;const base=early?P.early.price:P.price;const shown=price!=null?price:(quote&&quote.product===k?quote.final:base);
@@ -15343,14 +15370,14 @@ function planCard2(k,P,chosen,quote,price){const early=P.early&&P.early.left>0;c
     <b class="plname">${esc(PLAN_NAME[k]||P.name)}</b><span class="plprice">${typeof shown==='number'?vnd(shown):shown}${(early&&!(quote&&quote.product===k))||(quote&&quote.product===k&&quote.discount)?`<s>${vnd(quote&&quote.product===k?quote.base||P.price:P.price)}</s>`:''}</span>${per}
     <ul class="plfeat">${(PLAN_FEAT[k]||[]).map(f=>`<li>${f}</li>`).join('')}</ul></button>`;}
 viewPremium=async function(){
-  const head=`<section class="addhero prhero"><div class="addicon" aria-hidden="true">⭐</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Học và chơi thoải mái</h1><p><b>Pro</b>: không tốn năng lượng, ôn không giới hạn. <b>Plus</b>: Khỉ Thông Thái tự thu hoạch vườn. <b>Chơi Tiếp</b>: thua được chơi tiếp miễn phí. Hoặc nạp <b>Nguyên bảo</b>.</p></div></section>`;
+  const head=`<section class="addhero prhero"><div class="addicon" aria-hidden="true">⭐</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Học và chơi thoải mái</h1><p><b>Pro</b>: không tốn năng lượng, ôn không giới hạn, gồm luôn quyền lợi Plus. <b>Plus</b>: Khỉ Thông Thái tự thu hoạch vườn và được chơi tiếp miễn phí khi thua. Hoặc nạp <b>Nguyên bảo</b>.</p></div></section>`;
   app.innerHTML=`<div class="stack">${head}<div class="panel muted">Đang tải bảng giá…</div></div>`;
   try{await meFetch();}catch(e){}
   const app_=gpbOK();if(isApp()&&!app_){app.innerHTML=`<div class="stack">${head}${planStatusHTML()||'<div class="panel"><p class="muted" style="margin:0">Tài khoản này chưa có gói trả phí.</p></div>'}<div class="panel small muted">Hãy cập nhật app lên bản mới nhất trên Google Play để mua gói.</div></div>`;return;}
   const pr=app_?{products:Object.assign({month:{},year:{},life:{},teacher:{}},PLAN_FALLBACK),auto:false}:await pricingGet();const P=Object.assign({},PLAN_FALLBACK,pr.products||{});const p=PM();
   const lifeOwned=p.plan==='life'||!!p.study,plusLife=!!(p.plus&&p.plus.life);
-  const hidden=k=>(lifeOwned&&['month','year','life'].includes(k))||(plusLife&&['plus','plus_life'].includes(k));
-  let chosen=(location.hash.match(/#premium-([a-z0-9_]+)/)||[])[1]||(lifeOwned?'plus':'year');if(hidden(chosen)||!P[chosen])chosen=['year','plus','replay','teacher','coins1000'].find(k=>!hidden(k));
+  const hidden=k=>['plus','plus_life'].includes(k)||(lifeOwned&&['month','year','life','replay','replay_year'].includes(k));
+  let chosen=(location.hash.match(/#premium-([a-z0-9_]+)/)||[])[1]||(lifeOwned?'teacher':'year');if(hidden(chosen)||!P[chosen])chosen=['year','replay','teacher','coins1000'].find(k=>!hidden(k));
   let quote=null,code='',waiting=false,err='';
   const m=ME(),pend=(m.uid===(SOC.auth&&SOC.auth.uid))&&(m.orders||[]).find(o=>o.status==='pending');
   const priceOf=k=>{if(!app_)return null;const it=GPB.items[GPB_IDS[k]];return it&&it.price?esc(it.price):'<span class="small muted">Đang tải giá…</span>';};
@@ -18275,7 +18302,7 @@ if(window.__T)window.__u90={dfxRestyle};
 
 /* ===== 5.45 Chơi tiếp khi thua: đếm ngược 5 giây rồi chơi tiếp bình thường
    Không có gói: mua tối đa 2 lượt mỗi ván (50, 100 Nguyên bảo).
-   Gói Chơi Tiếp: lượt 1 miễn phí, sau đó mua thêm 2 lượt (50, 100) → tối đa 3 lượt mỗi ván. */
+   Gói Plus: lượt 1 miễn phí, sau đó mua thêm 2 lượt (50, 100) → tối đa 3 lượt mỗi ván. */
 const GM_CD=5;
 const gmMax=()=>(typeof replayActive==='function'&&replayActive())?3:2;
 function gmCost(n){const pk=typeof replayActive==='function'&&replayActive();if(pk)return n===0?0:50*n;return 50*(n+1);}
@@ -18288,8 +18315,8 @@ function gmCountdown(key,lap,max,done){let ov=document.getElementById('gmcd');if
   if(window.__T)window.__gmcd={skip:()=>{clearInterval(iv);ov.remove();done();}};}
 gmLose=function(key,revive,giveUp){try{if(typeof duoOn==='function'&&duoOn())return false;if(GM_RUN.key!==key)GM_RUN={key,n:0};
   const n=GM_RUN.n,max=gmMax();if(n>=max)return false;const cost=gmCost(n),pk=gmMax()===3;if(cost>0&&SHOP().coins<cost)return false;
-  const note=pk?(n===0?'<b>Miễn phí</b> nhờ Gói Chơi Tiếp.':`tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins}). Gói Chơi Tiếp đã dùng lượt miễn phí của ván này.`)
-    :`tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins}). <a href="#premium">Gói Chơi Tiếp</a>: lượt đầu mỗi ván miễn phí, mua thêm được tới 3 lượt.`;
+  const note=pk?(n===0?'<b>Miễn phí</b> nhờ Gói Plus.':`tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins}). Gói Plus đã dùng lượt miễn phí của ván này.`)
+    :`tốn <b>${cost} ${YB}</b> (bạn có ${SHOP().coins}). <a href="#premium">Gói Plus</a>: lượt đầu mỗi ván miễn phí, mua thêm được tới 3 lượt.`;
   gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Chơi tiếp ${esc(GM_NAME[key]||'')}?</h3><p class="small muted" style="margin:0">Giữ nguyên điểm, sau <b>${GM_CD} giây</b> đếm ngược sẽ chơi tiếp từ chỗ vừa thua. Lượt chơi tiếp <b>${n+1}/${max}</b> của ván này, ${note}</p>`,
     cost?`Chơi tiếp · ${cost} ${YB}`:'Chơi tiếp miễn phí',()=>{
     if(cost>0&&!spend(cost,'Chơi tiếp '+(GM_NAME[key]||'trò chơi')))return giveUp&&giveUp();GM_RUN.n=n+1;try{sfx('win');}catch(e){}gmCountdown(key,n+1,max,revive);},giveUp);
@@ -21353,6 +21380,91 @@ socialLoad=function(){if(SL.p){if(!SL.next)SL.next=SL.p.catch(()=>{}).then(()=>{
 function frRefreshBg(head){Promise.all([socialPush().catch(()=>{}),socialLoad()]).then(()=>{if(!location.hash.startsWith('#friends'))return;
   const busy=document.querySelector('#app input:focus,#app textarea:focus')||(document.getElementById('frdlg')||{}).open;if(busy)return;renderFriends(head);}).catch(()=>{});}
 if(window.__T)window.__u125={SL,socialBundle,socialLoadOld};
+
+/* ===== 5.85: gói mới (Plus = Chơi tiếp + Khỉ Thông Thái; Pro gồm Plus), giới hạn bạn bè, tin mua gói, khối mua gói, lớp đang mở ===== */
+/* ---------- 1. Tên gói, quyền lợi, nhóm gói ---------- */
+Object.assign(PLAN_NAME,{replay:'Plus Tháng',replay_year:'Plus Năm',plus:'Khỉ Thông Thái (gói cũ)',plus_life:'Khỉ Thông Thái trọn đời (gói cũ)'});
+Object.assign(PLAN_FEAT,{
+  month:['⚡ Học bài mới, chơi trò chơi không tốn năng lượng','📚 Ôn từ hay sai không giới hạn','🐉 Kèm toàn bộ quyền lợi Gói Plus (Khỉ Thông Thái, chơi tiếp)','👥 Kết bạn tối đa 500 người'],
+  year:['⚡ Mọi quyền lợi Pro Tháng, gồm cả Gói Plus','📝 Gói luyện thi: đề đầy đủ không giới hạn, dự đoán điểm, phân tích phần yếu','🪙 Tặng 300 Nguyên bảo','💸 Rẻ hơn 58% so với mua từng tháng'],
+  life:['♾️ Mọi quyền lợi Pro Năm và Gói Plus, trả một lần dùng mãi','🆕 Gồm cả các cấp ra sau này (HSK3, HSK4…)','🏅 Huy hiệu PRO trên hồ sơ'],
+  replay:['🐒 Khỉ Thông Thái tự thu hoạch ngay khi cây chín','🛡️ Không lo cây héo, không bị bạn bè trộm','🔁 Thua ván nào cũng được chơi tiếp miễn phí','🕊️ Kèm Tiểu Bồ Câu gieo hạt và Tiểu Mao thu hoạch','👥 Kết bạn tối đa 100 người'],
+  replay_year:['🐉 Mọi quyền lợi Plus Tháng','💸 Tiết kiệm 57% so với mua từng tháng']});
+PLAN_GROUPS.splice(0,PLAN_GROUPS.length,
+  ['pro','⭐ Gói Pro','Học bài mới và chơi trò chơi không tốn năng lượng, ôn không giới hạn, kèm toàn bộ quyền lợi Gói Plus. Gói Năm và Trọn đời kèm luyện thi.',['month','year','life']],
+  ['replay','🐉 Gói Plus','Khỉ Thông Thái tự thu hoạch cây chín trong vườn và được chơi tiếp miễn phí mỗi khi thua.',['replay','replay_year']],
+  ['teacher','👩‍🏫 Gói Giáo viên','Tạo lớp, giao bài, bảng xếp hạng lớp, xuất CSV. Dành cho giáo viên và trung tâm.',['teacher']],
+  ['coins','🪙 Nguyên bảo','Nạp Nguyên bảo để mua chậu, hạt giống, trang phục hoặc chơi tiếp.',['coins1000']]);
+delete PLAN_FALLBACK.plus;delete PLAN_FALLBACK.plus_life;
+Object.assign(PLAN_FALLBACK,{replay:{name:'Gói Plus Tháng',price:39000,days:30,plan:'replay'},replay_year:{name:'Gói Plus Năm',price:199000,days:365,plan:'replay'}});
+const proOnC=()=>planActiveC(PM());
+function acctTier(){const p=PM();if(p.tier)return p.tier;return proOnC()?'pro':(subOn('replay')||subOn('plus'))?'plus':'free';}
+const FR_MAX={free:50,plus:100,pro:500},TIER_NAME={free:'tài khoản thường',plus:'Gói Plus',pro:'Gói Pro'};
+function frMax(){const p=PM();return p.friendMax||FR_MAX[acctTier()];}
+planStatusHTML=function(){const p=PM();if(!SOC.auth)return '';const out=[];
+  if(planActiveC(p)){const t=p.plan==='life'?'trọn đời':`đến ${fmtVN(p.until)} (còn ${daysLeft(p.until)} ngày)`;out.push(`<div class="panel row prmini pron"><span>⭐ <b>${esc(PLAN_NAME[p.plan]||'Pro')}</b> đang hoạt động · ${t} · gồm Gói Plus${isLegacyFan()?' · <b class="prfan">🏅 Người ủng hộ đầu tiên</b>':''}</span>${p.plan!=='life'?'<b class="prgo">Gia hạn ↓</b>':''}</div>`);}
+  if(p.replay){const on=subOn('replay');out.push(`<div class="panel row prmini${on?' pron':''}"><span>🐉 <b>Gói Plus</b> ${on?`đến ${fmtVN(p.replay.until)} (còn ${daysLeft(p.replay.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.replay.until)}`}</span><b class="prgo">Gia hạn ↓</b></div>`);}
+  if(p.plus){const on=subOn('plus');out.push(`<div class="panel row prmini${on?' pron':''}"><span>🐒 <b>Khỉ Thông Thái (gói cũ)</b> ${p.plus.life?'trọn đời':on?`đến ${fmtVN(p.plus.until)} (còn ${daysLeft(p.plus.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.plus.until)}`}</span>${p.plus.life||on?'':'<b class="prgo">Mua Gói Plus mới ↓</b>'}</div>`);}
+  if(p.teacher){const on=p.teacher.until>Date.now();out.push(`<div class="panel row prmini${on?' pron':''}"><span>🏫 <b>Gói Giáo viên</b> ${on?`đến ${fmtVN(p.teacher.until)} (còn ${daysLeft(p.teacher.until)} ngày)`:`đã hết hạn ngày ${fmtVN(p.teacher.until)}: lớp cũ vẫn xem được, cần gia hạn để tạo lớp mới`}</span><b class="prgo">Gia hạn ↓</b></div>`);}
+  return out.join('');};
+
+/* ---------- 2. Giới hạn bạn bè: 50 / 100 / 500 ---------- */
+(function(){const base=fbErr;fbErr=function(m){const x=String(m||'').match(/FRIEND_LIMIT:(me|other):(\d+):(\w+)/);
+  if(x)return x[1]==='me'?`Danh sách bạn của bạn đã đủ ${x[2]} người (${TIER_NAME[x[3]]||'tài khoản thường'}). Xóa bớt bạn hoặc nâng gói để kết thêm: thường 50, Plus 100, Pro 500.`:`Danh sách bạn của người này đã đủ ${x[2]} người, chưa kết bạn thêm được.`;
+  return base.apply(this,arguments);};})();
+acceptReq=async function(fid){const uid=SOC.auth.uid,t=Date.now();await fsSet(`users/${uid}/friends/${fid}`,{since:t});
+  try{await fsSet(`users/${fid}/friends/${uid}`,{since:t});}catch(e){try{await fsDel(`users/${uid}/friends/${fid}`);}catch(x){}throw e;}
+  await fsDel(`users/${uid}/requests/${fid}`);};
+function frMaxApply(){if(location.hash!=='#friends'||!SOC.auth)return;const n=(SOC.friends||[]).length,mx=frMax();
+  app.querySelectorAll('h2,h3').forEach(h=>{if(!/^Bạn bè \(\d+\)$/.test(h.textContent.trim())||h.querySelector('.frmax'))return;h.innerHTML=`Bạn bè <span class="frmax${n>=mx?' full':''}">${n}/${mx}</span>`;
+    const pn=h.closest('.panel');if(pn&&n>=mx*0.9&&acctTier()!=='pro'&&!pn.querySelector('.frlim'))pn.insertAdjacentHTML('afterbegin',`<div class="frlim">👥 ${n>=mx?'Danh sách bạn đã đủ':'Sắp đủ chỗ'} (${n}/${mx}). ${acctTier()==='free'?'Gói Plus kết được 100 bạn, Gói Pro 500 bạn.':'Gói Pro kết được 500 bạn.'} <a href="#premium">Nâng gói →</a></div>`);});}
+try{new MutationObserver(()=>{if(location.hash==='#friends')frMaxApply();}).observe(app,{childList:true,subtree:true});}catch(e){}
+
+/* ---------- 3. Tin tức thế giới: có người mua Gói Plus trở lên ---------- */
+(function(){const base=wtText;wtText=function(it){const d=it.data||{};
+  if(it.kind==='plan')return d.tier==='pro'?`💎 ${wtName(it)} vừa nâng cấp <b>Gói Pro${d.life?' Trọn đời':''}</b>! Chúc học thật vui 🎉`:`🐉 ${wtName(it)} vừa nâng cấp <b>Gói Plus</b>, Khỉ Thông Thái đã về vườn!`;
+  return base.apply(this,arguments);};})();
+
+/* ---------- 4. Khối mua gói bên phải "Học Online cùng Kasser" ---------- */
+function ctaProHTML(){const t=acctTier(),app_=typeof isApp==='function'&&isApp();
+  const life=PM().plan==='life'||PM().study;
+  if(t==='pro'&&life)return `<div class="ctapro on"><div><b>⭐ Bạn đang dùng Gói Pro Trọn đời</b><span>Gồm toàn bộ quyền lợi Plus. Cảm ơn bạn đã ủng hộ Tâm HSK!</span></div><a class="btn ctapro-btn" href="#premium">Xem gói của tôi</a></div>`;
+  return `<div class="ctapro"><div><b>${t==='pro'?'⭐ Gia hạn Gói Pro':t==='plus'?'⭐ Lên Gói Pro':'⭐ Nâng cấp Plus · Pro'}</b>
+    <span>${app_?'Plus: Khỉ Thông Thái + chơi tiếp miễn phí. Pro: không tốn năng lượng, gồm cả Plus.':'Plus <b>39K</b>/tháng · Pro <b>59K</b>/tháng · Pro Trọn đời <b>ưu đãi 100 người đầu</b>.'}</span></div>
+    <a class="btn ctapro-btn" href="#premium">Xem các gói</a></div>`;}
+function ctaProMount(){const c=document.querySelector('footer.site .cta');if(!c)return;let row=c.closest('.ctarow');
+  if(!row){row=document.createElement('div');row.className='ctarow';c.parentNode.insertBefore(row,c);row.appendChild(c);}
+  const old=row.querySelector('.ctapro');const h=ctaProHTML();if(old)old.outerHTML=h;else row.insertAdjacentHTML('beforeend',h);}
+try{ctaProMount();}catch(e){}
+window.addEventListener('hashchange',()=>{try{ctaProMount();}catch(e){}});
+(function(){if(typeof meFetch!=='function')return;const base=meFetch;meFetch=async function(){const r=await base.apply(this,arguments);try{ctaProMount();}catch(e){}return r;};})();
+
+/* ---------- 5. Trang "Tham gia lớp học Online": thêm danh sách lớp đang mở trên app ---------- */
+async function clOpenLoad(){const r=await netFetch('GET',API_BASE+'/v1/class/open',{},'');if(r.status>=400)throw new Error('Chưa tải được danh sách lớp.');return JSON.parse(r.text||'{}').classes||[];}
+function clOpenCard(k){const full=k.n>=k.max;return `<div class="clopen${k.kasser?' ks':''}"><div class="clohd"><span class="clolv">HSK ${k.level}</span>${k.kasser?'<span class="clok">Lớp của Kasser</span>':''}</div>
+  <b class="cloname">${esc(k.name)}</b><div class="small muted">👩‍🏫 ${esc(k.tname)} · 👥 ${k.n}/${k.max} học viên</div>${k.note?`<div class="small clonote">${esc(k.note)}</div>`:''}
+  <button class="btn sm ${full?'':'pri'}" data-clj="${esc(k.code)}" data-cln="${esc(k.name)}"${full?' disabled':''}>${full?'Lớp đã đủ':'Vào lớp này'}</button></div>`;}
+(function(){const base=viewClassReg;viewClassReg=function(){const r=base.apply(this,arguments);try{const f=app.querySelector('.crform');if(!f||app.querySelector('#clopen'))return r;
+  f.insertAdjacentHTML('beforebegin',`<section class="panel stack" id="clopen"><div class="row" style="justify-content:space-between;align-items:baseline;flex-wrap:wrap"><h2 style="margin:0">🏫 Lớp đang mở trên app</h2><span class="small muted">Vào ngay bằng tài khoản Tâm HSK, học và làm bài trong app</span></div><div class="clogrid"><div class="small muted">Đang tải…</div></div></section>
+    <div class="crhint small muted">Chưa thấy lớp phù hợp? Điền thông tin bên dưới, Kasser sẽ xếp lớp và liên hệ bạn.</div>`);
+  const g=app.querySelector('#clopen .clogrid');
+  clOpenLoad().then(ls=>{if(!g.isConnected)return;g.innerHTML=ls.length?ls.map(clOpenCard).join(''):'<div class="small muted">Hiện chưa có lớp mở công khai. Điền đăng ký bên dưới để được xếp lớp sớm nhất.</div>';
+    g.querySelectorAll('[data-clj]').forEach(b=>b.onclick=()=>{const m=myClass&&myClass();if(m&&m.code&&m.code!==b.dataset.clj){gardenToast(`Bạn đang ở lớp <b>${esc(m.name||m.code)}</b>. Rời lớp đó trước rồi vào lớp mới nhé.`);location.hash='#class';return;}
+      window.__klJoin=b.dataset.clj;klTab='hv';location.hash='#class';});})
+    .catch(e=>{if(g.isConnected)g.innerHTML=`<div class="small muted">${esc(e.message)}</div>`;});}catch(e){console.warn(e);}return r;};})();
+(function(){const base=classStudent;classStudent=async function(box){const r=await base.apply(this,arguments);try{const c=window.__klJoin;if(!c)return r;window.__klJoin=null;
+  const i=box.querySelector('#kcode'),b=box.querySelector('#kjoin');if(i&&b){i.value=c;b.click();}}catch(e){}return r;};})();
+/* giáo viên bật "Mở lớp công khai" */
+(function(){const base=viewClassDash;viewClassDash=async function(code){const r=await base.apply(this,arguments);try{if(location.hash!=='#class-'+code||app.querySelector('#kpubp'))return r;
+  const k=await fsGet('classes/'+code).catch(()=>null);if(!k||!SOC.auth||k.teacher!==SOC.auth.uid||app.querySelector('#kpubp'))return r;
+  const html=`<div class="panel stack klock" id="kpubp"><label class="tgl"><input type="checkbox" id="kpub"${k.pub?' checked':''}><span><b>🏫 Mở lớp công khai</b><span class="small muted">Lớp hiện ở trang "Tham gia lớp học Online", ai cũng bấm vào lớp được (không cần mã).</span></span></label>
+    <input id="kpubnote" maxlength="160" placeholder="Giới thiệu ngắn: lịch học, đối tượng… (VD: Tối 3-5-7, người mới bắt đầu)" value="${esc(k.pubnote||'')}"><div class="row"><button class="btn sm" id="kpubsave">Lưu giới thiệu</button><span class="small" id="kpubmsg"></span></div></div>`;
+  const lp=app.querySelector('#klockp');if(lp)lp.insertAdjacentHTML('afterend',html);else app.querySelector('.stack').insertAdjacentHTML('beforeend',html);
+  const cb=app.querySelector('#kpub'),m=app.querySelector('#kpubmsg'),nt=app.querySelector('#kpubnote');
+  const save=async()=>{cb.disabled=true;m.textContent='Đang lưu…';try{await fsSet('classes/'+code,{pub:cb.checked,pubnote:nt.value.trim().slice(0,160)},'?updateMask.fieldPaths=pub&updateMask.fieldPaths=pubnote');m.innerHTML=`<span style="color:var(--jade)">✓ ${cb.checked?'Lớp đang mở công khai':'Lớp chỉ vào bằng mã'}</span>`;}
+    catch(e){m.innerHTML=`<span style="color:var(--seal)">${esc(netMsg(e))}</span>`;}cb.disabled=false;};
+  cb.onchange=save;app.querySelector('#kpubsave').onclick=save;}catch(e){console.warn(e);}return r;};})();
+window.__u126={fbErr:m=>fbErr(m),wtText:x=>wtText(x),plusActive:()=>plusActive(),replayActive:()=>replayActive(),acctTier,frMax,ctaProHTML,clOpenCard};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
