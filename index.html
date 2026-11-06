@@ -5201,6 +5201,57 @@ html.gfull #lhpet,html.fs.learnmode #lhpet,html.exmode #lhpet,html.msopen #lhpet
 .trmtop .rkv{flex:none;font-size:12.5px;color:#2f7a55}
 .trmtop .frad{flex:none;font-size:11px!important;padding:3px 8px!important}
 @media (max-width:768px){.trmpomo{order:3;flex-basis:100%;justify-content:center}.trmbw{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+/* ===== 5.81: Phòng Tự Học giai đoạn 3 ===== */
+.trmhb{background:rgba(255,255,255,.16)!important;color:#fff!important;border:1px solid rgba(255,255,255,.3)!important}
+.trmchat h3{margin:0 0 8px;font-size:15px}
+.trmchatl{display:grid;gap:6px;max-height:280px;overflow:auto;padding:2px}
+.trmcm{position:relative;display:grid;gap:1px;padding:6px 10px;border-radius:12px;background:var(--paper);font-size:13.5px;line-height:1.35;max-width:92%;justify-self:start;padding-right:58px}
+.trmcm.me{justify-self:end;background:#fff1e8;padding-right:10px}
+.trmcm b{font-size:12px;color:#7a3e1c}.trmcm span{overflow-wrap:anywhere}
+.trmcma{position:absolute;right:4px;top:4px;display:flex;gap:2px}
+.trmcma button{width:24px;height:24px;border:0;border-radius:8px;background:transparent;cursor:pointer;font-size:12px;opacity:.55}
+.trmcma button:hover{opacity:1;background:#fff}
+.trmchatf{display:flex;gap:8px;margin-top:8px}
+.trmchatf input{flex:1;min-width:0;padding:9px 12px;border-radius:12px;border:1px solid var(--line);font:inherit;font-size:15px}
+.trmprivp{display:grid;gap:10px}.trmprivp h3{margin:0}
+.trmpj,.trmpc{display:flex;gap:8px;flex-wrap:wrap}
+.trmpj input,.trmpc input{flex:1 1 160px;min-width:0;padding:9px 12px;border-radius:12px;border:1px solid var(--line);font:inherit}
+#trmpcode{text-transform:uppercase;letter-spacing:2px;font-weight:800;max-width:180px}
+.trmpl{display:grid;gap:6px}
+.trmpr{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
+.trmpi{font-size:20px;flex:none}.trmpn{display:grid;flex:1;min-width:0;line-height:1.25}.trmpn b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trmpn small{color:var(--muted);font-size:11.5px}
+.trmkick{color:#b0281e!important}
+.trmths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.trmth{display:grid;gap:3px;padding:8px;border-radius:14px;border:1.5px solid var(--line);background:var(--card,#fff);cursor:pointer;font:inherit;text-align:left}
+.trmth.on{border-color:#d8352a;box-shadow:0 0 0 2px rgba(216,53,42,.15)}.trmth.lock{opacity:.75}.trmth small{color:var(--muted);font-size:11.5px}
+.trmthp{display:block;height:46px;border-radius:10px}
+.trmthp.th-def{background:linear-gradient(#f1e2bf 45%,#8a5a32 45% 50%,#d6b583 50%)}
+.trmthp.th-tea{background:linear-gradient(#e4ecd0 45%,#6b8f3a 45% 50%,#c9d79a 50%)}
+.trmthp.th-snow{background:radial-gradient(circle at 30% 20%,#fff 2px,transparent 3px),radial-gradient(circle at 70% 35%,#fff 2px,transparent 3px),linear-gradient(#cfe0ee 45%,#9fb4c6 45% 50%,#ebe2d2 50%)}
+.trmthp.th-tet{background:linear-gradient(90deg,transparent 18%,#c8102e 18% 26%,transparent 26% 74%,#c8102e 74% 82%,transparent 82%),linear-gradient(#fbe1c4 45%,#a8221a 45% 50%,#d9a07a 50%)}
+.trmsc.th-tea{border-color:#5f7a33}
+.trmsc.th-tea .trmfloor{background:repeating-linear-gradient(90deg,#cfdb9f 0 60px,#bccb86 60px 62px),repeating-linear-gradient(0deg,transparent 0 9px,rgba(120,140,60,.12) 9px 10px),#cfdb9f}
+.trmsc.th-tea .trmdesk{background:linear-gradient(#6f5235,#55391f)}
+.trmsc.th-snow{border-color:#8fa6ba}
+.trmsc.th-snow .trmfloor{background:repeating-linear-gradient(90deg,#efe6d6 0 46px,#e2d6c0 46px 48px)}
+.trmsc.th-snow .trmwall{position:relative;overflow:hidden}
+.trmsnow{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,#fff 1.4px,transparent 2px),radial-gradient(circle,#fff 1px,transparent 1.6px);background-size:46px 46px,29px 29px;animation:trmsnow 7s linear infinite;opacity:.85}
+@keyframes trmsnow{to{background-position:12px 46px,-8px 58px}}
+.trmsc.th-tet{border-color:#a8221a}
+.trmsc.th-tet .trmfloor{background:linear-gradient(90deg,transparent 46%,rgba(200,16,46,.35) 46% 54%,transparent 54%),repeating-linear-gradient(90deg,#dcae7f 0 46px,#d2a273 46px 48px)}
+.trmsc.th-tet .trmdesk{background:linear-gradient(#b3261e,#8a1a14)}
+.trmcls h3{font-size:16px}
+.trmrep{display:grid;gap:4px;overflow-x:auto}
+.trmrr{display:grid;grid-template-columns:minmax(110px,1.6fr) repeat(7,minmax(22px,1fr)) minmax(70px,auto);align-items:end;gap:4px;font-size:13px}
+.trmrr span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;align-self:center}
+.trmrr i{position:relative;display:block;height:28px;border-radius:6px;background:#eef3f1;font-style:normal;text-align:center}
+.trmrr i em{position:absolute;left:0;right:0;bottom:0;border-radius:6px;background:linear-gradient(#f0a35b,#c0392b)}
+.trmrr b{align-self:center;text-align:right;font-size:12.5px;color:#2f7a55}
+.trmrh i{height:auto;background:none;font-size:11px;color:var(--muted)}.trmrh span,.trmrh b{font-size:11.5px;color:var(--muted)}
+@media (max-width:768px){.trmths{grid-template-columns:repeat(2,minmax(0,1fr))}.trmhb{padding:5px 9px!important}}
+.trmside{grid-template-columns:minmax(0,1fr)}.trmside>*{min-width:0;max-width:100%;box-sizing:border-box}
+.trmchatf input,.trmpj input,.trmpc input{width:0}
 </style>
 </head><body>
 
@@ -5226,12 +5277,12 @@ html.gfull #lhpet,html.fs.learnmode #lhpet,html.exmode #lhpet,html.msopen #lhpet
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='2d3f1789';
-document.write('<script src="packs/hsk'+L+'.js?v=2d3f1789"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='94ed3a1a';
+document.write('<script src="packs/hsk'+L+'.js?v=94ed3a1a"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=2d3f1789','strokes-file');A('packs/dict.js?v=2d3f1789','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=94ed3a1a','strokes-file');A('packs/dict.js?v=94ed3a1a','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -20902,6 +20953,104 @@ document.addEventListener('click',e=>{const t=e.target;if(!t.closest)return;
 },false);
 if(window.__T)window.__u121={TRM2,trmPomo,trmDayWords,trmQuiz,trmDuoSync,trmTopLoad,trmAskOpen};
 
+/* ===== 5.81: Phòng Tự Học giai đoạn 3 — phòng bạn bè và phòng lớp (có chat chữ), giao diện phòng trả phí, báo cáo giờ học cho giáo viên ===== */
+const TRM3={want:null,plist:null,plAt:0,chat:[],chatRoom:'',mute:[]};
+try{TRM3.mute=JSON.parse(localStorage.getItem('hsk-trmmute')||'[]');}catch(e){}
+const TRM_THEMES={'':['Mặc định','Thư viện tre'],tea:['Phòng trà','Chiếu tatami, ấm trà, tranh chữ 茶'],snow:['Phòng tuyết','Tuyết rơi ngoài cửa sổ, sàn gỗ sáng'],tet:['Phòng Tết','Câu đối đỏ, hoa mai, đèn lồng 福']};
+trmOn=function(){return /^#tuhoc(-p-[A-Z0-9]{6})?$/.test(location.hash||'');};
+function trmPriv(){return TRM.s&&TRM.s.priv||null;}
+function trmMuted(uid){return TRM3.mute.includes(uid);}
+function trmMuteSet(uid,on){TRM3.mute=TRM3.mute.filter(x=>x!==uid);if(on)TRM3.mute.push(uid);try{localStorage.setItem('hsk-trmmute',JSON.stringify(TRM3.mute.slice(-200)));}catch(e){}}
+function trmTheme(){const p=trmPriv();if(p&&p.theme)return p.theme;let t='';try{t=localStorage.getItem('hsk-trmth')||'';}catch(e){}return t&&typeof isPremium==='function'&&isPremium()?t:'';}
+function trmLink(code){return location.origin+location.pathname+'#tuhoc-p-'+code;}
+/* vào phòng riêng */
+trmJoin=async function(seat,lv){if(!SOC.auth){location.hash='#settings';return;}if(lv)TRM3.want=null;TRM.left=false;TRM.err='';
+  const box=document.getElementById('trmmsg');if(box)box.textContent='Đang vào phòng…';
+  try{const it=trmIntent();const room=TRM3.want||((!lv||lv===LEVEL)&&it?it.room:undefined);
+    const j=await trmReq({op:'join',lv:lv||LEVEL,seat,room,st:trmStNow()});
+    if(!j.seats&&!TRM3.want&&room&&room.startsWith('p-')&&/KICKED|NO_ROOM|CLASS_ONLY/.test(j.error||'')){trmSetIntent(null);return trmJoin(seat,LEVEL);}
+    if(j.seats){trmApply(j);try{speak('一起学习吧');}catch(e){}}
+    else{TRM.err={ROOM_FULL:'Phòng đã đủ 16 người, thử lại sau ít phút nhé.',NO_ROOM:'Không tìm thấy phòng này. Mã phòng có thể đã bị xóa.',CLASS_ONLY:'Phòng này chỉ dành cho học viên của lớp.',KICKED:'Chủ phòng đã mời bạn ra, 30 phút nữa mới vào lại được.'}[j.error]||'Chưa vào được phòng, thử lại nhé.';
+      if(TRM3.want&&j.error){TRM3.want=null;}trmRender();}}
+  catch(e){TRM.err='Chưa kết nối được máy chủ. Kiểm tra mạng rồi thử lại.';trmRender();}};
+(function(){const base=viewTuhoc;viewTuhoc=function(code){TRM3.want=code?'p-'+code:null;if(code)TRM.left=false;base.apply(this,[]);
+  if(code&&SOC.auth&&trmIn()&&TRM.s.room!=='p-'+code)trmJoin();};})();
+(function(){const base=trmLeave;trmLeave=async function(){const wasP=!!trmPriv();TRM3.want=null;await base.apply(this,arguments);if(wasP&&location.hash!=='#tuhoc')location.hash='#tuhoc';};})();
+/* tiêu đề phòng riêng + nút mời + giao diện */
+(function(){const base=trmHead;trmHead=function(){base.apply(this,arguments);const h=document.getElementById('trmhd');if(!h)return;const p=trmPriv(),t=h.querySelector('.trmttl p');
+  if(p&&t)t.innerHTML=`${p.kind==='c'?'🏫 Phòng lớp':'🔒 Phòng riêng'} · <b>${esc(p.name||'')}</b> · Mã ${esc(p.code)} · <b>${TRM.s.n}/16</b>`;
+  const me=h.querySelector('.trmme');if(me&&!me.querySelector('[data-trth]')){me.insertAdjacentHTML('afterbegin',`${p?`<button type="button" class="btn sm trmhb" data-trinv="${esc(p.code)}">🔗 Mời bạn</button>`:''}<button type="button" class="btn sm trmhb" data-trth aria-label="Giao diện phòng">🎨</button>`);}};})();
+(function(){const base=trmRender;trmRender=function(){const ci=document.getElementById('trmchatin'),v=ci?ci.value:'',f=ci&&document.activeElement===ci;
+  base.apply(this,arguments);const sc=document.getElementById('trmsc');if(sc){const th=trmTheme();if(sc.dataset.th!==th){sc.dataset.th=th;sc.classList.remove('th-tea','th-snow','th-tet');if(th)sc.classList.add('th-'+th);const w=sc.querySelector('.trmwall');if(w)w.innerHTML=trmWallSVG()+(th==='snow'?'<i class="trmsnow" aria-hidden="true"></i>':'');}}
+  const n=document.getElementById('trmchatin');if(n&&v){n.value=v;}if(n&&f){n.focus();try{n.setSelectionRange(v.length,v.length);}catch(e){}}const L=document.getElementById('trmchatl');if(L)L.scrollTop=L.scrollHeight;};})();
+(function(){const base=trmWallSVG;trmWallSVG=function(){let s=base.apply(this,arguments);const th=trmTheme();if(!th)return s;
+  if(th==='tea'){s=s.replace('fill="#f1e2bf"','fill="#e4ecd0"').replace(/fill="#d8352a"/g,'fill="#6b8f3a"').replace(/fill="#a8221a"/g,'fill="#4e6e28"');
+    s=s.replace('</svg>',`<g transform="translate(150 22)"><rect width="16" height="44" rx="2" fill="#f7f1df" stroke="#8a5a32"/><text x="8" y="30" text-anchor="middle" font-size="13" fill="#3e5a22" class="han" font-weight="700">茶</text></g><g transform="translate(234 22)"><rect width="16" height="44" rx="2" fill="#f7f1df" stroke="#8a5a32"/><text x="8" y="30" text-anchor="middle" font-size="13" fill="#3e5a22" class="han" font-weight="700">静</text></g><g transform="translate(78 56)"><ellipse cx="0" cy="8" rx="9" ry="7" fill="#5f8a3a"/><path d="M8 6q6 -2 6 4" stroke="#5f8a3a" stroke-width="2.5" fill="none"/><rect x="-4" y="-1" width="8" height="3" rx="1" fill="#4e6e28"/><path d="M-2 -4q-3 -5 1 -9M3 -4q3 -5 -1 -9" stroke="#fff" stroke-width="1.2" opacity=".8" fill="none"/></g></svg>`);}
+  if(th==='snow'){s=s.replace('fill="#f1e2bf"','fill="#eef3f7"').replace(/fill="#(bfe3f5|22325a)"/,'fill="#c9dbea"').replace('<path d="M-26 14q10-8 20 0t20 0t20 0v20h-60z" fill="#8cc06a"/>','<path d="M-29 12q12-8 24 0t24 0t10 -2v22h-58z" fill="#fff"/>').replace('</svg>',`<path d="M0 8h400" stroke="#fff" stroke-width="3"/><path d="M167 46q33 -38 66 0" stroke="#fff" stroke-width="3" fill="none" opacity=".9"/></svg>`);}
+  if(th==='tet'){s=s.replace('fill="#f1e2bf"','fill="#fbe1c4"').replace('</svg>',`<g transform="translate(110 14)"><rect width="13" height="62" rx="2" fill="#c8102e"/>${['福','春','安'].map((c,i)=>`<text x="6.5" y="${16+i*19}" text-anchor="middle" font-size="11" fill="#ffd34d" class="han" font-weight="700">${c}</text>`).join('')}</g><g transform="translate(277 14)"><rect width="13" height="62" rx="2" fill="#c8102e"/>${['喜','乐','吉'].map((c,i)=>`<text x="6.5" y="${16+i*19}" text-anchor="middle" font-size="11" fill="#ffd34d" class="han" font-weight="700">${c}</text>`).join('')}</g><g transform="translate(96 70)" fill="#ffcc1a"><path d="M0 0q20 -8 40 -2" stroke="#6b4320" stroke-width="2" fill="none"/>${[[6,-3],[16,-6],[27,-6],[37,-3]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.2"/><circle cx="${x}" cy="${y}" r="1.1" fill="#e07b00"/>`).join('')}</g><g transform="translate(266 70)" fill="#ffcc1a"><path d="M0 -2q20 -6 40 2" stroke="#6b4320" stroke-width="2" fill="none"/>${[[5,-3],[15,-6],[26,-5],[36,-2]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.2"/><circle cx="${x}" cy="${y}" r="1.1" fill="#e07b00"/>`).join('')}</g></svg>`);}
+  return s;};})();
+/* chat chữ trong phòng riêng */
+(function(){const base=trmEvent;trmEvent=function(e,old){
+  if(e.k==='chat'){if(trmMuted(e.frm))return;if(!TRM3.chat.some(c=>c.id===e.id))TRM3.chat.push({id:e.id,frm:e.frm,name:e.fname,t:e.v,at:e.at});TRM3.chat=TRM3.chat.slice(-60);
+    if(!old){TRM.bub[e.frm]={zh:e.v.length>16?e.v.slice(0,15)+'…':e.v,vi:'',until:Date.now()+6000,chat:1};setTimeout(trmGridOnly,6100);}return;}
+  if((e.k==='emo'||e.k==='say')&&trmMuted(e.frm))return;return base.apply(this,arguments);};})();
+(function(){const base=trmApply;trmApply=function(j){if(j&&j.seats&&j.room!==TRM3.chatRoom){TRM3.chatRoom=j.room;TRM3.chat=[];}return base.apply(this,arguments);};})();
+(function(){const base=trmSideHTML;trmSideHTML=function(){const p=trmPriv();let h=base.apply(this,arguments);if(!p)return h;const me=SOC.auth&&SOC.auth.uid;
+  const chat=`<div class="panel trmchat"><h3>💬 Trò chuyện ${p.kind==='c'?'trong lớp':'trong phòng riêng'}</h3><div class="trmchatl" id="trmchatl" role="log" aria-live="polite">${TRM3.chat.length?TRM3.chat.map(c=>`<div class="trmcm${c.frm===me?' me':''}"><b>${esc(c.frm===me?'Bạn':c.name)}</b><span>${esc(c.t)}</span>${c.frm!==me?`<span class="trmcma"><button type="button" data-trrep="${c.id}" title="Báo cáo tin nhắn" aria-label="Báo cáo tin nhắn">⚑</button><button type="button" data-trmute="${esc(c.frm)}" title="Ẩn tin của bạn này" aria-label="Ẩn tin của ${esc(c.name)}">🔇</button></span>`:''}</div>`).join(''):'<p class="small muted" style="margin:0">Chưa có tin nhắn. Chào cả phòng một câu nhé!</p>'}</div>
+   <form class="trmchatf" id="trmchatf" autocomplete="off"><input id="trmchatin" maxlength="120" placeholder="Nhắn cả phòng (tối đa 120 ký tự)" aria-label="Tin nhắn"><button type="submit" class="btn pri">Gửi</button></form>
+   <p class="small muted" style="margin:6px 0 0">Nhắn lịch sự nhé. Tin có từ thô tục sẽ bị che, không gửi được đường dẫn. Bấm ⚑ để báo cáo, 🔇 để ẩn một người.</p></div>`;
+  return chat+h;};})();
+document.addEventListener('submit',async e=>{if(e.target.id!=='trmchatf')return;e.preventDefault();const i=document.getElementById('trmchatin'),t=(i.value||'').trim();if(!t)return;
+  const j=await trmSend({op:'chat',t});if(j&&j.seats){const n=document.getElementById('trmchatin');if(n)n.value='';}
+  else if(j&&j.error)try{gardenToast({NO_LINKS:'Không gửi được đường dẫn hay tài khoản mạng xã hội trong phòng.',CHAT_BANNED:'Bạn đang bị tạm khóa chat vì có tin nhắn bị báo cáo.',BAD_CHAT:'Tin nhắn trống.',CHAT_PRIVATE_ONLY:'Phòng công khai chỉ dùng biểu cảm và câu soạn sẵn.'}[j.error]||'Chưa gửi được.');}catch(x){}});
+/* thẻ người: mời ra (chủ phòng), ẩn tin */
+(function(){const base=trmCard;trmCard=function(uid){base.apply(this,arguments);const p=trmPriv(),c=document.querySelector('#trmdlg .trmcard'),me=SOC.auth&&SOC.auth.uid;if(!p||!c||uid===me)return;
+  const x=TRM.s.seats.find(a=>a.uid===uid);c.insertAdjacentHTML('beforeend',`<div class="trmcrow"><button type="button" class="btn sm" data-trmute="${esc(uid)}" data-trmon="${trmMuted(uid)?0:1}">${trmMuted(uid)?'🔈 Hiện lại tin nhắn':'🔇 Ẩn tin nhắn của bạn này'}</button>${p.owner?`<button type="button" class="btn sm trmkick" data-trkick="${esc(uid)}" data-trkn="${esc(x?x.name:'')}">🚪 Mời ra khỏi phòng</button>`:''}</div>`);};})();
+/* thanh: nút phòng riêng */
+(function(){const base=trmBarHTML;trmBarHTML=function(){const h=base.apply(this,arguments);if(!h)return h;return h.replace(/<\/div>$/,`<button type="button" class="btn trmpb" data-trpriv>🔒 Phòng riêng</button></div>`);};})();
+(function(){const base=trmLobbyHTML;trmLobbyHTML=function(){let h=base.apply(this,arguments);if(!SOC.auth)return h;if(!TRM3.plist)trmPList();return h+`<div class="panel trmprivp" id="trmprivp">${trmPrivHTML()}</div>`;};})();
+function trmPrivHTML(){const L=(TRM3.plist&&TRM3.plist.rooms)||[];
+  return `<h3>🔒 Phòng riêng</h3><p class="small muted" style="margin:0">Phòng bạn bè và phòng lớp có thêm chat chữ. Gửi mã hoặc đường dẫn cho bạn bè để vào cùng.</p>
+   <div class="trmpj"><input id="trmpcode" maxlength="6" placeholder="Mã 6 ký tự" aria-label="Mã phòng" autocapitalize="characters"><button type="button" class="btn pri" data-trpjoin>Vào phòng</button></div>
+   ${L.length?`<div class="trmpl">${L.map(r=>`<div class="trmpr"><span class="trmpi">${r.kind==='c'?'🏫':'🔒'}</span><div class="trmpn"><b>${esc(r.name||'Phòng riêng')}</b><small>Mã ${esc(r.code)} · HSK${r.lv} · ${r.n} người đang học${r.mine?' · của bạn':''}</small></div><a class="btn sm pri" href="#tuhoc-p-${esc(r.code)}">Vào</a>${r.mine?`<button type="button" class="btn sm" data-trinv="${esc(r.code)}" aria-label="Sao chép đường dẫn mời">🔗</button><button type="button" class="btn sm" data-trpdel="${esc(r.code)}" aria-label="Xóa phòng">🗑</button>`:''}</div>`).join('')}</div>`:''}
+   <div class="trmpc"><input id="trmpname" maxlength="40" placeholder="Tên phòng, ví dụ: Nhóm ôn thi HSK2" aria-label="Tên phòng mới"><button type="button" class="btn" data-trpnew>＋ Tạo phòng bạn bè</button></div>
+   <p class="small muted" style="margin:0">Tài khoản miễn phí tạo được 1 phòng riêng. Gói Tháng tạo tới 10 phòng, đổi giao diện phòng và có bàn học vàng.</p>`;}
+async function trmPList(force){if(!SOC.auth||(!force&&Date.now()-TRM3.plAt<20e3))return;TRM3.plAt=Date.now();try{const j=await trmReq({op:'plist'});if(j.rooms){TRM3.plist=j;const b=document.getElementById('trmprivp');if(b)b.innerHTML=trmPrivHTML();const q=document.querySelector('#trmqz.on .trmprivp');if(q)q.innerHTML=trmPrivHTML();}}catch(e){TRM3.plAt=0;}}
+function trmCopy(t,msg){const ok=()=>{try{gardenToast(msg);}catch(e){}};try{navigator.clipboard.writeText(t).then(ok,()=>{prompt('Sao chép đường dẫn:',t);});}catch(e){ok();}}
+function trmThemeOpen(){const prem=typeof isPremium==='function'&&isPremium(),p=trmPriv(),cur=trmTheme();
+  trmQzShow(`<h3>🎨 Giao diện phòng</h3><p class="small muted" style="margin:0">${p&&p.owner?'Bạn là chủ phòng: giao diện chọn ở đây áp dụng cho cả phòng.':'Giao diện bạn chọn chỉ hiện trên máy của bạn.'}</p>
+   <div class="trmths">${Object.entries(TRM_THEMES).map(([k,[n,d]])=>`<button type="button" class="trmth${k===cur?' on':''}${k&&!prem?' lock':''}" data-trtheme="${k}"><span class="trmthp th-${k||'def'}" aria-hidden="true"></span><b>${n}${k&&!prem?' 🔒':''}</b><small>${d}</small></button>`).join('')}</div>
+   ${prem?'':`<a class="btn pri" href="#premium" data-trqx>Mở giao diện phòng bằng Gói Tháng</a>`}`,true);}
+document.addEventListener('click',async e=>{const t=e.target;if(!t.closest)return;
+  if(t.closest('[data-trth]')){trmThemeOpen();return;}
+  const th=t.closest('[data-trtheme]');if(th){const k=th.dataset.trtheme,prem=typeof isPremium==='function'&&isPremium();if(k&&!prem){location.hash='#premium';trmQzClose();return;}
+    const p=trmPriv();if(p&&p.owner){const j=await trmSend({op:'ptheme',theme:k});if(j&&j.seats){trmQzClose();try{gardenToast('🎨 Đã đổi giao diện cho cả phòng.');}catch(x){}}return;}
+    try{localStorage.setItem('hsk-trmth',k);}catch(x){}const sc=document.getElementById('trmsc');if(sc)sc.dataset.th='?';trmRender();trmQzClose();return;}
+  const iv=t.closest('[data-trinv]');if(iv){trmCopy(`Vào Phòng Tự Học cùng mình trên Tâm HSK nhé! Mã phòng ${iv.dataset.trinv}: ${trmLink(iv.dataset.trinv)}`,'🔗 Đã sao chép đường dẫn mời. Dán gửi cho bạn bè nhé!');return;}
+  if(t.closest('[data-trpriv]')){trmQzShow(`<div class="trmprivp">${trmPrivHTML()}</div>`,true);trmPList(true);return;}
+  if(t.closest('[data-trpjoin]')){const c=((document.getElementById('trmpcode')||{}).value||'').trim().toUpperCase();if(!/^[A-Z0-9]{6}$/.test(c)){try{gardenToast('Mã phòng gồm 6 chữ hoặc số.');}catch(x){}return;}trmQzClose();location.hash='#tuhoc-p-'+c;return;}
+  if(t.closest('[data-trpnew]')){const n=((document.getElementById('trmpname')||{}).value||'').trim();const j=await trmReq({op:'pcreate',kind:'f',name:n,lv:LEVEL});
+    if(j.code){trmQzClose();TRM3.plAt=0;location.hash='#tuhoc-p-'+j.code;setTimeout(()=>trmCopy(`Vào Phòng Tự Học cùng mình trên Tâm HSK nhé! Mã phòng ${j.code}: ${trmLink(j.code)}`,'🔒 Đã tạo phòng. Đường dẫn mời đã được sao chép!'),900);}
+    else try{gardenToast(j.error==='NEED_PREMIUM'?'Tài khoản miễn phí tạo được 1 phòng riêng. <a href="#premium" style="color:inherit;font-weight:800">Gói Tháng</a> tạo được tới 10 phòng.':j.error==='ROOM_LIMIT'?'Bạn đã có 10 phòng riêng, xóa bớt một phòng nhé.':'Chưa tạo được phòng, thử lại nhé.');}catch(x){}return;}
+  const pd=t.closest('[data-trpdel]');if(pd){if(!confirm('Xóa phòng '+pd.dataset.trpdel+'? Mọi người trong phòng sẽ phải ra ngoài.'))return;await trmReq({op:'pdel',code:pd.dataset.trpdel});trmPList(true);return;}
+  const rp=t.closest('[data-trrep]');if(rp){const j=await trmReq({op:'report',id:+rp.dataset.trrep});try{gardenToast(j.ok?'⚑ Đã gửi báo cáo. Cảm ơn bạn, quản trị viên sẽ xem sớm.':'Chưa gửi được báo cáo.');}catch(x){}return;}
+  const mu=t.closest('[data-trmute]');if(mu){const u=mu.dataset.trmute,on=mu.dataset.trmon==null?true:mu.dataset.trmon==='1';trmMuteSet(u,on);if(on)TRM3.chat=TRM3.chat.filter(c=>c.frm!==u);trmCardClose();trmRender();try{gardenToast(on?'🔇 Đã ẩn tin nhắn và biểu cảm của bạn này trên máy bạn.':'🔈 Đã hiện lại tin nhắn của bạn này.');}catch(x){}return;}
+  const kk=t.closest('[data-trkick]');if(kk){if(!confirm('Mời '+(kk.dataset.trkn||'bạn này')+' ra khỏi phòng? Bạn ấy sẽ không vào lại được trong 30 phút.'))return;trmCardClose();trmSend({op:'kick',uid:kk.dataset.trkick});return;}
+},false);
+/* giáo viên: phòng lớp + báo cáo giờ học trên trang lớp */
+(function(){const base=viewClassDash;viewClassDash=async function(code){const r=await base.apply(this,arguments);try{if(location.hash==='#class-'+code)trmClassPanel(code);}catch(e){}return r;};})();
+async function trmClassPanel(code){const st=document.querySelector('#app .stack');if(!st||document.getElementById('trmcls'))return;const k=st.querySelector('.kcode');const anchor=k?k.closest('.panel'):st.firstElementChild;
+  anchor.insertAdjacentHTML('afterend',`<div class="panel stack trmcls" id="trmcls"><div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3 style="margin:0">🏮 Phòng Tự Học của lớp</h3><span class="small muted" id="trmclsc"></span></div><div id="trmclsb" class="small muted">Đang tải giờ học…</div></div>`);
+  let j;try{j=await trmReq({op:'creport',cls:code});}catch(e){document.getElementById('trmclsb').textContent='Chưa tải được, kiểm tra mạng nhé.';return;}
+  if(j.error){document.getElementById('trmclsb').textContent=j.error==='NOT_TEACHER'?'Chỉ giáo viên của lớp xem được.':'Máy chủ chưa cập nhật bản mới.';return;}
+  const head=j.code?`<div class="row" style="gap:8px;flex-wrap:wrap"><a class="btn pri" href="#tuhoc-p-${esc(j.code)}">Vào phòng lớp</a><button type="button" class="btn" data-trinv="${esc(j.code)}">🔗 Sao chép link cho học viên</button></div>`:`<div class="row" style="gap:8px;flex-wrap:wrap"><button type="button" class="btn pri" id="trmclsnew">Mở phòng tự học cho lớp</button><span class="small muted">Học viên của lớp vào học chung, có chat chữ trong lớp.</span></div>`;
+  document.getElementById('trmclsc').textContent=j.code?'Mã phòng '+j.code:'';
+  const dn=j.days.map(d=>['CN','T2','T3','T4','T5','T6','T7'][new Date(d+'T00:00:00').getDay()]);const mx=Math.max(1,...j.members.flatMap(m=>m.days));
+  const rows=j.members.length?`<div class="trmrep"><div class="trmrr trmrh"><span>Học viên</span>${dn.map(d=>`<i>${d}</i>`).join('')}<b>Tổng</b></div>${j.members.map(m=>{const tot=m.days.reduce((a,b)=>a+b,0);return `<div class="trmrr"><span>${esc(m.name)}</span>${m.days.map(s=>`<i title="${trmFmtSec(s)}"><em style="height:${Math.round(s/mx*100)}%"></em></i>`).join('')}<b>${tot?trmFmtSec(tot):'–'}</b></div>`;}).join('')}</div>`:'<p class="small muted" style="margin:0">Lớp chưa có học viên.</p>';
+  document.getElementById('trmclsb').outerHTML=`<div>${head}<p class="small muted" style="margin:10px 0 6px">⏱ Thời gian ngồi học trong Phòng Tự Học 7 ngày qua (mọi phòng):</p>${rows}</div>`;
+  const nb=document.getElementById('trmclsnew');if(nb)nb.onclick=async()=>{nb.disabled=true;const r=await trmReq({op:'pcreate',kind:'c',cls:code,lv:LEVEL});if(r.code){document.getElementById('trmcls').remove();trmClassPanel(code);}else{nb.disabled=false;try{gardenToast('Chưa mở được phòng lớp.');}catch(e){}}};}
+if(window.__T)window.__u122={TRM3,trmTheme,trmPList,trmClassPanel,trmThemeOpen};
+
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
 function hzPanel(l){const z=l.hz;if(!z)return '';const wl=w=>`<a class="hzw han" href="${typeof wpURL==='function'?wpURL(w):'#'}" target="_blank" rel="noopener">${esc(w)}</a>`;
@@ -20933,7 +21082,7 @@ function route(){
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
   else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
-  else if(h==='tuhoc')viewTuhoc();else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
+  else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(h==='bomber')viewBomber();else if(/^duo-(race|defense|memory|bomber)$/.test(h))viewDuo(h.slice(4));else if(h==='memory')viewMemory();else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
   else if(h.startsWith('d='))viewDeckOpen(h.slice(2));else if(h==='evo')viewEvo();else if(h.startsWith('evo-'))viewEvo(decodeURIComponent(h.slice(4)));else if(h==='puzzle')viewPuzzle();else if(h==='focus')viewFocus();else if(h==='deck')viewDeckMake();else if(h==='name')viewName();else if(h==='hv')viewHvDetective();else if(h==='num')viewNumbers();else if(h==='handsfree')viewHandsfree();else if(h==='sheet')viewWorksheet();else if(h==='plan')viewPlan();
