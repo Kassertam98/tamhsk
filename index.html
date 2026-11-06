@@ -5475,6 +5475,48 @@ html.trwide main#app.wrap{max-width:min(1560px,calc(100vw - 32px))!important;wid
 }
 .trwn .trmwall{height:clamp(96px,11vw,168px)}
 .trwexit{background:rgba(255,250,240,.16)!important;color:#fbeed6!important;border-color:rgba(255,250,240,.35)!important;font-size:18px;font-weight:800;min-width:40px}
+/* 5.89 Phòng Tự Học: 10 tính năng */
+.trwn .trmwrap>.trmleft,.trwn .trmwrap>.trmright{grid-row:1/span 2}
+.trwn .trmwrap>#trwtopw.trwbelow{grid-column:2;min-width:0}
+#trwtopw.trwbelow .trmtopp{margin:0;border:3px solid #7a4e2a;background:#fffaf0}
+#trwtopw.trwbelow .trmtopp h3{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#trwtopw.trwbelow.topoff .trmtopp>:not(h3){display:none!important}
+#trwtopw.trwbelow .trmtop{gap:10px}
+@media (max-width:820px){.trwn .trmwrap>#trwtopw.trwbelow{display:none}}
+@media (max-width:1180px) and (min-width:821px){.trwn .trmwrap>.trmleft{grid-row:1/span 2}.trwn .trmwrap>.trmright{grid-row:auto}}
+.trxstrip{display:flex;flex-wrap:wrap;gap:8px}
+.trxchip{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;padding:7px 12px;border-radius:99px;border:1px solid #c9a36a;background:#fffaf0;color:#3a2414;font:inherit;font-size:13.5px;line-height:1.3;max-width:100%}
+button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
+.trxchip.gold{background:linear-gradient(120deg,#fff3c4,#ffe08a);border-color:#e0a800}
+.trxchip.exam.on{background:#0d7a63;color:#fff;border-color:#0d7a63}
+.trxchip.amb.on{background:#24402f;color:#f3efe0;border-color:#24402f}
+.trxchip.goal.done{background:#e3f5ec;border-color:#5cc08a}
+.trxbar{display:inline-block;width:70px;height:6px;border-radius:9px;background:#ead8b4;overflow:hidden}.trxbar b{display:block;height:100%;background:linear-gradient(90deg,#e8590c,#f5b301)}
+.trxfn{position:fixed;top:84px;right:16px;z-index:75;display:flex;align-items:center;gap:10px;width:min(360px,calc(100vw - 32px));padding:10px 12px;border-radius:16px;background:#fffaf0;border:2px solid #7a4e2a;box-shadow:0 14px 30px -14px rgba(0,0,0,.45)}
+.trxfn small{display:block;color:var(--muted);font-size:12.5px}.trxfn b{display:block;overflow-wrap:anywhere}
+@media (max-width:640px){.trxfn{top:auto;bottom:auto;top:calc(env(safe-area-inset-top) + 64px);left:16px;right:16px;width:auto}}
+.trxfm{font-style:normal;font-size:13px}
+.trmseat.trxs7 .trmav{box-shadow:0 0 0 3px #ffb347,0 0 16px 4px rgba(255,170,60,.65);border-radius:50%}
+.trxtags{position:absolute;top:2px;right:2px;display:flex;gap:2px;z-index:2;pointer-events:none}
+.trxtags i{font-style:normal;font-size:11px;line-height:1;padding:2px 4px;border-radius:99px;background:rgba(255,250,240,.92);border:1px solid #e3cfa6;color:#7a3a10;font-weight:700}
+.trmseat{position:relative}
+.trxboard h4{margin:8px 0 6px}.trxbr{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;padding:6px 8px;border-radius:8px}.trxbr.me{background:#e3f5ec}.trxbr b{overflow-wrap:anywhere}.trxbr em{font-style:normal;color:var(--muted);font-size:13px}
+.trxq{text-align:center;display:flex;flex-direction:column;gap:6px}.trxqw{font-size:44px;font-weight:700}
+.trxqo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.trxqo .btn{white-space:normal;min-height:48px}
+.trxqo .btn.ok{background:#0d7a63;color:#fff;border-color:#0d7a63}.trxqo .btn.no{background:#c0392b;color:#fff;border-color:#c0392b}
+.trxres{font-size:18px}
+.trxmc{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.trxrhr{display:flex;flex-direction:column;gap:8px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.trxrhr input[type=time]{padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.trxd span{padding:4px 10px}
+.trxcls{justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.trxhb{display:flex;align-items:center;gap:12px;margin:10px 0;padding:12px 14px;border-radius:var(--r);text-decoration:none;color:#3a2414;background:linear-gradient(120deg,#fff3d6,#ffe9c4);border:1px solid #e0b060}
+.trxhb>span{font-size:28px}.trxhb div{flex:1;min-width:0}.trxhb b{display:block;overflow-wrap:anywhere}.trxhb small{color:#7a5a30}.trxhb em{font-style:normal;font-weight:700;white-space:nowrap;color:#b8580c}
+.trxhb.gold{background:linear-gradient(120deg,#fff1b8,#ffd86b)}.trxhb.cls{background:linear-gradient(120deg,#e6f6f6,#d4f0e6);border-color:#5cc0a0}.trxhb.cls em{color:#0d7a63}
+:root[data-theme="dark"] .trxhb,:root[data-theme="dark"] .trxchip{color:#3a2414}
+@media (min-width:1181px){.trwn .trmwrap>.trmleft{grid-column:1;grid-row:1/span 2}.trwn .trmwrap>#trmsc{grid-column:2;grid-row:1}.trwn .trmwrap>#trwtopw.trwbelow{grid-column:2;grid-row:2}.trwn .trmwrap>.trmright{grid-column:3;grid-row:1/span 2}}
+@media (max-width:1180px) and (min-width:821px){.trwn .trmwrap>.trmleft{grid-column:1;grid-row:1/span 2}.trwn .trmwrap>#trmsc{grid-column:2;grid-row:1}.trwn .trmwrap>#trwtopw.trwbelow{grid-column:2;grid-row:2}.trwn .trmwrap>.trmright{grid-column:1/-1;grid-row:3}}
+@media (max-width:820px){.trxstrip{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}.trxchip{flex:none;white-space:nowrap}}
 </style>
 </head><body>
 
@@ -5500,12 +5542,12 @@ html.trwide main#app.wrap{max-width:min(1560px,calc(100vw - 32px))!important;wid
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='b80610ae';
-document.write('<script src="packs/hsk'+L+'.js?v=b80610ae"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='a8531167';
+document.write('<script src="packs/hsk'+L+'.js?v=a8531167"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=b80610ae','strokes-file');A('packs/dict.js?v=b80610ae','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a8531167','strokes-file');A('packs/dict.js?v=a8531167','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -21794,7 +21836,7 @@ function trwLayout(){const root=document.getElementById('trmroot');if(!root||!/^
 function trwOff(){if(!/^#tuhoc/.test(location.hash||'')){document.documentElement.classList.remove('trwide','trmfull');TRW.pop='';}}
 window.addEventListener('hashchange',e=>{try{const o=new URL(e.oldURL).hash;if(o&&!/^#tuhoc/.test(o))TRW.prev=o;}catch(x){}trwOff();});
 window.addEventListener('resize',()=>{if(document.getElementById('trmroot'))try{trwLayout();}catch(e){}});
-document.addEventListener('click',e=>{const ib=e.target.closest&&e.target.closest('#trwpopb button');if(ib&&!ib.closest('.trmchat')&&!ib.dataset.trw&&!ib.dataset.trroom)setTimeout(trwPopClose,60);
+document.addEventListener('click',e=>{const ib=e.target.closest&&e.target.closest('#trwpopb button');if(ib&&!ib.closest('.trmchat,.trxq')&&!ib.dataset.trw&&!ib.dataset.trroom)setTimeout(trwPopClose,60);
   const t=e.target.closest&&e.target.closest('[data-trw],[data-trroom]');
   if(!t){const w=document.getElementById('trwpopw');if(w&&!w.hidden&&e.target===w)trwPopClose();return;}
   if(t.dataset.trroom){e.preventDefault();trwGo(+t.dataset.trroom);return;}
@@ -21805,6 +21847,107 @@ document.addEventListener('click',e=>{const ib=e.target.closest&&e.target.closes
   trwPopOpen(k);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&TRW.pop)trwPopClose();});
 if(window.__T)window.__u129={TRW,trwTabsHTML,trwLayout,trwGo,trwPopOpen};
+
+/* ===== 5.89: Phòng Tự Học — 10 tính năng kéo người dùng vào phòng ===== */
+const TRX={fr:[],frAt:0,amb:null,ambK:'',exam:null,examAt:0,qz:null};
+const trxVn=()=>new Date(Date.now()+7*3600e3);const trxDay=()=>trxVn().toISOString().slice(0,10);const trxH=()=>trxVn().getUTCHours();
+const trxGold=()=>!!window.__trxGold||trxH()===20,trxExamOpen=()=>!!window.__trxH21||trxH()===21;
+const trxLS=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}};
+const trxRoomNo=()=>{const m=(TRM.s&&TRM.s.room||'').match(/^h\d-(\d+)$/);return m?+m[1]:0;};
+const trxMe=()=>TRM.s&&SOC.auth&&(TRM.s.seats||[]).find(x=>x&&x.uid===SOC.auth.uid);
+const fmtHM=ms=>{const m=Math.max(0,Math.round(ms/60e3));return m>=60?Math.floor(m/60)+' giờ '+(m%60)+' phút':m+' phút';};
+/* ---------- A. Chăm nhất tuần xuống dưới phòng (đủ chỗ hiện tên) ---------- */
+(function(){const base=trwLayout;trwLayout=function(){const r=base.apply(this,arguments);try{const w=document.querySelector('#trmroot .trmwrap'),t=document.getElementById('trwtopw'),sc=document.getElementById('trmsc');
+  if(w&&t&&sc&&t.parentElement!==w){sc.insertAdjacentElement('afterend',t);t.classList.add('trwbelow');}const L=document.getElementById('trmleft');if(L&&t)t.classList.toggle('topoff',L.classList.contains('topoff'));trxStrip();}catch(e){console.warn(e);}return r;};})();
+/* ---------- 1. Bạn bè đang học ---------- */
+async function trxFriends(){if(!SOC.auth||document.hidden||Date.now()-TRX.frAt<85e3)return;TRX.frAt=Date.now();let j=null;try{j=await trmReq({op:'friends'});}catch(e){return;}if(!j||!Array.isArray(j.list))return;TRX.fr=j.list;
+  const t=document.getElementById('trwtabs');if(t)t.innerHTML=trwTabsHTML();
+  const seen=trxLS('hsk-trxfr')||{},now=Date.now(),myRoom=TRM.s&&TRM.s.room;
+  const f=j.list.find(x=>x.room!==myRoom&&!(seen[x.uid]>now-2*3600e3));if(!f)return;seen[f.uid]=now;trxLS('hsk-trxfr',seen);
+  const n=+(f.room.split('-')[1]||1),lv=+(f.room.match(/^h(\d)/)||[0,0])[1];trxFriendCard(f,n,lv);}
+function trxFriendCard(f,n,lv){const old=document.getElementById('trxfn');if(old)old.remove();
+  document.body.insertAdjacentHTML('beforeend',`<div class="trxfn" id="trxfn" role="status">${avHTML(f.av2||f.avatar||0,40)}<div style="min-width:0;flex:1"><b>👫 ${esc(f.name||'Bạn bè')} đang học</b><small>Phòng Tự Học HSK${lv} · Phòng ${n}</small></div>${lv===LEVEL?`<button type="button" class="btn sm pri" data-trxgo="${n}">Học cùng</button>`:''}<button type="button" class="icon-btn" data-trxx aria-label="Đóng">✕</button></div>`);
+  setTimeout(()=>{const e=document.getElementById('trxfn');if(e)e.remove();},20e3);}
+(function(){const base=trwTabsHTML;trwTabsHTML=function(){let h=base.apply(this,arguments);try{(TRX.fr||[]).forEach(f=>{const m=f.room.match(/^h(\d)-(\d+)$/);if(!m||+m[1]!==LEVEL)return;
+  h=h.replace(new RegExp(`(data-trroom="${m[2]}"[^>]*><b>Phòng ${m[2]})`),`$1 <i class="trxfm" title="${esc(f.name||'')} đang học">👫</i>`);});}catch(e){}return h;};})();
+setInterval(()=>{try{trxFriends();}catch(e){}},30e3);setTimeout(()=>{try{trxFriends();}catch(e){}},8000);
+/* ---------- 3. Ghế người giữ chuỗi, 5. thú cưng, 9. bạn cùng bàn ---------- */
+const TRX_PET=['','🥚','🐣','🐥','🐉'],TRX_PETN=['','Trứng rồng','Rồng con mới nở','Rồng con','Rồng học giả'];
+const trxPetLv=m=>m>=1500?4:m>=600?3:m>=120?2:m>=30?1:0;
+(function(){const base=trmSeatHTML;trmSeatHTML=function(x,i){let h=base.apply(this,arguments);if(!x)return h;try{const mates=trxLS('hsk-trxmate')||{},mate=mates[x.uid]&&mates[x.uid].d&&mates[x.uid].d.length>=3;
+  const meU=SOC.auth&&SOC.auth.uid,pet=x.uid===meU?trxPetLv((trxLS('hsk-trxpet')||{}).min||0):(+x.pet||0);
+  const tags=(x.stk>=7?`<i class="trxstk" title="Chuỗi ${x.stk} ngày">🔥${x.stk}</i>`:'')+(mate?'<i class="trxmate" title="Bạn cùng bàn">🤝</i>':'')+(pet?`<i class="trxpet" title="${TRX_PETN[pet]}">${TRX_PET[pet]}</i>`:'');
+  if(x.stk>=7)h=h.replace('class="trmseat ','class="trmseat trxs7 ');if(tags)h=h.replace('<span class="trmav">',`<span class="trxtags">${tags}</span><span class="trmav">`);}catch(e){}return h;};})();
+(function(){if(typeof myProfile!=='function')return;const base=myProfile;myProfile=function(){const o=base.apply(this,arguments);try{o.rpet=trxPetLv((trxLS('hsk-trxpet')||{}).min||0);}catch(e){}return o;};})();
+/* ---------- 4. Rương thời gian, 6. mục tiêu chung, đếm phút (thú cưng, bạn cùng bàn) ---------- */
+const TRX_CHEST=[[25,20],[50,40],[100,80]];
+function trxTick(){const me=trxMe();if(!me||me.mode==='break'||document.hidden)return;const d=trxDay();
+  const c=trxLS('hsk-trxchest')||{};if(c.d!==d){c.d=d;c.min=0;c.got=[];}c.min++;
+  TRX_CHEST.forEach(([m,nb])=>{if(c.min>=m&&!c.got.includes(m)){c.got.push(m);const x2=trxGold()?2:1;try{earn(nb*x2,`Rương Phòng Tự Học ${m} phút${x2>1?' (giờ vàng x2)':''}`,{once:'trc:'+d+':'+m});confetti(50);sfx('win');}catch(e){}
+    gardenToast(`🎁 Mở rương <b>${m} phút</b> học hôm nay: +${nb*x2} Nguyên bảo${x2>1?' (giờ vàng x2)':''}!`);}});trxLS('hsk-trxchest',c);
+  const p=trxLS('hsk-trxpet')||{min:0};const lv0=trxPetLv(p.min);p.min++;trxLS('hsk-trxpet',p);const lv1=trxPetLv(p.min);if(lv1>lv0){gardenToast(`${TRX_PET[lv1]} Thú học cùng của bạn lớn lên: <b>${TRX_PETN[lv1]}</b>!`);try{socialPush();}catch(e){}}
+  // bạn cùng bàn: ghế cạnh bên (cùng bàn: 0-1, 2-3…)
+  const nb=(TRM.s.seats||[]).find(x=>x&&x.s===(me.s^1));if(nb&&TRM.s.room&&!TRM.s.room.startsWith('p-')){const M=trxLS('hsk-trxmate')||{};const o=M[nb.uid]||{name:nb.name,d:[],m:{}};o.name=nb.name;o.m=o.m||{};o.m[d]=(o.m[d]||0)+1;
+    if(o.m[d]>=10&&!o.d.includes(d)){o.d.push(d);if(o.d.length===3)trxMateCard(nb.uid,nb.name);}Object.keys(o.m).forEach(k=>{if(k<d&&!o.d.includes(k))delete o.m[k];});M[nb.uid]=o;trxLS('hsk-trxmate',M);}
+  trxStrip();}
+function trxMateCard(uid,name){let fb='';try{fb=frBtnHTML(uid,name,true)||'';}catch(e){}trwPopRaw('🤝 Bạn cùng bàn',`<div class="trxmc">${typeof baoSVG==='function'?baoSVG('cheer',90):''}<p>Bạn và <b>${esc(name||'bạn học')}</b> đã ngồi học cùng bàn <b>3 buổi</b>. Hai bạn đã là <b>bạn cùng bàn</b> 🤝</p>${fb?`<p class="small muted">Kết bạn để rủ nhau học tiếp, nhắn tin và tưới vườn cho nhau.</p>${fb}`:''}</div>`);}
+setInterval(()=>{try{trxTick();}catch(e){}},60e3);
+function trwPopRaw(title,html){const w=document.getElementById('trwpopw');if(!w){gardenToast(title);return;}TRW.pop='';document.getElementById('trwpopt').textContent=title;document.getElementById('trwpopb').innerHTML=html;w.hidden=false;}
+/* ---------- 2. Giờ vàng, 7. âm nền phòng, 8. đề 21h: dải thông tin trong phòng ---------- */
+const TRX_AMB=['rain','tea','lib','sea','zheng','roof','night','rain','tea','lib'],TRX_AMBN={rain:'Mưa',tea:'Quán trà',lib:'Thư viện',sea:'Biển',zheng:'Đàn tranh',roof:'Mưa mái hiên',night:'Đêm hè'};
+function trxAmbStop(){if(TRX.amb){try{TRX.amb.tm.forEach(clearTimeout);TRX.amb.ac.close();}catch(e){}TRX.amb=null;}}
+function trxAmbToggle(){if(TRX.amb){trxAmbStop();trxStrip();return;}const k=TRX_AMB[(trxRoomNo()||1)-1]||'rain';try{TRX.amb=ambient(k);TRX.ambK=k;}catch(e){}trxStrip();}
+function trxStrip(){const root=document.getElementById('trmroot');if(!root||!/^#tuhoc/.test(location.hash||''))return;let s=document.getElementById('trxstrip');
+  if(!s){const anchor=document.getElementById('trwdock')||root.querySelector('.trmwrap');if(!anchor)return;anchor.insertAdjacentHTML('beforebegin','<div class="trxstrip" id="trxstrip"></div>');s=document.getElementById('trxstrip');}
+  const inR=trmIn(),pub=inR&&TRM.s.room&&!TRM.s.room.startsWith('p-'),c=trxLS('hsk-trxchest')||{},cm=c.d===trxDay()?c.min||0:0,nx=TRX_CHEST.find(([m])=>cm<m),g=TRM.s&&TRM.s.goal,h=trxH();
+  const chips=[];
+  if(inR)chips.push(`<span class="trxchip chest" title="Học trong phòng mở rương Nguyên bảo">🎁 ${nx?`Rương ${nx[0]} phút: <b>${cm}/${nx[0]}</b>`:'<b>Đã mở hết 3 rương hôm nay</b>'}<i class="trxbar"><b style="width:${nx?Math.min(100,cm/nx[0]*100):100}%"></b></i></span>`);
+  if(pub&&g){const mm=Math.floor(g.sec/60),tg=Math.round(g.target/60),done=g.sec>=g.target;chips.push(`<span class="trxchip goal${done?' done':''}">🎯 Cả phòng hôm nay: <b>${mm}/${tg} phút</b>${done?' · đạt rồi 🎉':''}<i class="trxbar"><b style="width:${Math.min(100,g.sec/g.target*100)}%"></b></i></span>`);
+    if(done){const d=trxDay();try{earn(30,'Mục tiêu chung Phòng '+trxRoomNo(),{once:'trg:'+TRM.s.room+':'+d});}catch(e){}}}
+  chips.push(trxGold()?'<span class="trxchip gold">✨ <b>Giờ vàng 20h–21h</b>: rương x2</span>':`<span class="trxchip">⏰ Giờ vàng 20h–21h: rương x2</span>`);
+  const ex=TRX.exam;chips.push(trxExamOpen()?`<button type="button" class="trxchip exam on" data-trxexam>📝 <b>Đề 21h đang mở</b>${ex&&ex.mine?` · bạn ${ex.mine.score}/10`:' · Làm bài'}</button>`:`<button type="button" class="trxchip exam" data-trxexam>📝 Đề 21h${ex&&ex.yWinner?` · 🏅 hôm qua: ${esc(ex.yWinner.name)} ${ex.yWinner.score}/10`:''}</button>`);
+  if(pub)chips.push(`<button type="button" class="trxchip amb${TRX.amb?' on':''}" data-trxamb aria-pressed="${!!TRX.amb}">🎧 Âm nền phòng: <b>${TRX_AMBN[TX_ambK()]||'Mưa'}</b>${TRX.amb?' · đang phát':''}</button>`);
+  s.innerHTML=chips.join('');if(Date.now()-TRX.examAt>120e3)trxExamLoad();}
+function TX_ambK(){return TRX_AMB[(trxRoomNo()||1)-1]||'rain';}
+async function trxExamLoad(){if(!SOC.auth)return;TRX.examAt=Date.now();try{const j=await trmReq({op:'exam',lv:LEVEL});if(j&&j.day){TRX.exam=j;const s=document.getElementById('trxstrip');if(s)trxStrip();}}catch(e){}}
+function trxExamBoard(j){return `<div class="trxboard"><h4>🏆 Bảng điểm đề 21h hôm nay · HSK${LEVEL}</h4>${(j.top||[]).length?j.top.map((x,i)=>`<div class="trxbr${x.me?' me':''}"><span>${['🥇','🥈','🥉'][i]||i+1}</span><b>${esc(x.name)}</b><em>${x.score}/10 · ${Math.round(x.ms/1000)} giây</em></div>`).join(''):'<p class="small muted">Chưa ai nộp bài.</p>'}${j.yWinner?`<p class="small">🏅 Thủ khoa hôm qua: <b>${esc(j.yWinner.name)}</b> (${j.yWinner.score}/10)</p>`:''}</div>`;}
+async function trxExamOpen_(){if(!SOC.auth){location.hash='#settings';return;}await trxExamLoad();const j=TRX.exam||{};
+  if(!trxExamOpen()){trwPopRaw('📝 Đề 21h',`<p>Mỗi tối từ <b>21:00 đến 21:59</b>, cả phòng làm chung một đề 10 câu. Người điểm cao nhất (nhanh nhất nếu bằng điểm) được ghi tên lên bảng hôm sau.</p>${trxExamBoard(j)}`);return;}
+  if(j.mine){trwPopRaw('📝 Đề 21h',`<p>Bạn đã làm đề hôm nay: <b>${j.mine.score}/10</b>.</p>${trxExamBoard(j)}`);return;}
+  const seed=+trxDay().replace(/-/g,'')*13+LEVEL,pool=WORDS.filter(w=>w.zh&&w.vi&&!w.custom),qs=trmPick(pool,10,seed).map((w,i)=>{const ds=trmPick(pool.filter(x=>x.vi!==w.vi),3,seed+i*7+1);const opts=trmPick([w,...ds],4,seed+i*11+3);return {w,opts};});
+  TRX.qz={qs,i:0,score:0,t0:Date.now()};trxQ();}
+function trxQ(){const z=TRX.qz;if(!z)return;if(z.i>=z.qs.length){const ms=Date.now()-z.t0;trmReq({op:'exam',lv:LEVEL,score:z.score,ms}).then(j=>{if(j&&j.top){TRX.exam=j;}trwPopRaw('📝 Đề 21h · kết quả',`<p class="trxres">Bạn được <b>${z.score}/10</b> trong ${Math.round(ms/1000)} giây.</p>${trxExamBoard(TRX.exam||{})}`);try{if(z.score>=8)confetti(60);addXp(z.score*3);}catch(e){}trxStrip();}).catch(()=>trwPopRaw('📝 Đề 21h','Chưa nộp được, kiểm tra mạng nhé.'));TRX.qz=null;return;}
+  const q=z.qs[z.i];trwPopRaw(`📝 Đề 21h · câu ${z.i+1}/10`,`<div class="trxq"><div class="han trxqw">${esc(q.w.zh)}</div><small>${esc(q.w.py||'')}</small><p class="small muted">Chọn nghĩa đúng</p><div class="trxqo">${q.opts.map((o,k)=>`<button type="button" class="btn" data-trxa="${k}">${esc(o.vi)}</button>`).join('')}</div></div>`);}
+/* ---------- 10. Giờ tự học của lớp ---------- */
+const TRX_DOW=['CN','T2','T3','T4','T5','T6','T7'];
+(function(){const base=trmClassPanel;trmClassPanel=async function(code){const r=await base.apply(this,arguments);try{const p=document.getElementById('trmcls');if(!p||p.querySelector('#trxrhr'))return r;
+  const a=p.querySelector('a[href^="#tuhoc-p-"]');const rc=a?a.getAttribute('href').slice(9):'';const k=await fsGet('classes/'+code).catch(()=>null);const h=(k&&k.rhr)||{d:[],t:'20:00'};
+  p.insertAdjacentHTML('beforeend',`<div class="trxrhr" id="trxrhr"><b>⏰ Giờ tự học cố định của lớp</b><div class="small muted">Học viên thấy lời nhắc trên trang chủ đúng giờ, bấm là vào phòng lớp. Thời gian ngồi học hiện trong báo cáo bên trên.</div>
+    <div class="row" style="gap:6px;flex-wrap:wrap">${[1,2,3,4,5,6,0].map(d=>`<label class="tgl trxd"><input type="checkbox" value="${d}"${(h.d||[]).includes(d)?' checked':''}><span>${TRX_DOW[d]}</span></label>`).join('')}<input type="time" id="trxrt" value="${esc(h.t||'20:00')}"></div>
+    <div class="row" style="gap:8px"><button type="button" class="btn sm pri" id="trxrsave"${rc?'':' disabled'}>Lưu giờ tự học</button><span class="small" id="trxrmsg">${rc?'':'Tạo phòng lớp trước rồi đặt giờ.'}</span></div></div>`);
+  const sv=p.querySelector('#trxrsave');sv.onclick=async()=>{const d=[...p.querySelectorAll('.trxd input:checked')].map(x=>+x.value),t=p.querySelector('#trxrt').value||'20:00',m=p.querySelector('#trxrmsg');m.textContent='Đang lưu…';
+    try{await fsSet('classes/'+code,{rhr:{d,t,code:rc}},'?updateMask.fieldPaths=rhr');m.innerHTML=`<span style="color:var(--jade)">✓ Đã lưu: ${d.length?d.map(x=>TRX_DOW[x]).join(', '):'chưa chọn ngày'} lúc ${esc(t)}</span>`;}catch(e){m.textContent=netMsg(e);}};}catch(e){console.warn(e);}return r;};})();
+function trxClassHour(){const c=myClass&&myClass(),k=clsCached();if(!c||!k||k.code!==c.code||!k.rhr||!k.rhr.code||!(k.rhr.d||[]).length)return null;const v=trxVn(),dow=v.getUTCDay();if(!k.rhr.d.includes(dow))return {k,today:false};
+  const [hh,mm]=String(k.rhr.t||'20:00').split(':').map(Number),start=hh*60+mm,cur=v.getUTCHours()*60+v.getUTCMinutes();return {k,today:true,soon:cur>=start-15&&cur<start+60,start,cur};}
+(function(){const base=classStudent;classStudent=async function(box){const r=await base.apply(this,arguments);try{const k=clsCached();if(!k||!k.rhr||!(k.rhr.d||[]).length||box.querySelector('.trxcls'))return r;const anchor=box.querySelector('.panel');if(!anchor)return r;
+  anchor.insertAdjacentHTML('afterend',`<div class="panel row trxcls"><span>🏮 Giờ tự học của lớp: <b>${k.rhr.d.map(x=>TRX_DOW[x]).join(', ')}</b> lúc <b>${esc(k.rhr.t)}</b></span>${k.rhr.code?`<a class="btn sm pri" href="#tuhoc-p-${esc(k.rhr.code)}">Vào phòng lớp</a>`:''}</div>`);}catch(e){}return r;};})();
+(function(){const base=viewHome;viewHome=function(){const r=base.apply(this,arguments);try{trxHomeBanner();}catch(e){}return r;};})();
+function trxHomeBanner(){if(!/^#?(home)?$/.test(location.hash||'#home'))return;const old=app.querySelector('#trxhb');if(old)old.remove();let h='';const ch=trxClassHour();
+  if(ch&&ch.today&&ch.soon)h=`<a class="trxhb cls" id="trxhb" href="#tuhoc-p-${esc(ch.k.rhr.code)}"><span>🏫</span><div><b>Đến giờ tự học cùng lớp ${esc(ch.k.name||'')}</b><small>${ch.cur<ch.start?'Bắt đầu lúc '+esc(ch.k.rhr.t):'Đang diễn ra, cả lớp đang vào phòng'}</small></div><em>Vào phòng ›</em></a>`;
+  else if(trxGold())h=`<a class="trxhb gold" id="trxhb" href="#tuhoc"><span>✨</span><div><b>Giờ vàng Phòng Tự Học đang diễn ra</b><small>20:00–21:00 · học trong phòng mở rương Nguyên bảo x2</small></div><em>Vào phòng ›</em></a>`;
+  else if(trxExamOpen())h=`<a class="trxhb exam" id="trxhb" href="#tuhoc"><span>📝</span><div><b>Đề 21h đang mở trong Phòng Tự Học</b><small>10 câu, cả phòng làm chung, ai cao điểm nhất lên bảng</small></div><em>Làm bài ›</em></a>`;
+  else{const v=trxVn(),mins=(20-v.getUTCHours())*60-v.getUTCMinutes();if(mins>0&&mins<=180)h=`<a class="trxhb" id="trxhb" href="#tuhoc"><span>⏰</span><div><b>Giờ vàng Phòng Tự Học sau ${fmtHM(mins*60e3)}</b><small>20:00–21:00 rương x2 · 21:00 đề chung 10 câu</small></div><em>Xem phòng ›</em></a>`;}
+  if(!h)return;const hello=app.querySelector(':scope>section.hello'),asg=app.querySelector('#asgbox');(asg||hello)?(asg||hello).insertAdjacentHTML('afterend',h):app.insertAdjacentHTML('afterbegin',h);}
+/* sự kiện chung */
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-trxgo],[data-trxx],[data-trxamb],[data-trxexam],[data-trxa]');if(!t)return;e.preventDefault();
+  if(t.dataset.trxx!=null){const c=document.getElementById('trxfn');if(c)c.remove();return;}
+  if(t.dataset.trxgo){const n=+t.dataset.trxgo;const c=document.getElementById('trxfn');if(c)c.remove();if(location.hash!=='#tuhoc')location.hash='#tuhoc';setTimeout(()=>{try{trwGo(n);}catch(x){}},1600);return;}
+  if(t.dataset.trxamb!=null){trxAmbToggle();return;}
+  if(t.dataset.trxexam!=null){trxExamOpen_();return;}
+  if(t.dataset.trxa!=null&&TRX.qz){const z=TRX.qz,q=z.qs[z.i],o=q.opts[+t.dataset.trxa],ok=o.vi===q.w.vi;if(ok)z.score++;t.classList.add(ok?'ok':'no');t.closest('.trxqo').querySelectorAll('button').forEach(b=>b.disabled=true);
+    try{sfx(ok?'tap':'no');}catch(x){}setTimeout(()=>{z.i++;trxQ();},500);}},true);
+window.addEventListener('hashchange',()=>{if(!/^#tuhoc/.test(location.hash||''))trxAmbStop();});
+if(window.__T)window.__u130={TRX,trxStrip,trxFriends,trxTick,trxHomeBanner,trxExamOpen_,trxMateCard,trxPetLv};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
