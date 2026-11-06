@@ -5384,6 +5384,32 @@ html.mhome footer.site .ctarow{display:none!important}
 /* 5.85: sửa trùng tên .prcard (thẻ phát âm) làm khung mua gói bị xếp ngang */
 .plans2 #prcard{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:16px;background:var(--card)}
 .plans2 #prcard .prvc{flex-wrap:nowrap}.plans2 #prcard .prvc input{flex:1;min-width:0}
+/* 5.86 lớp học */
+.kwrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:6px 0;border-top:1px dashed var(--line)}.kwrow b{min-width:0;overflow-wrap:anywhere}.kwrow .btn{margin-left:auto}
+.kfree{font-size:13px;padding:8px 10px;border-radius:10px;background:#fff6dc;border:1px solid #f0d58a}
+.kearnrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.kearnrow>div{padding:8px;border-radius:10px;background:var(--paper);border:1px solid var(--line);min-width:0}.kearnrow small{display:block;color:var(--muted)}.kearnrow b{font-size:16px}
+#kreptxt,#kratetxt{width:100%;min-width:0;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+.asgbox{margin:10px 0;padding:12px 14px;border-radius:var(--r);background:linear-gradient(135deg,#eef6ff,#f3fff8);border:1px solid #9cc7f0;display:flex;flex-direction:column;gap:6px}
+:root[data-theme="dark"] .asgbox{background:linear-gradient(135deg,#16283a,#163327);border-color:#2f5a80}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .asgbox{background:linear-gradient(135deg,#16283a,#163327);border-color:#2f5a80}}
+.asghd{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.asgit{display:flex;align-items:center;gap:10px;padding:6px 0;border-top:1px dashed var(--line)}.asgit b{overflow-wrap:anywhere}.asgit.late .small{color:var(--seal)}
+.asgxp{font-weight:700;color:#b8860b}
+.klgrow{display:flex;align-items:center;gap:8px;padding:6px 4px;border-top:1px dashed var(--line)}.klgrow.me{background:var(--jade-soft,#e3f5ec);border-radius:8px}.klgn{width:28px;text-align:center;font-weight:700}
+.krate{display:flex;gap:4px}.kstar{font-size:30px;line-height:1;background:none;border:0;color:#e0a800;cursor:pointer;padding:2px}
+.kcertp{gap:10px;align-items:center;flex-wrap:wrap}
+.clostar{color:#e0a800;font-size:14px}.clostar small{color:var(--muted)}
+.certpg{background:#fffaf0;border-radius:16px;padding:10px;box-shadow:0 4px 18px rgba(0,0,0,.08);color:#2b2118}
+.certin{border:3px double #b8860b;border-radius:12px;padding:22px 18px;text-align:center;position:relative;display:flex;flex-direction:column;gap:8px}
+.cseal7{position:absolute;top:12px;right:14px;width:46px;height:46px;border-radius:50%;background:#c0392b;color:#fff;display:grid;place-items:center;font-size:24px;transform:rotate(-8deg)}
+.certlb{letter-spacing:.14em;font-size:12px;font-weight:700;color:#b8860b}
+.certname{font-size:clamp(24px,6vw,38px);font-weight:800;font-family:Georgia,serif;overflow-wrap:anywhere}
+.certtx{font-size:15px}
+.certft{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;text-align:left;margin-top:8px}.certft small{display:block;color:#7a6a55;font-size:11px}.certft b{display:block;margin-bottom:4px}
+.certcode{font-family:monospace;letter-spacing:.08em}
+.certqr{width:110px;min-height:110px;flex:none;background:#fff;padding:4px;border-radius:6px}.certqr svg{width:100%;height:auto;display:block}
+.certurl{color:#7a6a55;overflow-wrap:anywhere}
+@media print{html.certprint body *{visibility:hidden}html.certprint #certpg,html.certprint #certpg *{visibility:visible}html.certprint #certpg{position:fixed;inset:0;box-shadow:none}}
 </style>
 </head><body>
 
@@ -5409,12 +5435,12 @@ html.mhome footer.site .ctarow{display:none!important}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='0b6ab8a3';
-document.write('<script src="packs/hsk'+L+'.js?v=0b6ab8a3"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='1f6ec196';
+document.write('<script src="packs/hsk'+L+'.js?v=1f6ec196"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=0b6ab8a3','strokes-file');A('packs/dict.js?v=0b6ab8a3','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=1f6ec196','strokes-file');A('packs/dict.js?v=1f6ec196','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -21466,6 +21492,110 @@ function clOpenCard(k){const full=k.n>=k.max;return `<div class="clopen${k.kasse
   cb.onchange=save;app.querySelector('#kpubsave').onclick=save;}catch(e){console.warn(e);}return r;};})();
 window.__u126={fbErr:m=>fbErr(m),wtText:x=>wtText(x),plusActive:()=>plusActive(),replayActive:()=>replayActive(),acctTier,frMax,ctaProHTML,clOpenCard};
 
+/* ===== 5.86: Lớp học giai đoạn 1–3 — giao bài 1 chạm, hộp bài được giao, báo cáo phụ huynh, giáo viên miễn phí 1 lớp,
+   học viên cần chú ý + nhắc, hoa hồng giáo viên, chứng nhận có QR, đánh giá lớp, giải đấu liên lớp ===== */
+async function kApi(m,path,body){const h={'Content-Type':'application/json'};if(SOC.auth){try{h.Authorization='Bearer '+await idToken();}catch(e){}}
+  const r=await netFetch(m,API_BASE+path,h,body?JSON.stringify(body):'');let j={};try{j=JSON.parse(r.text||'{}');}catch(e){}return {s:r.status,j};}
+const K_ERR={NUDGE_TODAY:'Hôm nay đã nhắc học viên này rồi, mai nhắc tiếp nhé.',NOT_FINISHED:'Cần qua đủ 15 bài của cấp này mới nhận được chứng nhận.',NOT_MEMBER:'Bạn cần là học viên của lớp.',NOT_TEACHER:'Chỉ giáo viên của lớp làm được việc này.'};
+const kErr=j=>{const m=(j&&j.error&&j.error.message)||'';return K_ERR[m]||'Chưa làm được, thử lại sau nhé.';};
+const kDays=d=>d?Math.round((new Date(d+'T00:00:00')-new Date(today()+'T00:00:00'))/864e5):null;
+
+/* ---------- 1. Giáo viên miễn phí: 1 lớp, tối đa 15 học viên; Giáo viên Pro không giới hạn ---------- */
+(function(){const base=canTeachC;canTeachC=function(){return base.apply(this,arguments)||myTeach().length===0;};})();
+Object.assign(PLAN_NAME,{teacher:'Giáo viên Pro'});
+Object.assign(PLAN_FEAT,{teacher:['🏫 Không giới hạn số lớp, mỗi lớp tối đa 40 học viên','⚡ Giao bài 1 chạm, báo cáo phụ huynh, nhắc học viên','📜 Chứng nhận hoàn thành có mã QR xác minh','💰 Nhận 20% hoa hồng khi học viên trong lớp mua gói','🆓 Chưa mua vẫn mở được 1 lớp miễn phí (15 học viên)']});
+try{const g=PLAN_GROUPS.find(x=>x[0]==='teacher');if(g){g[1]='👩‍🏫 Giáo viên Pro';g[2]='Miễn phí 1 lớp 15 học viên. Giáo viên Pro: không giới hạn lớp, giao bài 1 chạm, báo cáo phụ huynh, chứng nhận, hoa hồng 20%.';}}catch(e){}
+if(PLAN_FALLBACK)PLAN_FALLBACK.teacher={name:'Gói Giáo viên Pro',price:129000,days:30,plan:'teacher'};
+
+/* ---------- 2. Bảng điều khiển giáo viên ---------- */
+function kMedian(a){if(!a.length)return 0;const b=a.slice().sort((x,y)=>x-y);return b[Math.floor((b.length-1)/2)];}
+function kReport(k,m,as){const lv=k.level,s=m['h'+lv]||{},done=as.filter(a=>asgDone(a,s)[0]).length,d=s.active?-kDays(s.active):null;
+  return `📘 Báo cáo học tập — ${m.name||'Học viên'}\nLớp: ${k.name} (HSK${lv})${k.tname?' · GV '+k.tname:''}\nNgày: ${new Date().toLocaleDateString('vi-VN')}\n\n• Lần học gần nhất: ${d==null?'chưa học':d<=0?'hôm nay':d===1?'hôm qua':d+' ngày trước'}\n• Chuỗi ngày học: ${s.streak||0} ngày\n• Bài đã qua: ${(s.passed||[]).length}/15\n• Từ đã học: ${s.learned||0}\n• Thi thử cao nhất: ${s.exam>=0?s.exam+'%':'chưa thi'}\n• XP tuần này: ${mWx(m)}\n• Bài được giao đã xong: ${done}/${as.length}\n\nNhận xét của giáo viên: `;}
+function kReportDlg(txt,name){let d=document.getElementById('krepdlg');if(!d){d=document.createElement('dialog');d.id='krepdlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
+  d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h3 style="margin:0">📨 Báo cáo phụ huynh · ${esc(name)}</h3><button class="icon-btn" data-x aria-label="Đóng">✕</button></div>
+    <p class="small muted" style="margin:0">Thêm nhận xét rồi gửi cho phụ huynh qua Zalo, Messenger hoặc tin nhắn.</p><textarea id="kreptxt" rows="12">${esc(txt)}</textarea>
+    <div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn pri" id="krcopy">Sao chép</button><button class="btn" id="krshare">Chia sẻ (Zalo…)</button><a class="btn ghost" href="https://chat.zalo.me/" target="_blank" rel="noopener">Mở Zalo</a></div></div>`;
+  const t=()=>d.querySelector('#kreptxt').value;d.querySelector('[data-x]').onclick=()=>d.close();
+  d.querySelector('#krcopy').onclick=async()=>{try{await navigator.clipboard.writeText(t());gardenToast('Đã sao chép báo cáo, dán vào Zalo để gửi phụ huynh');}catch(e){d.querySelector('#kreptxt').select();}};
+  d.querySelector('#krshare').onclick=async()=>{try{if(navigator.share){await navigator.share({text:t()});return;}}catch(e){return;}try{await navigator.clipboard.writeText(t());gardenToast('Máy chưa hỗ trợ chia sẻ, đã sao chép báo cáo');}catch(e){}};
+  if(!d.open)d.showModal();}
+(function(){const base=viewClassDash;viewClassDash=async function(code){const r=await base.apply(this,arguments);try{if(location.hash!=='#class-'+code||app.querySelector('#k127'))return r;
+  const k=await fsGet('classes/'+code).catch(()=>null);if(!k||!SOC.auth||k.teacher!==SOC.auth.uid||app.querySelector('#k127'))return r;
+  const ms=await fsList(`classes/${code}/members`).catch(()=>[]);const lv=k.level,as=k.asg||[],S_=m=>m['h'+lv]||null;
+  const anchor=app.querySelector('#kcopy'),pnl=anchor&&anchor.closest('.panel');const hook=pnl||app.querySelector('.stack>*');
+  // học viên cần chú ý: bỏ học từ 3 ngày, hoặc chưa học lần nào
+  const warn=ms.map(m=>{const s=S_(m);const d=s&&s.active?-kDays(s.active):null;return {m,d,why:d==null?'chưa học lần nào':d>=3?`bỏ học ${d} ngày`:''};}).filter(x=>x.why);
+  hook.insertAdjacentHTML('afterend',`<div id="k127" class="stack"><div class="panel stack kquick"><div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:8px"><div style="min-width:0"><h3 style="margin:0">⚡ Giao bài 1 chạm</h3><div class="small muted">App tự chọn bài tiếp theo theo tiến độ chung của lớp (bài + ngữ pháp + số từ), hạn 7 ngày.</div></div><button class="btn pri" id="kone">Giao bài tuần này</button></div><div class="small" id="konemsg"></div></div>
+    <div class="panel stack kwarn"><h3 style="margin:0">👀 Học viên cần chú ý (${warn.length})</h3>${warn.length?warn.map(x=>`<div class="kwrow">${avatarHTML(x.m.avatar,28)}<b>${esc(x.m.name||'')}</b><span class="small muted">${x.why}</span><button class="btn sm" data-knudge="${esc(x.m.id)}">🔔 Nhắc</button></div>`).join(''):'<p class="small muted" style="margin:0">Cả lớp đều học đều đặn 👏</p>'}</div>
+    <div class="panel stack kearn" id="kearn"><h3 style="margin:0">💰 Gói giáo viên & hoa hồng</h3><div class="small muted">Đang tải…</div></div></div>`);
+  // nút báo cáo phụ huynh mỗi học viên
+  app.querySelectorAll('.ktable tbody tr').forEach((tr,i)=>{const m=ms.slice().sort((a,b)=>(b.upd||0)-(a.upd||0))[i];if(!m)return;const td=tr.lastElementChild;if(td&&!td.querySelector('[data-krep]'))td.insertAdjacentHTML('afterbegin',`<button class="btn sm" data-krep="${esc(m.id)}" title="Báo cáo phụ huynh">📨</button> `);});
+  app.querySelectorAll('[data-krep]').forEach(b=>b.onclick=()=>{const m=ms.find(x=>x.id===b.dataset.krep);if(m)kReportDlg(kReport(k,m,as),m.name||'');});
+  app.querySelectorAll('[data-knudge]').forEach(b=>b.onclick=async()=>{b.disabled=true;const x=await kApi('POST','/v1/class/nudge',{code,uid:b.dataset.knudge});if(x.s===200){b.textContent='✓ Đã nhắc';gardenToast('🔔 Đã gửi lời nhắc vào chuông thông báo của học viên');}else{b.disabled=false;gardenToast(kErr(x.j));}});
+  app.querySelector('#kone').onclick=async()=>{const m=app.querySelector('#konemsg'),ss=ms.map(S_).filter(Boolean);
+    const n=Math.min(NL,kMedian(ss.map(s=>(s.passed||[]).length))+1),w=Math.max(20,Math.ceil((kMedian(ss.map(s=>s.learned||0))+30)/10)*10),due=addDays(today(),7),id=Date.now().toString(36);
+    const add=[{kind:'lesson',n},{kind:'grammar',n},{kind:'words',n:w}].filter(a=>!as.some(x=>x.kind===a.kind&&+x.n===a.n&&x.lv===lv)).map((a,i)=>Object.assign(a,{id:id+i,lv,due,note:'Bài tuần này (giao tự động)'}));
+    if(!add.length){m.textContent='Lớp đã có đủ bài tuần này rồi.';return;}m.textContent='Đang giao…';
+    try{await fsSet('classes/'+code,{asg:as.concat(add)},'?updateMask.fieldPaths=asg');gardenToast(`⚡ Đã giao ${add.length} bài: ${add.map(asgTitle).join(', ')}`);viewClassDash(code);}catch(e){m.textContent=netMsg(e);}};
+  kApi('GET','/v1/class/earn').then(x=>{const el=app.querySelector('#kearn');if(!el||x.s!==200)return;const j=x.j;
+    el.innerHTML=`<h3 style="margin:0">💰 Gói giáo viên & hoa hồng</h3>${j.free?`<div class="kfree">🆓 Bạn đang dùng <b>lớp miễn phí</b>: 1 lớp, tối đa ${j.freeMax} học viên (lớp này ${ms.length}/${j.freeMax}). <a href="#premium-teacher">Nâng Giáo viên Pro</a> để mở nhiều lớp, mỗi lớp ${j.proMax} học viên.</div>`:'<div class="small">⭐ Giáo viên Pro: không giới hạn số lớp.</div>'}
+      <div class="kearnrow"><div><small>Chờ thanh toán</small><b>${vnd(j.pending)}</b></div><div><small>Đã nhận</small><b>${vnd(j.paid)}</b></div><div><small>Tỷ lệ</small><b>${j.rate}%</b></div></div>
+      <p class="small muted" style="margin:0">Học viên trong lớp mua gói Plus/Pro/Nguyên bảo, bạn nhận ${j.rate}% giá trị đơn. Kasser chuyển khoản cuối mỗi tháng.</p>`;});
+  }catch(e){console.warn(e);}return r;};})();
+
+/* ---------- 3. Trang chủ học viên: hộp "Bài được giao" ---------- */
+const ASG_XP=30;
+function asgBoxHTML(){const c=myClass&&myClass(),k=clsCached();if(!c||!k||k.code!==c.code)return '';const st=classStats();
+  const all=(k.asg||[]).filter(a=>+a.lv===LEVEL),todo=all.filter(a=>!asgDone(a,st)[0]).sort((a,b)=>(a.due||'9').localeCompare(b.due||'9'));
+  if(!all.length)return '';
+  return `<section class="asgbox" id="asgbox"><div class="asghd"><b>📋 Bài được giao · ${esc(k.name||'')}</b><a class="small" href="#class">Xem lớp →</a></div>
+    ${todo.length?todo.slice(0,3).map(a=>{const d=kDays(a.due);const late=d!=null&&d<0;return `<div class="asgit${late?' late':''}"><div style="min-width:0;flex:1"><b>${esc(asgTitle(a))}</b><div class="small">${d==null?'Không hạn':late?`⚠️ Quá hạn ${-d} ngày`:d===0?'⏰ Hạn hôm nay':`⏳ Còn ${d} ngày`} · <span class="asgxp">+${ASG_XP} XP</span></div></div>${asgGo(a)}</div>`;}).join('')+(todo.length>3?`<div class="small muted">… và ${todo.length-3} bài nữa</div>`:''):`<div class="small">✅ Đã xong tất cả ${all.length} bài được giao. Giỏi lắm!</div>`}</section>`;}
+function asgReward(){try{const c=myClass&&myClass(),k=clsCached();if(!c||!k||k.code!==c.code)return;const st=classStats();let got={};try{got=JSON.parse(localStorage.getItem('hsk-asgxp')||'{}');}catch(e){}
+  let n=0;(k.asg||[]).forEach(a=>{const key=c.code+':'+a.id;if(+a.lv===LEVEL&&!got[key]&&asgDone(a,st)[0]){got[key]=Date.now();n++;}});
+  if(n){localStorage.setItem('hsk-asgxp',JSON.stringify(got));addXp(ASG_XP*n);save();gardenToast(`📋 Hoàn thành ${n} bài được giao: <b>+${ASG_XP*n} XP</b>`);}}catch(e){}}
+let ASG_AT=0;async function asgRefresh(){const c=myClass&&myClass();if(!c||!SOC.auth||Date.now()-ASG_AT<5*60e3)return;ASG_AT=Date.now();try{const k=await fsGet('classes/'+c.code);if(k){clsCache(Object.assign({code:c.code},k));asgMount();}}catch(e){}}
+function asgMount(){if(!/^#?(home)?$/.test(location.hash||'#home'))return;const old=app.querySelector('#asgbox');const h=asgBoxHTML();if(old){if(h)old.outerHTML=h;else old.remove();return;}if(!h)return;
+  const hello=app.querySelector(':scope>section.hello');if(hello)hello.insertAdjacentHTML('afterend',h);else app.insertAdjacentHTML('afterbegin',h);asgReward();}
+(function(){const base=viewHome;viewHome=function(){const r=base.apply(this,arguments);try{asgMount();asgRefresh();}catch(e){}return r;};})();
+
+/* ---------- 4. Trang lớp của học viên: đánh giá, chứng nhận, giải liên lớp ---------- */
+function stars(v,n){const f=Math.round(v||0);return '★★★★★'.slice(0,f)+'☆☆☆☆☆'.slice(0,5-f)+(n!=null?` <small>${v?v.toFixed(1):'–'} (${n})</small>`:'');}
+async function leagueHTML(){const x=await kApi('GET','/v1/class/league');const ls=(x.j&&x.j.list)||[];if(!ls.length)return '';const my=(myClass&&myClass()||{}).code;
+  return `<div class="panel stack klg"><h3 style="margin:0">🏆 Giải đấu liên lớp tuần này</h3><div class="small muted">Xếp theo XP trung bình mỗi học viên (lớp từ 3 học viên). Lớp nhất tuần được vinh danh trên bảng tin.</div>
+    ${ls.map((c,i)=>`<div class="klgrow${c.code===my?' me':''}"><span class="klgn">${['🥇','🥈','🥉'][i]||i+1}</span><span style="flex:1;min-width:0"><b>${esc(c.name)}</b> <small class="muted">${esc(c.tname||'')} · ${c.n} HV</small></span><b>${c.avg} XP</b></div>`).join('')}</div>`;}
+(function(){const base=classStudent;classStudent=async function(box){const r=await base.apply(this,arguments);try{const c=myClass&&myClass();if(!c||box.querySelector('#k127s')||!box.querySelector('#kleave'))return r;
+  const st=classStats(),fin=(st.passed||[]).length>=15;
+  box.insertAdjacentHTML('beforeend',`<div id="k127s" class="stack"><div class="panel stack"><h3 style="margin:0">⭐ Đánh giá lớp học</h3><div class="krate" role="radiogroup" aria-label="Chấm sao lớp học">${[1,2,3,4,5].map(i=>`<button class="kstar" data-kst="${i}" aria-label="${i} sao">☆</button>`).join('')}</div><input id="kratetxt" maxlength="200" placeholder="Cảm nhận ngắn (không bắt buộc)"><div class="small" id="kratemsg"></div></div>
+    <div class="panel row kcertp"><div style="min-width:0;flex:1"><b>📜 Chứng nhận hoàn thành HSK ${LEVEL}</b><div class="small muted">${fin?'Bạn đã qua đủ 15 bài, nhận chứng nhận có mã QR xác minh!':`Qua đủ 15 bài để nhận (đang ${(st.passed||[]).length}/15).`}</div></div><a class="btn ${fin?'pri':''}" href="#cert"${fin?'':' aria-disabled="true"'}>${fin?'Nhận chứng nhận':'Xem'}</a></div><div id="klg"></div></div>`);
+  box.querySelectorAll('[data-kst]').forEach(b=>{b.onmouseenter=()=>box.querySelectorAll('[data-kst]').forEach(x=>x.textContent=+x.dataset.kst<=+b.dataset.kst?'★':'☆');
+    b.onclick=async()=>{const n=+b.dataset.kst,m=box.querySelector('#kratemsg');box.querySelectorAll('[data-kst]').forEach(x=>{x.textContent=+x.dataset.kst<=n?'★':'☆';x.classList.toggle('on',+x.dataset.kst<=n);});m.textContent='Đang gửi…';
+      const x=await kApi('POST','/v1/class/rate',{code:c.code,stars:n,txt:box.querySelector('#kratetxt').value.trim()});m.innerHTML=x.s===200?`<span style="color:var(--jade)">✓ Cảm ơn bạn đã đánh giá ${n} sao!</span>`:`<span style="color:var(--seal)">${esc(kErr(x.j))}</span>`;};});
+  leagueHTML().then(h=>{const el=box.querySelector('#klg');if(el)el.innerHTML=h;}).catch(()=>{});}catch(e){console.warn(e);}return r;};})();
+(function(){const base=classTeacherList;classTeacherList=async function(box){const r=await base.apply(this,arguments);try{if(box.querySelector('#klgt'))return r;box.insertAdjacentHTML('beforeend','<div id="klgt"></div>');leagueHTML().then(h=>{const el=box.querySelector('#klgt');if(el)el.innerHTML=h;}).catch(()=>{});}catch(e){}return r;};})();
+/* sao đánh giá trên danh sách lớp đang mở */
+(function(){const base=clOpenCard;clOpenCard=function(k){let h=base.apply(this,arguments);if(k.rates)h=h.replace('</b><div class="small muted">',`</b><div class="clostar">${stars(k.rate,k.rates)}</div><div class="small muted">`);return h;};})();
+
+/* ---------- 5. Chứng nhận có mã QR + trang xác minh ---------- */
+let QRLIB=null;function qrLoad(){if(QRLIB)return QRLIB;QRLIB=new Promise((ok,no)=>{if(window.qrcode)return ok(window.qrcode);const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js';s.onload=()=>ok(window.qrcode);s.onerror=()=>{QRLIB=null;no();};document.head.appendChild(s);});return QRLIB;}
+const certURL=c=>'https://hsk.kassertam.com/#certv-'+c;
+function certHTML(c){const d=new Date(c.at).toLocaleDateString('vi-VN');return `<div class="certpg" id="certpg"><div class="certin"><div class="cseal7 han" aria-hidden="true">證</div><div class="certlb">TÂM HSK · CHỨNG NHẬN HOÀN THÀNH</div>
+  <div class="certname">${esc(c.name)}</div><div class="certtx">đã hoàn thành toàn bộ <b>15 bài HSK ${c.lv}</b>${c.cls?` trong lớp <b>${esc(c.cls)}</b>`:''}${c.tname?` do giáo viên <b>${esc(c.tname)}</b> hướng dẫn`:''}.</div>
+  <div class="certft"><div><small>Ngày cấp</small><b>${d}</b><small>Mã xác minh</small><b class="certcode">${esc(c.code)}</b></div><div class="certqr" id="certqr" aria-label="Mã QR xác minh"></div></div>
+  <div class="small certurl">Quét QR hoặc mở ${esc(certURL(c.code))} để xác minh</div></div></div>`;}
+async function certQR(c){try{const q=await qrLoad();const o=q(0,'M');o.addData(certURL(c.code));o.make();const el=document.getElementById('certqr');if(el)el.innerHTML=o.createSvgTag(3,0);}catch(e){const el=document.getElementById('certqr');if(el)el.innerHTML='<small>Mở link bên dưới để xác minh</small>';}}
+async function viewCert(){app.innerHTML='<div class="panel">Đang tải chứng nhận…</div>';if(!SOC.auth){app.innerHTML='<div class="notice">Đăng nhập và vào lớp để nhận chứng nhận.</div>';return;}
+  try{classPush&&await classPush();}catch(e){}
+  const x=await kApi('POST','/v1/cert/issue',{lv:LEVEL});if(x.s!==200){app.innerHTML=`<div class="stack"><div class="notice">${esc(kErr(x.j))}</div><a class="btn" href="#class">← Về lớp học</a></div>`;return;}
+  app.innerHTML=`<div class="stack"><div class="lhead" style="margin:0"><button class="icon-btn" data-go="#class" aria-label="Về lớp">${ICON.back}</button><h1>Chứng nhận của bạn</h1></div>${certHTML(x.j)}
+    <div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn pri" id="certprint">🖨️ In / lưu PDF</button><button class="btn" id="certshare">Chia sẻ link xác minh</button></div></div>`;
+  certQR(x.j);try{confetti(60);sfx('win');}catch(e){}
+  app.querySelector('#certprint').onclick=()=>{document.documentElement.classList.add('certprint');setTimeout(()=>{window.print();setTimeout(()=>document.documentElement.classList.remove('certprint'),500);},100);};
+  app.querySelector('#certshare').onclick=async()=>{const u=certURL(x.j.code);try{if(navigator.share){await navigator.share({title:'Chứng nhận Tâm HSK',url:u});return;}}catch(e){return;}try{await navigator.clipboard.writeText(u);gardenToast('Đã sao chép link xác minh');}catch(e){}};}
+async function viewCertVerify(code){app.innerHTML='<div class="panel">Đang xác minh…</div>';const x=await kApi('GET','/v1/cert/verify?c='+encodeURIComponent(code));
+  app.innerHTML=x.s===200&&x.j.ok?`<div class="stack"><div class="fb ok">✅ Chứng nhận hợp lệ, do Tâm HSK cấp.</div>${certHTML(x.j.cert)}</div>`:`<div class="stack"><div class="notice">❌ Không tìm thấy chứng nhận với mã <b>${esc(code)}</b>. Chứng nhận này không hợp lệ.</div></div>`;
+  if(x.s===200&&x.j.ok)certQR(x.j.cert);}
+window.__u127={kReport,asgBoxHTML,kMedian,certHTML};
+
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
 function hzPanel(l){const z=l.hz;if(!z)return '';const wl=w=>`<a class="hzw han" href="${typeof wpURL==='function'?wpURL(w):'#'}" target="_blank" rel="noopener">${esc(w)}</a>`;
@@ -21487,7 +21617,7 @@ function route(){
   if(ttsOK)try{speechSynthesis.cancel();}catch(e){}
   if(sttStop){try{sttStop();}catch(e){}sttStop=null;}
   {const wg=document.getElementById('wdg');if(wg&&wg.open)wg.close();}
-  const MORE=['invite','buddy','lux','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','tuhoc','support','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber','memory','duo-memory'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
+  const MORE=['invite','buddy','lux','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','tuhoc','support','cert','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber','memory','duo-memory'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
   navUpdate(h);if(typeof navGroup==='function'&&navGroup(navKey(h))==='game'&&h!=='games'&&h!=='friends'&&h!=='achievements'){const q=QD();if(!q.gv){q.gv=1;qTick('game');save();}}
   const m=h.match(/^l(\d{1,2})$/);
   if(m&&+m[1]>=1&&+m[1]<=NL){const n=+m[1];if(cur.n!==n){cur={n,stage:'words'};}viewLesson(n,cur.stage);}
@@ -21496,7 +21626,7 @@ function route(){
   else if(h==='more')viewMore();else if(h==='pron')viewPron();else if(h==='listen')viewListen();else if(h==='culture')viewCulture();
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
-  else if(h==='support')viewSupport();else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
+  else if(h==='support')viewSupport();else if(h==='cert')viewCert();else if(/^certv-[A-Z0-9]{4,12}$/.test(h))viewCertVerify(h.slice(6));else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
   else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(h==='bomber')viewBomber();else if(/^duo-(race|defense|memory|bomber)$/.test(h))viewDuo(h.slice(4));else if(h==='memory')viewMemory();else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
