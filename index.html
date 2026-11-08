@@ -5746,6 +5746,13 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
 /* 5.98 kho nhân vật */
 img.bao[data-char].bao-sad{filter:drop-shadow(0 4px 6px rgba(0,0,0,.15));transform:none}
 img.charpet{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 3px 4px rgba(0,0,0,.18))}
+.c3grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.c3card{display:grid;gap:4px;justify-items:center;text-align:center;padding:10px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;transition:border-color .15s,transform .15s}
+.c3card:hover{transform:translateY(-2px)}.c3card.on{border-color:var(--jade);background:color-mix(in srgb,var(--jade) 9%,var(--card))}.c3card.try{border-color:#f4b400;box-shadow:0 0 0 3px rgba(244,180,0,.25)}
+.c3img{width:100%;aspect-ratio:1;display:grid;place-items:center;border-radius:12px;background:radial-gradient(circle at 50% 60%,color-mix(in srgb,var(--jade) 10%,transparent),transparent 70%)}
+.c3img img{max-width:88%;max-height:88%;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+.c3card b{font-size:14px}.c3tag{font-size:12px;font-weight:800;color:var(--jade)}
+.c3card .btn{width:100%}
 </style>
 </head><body>
 
@@ -5771,12 +5778,12 @@ img.charpet{width:100%;height:100%;object-fit:contain;display:block;filter:drop-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='3d68ac74';
-document.write('<script src="packs/hsk'+L+'.js?v=3d68ac74"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='ee34432e';
+document.write('<script src="packs/hsk'+L+'.js?v=ee34432e"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=3d68ac74','strokes-file');A('packs/dict.js?v=3d68ac74','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ee34432e','strokes-file');A('packs/dict.js?v=ee34432e','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -22505,35 +22512,91 @@ function olcChatAdd(j,isT){const el=app.querySelector('#olcmsgs');if(!el)return;
 (function(){viewClassReg=function(){viewOlc();};})();
 if(window.__T)window.__u138={olcSched:null,olcLeft,OLC_ERR};
 
-/* ===== 5.98: Kho nhân vật — bộ ảnh nhân vật (góc nhìn + biểu cảm) nạp từ trang quản trị, thay Tiểu Long Hổ và thú cưng không cần cập nhật app ===== */
-let CHARX=null;
+/* ===== 5.98–5.99: Kho nhân vật — linh thú (mặc định + bán), thú cưng vườn, phụ kiện 3D (Mũ, Cầm tay, Trang phục) nạp từ trang quản trị ===== */
+let CHARX=null,CHARL=[];
 const CHAR_MOOD={happy:'happy',cheer:'cheer',think:'think',wow:'wow',sad:'sad',sleep:'sleep',wave:'wave',love:'love',angry:'angry',point:'point',dizzy:'wow'};
 const CHAR_SPIN=['front','q34r','sider','back','sidel','q34l','front'];
+const C3_KINDS=[['mu','🎩 Mũ'],['camtay','🪄 Cầm tay'],['trangphuc','👘 Trang phục']];
+const C3_DEF={mu:{x:.5,y:.13,w:.55,r:0},camtay:{x:.24,y:.66,w:.32,r:0},trangphuc:{x:.5,y:.66,w:.72,r:0}};
 function charOutfit(){try{return !!PET_URL&&!(P3&&PET_URL===P3.out);}catch(e){return !!PET_URL;}}
 function charPack(slot){return (CHARX&&CHARX[slot])||null;}
-function charUrl(slot,key){const p=charPack(slot);if(!p)return '';const has=k=>p.items.some(i=>i.key===k);const k=has(key)?key:has('happy')?'happy':has('front')?'front':p.items[0].key;
-  return API_BASE+'/v1/char/img/'+encodeURIComponent(p.slug)+'/'+p.ver+'/'+k+'.webp';}
-function charBaoSrc(im){if(charOutfit())return PET_URL;if(!charPack('mascot'))return MASCOT_URL;const m=im&&im.dataset&&(im.dataset.mood||((String(im.className).match(/\bbao-(\w+)/)||[])[1]));return charUrl('mascot',m?(CHAR_MOOD[m]||'happy'):'front');}
-function charSet(list){const m={};(Array.isArray(list)?list:[]).forEach(p=>{if(p&&p.slot&&p.slug&&Array.isArray(p.items)&&p.items.length)m[p.slot]=p;});CHARX=m;try{if(m.mascot){P3.on=false;if(PET_URL&&PET_URL===P3.out)PET_URL='';}}catch(e){}
-  try{Object.keys(GPET).forEach(k=>{const P=GPET[k];if(P._svg0==null)P._svg0=P.svg;const pk=charPack('pet:'+k);P.svg=pk?`<img class="charpet" src="${charUrl('pet:'+k,'happy')}" alt="${esc(P.n)}" draggable="false">`:P._svg0;});}catch(e){}}
-function charRefreshDom(){document.querySelectorAll('img.bao').forEach(i=>{if(charOutfit())return;const u=charBaoSrc(i);if(u&&i.getAttribute('src')!==u){i.src=u;if(charPack('mascot'))i.dataset.char='mascot';else delete i.dataset.char;}});}
+function charBy(slug){return CHARL.find(p=>p.slug===slug)||null;}
+function charMascot(){const s=SHOP(),lt=s.lt&&s.own['lt:'+s.lt]?charBy(s.lt):null;return lt&&lt.slot==='linhthu'?lt:charPack('mascot');}
+function charImgU(p,key){if(!p)return '';const has=k=>p.items.some(i=>i.key===k);const k=has(key)?key:has('happy')?'happy':has('front')?'front':p.items[0].key;return API_BASE+'/v1/char/img/'+encodeURIComponent(p.slug)+'/'+p.ver+'/'+k+'.webp';}
+function charUrl(slot,key){return charImgU(slot==='mascot'?charMascot():charPack(slot),key);}
+function charSet(list){CHARL=(Array.isArray(list)?list:[]).filter(p=>p&&p.slot&&p.slug&&Array.isArray(p.items)&&p.items.length);const m={};CHARL.forEach(p=>{if(p.slot==='mascot'||p.slot.indexOf('pet:')===0)m[p.slot]=p;});CHARX=m;C3C.clear();
+  try{if(charMascot()){P3.on=false;if(PET_URL&&PET_URL===P3.out)PET_URL='';}}catch(e){}
+  try{Object.keys(GPET).forEach(k=>{const P=GPET[k];if(P._svg0==null)P._svg0=P.svg;const pk=charPack('pet:'+k);P.svg=pk?`<img class="charpet" src="${charImgU(pk,'happy')}" alt="${esc(P.n)}" draggable="false">`:P._svg0;});}catch(e){}}
+/* ---------- phụ kiện: đặt lên linh thú theo điểm neo của từng biểu cảm, ghép thành 1 ảnh ---------- */
+const C3C=new Map(),C3I=new Map();
+function c3Wear(tryMap){const s=SHOP(),w=Object.assign({},s.c3||{},tryMap||{}),o={};C3_KINDS.forEach(([k])=>{const p=w[k]&&charBy(w[k]);if(p&&p.slot===k&&(s.own['c3:'+p.slug]||(tryMap&&tryMap[k]===p.slug)))o[k]=p;});return o;}
+function c3Load(u){if(C3I.has(u))return C3I.get(u);const pr=new Promise(r=>{const im=new Image();im.crossOrigin='anonymous';im.onload=()=>r(im);im.onerror=()=>r(null);im.src=u;});C3I.set(u,pr);return pr;}
+function c3Anchor(base,kind,pose){const own=base.meta&&base.meta.anchors&&base.meta.anchors[kind],def=charPack('mascot'),A=own||(def&&def.meta&&def.meta.anchors&&def.meta.anchors[kind])||{};return Object.assign({},C3_DEF[kind],A.front||{},A[pose]||{});}
+function c3ItemKey(item,pose){const has=k=>item.items.some(i=>i.key===k);return has(pose)?pose:has('front')?'front':item.items[0].key;}
+async function c3Draw(x,W,H,base,kind,item,pose){const im=await c3Load(charImgU(item,c3ItemKey(item,pose)));if(!im)return;const A=c3Anchor(base,kind,pose),J=(item.meta&&item.meta.adj)||{};
+  const w=Math.max(4,A.w*(J.ws||1)*W),h=w*im.height/im.width;x.save();x.translate((A.x+(J.dx||0))*W,(A.y+(J.dy||0))*H);x.rotate(((A.r||0)+(J.r||0))*Math.PI/180);x.drawImage(im,-w/2,-h/2,w,h);x.restore();}
+async function c3Compose(base,pose,wear){const im=await c3Load(charImgU(base,pose));if(!im)return '';const W=im.width,H=im.height,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+  x.drawImage(im,0,0,W,H);if(wear.trangphuc)await c3Draw(x,W,H,base,'trangphuc',wear.trangphuc,pose);
+  if(wear.mu)await c3Draw(x,W,H,base,'mu',wear.mu,pose);if(wear.camtay)await c3Draw(x,W,H,base,'camtay',wear.camtay,pose);
+  return await new Promise(r=>{try{c.toBlob(b=>r(b?URL.createObjectURL(b):''),'image/webp',.9);}catch(e){r('');}});}
+function c3Key(base,pose,wear){return base.slug+base.ver+'|'+pose+'|'+C3_KINDS.map(([k])=>wear[k]?wear[k].slug+wear[k].ver:'').join(',');}
+/* nguồn ảnh linh vật cho một biểu cảm; có phụ kiện thì trả ảnh ghép (nếu ghép xong), chưa xong thì ghép ngầm rồi cập nhật */
+function charPoseSrc(pose,tryMap){const base=charMascot();if(!base)return MASCOT_URL;const wear=c3Wear(tryMap);if(!Object.keys(wear).length)return charImgU(base,pose);
+  const k=c3Key(base,pose,wear),v=C3C.get(k);if(typeof v==='string'&&v)return v;
+  if(!v){C3C.set(k,1);c3Compose(base,pose,wear).then(u=>{C3C.set(k,u||'');if(u&&!tryMap)charRefreshDom();});}return charImgU(base,pose);}
+function charMoodOf(im){const m=im&&im.dataset&&(im.dataset.mood||((String(im.className).match(/\bbao-(\w+)/)||[])[1]));return m?(CHAR_MOOD[m]||'happy'):'front';}
+function charBaoSrc(im){if(charOutfit())return PET_URL;if(!charMascot())return MASCOT_URL;return charPoseSrc(charMoodOf(im));}
+function charRefreshDom(){document.querySelectorAll('img.bao').forEach(i=>{if(charOutfit()||i._chs||i._cht||i.closest('#shprev'))return;const u=charBaoSrc(i);if(u&&i.getAttribute('src')!==u){i.src=u;if(charMascot())i.dataset.char='mascot';else delete i.dataset.char;}});}
 try{const c=JSON.parse(localStorage.getItem('hsk-char')||'null');if(c)charSet(c);}catch(e){}
-try{fetch(API_BASE+'/v1/char/list').then(r=>r.ok?r.json():null).then(j=>{if(!j)return;const before=JSON.stringify(CHARX);try{localStorage.setItem('hsk-char',JSON.stringify(j.list||[]));}catch(e){}charSet(j.list);if(JSON.stringify(CHARX)!==before)charRefreshDom();}).catch(()=>{});}catch(e){}
+function charFetch(){try{return fetch(API_BASE+'/v1/char/list').then(r=>r.ok?r.json():null).then(j=>{if(!j)return;const before=JSON.stringify(CHARL);try{localStorage.setItem('hsk-char',JSON.stringify(j.list||[]));}catch(e){}charSet(j.list);if(JSON.stringify(CHARL)!==before){charRefreshDom();if(location.hash==='#shop'&&(shopTab==='wear'||shopTab==='linhthu'))viewShop();}}).catch(()=>{});}catch(e){}}
+charFetch();
 /* ảnh linh vật mặc định và theo tâm trạng */
-petSrc=()=>(charOutfit()?PET_URL:'')||(charPack('mascot')?charUrl('mascot','front'):'')||MASCOT_URL;
-(function(){const base=baoSVG;baoSVG=function(mood,size){const h=base(mood,size);if(charOutfit()||!charPack('mascot'))return h;
-  return h.replace(/src="[^"]*"/,`src="${charUrl('mascot',CHAR_MOOD[mood]||'happy')}" data-char="mascot" data-mood="${esc(mood||'happy')}"`);};})();
+petSrc=()=>(charOutfit()?PET_URL:'')||(charMascot()?charPoseSrc('front'):'')||MASCOT_URL;
+(function(){const base=baoSVG;baoSVG=function(mood,size){const h=base(mood,size);if(charOutfit()||!charMascot())return h;
+  return h.replace(/src="[^"]*"/,`src="${charPoseSrc(CHAR_MOOD[mood]||'happy')}" data-char="mascot" data-mood="${esc(mood||'happy')}"`);};})();
 /* ảnh lỗi (mất mạng lần đầu) → quay về ảnh cũ */
 document.addEventListener('error',e=>{const t=e.target;if(!t||t.tagName!=='IMG')return;const s=t.getAttribute('src')||'';if(s.indexOf('/v1/char/img/')<0)return;delete t.dataset.char;
-  if(t.classList.contains('charpet')){const k=Object.keys(GPET).find(k=>GPET[k].svg&&GPET[k].svg.indexOf(s)>=0);if(k&&GPET[k]._svg0){t.outerHTML=GPET[k]._svg0;return;}}t.src=(charOutfit()?PET_URL:'')||MASCOT_URL;},true);
+  if(t.classList.contains('charpet')){const k=Object.keys(GPET).find(k=>GPET[k].svg&&GPET[k].svg.indexOf(s)>=0);if(k&&GPET[k]._svg0){t.outerHTML=GPET[k]._svg0;return;}}if(t.classList.contains('bao'))t.src=(charOutfit()?PET_URL:'')||MASCOT_URL;},true);
 /* chạm vào: đổi biểu cảm thoáng qua, chạm lần 3 thì xoay một vòng qua các góc nhìn */
 const CHAR_POKE=['love','wow','wave','happy','point'];let charPokeN=0;
-function charPreload(){if(charPreload.done||!charPack('mascot'))return;charPreload.done=1;[...CHAR_SPIN,...CHAR_POKE].forEach(k=>{const i=new Image();i.src=charUrl('mascot',k);});}
-(function(){const base=petPoke;petPoke=function(img,more){const r=base.apply(this,arguments);try{if(!img||img.dataset.char!=='mascot'||charOutfit())return r;charPreload();
+function charPreload(){const b=charMascot();if(!b||charPreload.done===b.slug)return;charPreload.done=b.slug;[...CHAR_SPIN,...CHAR_POKE].forEach(k=>{const i=new Image();i.src=charImgU(b,k);});}
+(function(){const base=petPoke;petPoke=function(img,more){const r=base.apply(this,arguments);try{if(!img||img.dataset.char!=='mascot'||charOutfit())return r;charPreload();const B=charMascot();
   const back=img.getAttribute('src');clearTimeout(img._cht);if(img._chs)return r;charPokeN++;
-  if(charPokeN%3===0){let i=0;img._chs=setInterval(()=>{i++;if(i>=CHAR_SPIN.length||!img.isConnected){clearInterval(img._chs);img._chs=null;img.src=back;return;}img.src=charUrl('mascot',CHAR_SPIN[i]);},90);}
-  else{let u=charUrl('mascot',CHAR_POKE[charPokeN%CHAR_POKE.length]);if(u===back)u=charUrl('mascot',CHAR_POKE[(charPokeN+1)%CHAR_POKE.length]);img.src=u;img._cht=setTimeout(()=>{if(img.isConnected)img.src=back;},1100);}}catch(e){}return r;};})();
-if(window.__T)window.__u139={charSet,charUrl,charPack,get CHARX(){return CHARX;}};
+  if(charPokeN%3===0){let i=0;img._chs=setInterval(()=>{i++;if(i>=CHAR_SPIN.length||!img.isConnected){clearInterval(img._chs);img._chs=null;img.src=back;return;}img.src=charImgU(B,CHAR_SPIN[i]);},90);}
+  else{let u=charPoseSrc(CHAR_POKE[charPokeN%CHAR_POKE.length]);if(u===back)u=charPoseSrc(CHAR_POKE[(charPokeN+1)%CHAR_POKE.length]);img.src=u;img._cht=setTimeout(()=>{img._cht=0;if(img.isConnected)img.src=back;},1100);}}catch(e){}return r;};})();
+/* ---------- bỏ tủ đồ cũ: hoàn Nguyên bảo những món đã mua ---------- */
+(function(){try{const s=SHOP();if(!s.once.acc3refund){let n=0,c=0;Object.keys(s.own||{}).forEach(id=>{if(!ACC[id]||!s.own[id])return;const a=ACC[id];n+=a.chest?150:a.ev?EV_ITEM_PRICE:(a.price||0);c++;delete s.own[id];});
+    Object.keys(s.wear||{}).forEach(k=>{if(ACC[s.wear[k]])delete s.wear[k];});s.once.acc3refund=Date.now();
+    if(n>0){s.coins=(+s.coins||0)+n;s.log.unshift([Date.now(),n,'Hoàn tiền '+c+' món trang phục cũ']);setTimeout(()=>{try{renderWallet(true);gardenToast(`${YB} <b>+${n} Nguyên bảo</b> · Tủ đồ đổi sang trang phục 3D mới, Kasser hoàn lại tiền ${c} món bạn đã mua.`);}catch(e){}},2500);}shSave();}
+  Object.keys(ACC).forEach(k=>delete ACC[k]);for(let i=CHEST_POOL.length-1;i>=0;i--)if(CHEST_POOL[i][0]==='acc')CHEST_POOL.splice(i,1);PET_URL='';petKey='';}catch(e){console.warn(e);}})();
+/* ---------- cửa hàng: tab Linh thú + Tủ đồ mới (Mũ, Cầm tay, Trang phục) ---------- */
+let C3TAB='mu',C3TRY=null;
+function c3Thumb(p){return `<img src="${charImgU(p,'front')}" alt="" loading="lazy" draggable="false">`;}
+function c3Prev(tryMap){const pv=document.querySelector('#shprev img.bao');if(!pv)return;const base=charMascot();if(!base)return;const wear=c3Wear(tryMap);
+  if(!Object.keys(wear).length){pv.src=charImgU(base,'happy');return;}pv.src=charImgU(base,'happy');c3Compose(base,'happy',wear).then(u=>{if(u&&pv.isConnected)pv.src=u;});}
+(function(){const base=viewShop;viewShop=function(){const r=base.apply(this,arguments);try{const tb=app.querySelector('.shtabs');if(tb&&!tb.querySelector('[data-st="linhthu"]')){const b=document.createElement('button');b.dataset.st='linhthu';b.innerHTML='🐉 Linh thú';if(shopTab==='linhthu'){tb.querySelectorAll('.on').forEach(x=>x.classList.remove('on'));b.classList.add('on');}
+    b.onclick=()=>{shopTab='linhthu';C3TRY=null;viewShop();};tb.insertBefore(b,tb.firstChild);}
+  if(shopTab==='linhthu'||shopTab==='wear'){const pv=app.querySelector('#shprev img.bao');if(pv&&charMascot()){pv.dataset.char='mascot';c3Prev(shopTab==='wear'&&C3TRY?{[C3TRY[0]]:C3TRY[1]}:null);}}}catch(e){console.warn(e);}return r;};})();
+(function(){const base=shopBody;shopBody=function(body){if(shopTab!=='wear'&&shopTab!=='linhthu')return base.apply(this,arguments);const s=SHOP();s.c3=s.c3||{};const rer=()=>viewShop();
+  if(shopTab==='linhthu'){const def=charPack('mascot'),L=CHARL.filter(p=>p.slot==='linhthu'),cur=charMascot();
+    const card=(p,isDef)=>{const own=isDef||s.own['lt:'+p.slug],on=cur&&cur.slug===p.slug;return `<div class="c3card${on?' on':''}"><div class="c3img">${c3Thumb(p)}</div><b>${esc(p.name)}</b><div class="small muted">${isDef?'Linh thú gốc · miễn phí':own?'Đã sở hữu':ybFmt(p.price||0)}</div>
+      ${on?'<span class="c3tag">✓ Đang dùng</span>':own?`<button class="btn sm pri" data-ltuse="${isDef?'':esc(p.slug)}">Dùng linh thú này</button>`:`<button class="btn sm pri" data-ltbuy="${esc(p.slug)}">Mua ${ybFmt(p.price||0)}</button>`}</div>`;};
+    body.innerHTML=`<div class="stack"><p class="small muted" style="margin:0">Linh thú đi cùng bạn khắp app: đổi biểu cảm theo lúc học, chạm vào để chơi. Phụ kiện trong Tủ đồ mặc được cho mọi linh thú.</p>
+      ${def||L.length?`<div class="c3grid">${def?card(def,true):''}${L.map(p=>card(p,false)).join('')}</div>`:'<div class="panel muted">Chưa có linh thú nào. Sắp có Tiểu Long Hổ phiên bản mới!</div>'}</div>`;
+    body.querySelectorAll('[data-ltbuy]').forEach(b=>b.onclick=()=>{const p=charBy(b.dataset.ltbuy);if(!p||!spend(p.price||0,'Mua linh thú '+p.name))return;s.own['lt:'+p.slug]=1;s.lt=p.slug;shSave();try{gardenToast('🐉 Chào mừng <b>'+esc(p.name)+'</b> về nhà!');}catch(e){}charRefreshDom();rer();});
+    body.querySelectorAll('[data-ltuse]').forEach(b=>b.onclick=()=>{s.lt=b.dataset.ltuse||'';shSave();charRefreshDom();rer();});return;}
+  const L=CHARL.filter(p=>p.slot===C3TAB);
+  body.innerHTML=`<div class="stack"><div class="shslots">${C3_KINDS.map(([k,t])=>`<button class="fchip${C3TAB===k?' on':''}" data-c3k="${k}">${t}</button>`).join('')}</div>
+    ${!charMascot()?'<div class="panel muted">Linh thú 3D đang được tải, phụ kiện sẽ hiện khi tải xong.</div>':''}
+    ${L.length?`<div class="c3grid">${L.map(p=>{const own=s.own['c3:'+p.slug],on=s.c3[C3TAB]===p.slug&&own,tr=C3TRY&&C3TRY[1]===p.slug;return `<div class="c3card${on?' on':''}${tr?' try':''}" data-c3try="${esc(p.slug)}"><div class="c3img">${c3Thumb(p)}</div><b>${esc(p.name)}</b><div class="small muted">${own?'Đã sở hữu':ybFmt(p.price||0)}</div>
+      ${on?`<button class="btn sm" data-c3off="${esc(p.slug)}">Tháo ra</button>`:own?`<button class="btn sm pri" data-c3on="${esc(p.slug)}">Mặc</button>`:`<button class="btn sm pri" data-c3buy="${esc(p.slug)}">Mua ${ybFmt(p.price||0)}</button>`}</div>`;}).join('')}</div><p class="small muted" style="margin:0">Bấm vào món đồ để thử trên linh thú trước khi mua.</p>`
+    :`<div class="panel muted">Chưa có ${C3_KINDS.find(k=>k[0]===C3TAB)[1].replace(/^\S+ /,'').toLowerCase()} nào. Đồ mới sẽ sớm lên kệ!</div>`}</div>`;
+  body.querySelectorAll('[data-c3k]').forEach(b=>b.onclick=()=>{C3TAB=b.dataset.c3k;C3TRY=null;rer();});
+  body.querySelectorAll('[data-c3try]').forEach(c=>c.addEventListener('click',e=>{if(e.target.closest('button'))return;const sl=c.dataset.c3try;C3TRY=C3TRY&&C3TRY[1]===sl?null:[C3TAB,sl];body.querySelectorAll('.c3card').forEach(x=>x.classList.toggle('try',!!C3TRY&&x.dataset.c3try===C3TRY[1]));c3Prev(C3TRY?{[C3TRY[0]]:C3TRY[1]}:null);}));
+  body.querySelectorAll('[data-c3buy]').forEach(b=>b.onclick=()=>{const p=charBy(b.dataset.c3buy);if(!p||!spend(p.price||0,'Mua '+p.name))return;s.own['c3:'+p.slug]=1;s.c3[C3TAB]=p.slug;shSave();C3TRY=null;C3C.clear();charRefreshDom();rer();});
+  body.querySelectorAll('[data-c3on]').forEach(b=>b.onclick=()=>{s.c3[C3TAB]=b.dataset.c3on;shSave();C3TRY=null;charRefreshDom();rer();});
+  body.querySelectorAll('[data-c3off]').forEach(b=>b.onclick=()=>{delete s.c3[C3TAB];shSave();C3TRY=null;charRefreshDom();rer();});};})();
+if(window.__T)window.__u139={charSet,charUrl,charPack,charMascot,charPoseSrc,c3Wear,get CHARX(){return CHARX;},get CHARL(){return CHARL;}};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
