@@ -5753,6 +5753,160 @@ img.charpet{width:100%;height:100%;object-fit:contain;display:block;filter:drop-
 .c3img img{max-width:88%;max-height:88%;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
 .c3card b{font-size:14px}.c3tag{font-size:12px;font-weight:800;color:var(--jade)}
 .c3card .btn{width:100%}
+/* 5.100 trang chọn bài: icon đồng bộ, Thi thử xanh dương, bài học to 2 cột */
+.hq4rev .hq4ic,.hq4exam .hq4ic,.mhrev .mhri{font-size:0!important;color:transparent}
+.hq4rev .hq4ic::before,.hq4exam .hq4ic::before,.mhrev .mhri::before{content:'';width:24px;height:24px;background:#fff;-webkit-mask:var(--u140i) center/contain no-repeat;mask:var(--u140i) center/contain no-repeat}
+.hq4rev .hq4ic,.mhrev .mhri{--u140i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 11a8 8 0 0 0-14.3-4.9L4 8'/%3E%3Cpath d='M4 3v5h5'/%3E%3Cpath d='M4 13a8 8 0 0 0 14.3 4.9L20 16'/%3E%3Cpath d='M20 21v-5h-5'/%3E%3C/svg%3E")}
+.hq4exam .hq4ic{--u140i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='4' width='14' height='17' rx='2.5'/%3E%3Cpath d='M9 4V2.8h6V4'/%3E%3Cpath d='M8.5 12.5l2.4 2.4 4.6-5'/%3E%3C/svg%3E")}
+.hq4exam{background:linear-gradient(140deg,#4fa8ff,#1d63d8)!important;color:#fff!important;box-shadow:0 14px 26px -16px #1d4fb0!important}
+.hq4exam .hq4ic{background:rgba(255,255,255,.25)!important}
+.hq4exam small{color:rgba(255,255,255,.9)}
+/* lưới bài học: 2 bài mỗi dòng, thẻ to hơn */
+.hlwrap .hlgrid,.hlwrap.hpoff .hlgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px}
+.hlwrap .hlgrid .lcard.hasicon{padding:18px 18px 16px;gap:8px;min-height:170px;border-radius:20px;border-width:1.5px;transition:transform .15s,box-shadow .15s}
+.hlwrap .hlgrid .lcard.hasicon:hover{transform:translateY(-2px);box-shadow:0 12px 22px -16px rgba(0,0,0,.35)}
+.hlwrap .hlgrid .lcard.hasicon .licon{top:14px;right:14px;width:64px!important;height:64px!important}
+.hlwrap .hlgrid .lcard.hasicon .licon svg{width:50px;height:50px}
+.hlwrap .hlgrid .lcard.hasicon .num,.hlwrap .hlgrid .lcard.hasicon .zh{margin-right:74px}
+.hlwrap .hlgrid .lcard .num{font-size:12.5px}
+.hlwrap .hlgrid .lcard .zh{font-size:23px;line-height:1.3}
+.hlwrap .hlgrid .lcard .vi{font-size:14.5px}
+.hlwrap .hlgrid .lcard .lmeta{font-size:12.5px}
+.hlwrap .hlgrid .lcard.hasicon .stamp{top:60px;right:60px}
+.hlwrap .hlgrid .lcard.next{box-shadow:0 0 0 2px var(--jade),0 12px 24px -16px var(--jade)}
+@media (max-width:900px){.hlwrap .hlgrid .lcard .zh{font-size:20px}}
+/* 5.100 Phòng Tự Học */
+.trmav .u141pet{position:absolute;left:-26px;bottom:-4px;width:34px;height:34px;object-fit:contain;z-index:2;filter:drop-shadow(0 2px 2px rgba(60,30,10,.35));animation:u141bob 2.6s ease-in-out infinite;pointer-events:none}
+.trmav .u141pet.me{width:40px;height:40px;left:-32px}
+.trmseat.brk .u141pet{animation:none;opacity:.85}
+@keyframes u141bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-3px) rotate(3deg)}}
+.u141tap{position:absolute;top:-6px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:#ffd54a;color:#4a3200;box-shadow:0 3px 8px -4px rgba(0,0,0,.5);z-index:3;animation:u141tap 1.8s ease-in-out infinite;pointer-events:none}
+@keyframes u141tap{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-3px)}}
+/* menu học to ở giữa */
+.u141big{display:grid;grid-template-columns:repeat(2,minmax(0,320px));justify-content:center;gap:14px;margin:4px auto 10px}
+.u141b{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:14px 16px;border-radius:20px;text-decoration:none;color:#fff;min-height:84px;box-sizing:border-box;transition:transform .15s,box-shadow .15s}
+.u141b:hover{transform:translateY(-2px)}.u141b:focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
+.u141b.go{background:linear-gradient(140deg,#1f9d6c,#0d6b4a);box-shadow:0 14px 26px -16px #0d6b4a}
+.u141b.rev{background:linear-gradient(140deg,#ff9a3c,#e8640c);box-shadow:0 14px 26px -16px #b34a06}
+.u141bi{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.22);display:grid;place-items:center}
+.u141bi::before{content:'';width:26px;height:26px;background:#fff;-webkit-mask:var(--u141i) center/contain no-repeat;mask:var(--u141i) center/contain no-repeat}
+.u141b.go .u141bi{--u141i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 5.5c3-1.5 6.5-1.5 10 1 3.5-2.5 7-2.5 10-1V19c-3-1.5-6.5-1.5-10 1-3.5-2.5-7-2.5-10-1z'/%3E%3Cpath d='M12 6.5V20'/%3E%3C/svg%3E")}
+.u141b.rev .u141bi{--u141i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 11a8 8 0 0 0-14.3-4.9L4 8'/%3E%3Cpath d='M4 3v5h5'/%3E%3Cpath d='M4 13a8 8 0 0 0 14.3 4.9L20 16'/%3E%3Cpath d='M20 21v-5h-5'/%3E%3C/svg%3E")}
+.u141bt{display:grid;gap:1px;min-width:0}.u141bt b{font-size:19px;line-height:1.2}.u141bt small{font-size:13.5px;opacity:.92;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.u141bt em{font-style:normal;font-size:11.5px;opacity:.8}
+.u141ar{font-size:28px;font-weight:800;opacity:.85}
+.trmbar.u141sm{justify-content:center}
+#trmdlg .u141big{grid-template-columns:minmax(0,1fr);margin:8px 0 12px;justify-content:stretch}
+.u141q{margin:10px 0 0;font-weight:800;color:#5a3618}
+/* chọn cấp trong danh sách phòng */
+.u141lvs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;padding:0 2px 8px}
+.u141lv{min-width:0;padding:5px 0;border-radius:10px;border:1.5px solid #c9a476;background:#fff8ea;color:#5a3618;font:inherit;font-weight:800;font-size:12.5px;cursor:pointer}
+.u141lv.on{background:#7a4e2a;border-color:#7a4e2a;color:#fff}.u141lv.soon{opacity:.5}
+.u141lv:focus-visible{outline:2px solid #e8640c;outline-offset:2px}
+/* chat phòng */
+.u141tier{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:#ffd54a;color:#4a3200;vertical-align:middle;margin-left:4px}
+.u141lock{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;border:1.5px dashed #d79b00;background:#fff8e0;color:#4a3200;text-decoration:none;margin-top:6px}
+.u141lock span:last-child{display:grid;gap:1px}.u141lock small{font-size:12px;opacity:.85}
+@media (max-width:720px){.u141big{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:2px 0 8px}.u141b{grid-template-columns:auto minmax(0,1fr);gap:8px;padding:10px;min-height:64px;border-radius:16px}.u141bi{width:36px;height:36px;border-radius:11px}.u141bi::before{width:20px;height:20px}.u141bt b{font-size:15px}.u141bt small{font-size:12px}.u141bt em,.u141b .u141ar{display:none}#trmdlg .u141big{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.u141pet,.u141tap{animation:none!important}}
+/* 5.100 chat Thế giới */
+.wchwrap{max-width:860px;margin:0 auto}
+.wchhead{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#0b6e38,#12a150);color:#fff;border:0}
+.wchhead h1{margin:0;font-size:22px;color:#fff}.wchhead p{margin:2px 0 0;color:rgba(255,255,255,.9)!important}.wchglobe{font-size:36px}
+.wchlist{display:flex;flex-direction:column;gap:8px;min-height:220px;max-height:min(58vh,560px);overflow:auto;padding:6px 2px 10px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.wchm{max-width:86%;align-self:flex-start;padding:7px 11px;border-radius:14px 14px 14px 4px;background:var(--bg,rgba(0,0,0,.04));border:1px solid var(--line)}
+.wchm.me{align-self:flex-end;border-radius:14px 14px 4px 14px;background:color-mix(in srgb,var(--jade) 13%,var(--card));border-color:color-mix(in srgb,var(--jade) 35%,var(--line))}
+.wchh{display:flex;align-items:center;gap:6px;font-size:12px}.wchh time{color:var(--muted);margin-left:auto;white-space:nowrap}
+.wcht{font-size:10px;font-weight:800;padding:1px 7px;border-radius:999px;background:#ffd54a;color:#4a3200}.wcht.pro{background:linear-gradient(90deg,#7b4dff,#c04dff);color:#fff}
+.wcha{border:0;background:none;cursor:pointer;opacity:.45;padding:0 2px;font-size:12px}.wcha:hover,.wcha:focus-visible{opacity:1}
+.wchx{white-space:pre-wrap;word-break:break-word;font-size:14.5px;line-height:1.45}
+.wchf{display:flex;gap:8px}.wchf input{flex:1;min-width:0}
+.wchempty{margin:auto;text-align:center}
+.wchhl{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px}
+.wchr{margin-top:10px}.wchr .rwhd{display:flex;justify-content:space-between;align-items:center}
+#wchrail{display:grid;gap:6px}#wchrail .wchm{max-width:100%;padding:5px 8px;font-size:12.5px}#wchrail .wchx{font-size:13px}
+.wchopen{justify-self:start;font-weight:800;font-size:13px;color:var(--jade);text-decoration:none;padding:2px 0}
+.wchban{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;text-decoration:none;color:inherit;border:1.5px solid color-mix(in srgb,#12a150 45%,var(--line));background:linear-gradient(135deg,color-mix(in srgb,#12a150 10%,var(--card)),var(--card) 70%)}
+.wchban>span:first-child{font-size:28px}.wchban>span:nth-child(2){display:grid;gap:2px}.wchban small{color:var(--muted)}.wchban em{font-style:normal;font-weight:800;color:#0b6e38}
+#wtick .wtlb{cursor:pointer}
+/* 5.100 thăm nhà bạn */
+.u143top{justify-content:space-between;align-items:center}
+.u143tag{font-size:12.5px;font-weight:800;padding:4px 12px;border-radius:999px;background:color-mix(in srgb,var(--amber,#e0a21b) 18%,var(--card));color:var(--amber,#9a6a00);border:1px solid color-mix(in srgb,var(--amber,#e0a21b) 40%,var(--line))}
+.u143act{gap:8px;flex-wrap:wrap;margin-top:6px}
+.u143 .hinfo .label .avatar{flex:none}
+/* 5.100 cửa hàng mới */
+.u144lay{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:14px;align-items:start}
+.u144main{display:grid;gap:12px;min-width:0}
+.u144side{display:grid;gap:10px;position:sticky;top:calc(var(--hdrh,120px) + 10px)}
+.u144s{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:center;text-align:left;padding:12px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);font:inherit;color:inherit;cursor:pointer;transition:transform .15s,border-color .15s}
+.u144s:hover{transform:translateY(-2px)}.u144s.on{border-color:var(--jade);box-shadow:0 0 0 2px color-mix(in srgb,var(--jade) 25%,transparent)}
+.u144s>span:last-child{display:grid;gap:1px;min-width:0}.u144s b{font-size:15px}.u144s small{font-size:12px;color:var(--muted)}
+.u144si{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:var(--bg,rgba(0,0,0,.04))}
+.u144s-weather .u144si{background:linear-gradient(140deg,#bfe6ff,#7cc3f5)}.u144s-game .u144si{background:linear-gradient(140deg,#ffd0c7,#ff8f7a)}.u144s-space .u144si{background:linear-gradient(140deg,#e6dcff,#b59cf5)}.u144s-event .u144si{background:linear-gradient(140deg,#ffe2a8,#f5b041)}
+.u144s .nbadge{font-style:normal}
+.u144tudo{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;padding:16px 20px;border-radius:22px;text-decoration:none;color:#fff;background:radial-gradient(circle at 12% 40%,rgba(255,220,140,.45),transparent 45%),linear-gradient(130deg,#7b3fa0,#3d2a8a 60%,#22306e);box-shadow:0 16px 30px -18px #3d2a8a;min-height:120px;overflow:hidden}
+.u144tudo:hover{transform:translateY(-2px)}.u144tudo:focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
+.u144tdi{width:96px;height:96px;display:grid;place-items:center}.u144tdi img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));animation:u144bob 2.4s ease-in-out infinite}
+.u144tdt{display:grid;gap:3px}.u144tdt .label{color:#ffd54a}.u144tdt b{font-size:24px;line-height:1.15}.u144tdt small{font-size:13.5px;opacity:.9}
+.u144tdgo{font-weight:800;padding:10px 16px;border-radius:999px;background:#ffd54a;color:#3a2a00;white-space:nowrap}
+.u144tabs{flex-wrap:wrap}
+.u144crumb{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-radius:14px;background:var(--bg,rgba(0,0,0,.03));border:1px solid var(--line)}
+/* kệ linh thú */
+.u144shelf{gap:18px 14px!important}
+.u144shelf .c3card{position:relative;background:linear-gradient(180deg,var(--card) 70%,color-mix(in srgb,#b07a3a 10%,var(--card)));border-bottom:8px solid #a8743a;border-radius:18px 18px 8px 8px;box-shadow:0 10px 18px -14px rgba(90,50,10,.7)}
+.u144shelf .c3img{cursor:pointer;position:relative}
+.u144shelf .c3img::after{content:'';position:absolute;left:18%;right:18%;bottom:2px;height:10px;border-radius:50%;background:radial-gradient(rgba(0,0,0,.22),transparent 70%);animation:u144sh 2.4s ease-in-out infinite}
+.u144shelf .c3img img{animation:u144bob 2.4s ease-in-out infinite;transform-origin:50% 90%}
+.u144shelf .c3card:nth-child(2n) .c3img img,.u144shelf .c3card:nth-child(2n) .c3img::after{animation-delay:-.8s}.u144shelf .c3card:nth-child(3n) .c3img img,.u144shelf .c3card:nth-child(3n) .c3img::after{animation-delay:-1.5s}
+.u144shelf .c3img:hover img{animation:u144wig .6s ease-in-out infinite}
+.u144hop{animation:u144hop .55s ease-out,u144bob 2.4s ease-in-out .55s infinite!important}
+@keyframes u144bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-6px) rotate(2deg)}}
+@keyframes u144sh{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.8);opacity:.6}}
+@keyframes u144wig{0%,100%{transform:rotate(-5deg) scale(1.03)}50%{transform:rotate(5deg) scale(1.03)}}
+@keyframes u144hop{0%{transform:translateY(0) scale(1)}35%{transform:translateY(-14px) scale(1.05,.97)}70%{transform:translateY(0) scale(.97,1.04)}100%{transform:translateY(0) scale(1)}}
+.u144det{width:100%}
+.u144try.on{background:color-mix(in srgb,var(--jade) 14%,var(--card));border-color:var(--jade);color:var(--jade)}
+.c3card .u144try{width:100%}
+.u144sale{position:absolute;top:6px;left:6px;z-index:2;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:#e53935;color:#fff}
+.lookit,.wxcard,.helpit,.spit,.furncard{position:relative}
+.u144lk{background:#fff3d6!important;color:#8a5a00!important;border:1px dashed #d79b00!important;text-decoration:none;font-weight:800}
+#shprev.u144flash{animation:u144fl .9s ease-out}
+@keyframes u144fl{0%{box-shadow:0 0 0 0 rgba(255,213,74,.9)}100%{box-shadow:0 0 0 18px rgba(255,213,74,0)}}
+/* hộp chi tiết linh thú */
+.u144dlg{position:fixed;inset:0;z-index:300;display:none;place-items:center;padding:16px;background:rgba(20,14,6,.55);backdrop-filter:blur(3px)}
+.u144dlg.on{display:grid}
+.u144dc{position:relative;width:min(760px,100%);max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:center;padding:20px;border-radius:24px;background:var(--card);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.u144dx{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg,rgba(0,0,0,.06));cursor:pointer;font-size:16px;z-index:2}
+.u144stage{position:relative;aspect-ratio:1;border-radius:20px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 35%,#fff8e3,#f3dfb6 60%,#d9b277)}
+.u144spot{position:absolute;left:22%;right:22%;bottom:9%;height:9%;border-radius:50%;background:radial-gradient(rgba(90,50,10,.35),transparent 70%)}
+.u144stage img{position:relative;width:86%;height:86%;object-fit:contain}
+.u144pop{animation:u144hop .6s ease-out}
+.u144dinfo h3{margin:0 0 4px;font-size:24px}.u144dact{gap:8px;flex-wrap:wrap;margin-top:8px}
+html.u144modal{overflow:hidden}
+/* trang Tủ đồ linh thú */
+.u144td{max-width:1000px;margin:0 auto}
+.u144tdh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:center;padding:16px;border-radius:22px;border:1.5px solid var(--line);background:var(--card)}
+.u144stage.big{max-width:420px;width:100%;justify-self:center}
+.u144idle{animation:u144bob 2.6s ease-in-out infinite}
+.u144tdr{display:grid;gap:8px}.u144tdr h1{margin:0}
+.u144bill{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.u144bill li{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:8px;align-items:center;padding:6px 10px;border-radius:10px;background:var(--bg,rgba(0,0,0,.03))}
+.u144bill span{font-size:12.5px;color:var(--muted)}.u144bill em{font-style:normal;font-weight:700;font-size:13px}
+.u144tot{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-top:1.5px dashed var(--line);font-size:15px}.u144tot b{font-size:20px}
+.u144row{display:grid;gap:8px}.u144row h3{margin:0}
+.u144pick{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;scroll-snap-type:x proximity}
+.u144op{flex:none;width:112px;display:grid;justify-items:center;gap:3px;padding:8px;border-radius:16px;border:2px solid var(--line);background:var(--card);cursor:pointer;font:inherit;color:inherit;scroll-snap-align:start}
+.u144op img,.u144none{width:80px;height:80px;object-fit:contain}.u144none{display:grid;place-items:center;font-size:34px;color:var(--muted)}
+.u144op small{font-size:12px;font-weight:700;text-align:center;line-height:1.2;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.u144op em{font-style:normal;font-size:11.5px;color:var(--muted)}
+.u144op.on{border-color:var(--jade);background:color-mix(in srgb,var(--jade) 10%,var(--card));box-shadow:0 0 0 2px color-mix(in srgb,var(--jade) 25%,transparent)}
+.u144op.lk{opacity:.6}.u144op:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+.c3tag.big{font-size:15px;padding:10px 14px;text-align:center}
+.u144evt{margin-top:2px}
+@media (max-width:900px){.u144lay{grid-template-columns:minmax(0,1fr)}.u144main{display:contents}.u144main>*{order:4;min-width:0}.u144main>.u144tudo{order:1}.u144main>.u144tabs{order:2}.u144side{position:static;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;order:3}.u144s{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;padding:8px 4px;gap:4px}.u144s small{display:none}.u144s b{font-size:12.5px}.u144si{width:36px;height:36px;font-size:19px}}
+@media (max-width:640px){.u144tudo{grid-template-columns:auto minmax(0,1fr);padding:12px 14px;gap:12px;min-height:0}.u144tdgo{grid-column:1/-1;text-align:center}.u144tdi{width:70px;height:70px}.u144tdt b{font-size:20px}
+  .u144dc{grid-template-columns:minmax(0,1fr);padding:14px}.u144stage{max-height:46vh;justify-self:center;width:min(100%,46vh)}
+  .u144tdh{grid-template-columns:minmax(0,1fr)}.u144stage.big{max-width:280px}.u144op{width:96px}.u144op img,.u144none{width:66px;height:66px}}
+@media (prefers-reduced-motion:reduce){.u144shelf .c3img img,.u144shelf .c3img::after,.u144tdi img,.u144idle,.u144hop,.u144pop{animation:none!important}}
 </style>
 </head><body>
 
@@ -5778,12 +5932,12 @@ img.charpet{width:100%;height:100%;object-fit:contain;display:block;filter:drop-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='ee34432e';
-document.write('<script src="packs/hsk'+L+'.js?v=ee34432e"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='e5cf3a55';
+document.write('<script src="packs/hsk'+L+'.js?v=e5cf3a55"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ee34432e','strokes-file');A('packs/dict.js?v=ee34432e','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=e5cf3a55','strokes-file');A('packs/dict.js?v=e5cf3a55','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -22598,6 +22752,248 @@ function c3Prev(tryMap){const pv=document.querySelector('#shprev img.bao');if(!p
   body.querySelectorAll('[data-c3off]').forEach(b=>b.onclick=()=>{delete s.c3[C3TAB];shSave();C3TRY=null;charRefreshDom();rer();});};})();
 if(window.__T)window.__u139={charSet,charUrl,charPack,charMascot,charPoseSrc,c3Wear,get CHARX(){return CHARX;},get CHARL(){return CHARL;}};
 
+/* 5.100 dòng "Đề 21h đang mở" ở trang chủ: vào Phòng Tự Học và mở đề luôn */
+function u140AutoExam(){let n=0;const t=setInterval(()=>{n++;const inRoom=typeof trmOn==='function'&&trmOn();
+  if(!inRoom&&n>4){clearInterval(t);return;}
+  if(inRoom&&(document.getElementById('trxstrip')||n>=24)){clearInterval(t);try{trxExamOpen_();}catch(e){}}},400);}
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a.trxhb.exam');if(!a)return;
+  if(location.hash==='#tuhoc'){e.preventDefault();}u140AutoExam();},true);
+if(window.__T)window.__u140={u140AutoExam};
+
+/* 5.100 Phòng Tự Học: linh thú ngồi cạnh, đổi cấp HSK, menu học to ở giữa, bấm mình mở Học tiếp/Ôn tập, chat Plus/Pro */
+function u141Pet(x,me){let src='';try{src=me?charBaoSrc({dataset:{mood:'happy'}}):charImgU(charPack('mascot'),'happy');}catch(e){}if(!src)src=typeof MASCOT_URL!=='undefined'?MASCOT_URL:'';
+  return src?`<img class="u141pet${me?' me':''}" src="${src}" alt="" aria-hidden="true" draggable="false">`:'';}
+(function(){const base=trmSeatHTML;trmSeatHTML=function(x,i){let h=base.apply(this,arguments);if(!x)return h;try{const me=SOC.auth&&x.uid===SOC.auth.uid;
+  h=h.replace('<span class="trmav">','<span class="trmav">'+u141Pet(x,me));if(me&&x.mode!=='break')h=h.replace('<span class="trmdesk">','<span class="u141tap" aria-hidden="true">Bấm để học ▶</span><span class="trmdesk">');}catch(e){}return h;};})();
+function u141Due(){try{return dueWords().length;}catch(e){return 0;}}
+function u141BigHTML(){const nx=Math.min(progNext(),LESSONS.length),l=LESSONS.find(a=>a.n===nx)||{},due=u141Due();
+  return `<div class="u141big"><a class="u141b go trmgo" href="#l${nx}"><span class="u141bi" aria-hidden="true"></span><span class="u141bt"><b>Học tiếp · Bài ${nx}</b><small class="han">${esc(l.zh||'')}</small><em>vẫn giữ ghế trong phòng</em></span><span class="u141ar" aria-hidden="true">›</span></a>
+    <a class="u141b rev trmrev" href="#review"><span class="u141bi" aria-hidden="true"></span><span class="u141bt"><b>Ôn tập${due?' · '+due+' từ':''}</b><small>${due?'đến hạn ôn hôm nay':'ôn thêm từ đã học'}</small><em>vẫn giữ ghế trong phòng</em></span><span class="u141ar" aria-hidden="true">›</span></a></div>`;}
+(function(){const base=trmBarHTML;trmBarHTML=function(){const h=base.apply(this,arguments);if(!h)return h;try{const t=document.createElement('div');t.innerHTML=h;const bar=t.querySelector('.trmbar');if(!bar)return h;
+  bar.querySelectorAll('.trmgo,.trmrev').forEach(a=>a.remove());bar.classList.add('u141sm');return u141BigHTML()+bar.outerHTML;}catch(e){return h;}};})();
+(function(){const base=trmCard;trmCard=function(uid){const r=base.apply(this,arguments);try{if(SOC.auth&&uid===SOC.auth.uid){const c=document.querySelector('#trmdlg .trmcard');if(c&&!c.querySelector('.u141big')){const ch=c.querySelector('.trmch');(ch||c.firstElementChild).insertAdjacentHTML('afterend',`<p class="u141q">Bạn muốn làm gì tiếp?</p>${u141BigHTML()}`);}}}catch(e){}return r;};})();
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('#trmdlg .u141b');if(a)try{trmCardClose();}catch(x){}});
+/* đổi cấp HSK ngay trong danh sách phòng */
+(function(){const base=trwTabsHTML;trwTabsHTML=function(){const h=base.apply(this,arguments);try{const lv=HSK_LEVELS.map(([n])=>`<button type="button" class="u141lv${n===LEVEL?' on':''}${LEVEL_READY[n]?'':' soon'}" data-u141lv="${n}" aria-pressed="${n===LEVEL}" title="${LEVEL_READY[n]?'Phòng HSK'+n:'HSK'+n+' sắp có'}">H${n}</button>`).join('');
+  return h.replace(/(<div class="trwtabh">)[^<]*(<\/div>)/,`$1🚪 Chọn cấp & phòng$2<div class="u141lvs" role="group" aria-label="Chọn cấp HSK">${lv}</div>`);}catch(e){return h;}};})();
+async function u141Level(n){if(n===LEVEL)return;if(!LEVEL_READY[n]){gardenToast(`HSK ${n} đang được soạn, sắp có nhé!`);return;}
+  if(!window.HSK_SITE){gardenToast('Bản này chỉ chứa HSK2. Mở bản web trên mạng để chuyển cấp.');return;}
+  if(SOC.auth&&trmIn()){try{const room='h'+n+'-1';const j=await trmReq({op:'join',lv:n,room,pick:1,st:''});if(j&&j.seats)trmSetIntent({lv:n,room:j.room||room});}catch(e){}}
+  try{localStorage.setItem('hsk-level',String(n));}catch(e){}if(window.__u141noReload){window.__u141lv=n;return;}location.hash='#tuhoc';location.reload();}
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-u141lv]');if(!b)return;e.preventDefault();e.stopPropagation();u141Level(+b.dataset.u141lv);},true);
+/* chat phòng công khai: tài khoản Plus/Pro */
+function u141CanChat(){try{return !!(SOC.auth&&plusActive());}catch(e){return false;}}
+(function(){const base=trmSideHTML;trmSideHTML=function(){let h=base.apply(this,arguments);try{if(trmPriv()||!trmIn())return h;const me=SOC.auth&&SOC.auth.uid;
+  const list=TRM3.chat.length?TRM3.chat.map(c=>`<div class="trmcm${c.frm===me?' me':''}"><b>${esc(c.frm===me?'Bạn':c.name)}</b><span>${esc(c.t)}</span>${c.frm!==me?`<span class="trmcma"><button type="button" data-trrep="${c.id}" title="Báo cáo tin nhắn" aria-label="Báo cáo tin nhắn">⚑</button><button type="button" data-trmute="${esc(c.frm)}" title="Ẩn tin của bạn này" aria-label="Ẩn tin của ${esc(c.name)}">🔇</button></span>`:''}</div>`).join(''):'<p class="small muted" style="margin:0">Chưa có tin nhắn nào.</p>';
+  const form=u141CanChat()?`<form class="trmchatf" id="trmchatf" autocomplete="off"><input id="trmchatin" maxlength="120" placeholder="Nhắn cả phòng (tối đa 120 ký tự)" aria-label="Tin nhắn"><button type="submit" class="btn pri">Gửi</button></form>`
+    :`<a class="u141lock" href="#premium"><span aria-hidden="true">🔒</span><span><b>Chat chữ dành cho Plus và Pro</b><small>Bạn vẫn đọc được tin nhắn. Nâng cấp để nhắn cùng cả phòng.</small></span></a>`;
+  return `<div class="panel trmchat u141chat"><h3>💬 Trò chuyện trong phòng <span class="u141tier">Plus · Pro</span></h3><div class="trmchatl" id="trmchatl" role="log" aria-live="polite">${list}</div>${form}<p class="small muted" style="margin:6px 0 0">Nhắn lịch sự nhé. Không gửi đường dẫn. Bấm ⚑ để báo cáo, 🔇 để ẩn một người.</p></div>`+h;}catch(e){return h;}};})();
+document.addEventListener('submit',e=>{if(e.target.id!=='trmchatf'||trmPriv()||u141CanChat())return;e.preventDefault();e.stopImmediatePropagation();gardenToast('Chat chữ trong phòng dành cho tài khoản Plus và Pro.');},true);
+if(window.__T)window.__u141={u141Level,u141BigHTML};
+
+/* 5.100 Kênh chat Thế giới: Plus/Pro được nhắn, ai cũng đọc được */
+const WCH={list:[],at:0,busy:false,poll:0,mute:[]};
+try{WCH.mute=JSON.parse(localStorage.getItem('hsk-wchmute')||'[]')||[];}catch(e){}
+function wchCan(){try{return !!(SOC.auth&&plusActive());}catch(e){return false;}}
+async function wchLoad(){if(WCH.busy)return;WCH.busy=true;try{const r=await fetch(API_BASE+'/v1/world');if(r.ok){const j=await r.json();const sig=JSON.stringify((j.chat||[]).map(x=>x.id));if(sig!==WCH.sig){WCH.sig=sig;WCH.list=j.chat||[];WCH.at=Date.now();wchPaint();}}}catch(e){}finally{WCH.busy=false;}}
+async function wchPost(body){const h={'Content-Type':'application/json'};h.Authorization='Bearer '+await idToken();const r=await fetch(API_BASE+'/v1/world/say',{method:'POST',headers:h,body:JSON.stringify(body)});let j={};try{j=await r.json();}catch(e){}if(!r.ok)throw new Error((j.error&&(j.error.message||j.error))||'ERR');return j;}
+function wchTime(t){const d=new Date(t),n=new Date();const hm=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');return d.toDateString()===n.toDateString()?hm:d.getDate()+'/'+(d.getMonth()+1)+' '+hm;}
+function wchMsgHTML(c,full){const me=SOC.auth&&c.uid===SOC.auth.uid,d=c.data||{};if(!me&&WCH.mute.includes(c.uid))return '';
+  return `<div class="wchm${me?' me':''}"><div class="wchh"><b>${esc(me?'Bạn':c.name||'Bạn học')}</b><span class="wcht ${d.tier==='pro'?'pro':'plus'}">${d.tier==='pro'?'Pro':'Plus'}</span><time>${wchTime(c.at)}</time>${full&&!me&&SOC.auth?`<button type="button" class="wcha" data-wchrep="${c.id}" title="Báo cáo tin nhắn" aria-label="Báo cáo tin nhắn">⚑</button><button type="button" class="wcha" data-wchmute="${esc(c.uid)}" title="Ẩn tin của bạn này" aria-label="Ẩn tin của ${esc(c.name||'')}">🔇</button>`:''}</div><div class="wchx">${esc(d.t||'')}</div></div>`;}
+function wchFormHTML(){if(!SOC.auth)return `<a class="u141lock" href="#settings"><span aria-hidden="true">🔑</span><span><b>Đăng nhập để tham gia</b><small>Tài khoản Plus và Pro được nhắn trong kênh Thế giới.</small></span></a>`;
+  if(!wchCan())return `<a class="u141lock" href="#premium"><span aria-hidden="true">🔒</span><span><b>Chat Thế giới dành cho Plus và Pro</b><small>Bạn vẫn đọc được tin. Nâng cấp để trò chuyện cùng mọi người.</small></span></a>`;
+  return `<form class="wchf" id="wchf" autocomplete="off"><input id="wchin" maxlength="120" placeholder="Nhắn cả thế giới (tối đa 120 ký tự)" aria-label="Tin nhắn Thế giới"><button type="submit" class="btn pri">Gửi</button></form>`;}
+function viewWorldChat(){WCH.lastPaint='';app.innerHTML=`<div class="stack wchwrap">
+  <section class="panel wchhead"><span class="wchglobe" aria-hidden="true">🌍</span><div><h1>Kênh Thế giới</h1><p class="small muted">Trò chuyện với mọi người đang học Tâm HSK. Tài khoản <b>Plus</b> và <b>Pro</b> được nhắn, ai cũng đọc được.</p></div></section>
+  <section class="panel wchbox"><div class="wchlist" id="wchlist" role="log" aria-live="polite"></div><div id="wchfw" data-can="${wchCan()?1:0}">${wchFormHTML()}</div><p class="small muted" style="margin:6px 0 0">Nhắn lịch sự, không gửi đường dẫn hay tài khoản mạng xã hội. Tin bị báo cáo sẽ được quản trị xem xét. Tin giữ lại 2 ngày.</p></section>
+  <section class="panel wchhon"><h3>📢 Vinh danh gần đây</h3><ul class="wchhl">${(WT.items||[]).slice(0,8).map(it=>{const t=wtText(it);return t?`<li>${t}</li>`:'';}).join('')||'<li class="small muted">Chưa có tin mới.</li>'}</ul></section></div>`;
+  wchPaint(true);wchLoad();clearInterval(WCH.poll);let k=0;WCH.poll=setInterval(()=>{if(location.hash!=='#thegioi'){clearInterval(WCH.poll);return;}wchFormSync();if(++k%6===0&&!document.hidden)wchLoad();},1000);}
+function wchFormSync(){const w=document.getElementById('wchfw');if(!w)return;const c=wchCan()?'1':'0';if(w.dataset.can!==c){w.dataset.can=c;w.innerHTML=wchFormHTML();}}
+function wchPaint(force){const L=document.getElementById('wchlist');if(L){const h=WCH.list.map(c=>wchMsgHTML(c,true)).join('')||'<p class="small muted wchempty">Chưa có tin nhắn nào. Hãy là người mở lời!</p>';
+    if(force||h!==WCH.lastPaint){const atEnd=L.scrollHeight-L.scrollTop-L.clientHeight<60;WCH.lastPaint=h;L.innerHTML=h;if(atEnd||force)L.scrollTop=L.scrollHeight;}}
+  const R=document.getElementById('wchrail');if(R)R.innerHTML=wchRailInner();}
+function wchRailInner(){const last=WCH.list.filter(c=>!WCH.mute.includes(c.uid)).slice(-3);return (last.length?last.map(c=>wchMsgHTML(c,false)).join(''):'<p class="small muted" style="margin:0">Chưa có tin nhắn.</p>')+`<a class="wchopen" href="#thegioi">${wchCan()?'💬 Vào chat':'Mở kênh Thế giới'} ›</a>`;}
+document.addEventListener('submit',async e=>{if(e.target.id!=='wchf')return;e.preventDefault();const i=document.getElementById('wchin'),t=(i.value||'').trim();if(!t)return;const btn=e.target.querySelector('button');btn.disabled=true;
+  try{await wchPost({t,name:pubName()});i.value='';await wchLoad();const L=document.getElementById('wchlist');if(L)L.scrollTop=L.scrollHeight;}
+  catch(x){const m=String(x.message);gardenToast({NO_LINKS:'Không gửi được đường dẫn hay tài khoản mạng xã hội.',CHAT_BANNED:'Bạn đang bị tạm khóa chat vì có tin nhắn bị báo cáo.',CHAT_PLUS_ONLY:'Chat Thế giới dành cho tài khoản Plus và Pro.',SLOW_DOWN:'Từ từ nhé, chờ vài giây rồi gửi tiếp.',BAD_CHAT:'Tin nhắn trống.'}[m]||'Chưa gửi được, thử lại nhé.');}
+  finally{btn.disabled=false;i.focus();}});
+document.addEventListener('click',async e=>{const r=e.target.closest&&e.target.closest('[data-wchrep],[data-wchmute]');if(!r)return;e.preventDefault();
+  if(r.dataset.wchmute){WCH.mute=[...new Set([...WCH.mute,r.dataset.wchmute])].slice(-100);try{localStorage.setItem('hsk-wchmute',JSON.stringify(WCH.mute));}catch(x){}wchPaint(true);gardenToast('Đã ẩn tin nhắn của bạn này.');return;}
+  try{await wchPost({rep:+r.dataset.wchrep});gardenToast('Đã gửi báo cáo, cảm ơn bạn!');}catch(x){gardenToast('Chưa gửi được báo cáo.');}});
+/* cột trái: xem nhanh 3 tin chat; thanh chữ chạy: bấm chữ "Thế giới" để mở kênh */
+(function(){const base=lrailHTML;lrailHTML=function(){const h=base.apply(this,arguments);try{if(!wtOn())return h;return h+`<div class="rworld wchr"><div class="rwhd"><span>💬 Chat Thế giới</span><span class="wcht plus">Plus·Pro</span></div><div id="wchrail">${wchRailInner()}</div></div>`;}catch(e){return h;}};})();
+document.addEventListener('click',e=>{const l=e.target.closest&&e.target.closest('#wtick .wtlb');if(!l)return;e.preventDefault();location.hash='#thegioi';});
+function wchFriendsBan(){if(location.hash!=='#friends'||document.querySelector('#app .wchban'))return;const hero=document.querySelector('#app .frhero')||document.querySelector('#app .addhero');
+  if(hero)hero.insertAdjacentHTML('afterend',`<a class="panel wchban" href="#thegioi"><span aria-hidden="true">🌍</span><span><b>Kênh chat Thế giới</b><small>Trò chuyện với mọi người đang học · Plus và Pro được nhắn</small></span><em>Vào ›</em></a>`);}
+setInterval(wchFriendsBan,800);
+setTimeout(wchLoad,2500);setInterval(()=>{if(!document.hidden&&document.getElementById('wchrail')&&location.hash!=='#thegioi')wchLoad();},30000);
+if(window.__T)window.__u142={WCH,wchLoad};
+
+/* 5.100 Thăm nhà bạn: vào thẳng trang nhà như chủ nhà thấy */
+let u143All=false;
+visitHouse=function(f){if(!f||!f.id)return;try{bondPost(f.id,'visit');}catch(e){}u143All=false;location.hash='#nhaban-'+f.id;};
+function viewFriendHouse2(fid){const f=(SOC.friends||[]).find(x=>x.id===fid);
+  if(!f&&SOC.auth&&!viewFriendHouse2._try){viewFriendHouse2._try=1;app.innerHTML='<div class="stack"><div class="panel muted">Đang mở nhà bạn…</div></div>';socialLoad().catch(()=>{}).finally(()=>{if(location.hash==='#nhaban-'+fid)viewFriendHouse2(fid);viewFriendHouse2._try=0;});return;}
+  if(!f){app.innerHTML=`<div class="stack"><a class="small" href="#friends">‹ Bạn bè</a><div class="panel muted">${SOC.auth?'Không tìm thấy bạn này trong danh sách bạn bè.':'Đăng nhập để thăm nhà bạn bè.'}</div></div>`;return;}
+  const hs=f.house||{t:0,place:{}},t=Math.max(0,Math.min(HT.length-1,hs.t||0)),rooms=HT[t][2],showN=u143All?rooms:Math.min(rooms,4);const nm=typeof showName==='function'?showName(f.handle,f.name,f.idn):esc(f.name||'Bạn');
+  const place=hs.place||{},valid=k=>{const [r,sid]=k.split('-');return +r<rooms&&roomSlots(HT[t][3]).some(x=>x[3]===sid);},placed=Object.entries(place).filter(([k,id])=>FURN[id]&&valid(k)).length;
+  const h=HS(),keep=h.place;let rs='';h.place=place;
+  try{for(let r=0;r<showN;r++)rs+=`<div class="room panel"><div class="roomh"><b>${esc(ROOM_NAMES[r%ROOM_NAMES.length])}${r>=ROOM_NAMES.length?' '+(Math.floor(r/ROOM_NAMES.length)+1):''}</b><span class="small muted">${roomSlots(HT[t][3]).filter(x=>place[r+'-'+x[3]]&&FURN[place[r+'-'+x[3]]]).length}/${HT[t][3]}</span></div><div class="roomwrap">${roomSVG(t,r,false)}</div></div>`;}finally{h.place=keep;}
+  app.innerHTML=`<div class="stack house u143">
+   <div class="row u143top"><a class="btn sm" href="#friends">‹ Bạn bè</a><span class="u143tag">🏠 Đang thăm nhà bạn</span></div>
+   <section class="hhero" style="--hc:${HT[t][5]}"><div class="hext"><svg viewBox="0 0 320 180">${HOUSE_EXT[t]}</svg><span class="hsign">Nhà của ${nm}</span></div>
+    <div class="hinfo"><div class="label row" style="gap:8px">${avatarHTML(f.avatar,30,f.frame)}<span>Nhà của ${nm}</span></div><h1 style="margin:2px 0">${esc(HT[t][0])}</h1><div class="small muted">${HT[t][4]} m² · ${rooms} phòng · đã bày ${placed} món nội thất</div>
+     <div class="tierline">${HT.map((x,i)=>`<span class="tierdot${i<=t?' on':''}${i===t?' cur':''}" style="--tc:${x[5]}" title="${esc(x[0])}"><i></i><small>${esc(x[0])}</small></span>`).join('')}</div>
+     <div class="row u143act"><button class="btn pri" data-u143like>👍 Khen nhà đẹp</button><a class="btn" href="#vg-${esc(f.id)}">🌱 Thăm vườn</a><button class="btn" data-u143chat>💬 Nhắn tin</button></div></div></section>
+   <section class="stack" style="gap:10px"><h2 style="margin:0">Các phòng</h2>
+    <div class="rooms">${rs}</div>
+    ${rooms>showN?`<button class="btn" data-u143all>Xem tất cả ${rooms} phòng</button>`:''}
+    ${!placed?`<div class="panel row" style="gap:12px">${baoSVG('think',56)}<div style="flex:1"><b>Nhà bạn ấy còn trống trơn!</b><div class="small muted">Gửi lời khen để cổ vũ bạn ấy sắm đồ nhé.</div></div></div>`:''}</section></div>`;
+  const lk=app.querySelector('[data-u143like]');lk.onclick=async()=>{lk.disabled=true;try{await sendInbox(f.id,'cheer','Nhà bạn đẹp quá! 🏠✨');gardenToast('Đã gửi lời khen tới '+nm);bondPost(f.id,'cheer');}catch(x){lk.disabled=false;gardenToast(esc(netMsg(x)));}};
+  app.querySelector('[data-u143chat]').onclick=()=>{try{openChat(f);}catch(e){}};
+  const al=app.querySelector('[data-u143all]');if(al)al.onclick=()=>{u143All=true;viewFriendHouse2(fid);};
+  window.scrollTo({top:0});}
+if(window.__T)window.__u143={viewFriendHouse2,setHouse(fid,h){const f=(SOC.friends||[]).find(x=>x.id===fid);if(f)f.house=h;},furn(){return Object.keys(FURN).map(k=>[k,FURN[k][3]]);}};
+
+/* 5.100 Cửa hàng mới: Linh thú cử động trên kệ, nút Thử, Tủ đồ linh thú (mua cả bộ), cột phải Thời tiết/Trò chơi/Không gian/Sự kiện,
+   Rương + Hẹn ước tuần chuyển sang Nhiệm vụ, áp cấu hình "Quản lí cửa hàng" (giá, ẩn món, loại tài khoản được mua) */
+/* ---------- cấu hình từ trang quản trị ---------- */
+let SHOPCFG={};try{SHOPCFG=JSON.parse(localStorage.getItem('hsk-shopcfg')||'{}')||{};}catch(e){}
+const U144O={};
+function u144Tier(){try{if(planActiveC(PM()))return 'pro';if(plusActive())return 'plus';}catch(e){}return 'free';}
+const U144_TN={free:'Miễn phí',plus:'Plus',pro:'Pro'};
+function u144Cfg(id){return SHOPCFG[id]||null;}
+function u144Hidden(id){const c=u144Cfg(id);return !!(c&&c.h);}
+function u144Locked(id){const c=u144Cfg(id);return !!(c&&c.t&&c.t.length&&!c.t.includes(u144Tier()));}
+function u144LockTxt(id){const c=u144Cfg(id);return '🔒 Chỉ '+(c.t||[]).filter(t=>t!=='free').map(t=>U144_TN[t]).join(' · ');}
+const U144_ARR=[['sk:',()=>SKINS,4],['fr:',()=>FRAMES,2],['fx:',()=>FXS,2],['snd:',()=>SOUNDS,2],['wx:',()=>WXS,4],['hp:',()=>HELPS,3],['rc:',()=>RC_SKINS,2],['df:',()=>DF_SKINS,2],['sp:',()=>SPACES,2]];
+function u144ApplyPrices(){try{U144_ARR.forEach(([pre,get,ix])=>{(get()||[]).forEach(x=>{const id=pre+x[0];if(!(id in U144O))U144O[id]=x[ix];const c=u144Cfg(id);if(typeof U144O[id]==='number')x[ix]=c&&c.p!=null?c.p:U144O[id];});});
+  Object.keys(FURN).forEach(k=>{const id='fn:'+k,x=FURN[k];if(!(id in U144O))U144O[id]=x[2];const c=u144Cfg(id);x[2]=c&&c.p!=null?c.p:U144O[id];});
+  (CHARL||[]).forEach(p=>{const id=(p.slot==='linhthu'?'lt:':'c3:')+p.slug;if(!(id in U144O))U144O[id]=p.price||0;const c=u144Cfg(id);p.price=c&&c.p!=null?c.p:U144O[id];});}catch(e){console.warn(e);}}
+(function(){const base=charSet;charSet=function(){const r=base.apply(this,arguments);Object.keys(U144O).filter(k=>/^(lt|c3):/.test(k)).forEach(k=>delete U144O[k]);u144ApplyPrices();return r;};})();
+function u144CfgLoad(){try{fetch(API_BASE+'/v1/char/shopcfg').then(r=>r.ok?r.json():null).then(j=>{if(!j)return;const n=j.items||{};if(JSON.stringify(n)===JSON.stringify(SHOPCFG))return;SHOPCFG=n;try{localStorage.setItem('hsk-shopcfg',JSON.stringify(n));}catch(e){}u144ApplyPrices();
+  if(location.hash==='#shop')viewShop();else if(location.hash==='#tudo')viewTudo();else if(location.hash==='#furn')viewFurn();}).catch(()=>{});}catch(e){}}
+u144ApplyPrices();setTimeout(u144CfgLoad,1500);
+/* ẩn món / khóa theo loại tài khoản ngay trên giao diện (mọi tab cửa hàng + nội thất) */
+const U144_SEL=[['sk:','data-buy2',1],['fr:','data-buy2',1],['fx:','data-buy2',1],['snd:','data-buy2',1],['wx:','data-wxbuy',0],['hp:','data-hb',0],['rc:','data-gb',1],['df:','data-gb',1],['sp:','data-gb',1],['fn:','data-fb',0],['lt:','data-ltbuy',0],['c3:','data-c3buy',0]];
+function u144Apply(root){if(!root)return;try{Object.keys(SHOPCFG).forEach(id=>{const c=SHOPCFG[id],pre=id.slice(0,id.indexOf(':')+1),key=id.slice(pre.length),m=U144_SEL.find(x=>x[0]===pre);if(!m)return;
+    const v=m[2]?id:key;root.querySelectorAll(`[${m[1]}="${CSS.escape(v)}"]`).forEach(b=>{const card=b.closest('.lookit,.wxcard,.helpit,.spit,.furncard,.c3card,.u144it')||b.parentElement;
+      if(c.h){card.remove();return;}
+      if(c.sale&&card&&!card.querySelector('.u144sale'))card.insertAdjacentHTML('afterbegin',`<span class="u144sale">${esc(c.sale)}</span>`);
+      if(u144Locked(id)){const a=document.createElement('a');a.className='btn sm u144lk';a.href='#premium';a.textContent=u144LockTxt(id);b.replaceWith(a);}});});}catch(e){console.warn(e);}}
+(function(){const base=viewFurn;viewFurn=function(){const r=base.apply(this,arguments);try{u144Apply(app);}catch(e){}return r;};})();
+/* ---------- bố cục cửa hàng ---------- */
+const U144_TABS=[['linhthu','🐉 Linh thú'],['trangphuc','👘 Trang phục'],['mu','🎩 Mũ'],['camtay','🪄 Cầm tay'],['look','🎨 Giao diện'],['help','🧪 Trợ giúp'],['lixi','🎁 Quà tặng'],['log','📜 Lịch sử']];
+const U144_SIDE=[['weather','🌦️','Thời tiết','Trang trí mọi màn hình'],['game','🏎️','Trò chơi','Skin Đua xe, Thủ thành'],['space','🏫','Không gian','Cảnh Góc tập trung'],['event','🏮','Sự kiện','Đồ giới hạn theo dịp']];
+const U144_C3=['trangphuc','mu','camtay'];
+let U144EMB=null,U144EV='main';
+if(shopTab==='wear'&&C3TAB==='mu')shopTab='linhthu';
+function u144Cur(){return shopTab==='wear'?C3TAB:shopTab;}
+function u144Go(k){if(U144_C3.includes(k)){shopTab='wear';C3TAB=k;}else shopTab=k;C3TRY=null;shopTry=null;viewShop();}
+(function(){const base=viewShop;viewShop=function(){
+  if(U144EMB&&location.hash!=='#shop'){U144EMB();return;}
+  if(shopTab==='chest'||shopTab==='bet'||(shopTab==='wear'&&!U144_C3.includes(C3TAB)))shopTab='linhthu';
+  const r=base.apply(this,arguments);
+  try{const tabs=app.querySelector('.shop2 .shtabs'),body=app.querySelector('#shbody'),hero=app.querySelector('.shop2 .shhero');if(!tabs||!body||!hero)return r;
+    const cur=u144Cur(),ev=typeof evNow==='function'&&evNow();
+    tabs.classList.add('u144tabs');tabs.innerHTML=U144_TABS.map(([k,t])=>`<button type="button" class="${cur===k?'on':''}" data-u144t="${k}" aria-pressed="${cur===k}">${t}</button>`).join('');
+    const lay=document.createElement('div');lay.className='u144lay';
+    lay.innerHTML=`<div class="u144main"><a class="u144tudo" href="#tudo"><span class="u144tdi" aria-hidden="true">${u144TudoArt()}</span><span class="u144tdt"><span class="label">Mới</span><b>Tủ đồ linh thú</b><small>Phối linh thú + mũ + trang phục + đồ cầm tay, thử cả bộ rồi mua một lần</small></span><span class="u144tdgo">Mở tủ đồ ›</span></a></div>
+      <aside class="u144side" aria-label="Danh mục khác">${U144_SIDE.map(([k,ic,n,d])=>`<button type="button" class="u144s u144s-${k}${shopTab===k?' on':''}" data-u144t="${k}" aria-pressed="${shopTab===k}"><span class="u144si" aria-hidden="true">${ic}</span><span><b>${n}${k==='event'&&ev?' <i class="nbadge">!</i>':''}</b><small>${d}</small></span></button>`).join('')}</aside>`;
+    hero.after(lay);const main=lay.querySelector('.u144main');main.appendChild(tabs);main.appendChild(body);
+    let nx=lay.nextSibling;while(nx){const n2=nx.nextSibling;if(nx.nodeType===1)main.appendChild(nx);nx=n2;}
+    lay.querySelectorAll('[data-u144t]').forEach(b=>b.onclick=()=>u144Go(b.dataset.u144t));
+    if(U144_SIDE.some(x=>x[0]===shopTab))body.insertAdjacentHTML('beforebegin',`<div class="u144crumb"><b>${U144_SIDE.find(x=>x[0]===shopTab).slice(1,3).join(' ')}</b><button type="button" class="btn sm ghost" data-u144t="linhthu">‹ Về Linh thú</button></div>`),main.querySelector('.u144crumb [data-u144t]').onclick=()=>u144Go('linhthu');
+  }catch(e){console.warn(e);}return r;};})();
+function u144TudoArt(){const b=charMascot();return b?`<img src="${charImgU(b,'cheer')}" alt="" draggable="false">`:'<span style="font-size:40px">👘</span>';}
+/* ---------- nội dung tab: kệ linh thú cử động, nút Thử cho phụ kiện ---------- */
+const U144_POSES=['happy','wave','cheer','love','wow','front'];
+let U144TK=0;
+function u144Shelf(body){const g=body.querySelector('.c3grid');if(!g)return;g.classList.add('u144shelf');
+  g.querySelectorAll('.c3card').forEach((c,i)=>{const im=c.querySelector('.c3img img');const btn=c.querySelector('[data-ltbuy],[data-ltuse]');const slug=btn?(btn.dataset.ltbuy||btn.dataset.ltuse||''):(c.classList.contains('on')?((charMascot()||{}).slug||''):'');
+    const p=slug?charBy(slug):charPack('mascot');if(!p||!im)return;c.dataset.u144p=p.slug;im.dataset.u144i=i;
+    U144_POSES.forEach(k=>{const x=new Image();x.src=charImgU(p,k);});
+    const sh=c.querySelector('.c3img');sh.setAttribute('role','button');sh.tabIndex=0;sh.setAttribute('aria-label','Xem '+p.name);
+    if(!c.querySelector('.u144det'))(btn||c.querySelector('.c3tag')||c.lastElementChild).insertAdjacentHTML('beforebegin',`<button type="button" class="btn sm ghost u144det" data-u144d="${esc(p.slug)}">👀 Xem chi tiết</button>`);});
+  if(!U144TK)U144TK=setInterval(u144Tick,1500);}
+function u144Tick(){const L=document.querySelectorAll('.u144shelf .c3card[data-u144p] .c3img img');if(!L.length){clearInterval(U144TK);U144TK=0;return;}
+  L.forEach(im=>{const c=im.closest('.c3card'),p=charBy(c.dataset.u144p)||(charPack('mascot')&&charPack('mascot').slug===c.dataset.u144p?charPack('mascot'):null);if(!p)return;const n=((+im.dataset.u144n||0)+1)%U144_POSES.length;
+    if(Math.random()<.35)return;im.dataset.u144n=n;im.src=charImgU(p,U144_POSES[n]);im.classList.remove('u144hop');void im.offsetWidth;im.classList.add('u144hop');});}
+function u144TryBtns(body){body.querySelectorAll('.shslots').forEach(x=>{if(x.querySelector('[data-c3k]'))x.remove();});
+  body.querySelectorAll('.c3card[data-c3try]').forEach(c=>{if(c.querySelector('.u144try'))return;const sl=c.dataset.c3try,on=C3TRY&&C3TRY[1]===sl;
+    const b=c.querySelector('[data-c3buy],[data-c3on],[data-c3off]');(b||c.lastElementChild).insertAdjacentHTML('beforebegin',`<button type="button" class="btn sm ghost u144try${on?' on':''}" data-u144try="${esc(sl)}" aria-pressed="${!!on}">${on?'✓ Đang thử':'👀 Thử'}</button>`);});
+  body.querySelectorAll('p.small.muted').forEach(p=>{if(/Bấm vào món đồ để thử/.test(p.textContent))p.textContent='Bấm "Thử" để xem món đồ trên linh thú của bạn trước khi mua.';});}
+(function(){const base=shopBody;shopBody=function(body){const r=base.apply(this,arguments);try{if(shopTab==='linhthu')u144Shelf(body);if(shopTab==='wear')u144TryBtns(body);u144Apply(body);}catch(e){console.warn(e);}return r;};})();
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-u144try]');if(!t)return;e.preventDefault();const sl=t.dataset.u144try;
+  C3TRY=C3TRY&&C3TRY[1]===sl?null:[C3TAB,sl];document.querySelectorAll('[data-u144try]').forEach(b=>{const on=!!C3TRY&&b.dataset.u144try===C3TRY[1];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.textContent=on?'✓ Đang thử':'👀 Thử';});
+  document.querySelectorAll('.c3card[data-c3try]').forEach(x=>x.classList.toggle('try',!!C3TRY&&x.dataset.c3try===C3TRY[1]));c3Prev(C3TRY?{[C3TRY[0]]:C3TRY[1]}:null);u144ShowPrev();});
+function u144ShowPrev(){const pv=document.getElementById('shprev');if(!pv)return;const r=pv.getBoundingClientRect();if(r.top<70||r.bottom>innerHeight)pv.scrollIntoView({behavior:'smooth',block:'center'});pv.classList.remove('u144flash');void pv.offsetWidth;pv.classList.add('u144flash');}
+/* ---------- chi tiết linh thú: xoay một vòng rồi đổi biểu cảm ---------- */
+const U144_SHOW=[...CHAR_SPIN.map(k=>[k,170]),['happy',900],['wave',900],['cheer',900],['love',900],['wow',800],['think',800],['sleep',900],['happy',600]];
+let U144DT=0;
+function u144Detail(slug){const def=charPack('mascot'),p=charBy(slug)||(def&&def.slug===slug?def:null);if(!p)return;const s=SHOP(),isDef=def&&p.slug===def.slug,own=isDef||s.own['lt:'+p.slug],cur=charMascot(),on=cur&&cur.slug===p.slug,lock=!own&&u144Locked('lt:'+p.slug);
+  let d=document.getElementById('u144dlg');if(!d){d=document.createElement('div');d.id='u144dlg';d.className='u144dlg';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-u144x]'))u144DetClose();});}
+  d.innerHTML=`<div class="u144dc"><button type="button" class="u144dx" data-u144x aria-label="Đóng">✕</button><div class="u144stage"><span class="u144spot" aria-hidden="true"></span><img id="u144dimg" src="${charImgU(p,'front')}" alt="${esc(p.name)}" draggable="false"></div>
+    <div class="u144dinfo"><h3>${esc(p.name)}</h3><p class="small muted">${isDef?'Linh thú gốc · miễn phí':own?'Đã sở hữu':'Giá '+ybFmt(p.price||0)}</p><p class="small">Linh thú đi cùng bạn khắp app, đổi biểu cảm theo lúc học. Mũ, trang phục, đồ cầm tay trong Tủ đồ đều mặc được.</p>
+    <div class="row u144dact">${on?'<span class="c3tag">✓ Đang dùng</span>':own?`<button class="btn pri" data-u144use="${isDef?'':esc(p.slug)}">Dùng linh thú này</button>`:lock?`<a class="btn u144lk" href="#premium">${u144LockTxt('lt:'+p.slug)}</a>`:`<button class="btn pri" data-u144buy="${esc(p.slug)}">Mua ${ybFmt(p.price||0)}</button>`}<a class="btn" href="#tudo" data-u144x data-u144tudo="${esc(p.slug)}">👘 Phối đồ</a></div></div></div>`;
+  d.classList.add('on');document.documentElement.classList.add('u144modal');let i=0;clearTimeout(U144DT);const im=d.querySelector('#u144dimg');U144_SHOW.forEach(([k])=>{const x=new Image();x.src=charImgU(p,k);});
+  const step=()=>{if(!d.classList.contains('on'))return;const [k,ms]=U144_SHOW[i%U144_SHOW.length];im.src=charImgU(p,k);im.classList.remove('u144pop');void im.offsetWidth;if(ms>500)im.classList.add('u144pop');i++;U144DT=setTimeout(step,ms);};step();
+  setTimeout(()=>{const b=d.querySelector('.u144dx');if(b)b.focus();},40);}
+function u144DetClose(){const d=document.getElementById('u144dlg');if(d)d.classList.remove('on');document.documentElement.classList.remove('u144modal');clearTimeout(U144DT);}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')u144DetClose();});
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-u144d],.u144shelf .c3img,[data-u144buy],[data-u144use],[data-u144tudo]');if(!t)return;
+  if(t.dataset.u144tudo!=null){U144TD.lt=t.dataset.u144tudo;return;}
+  if(t.dataset.u144buy){const p=charBy(t.dataset.u144buy);const s=SHOP();if(!p||u144Locked('lt:'+p.slug)||!spend(p.price||0,'Mua linh thú '+p.name))return;s.own['lt:'+p.slug]=1;s.lt=p.slug;shSave();try{gardenToast('🐉 Chào mừng <b>'+esc(p.name)+'</b> về nhà!');confetti(40);}catch(x){}charRefreshDom();u144DetClose();if(location.hash==='#shop')viewShop();return;}
+  if(t.dataset.u144use!=null){const s=SHOP();s.lt=t.dataset.u144use||'';shSave();charRefreshDom();u144DetClose();if(location.hash==='#shop')viewShop();return;}
+  const slug=t.dataset.u144d||(t.closest('.c3card')&&t.closest('.c3card').dataset.u144p);if(slug){e.preventDefault();u144Detail(slug);}});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.u144shelf .c3img')){e.preventDefault();const c=e.target.closest('.c3card');if(c&&c.dataset.u144p)u144Detail(c.dataset.u144p);}});
+/* ---------- Tủ đồ linh thú: thử và mua cả bộ 4 món ---------- */
+const U144TD={lt:null,mu:null,trangphuc:null,camtay:null,init:false};
+const U144_TDK=[['lt','🐉 Linh thú'],['mu','🎩 Mũ'],['trangphuc','👘 Trang phục'],['camtay','🪄 Cầm tay']];
+function u144TdList(k){const def=charPack('mascot');if(k==='lt')return [def,...CHARL.filter(p=>p.slot==='linhthu')].filter(p=>p&&(p===def||!u144Hidden('lt:'+p.slug)||SHOP().own['lt:'+p.slug]));
+  return CHARL.filter(p=>p.slot===k&&(!u144Hidden('c3:'+p.slug)||SHOP().own['c3:'+p.slug]));}
+function u144Own(k,p){const s=SHOP(),def=charPack('mascot');if(!p)return true;if(k==='lt')return (def&&p.slug===def.slug)||!!s.own['lt:'+p.slug];return !!s.own['c3:'+p.slug];}
+function u144Id(k,p){return (k==='lt'?'lt:':'c3:')+p.slug;}
+function u144TdSel(k){const v=U144TD[k];if(k==='lt'){const def=charPack('mascot');return v?charBy(v)||(def&&def.slug===v?def:null):def;}return v?charBy(v):null;}
+function viewTudo(){const s=SHOP();s.c3=s.c3||{};
+  if(!U144TD.init){const cur=charMascot();U144TD.lt=U144TD.lt||(cur?cur.slug:null);C3_KINDS.forEach(([k])=>{if(U144TD[k]===null)U144TD[k]=s.c3[k]&&s.own['c3:'+s.c3[k]]?s.c3[k]:'';});U144TD.init=true;}
+  const base=u144TdSel('lt');
+  if(!base){app.innerHTML=`<div class="stack"><a class="small" href="#shop">‹ Cửa hàng</a><div class="panel muted">Linh thú 3D đang được tải, thử lại sau giây lát nhé.</div></div>`;setTimeout(()=>{if(location.hash==='#tudo'&&charPack('mascot'))viewTudo();},1500);return;}
+  const sel={};U144_TDK.forEach(([k])=>{sel[k]=u144TdSel(k);});
+  const need=U144_TDK.map(([k])=>[k,sel[k]]).filter(([k,p])=>p&&!u144Own(k,p)),total=need.reduce((a,[k,p])=>a+(p.price||0),0),locked=need.filter(([k,p])=>u144Locked(u144Id(k,p)));
+  const row=([k,t])=>{const L=u144TdList(k),cur=sel[k];return `<section class="u144row"><h3>${t}</h3><div class="u144pick" role="radiogroup" aria-label="${t}">
+      ${k!=='lt'?`<button type="button" class="u144op${!cur?' on':''}" data-u144op="${k}" data-v="" role="radio" aria-checked="${!cur}"><span class="u144none" aria-hidden="true">∅</span><small>Không</small></button>`:''}
+      ${L.map(p=>{const own=u144Own(k,p),lk=!own&&u144Locked(u144Id(k,p)),on=cur&&cur.slug===p.slug;return `<button type="button" class="u144op${on?' on':''}${lk?' lk':''}" data-u144op="${k}" data-v="${esc(p.slug)}" role="radio" aria-checked="${!!on}" title="${esc(p.name)}"><img src="${charImgU(p,k==='lt'?'happy':'front')}" alt="" loading="lazy" draggable="false"><small>${esc(p.name)}</small><em>${own?'✓ Đã có':lk?'🔒':ybFmt(p.price||0)}</em></button>`;}).join('')}
+      ${!L.length?'<span class="small muted">Chưa có món nào, đồ mới sẽ sớm lên kệ.</span>':''}</div></section>`;};
+  const allOwn=!need.length,isWearing=(()=>{const cur=charMascot();if(!cur||cur.slug!==base.slug)return false;return C3_KINDS.every(([k])=>((s.c3[k]&&s.own['c3:'+s.c3[k]])?s.c3[k]:'')===(sel[k]?sel[k].slug:''));})();
+  app.innerHTML=`<div class="stack u144td"><div class="row u143top"><a class="btn sm" href="#shop">‹ Cửa hàng</a><span class="ybpill" style="cursor:default">${YB}<b>${s.coins}</b></span></div>
+    <section class="u144tdh"><div class="u144stage big"><span class="u144spot" aria-hidden="true"></span><img id="u144tdimg" class="u144idle" src="${charImgU(base,'happy')}" alt="Linh thú đang phối đồ" draggable="false"></div>
+      <div class="u144tdr"><div class="label">Tủ đồ linh thú</div><h1>Phối cả bộ</h1><p class="small muted">Chọn linh thú, mũ, trang phục và đồ cầm tay. Xem trước ngay bên trái, ưng ý thì mua cả bộ một lần.</p>
+        <ul class="u144bill">${U144_TDK.map(([k,t])=>{const p=sel[k];return `<li><span>${t}</span><b>${p?esc(p.name):'Không'}</b><em>${!p?'':u144Own(k,p)?'Đã có':u144Locked(u144Id(k,p))?'🔒':ybFmt(p.price||0)}</em></li>`;}).join('')}</ul>
+        <div class="u144tot"><span>Cần mua</span><b>${ybFmt(total)}</b></div>
+        ${locked.length?`<a class="btn u144lk big" href="#premium">${u144LockTxt(u144Id(locked[0][0],locked[0][1]))} · bỏ món bị khóa để mua</a>`:allOwn?(isWearing?'<span class="c3tag big">✓ Bạn đang mặc bộ này</span>':'<button type="button" class="btn pri big" data-u144wear>👘 Mặc bộ này</button>'):`<button type="button" class="btn pri big" data-u144set ${s.coins<total?'disabled':''}>Mua cả bộ · ${ybFmt(total)}</button>${s.coins<total?`<p class="small muted" style="margin:0">Còn thiếu ${total-s.coins} Nguyên bảo.</p>`:''}`}
+      </div></section>
+    ${U144_TDK.map(row).join('')}</div>`;
+  const wear={};C3_KINDS.forEach(([k])=>{if(sel[k])wear[k]=sel[k];});const im=app.querySelector('#u144tdimg');
+  if(Object.keys(wear).length)c3Compose(base,'happy',wear).then(u=>{if(u&&im.isConnected)im.src=u;});
+  app.querySelectorAll('[data-u144op]').forEach(b=>b.onclick=()=>{U144TD[b.dataset.u144op]=b.dataset.v||'';viewTudo();});
+  const go=app.querySelector('[data-u144set]');if(go)go.onclick=()=>{if(!spend(total,'Mua bộ đồ linh thú ('+need.length+' món)'))return;need.forEach(([k,p])=>{s.own[u144Id(k,p)]=1;});u144WearSet(sel);try{confetti(70);gardenToast('👘 Đã mua và mặc cả bộ cho <b>'+esc(base.name)+'</b>!');}catch(e){}viewTudo();};
+  const wr=app.querySelector('[data-u144wear]');if(wr)wr.onclick=()=>{u144WearSet(sel);try{gardenToast('👘 Đã mặc bộ đồ mới!');}catch(e){}viewTudo();};
+  window.scrollTo({top:0});}
+function u144WearSet(sel){const s=SHOP(),def=charPack('mascot');s.c3=s.c3||{};s.lt=sel.lt&&!(def&&sel.lt.slug===def.slug)?sel.lt.slug:'';C3_KINDS.forEach(([k])=>{if(sel[k])s.c3[k]=sel[k].slug;else delete s.c3[k];});shSave();C3C.clear();charRefreshDom();}
+/* ---------- Rương + Hẹn ước tuần chuyển sang trang Sự kiện & Nhiệm vụ ---------- */
+const U144_EVT=[['main','🎉 Sự kiện & Nhiệm vụ'],['chest','🎁 Rương'],['bet','🤝 Hẹn ước tuần']];
+(function(){const base=viewEvents;viewEvents=function(){if(U144EV==='main'){U144EMB=null;const r=base.apply(this,arguments);u144EvTabs();return r;}
+  stopGames();const n=(()=>{try{return chestReady().length;}catch(e){return 0;}})();
+  app.innerHTML=`<div class="stack evpage"><section class="addhero evhero"><div class="addicon han" aria-hidden="true">庆</div><div style="min-width:0"><div class="label">Mở rộng</div><h1>Sự kiện & Nhiệm vụ</h1><p>${U144EV==='chest'?'Mở rương mốc bạn đã đạt để nhận Nguyên bảo và quà.':'Tự hẹn số ngày học trong tuần, giữ lời để nhận thưởng.'}</p></div></section><div id="shbody" class="u144evb"></div></div>`;
+  u144EvTabs();shopTab=U144EV;U144EMB=()=>{if(location.hash==='#events')viewEvents();};try{shopBody(app.querySelector('#shbody'));}catch(e){console.warn(e);}};})();
+function u144EvTabs(){const h=app.querySelector('.evpage .evhero');if(!h||app.querySelector('.u144evt'))return;const n=(()=>{try{return chestReady().length;}catch(e){return 0;}})();
+  h.insertAdjacentHTML('afterend',`<div class="shtabs u144evt" role="tablist">${U144_EVT.map(([k,t])=>`<button type="button" role="tab" class="${U144EV===k?'on':''}" aria-selected="${U144EV===k}" data-u144ev="${k}">${t}${k==='chest'&&n?` <b class="nbadge">${n}</b>`:''}</button>`).join('')}</div>`);
+  app.querySelectorAll('[data-u144ev]').forEach(b=>b.onclick=()=>{U144EV=b.dataset.u144ev;viewEvents();});}
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('[data-shoptab="chest"],[data-shoptab="bet"]');if(!a)return;e.preventDefault();U144EV=a.dataset.shoptab;if(location.hash==='#events')viewEvents();else location.hash='#events';},true);
+window.addEventListener('hashchange',()=>{if(location.hash!=='#events'){U144EMB=null;U144EV='main';}if(location.hash!=='#shop')u144DetClose();});
+if(window.__T)window.__u144={get SHOPCFG(){return SHOPCFG;},setCfg(c){SHOPCFG=c||{};u144ApplyPrices();},u144Tier,U144TD,viewTudo};
+
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
 function hzPanel(l){const z=l.hz;if(!z)return '';const wl=w=>`<a class="hzw han" href="${typeof wpURL==='function'?wpURL(w):'#'}" target="_blank" rel="noopener">${esc(w)}</a>`;
@@ -22619,7 +23015,7 @@ function route(){
   if(ttsOK)try{speechSynthesis.cancel();}catch(e){}
   if(sttStop){try{sttStop();}catch(e){}sttStop=null;}
   {const wg=document.getElementById('wdg');if(wg&&wg.open)wg.close();}
-  const MORE=['invite','buddy','lux','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','tuhoc','support','cert','teach-apply','hoc-online','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber','memory','duo-memory'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
+  const MORE=['invite','buddy','lux','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','tuhoc','support','cert','teach-apply','hoc-online','thegioi','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber','memory','duo-memory'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
   navUpdate(h);if(typeof navGroup==='function'&&navGroup(navKey(h))==='game'&&h!=='games'&&h!=='friends'&&h!=='achievements'){const q=QD();if(!q.gv){q.gv=1;qTick('game');save();}}
   const m=h.match(/^l(\d{1,2})$/);
   if(m&&+m[1]>=1&&+m[1]<=NL){const n=+m[1];if(cur.n!==n){cur={n,stage:'words'};}viewLesson(n,cur.stage);}
@@ -22628,7 +23024,7 @@ function route(){
   else if(h==='more')viewMore();else if(h==='pron')viewPron();else if(h==='listen')viewListen();else if(h==='culture')viewCulture();
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
-  else if(h==='support')viewSupport();else if(h==='cert')viewCert();else if(h==='teach-apply')viewTeachApply();else if(h==='hoc-online')viewOlc();else if(/^lop-online\/\d{1,9}$/.test(h))viewOlcClass(+h.split('/')[1]);else if(/^certv-[A-Z0-9]{4,12}$/.test(h))viewCertVerify(h.slice(6));else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
+  else if(h==='support')viewSupport();else if(h==='cert')viewCert();else if(h==='teach-apply')viewTeachApply();else if(h==='hoc-online')viewOlc();else if(h==='thegioi')viewWorldChat();else if(h==='tudo')viewTudo();else if(/^nhaban-[A-Za-z0-9_-]{4,64}$/.test(h))viewFriendHouse2(h.slice(7));else if(/^lop-online\/\d{1,9}$/.test(h))viewOlcClass(+h.split('/')[1]);else if(/^certv-[A-Z0-9]{4,12}$/.test(h))viewCertVerify(h.slice(6));else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
   else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(h==='bomber')viewBomber();else if(/^duo-(race|defense|memory|bomber)$/.test(h))viewDuo(h.slice(4));else if(h==='memory')viewMemory();else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
