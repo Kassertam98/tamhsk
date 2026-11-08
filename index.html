@@ -5566,6 +5566,34 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
 .tdtr{padding:12px 14px;border-radius:12px;background:#eef6ff;border:1px solid #b9d6f2;line-height:1.6;overflow-wrap:anywhere}
 .tdps{display:flex;flex-direction:column;gap:6px;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--paper)}.tdps .han{overflow-wrap:anywhere}
 :root[data-theme="dark"] .tdtr{background:#16283a;border-color:#2f5a80}
+/* 5.93 bài khóa gọn */
+.txc2{gap:10px}
+.txc2 .txcast{padding:0 2px}.txc2 .txcast svg{width:32px;height:32px}.txc2 .txc b{font-size:14px}.txc2 .txc span{font-size:12px}
+.txc2 .chat{gap:6px;padding:6px 0}
+.txc2 .txstage.hasbg{padding:8px 8px;min-height:0}.txc2 .txstage.hasbg .chat{margin-top:6px}
+.txc2 .bub{gap:6px}.txc2 .bub>svg,.txc2 .bub>img{width:30px;height:30px}
+.txc2 .bub .bbody{max-width:min(84%,560px);gap:1px}
+.txc2 .bub .bname{font-size:11px;line-height:1.2}
+.txc2 .bub .bin{padding:6px 10px}
+.txc2 .bub .dzh{font-size:18px;line-height:1.4}.txc2 .bub .dpy{font-size:12px;line-height:1.3}.txc2 .bub .dvi{font-size:13px;line-height:1.35}
+.txc2 .txstage.hasbg .bub .bbody{padding:4px 6px 6px}
+.txc2 .bub .icon-btn{width:32px;height:32px}
+.txbar{align-items:center;flex-wrap:wrap}
+#all.heard{background:color-mix(in srgb,var(--jade) 14%,var(--card));color:var(--jade);border-color:var(--jade)}#all.heard small{font-weight:500;opacity:.75}
+.txgo{background:linear-gradient(180deg,#ffd54a,#f4b400)!important;color:#3a2a00!important;border:1px solid #d79b00!important;font-weight:700;box-shadow:0 4px 12px -6px #d79b00;animation:txgoIn .45s cubic-bezier(.2,.9,.3,1.3)}
+.txgo:hover{filter:brightness(1.04)}
+@keyframes txgoIn{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.stnext{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 12px;margin:-6px 0 14px;border-radius:14px;border:1px dashed var(--line);background:var(--card)}
+.stnext.ok{border:1px solid #f0c64a;background:color-mix(in srgb,#ffd54a 16%,var(--card))}
+.stn-t{display:grid;gap:2px;min-width:0}.stn-t b{font-size:14px}.stn-t small{font-size:12px;color:var(--muted)}
+.stnext .btn[disabled]{opacity:.55;cursor:not-allowed}
+@media (max-width:520px){.stnext .btn{width:100%}}
+@media (prefers-reduced-motion:reduce){.txgo{animation:none}}
+@media(max-width:560px){.txc2 .txtabs{display:flex;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.txc2 .txtabs::-webkit-scrollbar{display:none}
+  .txc2 .txtabs button{flex:0 0 46%;padding:6px 9px}.txc2 .txtabs button span{-webkit-line-clamp:1}
+  .txc2 .txcast{display:none}
+  .txc2 .bub .bbody{max-width:calc(100% - 76px)}.txc2 .bub .icon-btn{width:28px;height:28px}.txc2 .bub>svg,.txc2 .bub>img{width:26px;height:26px}
+  .txc2 .bub .dzh{font-size:17px}}
 </style>
 </head><body>
 
@@ -5591,12 +5619,12 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='33ab5321';
-document.write('<script src="packs/hsk'+L+'.js?v=33ab5321"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='4412fe1b';
+document.write('<script src="packs/hsk'+L+'.js?v=4412fe1b"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=33ab5321','strokes-file');A('packs/dict.js?v=33ab5321','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=4412fe1b','strokes-file');A('packs/dict.js?v=4412fe1b','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -22131,6 +22159,31 @@ function tdParaBind(root,getTxt,rerender){root.querySelectorAll('[data-tdp]').fo
     body.querySelectorAll('[data-tddel]').forEach(b=>b.onclick=()=>{ps.splice(+b.dataset.tddel,1);S.paras=ps;save();viewTudien();});}
   }catch(e){console.warn(e);}return r;};})();
 if(window.__T)window.__u133={tdIsPara,paras:()=>(S.paras||[]).length};
+
+/* ===== 5.93: Bài khóa gọn hơn + nút sang bài khóa kế ở trên (sau khi nghe xong) · Ngữ pháp/Chữ Hán có thanh "bước tiếp" ở trên ===== */
+const TXH=()=>{S.txHeard=S.txHeard||{};return S.txHeard;};
+function txEnhance(el,l){const all=el.querySelector('#all');if(!all||all.dataset.u134)return;all.dataset.u134='1';
+  const tabs=[...el.querySelectorAll('.txtabs [data-tx]')],ti=Math.max(0,tabs.findIndex(b=>b.classList.contains('on'))),last=ti>=l.texts.length-1,key=LEVEL+'-'+l.n+'-'+ti;
+  el.querySelector('.txpanel')&&el.querySelector('.txpanel').classList.add('txc2');
+  const show=()=>{all.classList.add('heard');all.innerHTML='✓ Đã nghe <small>· nghe lại</small>';
+    if(el.querySelector('#txgo'))return;const b=document.createElement('button');b.className='btn sm txgo';b.id='txgo';
+    b.innerHTML=last?'Sang Ngữ pháp →':`Bài khóa ${ti+2} →`;b.onclick=()=>{const t=el.querySelector(last?'#done':'#txnext');if(t)t.click();};all.insertAdjacentElement('afterend',b);};
+  if(TXH()[key])show();
+  const oc=all.onclick;all.onclick=function(){const sq=speakQueue;speakQueue=function(t,r,onIdx,onEnd,roles){speakQueue=sq;return sq.call(this,t,r,onIdx,function(){if(onEnd)onEnd.apply(this,arguments);TXH()[key]=1;save();if(all.isConnected)show();},roles);};
+    try{return oc.apply(this,arguments);}finally{if(speakQueue!==sq)speakQueue=sq;}};}
+(function(){const base=stDialog;stDialog=function(el,l){const r=base.apply(this,arguments);try{txEnhance(el,l);
+  if(!el.__u134){el.__u134=1;new MutationObserver(()=>{try{txEnhance(el,l);}catch(e){}}).observe(el,{childList:true});}}catch(e){console.warn(e);}return r;};})();
+/* thanh bước tiếp ở trên cho Ngữ pháp và Chữ Hán */
+const STN_HINT={grammar:'Học hết các điểm ngữ pháp (đủ sao) để mở bước tiếp.',hanzi:'Viết đúng các chữ bắt buộc để mở bước tiếp.'};
+function stnRender(){const sec=app.querySelector('#stage');if(!sec||!cur||!STN_HINT[cur.stage])return;const k=cur.stage,n=cur.n,i=STG_ORDER.indexOf(k),nx=STG_ORDER[i+1];if(!nx)return;
+  const ok=!!(L(n).stages||{})[k];let bar=app.querySelector('#stnext');if(!bar){bar=document.createElement('div');bar.id='stnext';sec.insertAdjacentElement('beforebegin',bar);}
+  bar.className='stnext'+(ok?' ok':'');
+  bar.innerHTML=ok?`<span class="stn-t"><b>✓ Đã xong ${STG_NAME[k]}</b><small>Bấm để sang bước tiếp theo</small></span><button class="btn txgo" data-stage="${nx}">Sang ${STG_NAME[nx]} →</button>`
+    :`<span class="stn-t"><b>🔒 Bước tiếp: ${STG_NAME[nx]}</b><small>${STN_HINT[k]}</small></span><button class="btn" disabled>Sang ${STG_NAME[nx]} →</button>`;
+  const b=bar.querySelector('[data-stage]');if(b)b.onclick=e=>{e.stopPropagation();goStage(nx);};}
+(function(){const base=viewLesson;viewLesson=function(){const r=base.apply(this,arguments);try{stnRender();setTimeout(stnRender,300);}catch(e){}return r;};})();
+(function(){const base=markStage;markStage=function(n,st){const r=base.apply(this,arguments);try{if(cur&&cur.n===n&&cur.stage===st)stnRender();}catch(e){}return r;};})();
+if(window.__T)window.__u134={go:k=>goStage(k),mark:(n,s)=>markStage(n,s),fakeTTS:()=>{speakQueue=function(t,r,i,e){if(e)setTimeout(e,60);};},st:n=>Object.assign({},L(n).stages)};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
