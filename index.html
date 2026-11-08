@@ -5594,6 +5594,35 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
   .txc2 .txcast{display:none}
   .txc2 .bub .bbody{max-width:calc(100% - 76px)}.txc2 .bub .icon-btn{width:28px;height:28px}.txc2 .bub>svg,.txc2 .bub>img{width:26px;height:26px}
   .txc2 .bub .dzh{font-size:17px}}
+/* 5.94: Từ mới — hàng nút thẻ đồng bộ theo style app */
+.fwtools{gap:8px}
+.fwtools>*{width:58px!important;height:58px!important;border-radius:16px!important;border:1.5px solid var(--line)!important;background:var(--card)!important;color:var(--jade)!important;box-shadow:0 2px 0 var(--line)!important;transition:transform .12s,border-color .15s,background .15s}
+.fwtools .fwt-sp,.fwtools .fwt-fv,.fwtools .fwt-cm,.fwtools .fwt-dk{background:var(--card)!important;border-color:var(--line)!important}
+.fwtools>* svg{width:22px!important;height:22px!important;margin-top:-12px;color:var(--jade);stroke:currentColor}
+.fwtools>*::before{content:''!important;display:block;width:22px;height:22px;margin-top:-12px;background:var(--jade);-webkit-mask:var(--fwi) center/contain no-repeat;mask:var(--fwi) center/contain no-repeat}
+.fwtools .fwt-sp::before,.fwtools .fwt-fv::before,.fwtools .fwt-dk::before{display:none}
+.fwtools .fwt-cm{--fwi:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M4%208h3l2-3h6l2%203h3a1%201%200%200%201%201%201v9a1%201%200%200%201-1%201H4a1%201%200%200%201-1-1V9a1%201%200%200%201%201-1z'/%3E%3Ccircle%20cx='12'%20cy='13'%20r='3.5'/%3E%3C/svg%3E")}.fwtools .fwt-ag{--fwi:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M3%2012a9%209%200%201%200%203-6.7'/%3E%3Cpath%20d='M3%204v5h5'/%3E%3Cpath%20d='M10%209.5v5l4-2.5z'%20fill='black'/%3E%3C/svg%3E")}.fwtools .fwt-hd{--fwi:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Crect%20x='6'%20y='5'%20width='4'%20height='14'%20rx='1'/%3E%3Crect%20x='14'%20y='5'%20width='4'%20height='14'%20rx='1'/%3E%3C/svg%3E")}
+.fwtools .fwt-cm>*:not(svg),.fwtools .fwt-cm>svg{display:none}
+.fwtools>*::after{bottom:6px;font-size:10px;font-weight:700;color:var(--muted)}
+.fwtools>*:hover:not(:disabled){border-color:var(--jade)!important;background:var(--jade-soft)!important}
+.fwtools .fav.on{border-color:var(--amber)!important;background:var(--amber-soft)!important;color:var(--amber)!important}.fwtools .fav.on svg{color:var(--amber);fill:currentColor}
+.fwtools .fwt-hd.on,.fwtools .fwt-hd[aria-pressed="true"]{border-color:var(--jade)!important;background:var(--jade-soft)!important}
+.fwtools>*:disabled{opacity:.45;box-shadow:none!important}
+.fwacts{gap:10px}
+.fwacts>*{min-height:48px;border-radius:999px!important;font-size:15px!important;font-weight:700!important;display:flex!important;align-items:center;gap:8px;transition:transform .12s}
+.fwacts>*::before{content:'';width:18px;height:18px;flex:none;background:currentColor;-webkit-mask:var(--fwi) center/contain no-repeat;mask:var(--fwi) center/contain no-repeat}
+.fwacts .fwt-ms{--fwi:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M21%2012a9%209%200%201%201-3-6.7'/%3E%3Cpath%20d='M21%204v5h-5'/%3E%3C/svg%3E");border:1.5px solid var(--jade)!important;color:var(--jade)!important;background:var(--card)!important;box-shadow:0 3px 0 color-mix(in srgb,var(--jade) 35%,var(--line))!important}
+.fwacts .fwt-nx{--fwi:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M5%2012.5l4.5%204.5L19%207.5'/%3E%3C/svg%3E");background:var(--jade)!important;border:1.5px solid var(--jade)!important;color:var(--jade-ink,#fff)!important;box-shadow:0 3px 0 #0a5a49!important}
+.fwacts>*:active:not(:disabled){transform:translateY(2px);box-shadow:none!important}
+.fwacts>*:disabled{opacity:.5;box-shadow:none!important}
+.fwtools{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));max-width:440px;width:100%;justify-self:center}
+.fwtools>*{width:auto!important;min-width:0!important}
+@media(max-width:400px){.fwtools{gap:5px}.fwtools>*{height:54px!important}.fwtools>*::after{font-size:9px}}
+.fwacts>*{white-space:nowrap}
+/* nút chụp thẻ ở mọi nơi dùng icon nét như các nút khác */
+.dkcam{font-size:0!important;color:var(--ink);display:inline-grid!important;place-items:center}
+.dkcam::before{content:'';display:block;width:18px;height:18px;margin:auto;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M4%208h3l2-3h6l2%203h3a1%201%200%200%201%201%201v9a1%201%200%200%201-1%201H4a1%201%200%200%201-1-1V9a1%201%200%200%201%201-1z'/%3E%3Ccircle%20cx='12'%20cy='13'%20r='3.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M4%208h3l2-3h6l2%203h3a1%201%200%200%201%201%201v9a1%201%200%200%201-1%201H4a1%201%200%200%201-1-1V9a1%201%200%200%201%201-1z'/%3E%3Ccircle%20cx='12'%20cy='13'%20r='3.5'/%3E%3C/svg%3E") center/contain no-repeat}
+.fwtools .dkcam::before{width:22px;height:22px;margin:-12px auto 0;background:var(--jade)}
 </style>
 </head><body>
 
@@ -5619,12 +5648,12 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='4412fe1b';
-document.write('<script src="packs/hsk'+L+'.js?v=4412fe1b"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='92fd794c';
+document.write('<script src="packs/hsk'+L+'.js?v=92fd794c"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=4412fe1b','strokes-file');A('packs/dict.js?v=4412fe1b','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=92fd794c','strokes-file');A('packs/dict.js?v=92fd794c','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -22184,6 +22213,9 @@ function stnRender(){const sec=app.querySelector('#stage');if(!sec||!cur||!STN_H
 (function(){const base=viewLesson;viewLesson=function(){const r=base.apply(this,arguments);try{stnRender();setTimeout(stnRender,300);}catch(e){}return r;};})();
 (function(){const base=markStage;markStage=function(n,st){const r=base.apply(this,arguments);try{if(cur&&cur.n===n&&cur.stage===st)stnRender();}catch(e){}return r;};})();
 if(window.__T)window.__u134={go:k=>goStage(k),mark:(n,s)=>markStage(n,s),fakeTTS:()=>{speakQueue=function(t,r,i,e){if(e)setTimeout(e,60);};},st:n=>Object.assign({},L(n).stages)};
+
+/* 5.94: bỏ emoji thừa trên nút Chưa nhớ / Đặt lên bàn (đã có icon đồng bộ) */
+(function(){const base=fwDress;fwDress=function(){const r=base.apply(this,arguments);try{['#fwmiss','#fwnext'].forEach(s=>{const b=app.querySelector(s);if(b&&/[🔁✓]/.test(b.textContent))b.textContent=b.textContent.replace(/🔁\s*|\s*✓/g,'').trim();});}catch(e){}return r;};})();
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
