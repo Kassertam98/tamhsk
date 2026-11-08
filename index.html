@@ -5583,12 +5583,12 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='175cb676';
-document.write('<script src="packs/hsk'+L+'.js?v=175cb676"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='c35772e8';
+document.write('<script src="packs/hsk'+L+'.js?v=c35772e8"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=175cb676','strokes-file');A('packs/dict.js?v=175cb676','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=c35772e8','strokes-file');A('packs/dict.js?v=c35772e8','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -5672,7 +5672,7 @@ function speak(text,rate){if(!ttsOK)return;try{ttsUnlock();const busy=speechSynt
 const hasZh=()=>ttsOK&&(zhVoice||speechSynthesis.getVoices().length===0);
 const slowBtn=t=>`<button class="btn sm ghost" data-speak="${esc(t)}" data-rate="0.55" title="Đọc chậm">Đọc chậm</button>`;
 const speakBtn=(t,label)=>`<button class="icon-btn" data-speak="${esc(t)}" aria-label="${esc(label||'Nghe')}" title="Nghe">${ICON.speak}</button>`;
-const voiceNote=()=>(!ttsOK||(speechSynthesis.getVoices().length&&!zhVoice))?`<div class="notice">Thiết bị này chưa có giọng đọc tiếng Trung nên nút nghe có thể im lặng. Trên Android hoặc Windows, hãy cài thêm giọng “Tiếng Trung (Trung Quốc)” trong phần cài đặt giọng nói.</div>`:'';
+const voiceNote=()=>(window.TTSX&&TTSX.on)?'':(!ttsOK||(speechSynthesis.getVoices().length&&!zhVoice))?`<div class="notice">Thiết bị này chưa có giọng đọc tiếng Trung nên nút nghe có thể im lặng. Trên Android hoặc Windows, hãy cài thêm giọng “Tiếng Trung (Trung Quốc)” trong phần cài đặt giọng nói.</div>`:'';
 
 /* ---------- Pinyin cho câu ---------- */
 function sentPy(text){try{if(window.pinyinPro)return pinyinPro.pinyin(text.replace(/\s+/g,''),{nonZh:'consecutive'}).replace(/\s([，。！？、；：])/g,'$1');}catch(e){}return '';}
@@ -22059,6 +22059,28 @@ viewPremium=async function(){
   draw();
   const pre=(location.hash.match(/#premium-([a-z0-9_]+)/)||[])[1];if(pre){const tgt=pre==='teacher'?'student':pre;const b=app.querySelector(`[data-pvbuy="${tgt}"]`);if(b){b.scrollIntoView({block:'center'});b.classList.add('pvflash');}}};
 if(window.__T)window.__u131={PV_CMP};
+
+/* ===== 5.91: giọng đọc Doubao (Volcengine) qua Worker — thay giọng máy và giọng thu sẵn; lỗi hoặc chưa bật thì quay về như cũ ===== */
+const TTSX={on:false,bad:0};
+const DB_VK={m1:'BV002_streaming',f1:'BV001_streaming',f2:'BV405_streaming',f3:'BV700_streaming',f3s:'BV009_streaming',f4:'BV700_streaming',f4s:'BV009_streaming',m2:'BV701_streaming',m3:'BV002_streaming',m3o:'BV701_streaming',boy:'BV405_streaming'};
+const DB_SLOW={f3s:0.85,f4s:0.85,m3o:0.85};
+const DB_MAIN={female:'BV001_streaming',male:'BV002_streaming',warm:'BV700_streaming',clear:'BV009_streaming'};
+const dbOn=()=>TTSX.on&&TTSX.bad<3&&!(S.set&&S.set.vsrc==='device')&&navigator.onLine!==false;
+function dbUrl(t,v,s){return API_BASE+'/v1/tts?s='+(s||1)+'&v='+encodeURIComponent(v)+'&t='+encodeURIComponent(String(t).replace(/\s+/g,''));}
+(function(){const base=voUrl;voUrl=function(vk,t){if(dbOn()&&vk){const v=DB_VK[vk]||(String(vk).startsWith('p_')?'BV405_streaming':DB_MAIN[(S.set&&S.set.dbv)||'female']);return dbUrl(t,v,DB_SLOW[vk]);}return base.apply(this,arguments);};})();
+/* từ đơn lẻ: đọc bằng giọng Doubao chính (cài đặt), lỗi thì quay về giọng máy */
+(function(){const base=speak;speak=function(text,rate){if(!dbOn())return base.apply(this,arguments);try{voStop();ttsCancel0();ttsUnlock();}catch(e){}
+  if(!VO_AU){VO_AU=new Audio();VO_AU.preload='auto';}const a=VO_AU;let fb=false;const bad=()=>{if(fb)return;fb=true;TTSX.bad++;base.call(this,text,rate);};
+  a.onended=null;a.onerror=bad;a.src=dbUrl(text,DB_MAIN[(S.set&&S.set.dbv)||'female']);try{a.preservesPitch=true;}catch(e){}
+  a.playbackRate=Math.max(.5,Math.min(2,((S.set&&S.set.rate)||1)*(rate||.85)/.85));const p=a.play();if(p&&p.catch)p.catch(e=>{if(e&&e.name==='NotAllowedError')return;bad();});
+  a.onplaying=()=>{TTSX.bad=0;};};})();
+async function dbStatus(){try{const r=await netFetch('GET',API_BASE+'/v1/tts/status',{},'');const j=JSON.parse(r.text||'{}');TTSX.on=!!j.on;if(TTSX.on)ttsOK=true;}catch(e){}}
+dbStatus();
+/* Cài đặt: chọn giọng Doubao */
+document.addEventListener('change',e=>{if(e.target&&e.target.id==='sdbv'){S.set.dbv=e.target.value;save();try{speak('你好！欢迎你学习汉语。');}catch(x){}}});
+setInterval(()=>{const sv=document.getElementById('svoice')||document.getElementById('srate');if(!sv||document.getElementById('sdbv')||!TTSX.on)return;const row=sv.closest('.row');if(!row)return;
+  const cur=(S.set&&S.set.dbv)||'female';row.insertAdjacentHTML('beforebegin',`<div class="row" id="sdbvr"><label class="small muted" for="sdbv">Giọng AI</label><select id="sdbv">${[['female','Doubao · nữ, rõ ràng'],['male','Doubao · nam'],['warm','Doubao · nữ, giàu cảm xúc'],['clear','Doubao · nữ, chuẩn đọc bài']].map(([k,t])=>`<option value="${k}"${cur===k?' selected':''}>${t}</option>`).join('')}</select></div>`);},1500);
+window.TTSX=TTSX;if(window.__T)window.__u132={TTSX,dbUrl,dbOn,dbStatus,speak:(t,r)=>speak(t,r),speakQueue:(...a)=>speakQueue(...a)};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
