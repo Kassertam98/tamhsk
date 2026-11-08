@@ -5675,6 +5675,74 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
 .rkp2pet{width:62px;height:54px;right:calc(50% - 74px)}.rkp2pod.p1 .rkp2pet{width:78px;height:68px;right:calc(50% - 92px)}
 .rkp2head b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80%}
 @media(max-width:520px){.rkp2head b{font-size:11px;letter-spacing:.06em}.rkp2pet{width:44px;height:40px;right:calc(50% - 54px)}.rkp2pod.p1 .rkp2pet{width:54px;height:48px;right:calc(50% - 64px)}}
+/* 5.97 khóa học online */
+.olcwrap{max-width:1100px;margin:0 auto}
+.olcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.olcc{display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:18px;border:1.5px solid var(--line);background:var(--card);box-shadow:0 2px 0 var(--line)}
+.olcc:not(.soon){border-color:color-mix(in srgb,var(--jade) 45%,var(--line));background:linear-gradient(170deg,color-mix(in srgb,var(--jade) 7%,var(--card)),var(--card) 55%)}
+.olcc.soon{opacity:.85;background:repeating-linear-gradient(135deg,var(--card) 0 14px,color-mix(in srgb,var(--line) 35%,var(--card)) 14px 15px)}
+.olcch{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.olcch b{font-size:22px}
+.olcfrom{font-size:13px;font-weight:700;color:var(--jade)}.olcsoon{font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--amber-soft,#fff3d6);color:var(--amber,#b07d00)}
+.olcmeta{display:flex;flex-wrap:wrap;gap:6px}.olcmeta span{font-size:12.5px;padding:3px 9px;border-radius:999px;background:var(--bg,rgba(0,0,0,.04));border:1px solid var(--line)}
+.olcc p{margin:0;min-height:2.6em}
+.olctiers{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.olct{position:relative;cursor:pointer}.olct input{position:absolute;opacity:0;pointer-events:none}
+.olct span{display:grid;gap:2px;padding:10px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);text-align:center;transition:border-color .15s,background .15s}
+.olct b{font-size:13px}.olct em{font-style:normal;font-weight:800;font-size:15px;color:var(--jade)}
+.olct input:checked+span{border-color:var(--jade);background:color-mix(in srgb,var(--jade) 12%,var(--card));box-shadow:0 0 0 2px color-mix(in srgb,var(--jade) 25%,transparent)}
+.olct input:focus-visible+span{outline:2px solid var(--jade);outline-offset:2px}
+.olcf{border:1.5px solid var(--jade)}
+.olcsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.olcsum div{display:grid;gap:2px;padding:10px 12px;border-radius:12px;background:var(--bg,rgba(0,0,0,.03));border:1px solid var(--line)}.olcsum span{font-size:12px;color:var(--muted)}.olcsum b{font-size:16px}.olcsum .olcdep{color:var(--jade)}
+.olcfs{border:0;padding:0;margin:0}.olcfs legend{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px}
+.olcchips{display:flex;flex-wrap:wrap;gap:6px}.olcchip{cursor:pointer}.olcchip input{position:absolute;opacity:0;pointer-events:none}
+.olcchip span{display:inline-block;padding:6px 13px;border-radius:999px;border:1.5px solid var(--line);font-weight:700;font-size:13.5px;background:var(--card)}
+.olcchip input:checked+span{background:var(--jade);border-color:var(--jade);color:#fff}.olcchip input:focus-visible+span{outline:2px solid var(--jade);outline-offset:2px}
+.olcterms{border:1px solid var(--line);border-radius:12px;padding:8px 12px;background:var(--bg,rgba(0,0,0,.02))}.olcterms summary{font-weight:700;cursor:pointer}
+.olctt{white-space:pre-wrap;font-size:13.5px;line-height:1.55;margin-top:6px;max-height:220px;overflow:auto}
+.olcagree{display:flex;gap:8px;align-items:flex-start;font-weight:600}.olcagree input{margin-top:3px;width:18px;height:18px;flex:none}
+.olcyel{background:linear-gradient(180deg,#ffd54a,#f4b400)!important;color:#3a2a00!important;border:1px solid #d79b00!important;font-weight:800}
+.olcmine{border:1.5px solid color-mix(in srgb,var(--jade) 45%,var(--line))}
+.olcr{display:grid;gap:6px;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:inherit}
+.olcr.st-wait{border-left:5px solid var(--amber,#e0a21b)}.olcr.st-placed{border-left:5px solid #f4b400}.olcr.st-full,.olcr.st-done{border-left:5px solid var(--jade)}.olcr.st-refund,.olcr.st-refreq{opacity:.8}
+.olcbadge{font-size:12.5px;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--bg,rgba(0,0,0,.05));border:1px solid var(--line)}
+.olcsteps{display:flex;gap:4px;list-style:none;margin:2px 0;padding:0;counter-reset:s}
+.olcsteps li{flex:1;min-width:0;font-size:11.5px;font-weight:700;color:var(--muted);text-align:center;padding-top:16px;position:relative;counter-increment:s}
+.olcsteps li::before{content:'';position:absolute;top:4px;left:0;right:0;height:5px;border-radius:9px;background:var(--line)}.olcsteps li.on{color:var(--jade)}.olcsteps li.on::before{background:var(--jade)}
+.olccls{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:10px;border-radius:12px;background:color-mix(in srgb,var(--jade) 7%,var(--card))}
+.olcteach{grid-template-columns:1fr;border-left:5px solid var(--jade)}
+.olcrefform .crgrid{gap:8px}
+.olcalt{justify-content:space-between;text-decoration:none;color:inherit}
+/* trang lớp */
+.olchead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--jade) 14%,var(--card)),var(--card) 70%);border:1.5px solid var(--jade)}
+.olchead h1{margin:2px 0;font-size:22px}.olchi{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:var(--jade);color:#fff;font-size:26px;font-weight:800}
+.olctc{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid var(--line)}
+.olctc.live{border-color:#e53935;background:linear-gradient(135deg,rgba(229,57,53,.08),var(--card) 60%)}.olctc.done{grid-template-columns:1fr}
+.olctl{display:grid;gap:4px;min-width:0}.olctl b{font-size:16px}
+.olcpill{justify-self:start;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--bg,rgba(0,0,0,.05));border:1px solid var(--line)}
+.olcta{display:grid;gap:6px;justify-items:end;text-align:right;max-width:min(520px,100%)}
+.olccount{display:grid;justify-items:end}.olccount b{font-size:20px;color:var(--jade)}
+.olclinkf{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.olclinkf input{min-width:220px;flex:1}
+.olccols{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:start}
+.olcchat{min-width:0}
+.olcmsgs{display:flex;flex-direction:column;gap:8px;min-height:180px;max-height:min(52vh,520px);overflow:auto;padding:6px 2px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.olcm{max-width:86%;align-self:flex-start;padding:7px 11px;border-radius:14px 14px 14px 4px;background:var(--bg,rgba(0,0,0,.04));border:1px solid var(--line)}
+.olcm.me{align-self:flex-end;border-radius:14px 14px 4px 14px;background:color-mix(in srgb,var(--jade) 13%,var(--card));border-color:color-mix(in srgb,var(--jade) 35%,var(--line))}
+.olcm.t{border-color:#f0c64a;background:color-mix(in srgb,#ffd54a 14%,var(--card))}
+.olcmh{display:flex;align-items:center;gap:6px;font-size:12px}.olcmh time{color:var(--muted);margin-left:auto;white-space:nowrap}
+.olcrole{font-size:10.5px;font-weight:800;padding:1px 7px;border-radius:999px;background:#f4b400;color:#3a2a00}
+.olcpin{border:0;background:none;cursor:pointer;opacity:.45;padding:0 2px;font-size:12px}.olcpin:hover{opacity:1}
+.olcmt{white-space:pre-wrap;word-break:break-word;font-size:14.5px;line-height:1.45}
+.olcpinned{display:flex;gap:8px;align-items:flex-start;padding:8px 10px;border-radius:12px;background:color-mix(in srgb,#ffd54a 18%,var(--card));border:1px solid #f0c64a;font-size:13.5px;margin-bottom:6px}.olcpinned>div{flex:1;min-width:0;word-break:break-word}
+.olcsend{display:flex;gap:8px}.olcsend input{flex:1;min-width:0}
+.olcsess{display:grid;gap:4px;max-height:360px;overflow:auto}
+.olcsr{display:grid;grid-template-columns:30px minmax(0,1fr) auto auto;gap:8px;align-items:center;padding:6px 8px;border-radius:10px;border:1px solid var(--line);font-size:13.5px}
+.olcsr.past{opacity:.7}.olcsr.live{border-color:#e53935;background:rgba(229,57,53,.06)}
+.olcsn{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--bg,rgba(0,0,0,.05));font-weight:800;font-size:12px}
+.olcs{font-size:11.5px;font-weight:800;color:var(--muted)}.olcs.ok{color:var(--jade)}.olcs.no{color:#c62828}.olcs.live{color:#e53935}
+.olcslf{display:flex;flex-wrap:wrap;gap:6px;padding:6px 0 8px 38px}.olcslf input{flex:1;min-width:160px}
+@media(max-width:820px){.olccols{grid-template-columns:minmax(0,1fr)}.olctc{grid-template-columns:minmax(0,1fr)}.olcta{justify-items:stretch;text-align:left}.olccount{justify-items:start}.olclinkf{justify-content:stretch}.olclinkf input{min-width:0}.olcta .btn{width:100%;text-align:center}}
+@media(max-width:420px){.olctiers{grid-template-columns:1fr 1fr}.olchead{grid-template-columns:minmax(0,1fr)}.olchi{display:none}}
 </style>
 </head><body>
 
@@ -5700,12 +5768,12 @@ button.trxchip{cursor:pointer}button.trxchip:hover{background:#fff3d6}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='2b6dd005';
-document.write('<script src="packs/hsk'+L+'.js?v=2b6dd005"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='270e59c6';
+document.write('<script src="packs/hsk'+L+'.js?v=270e59c6"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=2b6dd005','strokes-file');A('packs/dict.js?v=2b6dd005','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=270e59c6','strokes-file');A('packs/dict.js?v=270e59c6','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -22300,6 +22368,140 @@ if(window.__T)window.__u136={rkPodiumHTML,myBestPet};
 try{const cl=x=>Math.max(.9,Math.min(1.1,1+(x-1)*.35));Object.values(VPROF).forEach(P=>{P.p=+cl(P.p).toFixed(3);P.pv=+cl(P.pv).toFixed(3);});}catch(e){}
 if(window.__T)window.__u137={VPROF};
 
+/* ===== 5.97: Khóa học online có giáo viên — đăng ký + đặt cọc, khóa học của tôi, trang lớp (chat, buổi hôm nay, link Lark, lịch, điểm danh) ===== */
+const OLC_DAYS=['CN','T2','T3','T4','T5','T6','T7'],OLC_DAYN=['Chủ nhật','Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7'];
+const OLC_ERR={COURSE_NOT_OPEN:'Khóa này chưa mở đăng ký.',TIER_NOT_FOUND:'Hãy chọn loại lớp.',NAME_REQUIRED:'Nhập họ tên nhé.',INVALID_PHONE:'Số điện thoại chưa đúng (VD 0901234567).',MUST_AGREE:'Bạn cần đồng ý điều khoản đặt cọc.',ALREADY_REGISTERED:'Bạn đã đặt chỗ khóa này rồi, xem ở mục Khóa học của tôi.',REFUND_NOT_ALLOWED:'Chưa tới hạn hoàn cọc.',BANK_INFO_REQUIRED:'Nhập đủ ngân hàng, số tài khoản (chỉ số) và tên chủ tài khoản.',NOT_MEMBER:'Bạn không thuộc lớp này.',NEED_FULL_PAYMENT:'Đóng đủ học phí để nhận link buổi học.',NOT_TIME_YET:'Chưa tới giờ học (link mở từ 15 phút trước giờ học).',NO_LINK_YET:'Giáo viên chưa gửi link buổi này.',INVALID_LINK:'Link phải bắt đầu bằng https://',NOT_TEACHER:'Chỉ giáo viên làm được việc này.',TOO_MANY_ATTEMPTS_TRY_LATER:'Bạn thao tác hơi nhanh, thử lại sau ít phút.',UNAUTHENTICATED:'Hãy đăng nhập trước.'};
+const olcErr=j=>{const m=String((j&&j.error&&j.error.message)||j||'');return OLC_ERR[m]||m||'Có lỗi, thử lại sau.';};
+const olcHM=t=>{const d=new Date(t);return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');};
+const olcDay=t=>{const d=new Date(t);return OLC_DAYN[d.getDay()]+' '+d.getDate()+'/'+(d.getMonth()+1);};
+const olcSchedTxt=c=>(c.days||[]).slice().sort((a,b)=>((a+6)%7)-((b+6)%7)).map(d=>OLC_DAYS[d]).join('-')+' · '+(c.time||'')+' · '+(c.mins||90)+' phút';
+function olcLeft(ms){if(ms<=0)return 'bây giờ';const m=Math.round(ms/60000);if(m<60)return m+' phút nữa';const h=Math.floor(m/60);if(h<24)return h+' giờ '+(m%60)+' phút nữa';const d=Math.floor(h/24);return d+' ngày '+(h%24)+' giờ nữa';}
+const olcLinkify=t=>esc(t).replace(/(https:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
+let OLC_CFG=null,OLC_POLL=null;
+async function olcCfgGet(){if(OLC_CFG&&Date.now()-OLC_CFG._at<60000)return OLC_CFG;const x=await kApi('GET','/v1/olc/cfg');if(x.s!==200)throw new Error('cfg');OLC_CFG=Object.assign(x.j,{_at:Date.now()});return OLC_CFG;}
+function olcStop(){if(OLC_POLL){clearInterval(OLC_POLL);OLC_POLL=null;}}
+/* ---------- trang Đăng ký học online ---------- */
+async function viewOlc(){olcStop();
+  app.innerHTML=`<div class="stack olcwrap"><section class="addhero olchero"><div class="addicon han" aria-hidden="true">课</div><div style="min-width:0"><div class="label" style="color:var(--amber)">Khóa học online cùng giáo viên Kasser</div><h1>Đăng ký học online</h1><p id="olcnote">Học trực tuyến theo lớp nhỏ, giáo viên kèm sát từng buổi.</p></div></section>
+    <div id="olcmine"></div><div class="panel muted" id="olcload">Đang tải khóa học…</div><div class="olcgrid" id="olcgrid"></div><div id="olcform"></div>
+    <a class="panel row prmini olcalt" href="#class"><span>🏫 Đã có mã lớp tự học trong app (Gói Học Viên)? <b>Vào lớp bằng mã</b></span><b>›</b></a><a class="panel row prmini olcalt" id="taentry" href="#teach-apply"><span>👩‍🏫 Muốn dạy cùng Kasser? <b>Gửi đơn ứng tuyển giáo viên</b></span><b>›</b></a></div>`;
+  let cfg;try{cfg=await olcCfgGet();}catch(e){const l=app.querySelector('#olcload');if(l)l.textContent='Không tải được khóa học, kiểm tra mạng rồi thử lại.';return;}
+  if(!app.querySelector('#olcgrid'))return;app.querySelector('#olcload').remove();
+  if(cfg.note)app.querySelector('#olcnote').textContent=cfg.note;
+  app.querySelector('#olcgrid').innerHTML=cfg.courses.map(c=>{const open=c.status==='open'&&c.tiers.length;const lo=c.tiers.length?Math.min(...c.tiers.map(t=>t.price)):0;
+    return `<article class="olcc${open?'':' soon'}" data-c="${esc(c.id)}"><div class="olcch"><b>${esc(c.name)}</b>${open?`<span class="olcfrom">từ ${vnd(lo)}</span>`:'<span class="olcsoon">Sắp có</span>'}</div>
+      <div class="olcmeta"><span>📚 ${c.sessions} buổi</span><span>⏱️ ${c.mins} phút/buổi</span><span>💻 Học online</span></div><p class="small muted">${esc(c.desc||'')}</p>
+      ${open?`<div class="olctiers">${c.tiers.map((t,i)=>`<label class="olct"><input type="radio" name="t-${esc(c.id)}" value="${t.size}"${i===0?' checked':''}><span><b>Lớp ${t.size} người</b><em>${vnd(t.price)}</em></span></label>`).join('')}</div>
+        <button class="btn pri" data-olcgo="${esc(c.id)}">Đặt trước ${vnd(cfg.deposit)}</button><div class="small muted">Tiền đặt trước được trừ vào học phí.</div>`
+      :`<button class="btn" data-olcwant="${esc(c.id)}">🔔 Báo tôi khi mở lớp</button>`}</article>`;}).join('');
+  app.querySelectorAll('[data-olcwant]').forEach(b=>b.onclick=()=>{S.olcWant=Object.assign({},S.olcWant,{[b.dataset.olcwant]:Date.now()});save();b.disabled=true;b.textContent='✓ Sẽ báo bạn khi mở lớp';try{gardenToast('Đã ghi nhận, Kasser sẽ báo bạn khi mở lớp 🔔');}catch(e){}});
+  app.querySelectorAll('[data-olcgo]').forEach(b=>b.onclick=()=>{const c=cfg.courses.find(x=>x.id===b.dataset.olcgo),sz=+((app.querySelector(`input[name="t-${CSS.escape(c.id)}"]:checked`)||{}).value||c.tiers[0].size);olcForm(cfg,c,sz);});
+  olcMine();}
+function olcForm(cfg,c,sz){const box=app.querySelector('#olcform');if(!box)return;const t=c.tiers.find(x=>x.size===sz)||c.tiers[0];
+  if(!SOC.auth){box.innerHTML=`<div class="panel stack olcf"><h2 style="margin:0">Đăng nhập để đặt chỗ</h2><p class="muted" style="margin:0">Cần tài khoản để lưu chỗ học, nhận thông báo xếp lớp và vào lớp.</p><a class="btn pri" href="#settings">Đăng nhập / Tạo tài khoản</a></div>`;box.scrollIntoView({behavior:'smooth',block:'start'});return;}
+  const nm=(S.set&&S.set.name)||'',slot=(S.olcSlot||[]);
+  const chip=(v,l)=>`<label class="olcchip"><input type="checkbox" value="${v}"${slot.includes(v)?' checked':''}><span>${l}</span></label>`;
+  box.innerHTML=`<form class="panel stack olcf" novalidate><div class="row" style="justify-content:space-between;align-items:baseline;flex-wrap:wrap"><h2 style="margin:0">Đặt chỗ ${esc(c.name)} · Lớp ${t.size} người</h2><button type="button" class="btn sm ghost" id="olcx">Đóng</button></div>
+    <div class="olcsum"><div><span>Học phí</span><b>${vnd(t.price)}</b></div><div><span>Đặt trước hôm nay</span><b class="olcdep">${vnd(cfg.deposit)}</b></div><div><span>Còn lại (đóng khi được xếp lớp)</span><b>${vnd(Math.max(0,t.price-cfg.deposit))}</b></div><div><span>Khóa học</span><b>${c.sessions} buổi × ${c.mins} phút</b></div></div>
+    <div class="crgrid"><label><span>Họ và tên <i>*</i></span><input id="olcname" maxlength="60" autocomplete="name" value="${esc(nm)}" placeholder="VD: Nguyễn Minh Tâm"></label>
+      <label><span>Số điện thoại / Zalo <i>*</i></span><input id="olcphone" type="tel" inputmode="tel" maxlength="15" autocomplete="tel" value="${esc(S.olcPhone||'')}" placeholder="VD: 0901234567"></label></div>
+    <fieldset class="olcfs"><legend>Ngày học mong muốn (chọn nhiều)</legend><div class="olcchips" id="olcdays">${[1,2,3,4,5,6,0].map(d=>chip(OLC_DAYS[d],OLC_DAYS[d])).join('')}</div></fieldset>
+    <fieldset class="olcfs"><legend>Buổi học mong muốn</legend><div class="olcchips" id="olcpart">${chip('Sáng','🌤️ Sáng')}${chip('Chiều','☀️ Chiều')}${chip('Tối','🌙 Tối')}</div></fieldset>
+    <div class="crgrid"><label><span>Trình độ hiện tại</span><select id="olclvl"><option>Mới bắt đầu</option><option>Đã học một ít</option><option>Đã học xong HSK 1</option><option>Đã học xong HSK 2</option></select></label>
+      <label><span>Ghi chú (không bắt buộc)</span><input id="olcnote2" maxlength="400" placeholder="VD: chỉ học được sau 20h"></label></div>
+    <details class="olcterms" open><summary>📜 Điều khoản đặt cọc</summary><div class="olctt">${esc(cfg.terms||'')}</div></details>
+    <label class="olcagree"><input type="checkbox" id="olcagree"><span>Tôi đã đọc và đồng ý điều khoản đặt cọc</span></label>
+    ${isApp()?`<div class="fb">Đăng ký và thanh toán trên trang web <b>hsk.kassertam.com</b> (đăng nhập cùng tài khoản này). Sau đó trang lớp, chat và link buổi học dùng được ngay trong app.</div>`:`<button class="btn pri big" type="submit" id="olcpaygo">Đặt trước ${vnd(cfg.deposit)} qua PayOS</button>`}
+    <div class="small" id="olcmsg" role="status"></div><div id="olcpay"></div></form>`;
+  const f=box.querySelector('form'),msg=t=>{box.querySelector('#olcmsg').innerHTML=t;};
+  box.querySelector('#olcx').onclick=()=>{box.innerHTML='';};box.scrollIntoView({behavior:'smooth',block:'start'});
+  f.onsubmit=async e=>{e.preventDefault();if(isApp())return;const g=box.querySelector('#olcpaygo');
+    const slots=[...box.querySelectorAll('.olcchips input:checked')].map(i=>i.value),body={course:c.id,size:t.size,name:box.querySelector('#olcname').value.trim(),phone:box.querySelector('#olcphone').value.trim(),slots,lvl:box.querySelector('#olclvl').value,note:box.querySelector('#olcnote2').value.trim(),agree:box.querySelector('#olcagree').checked};
+    if(!body.agree)return msg('<span class="err">'+OLC_ERR.MUST_AGREE+'</span>');
+    S.olcSlot=slots;S.olcPhone=body.phone;save();g.disabled=true;g.textContent='Đang tạo đơn…';msg('');
+    const x=await kApi('POST','/v1/olc/reg',body);if(x.s!==200){g.disabled=false;g.textContent='Đặt trước '+vnd(cfg.deposit)+' qua PayOS';return msg('<span class="err">'+esc(olcErr(x.j))+'</span>');}
+    try{const o=await shopPost('/v1/order/create',{product:'olcdep',reg:x.j.id});if(o.status==='paid'){viewOlc();return;}
+      const px=box.querySelector('#olcpay');px.innerHTML=payHTML2(o,true);try{wireCopy(px);}catch(e){}g.remove();px.scrollIntoView({behavior:'smooth',block:'start'});olcWatch();}
+    catch(err){g.disabled=false;g.textContent='Đặt trước '+vnd(cfg.deposit)+' qua PayOS';msg('<span class="err">'+esc(olcErr(err.message))+'</span>');}};}
+/* chờ tiền vào: kiểm tra Khóa học của tôi mỗi 6 giây trong 15 phút */
+function olcWatch(){olcStop();const t0=Date.now();OLC_POLL=setInterval(async()=>{if(!/^#(hoc-online|classreg)$/.test(location.hash)||Date.now()-t0>9e5)return olcStop();
+  const x=await kApi('GET','/v1/olc/mine');const L=(x.j&&x.j.list)||[];if(L.some(r=>r.status==='wait'&&Date.now()-r.depAt<9e5)){olcStop();try{gardenToast('Đặt chỗ thành công 🎉 Bạn đã vào danh sách chờ xếp lớp.');}catch(e){}viewOlc();}},6000);}
+const OLC_ST={wait:['⏳','Đang chờ xếp lớp'],placed:['🎉','Đã xếp lớp · chờ đóng học phí còn lại'],full:['✅','Đang học'],done:['🎓','Đã hoàn thành'],refreq:['💸','Đã gửi yêu cầu hoàn cọc'],refund:['↩️','Đã hoàn cọc']};
+let OLC_MINE=null;
+async function olcMine(){const box=app.querySelector('#olcmine');if(!box||!SOC.auth)return;if(OLC_MINE&&OLC_MINE.uid===SOC.auth.uid&&!box.children.length)olcMineDraw(box,OLC_MINE.j);const x=await kApi('GET','/v1/olc/mine');if(!box.isConnected||x.s!==200)return;OLC_MINE={uid:SOC.auth.uid,j:x.j};olcMineDraw(box,x.j);}
+function olcMineDraw(box,J){const x={j:J};const L=J.list||[],T=J.teach||[];if(!L.length&&!T.length){box.innerHTML='';return;}
+  const now=Date.now();
+  box.innerHTML=`<section class="panel stack olcmine"><h2 style="margin:0">Khóa học của tôi</h2>${L.map(r=>{const st=OLC_ST[r.status]||['•',r.status],c=r.cls;
+    const steps=['Đặt cọc','Chờ xếp lớp','Đã xếp lớp','Đang học'],k={wait:1,placed:2,full:3,done:3}[r.status];
+    return `<div class="olcr st-${esc(r.status)}"><div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><b>${esc(r.cname)} · Lớp ${r.size} người</b><span class="olcbadge">${st[0]} ${st[1]}</span></div>
+      ${k!=null?`<ol class="olcsteps">${steps.map((s,i)=>`<li class="${i<=k?'on':''}">${s}</li>`).join('')}</ol>`:''}
+      <div class="small muted">Học phí ${vnd(r.price)} · đã đặt trước ${vnd(r.dep)}${r.paid?' · đã đóng thêm '+vnd(r.paid):''}${r.rest?' · <b>còn '+vnd(r.rest)+'</b>':''}</div>
+      ${r.status==='wait'?(r.canRefund?`<div class="fb">Đã quá ${x.j.refundDays} ngày chưa xếp được lớp. Bạn có thể nhận lại tiền cọc.</div><button class="btn sm" data-olcref="${r.id}">Yêu cầu hoàn cọc</button><div class="olcrefbox" id="olcref${r.id}"></div>`:`<div class="small">Kasser đang gom lớp theo khung giờ bạn chọn. Hạn hoàn cọc nếu chưa xếp được lớp: <b>${fmtVN(r.refundAt)}</b>.</div>`):''}
+      ${c?`<div class="olccls"><div><b>${esc(c.name)}</b><div class="small muted">${esc(olcSchedTxt({days:JSON.parse(c.days||'[]'),time:c.time,mins:c.mins}))}${c.tname?' · GV '+esc(c.tname):''}</div>${c.next?`<div class="small">Buổi ${c.next.n}: ${olcDay(c.next.at)} lúc ${olcHM(c.next.at)} (${olcLeft(c.next.at-now)})</div>`:''}</div>
+        <div class="row" style="gap:6px;flex-wrap:wrap">${r.rest&&r.status==='placed'&&!isApp()?`<button class="btn sm pri olcyel" data-olcrest="${r.id}">Đóng học phí còn lại ${vnd(r.rest)}</button>`:''}<a class="btn sm${r.rest?'':' pri'}" href="#lop-online/${c.id}">Vào trang lớp →</a></div></div><div id="olcrp${r.id}"></div>`:''}</div>`;}).join('')}
+    ${T.length?`<h3 style="margin:6px 0 0">👩‍🏫 Lớp bạn dạy</h3>${T.map(c=>`<a class="olcr olcteach" href="#lop-online/${c.id}"><b>${esc(c.name)}</b><span class="small muted">${esc(olcSchedTxt({days:JSON.parse(c.days||'[]'),time:c.time,mins:c.mins}))} · khai giảng ${esc(c.start||'')}</span></a>`).join('')}`:''}</section>`;
+  box.querySelectorAll('[data-olcref]').forEach(b=>b.onclick=()=>{const id=b.dataset.olcref,f=box.querySelector('#olcref'+id);b.remove();
+    f.innerHTML=`<div class="stack olcrefform"><div class="crgrid"><label><span>Ngân hàng</span><input maxlength="60" data-k="bank" placeholder="VD: Vietcombank"></label><label><span>Số tài khoản</span><input maxlength="30" inputmode="numeric" data-k="acc" placeholder="Chỉ nhập số"></label></div><label><span>Tên chủ tài khoản</span><input maxlength="60" data-k="holder" placeholder="VD: NGUYEN VAN A"></label><div class="row"><button class="btn sm pri">Gửi yêu cầu hoàn cọc</button><span class="small" role="status"></span></div></div>`;
+    f.querySelector('button').onclick=async()=>{const v=k=>f.querySelector(`[data-k="${k}"]`).value.trim(),m=f.querySelector('[role=status]');const y=await kApi('POST','/v1/olc/refund',{id:+id,bank:v('bank'),acc:v('acc'),holder:v('holder')});
+      if(y.s===200){m.innerHTML='<span style="color:var(--jade)">✓ Đã gửi, Kasser sẽ chuyển khoản trong vài ngày làm việc.</span>';setTimeout(olcMine,1500);}else m.innerHTML='<span class="err">'+esc(olcErr(y.j))+'</span>';};});
+  box.querySelectorAll('[data-olcrest]').forEach(b=>b.onclick=async()=>{const id=b.dataset.olcrest;b.disabled=true;b.textContent='Đang tạo đơn…';
+    try{const o=await shopPost('/v1/order/create',{product:'olcrest',reg:+id});if(o.status==='paid')return olcMine();const px=box.querySelector('#olcrp'+id);px.innerHTML=payHTML2(o,true);try{wireCopy(px);}catch(e){}px.scrollIntoView({behavior:'smooth',block:'start'});b.remove();}
+    catch(e){b.disabled=false;b.textContent='Đóng học phí còn lại';gardenToast(esc(olcErr(e.message)));}});}
+/* ---------- trang lớp ---------- */
+async function viewOlcClass(id){olcStop();
+  app.innerHTML=`<div class="stack olcwrap"><a class="small" href="#hoc-online">‹ Khóa học của tôi</a><div class="panel muted" id="olcload">Đang tải lớp…</div></div>`;
+  if(!SOC.auth){app.querySelector('#olcload').innerHTML='Hãy <a href="#settings">đăng nhập</a> để vào lớp.';return;}
+  const x=await kApi('GET','/v1/olc/cls?id='+id);if(!/^#lop-online\//.test(location.hash))return;
+  if(x.s!==200){app.querySelector('#olcload').textContent=olcErr(x.j);return;}
+  const D=x.j,C=D.cls,isT=D.role!=='student',skew=(D.now||Date.now())-Date.now(),NOW=()=>Date.now()+skew;
+  app.innerHTML=`<div class="stack olcwrap olcroom"><a class="small" href="#hoc-online">‹ Khóa học của tôi</a>
+    <section class="panel olchead"><div class="olchi han" aria-hidden="true">${esc((C.cname||'').replace(/\D/g,'')||'课')}</div><div style="min-width:0"><div class="label">${esc(C.cname)} · Lớp ${C.size} người${isT?' · <b>'+(D.role==='teacher'?'Bạn là giáo viên':'Quản trị')+'</b>':''}</div><h1>${esc(C.name)}</h1>
+      <div class="small muted">${esc(olcSchedTxt(C))} · khai giảng ${esc(C.start||'')}${C.tname?' · GV <b>'+esc(C.tname)+'</b>':''} · ${D.members.length} học viên</div></div></section>
+    <section class="olctoday" id="olctoday"></section>
+    <div class="olccols"><section class="panel stack olcchat"><div class="row" style="justify-content:space-between"><h2 style="margin:0">💬 Trò chuyện của lớp</h2><span class="small muted">Chỉ thành viên lớp thấy</span></div><div id="olcpins"></div>
+      <div class="olcmsgs" id="olcmsgs" aria-live="polite"><div class="small muted">Đang tải…</div></div>
+      <form class="olcsend" id="olcsend"><input id="olcin" maxlength="1000" autocomplete="off" placeholder="${isT?'Nhắn cho cả lớp…':'Nhắn cho giáo viên và cả lớp…'}"><button class="btn pri" type="submit">Gửi</button></form></section>
+    <aside class="stack olcside"><section class="panel stack"><h2 style="margin:0">📅 Lịch ${C.sessions} buổi</h2><div class="olcsess" id="olcsess"></div></section>
+      <section class="panel stack"><h2 style="margin:0">👥 Thành viên</h2><div class="small">${C.tname?'👩‍🏫 <b>'+esc(C.tname)+'</b> (giáo viên)<br>':''}${D.members.map(m=>esc(m.name)+(m.me?' (bạn)':'')+(isT&&!m.paid?' <span class="muted">· chưa đóng đủ</span>':'')).join('<br>')||'<span class="muted">Chưa có học viên.</span>'}</div></section></aside></div></div>`;
+  const today=()=>{const box=app.querySelector('#olctoday');if(!box)return;const n=NOW();const live=D.sess.find(s=>n>=s.at-15*60000&&n<=s.at+C.mins*60000),next=D.sess.find(s=>s.at>n);const s=live||next;
+    if(!s){box.innerHTML=`<div class="panel olctc done"><b>🎓 Khóa học đã hoàn thành ${C.sessions} buổi.</b></div>`;return;}
+    const isLive=!!live,dt=`Buổi ${s.n}/${C.sessions} · ${olcDay(s.at)} · ${olcHM(s.at)}–${olcHM(s.at+C.mins*60000)}`;let act='';
+    if(isT)act=`<div class="olclinkf"><input id="olctl" maxlength="400" placeholder="Dán link Lark của buổi ${s.n} (https://…)" value="${esc(s.link||'')}"><button class="btn pri" id="olctls">Lưu link</button>${s.link?`<a class="btn olcyel" href="${esc(s.link)}" target="_blank" rel="noopener">Vào phòng học ↗</a>`:''}</div><div class="small" id="olctlm">${s.link?'✓ Đã gửi link, học viên thấy từ 15 phút trước giờ học.':'Học viên chưa có link buổi này.'}</div>`;
+    else if(!D.paid)act=`<div class="fb">Đóng học phí còn lại <b>${vnd(D.rest)}</b> để nhận link buổi học.</div>${isApp()?'<div class="small muted">Thanh toán trên web hsk.kassertam.com bằng tài khoản này.</div>':`<a class="btn pri olcyel" href="#hoc-online">Đóng học phí còn lại</a>`}`;
+    else if(isLive&&s.link)act=`<a class="btn pri big olcyel olcjoin" href="${esc(s.link)}" target="_blank" rel="noopener" data-n="${s.n}">🎥 Vào học ngay</a><div class="small muted">Bấm để mở phòng học Lark và được điểm danh.</div>`;
+    else if(isLive)act=`<div class="fb">Giáo viên chưa gửi link buổi này. Link sẽ hiện ở đây, trang tự cập nhật.</div>`;
+    else act=`<div class="olccount"><b>${olcLeft(s.at-n)}</b><span class="small muted">Nút "Vào học" hiện từ 15 phút trước giờ học</span></div>`;
+    box.innerHTML=`<div class="panel olctc${isLive?' live':''}"><div class="olctl"><span class="olcpill">${isLive?'🔴 Đang diễn ra':'⏭️ Buổi tiếp theo'}</span><b>${esc(dt)}</b>${s.note?`<div class="small">📝 ${esc(s.note)}</div>`:''}</div><div class="olcta">${act}</div></div>`;
+    const j=box.querySelector('.olcjoin');if(j)j.addEventListener('click',()=>{kApi('POST','/v1/olc/join',{id:C.id,n:+j.dataset.n});const ss=D.sess.find(z=>z.n===+j.dataset.n);if(ss)ss.att=true;});
+    const sv=box.querySelector('#olctls');if(sv)sv.onclick=()=>olcSaveLink(C.id,s.n,box.querySelector('#olctl').value.trim(),box.querySelector('#olctlm'),()=>reload());};
+  const sessList=()=>{const el=app.querySelector('#olcsess');if(!el)return;const n=NOW();
+    el.innerHTML=D.sess.map(s=>{const past=s.at+C.mins*60000<n,live=n>=s.at-15*60000&&!past;const st=isT?(past?`<span class="olcs ok">${s.att} có mặt</span>`:s.has?'<span class="olcs">có link</span>':'<span class="olcs muted">chưa có link</span>'):past?(s.att?'<span class="olcs ok">✓ có mặt</span>':'<span class="olcs no">vắng</span>'):live?'<span class="olcs live">đang học</span>':'';
+      return `<div class="olcsr${past?' past':''}${live?' live':''}"><span class="olcsn">${s.n}</span><span class="olcsd">${olcDay(s.at)} · ${olcHM(s.at)}</span>${st}${isT?`<button class="btn sm ghost" data-sl="${s.n}" aria-label="Link buổi ${s.n}">🔗</button>`:''}</div>`;}).join('');
+    el.querySelectorAll('[data-sl]').forEach(b=>b.onclick=()=>{const s=D.sess.find(z=>z.n===+b.dataset.sl);const row=b.closest('.olcsr');if(row.nextElementSibling&&row.nextElementSibling.classList.contains('olcslf'))return row.nextElementSibling.remove();
+      row.insertAdjacentHTML('afterend',`<div class="olcslf"><input maxlength="400" placeholder="Link Lark buổi ${s.n}" value="${esc(s.link||'')}"><input maxlength="200" placeholder="Ghi chú buổi (bài tập, nội dung…)" value="${esc(s.note||'')}"><button class="btn sm pri">Lưu</button><span class="small"></span></div>`);
+      const f=row.nextElementSibling;f.querySelector('button').onclick=()=>olcSaveLink(C.id,s.n,f.querySelectorAll('input')[0].value.trim(),f.querySelector('span'),()=>reload(),f.querySelectorAll('input')[1].value.trim());});
+    const lv=el.querySelector('.live')||[...el.querySelectorAll('.olcsr')].find(r=>!r.classList.contains('past'));if(lv&&!el.dataset.sc){el.dataset.sc=1;el.scrollTop=Math.max(0,lv.offsetTop-el.offsetTop-40);}};
+  const reload=async()=>{const y=await kApi('GET','/v1/olc/cls?id='+id);if(y.s===200){Object.assign(D,y.j);today();sessList();}};
+  today();sessList();olcChat(C.id,isT);
+  let tick=0;OLC_POLL=setInterval(()=>{if(location.hash!=='#lop-online/'+id)return olcStop();tick++;olcChatPull(C.id,isT);if(tick%5===0){today();if(tick%10===0)reload();}},6000);}
+async function olcSaveLink(cls,n,link,out,done,note){if(link&&!/^https:\/\/\S+$/.test(link)){out.innerHTML='<span class="err">'+OLC_ERR.INVALID_LINK+'</span>';return;}
+  out.textContent='Đang lưu…';const y=await kApi('POST','/v1/olc/link',{id:cls,n,link,note});if(y.s===200){out.innerHTML='<span style="color:var(--jade)">✓ Đã lưu</span>';if(done)done();}else out.innerHTML='<span class="err">'+esc(olcErr(y.j))+'</span>';}
+let OLC_LAST=0;
+function olcMsgHTML(m,isT){return `<div class="olcm${m.me?' me':''}${m.role!=='student'?' t':''}" data-id="${m.id}"><div class="olcmh"><b>${esc(m.name)}</b>${m.role==='teacher'?'<span class="olcrole">Giáo viên</span>':m.role==='admin'?'<span class="olcrole">Kasser</span>':''}<time>${olcHM(m.at)} ${new Date(m.at).toLocaleDateString('vi-VN',{day:'numeric',month:'numeric'})}</time>${isT?`<button class="olcpin" data-pin="${m.id}" data-on="${m.pin?0:1}" title="${m.pin?'Bỏ ghim':'Ghim tin này'}">📌</button>`:''}</div><div class="olcmt">${olcLinkify(m.txt)}</div></div>`;}
+function olcPins(pins,isT){const el=app.querySelector('#olcpins');if(!el)return;el.innerHTML=(pins||[]).map(p=>`<div class="olcpinned"><span>📌</span><div><b>${esc(p.name)}</b>: ${olcLinkify(p.txt)}</div>${isT?`<button class="btn sm ghost" data-pin="${p.id}" data-on="0">Bỏ ghim</button>`:''}</div>`).join('');olcPinBind(el);}
+function olcPinBind(root){root.querySelectorAll('[data-pin]').forEach(b=>b.onclick=async()=>{const cls=+location.hash.split('/')[1];await kApi('POST','/v1/olc/pin',{id:cls,msg:+b.dataset.pin,pin:+b.dataset.on});OLC_LAST=0;olcChatPull(cls,true,true);});}
+async function olcChat(cls,isT){OLC_LAST=0;await olcChatPull(cls,isT,true);const f=app.querySelector('#olcsend');if(!f)return;
+  f.onsubmit=async e=>{e.preventDefault();const i=f.querySelector('#olcin'),t=i.value.trim();if(!t)return;i.value='';i.disabled=true;
+    const y=await kApi('POST','/v1/olc/chat',{id:cls,txt:t,after:OLC_LAST});i.disabled=false;i.focus();if(y.s!==200){i.value=t;gardenToast(esc(olcErr(y.j)));return;}olcChatAdd(y.j,isT);};}
+async function olcChatPull(cls,isT,full){const y=await kApi('GET','/v1/olc/chat?id='+cls+'&after='+(full?0:OLC_LAST));if(y.s!==200)return;if(full){const el=app.querySelector('#olcmsgs');if(el)el.innerHTML='';}olcChatAdd(y.j,isT);}
+function olcChatAdd(j,isT){const el=app.querySelector('#olcmsgs');if(!el)return;if(el.querySelector('.muted:only-child'))el.innerHTML='';const L=(j.list||[]).filter(m=>m.id>OLC_LAST);
+  const atEnd=el.scrollHeight-el.scrollTop-el.clientHeight<60;if(L.length){el.insertAdjacentHTML('beforeend',L.map(m=>olcMsgHTML(m,isT)).join(''));OLC_LAST=L[L.length-1].id;olcPinBind(el);}
+  if(!el.children.length)el.innerHTML='<div class="small muted olcempty">Chưa có tin nhắn. Chào cả lớp một câu nhé 👋</div>';else{const e0=el.querySelector('.olcempty');if(e0&&L.length)e0.remove();}
+  if(L.length&&(atEnd||L.some(m=>m.me)))el.scrollTop=el.scrollHeight;olcPins(j.pins,isT);}
+/* Đăng ký lớp cũ (#classreg) chuyển sang trang mới */
+(function(){viewClassReg=function(){viewOlc();};})();
+if(window.__T)window.__u138={olcSched:null,olcLeft,OLC_ERR};
+
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
 function hzPanel(l){const z=l.hz;if(!z)return '';const wl=w=>`<a class="hzw han" href="${typeof wpURL==='function'?wpURL(w):'#'}" target="_blank" rel="noopener">${esc(w)}</a>`;
@@ -22321,7 +22523,7 @@ function route(){
   if(ttsOK)try{speechSynthesis.cancel();}catch(e){}
   if(sttStop){try{sttStop();}catch(e){}sttStop=null;}
   {const wg=document.getElementById('wdg');if(wg&&wg.open)wg.close();}
-  const MORE=['invite','buddy','lux','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','tuhoc','support','cert','teach-apply','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber','memory','duo-memory'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
+  const MORE=['invite','buddy','lux','english','events','more','dict','radicals','grammar','tone','read','class','handsfree','sheet','plan','name','hv','num','evo','puzzle','focus','tuhoc','support','cert','teach-apply','hoc-online','deck','pron','listen','culture','hsk3','settings','speak','tree','pinyin'];const GAMEV=['rank','duo-race','duo-defense','garden','friends','achievements','duel','travel','wall','defense','chat','blocks','bomber','memory','duo-memory'];const nv=/^l\d/.test(h)?'home':/^add/.test(h)?'add':(MORE.includes(h)||/^c-|^x\d|^speak-|^tree-|^tone-|^story-|^class-|^evo-|^d=/.test(h))?'more':GAMEV.includes(h)?'games':h;
   navUpdate(h);if(typeof navGroup==='function'&&navGroup(navKey(h))==='game'&&h!=='games'&&h!=='friends'&&h!=='achievements'){const q=QD();if(!q.gv){q.gv=1;qTick('game');save();}}
   const m=h.match(/^l(\d{1,2})$/);
   if(m&&+m[1]>=1&&+m[1]<=NL){const n=+m[1];if(cur.n!==n){cur={n,stage:'words'};}viewLesson(n,cur.stage);}
@@ -22330,7 +22532,7 @@ function route(){
   else if(h==='more')viewMore();else if(h==='pron')viewPron();else if(h==='listen')viewListen();else if(h==='culture')viewCulture();
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
-  else if(h==='support')viewSupport();else if(h==='cert')viewCert();else if(h==='teach-apply')viewTeachApply();else if(/^certv-[A-Z0-9]{4,12}$/.test(h))viewCertVerify(h.slice(6));else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
+  else if(h==='support')viewSupport();else if(h==='cert')viewCert();else if(h==='teach-apply')viewTeachApply();else if(h==='hoc-online')viewOlc();else if(/^lop-online\/\d{1,9}$/.test(h))viewOlcClass(+h.split('/')[1]);else if(/^certv-[A-Z0-9]{4,12}$/.test(h))viewCertVerify(h.slice(6));else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
   else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(h==='bomber')viewBomber();else if(/^duo-(race|defense|memory|bomber)$/.test(h))viewDuo(h.slice(4));else if(h==='memory')viewMemory();else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
