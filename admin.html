@@ -255,7 +255,7 @@ a{color:var(--jade)}
   /* --- 5.100: Quản lí cửa hàng (giá Nguyên bảo, ai được mua, ẩn món, nhãn) --- */
   var SHOPC={items:{}},SHOPL=[],SHOPF={q:'',cat:''};
   /* --- 5.103: link cho trang khóa học online và hệ sinh thái --- */
-  var LP_F=[['Nút tư vấn',[['consult','Nút "Nhận tư vấn" chính (để trống thì dùng Zalo/Messenger/Form)'],['zalo','Zalo tư vấn'],['messenger','Messenger tư vấn'],['phone','Số gọi (dạng tel:0900000000)'],['form','Form đăng ký tư vấn'],['test','Bài kiểm tra đầu vào']]],
+  var LP_F=[['Nút tư vấn',[['consult','Nút "Nhận tư vấn" chính (để trống thì dùng Zalo/Messenger/Form)'],['zalo','Zalo tư vấn (cũng là nút nổi Zalo)'],['messenger','Messenger tư vấn (nút nổi Facebook; để trống thì dùng Fanpage)'],['phone','Số gọi (dạng tel:0900000000)'],['form','Form đăng ký tư vấn']]],
     ['Hệ sinh thái Tâm HSK',[['play','Google Play (app Tâm HSK)'],['appstore','App Store'],['web','Bản web (để trống = hsk.kassertam.com)'],['english','App Kasser English'],['fanpage','Fanpage Tâm HSK'],['group','Hội nhóm Tâm HSK'],['youtube','Kênh YouTube (để trống thì ẩn)'],['tiktok','Kênh video ngắn (để trống thì ẩn)']]]];
   function lpTab(){var P=$('#pane');req('GET','/v1/admin/lp').then(function(c){var L=c.links||{},C=c.courses||{};
     P.innerHTML='<div class="card"><div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3 style="margin:0">Trang khóa học & liên kết</h3><div class="row" style="gap:6px"><span class="small muted" id="lpmsg"></span><button class="pri" id="lpsave">Lưu</button></div></div>'+
