@@ -1,5 +1,5 @@
 // Bộ nhớ đệm để mở được khi mất mạng
-const C='lophsk-ff42cd79';
+const C='lophsk-4c109982';
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(["./", "index.html", "manifest.webmanifest", "lib/hanzi-writer.min.js", "lib/pinyin-pro.js"])).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C&&k!=='hsk-pet').map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==location.origin)return;

@@ -5911,6 +5911,21 @@ html.u144modal{overflow:hidden}
 .c3card.nofit .c3img img{opacity:.55;filter:grayscale(.3)}
 .c3fits{font-size:11.5px;color:var(--muted);line-height:1.3}.c3card:not(.nofit) .c3fits{color:var(--jade);font-weight:700}
 .u144op.nofit{opacity:.45;cursor:not-allowed}
+/* 5.102 biểu cảm theo tình huống */
+.u145say{position:absolute;z-index:170;display:flex;align-items:center;gap:10px;max-width:min(440px,calc(100vw - 16px));padding:4px 34px 4px 6px;border-radius:16px;background:var(--card);color:var(--ink);border:2px solid var(--amber,#e0a21b);box-shadow:0 14px 28px -14px rgba(0,0,0,.45);opacity:0;transform:translateY(-8px) scale(.95);transition:opacity .25s,transform .25s}
+.u145say.on{opacity:1;transform:none}
+.u145say img{width:48px;height:48px;object-fit:contain;flex:none}
+.u145say>div{display:grid;gap:0;min-width:0}.u145say b{font-size:13.5px;line-height:1.25}
+.u145say .han{font-size:14px;font-weight:700}.u145say small{font-size:11px;color:var(--muted)}
+.u145say button{position:absolute;top:4px;right:4px;width:26px;height:26px;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer;font-size:13px}
+.u145say.m-angry{border-color:#e5482b;background:color-mix(in srgb,#e5482b 9%,var(--card))}.u145say.m-angry b{color:#c62828}
+.u145say.m-angry img{animation:u145shake .5s ease-in-out 2}
+.u145say.m-love,.u145say.m-cheer{border-color:var(--jade)}
+img.u145jump{animation:u145jump .5s ease-out}
+img.u145shake{animation:u145shake .45s ease-in-out}
+@keyframes u145jump{0%{transform:translateY(0)}35%{transform:translateY(-10px) scale(1.04)}70%{transform:translateY(0) scale(.98)}100%{transform:none}}
+@keyframes u145shake{0%,100%{transform:none}20%{transform:translateX(-5px) rotate(-3deg)}40%{transform:translateX(5px) rotate(3deg)}60%{transform:translateX(-4px) rotate(-2deg)}80%{transform:translateX(3px)}}
+@media (prefers-reduced-motion:reduce){img.u145jump,img.u145shake,.u145say.m-angry img{animation:none}}
 </style>
 </head><body>
 
@@ -5936,12 +5951,12 @@ html.u144modal{overflow:hidden}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='ff42cd79';
-document.write('<script src="packs/hsk'+L+'.js?v=ff42cd79"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;window.HSK_PACK_VER='4c109982';
+document.write('<script src="packs/hsk'+L+'.js?v=4c109982"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ff42cd79','strokes-file');A('packs/dict.js?v=ff42cd79','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=4c109982','strokes-file');A('packs/dict.js?v=4c109982','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -23011,6 +23026,64 @@ function u144EvTabs(){const h=app.querySelector('.evpage .evhero');if(!h||app.qu
 document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('[data-shoptab="chest"],[data-shoptab="bet"]');if(!a)return;e.preventDefault();U144EV=a.dataset.shoptab;if(location.hash==='#events')viewEvents();else location.hash='#events';},true);
 window.addEventListener('hashchange',()=>{if(location.hash!=='#events'){U144EMB=null;U144EV='main';}if(location.hash!=='#shop')u144DetClose();});
 if(window.__T)window.__u144={get SHOPCFG(){return SHOPCFG;},setCfg(c){SHOPCFG=c||{};u144ApplyPrices();},u144Tier,U144TD,viewTudo};
+
+/* 5.102 Tiểu Long Hổ có biểu cảm theo từng tình huống: đúng, sai, chuỗi đúng, sai liên tiếp (nổi giận + mắng), học xong, ngồi lâu không học */
+const U145={cc:0,cw:0,hist:[],last:0,angryAt:0,bubbleAt:0,idleT:0,sleeping:false,timer:0};
+const U145_SCOLD=[
+  ['Lướt Toptop ít thôi! Học từ đi chứ!','少刷Toptop，多背单词！','shǎo shuā Toptop, duō bèi dāncí'],
+  ['Từ này ôn mấy lần rồi mà vẫn sai à? Tập trung nào!','认真一点！','rènzhēn yìdiǎn'],
+  ['Đêm qua thức khuya cày phim phải không? Học bài đi!','别熬夜了，快学习！','bié áoyè le, kuài xuéxí'],
+  ['Sai nữa là Long Hổ giận thật đó nha!','我生气了！','wǒ shēngqì le'],
+  ['Đọc chậm lại, nhìn kỹ chữ rồi hãy chọn!','慢慢来，看清楚！','mànmàn lái, kàn qīngchu']];
+const U145_LINES={
+  wrong1:['Sai một chút thôi, nhìn kỹ lại nha.','Không sao, lần sau nhớ nè!'],
+  wrong2:['Hai câu sai liền rồi… Long Hổ hơi buồn đó.','Chậm lại một chút nhé, đừng vội.'],
+  cc3:['Ba câu đúng liền! Tiếp đi!','Đúng rồi! Long Hổ cổ vũ nè!'],
+  cc5:['Năm câu liền không sai! Giỏi quá!','Long Hổ thích bạn rồi đó!'],
+  cc10:['Mười câu đúng liền! Đỉnh thật sự!','Học bá xuất hiện!'],
+  done:['Xong bài rồi! Thưởng một cái ôm nè!','Hôm nay học chăm ghê!'],
+  wake:['A, bạn quay lại rồi! Học tiếp nha.','Long Hổ ngủ quên mất… học tiếp thôi!']};
+const u145Pick=a=>a[Math.floor(Math.random()*a.length)];
+/* đổi tạm biểu cảm của mọi linh thú đang hiện trên màn hình */
+function u145Pose(mood,ms){try{const pose=CHAR_MOOD[mood]||mood,src=charPoseSrc(pose);if(!src)return;
+  document.querySelectorAll('img[data-char="mascot"]').forEach(im=>{const r=im.getBoundingClientRect();if(!r.width||r.bottom<0||r.top>innerHeight)return;
+    if(!im.dataset.u145o)im.dataset.u145o=im.getAttribute('src');im.src=src;im.classList.remove('u145jump','u145shake');void im.offsetWidth;im.classList.add(mood==='angry'||mood==='sad'?'u145shake':'u145jump');});
+  clearTimeout(U145.timer);U145.timer=setTimeout(u145Restore,ms||2200);}catch(e){}}
+function u145Restore(){document.querySelectorAll('img[data-u145o]').forEach(im=>{im.src=im.dataset.u145o;delete im.dataset.u145o;im.classList.remove('u145shake','u145jump');});}
+/* bong bóng thoại có hình linh thú, đặt dưới logo đầu trang, không che nội dung học */
+function u145Say(mood,text,zh,py,ms){try{const pose=CHAR_MOOD[mood]||mood;let src='';try{src=charPoseSrc(pose);}catch(e){}
+  let bb=document.getElementById('u145say');if(bb)bb.remove();bb=document.createElement('div');bb.id='u145say';bb.className='u145say m-'+mood;bb.setAttribute('role','status');
+  bb.innerHTML=`${src?`<img src="${src}" alt="" aria-hidden="true">`:''}<div><b>${esc(text)}</b>${zh?`<span class="han">${esc(zh)}</span><small>${esc(py||'')}</small>`:''}</div><button type="button" aria-label="Đóng">✕</button>`;
+  document.body.appendChild(bb);const lg=document.querySelector('.brand .logo');const r=lg?lg.getBoundingClientRect():{left:12,bottom:70};
+  const hb=document.querySelector('.brand');const hr=hb?hb.getBoundingClientRect():r;bb.style.left=Math.max(8,Math.min(hr.right+8,innerWidth-bb.offsetWidth-8))+'px';bb.style.top=(Math.max(4,hr.top+(hr.height-bb.offsetHeight)/2)+window.scrollY)+'px';
+  requestAnimationFrame(()=>bb.classList.add('on'));bb.querySelector('button').onclick=()=>u145Hide();clearTimeout(u145Say.t);u145Say.t=setTimeout(u145Hide,ms||3800);U145.bubbleAt=Date.now();}catch(e){}}
+function u145Hide(){const bb=document.getElementById('u145say');if(!bb)return;bb.classList.remove('on');setTimeout(()=>bb.remove(),280);}
+/* phản ứng theo kết quả trả lời */
+function u145Answer(ok){const now=Date.now();if(now-U145.last>180000){U145.cc=0;U145.cw=0;U145.hist=[];}U145.last=now;u145Wake();
+  U145.hist.push(ok?1:0);if(U145.hist.length>10)U145.hist.shift();const wrong10=U145.hist.filter(x=>!x).length;
+  if(ok){U145.cc++;U145.cw=0;const c=U145.cc;
+    if(c===10||c%10===0){u145Pose('love',3000);u145Say('love',u145Pick(U145_LINES.cc10));try{confetti(40);}catch(e){}}
+    else if(c===5){u145Pose('love',2600);u145Say('love',u145Pick(U145_LINES.cc5));}
+    else if(c===3){u145Pose('cheer',2200);u145Say('cheer',u145Pick(U145_LINES.cc3),'','',2600);}
+    else u145Pose(c>=2?'cheer':'happy',1600);
+    return;}
+  U145.cc=0;U145.cw++;const w=U145.cw;
+  const mad=(w>=4||wrong10>=6)&&now-U145.angryAt>45000;
+  if(mad){U145.angryAt=now;const s=u145Pick(U145_SCOLD);u145Pose('angry',5000);u145Say('angry',s[0],s[1],s[2],6000);try{if(navigator.vibrate)navigator.vibrate([60,40,60]);}catch(e){}return;}
+  if(w>=3){u145Pose('angry',2200);return;}
+  if(w===2){u145Pose('sad',2200);if(now-U145.bubbleAt>20000)u145Say('sad',u145Pick(U145_LINES.wrong2),'','',2800);return;}
+  u145Pose('think',1800);}
+/* học xong một phần (âm thanh thắng) → cổ vũ */
+(function(){const base=sfx;sfx=function(kind){const r=base.apply(this,arguments);try{if(kind==='win'||kind==='fanfare'){U145.cc=0;U145.cw=0;u145Pose(kind==='fanfare'?'love':'cheer',2600);if(kind==='fanfare'&&Date.now()-U145.bubbleAt>8000)u145Say('love',u145Pick(U145_LINES.done));}}catch(e){}return r;};})();
+(function(){const base=grade;grade=function(w,ok,soft){const r=base.apply(this,arguments);try{u145Answer(!!ok);}catch(e){}return r;};})();
+(function(){const base=gGrade;gGrade=function(n,i,ok){const r=base.apply(this,arguments);try{u145Answer(!!ok);}catch(e){}return r;};})();
+/* ngồi lâu không thao tác → ngủ gật; quay lại → vẫy chào */
+function u145Sleep(){if(document.hidden||U145.sleeping)return;U145.sleeping=true;try{const src=charPoseSrc('sleep');document.querySelectorAll('img[data-char="mascot"]').forEach(im=>{if(!im.dataset.u145o)im.dataset.u145o=im.getAttribute('src');im.src=src;});}catch(e){}}
+function u145Wake(){clearTimeout(U145.idleT);U145.idleT=setTimeout(u145Sleep,240000);if(!U145.sleeping)return;U145.sleeping=false;u145Restore();u145Pose('wave',2000);if(Date.now()-U145.bubbleAt>30000)u145Say('wave',u145Pick(U145_LINES.wake),'','',2600);}
+['pointerdown','keydown'].forEach(t=>document.addEventListener(t,()=>u145Wake(),{passive:true,capture:true}));
+window.addEventListener('hashchange',()=>{U145.cc=0;U145.cw=0;U145.hist=[];u145Hide();});
+u145Wake();
+if(window.__T)window.__u145={U145,u145Answer,u145Sleep,u145Wake};
 
 
 /* kiến thức chữ Hán, chữ cũ từ mới, thành ngữ của bài (HSK3+) */
