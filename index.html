@@ -6127,6 +6127,7 @@ html.u153on #gstop{display:none!important}
 .u153side.s-han b{color:#c3402b}.u153side.s-xn b{color:#5b3fa0}
 /* 5.106 */
 /* 5.106 */
+/* 5.107 */
 </style>
 </head><body>
 
@@ -6152,12 +6153,12 @@ html.u153on #gstop{display:none!important}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='d77bb695';
-document.write('<script src="packs/hsk'+L+'.js?v=d77bb695"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='82339b91';
+document.write('<script src="packs/hsk'+L+'.js?v=82339b91"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=d77bb695','strokes-file');A('packs/dict.js?v=d77bb695','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=82339b91','strokes-file');A('packs/dict.js?v=82339b91','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -24208,6 +24209,12 @@ ${waP(-16,4,{s:.45,shirt:'#e8640c',hair:'bun',L:{a:-140},mouth:'open'})}${waP(16
  a:{'春节':[104,60],'新年':[16,104],'快乐':[16,150],'恭喜':[244,104],'发财':[244,150],'鞭炮':[78,146],'红包':[184,150],'节日':[30,40],'过年':[130,206],'饺子':[110,272],'庆祝':[166,232],'放假':[50,240],'月饼':[60,380],'中秋节':[214,360],'端午节':[136,400],
    '生日':[56,490],'礼物':[124,500],'圣诞节':[214,480],'结婚':[90,600],'祝':[90,556],'晚会':[200,590]}};
 if(window.__T)window.__u155={keys:['hoc','nha','tg','so','ttao','st','yt','dl','cn','tn','cty','le']};
+
+/* 5.107: trang phục có 6 ảnh bộ đồ (bodo_front…): linh thú chưa may được bộ này thì cửa hàng hiện chính bộ đồ, không hiện linh thú khác */
+const U156_SHEET=['front','q34r','sider','back','sidel','q34l'];
+function u156Sheet(prod){if(!prod||!prod.vars)return null;return prod.vars.find(v=>(v.items||[]).some(i=>i.key==='bodo_front'))||null;}
+(function(){const base=c3ProdImg;c3ProdImg=function(prod,b,pose){try{if(prod&&prod.bake&&!c3Var(prod,b)){const s=u156Sheet(prod);if(s){const k='bodo_'+(U156_SHEET.includes(pose)?pose:'front');return charImgU(s,(s.items||[]).some(i=>i.key===k)?k:'bodo_front');}}}catch(e){}return base.apply(this,arguments);};})();
+if(window.__T)window.__u156={u156Sheet,prods:k=>c3Prods(k),img:(p,b,k)=>c3ProdImg(p,b,k)};
 
 function route(){
   stopGames();
