@@ -6125,6 +6125,8 @@ html.u153on #gstop{display:none!important}
 @media (max-width:620px){.u153vb{display:none}.u153tn b{line-height:1.25}}
 .u153side.s-han{border-color:#c3402b;background:linear-gradient(170deg,#fff1ec,var(--card))}.u153side.s-xn{border-color:#5b3fa0;background:linear-gradient(170deg,#f1ecff,var(--card))}
 .u153side.s-han b{color:#c3402b}.u153side.s-xn b{color:#5b3fa0}
+/* 5.106 */
+/* 5.106 */
 </style>
 </head><body>
 
@@ -6150,12 +6152,12 @@ html.u153on #gstop{display:none!important}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='c5fbea5c';
-document.write('<script src="packs/hsk'+L+'.js?v=c5fbea5c"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='d77bb695';
+document.write('<script src="packs/hsk'+L+'.js?v=d77bb695"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=c5fbea5c','strokes-file');A('packs/dict.js?v=c5fbea5c','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=d77bb695','strokes-file');A('packs/dict.js?v=d77bb695','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -6178,6 +6180,11 @@ const ICON={
 
 /* ---------- Dữ liệu dẫn xuất ---------- */
 const WORDS=[];
+/* 5.106: pinyin thanh gốc cho từ đứng riêng (sách ghi thanh nhẹ như trong câu: 上 shang, 里 li, 回来 huílai…) */
+const PYFIX={"上": "shàng", "里": "lǐ", "回来": "huílái", "左边": "zuǒbiān", "外面": "wàimiàn", "右边": "yòubiān", "外边": "wàibiān", "出来": "chūlái", "出去": "chūqù", "回去": "huíqù", "进来": "jìnlái", "进去": "jìnqù", "上来": "shànglái", "上去": "shàngqù", "下来": "xiàlái", "下去": "xiàqù", "过来": "guòlái", "过去": "guòqù", "起来": "qǐlái"},PYFIXD={"上": "shàng", "里": "lǐ", "回来": "huí lái", "左边": "zuǒ biān", "外面": "wài miàn", "右边": "yòu biān", "外边": "wài biān", "出来": "chū lái", "出去": "chū qù", "回去": "huí qù", "进来": "jìn lái", "进去": "jìn qù", "上来": "shàng lái", "上去": "shàng qù", "下来": "xià lái", "下去": "xià qù", "过来": "guò lái", "过去": "guò qù", "起来": "qǐ lái"};
+const pyBare=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z]/g,'');
+function pyFixRows(rows){(rows||[]).forEach(w=>{const f=PYFIX[w[0]];if(f&&pyBare(w[1])===pyBare(f))w[1]=f;});}
+try{LESSONS.forEach(l=>pyFixRows(l.words));if(typeof XPACK!=='undefined')XPACK.forEach(g=>pyFixRows(g.words));}catch(e){}
 LESSONS.forEach(l=>l.words.forEach((w,i)=>WORDS.push({id:l.n+'-'+i,l:l.n,zh:w[0],py:w[1],hv:w[2],vi:w[3],star:w[4]==='*',trap:(w[4]||'').startsWith('!')?w[4].slice(1):''})));
 const NL=LESSONS.length,XPID=NL+1,MEID=NL+2;
 const XWORDS=[];XPACK.forEach((g,gi)=>g.words.forEach((w,i)=>XWORDS.push({id:'x'+(gi+1)+'-'+i,l:XPID,g:gi+1,zh:w[0],py:w[1],hv:w[2],vi:w[3],star:false,trap:(w[4]||'').startsWith('!')?w[4].slice(1):''})));
@@ -6827,7 +6834,7 @@ let DICT=null,HVMAP=null;
 function loadDict(){
   if(DICT)return;
   HVMAP={};HV_RAW.split('|').forEach(s=>{if(s){const c=[...s][0];HVMAP[c]=s.slice(c.length);}});
-  DICT=DICT_RAW.split('\n').map((l,i)=>{const p=l.split('\t');return{zh:p[0],py:p[1],vi:p[2],hsk:+p[3]||0,k:fold(p[1]).replace(/[^a-z]/g,''),n:toneNum(p[1]),i};});
+  DICT=DICT_RAW.split('\n').map((l,i)=>{const p=l.split('\t');if(PYFIXD[p[0]]&&pyBare(p[1])===pyBare(PYFIXD[p[0]])&&p[1]!==PYFIXD[p[0]])p[1]=PYFIXD[p[0]];return{zh:p[0],py:p[1],vi:p[2],hsk:+p[3]||0,k:fold(p[1]).replace(/[^a-z]/g,''),n:toneNum(p[1]),i};});
 }
 // "xǐ huan" → "xi3huan5" (bỏ dấu cách)
 function toneNum(py){return String(py).toLowerCase().split(/\s+/).filter(Boolean).map(s=>{let t=5;const b=[...s].map(c=>{if(TONED[c]&&TONED[c][1]<4){t=TONED[c][1]+1;return TONED[c][0];}return c;}).join('');return b.replace(/ü/g,'u')+t;}).join('');}
@@ -23707,6 +23714,500 @@ wwRender=function(){const st=WW.st,box=app.querySelector('#wwbox');if(!box||!st)
 addEventListener('hashchange',()=>{if(location.hash!=='#wall')document.documentElement.classList.remove('u153on');});
 setInterval(()=>{if(location.hash==='#wall'&&WW.st&&WW.st.me&&!document.hidden&&!WW.busy&&app.querySelector('.u153')){wwApi('GET','/v1/ww').then(st=>{WW.st=st;u153Upd();if(!app.querySelector('.u153o:disabled'))u153Redraw();}).catch(()=>{});}},20000);
 if(window.__T)window.__u153={u153Pct,u153Scene,u153Help,WW};
+
+/* 5.106: đáp án nhiễu không được trùng âm (他/她/它 đều đọc tā) hay trùng nghĩa với đáp án đúng */
+const u154Py=s=>String(s||'').toLowerCase().replace(/[\s'’·-]/g,'');
+const u154Vi=s=>String(s||'').toLowerCase().split(/[;,(]/)[0].trim();
+function u154Clash(a,b){return a.zh===b.zh||(a.py&&b.py&&u154Py(a.py)===u154Py(b.py))||(a.vi&&b.vi&&u154Vi(a.vi)===u154Vi(b.vi));}
+distract=function(w,pool,n,field){const f=field||'zh';const ok=pool.filter(x=>x[f]!==w[f]&&!u154Clash(x,w));const out=[];
+  for(const x of shuffle(ok)){if(out.length>=n)break;if(out.some(y=>u154Clash(x,y)))continue;out.push(x);}
+  if(out.length<n){for(const x of shuffle(WORDS)){if(out.length>=n)break;if(x[f]===w[f]||u154Clash(x,w)||out.some(y=>u154Clash(x,y)))continue;out.push(x);}}
+  return out;};
+if(window.__T)window.__u154={distract:(w,pool,n)=>distract(w,pool,n),u154Clash,PYFIX,word:zh=>WORDS.find(w=>w.zh===zh)};
+
+/* 5.106 Tranh cảnh minh họa cho 12 chủ đề từ điển thêm ở 5.103 (khung 260×660, cùng kiểu TD_SCENE cũ) */
+const s5K=WA_INK;
+const s5T=(x,y,t,o)=>{o=o||{};return `<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" font-size="${o.s||10}" font-weight="${o.w||800}" fill="${o.c||s5K}" font-family="${o.han?'var(--f-han,serif)':'system-ui,sans-serif'}">${t}</text>`;};
+const s5Book=(x,y,c,w,h)=>{w=w||18;h=h||26;return `<rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="2" fill="${c}" stroke="${s5K}" stroke-width="1.4"/><path d="M${x-w/2+4},${y-h/2} V${y+h/2}" stroke="${s5K}" stroke-width="1.1" opacity=".5"/><rect x="${x-w/2+6}" y="${y-h/2+5}" width="${w-9}" height="4" rx="1" fill="#fff" opacity=".7"/>`;};
+const s5Open=(x,y,c)=>`<path d="M${x},${y-8} Q${x-12},${y-13} ${x-22},${y-9} V${y+9} Q${x-12},${y+5} ${x},${y+10} Q${x+12},${y+5} ${x+22},${y+9} V${y-9} Q${x+12},${y-13} ${x},${y-8}Z" fill="#fff" stroke="${s5K}" stroke-width="1.4" stroke-linejoin="round"/><path d="M${x},${y-8} V${y+10}" stroke="${s5K}" stroke-width="1.2"/><path d="M${x-17},${y-4} h11 M${x-17},${y} h11 M${x+6},${y-4} h11 M${x+6},${y} h11" stroke="${c||'#9fb3c8'}" stroke-width="1.3"/>`;
+const s5Paper=(x,y,w,h,mark,mc)=>`<g transform="rotate(-4 ${x} ${y})"><rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="2" fill="#fff" stroke="${s5K}" stroke-width="1.4"/>${[...Array(Math.max(1,Math.floor(h/7)-1))].map((_,i)=>`<path d="M${x-w/2+4},${y-h/2+7+i*6} h${w-14}" stroke="#b9c6d4" stroke-width="1.1"/>`).join('')}${mark?s5T(x+w/2-7,y+h/2-4,mark,{s:9,c:mc||'#e5383b',a:'end'}):''}</g>`;
+const s5Pencil=(x,y,a,c)=>`<g transform="translate(${x} ${y}) rotate(${a||0})"><rect x="-14" y="-3" width="22" height="6" rx="1" fill="${c||'#ffc93c'}" stroke="${s5K}" stroke-width="1.2"/><path d="M8,-3 L15,0 L8,3Z" fill="#f2d3a6" stroke="${s5K}" stroke-width="1.1" stroke-linejoin="round"/><path d="M13,-1 L15,0 L13,1Z" fill="${s5K}"/><rect x="-17" y="-3" width="4" height="6" rx="1" fill="#ef8aa0" stroke="${s5K}" stroke-width="1.1"/></g>`;
+const s5Bag=(x,y,c)=>`<path d="M${x-9},${y-12} q9,-10 18,0" fill="none" stroke="${s5K}" stroke-width="2"/><rect x="${x-14}" y="${y-12}" width="28" height="30" rx="7" fill="${c}" stroke="${s5K}" stroke-width="1.5"/><rect x="${x-9}" y="${y+2}" width="18" height="11" rx="3" fill="#fff" opacity=".35" stroke="${s5K}" stroke-width="1.1"/>`;
+const s5Clock=(x,y,r,h,m,c)=>{const ha=(h%12*30+m/2-90)*Math.PI/180,ma=(m*6-90)*Math.PI/180;return `<circle cx="${x}" cy="${y}" r="${r}" fill="${c||'#fff'}" stroke="${s5K}" stroke-width="1.8"/>${[0,3,6,9].map(k=>{const a=k*Math.PI/6;return `<circle cx="${(x+r*.78*Math.cos(a)).toFixed(1)}" cy="${(y+r*.78*Math.sin(a)).toFixed(1)}" r="1.2" fill="${s5K}"/>`;}).join('')}<path d="M${x},${y} L${(x+r*.5*Math.cos(ha)).toFixed(1)},${(y+r*.5*Math.sin(ha)).toFixed(1)}" stroke="${s5K}" stroke-width="2.2" stroke-linecap="round"/><path d="M${x},${y} L${(x+r*.78*Math.cos(ma)).toFixed(1)},${(y+r*.78*Math.sin(ma)).toFixed(1)}" stroke="#e5383b" stroke-width="1.5" stroke-linecap="round"/><circle cx="${x}" cy="${y}" r="1.6" fill="${s5K}"/>`;};
+const s5Bub=(x,y,t,c,w)=>{w=w||22;return `<rect x="${x-w/2}" y="${y-10}" width="${w}" height="18" rx="9" fill="${c||'#fff'}" stroke="${s5K}" stroke-width="1.3"/><path d="M${x-3},${y+8} L${x-6},${y+14} L${x+3},${y+8}" fill="${c||'#fff'}" stroke="${s5K}" stroke-width="1.3" stroke-linejoin="round"/>${s5T(x,y+3.5,t,{s:11})}`;};
+const s5Flag=(x,y,c,t)=>`<path d="M${x},${y} V${y-34}" stroke="${s5K}" stroke-width="1.8"/><path d="M${x},${y-34} h20 l-5,7 l5,7 h-20Z" fill="${c}" stroke="${s5K}" stroke-width="1.3" stroke-linejoin="round"/>${t?s5T(x+8,y-24,t,{s:8,c:'#ffe08a',han:1}):''}`;
+const s5Tree=(x,y,s,c)=>{s=s||1;return `<rect x="${x-3*s}" y="${y-4*s}" width="${6*s}" height="${16*s}" rx="2" fill="#9c6b3c" stroke="${s5K}" stroke-width="1.3"/><circle cx="${x}" cy="${y-14*s}" r="${13*s}" fill="${c||'#3fae5f'}" stroke="${s5K}" stroke-width="1.5"/><circle cx="${x-5*s}" cy="${y-18*s}" r="${3.5*s}" fill="#fff" opacity=".25"/>`;};
+const s5Cloud=(x,y,s,c)=>{s=s||1;return `<path d="M${x-16*s},${y+6*s} q-10,0 -8,-9 q2,-8 11,-6 q3,-11 15,-9 q10,-8 19,2 q11,-1 10,10 q7,3 3,10Z" transform="translate(${x} ${y}) scale(${s}) translate(${-x} ${-y})" fill="${c||'#fff'}" stroke="${s5K}" stroke-width="1.4" stroke-linejoin="round"/>`;};
+const s5Sun=(x,y,r)=>`${[...Array(10)].map((_,i)=>{const a=i*Math.PI/5;return `<path d="M${(x+(r+3)*Math.cos(a)).toFixed(1)},${(y+(r+3)*Math.sin(a)).toFixed(1)} L${(x+(r+8)*Math.cos(a)).toFixed(1)},${(y+(r+8)*Math.sin(a)).toFixed(1)}" stroke="#ffb703" stroke-width="2.6" stroke-linecap="round"/>`;}).join('')}<circle cx="${x}" cy="${y}" r="${r}" fill="#ffd23f" stroke="${s5K}" stroke-width="1.5"/>`;
+const s5Moon=(x,y,r)=>`<path d="M${x+r*.3},${y-r} A${r},${r} 0 1 0 ${x+r*.3},${y+r} A${r*.78},${r*.78} 0 1 1 ${x+r*.3},${y-r}Z" fill="#ffe680" stroke="${s5K}" stroke-width="1.4"/>`;
+const s5Win=(x,y,w,h,c)=>`<rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="3" fill="${c||'#bfe3f7'}" stroke="${s5K}" stroke-width="1.5"/><path d="M${x},${y-h/2} V${y+h/2} M${x-w/2},${y} H${x+w/2}" stroke="${s5K}" stroke-width="1.2"/>`;
+const s5Sign=(x,y,t,bg,w,fc)=>{w=w||40;return `<rect x="${x-w/2}" y="${y-9}" width="${w}" height="18" rx="4" fill="${bg||'#fff'}" stroke="${s5K}" stroke-width="1.4"/>${s5T(x,y+4,t,{s:10,c:fc||s5K,han:/[一-鿿]/.test(t)})}`;};
+const s5Phone=(x,y,s,sc)=>{s=s||1;return `<rect x="${x-8*s}" y="${y-14*s}" width="${16*s}" height="28" rx="3.5" fill="#2b3440" stroke="${s5K}" stroke-width="1.4" transform="scale(1)"/><rect x="${x-6*s}" y="${y-11*s}" width="${12*s}" height="20" rx="1.5" fill="${sc||'#9fd8ff'}"/><circle cx="${x}" cy="${y+11.5}" r="1.2" fill="#ccc"/>`;};
+const s5Laptop=(x,y,sc)=>`<rect x="${x-20}" y="${y-16}" width="40" height="26" rx="2.5" fill="#3b4656" stroke="${s5K}" stroke-width="1.4"/><rect x="${x-17}" y="${y-13}" width="34" height="20" rx="1" fill="${sc||'#bfe3f7'}"/><path d="M${x-26},${y+10} H${x+26} L${x+22},${y+15} H${x-22}Z" fill="#c9d2dc" stroke="${s5K}" stroke-width="1.4" stroke-linejoin="round"/>`;
+const s5Coin=(x,y,r,t,c)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c||'#ffcf3f'}" stroke="${s5K}" stroke-width="1.4"/><circle cx="${x}" cy="${y}" r="${r-3}" fill="none" stroke="#e0a400" stroke-width="1"/>${t?s5T(x,y+3.5,t,{s:Math.max(7,r*.75)}):''}`;
+const s5Bill=(x,y,t,c)=>`<g transform="rotate(-6 ${x} ${y})"><rect x="${x-20}" y="${y-10}" width="40" height="20" rx="2" fill="${c||'#9bd49b'}" stroke="${s5K}" stroke-width="1.4"/><circle cx="${x-10}" cy="${y}" r="5" fill="none" stroke="#3a7a3a" stroke-width="1"/>${s5T(x+6,y+4,t,{s:10,c:'#1f4d1f'})}</g>`;
+const s5Box=(x,y,w,h,c)=>`<rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="2" fill="${c||'#d9a066'}" stroke="${s5K}" stroke-width="1.4"/><path d="M${x-w/2},${y-h/2+5} H${x+w/2} M${x},${y-h/2} V${y-h/2+5}" stroke="${s5K}" stroke-width="1.1"/><rect x="${x-4}" y="${y-h/2}" width="8" height="${h}" fill="#f2d3a6" opacity=".7"/>`;
+const s5Plane=(x,y,s,a)=>`<g transform="translate(${x} ${y}) rotate(${a||0}) scale(${s||1})"><path d="M-18,0 Q-18,-4 -12,-4 H12 Q20,-3 22,0 Q20,3 12,4 H-12 Q-18,4 -18,0Z" fill="#fff" stroke="${s5K}" stroke-width="1.4"/><path d="M-4,-3 L-10,-14 H-5 L6,-3Z M-4,3 L-10,14 H-5 L6,3Z M-16,-2 L-20,-9 H-16 L-12,-3Z" fill="#5a8fd6" stroke="${s5K}" stroke-width="1.2" stroke-linejoin="round"/><circle cx="12" cy="-1" r="1.4" fill="#5a8fd6"/><circle cx="7" cy="-1" r="1.4" fill="#5a8fd6"/></g>`;
+const s5Ball=(x,y,r,k)=>{if(k==='foot')return `<circle cx="${x}" cy="${y}" r="${r}" fill="#fff" stroke="${s5K}" stroke-width="1.5"/><path d="M${x},${y-r*.35} l${r*.33},${r*.24} l-${r*.13},${r*.4} h-${r*.4} l-${r*.13},-${r*.4}Z" fill="${s5K}"/>`;
+  if(k==='basket')return `<circle cx="${x}" cy="${y}" r="${r}" fill="#f28c28" stroke="${s5K}" stroke-width="1.5"/><path d="M${x-r},${y} H${x+r} M${x},${y-r} V${y+r} M${x-r*.7},${y-r*.7} Q${x},${y} ${x-r*.7},${y+r*.7} M${x+r*.7},${y-r*.7} Q${x},${y} ${x+r*.7},${y+r*.7}" fill="none" stroke="${s5K}" stroke-width="1.1"/>`;
+  if(k==='tennis')return `<circle cx="${x}" cy="${y}" r="${r}" fill="#d7f04a" stroke="${s5K}" stroke-width="1.4"/><path d="M${x-r*.8},${y-r*.5} Q${x},${y} ${x-r*.8},${y+r*.5} M${x+r*.8},${y-r*.5} Q${x},${y} ${x+r*.8},${y+r*.5}" fill="none" stroke="#fff" stroke-width="1.4"/>`;
+  return `<circle cx="${x}" cy="${y}" r="${r}" fill="${k||'#fff'}" stroke="${s5K}" stroke-width="1.4"/>`;};
+const s5Gift=(x,y,c,r)=>`<rect x="${x-12}" y="${y-8}" width="24" height="20" rx="2" fill="${c||'#e5383b'}" stroke="${s5K}" stroke-width="1.4"/><rect x="${x-14}" y="${y-13}" width="28" height="7" rx="2" fill="${c||'#e5383b'}" stroke="${s5K}" stroke-width="1.4"/><path d="M${x},${y-13} V${y+12}" stroke="${r||'#ffd23f'}" stroke-width="4"/><path d="M${x},${y-13} q-9,-9 -10,-2 q1,4 10,2 q9,2 10,-2 q-1,-7 -10,2" fill="none" stroke="${r||'#ffd23f'}" stroke-width="2.4"/>`;
+const s5Lantern=(x,y,s)=>{s=s||1;return `<path d="M${x},${y-16*s} V${y-11*s}" stroke="${s5K}" stroke-width="1.3"/><ellipse cx="${x}" cy="${y}" rx="${12*s}" ry="${11*s}" fill="#e5383b" stroke="${s5K}" stroke-width="1.4"/><path d="M${x},${y-11*s} V${y+11*s} M${x-6*s},${y-9*s} Q${x-9*s},${y} ${x-6*s},${y+9*s} M${x+6*s},${y-9*s} Q${x+9*s},${y} ${x+6*s},${y+9*s}" fill="none" stroke="#ffb703" stroke-width="1"/><rect x="${x-5*s}" y="${y-13*s}" width="${10*s}" height="${3*s}" fill="#ffb703" stroke="${s5K}" stroke-width="1"/><rect x="${x-5*s}" y="${y+10*s}" width="${10*s}" height="${3*s}" fill="#ffb703" stroke="${s5K}" stroke-width="1"/><path d="M${x},${y+13*s} v${7*s}" stroke="#ffb703" stroke-width="2"/>`;};
+const s5Band=(y,h,c)=>`<rect x="0" y="${y}" width="260" height="${h}" fill="${c}"/>`;
+const s5Floor=(y,c)=>`<rect x="0" y="${y}" width="260" height="6" fill="${c||'#b9ab96'}" stroke="${s5K}" stroke-width="1.4"/>`;
+const s5Desk=(x1,x2,y,c)=>`<rect x="${x1}" y="${y}" width="${x2-x1}" height="5" rx="1.5" fill="${c||'#c98b5a'}" stroke="${s5K}" stroke-width="1.4"/><path d="M${x1+4},${y+5} V${y+22} M${x2-4},${y+5} V${y+22}" stroke="${s5K}" stroke-width="2"/>`;
+const s5Chair=(x,y,c)=>`<path d="M${x-8},${y} V${y-20} M${x-8},${y-8} H${x+8} V${y}" fill="none" stroke="${c||'#8a5a35'}" stroke-width="3.2" stroke-linecap="round"/>`;
+
+/* ===== 1. Trường học ===== */
+TD_SCENE.hoc={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,150,'#cfeaf9')}${s5Cloud(40,28,.8)}${s5Cloud(210,22,.7)}
+<path d="M0,150 H260" stroke="${K}" stroke-width="1.4"/>
+<!-- 学校 + 校长 + chuông -->
+<rect x="58" y="52" width="144" height="98" fill="#f6d7a7" stroke="${K}" stroke-width="1.8"/><path d="M48,56 L130,20 L212,56Z" fill="#c3402b" stroke="${K}" stroke-width="1.8" stroke-linejoin="round"/>
+${s5Clock(130,40,10,8,0)}${s5Sign(130,70,'学校','#fff8e1',44)}
+${s5Win(80,96,22,20)}${s5Win(180,96,22,20,'#ffe8a3')}<rect x="116" y="104" width="28" height="46" rx="3" fill="#8a5a35" stroke="${K}" stroke-width="1.6"/><circle cx="138" cy="128" r="1.8" fill="#ffd23f"/>
+${waP(180,98,{s:.42,shirt:'#3d4a66',hair:'old',glasses:1,mood:'n'})}
+${s5Flag(30,150,'#e5383b')}
+<g transform="translate(236 104)"><path d="M0,-14 V-8" stroke="${K}" stroke-width="1.4"/><path d="M-9,8 Q-9,-8 0,-8 Q9,-8 9,8Z" fill="#ffc93c" stroke="${K}" stroke-width="1.4"/><circle cx="0" cy="10" r="2.6" fill="${K}"/><path d="M-14,-4 l-4,-3 M14,-4 l4,-3 M-15,3 h-5 M15,3 h5" stroke="#e8640c" stroke-width="1.6" stroke-linecap="round"/></g>
+<!-- 教室 -->
+${s5Band(150,250,'#fff4dc')}
+<rect x="22" y="160" width="160" height="70" rx="4" fill="#2f5d50" stroke="#8a5a35" stroke-width="5"/>${s5T(70,192,'汉字',{s:20,c:'#fff',han:1})}${s5T(140,186,'一 二 三',{s:11,c:'#d7f0e8',han:1})}<path d="M120,205 h46 M120,214 h34" stroke="#d7f0e8" stroke-width="1.6"/>
+${waP(214,196,{s:.78,shirt:'#ef8a5b',hair:'bun',hairC:'#5b3a29',L:[-24,4],mouth:'open'})}
+${s5Sign(222,166,'?',"#fff",20)}
+${s5Desk(14,92,300)}${s5Desk(110,190,300)}
+${waP(36,270,{s:.62,shirt:'#5a8fd6',hair:'spiky',R:[12,-20],mood:'n',mouth:'o'})}${s5Bub(54,236,'?','#fff3c4',18)}
+${waP(72,272,{s:.6,shirt:'#9d6bd1',hair:'long',hairC:'#4a2d22',mouth:'open'})}${s5Bub(92,244,'!','#dff3e6',18)}
+${waP(132,272,{s:.6,shirt:'#3fae5f',hair:'short',R:[10,26]})}${waP(168,272,{s:.6,shirt:'#ffb703',hair:'bun',L:[-10,26]})}
+${s5Open(150,296)}${s5Book(30,292,'#e5383b',14,10)}${s5Paper(78,294,20,12)}
+${s5Pencil(196,292,-20)}
+${s5Bag(232,330,'#5a8fd6')}${s5Bag(100,336,'#ef5b6b')}
+${s5Book(150,340,'#3fae5f',24,30)}${s5T(150,344,'课本',{s:7,c:'#fff',han:1})}
+${s5Book(40,342,'#ffb703',20,26)}<path d="M32,334 h16 M32,340 h16 M32,346 h12" stroke="#fff" stroke-width="1"/>
+<rect x="190" y="360" width="40" height="22" rx="3" fill="#fff" stroke="${K}" stroke-width="1.4"/>${s5T(210,375,'三年级',{s:9,han:1})}
+<!-- 图书馆 + 考试 -->
+${s5Floor(398)}${s5Band(404,140,'#eaf3ff')}
+<rect x="10" y="414" width="90" height="118" rx="4" fill="#c98b5a" stroke="${K}" stroke-width="1.6"/>${[440,474,508].map(y=>`<path d="M14,${y} H96" stroke="${K}" stroke-width="2"/>`).join('')}
+${[18,28,38,50,60,72,84].map((x,i)=>`<rect x="${x}" y="${420+(i%2)*3}" width="8" height="${20-(i%2)*3}" fill="${['#e5383b','#5a8fd6','#ffb703','#3fae5f','#9d6bd1','#ef8a5b','#2f5d50'][i]}" stroke="${K}" stroke-width="1"/>`).join('')}
+${[18,30,42,56,70,82].map((x,i)=>`<rect x="${x}" y="${456-(i%3)*2}" width="10" height="${18+(i%3)*2}" fill="${['#9d6bd1','#3fae5f','#e5383b','#ffb703','#5a8fd6','#ef8a5b'][i]}" stroke="${K}" stroke-width="1"/>`).join('')}
+${s5Book(56,490,'#c3402b',30,22)}${s5T(56,494,'词典',{s:9,c:'#ffe08a',han:1})}
+${s5Sign(55,412,'图书馆','#fff8e1',52)}
+${waP(140,452,{s:.66,shirt:'#3fae5f',hair:'short',glasses:1,mood:'n',L:[-8,24],R:[8,24]})}${s5Open(140,478)}
+${waP(214,452,{s:.66,shirt:'#ef5b6b',hair:'long',mood:'n',R:[14,22]})}${s5Paper(226,480,24,20)}${s5Pencil(240,474,40,'#5a8fd6')}
+${s5Paper(126,516,28,30,'100')}${s5T(112,500,'考试',{s:8,c:'#c3402b',han:1,a:'start'})}
+${s5Paper(176,520,26,26,'A+','#0d7a63')}
+${s5Paper(226,522,24,24)}<path d="M216,516 l4,4 l8,-9" fill="none" stroke="#0d7a63" stroke-width="2" stroke-linecap="round"/>
+<!-- 毕业 · 大学 · 留学 -->
+${s5Band(544,116,'#e2f2d2')}<path d="M0,544 H260" stroke="${K}" stroke-width="1.4"/>
+<path d="M150,560 V600 M232,560 V600" stroke="${K}" stroke-width="5"/><path d="M142,560 H240" stroke="#c3402b" stroke-width="7" stroke-linecap="round"/>${s5Sign(191,575,'大学','#fff8e1',40)}
+${waP(56,592,{s:.8,shirt:'#2b3440',hair:'short',R:{a:-120},front:`<path d="M-17,-15 L0,-24 L17,-15 L0,-7Z" fill="#2b3440" stroke="${K}" stroke-width="1.3"/><path d="M12,-15 v9" stroke="#ffd23f" stroke-width="1.6"/>`})}
+<path d="M84,566 l6,-4 l1,7 Z" fill="#fff" stroke="${K}" stroke-width="1"/>${s5Paper(100,606,22,16)}<path d="M89,606 h22" stroke="#e5383b" stroke-width="2.4"/>
+${s5Plane(214,622,.9,-12)}${s5Flag(176,650,'#5a8fd6')}${s5Sign(122,640,'专业','#fff',36)}
+</g>`;},
+ a:{'学校':[108,70],'校长':[180,96],'上课':[236,108],'下课':[130,40],'黑板':[40,170],'汉字':[46,198],'老师':[214,200],'问题':[54,234],'回答':[92,242],'学生':[36,272],'同学':[150,272],'课本':[150,338],'本子':[40,340],'铅笔':[196,292],'书包':[232,330],'年级':[192,371],'教室':[100,226],
+   '图书馆':[30,412],'词典':[42,500],'学习':[140,478],'练习':[226,480],'复习':[214,454],'考试':[126,516],'成绩':[176,520],'作业':[226,522],'毕业':[56,580],'大学':[172,575],'留学':[214,622],'专业':[105,640]}};
+
+/* ===== 2. Nhà cửa ===== */
+TD_SCENE.nha={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,660,'#dff1fb')}${s5Cloud(220,30,.8)}
+<!-- 房子 -->
+<path d="M16,104 L130,22 L244,104Z" fill="#c3402b" stroke="${K}" stroke-width="2" stroke-linejoin="round"/>${waHeart(130,70,1.2)}${s5T(130,94,'家',{s:14,c:'#fff',han:1})}
+<rect x="196" y="38" width="16" height="30" fill="#8a5a35" stroke="${K}" stroke-width="1.5"/>
+<rect x="24" y="104" width="212" height="390" fill="#fff4dc" stroke="${K}" stroke-width="2"/>
+<!-- tầng trên: 卧室 + 洗手间 -->
+<rect x="24" y="104" width="140" height="130" fill="#f3e3ff"/><rect x="164" y="104" width="72" height="130" fill="#dff4f1"/><path d="M164,104 V234" stroke="${K}" stroke-width="1.8"/>
+${s5Win(60,140,30,28,'#bfe3f7')}
+<rect x="40" y="186" width="80" height="22" rx="4" fill="#9d6bd1" stroke="${K}" stroke-width="1.6"/><rect x="40" y="176" width="22" height="14" rx="4" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M40,208 v16 M120,208 v16" stroke="${K}" stroke-width="2.4"/>
+<path d="M140,112 V126" stroke="${K}" stroke-width="1.4"/><path d="M130,126 h20 l-4,10 h-12Z" fill="#ffd23f" stroke="${K}" stroke-width="1.4" stroke-linejoin="round"/><path d="M134,140 l-4,6 M140,140 v7 M146,140 l4,6" stroke="#ffb703" stroke-width="1.6" stroke-linecap="round"/>
+<ellipse cx="145" cy="180" rx="10" ry="14" fill="#cdeffd" stroke="${K}" stroke-width="1.6"/><rect x="141" y="194" width="8" height="30" fill="#8a5a35" stroke="${K}" stroke-width="1.3"/>
+<rect x="178" y="190" width="44" height="22" rx="8" fill="#fff" stroke="${K}" stroke-width="1.5"/><path d="M182,212 v12 M218,212 v12" stroke="${K}" stroke-width="2"/><path d="M212,190 V156 q0,-6 -6,-6 h-6" fill="none" stroke="#9fb3c8" stroke-width="3"/>${[0,1,2].map(i=>`<path d="M${198+i*3},${160+i*6} v6" stroke="#6cc4f0" stroke-width="1.6" stroke-linecap="round"/>`).join('')}
+<rect x="176" y="120" width="40" height="22" rx="3" fill="#fff" stroke="${K}" stroke-width="1.3"/>${s5T(196,135,'WC',{s:10,c:'#1d6fb8'})}
+${s5Floor(234,'#c9b79c')}
+<!-- 楼梯 -->
+<path d="M206,240 h30 v18 h-18 v18 h-18 v18 h-18 v18 h-18 v-90Z" fill="#e3c39a" stroke="${K}" stroke-width="1.5" transform="translate(-8 0)"/>
+<!-- tầng dưới: 客厅 -->
+<rect x="24" y="240" width="140" height="150" fill="#fff8e1"/>
+<rect x="40" y="252" width="70" height="20" rx="4" fill="#e9eef3" stroke="${K}" stroke-width="1.5"/><path d="M48,276 q4,6 0,10 M60,276 q4,6 0,10 M72,276 q4,6 0,10" stroke="#6cc4f0" stroke-width="1.6" fill="none"/>
+<rect x="120" y="262" width="36" height="26" rx="2" fill="#2b3440" stroke="${K}" stroke-width="1.5"/><rect x="123" y="265" width="30" height="20" fill="#7fc7f0"/><path d="M130,288 l-4,8 M146,288 l4,8" stroke="${K}" stroke-width="1.6"/>
+<rect x="36" y="320" width="80" height="26" rx="8" fill="#ef8a5b" stroke="${K}" stroke-width="1.6"/><rect x="30" y="314" width="14" height="34" rx="6" fill="#ef8a5b" stroke="${K}" stroke-width="1.6"/><rect x="108" y="314" width="14" height="34" rx="6" fill="#ef8a5b" stroke="${K}" stroke-width="1.6"/><path d="M40,348 v8 M112,348 v8" stroke="${K}" stroke-width="2.4"/>
+${s5Desk(70,124,364,'#c98b5a')}${s5Chair(140,386,'#8a5a35')}
+${s5Floor(390,'#c9b79c')}
+<!-- 厨房 -->
+<rect x="24" y="396" width="212" height="98" fill="#fff0e6"/>
+<rect x="34" y="404" width="34" height="80" rx="4" fill="#e9eef3" stroke="${K}" stroke-width="1.6"/><path d="M34,432 H68 M62,414 v10 M62,440 v14" stroke="${K}" stroke-width="1.6"/>
+<rect x="80" y="450" width="90" height="34" fill="#c98b5a" stroke="${K}" stroke-width="1.5"/><circle cx="104" cy="446" r="8" fill="#5b5b5b" stroke="${K}" stroke-width="1.3"/><path d="M98,438 q2,-8 6,-8 M108,436 q2,-6 4,-6" stroke="#bbb" stroke-width="1.4" fill="none"/><rect x="132" y="436" width="22" height="14" rx="3" fill="#e5383b" stroke="${K}" stroke-width="1.3"/>
+<rect x="190" y="412" width="36" height="72" rx="3" fill="#8a5a35" stroke="${K}" stroke-width="1.6"/><circle cx="220" cy="452" r="2.4" fill="#ffd23f"/><rect x="198" y="420" width="20" height="16" rx="2" fill="#bfe3f7" stroke="${K}" stroke-width="1.1"/>
+${waP(176,432,{s:.62,shirt:'#3fae5f',hair:'short',R:[14,30]})}<path d="M184,450 l14,30" stroke="#c98b5a" stroke-width="2.4"/><path d="M194,478 l10,6 l-6,4Z" fill="#ffc93c" stroke="${K}" stroke-width="1"/>
+<!-- 院子 · 钥匙 · 邻居 · 搬家 · 楼 -->
+${s5Band(494,166,'#cfe8b8')}<path d="M0,494 H260" stroke="${K}" stroke-width="1.4"/>
+${[0,1,2,3].map(r=>[0,1,2,3,4].map(c=>`<rect x="${4+c*14+(r%2?7:0)}" y="${504+r*8}" width="13" height="7" fill="#d98b5a" stroke="${K}" stroke-width=".9"/>`).join('')).join('')}
+${s5Tree(110,560,1.1)}${s5Tree(90,600,.8,'#62c37a')}
+<g transform="translate(150 530) rotate(-20)"><circle cx="0" cy="0" r="6" fill="none" stroke="#ffb703" stroke-width="3"/><path d="M6,0 H20 M16,0 v5 M20,0 v4" stroke="#ffb703" stroke-width="3" stroke-linecap="round"/></g>
+<rect x="196" y="508" width="58" height="100" fill="#cfd8e3" stroke="${K}" stroke-width="1.6"/>${[0,1,2,3].map(r=>[0,1].map(c=>s5Win(212+c*26,524+r*22,14,14,'#ffe8a3')).join('')).join('')}
+${waP(170,588,{s:.6,shirt:'#ffb703',hair:'old',beard:1,R:{a:-140},mood:'happy'})}
+${s5Box(40,630,30,24)}${s5Box(70,636,24,18,'#e3b07a')}${waP(118,608,{s:.62,shirt:'#5a8fd6',hair:'spiky',L:[-14,18],R:[14,18]})}${s5Box(118,628,26,18)}
+${s5T(232,650,'↖',{s:12,c:'#8a5a35'})}
+</g>`;},
+ a:{'房子':[130,60],'家':[146,92],'卧室':[94,150],'床':[80,196],'灯':[140,128],'镜子':[145,180],'洗手间':[178,130],'房间':[110,120],'楼梯':[196,284],'客厅':[60,300],'空调':[75,262],'电视':[138,275],'沙发':[76,330],'桌子':[96,368],'椅子':[140,374],'窗户':[60,140],
+   '厨房':[110,446],'冰箱':[51,444],'门':[208,450],'打扫':[198,478],'墙':[38,516],'院子':[100,588],'钥匙':[160,526],'楼':[225,560],'邻居':[170,590],'搬家':[118,626]}};
+
+/* ===== 3. Thời gian ===== */
+TD_SCENE.tg={draw:()=>{const K=s5K;return `<g>
+<defs><linearGradient id="s5tg" x1="0" x2="1"><stop offset="0" stop-color="#ffd9a8"/><stop offset=".35" stop-color="#bfe3f7"/><stop offset=".7" stop-color="#ffb38a"/><stop offset="1" stop-color="#2c3f73"/></linearGradient></defs>
+<rect x="0" y="0" width="260" height="150" fill="url(#s5tg)"/>
+<path d="M14,130 Q130,-10 246,130" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/>
+<path d="M0,130 H260 V150 H0Z" fill="#9ccf86"/>
+${s5Sun(26,116,10)}${s5Sun(72,60,10)}${s5Sun(130,30,12)}${s5Sun(188,60,10)}${s5Moon(232,112,11)}${waStar(214,92,4)}${waStar(246,86,3)}
+${s5T(26,144,'6:00',{s:8})}${s5T(72,84,'9:00',{s:8})}${s5T(130,58,'12:00',{s:8})}${s5T(188,84,'15:00',{s:8})}${s5T(232,144,'20:00',{s:8,c:'#fff'})}
+<!-- lịch -->
+${s5Band(150,240,'#fff8e1')}
+<rect x="14" y="160" width="232" height="110" rx="8" fill="#fff" stroke="${K}" stroke-width="1.8"/><rect x="14" y="160" width="232" height="26" rx="8" fill="#c3402b" stroke="${K}" stroke-width="1.8"/>
+${s5T(52,178,'2026年',{s:12,c:'#fff',han:1})}${s5T(130,178,'11月',{s:12,c:'#fff',han:1})}${s5T(212,178,'星期二',{s:11,c:'#ffe08a',han:1})}
+${['一','二','三','四','五','六','日'].map((d,i)=>s5T(30+i*33,200,d,{s:10,han:1,c:i>=5?'#c3402b':K})).join('')}
+<rect x="176" y="190" width="66" height="76" rx="6" fill="#ffe3e0" opacity=".8"/>
+${[...Array(14)].map((_,i)=>{const d=i+3,x=30+(i%7)*33,y=220+Math.floor(i/7)*22;return d===10?`<circle cx="${x}" cy="${y-4}" r="10" fill="#0d7a63"/>${s5T(x,y,d,{s:11,c:'#fff'})}`:s5T(x,y,d,{s:11,c:i%7>=5?'#c3402b':K});}).join('')}
+<path d="M56,262 h20" stroke="${K}" stroke-width="0"/>
+<!-- 3 tờ lịch -->
+${[['9','#e9eef3',50],['10','#fff3c4',130],['11','#dff3e6',210]].map(([d,c,x],i)=>`<rect x="${x-24}" y="282" width="48" height="52" rx="6" fill="${c}" stroke="${K}" stroke-width="1.6"/><rect x="${x-24}" y="282" width="48" height="12" rx="6" fill="${['#9fb3c8','#e8640c','#0d7a63'][i]}"/>${s5T(x,322,d,{s:20})}`).join('')}
+<path d="M78,308 h20 l-5,-4 M98,308 l-5,4 M158,308 h20 l-5,-4 M178,308 l-5,4" fill="none" stroke="${K}" stroke-width="1.6"/>
+<!-- đồng hồ -->
+${s5Clock(52,364,22,10,10)}<path d="M52,364 l0,0" />${s5Sign(110,354,'1h = 60′','#fff',50)}
+<g transform="translate(206 364)"><path d="M-12,-20 H12 M-12,20 H12 M-10,-20 Q-10,-4 0,0 Q-10,4 -10,20 M10,-20 Q10,-4 0,0 Q10,4 10,20" fill="#fff8e1" stroke="${K}" stroke-width="1.6"/><path d="M-6,-12 H6 L0,-2Z M-7,16 Q0,8 7,16Z" fill="#ffc93c"/></g>
+<!-- trục thời gian -->
+${s5Band(390,120,'#eef7ff')}
+<path d="M14,450 H246" stroke="${K}" stroke-width="2.4"/><path d="M246,450 l-8,-5 v10Z" fill="${K}"/>
+${s5T(30,436,'2025',{s:9})}${s5T(230,436,'2027',{s:9})}
+<circle cx="30" cy="450" r="5" fill="#9fb3c8" stroke="${K}" stroke-width="1.2"/><circle cx="230" cy="450" r="5" fill="#9fb3c8" stroke="${K}" stroke-width="1.2"/>
+<circle cx="130" cy="450" r="9" fill="#e5383b" stroke="${K}" stroke-width="1.6"/>${s5T(130,474,'NOW',{s:8,c:'#e5383b'})}
+<path d="M80,442 l-14,8 l14,8" fill="none" stroke="#5a8fd6" stroke-width="2.4"/><path d="M180,442 l14,8 l-14,8" fill="none" stroke="#3fae5f" stroke-width="2.4"/>
+<circle cx="110" cy="450" r="4" fill="#ffb703" stroke="${K}" stroke-width="1.1"/><circle cx="150" cy="450" r="4" fill="#ffb703" stroke="${K}" stroke-width="1.1"/>
+${s5Sign(110,420,'−1′','#fff',26)}${s5Sign(152,420,'+1′','#fff',26)}
+<circle cx="64" cy="494" r="9" fill="#dff3e6" stroke="#0d7a63" stroke-width="1.8"/><path d="M59,494 l4,4 l7,-8" fill="none" stroke="#0d7a63" stroke-width="2.2" stroke-linecap="round"/>
+${waP(196,488,{s:.5,shirt:'#9d6bd1',hair:'bun',mood:'n',R:{a:-60}})}${s5Bub(222,474,'?','#fff',18)}
+<!-- 4 mùa -->
+${[['#ffe3ef',0,510],['#fff3c4',130,510],['#ffe1c6',0,585],['#e6f2ff',130,585]].map(([c,x,y])=>`<rect x="${x}" y="${y}" width="130" height="75" fill="${c}" stroke="${K}" stroke-width="1"/>`).join('')}
+${[0,1,2,3,4].map(i=>`<circle cx="${40+Math.cos(i*1.26)*8}" cy="${546+Math.sin(i*1.26)*8}" r="6" fill="#ff8fb8" stroke="${K}" stroke-width="1"/>`).join('')}<circle cx="40" cy="546" r="5" fill="#ffd23f" stroke="${K}" stroke-width="1"/>${s5T(92,552,'🌱',{s:16})}
+${s5Sun(168,540,11)}<path d="M200,560 a18,18 0 0 0 36,0Z" fill="#3fae5f" stroke="${K}" stroke-width="1.4"/><path d="M203,560 a15,15 0 0 0 30,0Z" fill="#ef5b6b"/>
+${[[40,620,'#e8640c'],[70,612,'#c3402b'],[96,626,'#ffb703']].map(([x,y,c])=>`<path d="M${x},${y-10} Q${x+10},${y} ${x},${y+10} Q${x-10},${y} ${x},${y-10}Z" fill="${c}" stroke="${K}" stroke-width="1.2"/>`).join('')}
+<circle cx="194" cy="640" r="14" fill="#fff" stroke="${K}" stroke-width="1.5"/><circle cx="194" cy="614" r="10" fill="#fff" stroke="${K}" stroke-width="1.5"/><path d="M194,616 l6,2 l-6,1Z" fill="#e8640c"/><circle cx="191" cy="612" r="1.2" fill="${K}"/><circle cx="197" cy="612" r="1.2" fill="${K}"/>${waStar(166,606,4,'#bfe3f7')}${waStar(226,618,5,'#bfe3f7')}
+</g>`;},
+ a:{'早上':[26,116],'上午':[72,60],'中午':[130,30],'下午':[188,60],'晚上':[232,112],'年':[22,174],'月':[110,174],'星期':[188,174],'周末':[208,200],'日':[96,202],'号':[142,208],'昨天':[50,288],'今天':[130,288],'明天':[210,288],
+   '时间':[52,364],'小时':[46,354],'分钟':[86,354],'时候':[206,364],'去年':[30,450],'明年':[230,450],'现在':[130,450],'以前':[72,450],'以后':[188,450],'刚才':[98,420],'马上':[140,420],'已经':[64,494],
+   '春天':[40,546],'夏天':[168,540],'秋天':[70,612],'冬天':[194,628]}};
+
+/* ===== 4. Số đếm & tiền ===== */
+TD_SCENE.so={draw:()=>{const K=s5K;const nums=['一','二','三','四','五','六','七','八','九','十'];return `<g>
+${s5Band(0,300,'#f3f0ff')}
+${nums.map((n,i)=>{const x=24+(i%5)*53,y=40+Math.floor(i/5)*96;return `<rect x="${x-20}" y="${y-22}" width="40" height="44" rx="8" fill="${['#ffd6d6','#ffe8b3','#fff3c4','#dff3e6','#d6ecff'][i%5]}" stroke="${K}" stroke-width="1.5"/>${s5T(x,y+2,n,{s:18,han:1})}${s5T(x,y+17,i+1,{s:8,c:'#8a6d3b'})}`;}).join('')}
+${[0,1,2,3,4].map(i=>`<circle cx="${10+i*10}" cy="${92}" r="0"/>`).join('')}
+<rect x="10" y="96" width="70" height="22" rx="6" fill="#fff" stroke="${K}" stroke-width="1.4"/>${s5T(45,111,'0 · 零',{s:11})}
+<rect x="94" y="96" width="74" height="22" rx="6" fill="#fff" stroke="${K}" stroke-width="1.4"/>${s5T(131,111,'100 百',{s:11})}
+<rect x="182" y="96" width="70" height="22" rx="6" fill="#fff" stroke="${K}" stroke-width="1.4"/>${s5T(217,111,'1000 千',{s:11})}
+<rect x="40" y="186" width="180" height="26" rx="8" fill="#ffd23f" stroke="${K}" stroke-width="1.6"/>${s5T(130,204,'10000 = 一万',{s:13})}
+<!-- 两 · 几 · 多少 · 第 · 半 -->
+<circle cx="36" cy="246" r="12" fill="#ef5b6b" stroke="${K}" stroke-width="1.4"/><circle cx="62" cy="246" r="12" fill="#ef5b6b" stroke="${K}" stroke-width="1.4"/><path d="M36,234 q2,-6 6,-6 M62,234 q2,-6 6,-6" stroke="#3fae5f" stroke-width="2.2" fill="none"/>
+${waP(110,240,{s:.5,shirt:'#5a8fd6',hair:'spiky',mood:'n',R:{a:-60}})}${s5Bub(134,222,'几?','#fff',26)}${s5Bub(158,252,'多少?','#fff3c4',34)}
+<rect x="196" y="250" width="22" height="28" fill="#ffd23f" stroke="${K}" stroke-width="1.4"/><rect x="174" y="262" width="22" height="16" fill="#dfe6ee" stroke="${K}" stroke-width="1.4"/><rect x="218" y="266" width="22" height="12" fill="#f3d2b5" stroke="${K}" stroke-width="1.4"/>${s5T(207,268,'1',{s:12})}${waStar(207,240,6)}
+${s5Band(300,90,'#fff8e1')}
+<circle cx="56" cy="344" r="30" fill="#ffd27a" stroke="${K}" stroke-width="1.6"/><path d="M56,314 V374 A30,30 0 0 1 56,314Z" fill="#fff8e1" stroke="${K}" stroke-width="1.4"/>${[[66,330],[74,350],[62,360]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.5" fill="#e5383b"/>`).join('')}
+<path d="M120,318 h60 v52 h-60Z" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M150,318 V370" stroke="${K}" stroke-width="1.2" stroke-dasharray="3 2"/><rect x="120" y="318" width="30" height="52" fill="#9fd8ff" opacity=".7"/>${s5T(150,384,'½',{s:12})}
+<rect x="196" y="322" width="52" height="40" rx="6" fill="#fff" stroke="${K}" stroke-width="1.4"/>${s5T(222,340,'2:30',{s:12})}${s5T(222,355,'两点半',{s:9,han:1})}
+<!-- cửa hàng -->
+${s5Band(390,270,'#e2f2d2')}<path d="M0,390 H260" stroke="${K}" stroke-width="1.4"/>
+<path d="M14,404 H246 L236,424 H24Z" fill="#e5383b" stroke="${K}" stroke-width="1.5" stroke-linejoin="round"/>${[0,1,2,3,4,5].map(i=>`<path d="M${44+i*36},404 L${40+i*35},424" stroke="#fff" stroke-width="6" opacity=".6"/>`).join('')}
+<rect x="24" y="424" width="212" height="120" fill="#fff8ec" stroke="${K}" stroke-width="1.5"/>
+<g transform="translate(52 466)"><path d="M-16,-10 H10 L18,0 L10,10 H-16Z" fill="#fff3c4" stroke="${K}" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10" cy="0" r="2" fill="#fff" stroke="${K}"/>${s5T(-4,4,'¥99',{s:10})}</g>
+<g transform="translate(130 464)"><path d="M-22,-12 H14 L22,0 L14,12 H-22Z" fill="#dff3e6" stroke="${K}" stroke-width="1.4" stroke-linejoin="round"/>${s5T(-4,4,'¥5 ↓',{s:11,c:'#0d7a63'})}</g>
+<g transform="translate(206 462)"><path d="M-14,-6 L-8,-14 H8 L14,-6 L0,12Z" fill="#9fe3ff" stroke="${K}" stroke-width="1.4" stroke-linejoin="round"/><path d="M-14,-6 H14 M-6,-14 L-2,-6 L0,12 M6,-14 L2,-6" stroke="${K}" stroke-width="1" fill="none"/>${s5T(0,30,'¥9999',{s:10,c:'#c3402b'})}</g>
+<g transform="translate(64 514) rotate(-8)"><rect x="-30" y="-14" width="60" height="28" rx="4" fill="#e5383b" stroke="${K}" stroke-width="1.5"/>${s5T(0,5,'8折 SALE',{s:11,c:'#fff'})}</g>
+${waP(170,500,{s:.6,shirt:'#ef8a5b',hair:'bun',R:{a:-40},mouth:'open'})}
+<!-- tiền -->
+<rect x="24" y="560" width="64" height="44" rx="8" fill="#8a5a35" stroke="${K}" stroke-width="1.6"/><rect x="30" y="552" width="40" height="14" rx="2" fill="#9bd49b" stroke="${K}" stroke-width="1.2"/><circle cx="76" cy="582" r="5" fill="#ffd23f" stroke="${K}" stroke-width="1.2"/>
+${s5Bill(130,572,'1元')}${s5Bill(138,612,'¥10','#ffc6c6')}
+${s5Coin(196,572,13,'1角','#e0e6ee')}${s5Coin(232,600,10,'1分','#f3d2b5')}${s5Coin(196,626,12,'¥1')}
+</g>`;},
+ a:{'一':[24,40],'二':[77,40],'三':[130,40],'四':[183,40],'五':[236,40],'六':[24,136],'七':[77,136],'八':[130,136],'九':[183,136],'十':[236,136],'零':[14,107],'百':[98,107],'千':[186,107],'万':[44,199],
+   '两':[48,246],'几':[134,220],'多少':[158,250],'第':[207,262],'半':[56,344],'一半':[150,344],'价格':[38,466],'便宜':[110,464],'贵':[206,460],'打折':[38,518],'钱':[56,582],'元':[112,574],'块':[120,614],'毛':[184,562],'分':[224,592]}};
+
+/* ===== 5. Thể thao ===== */
+TD_SCENE.ttao={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,170,'#cfeaf9')}
+<path d="M0,170 L60,60 L100,110 L150,30 L230,150 L260,120 V170Z" fill="#9fb7c9" stroke="${K}" stroke-width="1.6" stroke-linejoin="round"/><path d="M150,30 L170,60 L160,58 L150,70 L140,56 L132,58Z" fill="#fff" stroke="${K}" stroke-width="1.2"/>
+<path d="M150,70 L230,150 L262,150 L262,160 L150,90Z" fill="#fff" opacity=".9"/>
+${waP(78,96,{s:.45,shirt:'#e8640c',hair:'short',legs:'walk',R:{a:-50}})}<path d="M90,84 l10,24" stroke="${K}" stroke-width="1.6"/>${s5Flag(60,62,'#e5383b')}
+${waP(204,124,{s:.45,shirt:'#5a8fd6',hair:'bun',L:{a:150},R:{a:30},legs:'walk'})}<path d="M186,154 l38,-14 M190,158 l38,-14" stroke="#c3402b" stroke-width="2.2" stroke-linecap="round"/>
+<!-- sân -->
+${s5Band(170,250,'#9fd68a')}<path d="M0,170 H260" stroke="${K}" stroke-width="1.4"/>
+<path d="M10,190 h44 v40 h-44" fill="none" stroke="#fff" stroke-width="3"/><path d="M12,192 h40 v36 h-40Z" fill="url(#none)" stroke="#fff" stroke-width="1" stroke-dasharray="2 2"/>${s5Ball(80,216,10,'foot')}
+${waP(108,196,{s:.5,shirt:'#e5383b',hair:'spiky',legs:'walk'})}
+<path d="M196,182 V240" stroke="${K}" stroke-width="3"/><rect x="200" y="182" width="36" height="24" fill="#fff" stroke="${K}" stroke-width="1.4"/><ellipse cx="226" cy="210" rx="10" ry="3" fill="none" stroke="#e8640c" stroke-width="2.4"/><path d="M216,210 l3,10 M236,210 l-3,10 M226,212 v10" stroke="#fff" stroke-width="1.2"/>${s5Ball(174,214,9,'basket')}
+<rect x="18" y="268" width="80" height="34" fill="#1d6fb8" stroke="${K}" stroke-width="1.5"/><path d="M58,262 V302" stroke="#fff" stroke-width="2"/><path d="M26,302 v16 M90,302 v16" stroke="${K}" stroke-width="2"/>${s5Ball(40,262,4,'#fff')}
+<g transform="translate(76 256) rotate(30)"><ellipse cx="0" cy="-6" rx="6" ry="7" fill="#e5383b" stroke="${K}" stroke-width="1.2"/><path d="M0,1 v8" stroke="#8a5a35" stroke-width="3"/></g>
+<g transform="translate(150 290)"><ellipse cx="0" cy="-12" rx="10" ry="13" fill="none" stroke="${K}" stroke-width="2"/><path d="M-8,-12 h16 M0,-24 v24 M-6,-20 h12 M-6,-4 h12" stroke="#bbb" stroke-width=".8"/><path d="M0,1 v14" stroke="#5a8fd6" stroke-width="3.4"/></g>${s5Ball(170,268,6,'tennis')}
+<g transform="translate(214 280)"><path d="M-6,0 L0,-14 L6,0Z" fill="#fff" stroke="${K}" stroke-width="1.2"/><circle cx="0" cy="2" r="3.4" fill="#e5383b" stroke="${K}" stroke-width="1"/></g><path d="M196,298 l18,-14 l18,14" fill="none" stroke="${K}" stroke-width="1.4"/>
+<!-- 比赛 · 队 · 赢 · 输 -->
+<rect x="70" y="330" width="120" height="44" rx="6" fill="#2b3440" stroke="${K}" stroke-width="1.6"/>${s5T(130,358,'3 : 1',{s:18,c:'#ffd23f'})}${s5T(130,345,'比赛',{s:8,c:'#fff',han:1})}
+${s5Flag(54,398,'#e5383b','A')}${s5Flag(198,398,'#5a8fd6','B')}
+<path d="M30,404 h28 l-4,12 h-20Z" fill="#ffd23f" stroke="${K}" stroke-width="1.3"/><path d="M34,404 q-8,0 -6,6 q2,4 6,2 M54,404 q8,0 6,6 q-2,4 -6,2" fill="none" stroke="${K}" stroke-width="1.3"/>${waP(44,382,{s:.4,shirt:'#e5383b',hair:'spiky',L:{a:-130},R:{a:-50},mouth:'open'})}
+${waP(222,382,{s:.4,shirt:'#5a8fd6',hair:'short',mood:'sad'})}
+<!-- bể bơi + chạy + xe đạp -->
+${s5Band(420,100,'#e6dcc8')}
+<rect x="10" y="430" width="110" height="80" rx="8" fill="#6cc4f0" stroke="${K}" stroke-width="1.6"/>${[446,466,486].map(y=>`<path d="M16,${y} q10,-5 20,0 t20,0 t20,0 t20,0 t20,0" fill="none" stroke="#fff" stroke-width="1.6"/>`).join('')}
+<g transform="translate(64 470)"><circle cx="0" cy="0" r="7" fill="${WA_SKIN}" stroke="${K}" stroke-width="1.3"/><path d="M-7,-2 Q0,-10 7,-2" fill="#e5383b" stroke="${K}" stroke-width="1.2"/><path d="M8,2 q10,-10 18,-4" fill="none" stroke="${WA_SKIN}" stroke-width="5" stroke-linecap="round"/></g>
+<path d="M134,440 H252 M134,464 H252 M134,488 H252" stroke="#fff" stroke-width="2"/>${waP(166,446,{s:.5,shirt:'#ffb703',hair:'short',legs:'walk',L:{a:150},R:{a:30}})}
+<g transform="translate(220 496)"><circle cx="-12" cy="6" r="9" fill="none" stroke="${K}" stroke-width="2"/><circle cx="12" cy="6" r="9" fill="none" stroke="${K}" stroke-width="2"/><path d="M-12,6 L-2,-6 L12,6 M-2,-6 H8 L12,6 M-4,-10 h6" fill="none" stroke="#e5383b" stroke-width="2.2"/></g>
+<!-- 健身 · 太极 · 跳舞 · 体育 · 运动 -->
+${s5Band(520,140,'#fff4dc')}<path d="M0,520 H260" stroke="${K}" stroke-width="1.4"/>
+<g transform="translate(40 556)"><rect x="-22" y="-3" width="44" height="6" fill="#9fb3c8" stroke="${K}" stroke-width="1.2"/><rect x="-28" y="-10" width="8" height="20" rx="2" fill="#2b3440"/><rect x="20" y="-10" width="8" height="20" rx="2" fill="#2b3440"/></g>
+${waP(40,590,{s:.55,shirt:'#3fae5f',hair:'spiky',L:{a:-120},R:{a:-60}})}
+${waP(112,590,{s:.55,shirt:'#fff',pants:'#fff',hair:'old',beard:1,L:{a:170},R:{a:-20},mood:'happy'})}
+${waP(180,588,{s:.55,shirt:'#ef5b6b',hair:'long',L:{a:-150},R:{a:20},legs:'walk'})}${waStar(200,560,4)}
+<g transform="translate(236 566)"><ellipse cx="0" cy="0" rx="9" ry="6" fill="#ffd23f" stroke="${K}" stroke-width="1.3"/><path d="M8,-2 h8" stroke="${K}" stroke-width="2"/><circle cx="-2" cy="0" r="2" fill="${K}"/><path d="M-8,-6 q-6,-14 4,-16" fill="none" stroke="#e5383b" stroke-width="1.4"/></g>
+<g transform="translate(230 632)"><path d="M-16,4 Q-16,-8 -4,-8 L10,-6 Q18,-4 18,4 Z" fill="#5a8fd6" stroke="${K}" stroke-width="1.4"/><path d="M-16,4 H18 v4 H-16Z" fill="#fff" stroke="${K}" stroke-width="1.2"/></g>
+</g>`;},
+ a:{'爬山':[78,98],'滑雪':[204,130],'足球':[80,216],'球':[40,262],'篮球':[174,214],'乒乓球':[58,285],'网球':[150,278],'羽毛球':[214,276],'比赛':[130,352],'队':[60,370],'赢':[44,410],'输':[222,384],
+   '游泳':[64,470],'跑步':[166,450],'自行车':[220,500],'健身':[40,556],'锻炼':[40,592],'太极拳':[112,592],'跳舞':[180,590],'体育':[236,566],'运动':[230,630]}};
+
+/* ===== 6. Sở thích ===== */
+TD_SCENE.st={draw:()=>{const K=s5K;const room=(x,y,w,h,c)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="${c}" stroke="${K}" stroke-width="1.5"/>`;return `<g>
+${s5Band(0,660,'#fff8ec')}
+${waP(130,46,{s:.8,shirt:'#ef5b6b',hair:'bun',L:{a:-150},R:{a:-30},mouth:'open'})}${waHeart(96,24,.8)}${waHeart(166,22,.7)}
+${room(8,96,120,110,'#eaf3ff')}${room(132,96,120,110,'#ffe9e9')}
+<g transform="translate(46 160)"><rect x="-30" y="-20" width="60" height="34" fill="#2b3440" stroke="${K}" stroke-width="1.4"/><path d="M-30,-6 H30" stroke="#fff" stroke-width="1"/>${[-24,-16,-8,0,8,16,24].map(x=>`<rect x="${x-1.5}" y="-20" width="3" height="14" fill="${K}"/>`).join('')}<path d="M-26,14 v10 M26,14 v10" stroke="${K}" stroke-width="2"/></g>
+<path d="M100,124 l2,10 a4,4 0 1 1 -2,-4Z M110,118 l2,12 a4,4 0 1 1 -2,-4 M100,124 l10,-6" fill="${K}" stroke="${K}" stroke-width="1.4"/>
+${waP(96,170,{s:.5,shirt:'#5a8fd6',hair:'short',mouth:'open'})}
+<g transform="translate(210 160) rotate(-30)"><ellipse cx="0" cy="8" rx="16" ry="12" fill="#e8a05b" stroke="${K}" stroke-width="1.4"/><circle cx="0" cy="8" r="4" fill="${K}"/><rect x="-3" y="-34" width="6" height="34" fill="#8a5a35" stroke="${K}" stroke-width="1.2"/></g>
+${waP(160,156,{s:.5,shirt:'#9d6bd1',hair:'long',mouth:'open'})}${s5T(160,118,'♪ ♫',{s:14,c:'#9d6bd1'})}
+${room(8,212,120,110,'#2b3440')}${room(132,212,120,110,'#e6f7ea')}
+<rect x="20" y="222" width="96" height="54" rx="3" fill="#fff" stroke="${K}" stroke-width="1"/><path d="M20,240 L60,262 L20,276Z" fill="#ffd23f" opacity=".5"/>${s5T(68,256,'▶',{s:16,c:'#e5383b'})}
+${[30,52,74,96].map(x=>`<path d="M${x-8},300 a8,8 0 0 1 16,0 v12 h-16Z" fill="#e5383b" stroke="${K}" stroke-width="1"/>`).join('')}
+<rect x="146" y="226" width="54" height="40" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M152,258 L166,240 L176,252 L184,244 L196,258Z" fill="#3fae5f"/>${s5Sun(188,236,4)}<path d="M160,266 l-8,20 M186,266 l8,20" stroke="${K}" stroke-width="1.6"/>
+<g transform="translate(222 296)"><rect x="-6" y="-4" width="20" height="8" rx="2" fill="#ffc93c" stroke="${K}"/><path d="M-14,0 h8" stroke="#e5383b" stroke-width="4" stroke-linecap="round"/></g>${waP(222,248,{s:.45,shirt:'#ffb703',hair:'spiky',R:[16,30]})}
+${room(8,328,120,110,'#fff3c4')}${room(132,328,120,110,'#e6f2ff')}
+<rect x="22" y="342" width="36" height="22" fill="#2b3440" stroke="${K}" stroke-width="1.2"/><rect x="25" y="345" width="30" height="16" fill="#7fc7f0"/>${s5Book(96,350,'#e5383b',16,22)}${s5Open(96,412)}
+${waP(56,396,{s:.5,shirt:'#3fae5f',hair:'short',glasses:1,mood:'n',L:[-6,26],R:[6,26]})}
+<g transform="translate(166 372)"><rect x="-22" y="-12" width="44" height="26" rx="13" fill="#5b5b5b" stroke="${K}" stroke-width="1.4"/><path d="M-12,-2 v6 M-15,1 h6" stroke="#fff" stroke-width="2"/><circle cx="10" cy="-1" r="2.4" fill="#e5383b"/><circle cx="15" cy="3" r="2.4" fill="#ffd23f"/></g>
+${s5Laptop(220,374)}${s5Bub(214,406,'Hi!','#fff',26)}${s5Bub(238,420,'…','#dff3e6',22)}
+<g transform="translate(160 420)"><rect x="-12" y="-8" width="26" height="18" rx="3" fill="#2b3440" stroke="${K}" stroke-width="1.3"/><circle cx="1" cy="1" r="6" fill="#9fd8ff" stroke="#fff" stroke-width="1.6"/><rect x="-8" y="-11" width="8" height="4" fill="#2b3440"/></g>
+${room(8,444,120,110,'#e2f2d2')}${room(132,444,120,110,'#ffe9d9')}
+<path d="M14,520 Q60,500 120,520 V546 H14Z" fill="#6cc4f0" opacity=".9"/>${waP(46,480,{s:.5,shirt:'#5a8fd6',hair:'short',R:[22,-8]})}<path d="M60,474 Q96,470 104,524" fill="none" stroke="${K}" stroke-width="1.2"/><path d="M104,524 q-2,6 -6,2" fill="none" stroke="${K}" stroke-width="1.2"/>
+<g transform="translate(170 500)">${s5Bag(0,0,'#ef5b6b')}</g><g transform="translate(206 512)"><path d="M-12,-14 H12 L14,14 H-14Z" fill="#ffd23f" stroke="${K}" stroke-width="1.4"/><path d="M-6,-14 q6,-10 12,0" fill="none" stroke="${K}" stroke-width="1.6"/></g>${waP(232,486,{s:.45,shirt:'#9d6bd1',hair:'long'})}
+${room(8,560,120,92,'#f6efe1')}${room(132,560,120,92,'#fff3c4')}
+<path d="M20,632 Q60,610 116,632" fill="none" stroke="#c9b79c" stroke-width="10" stroke-linecap="round"/>${waP(52,590,{s:.45,shirt:'#ef8a5b',hair:'old',legs:'walk'})}${waP(86,590,{s:.45,shirt:'#3d4a66',hair:'bun',legs:'walk'})}
+<g transform="translate(160 610)"><path d="M-10,-8 h20 l-2,18 h-16Z" fill="#fff" stroke="${K}" stroke-width="1.3"/><path d="M10,-4 q8,0 6,8 q-2,4 -7,2" fill="none" stroke="${K}" stroke-width="1.3"/><path d="M-4,-14 q2,-4 0,-6 M4,-14 q2,-4 0,-6" stroke="#bbb" stroke-width="1.2" fill="none"/></g>
+<g transform="translate(214 614)"><path d="M-18,-4 a18,10 0 0 0 36,0Z" fill="#5b5b5b" stroke="${K}" stroke-width="1.4"/><path d="M18,-4 h14" stroke="${K}" stroke-width="3"/><path d="M-10,-10 q2,-8 0,-12 M2,-10 q2,-8 0,-12" stroke="#bbb" stroke-width="1.2" fill="none"/></g>${waP(214,580,{s:.4,shirt:'#fff',hair:'short',R:[14,20]})}
+</g>`;},
+ a:{'爱好':[130,46],'钢琴':[46,160],'音乐':[104,128],'唱歌':[160,156],'吉他':[210,166],'电影':[68,250],'画画':[172,246],'照相':[160,420],'看书':[96,410],'电视':[40,354],'游戏':[166,372],'上网':[220,370],'聊天':[214,406],'钓鱼':[46,490],'购物':[190,506],'散步':[70,600],'喝茶':[160,610],'做饭':[214,612],'跳舞':[150,140],'旅游':[110,30]}};
+
+/* ===== 7. Sức khỏe ===== */
+TD_SCENE.yt={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,140,'#dff1fb')}
+<rect x="40" y="30" width="180" height="110" fill="#fff" stroke="${K}" stroke-width="1.8"/><rect x="40" y="30" width="180" height="22" fill="#e5383b" stroke="${K}" stroke-width="1.8"/>${s5T(130,46,'医院',{s:13,c:'#fff',han:1})}
+<path d="M122,64 h16 v14 h14 v16 h-14 v14 h-16 v-14 h-14 v-16 h14Z" fill="#e5383b" stroke="${K}" stroke-width="1.3"/>
+${s5Win(70,90,22,20)}${s5Win(190,90,22,20)}<rect x="114" y="112" width="32" height="28" fill="#bfe3f7" stroke="${K}" stroke-width="1.5"/>
+<g transform="translate(232 120)"><rect x="-20" y="-10" width="40" height="22" rx="4" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M-4,-4 h8 M0,-8 v8" stroke="#e5383b" stroke-width="2.4"/><circle cx="-12" cy="14" r="4" fill="${K}"/><circle cx="12" cy="14" r="4" fill="${K}"/></g>
+<!-- phòng khám -->
+${s5Band(140,200,'#f2fbf7')}<path d="M0,140 H260" stroke="${K}" stroke-width="1.4"/>
+${waP(50,190,{s:.8,shirt:'#fff',hair:'short',glasses:1,R:[22,10],front:`<path d="M-8,18 q-4,14 6,16" fill="none" stroke="${K}" stroke-width="1.6"/><circle cx="-2" cy="34" r="3" fill="#9fb3c8" stroke="${K}" stroke-width="1"/>`})}
+${waP(120,192,{s:.7,shirt:'#ffc6d9',hair:'bun',front:`<path d="M-6,-16 h12 v-4 h-12Z" fill="#fff" stroke="${K}" stroke-width="1"/><path d="M-1,-19 h2" stroke="#e5383b" stroke-width="1.6"/>`,R:[18,6]})}
+<g transform="translate(150 196) rotate(-30)"><rect x="-3" y="-14" width="6" height="22" rx="1" fill="#dff4ff" stroke="${K}" stroke-width="1.2"/><path d="M0,8 v8" stroke="${K}" stroke-width="1.2"/><path d="M-5,-14 h10" stroke="${K}" stroke-width="2"/></g>
+${waP(206,198,{s:.72,shirt:'#9fb3c8',hair:'spiky',mood:'sad',L:{a:-150}})}${s5Bub(232,160,'38.5°','#ffe3e0',34)}
+<g transform="translate(184 162)"><rect x="-2" y="-12" width="4" height="18" rx="2" fill="#fff" stroke="${K}" stroke-width="1"/><circle cx="0" cy="8" r="3" fill="#e5383b" stroke="${K}"/></g>
+<rect x="18" y="280" width="90" height="40" rx="6" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M26,292 h34 M26,300 h46 M26,308 h24" stroke="#9fb3c8" stroke-width="1.4"/><path d="M78,296 l6,6 l10,-12" fill="none" stroke="#0d7a63" stroke-width="2.2"/>
+<g transform="translate(150 300)"><rect x="-14" y="-16" width="28" height="34" rx="5" fill="#fff" stroke="${K}" stroke-width="1.4"/><rect x="-14" y="-16" width="28" height="9" rx="3" fill="#3fae5f" stroke="${K}" stroke-width="1.2"/><ellipse cx="-30" cy="8" rx="8" ry="4" fill="#ffc93c" stroke="${K}" stroke-width="1.1" transform="rotate(-30 -30 8)"/><ellipse cx="30" cy="6" rx="7" ry="4" fill="#ef5b6b" stroke="${K}" stroke-width="1.1" transform="rotate(20 30 6)"/></g>
+${waP(220,290,{s:.6,shirt:'#5a8fd6',hair:'short',mood:'n',R:{a:-60}})}<path d="M238,256 l8,-6 M240,262 l9,-2" stroke="#9fb3c8" stroke-width="2" stroke-linecap="round"/>
+<!-- triệu chứng -->
+${s5Band(340,150,'#fff8ec')}<path d="M0,340 H260" stroke="${K}" stroke-width="1.4"/>
+${waP(40,380,{s:.62,shirt:'#ef8a5b',hair:'long',mood:'sad',L:[-6,-14],R:[6,-14]})}<path d="M22,354 l-4,-6 M58,354 l4,-6 M40,350 v-8" stroke="#e5383b" stroke-width="2" stroke-linecap="round"/>
+${waP(104,380,{s:.62,shirt:'#3fae5f',hair:'spiky',mood:'sad',L:[-2,32],R:[2,32]})}<circle cx="104" cy="402" r="6" fill="none" stroke="#e5383b" stroke-width="1.6" stroke-dasharray="2 2"/>
+${waP(168,380,{s:.62,shirt:'#9d6bd1',hair:'bun',mood:'n',mouth:'o',R:[4,8]})}<path d="M182,380 q8,-4 14,0 M184,388 q8,0 14,4" fill="none" stroke="#9fb3c8" stroke-width="2" stroke-linecap="round"/>
+${waP(228,380,{s:.62,shirt:'#ffb703',hair:'short',mood:'sad',L:{a:-130}})}<path d="M220,356 l4,-6 l4,6" fill="none" stroke="#e5383b" stroke-width="2"/>
+<g transform="translate(66 470)"><rect x="-22" y="-12" width="44" height="22" rx="11" fill="#fff" stroke="${K}" stroke-width="1.4"/><rect x="-22" y="-12" width="22" height="22" rx="11" fill="#e5383b" stroke="${K}" stroke-width="1.4"/></g>
+<g transform="translate(138 470)"><path d="M-12,-6 Q0,-22 12,-6 L10,10 H-10Z" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M-8,10 v6 M8,10 v6" stroke="${K}" stroke-width="2"/></g>
+<g transform="translate(208 466)"><rect x="-16" y="-8" width="32" height="14" rx="3" fill="#ffd9b8" stroke="${K}" stroke-width="1.3"/><path d="M-6,-8 v14 M6,-8 v14" stroke="#ef5b6b" stroke-width="1.4"/><path d="M-10,-1 h20" stroke="#ef5b6b" stroke-width="1.4"/></g>
+<!-- nghỉ ngơi -->
+${s5Band(490,170,'#ece6ff')}<path d="M0,490 H260" stroke="${K}" stroke-width="1.4"/>
+<rect x="20" y="556" width="110" height="26" rx="6" fill="#fff" stroke="${K}" stroke-width="1.6"/><rect x="20" y="546" width="26" height="16" rx="6" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M24,582 v18 M126,582 v18" stroke="${K}" stroke-width="3"/>
+<g transform="translate(48 550)"><circle cx="0" cy="0" r="10" fill="${WA_SKIN}" stroke="${K}" stroke-width="1.4"/><path d="M-5,0 q2,2 4,0 M2,0 q2,2 4,0" fill="none" stroke="${K}" stroke-width="1.3"/></g><path d="M58,552 h70 v6 h-70Z" fill="#9fd8ff" stroke="${K}" stroke-width="1.2"/>
+${s5T(76,534,'Z z z',{s:12,c:'#5a8fd6'})}
+<path d="M150,520 v90 M150,520 h24 v20 h-24" fill="none" stroke="${K}" stroke-width="2"/><rect x="164" y="540" width="16" height="22" rx="3" fill="#dff4ff" stroke="${K}" stroke-width="1.2"/>
+${waP(212,560,{s:.62,shirt:'#3fae5f',hair:'spiky',L:{a:-140},R:{a:-40},mouth:'open'})}${waHeart(238,524,.8)}
+${waP(110,628,{s:.5,shirt:'#ffb703',hair:'bun',mood:'happy',L:{a:150}})}${s5Sign(160,622,'😌','#fff',22)}
+${waP(40,628,{s:.5,shirt:'#9fb3c8',hair:'short',mood:'sad',L:{a:110},R:{a:70}})}<path d="M20,606 l-4,-4 M26,602 l-2,-6" stroke="#5a8fd6" stroke-width="1.6"/>
+</g>`;},
+ a:{'医院':[100,46],'看病':[130,84],'住院':[232,120],'医生':[50,190],'护士':[120,192],'打针':[150,196],'检查':[60,300],'病':[206,200],'发烧':[216,160],'生病':[184,164],'药':[150,300],'身体':[220,290],'牙':[244,256],
+   '头疼':[40,368],'肚子':[104,402],'咳嗽':[190,384],'疼':[224,354],'感冒':[66,470],'受伤':[208,466],'睡觉':[48,550],'休息':[150,560],'健康':[212,560],'舒服':[160,622],'累':[40,628]}};
+
+/* ===== 8. Du lịch ===== */
+TD_SCENE.dl={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,200,'#cfeaf9')}${s5Cloud(60,40,.8)}${s5Plane(176,56,1.3,-10)}
+<rect x="10" y="130" width="240" height="70" fill="#e9eef3" stroke="${K}" stroke-width="1.6"/><path d="M10,130 Q130,96 250,130" fill="#bfe3f7" stroke="${K}" stroke-width="1.6"/>${s5T(130,124,'✈ 机场',{s:11,han:1})}
+<rect x="214" y="96" width="12" height="34" fill="#9fb3c8" stroke="${K}" stroke-width="1.3"/><rect x="208" y="88" width="24" height="10" rx="2" fill="#bfe3f7" stroke="${K}" stroke-width="1.3"/>
+${waP(60,156,{s:.6,shirt:'#5a8fd6',hair:'short',R:[22,30]})}<g transform="translate(88 182)"><rect x="-10" y="-16" width="22" height="30" rx="4" fill="#e8640c" stroke="${K}" stroke-width="1.5"/><path d="M-4,-16 v-6 h10 v6" fill="none" stroke="${K}" stroke-width="1.5"/><circle cx="-6" cy="16" r="2.4" fill="${K}"/><circle cx="8" cy="16" r="2.4" fill="${K}"/></g>
+<g transform="translate(140 166)"><rect x="-12" y="-16" width="24" height="32" rx="3" fill="#7b1f2b" stroke="${K}" stroke-width="1.4"/><circle cx="0" cy="-2" r="5" fill="none" stroke="#ffd23f" stroke-width="1.4"/>${s5T(0,12,'PASS',{s:5,c:'#ffd23f'})}</g>
+<g transform="translate(184 172) rotate(6)"><rect x="-16" y="-12" width="32" height="24" rx="2" fill="#fff" stroke="${K}" stroke-width="1.3"/><rect x="-12" y="-8" width="10" height="12" fill="#cfe3f7"/><path d="M2,-6 h10 M2,-1 h10 M2,4 h6" stroke="#9fb3c8" stroke-width="1.2"/><circle cx="8" cy="6" r="4" fill="none" stroke="#e5383b" stroke-width="1.2"/></g>
+<!-- 长城 + 风景 + 拍照 -->
+${s5Band(200,170,'#d8eec6')}<path d="M0,200 H260" stroke="${K}" stroke-width="1.4"/>
+<path d="M0,280 L50,224 L100,262 L150,214 L210,256 L260,226 V300 H0Z" fill="#a7c99a" stroke="${K}" stroke-width="1.3"/>
+<path d="M0,272 Q40,250 70,262 T140,236 T200,250 T260,232" fill="none" stroke="#b9734a" stroke-width="7"/>${[[20,262],[76,256],[140,232],[206,246]].map(([x,y])=>`<rect x="${x-7}" y="${y-16}" width="14" height="14" fill="#c98b5a" stroke="${K}" stroke-width="1.2"/>`).join('')}
+${waP(196,322,{s:.6,shirt:'#ef5b6b',hair:'long',R:[16,4]})}<g transform="translate(214 324)"><rect x="-8" y="-6" width="16" height="12" rx="2" fill="#2b3440" stroke="${K}"/><circle cx="0" cy="0" r="3.4" fill="#9fd8ff"/></g>
+<g transform="translate(76 338) rotate(-8)"><rect x="-22" y="-16" width="44" height="34" fill="#fff" stroke="${K}" stroke-width="1.4"/><rect x="-18" y="-12" width="36" height="22" fill="#bfe3f7"/><path d="M-18,8 L-6,-4 L4,6 L10,0 L18,8Z" fill="#3fae5f"/></g>
+<g transform="translate(130 318) rotate(-4)"><rect x="-20" y="-10" width="40" height="20" rx="3" fill="#ffd23f" stroke="${K}" stroke-width="1.3"/><path d="M6,-10 v20" stroke="${K}" stroke-dasharray="2 2"/>${s5T(-6,4,'票',{s:10,han:1})}</g>
+${s5Flag(28,362,'#e8640c')}${waP(48,328,{s:.5,shirt:'#ffb703',hair:'short',L:{a:-140},mouth:'open'})}
+<!-- 海边 + 酒店 -->
+${s5Band(370,140,'#bfe8f7')}<path d="M0,370 H260" stroke="${K}" stroke-width="1.4"/>
+<path d="M0,444 Q65,432 130,444 T260,440 V510 H0Z" fill="#f2dfaa"/><path d="M0,430 q20,-6 40,0 t40,0 t40,0" fill="none" stroke="#fff" stroke-width="2"/>
+<path d="M48,476 v-40" stroke="#8a5a35" stroke-width="4"/><path d="M48,436 q-20,-6 -28,6 M48,436 q20,-8 28,4 M48,436 q-8,-16 -22,-14 M48,436 q10,-16 22,-12" fill="none" stroke="#3fae5f" stroke-width="4" stroke-linecap="round"/>
+<path d="M90,470 L110,440 L130,470Z" fill="#ef5b6b" stroke="${K}" stroke-width="1.4"/><path d="M110,440 v34" stroke="${K}" stroke-width="1.4"/>
+<rect x="160" y="384" width="88" height="96" fill="#fff8e1" stroke="${K}" stroke-width="1.6"/>${s5Sign(204,396,'酒店','#e5383b',40,'#fff')}${[0,1,2].map(r=>[0,1,2].map(c=>s5Win(178+c*26,422+r*22,14,12,'#ffe8a3')).join('')).join('')}
+<g transform="translate(176 498)">${waStar(0,0,6)}${waStar(14,0,6)}${waStar(28,0,6)}</g>
+<!-- 火车站 · 地图 · 导游 · 外国 · 出发 · 到达 · 预订 -->
+${s5Band(510,150,'#fff4dc')}<path d="M0,510 H260" stroke="${K}" stroke-width="1.4"/>
+<rect x="12" y="522" width="110" height="46" rx="4" fill="#e9eef3" stroke="${K}" stroke-width="1.5"/>${s5T(66,538,'火车站',{s:10,han:1})}<rect x="22" y="546" width="60" height="16" rx="5" fill="#e5383b" stroke="${K}" stroke-width="1.3"/>${[30,44,58].map(x=>`<rect x="${x}" y="549" width="8" height="6" fill="#bfe3f7"/>`).join('')}
+<path d="M90,548 h22 l-6,-5 M112,548 l-6,5" fill="none" stroke="#0d7a63" stroke-width="2.2"/>
+<g transform="translate(176 548)"><path d="M-30,-18 L-10,-22 L10,-18 L30,-22 V18 L10,22 L-10,18 L-30,22Z" fill="#fff8e1" stroke="${K}" stroke-width="1.4"/><path d="M-10,-22 V18 M10,-18 V22" stroke="${K}" stroke-width="1"/><path d="M-22,8 Q-6,-10 18,4" fill="none" stroke="#e5383b" stroke-width="1.6" stroke-dasharray="3 2"/><circle cx="18" cy="4" r="3" fill="#e5383b"/></g>
+${waP(232,580,{s:.5,shirt:'#3fae5f',hair:'short',R:{a:-80}})}${s5Flag(250,560,'#ffd23f')}
+${waP(40,618,{s:.5,shirt:'#9d6bd1',hair:'bun',legs:'walk'})}<path d="M58,626 h20 l-6,-5 M78,626 l-6,5" fill="none" stroke="#e8640c" stroke-width="2"/>
+${s5Phone(120,622,1,'#dff3e6')}<path d="M115,622 l3,3 l6,-7" fill="none" stroke="#0d7a63" stroke-width="2"/>
+<circle cx="190" cy="622" r="18" fill="#9fd8ff" stroke="${K}" stroke-width="1.5"/><path d="M178,612 q8,4 10,12 q-6,6 -2,12 M196,606 q6,8 12,10" fill="none" stroke="#3fae5f" stroke-width="3"/>
+<path d="M226,646 l10,-12 l10,12Z" fill="#3fae5f" stroke="${K}" stroke-width="1.3"/>${s5Flag(236,634,'#0d7a63')}
+</g>`;},
+ a:{'机场':[100,122],'行李':[88,182],'旅行':[60,156],'护照':[140,166],'签证':[184,172],'长城':[140,232],'风景':[76,338],'照片':[76,330],'拍照':[214,324],'门票':[114,318],'导游':[48,330],'景点':[28,336],'海边':[90,440],'旅游':[110,458],'酒店':[186,396],'宾馆':[204,444],
+   '火车站':[30,538],'地图':[176,548],'外国':[190,622],'出发':[40,620],'预订':[120,622],'到达':[236,640]}};
+
+/* ===== 9. Công nghệ ===== */
+TD_SCENE.cn={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,660,'#eef3fb')}
+<!-- 网络 -->
+<circle cx="130" cy="60" r="38" fill="#cfe3f7" stroke="${K}" stroke-width="1.6"/><ellipse cx="130" cy="60" rx="16" ry="38" fill="none" stroke="${K}" stroke-width="1.2"/><path d="M92,60 H168 M98,40 H162 M98,80 H162" stroke="${K}" stroke-width="1.1"/>
+${[[46,40],[214,40],[40,110],[220,110]].map(([x,y])=>`<path d="M${x},${y} L130,60" stroke="#5a8fd6" stroke-width="1.4" stroke-dasharray="3 2"/><circle cx="${x}" cy="${y}" r="6" fill="#fff" stroke="${K}" stroke-width="1.3"/>`).join('')}
+<g transform="translate(226 150)"><path d="M-14,-4 a20,20 0 0 1 28,0 M-9,2 a12,12 0 0 1 18,0" fill="none" stroke="#0d7a63" stroke-width="2.4" stroke-linecap="round"/><circle cx="0" cy="8" r="2.6" fill="#0d7a63"/></g>
+<!-- bàn làm việc: 电脑 · 键盘 · 屏幕 · 网站 · 软件 · 下载 -->
+${s5Band(130,230,'#fff8ec')}
+<rect x="30" y="150" width="140" height="92" rx="6" fill="#2b3440" stroke="${K}" stroke-width="1.8"/><rect x="38" y="158" width="124" height="76" rx="2" fill="#fff"/>
+<rect x="38" y="158" width="124" height="12" fill="#e9eef3"/><circle cx="44" cy="164" r="2" fill="#e5383b"/><circle cx="51" cy="164" r="2" fill="#ffd23f"/><circle cx="58" cy="164" r="2" fill="#3fae5f"/><rect x="66" y="160" width="80" height="8" rx="4" fill="#fff" stroke="#c9d2dc"/>${s5T(106,167,'www',{s:6,c:'#5a8fd6'})}
+<rect x="44" y="176" width="54" height="30" rx="3" fill="#cfe3f7"/><path d="M104,180 h50 M104,188 h40 M104,196 h46" stroke="#9fb3c8" stroke-width="2"/>
+${[0,1,2].map(i=>`<rect x="${46+i*20}" y="212" width="14" height="14" rx="3" fill="${['#e5383b','#3fae5f','#ffb703'][i]}" stroke="${K}" stroke-width="1"/>`).join('')}
+<g transform="translate(140 218)"><rect x="-14" y="-6" width="28" height="12" rx="6" fill="#e9eef3" stroke="${K}" stroke-width="1"/><rect x="-14" y="-6" width="18" height="12" rx="6" fill="#3fae5f"/><path d="M-4,-14 v8 l-3,-3 M-4,-6 l3,-3" stroke="#0d7a63" stroke-width="1.6" fill="none"/></g>
+<path d="M92,242 v12 M70,254 h44" stroke="${K}" stroke-width="3"/>
+<rect x="30" y="268" width="130" height="26" rx="4" fill="#dfe6ee" stroke="${K}" stroke-width="1.5"/>${[...Array(10)].map((_,i)=>`<rect x="${36+i*12}" y="272" width="9" height="7" rx="1" fill="#fff" stroke="${K}" stroke-width=".7"/><rect x="${36+i*12}" y="282" width="9" height="7" rx="1" fill="#fff" stroke="${K}" stroke-width=".7"/>`).join('')}
+<ellipse cx="184" cy="282" rx="9" ry="12" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M184,270 v8" stroke="${K}" stroke-width="1.2"/>
+<g transform="translate(224 220)"><rect x="-22" y="-18" width="44" height="40" rx="5" fill="#2b3440" stroke="${K}" stroke-width="1.4"/><circle cx="0" cy="2" r="12" fill="#5a8fd6" stroke="#fff" stroke-width="2"/><circle cx="0" cy="2" r="5" fill="#9fd8ff"/><rect x="-16" y="-24" width="12" height="7" rx="2" fill="#2b3440"/></g>
+<g transform="translate(70 330)"><rect x="-30" y="-20" width="60" height="40" rx="6" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M-6,-8 L10,0 L-6,8Z" fill="#e5383b"/><rect x="-26" y="12" width="52" height="3" rx="1.5" fill="#e9eef3"/><rect x="-26" y="12" width="30" height="3" rx="1.5" fill="#e5383b"/></g>
+<g transform="translate(176 330)"><rect x="-26" y="-18" width="52" height="36" rx="5" fill="#fff8e1" stroke="${K}" stroke-width="1.4"/><path d="M-26,-18 L0,4 L26,-18" fill="none" stroke="${K}" stroke-width="1.4"/><circle cx="20" cy="-18" r="7" fill="#e5383b" stroke="${K}"/>${s5T(20,-15,'1',{s:8,c:'#fff'})}</g>
+<!-- điện thoại -->
+${s5Band(360,300,'#eaf7f1')}<path d="M0,360 H260" stroke="${K}" stroke-width="1.4"/>
+<g transform="translate(80 470)"><rect x="-44" y="-90" width="88" height="170" rx="16" fill="#2b3440" stroke="${K}" stroke-width="2"/><rect x="-38" y="-78" width="76" height="140" rx="6" fill="#fff"/><rect x="-10" y="-86" width="20" height="4" rx="2" fill="#555"/>
+<rect x="-32" y="-70" width="48" height="18" rx="9" fill="#e9eef3"/>${s5T(-8,-57,'你好！',{s:9,han:1})}<rect x="-14" y="-46" width="46" height="18" rx="9" fill="#bdeccf"/>${s5T(9,-33,'在吗？',{s:9,han:1})}
+<rect x="-32" y="-20" width="64" height="20" rx="4" fill="#fff8e1" stroke="#ffd23f"/>${s5T(0,-6,'138 0000 8888',{s:7})}
+<rect x="-32" y="8" width="64" height="20" rx="4" fill="#fff" stroke="#c9d2dc"/>${s5T(-26,22,'●●●●●●',{s:8,a:'start'})}<path d="M22,14 v-3 a4,4 0 0 1 8,0 v3" fill="none" stroke="${K}" stroke-width="1.2" transform="translate(-6 0)"/><rect x="14" y="14" width="10" height="8" rx="1.5" fill="#ffd23f" stroke="${K}" stroke-width="1"/>
+<rect x="-32" y="34" width="64" height="22" rx="11" fill="#3fae5f"/><path d="M-6,40 q0,10 10,10 l2,-3 l-3,-3 l-2,2 q-4,-2 -5,-5 l2,-2 l-3,-3Z" fill="#fff"/></g>
+<g transform="translate(176 430)"><rect x="-20" y="-14" width="40" height="28" rx="5" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M-12,-4 h24 M-12,4 h16" stroke="#9fb3c8" stroke-width="2"/><path d="M-6,14 l-6,8 l14,-8" fill="#fff" stroke="${K}" stroke-width="1.2"/></g>
+<g transform="translate(220 500)"><path d="M-12,-14 q-4,0 -2,6 q6,18 22,26 q6,2 6,-2 l2,-8 l-8,-4 l-4,4 q-8,-4 -12,-12 l4,-4 l-4,-8Z" fill="#3fae5f" stroke="${K}" stroke-width="1.3"/><path d="M8,-14 a10,10 0 0 1 10,10 M8,-20 a16,16 0 0 1 16,16" fill="none" stroke="#3fae5f" stroke-width="1.8"/></g>
+<g transform="translate(176 590)"><rect x="-16" y="-24" width="32" height="44" rx="6" fill="#2b3440" stroke="${K}" stroke-width="1.4"/><rect x="-12" y="-18" width="24" height="32" rx="2" fill="#dff3e6"/><path d="M2,-12 L-6,2 H0 L-2,10 L6,-4 H0Z" fill="#3fae5f"/></g><path d="M176,614 q0,20 30,20 h30" fill="none" stroke="${K}" stroke-width="2.4"/><rect x="232" y="626" width="16" height="16" rx="3" fill="#fff" stroke="${K}" stroke-width="1.4"/>
+<g transform="translate(60 616)"><circle cx="0" cy="0" r="10" fill="#5a8fd6" stroke="${K}" stroke-width="1.3"/>${s5T(0,4,'i',{s:12,c:'#fff'})}</g>
+</g>`;},
+ a:{'网络':[130,60],'上网':[226,152],'网站':[106,164],'电脑':[100,200],'屏幕':[160,190],'软件':[66,219],'下载':[140,218],'键盘':[94,281],'照相机':[224,222],'视频':[70,330],'电子邮件':[176,330],'手机':[80,380],'短信':[176,430],'信息':[60,616],'号码':[46,450],'密码':[46,486],'打电话':[80,515],'电话':[220,500],'充电':[176,590]}};
+
+/* ===== 10. Thiên nhiên ===== */
+TD_SCENE.tn={draw:()=>{const K=s5K;return `<g>
+<defs><linearGradient id="s5tn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a6e"/><stop offset=".22" stop-color="#5a8fd6"/><stop offset=".42" stop-color="#bfe3f7"/></linearGradient></defs>
+<rect x="0" y="0" width="260" height="300" fill="url(#s5tn)"/>
+${s5Moon(40,36,14)}${waStar(80,20,4)}${waStar(110,44,3)}${waStar(20,74,3)}${waStar(66,64,3.5)}
+${s5Sun(212,104,18)}
+${s5Cloud(120,110,1)}<path d="M100,124 l-4,10 M112,126 l-4,10 M124,124 l-4,10" stroke="#5a8fd6" stroke-width="2" stroke-linecap="round"/>
+${s5Cloud(54,160,.8,'#e9eef3')}${[[40,180],[56,188],[70,180]].map(([x,y])=>`<path d="M${x-4},${y} h8 M${x},${y-4} v8 M${x-3},${y-3} l6,6 M${x+3},${y-3} l-6,6" stroke="#fff" stroke-width="1.6"/>`).join('')}
+<path d="M150,170 q20,-10 40,0 q-20,6 -10,14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M160,184 q16,-6 30,0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+<path d="M0,300 L44,206 L80,250 L130,170 L186,240 L220,210 L260,250 V300Z" fill="#7a8f9e" stroke="${K}" stroke-width="1.6" stroke-linejoin="round"/><path d="M130,170 L146,196 L136,192 L128,202 L120,190 L114,194Z" fill="#fff"/>
+<!-- 森林 · 草原 · 河 · 湖 -->
+${s5Band(300,200,'#a8d98f')}
+${[[20,330],[42,318],[64,334],[30,352],[56,356]].map(([x,y])=>s5Tree(x,y,.8,'#2e7d4f')).join('')}
+<path d="M140,300 Q120,350 150,390 T130,500" fill="none" stroke="#6cc4f0" stroke-width="16"/><path d="M140,300 Q120,350 150,390 T130,500" fill="none" stroke="#bfe8f7" stroke-width="4" stroke-dasharray="6 8"/>
+<ellipse cx="214" cy="356" rx="36" ry="18" fill="#6cc4f0" stroke="${K}" stroke-width="1.5"/><path d="M196,354 q8,-4 16,0 M214,362 q8,-4 16,0" stroke="#fff" stroke-width="1.6" fill="none"/>
+${s5Tree(210,446,1.1,'#3fae5f')}
+${[[20,420],[30,430],[44,418],[60,428],[80,420],[96,432]].map(([x,y])=>`<path d="M${x},${y} l-4,-12 M${x},${y} l0,-14 M${x},${y} l4,-12" stroke="#3a8a3a" stroke-width="2" stroke-linecap="round"/>`).join('')}
+${[[40,470,'#ff8fb8'],[66,480,'#ffd23f'],[92,466,'#9d6bd1']].map(([x,y,c])=>`<path d="M${x},${y+4} v14" stroke="#3a8a3a" stroke-width="2"/>${[0,1,2,3,4].map(i=>`<circle cx="${(x+Math.cos(i*1.26)*5).toFixed(1)}" cy="${(y+Math.sin(i*1.26)*5).toFixed(1)}" r="4" fill="${c}" stroke="${K}" stroke-width=".8"/>`).join('')}<circle cx="${x}" cy="${y}" r="2.6" fill="#fff"/>`).join('')}
+<path d="M176,480 q14,-14 30,0 q10,6 20,0 l4,10 h-58Z" fill="#9fb3c8" stroke="${K}" stroke-width="1.4"/><ellipse cx="96" cy="406" rx="12" ry="8" fill="#b7b7b7" stroke="${K}" stroke-width="1.3"/>
+<g transform="translate(224 398)"><ellipse cx="0" cy="0" rx="14" ry="8" fill="#fff" stroke="${K}" stroke-width="1.3"/><circle cx="12" cy="-6" r="6" fill="#fff" stroke="${K}" stroke-width="1.3"/><path d="M-8,6 v8 M8,6 v8" stroke="${K}" stroke-width="2"/></g>
+<g transform="translate(170 420)"><path d="M0,10 v-14" stroke="#3a8a3a" stroke-width="2"/><path d="M0,-4 q-10,-4 -10,-12 q8,0 10,8 M0,-2 q10,-4 10,-12 q-8,0 -10,8" fill="#5cc27a" stroke="${K}" stroke-width="1"/><rect x="-7" y="8" width="14" height="10" rx="2" fill="#e0703f" stroke="${K}" stroke-width="1"/></g>
+<!-- 海 · 岛 · 地球 · 环境 · 自然 -->
+${s5Band(500,160,'#6cc4f0')}${[520,540,560].map(y=>`<path d="M0,${y} q15,-6 30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0 t30,0" fill="none" stroke="#bfe8f7" stroke-width="1.6"/>`).join('')}
+<ellipse cx="70" cy="590" rx="40" ry="12" fill="#f2dfaa" stroke="${K}" stroke-width="1.4"/><path d="M70,582 v-30" stroke="#8a5a35" stroke-width="3"/><path d="M70,552 q-14,-4 -18,6 M70,552 q14,-6 18,4 M70,552 q-4,-12 -14,-10" fill="none" stroke="#3fae5f" stroke-width="3.4" stroke-linecap="round"/>
+<g transform="translate(190 600)"><circle cx="0" cy="0" r="28" fill="#5a8fd6" stroke="${K}" stroke-width="1.6"/><path d="M-18,-14 q10,-8 18,-2 q4,8 -4,12 q-10,2 -8,10 q-10,-4 -6,-20Z M8,6 q10,-6 16,2 q-2,10 -12,12 q-6,-6 -4,-14Z" fill="#3fae5f" stroke="${K}" stroke-width="1"/></g>
+<g transform="translate(136 620)"><path d="M-14,-10 l4,-8 h8 l3,4 M14,-4 l2,8 l-4,8 h-4 M-6,16 h-8 l-4,-8" fill="none" stroke="#0d7a63" stroke-width="3" stroke-linecap="round"/><path d="M-1,-18 l4,4 l-6,1Z M14,4 l2,6 l-6,-1Z M-12,18 l-6,-2 l4,-5Z" fill="#0d7a63"/></g>
+<g transform="translate(36 640)"><path d="M0,10 C-14,0 -10,-16 6,-18 C10,-6 8,6 0,10Z" fill="#5cc27a" stroke="${K}" stroke-width="1.3"/><path d="M0,10 q2,-14 6,-26" stroke="${K}" stroke-width="1" fill="none"/></g>
+</g>`;},
+ a:{'天空':[110,60],'月亮':[40,36],'星星':[80,20],'太阳':[212,104],'云':[120,108],'雨':[112,130],'雪':[56,184],'风':[172,176],'山':[130,190],'森林':[42,336],'河':[134,350],'湖':[214,356],'树':[210,430],'草':[60,424],'花':[66,476],'石头':[96,406],'草原':[60,446],'动物':[224,400],'植物':[170,416],'海':[220,530],'岛':[70,586],'地球':[190,600],'环境':[136,620],'自然':[36,632]}};
+
+/* ===== 11. Công sở ===== */
+TD_SCENE.cty={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,130,'#dff1fb')}
+<rect x="70" y="20" width="120" height="110" fill="#cfd8e3" stroke="${K}" stroke-width="1.8"/>${s5Sign(130,34,'公司','#0d7a63',44,'#fff')}${[0,1,2].map(r=>[0,1,2,3].map(c=>s5Win(88+c*28,58+r*22,16,14,'#bfe3f7')).join('')).join('')}
+${waP(26,96,{s:.5,shirt:'#3d4a66',hair:'short',legs:'walk',R:[14,22]})}<rect x="32" y="114" width="14" height="10" rx="2" fill="#8a5a35" stroke="${K}"/><path d="M44,86 h14 l-4,-4 M58,86 l-4,4" fill="none" stroke="#0d7a63" stroke-width="2"/>
+${waP(232,96,{s:.5,shirt:'#9d6bd1',hair:'bun',legs:'walk',flip:1})}<path d="M214,86 h-14 l4,-4 M200,86 l4,4" fill="none" stroke="#e8640c" stroke-width="2"/>
+${s5Moon(216,30,10)}${s5Clock(36,36,12,21,0)}
+<!-- 办公室 -->
+${s5Band(130,180,'#fff8ec')}<path d="M0,130 H260" stroke="${K}" stroke-width="1.4"/>
+${s5Desk(16,120,200)}${s5Laptop(52,190)}${waP(90,172,{s:.6,shirt:'#3fae5f',hair:'spiky',L:[-14,22]})}${s5Chair(108,222)}
+${s5Desk(140,244,200)}${s5Laptop(220,190,'#ffe8a3')}${waP(176,172,{s:.6,shirt:'#ef8a5b',hair:'long'})}
+${s5Bub(130,150,'Hi','#fff',22)}
+<g transform="translate(60 266)"><rect x="-26" y="-16" width="52" height="30" rx="4" fill="#dfe6ee" stroke="${K}" stroke-width="1.5"/><rect x="-18" y="-24" width="36" height="10" fill="#fff" stroke="${K}" stroke-width="1.2"/><rect x="-18" y="8" width="36" height="14" fill="#fff" stroke="${K}" stroke-width="1.2"/></g>
+<g transform="translate(140 270)"><path d="M-20,-14 h16 l4,4 h20 v24 h-40Z" fill="#ffc93c" stroke="${K}" stroke-width="1.4"/></g>
+<g transform="translate(212 270)"><rect x="-16" y="-20" width="32" height="40" rx="2" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M-10,-12 h20 M-10,-6 h20 M-10,0 h14" stroke="#9fb3c8" stroke-width="1.4"/><path d="M-6,12 q4,-6 8,0 t8,-2" fill="none" stroke="#1d6fb8" stroke-width="1.6"/></g>
+<!-- 会议 -->
+${s5Band(310,170,'#eef3fb')}<path d="M0,310 H260" stroke="${K}" stroke-width="1.4"/>
+<rect x="160" y="322" width="90" height="56" rx="4" fill="#fff" stroke="${K}" stroke-width="1.5"/><path d="M168,368 L184,352 L196,360 L214,338 L240,346" fill="none" stroke="#e5383b" stroke-width="2"/><path d="M168,336 h40 M168,344 h28" stroke="#9fb3c8" stroke-width="1.6"/>
+<ellipse cx="96" cy="430" rx="80" ry="22" fill="#c98b5a" stroke="${K}" stroke-width="1.6"/>
+${waP(40,392,{s:.55,shirt:'#5a8fd6',hair:'short'})}${waP(96,384,{s:.6,shirt:'#2b3440',hair:'old',glasses:1,mood:'n',R:{a:-40},front:`<path d="M-2,16 l2,14 l2,-14Z" fill="#e5383b"/>`})}${waP(152,392,{s:.55,shirt:'#ef5b6b',hair:'bun'})}
+${waP(210,420,{s:.62,shirt:'#3d4a66',hair:'spiky',mood:'happy',R:{a:-50},front:`<path d="M-2,16 l2,14 l2,-14Z" fill="#ffd23f"/>`})}
+${s5Paper(70,436,22,16)}${s5Paper(124,438,22,16)}
+<!-- 面试 · 招聘 · 合同 · 工资 · 任务 · 计划 · 出差 -->
+${s5Band(480,180,'#fff4dc')}<path d="M0,480 H260" stroke="${K}" stroke-width="1.4"/>
+<rect x="14" y="492" width="70" height="44" rx="4" fill="#e5383b" stroke="${K}" stroke-width="1.5"/>${s5T(49,512,'招聘',{s:14,c:'#fff',han:1})}${s5T(49,528,'WE NEED YOU',{s:6,c:'#ffe08a'})}
+${waP(116,516,{s:.55,shirt:'#fff',hair:'short',mood:'n',front:`<path d="M-2,16 l2,14 l2,-14Z" fill="#1d6fb8"/>`})}${waP(162,516,{s:.55,shirt:'#9d6bd1',hair:'long',glasses:1,R:[14,10]})}${s5Paper(182,530,16,20)}
+<g transform="translate(228 516)"><rect x="-18" y="-22" width="36" height="44" rx="2" fill="#fff" stroke="${K}" stroke-width="1.4"/><path d="M-12,-14 h24 M-12,-8 h24 M-12,-2 h18" stroke="#9fb3c8" stroke-width="1.3"/><circle cx="8" cy="12" r="6" fill="none" stroke="#e5383b" stroke-width="1.6"/></g>
+<g transform="translate(46 590)"><rect x="-28" y="-16" width="56" height="32" rx="4" fill="#fff8e1" stroke="${K}" stroke-width="1.4"/>${s5Bill(-2,-2,'¥')}${s5Coin(16,8,7)}</g>
+<g transform="translate(120 590)"><rect x="-24" y="-24" width="48" height="48" rx="4" fill="#fff" stroke="${K}" stroke-width="1.4"/>${[0,1,2].map(i=>`<rect x="-18" y="${-18+i*13}" width="9" height="9" rx="2" fill="${i<2?'#dff3e6':'#fff'}" stroke="${K}" stroke-width="1"/>${i<2?`<path d="M-16,${-13+i*13} l2,2 l4,-5" fill="none" stroke="#0d7a63" stroke-width="1.6"/>`:''}<path d="M-4,${-13+i*13} h18" stroke="#9fb3c8" stroke-width="1.6"/>`).join('')}</g>
+<g transform="translate(196 590)"><rect x="-28" y="-22" width="56" height="44" rx="3" fill="#fff" stroke="${K}" stroke-width="1.4"/>${[0,1,2,3].map(i=>`<rect x="${-24+i*13}" y="-16" width="10" height="${8+i*7}" fill="${['#5a8fd6','#3fae5f','#ffb703','#e5383b'][i]}" transform="translate(0 ${30-(8+i*7)-16})"/>`).join('')}</g>
+${s5Plane(230,640,.8,-15)}<g transform="translate(176 642)"><rect x="-12" y="-10" width="24" height="18" rx="3" fill="#8a5a35" stroke="${K}" stroke-width="1.3"/><path d="M-5,-10 v-4 h10 v4" fill="none" stroke="${K}" stroke-width="1.3"/></g>
+${waP(40,628,{s:.45,shirt:'#5a8fd6',hair:'short',mood:'n'})}${s5T(70,640,'👔',{s:14})}
+</g>`;},
+ a:{'公司':[108,34],'上班':[26,104],'下班':[232,104],'加班':[216,30],'办公室':[130,170],'工作':[90,180],'同事':[176,176],'打印':[60,266],'文件':[140,270],'计划':[212,270],'会议':[200,350],'开会':[96,430],'经理':[96,388],'老板':[210,420],
+   '招聘':[18,512],'面试':[140,516],'客户':[116,516],'合同':[228,516],'工资':[46,590],'任务':[120,590],'职业':[40,628],'出差':[176,642]}};
+
+/* ===== 12. Lễ tết ===== */
+TD_SCENE.le={draw:()=>{const K=s5K;return `<g>
+${s5Band(0,180,'#ffe3e0')}
+${s5Lantern(30,40)}${s5Lantern(230,40)}<path d="M40,20 Q130,50 220,20" fill="none" stroke="${K}" stroke-width="1.2"/>
+<rect x="96" y="40" width="68" height="68" fill="#e5383b" stroke="${K}" stroke-width="1.6" transform="rotate(45 130 74)"/>${s5T(130,84,'福',{s:30,c:'#ffd23f',han:1})}
+<rect x="14" y="80" width="22" height="90" fill="#e5383b" stroke="${K}" stroke-width="1.4"/>${s5T(25,110,'新',{s:13,c:'#ffd23f',han:1})}${s5T(25,128,'年',{s:13,c:'#ffd23f',han:1})}${s5T(25,146,'快',{s:13,c:'#ffd23f',han:1})}${s5T(25,164,'乐',{s:13,c:'#ffd23f',han:1})}
+<rect x="224" y="80" width="22" height="90" fill="#e5383b" stroke="${K}" stroke-width="1.4"/>${s5T(235,110,'恭',{s:13,c:'#ffd23f',han:1})}${s5T(235,128,'喜',{s:13,c:'#ffd23f',han:1})}${s5T(235,146,'发',{s:13,c:'#ffd23f',han:1})}${s5T(235,164,'财',{s:13,c:'#ffd23f',han:1})}
+${[0,1,2,3,4].map(i=>`<rect x="${70+i*6}" y="${130+i*8}" width="6" height="12" rx="1.5" fill="#e5383b" stroke="${K}" stroke-width=".9"/>`).join('')}<path d="M76,128 q-6,-8 0,-14" stroke="${K}" stroke-width="1" fill="none"/>${waStar(64,120,6,'#ffd23f')}${waStar(58,136,4,'#ff8f3c')}
+<g transform="translate(184 150)"><rect x="-12" y="-16" width="24" height="32" rx="2" fill="#e5383b" stroke="${K}" stroke-width="1.4"/><circle cx="0" cy="-2" r="6" fill="#ffd23f" stroke="${K}" stroke-width="1"/>${s5T(0,1,'¥',{s:7})}</g>
+<!-- 过年: bữa cơm -->
+${s5Band(180,140,'#fff4dc')}<path d="M0,180 H260" stroke="${K}" stroke-width="1.4"/>
+<ellipse cx="130" cy="280" rx="100" ry="22" fill="#c98b5a" stroke="${K}" stroke-width="1.6"/>
+${waP(50,236,{s:.55,shirt:'#e5383b',hair:'old',beard:1})}${waP(94,230,{s:.55,shirt:'#ef5b6b',hair:'bun'})}${waP(166,230,{s:.55,shirt:'#ffb703',hair:'spiky',mouth:'open',R:{a:-60}})}${waP(210,236,{s:.55,shirt:'#9d6bd1',hair:'long'})}
+<ellipse cx="110" cy="276" rx="20" ry="6" fill="#fff" stroke="${K}" stroke-width="1.3"/>${[100,110,120].map(x=>`<path d="M${x-6},274 q6,-8 12,0Z" fill="#fff8e1" stroke="${K}" stroke-width="1"/>`).join('')}
+<ellipse cx="160" cy="278" rx="14" ry="5" fill="#fff" stroke="${K}" stroke-width="1.2"/><path d="M148,276 q12,-8 24,0" fill="#ef8a5b" stroke="${K}" stroke-width="1"/>
+${s5T(130,206,'过年好！',{s:11,c:'#c3402b',han:1})}
+<!-- 中秋 · 端午 -->
+${s5Band(320,120,'#2c3f73')}${s5Moon(214,358,0)}<circle cx="214" cy="360" r="22" fill="#ffe680" stroke="${K}" stroke-width="1.4"/>${waStar(170,340,3,'#fff')}${waStar(244,400,3,'#fff')}
+<g transform="translate(60 380)"><circle cx="0" cy="0" r="22" fill="#d99a4e" stroke="${K}" stroke-width="1.6"/><circle cx="0" cy="0" r="15" fill="none" stroke="#a8692a" stroke-width="1.4"/>${s5T(0,5,'月',{s:13,c:'#7a4a1a',han:1})}</g>
+<g transform="translate(136 404)"><path d="M-30,0 Q0,16 30,0 L22,-6 Q0,6 -22,-6Z" fill="#3fae5f" stroke="${K}" stroke-width="1.4"/><path d="M30,0 q8,-4 8,-12" stroke="${K}" stroke-width="1.4" fill="none"/><path d="M-12,-14 L0,-4 L12,-14 L0,-22Z" fill="#7cc36b" stroke="${K}" stroke-width="1.2"/></g>
+<!-- 生日 · 礼物 · 结婚 · 圣诞 · 晚会 -->
+${s5Band(440,220,'#f3f0ff')}<path d="M0,440 H260" stroke="${K}" stroke-width="1.4"/>
+<g transform="translate(56 500)"><rect x="-28" y="-6" width="56" height="26" rx="4" fill="#ff8fb8" stroke="${K}" stroke-width="1.5"/><rect x="-22" y="-22" width="44" height="18" rx="4" fill="#fff" stroke="${K}" stroke-width="1.5"/>${[-12,0,12].map(x=>`<path d="M${x},-22 v-10" stroke="${K}" stroke-width="2.4"/><path d="M${x},-36 q-3,4 0,6 q3,-2 0,-6Z" fill="#ffb703"/>`).join('')}</g>
+${s5Gift(124,500)}${s5Gift(150,512,'#5a8fd6','#fff')}
+<g transform="translate(214 490)"><path d="M0,-34 L22,8 H-22Z" fill="#2e7d4f" stroke="${K}" stroke-width="1.5"/><path d="M0,-24 L16,10 H-16Z" fill="#3fae5f" stroke="${K}" stroke-width="1.2" transform="translate(0 14)"/><rect x="-4" y="24" width="8" height="10" fill="#8a5a35"/>${waStar(0,-36,6)}<circle cx="-8" cy="0" r="2.6" fill="#e5383b"/><circle cx="8" cy="12" r="2.6" fill="#ffd23f"/></g>
+${waP(70,580,{s:.6,shirt:'#2b3440',hair:'short',R:[16,20]})}${waP(110,580,{s:.6,shirt:'#fff',hair:'long',L:[-16,20],front:`<path d="M-14,-16 Q0,-28 14,-16 L18,8 Q0,2 -18,8Z" fill="#fff" opacity=".8" stroke="${K}" stroke-width="1"/>`})}${waHeart(90,556,.9)}
+${s5T(90,632,'囍',{s:20,c:'#e5383b',han:1})}
+<g transform="translate(200 600)"><path d="M-40,-28 H40" stroke="${K}" stroke-width="1.2"/>${[-30,-15,0,15,30].map((x,i)=>`<path d="M${x-5},-28 L${x},-18 L${x+5},-28" fill="${['#e5383b','#ffd23f','#3fae5f','#5a8fd6','#ff8fb8'][i]}" stroke="${K}" stroke-width=".8"/>`).join('')}
+${waP(-16,4,{s:.45,shirt:'#e8640c',hair:'bun',L:{a:-140},mouth:'open'})}${waP(16,4,{s:.45,shirt:'#5a8fd6',hair:'spiky',R:{a:-40},legs:'walk'})}<path d="M-34,36 h68" stroke="${K}" stroke-width="1.4"/>${s5T(0,48,'♪ ♫',{s:10,c:'#9d6bd1'})}</g>
+</g>`;},
+ a:{'春节':[104,60],'新年':[16,104],'快乐':[16,150],'恭喜':[244,104],'发财':[244,150],'鞭炮':[78,146],'红包':[184,150],'节日':[30,40],'过年':[130,206],'饺子':[110,272],'庆祝':[166,232],'放假':[50,240],'月饼':[60,380],'中秋节':[214,360],'端午节':[136,400],
+   '生日':[56,490],'礼物':[124,500],'圣诞节':[214,480],'结婚':[90,600],'祝':[90,556],'晚会':[200,590]}};
+if(window.__T)window.__u155={keys:['hoc','nha','tg','so','ttao','st','yt','dl','cn','tn','cty','le']};
 
 function route(){
   stopGames();
