@@ -6290,6 +6290,41 @@ html.mgames .hcard .u157gbb b{font-size:11.5px!important}
 .u161it.on{border-color:#2fa36b;background:#eefaf3}
 .u161it b{font-size:13.5px}
 /* 5.109 giọng bài khóa: không có CSS riêng */
+/* 5.110 Toàn màn hình (Android, iOS, tablet): chừa dải trên cùng cho vùng tai thỏ/camera + nút nổi, nội dung bắt đầu bên dưới dải */
+html.fs main#app.wrap{padding-top:calc(env(safe-area-inset-top,0px) + 60px)!important;padding-right:max(10px,env(safe-area-inset-right,0px))!important;padding-bottom:max(16px,env(safe-area-inset-bottom,0px))!important}
+html.fs #fspill{top:calc(env(safe-area-inset-top,0px) + 14px)!important;max-width:calc(100vw - 150px);overflow:hidden;text-overflow:ellipsis;font-size:12px}
+html.fs.gplaying #gstop{top:calc(env(safe-area-inset-top,0px) + 8px)!important;right:max(8px,env(safe-area-inset-right,0px))!important;bottom:auto!important;transform:none!important;border-radius:999px!important;padding:8px 14px!important;display:flex!important;align-items:center;gap:6px}
+html.fs.gplaying #gstop b{writing-mode:horizontal-tb!important;letter-spacing:0!important;text-transform:none!important}
+html.fs.gplaying #gstop:active{transform:scale(.95)!important}
+html.fs.gplaying #gstop[hidden]{display:none!important}
+/* nội dung cuối trang luôn cuộn được ra khỏi nút nổi góc dưới */
+main#app.wrap{padding-bottom:max(var(--u163pb,0px),40px)!important}
+html.gplaying main#app.wrap,html.u163play main#app.wrap{padding-bottom:max(16px,env(safe-area-inset-bottom,0px))!important}
+/* đang chơi trò tự vẽ: ẩn các nút nổi không liên quan */
+html.u163play .fab,html.u163play #viewtools,html.u163play #gpromo{display:none!important}
+/* trang trò chơi không cần nút Thêm từ */
+html.gameroute .fab{display:none!important}
+/* màn hình thấp (điện thoại xoay ngang): đầu trang cuộn đi, khi đang chơi thì ẩn để khung chơi vừa màn hình */
+@media (max-height:520px) and (orientation:landscape){
+  header.top{position:relative!important;top:auto!important}
+  html.u163play header.top,html.gplaying header.top{display:none!important}
+  html.u163play main#app.wrap{padding-top:max(6px,env(safe-area-inset-top,0px))!important;padding-left:max(10px,env(safe-area-inset-left,0px))!important;padding-right:max(10px,env(safe-area-inset-right,0px))!important}
+  html.u163play .u158tip{display:none}
+  html.u163play .u158hud{margin-bottom:6px}
+  html.u163play .u158q{padding:6px 12px!important;margin-bottom:6px!important;min-height:0!important}
+  /* không đủ chỗ cho nút nổi phụ (toàn màn hình, sáng/tối): ẩn đi, chế độ tối vẫn ở Cài đặt; trò chơi tự vào toàn màn hình khi chơi */
+  #viewtools{display:none!important}
+}
+/* máy tính bảng và màn vừa: thanh công cụ xem về góc dưới trái, không đè menu đầu trang */
+@media (min-width:769px) and (max-width:1240px) and (min-height:521px){
+  #viewtools{top:auto!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;left:max(10px,env(safe-area-inset-left,0px))!important}
+}
+/* cuộn tới một phần (scrollIntoView) luôn dừng dưới đầu trang dính hoặc dải nút trên cùng, không chui vào dưới */
+html{scroll-padding-top:var(--u163sp,0px)}
+html.fs{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 58px)!important}
+/* đang chơi: lời nói của Long Hổ trên đầu trang không bay đè lên khung chơi */
+html.gplaying #pmsay,html.u163play #pmsay,html.fs #pmsay{display:none!important}
+html.fs.gplaying.u153on #gstop,html.u153on #gstop{display:none!important}
 </style>
 </head><body>
 
@@ -6315,12 +6350,12 @@ html.mgames .hcard .u157gbb b{font-size:11.5px!important}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='cd463631';
-document.write('<script src="packs/hsk'+L+'.js?v=cd463631"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='278949fc';
+document.write('<script src="packs/hsk'+L+'.js?v=278949fc"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=cd463631','strokes-file');A('packs/dict.js?v=cd463631','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=278949fc','strokes-file');A('packs/dict.js?v=278949fc','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -24535,8 +24570,9 @@ function rnStart(){if(typeof gmGate==='function'&&!gmGate('runner',rnStart))retu
     <div class="u158cv" id="u158cv"><canvas id="u158c" aria-label="Màn chơi Long Hổ Vượt Ải"></canvas></div>
     <div class="u158tip">👆 Chạm màn chơi để nhảy · chạm 2 lần để nhảy cao · máy tính: Space / ↑</div></div>`;
   const root=app.querySelector('#u158'),cv=root.querySelector('#u158c'),cx=cv.getContext('2d'),box=root.querySelector('#u158cv');
-  const fit=()=>{const w=Math.min(box.clientWidth,760),dpr=Math.min(2,window.devicePixelRatio||1);cv.style.width=w+'px';cv.style.height=(w*RN_H/RN_W)+'px';cv.width=Math.round(w*dpr);cv.height=Math.round(w*RN_H/RN_W*dpr);cx.setTransform(cv.width/RN_W,0,0,cv.height/RN_H,0,0);};
-  fit();addEventListener('resize',fit);setTimeout(()=>{const hd=document.querySelector('header.top'),hh=hd?hd.offsetHeight:0;window.scrollTo({top:Math.max(0,root.getBoundingClientRect().top+scrollY-hh-8)});},40);
+  const fit=()=>{const hh=u163Top(),q=root.querySelector('#u158q'),hu=root.querySelector('.u158hud'),tp=root.querySelector('.u158tip');
+    const maxH=Math.max(130,innerHeight-hh-(q?q.offsetHeight:0)-(hu?hu.offsetHeight:0)-(tp?tp.offsetHeight:0)-44);const w=Math.min(box.clientWidth,760,maxH*RN_W/RN_H),dpr=Math.min(2,window.devicePixelRatio||1);cv.style.width=w+'px';cv.style.height=(w*RN_H/RN_W)+'px';cv.width=Math.round(w*dpr);cv.height=Math.round(w*RN_H/RN_W*dpr);cx.setTransform(cv.width/RN_W,0,0,cv.height/RN_H,0,0);};
+  fit();addEventListener('resize',fit);setTimeout(()=>u163Scroll(root),40);
   const pet=new Image();pet.src=petSrc();const boss=new Image();boss.src='ga1/rn_hl_boss.webp';const bossSad=new Image();bossSad.src='ga1/rn_hl_sad.webp';
   const pool=rcPool();const st={hp:3,score:0,coins:0,ok:0,tot:0,streak:0,bestStreak:0,boss:0,dist:0,v:190,y:0,vy:0,jumps:0,inv:0,ents:[],fx:[],texts:[],q:null,qn:0,lastW:null,miss:[],over:false,t:performance.now(),off:0,bossOn:0,bossX:RN_W+60,bossMood:'boss',pending:0};
   if(window.__T)window.__rn=st;
@@ -24692,9 +24728,9 @@ function fsStart(){if(typeof gmGate==='function'&&!gmGate('fish',fsStart))return
     <div class="u158cv" id="u159cv"><canvas id="u159c" aria-label="Mặt hồ câu cá"></canvas></div>
     <div class="u158tip">👆 Chạm mặt hồ để thả câu · máy tính: Space / ↓</div></div>`;
   const root=app.querySelector('#u159'),cv=root.querySelector('#u159c'),cx=cv.getContext('2d'),box=root.querySelector('#u159cv');
-  const fit=()=>{const hd=document.querySelector('header.top'),hh=hd?hd.offsetHeight:0,q=root.querySelector('#u159q'),hud=root.querySelector('.u158hud');const maxH=Math.max(260,innerHeight-hh-(q?q.offsetHeight:0)-(hud?hud.offsetHeight:0)-60);
+  const fit=()=>{const hh=u163Top(),q=root.querySelector('#u159q'),hud=root.querySelector('.u158hud');const maxH=Math.max(150,innerHeight-hh-(q?q.offsetHeight:0)-(hud?hud.offsetHeight:0)-36);
     const w=Math.min(box.clientWidth,760,maxH*FS_W/FS_H),dpr=Math.min(2,window.devicePixelRatio||1);cv.style.width=w+'px';cv.style.height=(w*FS_H/FS_W)+'px';cv.width=Math.round(w*dpr);cv.height=Math.round(w*FS_H/FS_W*dpr);cx.setTransform(cv.width/FS_W,0,0,cv.height/FS_H,0,0);};
-  fit();addEventListener('resize',fit);setTimeout(()=>{const hd=document.querySelector('header.top'),hh=hd?hd.offsetHeight:0;window.scrollTo({top:Math.max(0,root.getBoundingClientRect().top+scrollY-hh-8)});},40);
+  fit();addEventListener('resize',fit);setTimeout(()=>u163Scroll(root),40);
   const im={lh:new Image(),hl:new Image(),hlc:new Image(),lhc:new Image()};im.lh.src=petSrc();im.hl.src='ga1/fs_hl.webp';im.hlc.src='ga1/fs_hl_cheer.webp';im.lhc.src='ga1/fs_lh_cheer.webp';
   const pool=rcPool();const st={left:FS_SEC,score:0,rv:0,ok:0,tot:0,streak:0,best:0,gold:0,bx:120,bdir:1,hook:{s:'idle',y:FS_WATER,x:120,fish:null,stuck:0},fish:[],q:null,qk:0,last:null,miss:[],over:false,t:performance.now(),rvT:0,rvHook:{s:'idle',y:FS_WATER,c:0},rvNext:LV[2][0]+Math.random()*(LV[2][1]-LV[2][0]),fx:[],texts:[],cheer:0,rvCheer:0};
   if(window.__T)window.__fs=st;
@@ -24826,6 +24862,21 @@ const u162Dev=()=>!!(S.set&&S.set.vsrc==='device');
   try{voStop();ttsCancel0();ttsUnlock();}catch(e){}if(!VO_AU){VO_AU=new Audio();VO_AU.preload='auto';}const a=VO_AU;a.onended=null;a.onerror=()=>base.call(this,text,rate);a.src=f;
   a.playbackRate=Math.max(.5,Math.min(2,((S.set&&S.set.rate)||1)*(rate||.85)/.85));const p=a.play();if(p&&p.catch)p.catch(e=>{if(e&&e.name==='NotAllowedError')return;base.call(this,text,rate);});};})();
 if(window.__T)window.__u162={VO_DB,VD,vdFile,u162File,playOne:(...x)=>playOne(...x)};
+
+/* 5.110 Luật bố cục đa thiết bị (Android, iOS, máy tính bảng, xoay ngang) — xem tools/DESIGN-STYLE.md mục "Bố cục đa thiết bị"
+   - Nút nổi (Dừng, thoát toàn màn hình, tên trò) nằm trong dải trên cùng dành riêng, không đè nội dung trò chơi.
+   - Màn hình thấp (điện thoại xoay ngang): đầu trang không dính, khi đang chơi thì ẩn hẳn để khung chơi vừa màn hình.
+   - Khung chơi tự co theo chiều cao còn trống thật (trừ đầu trang đang che, vùng an toàn). */
+function u163Top(){const hd=document.querySelector('header.top');if(!hd)return 0;const cs=getComputedStyle(hd);if(cs.display==='none'||(cs.position!=='fixed'&&cs.position!=='sticky'))return 0;return Math.max(0,hd.getBoundingClientRect().bottom);}
+function u163Scroll(el){try{const y=el.getBoundingClientRect().top+scrollY-u163Top()-6;window.scrollTo({top:Math.max(0,y)});}catch(e){}}
+/* trò tự vẽ (Vượt ải, Câu cá) cũng tính là "đang chơi" để ẩn nút nổi và đầu trang ở màn hình thấp */
+(function(){const R=document.documentElement;let t=0;const chk=()=>{t=0;const on=!!document.querySelector('#u158cv,#u159cv');if(R.classList.contains('u163play')!==on){R.classList.toggle('u163play',on);}};
+  new MutationObserver(()=>{if(!t)t=requestAnimationFrame(chk);}).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});addEventListener('hashchange',()=>setTimeout(chk,60));})();
+if(window.__T)window.__u163={u163Top,u163Scroll};
+/* chừa đáy trang đủ cao để cuộn nội dung cuối ra khỏi các nút nổi góc dưới (Thêm từ, công cụ xem, thanh tab) */
+(function(){const R=document.documentElement;let t=0;const calc=()=>{t=0;let m=0;document.querySelectorAll('#viewtools,.fab,#tabbar').forEach(e=>{const s=getComputedStyle(e);if(s.display==='none'||s.position!=='fixed'||!e.offsetWidth)return;const r=e.getBoundingClientRect();if(r.top>innerHeight*.5)m=Math.max(m,innerHeight-r.top);});
+    const sp=Math.ceil(u163Top())+'px';if(R.style.getPropertyValue('--u163sp')!==sp)R.style.setProperty('--u163sp',sp);const v=Math.ceil(m+14)+'px';if(R.style.getPropertyValue('--u163pb')!==v)R.style.setProperty('--u163pb',v);};
+  const q=()=>{if(!t)t=requestAnimationFrame(calc);};addEventListener('resize',q);addEventListener('hashchange',()=>setTimeout(q,80));new MutationObserver(q).observe(R,{attributes:true,attributeFilter:['class']});setTimeout(q,300);})();
 
 function route(){
   stopGames();
