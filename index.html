@@ -6351,6 +6351,15 @@ html.fs.gplaying.u153on #gstop,html.u153on #gstop{display:none!important}
 @media (max-width:560px){.u164s{flex-wrap:wrap;align-items:flex-start}.u164x{top:10px;transform:none}.u164st{flex-basis:calc(100% - 56px)}.u164sb{width:100%;padding-left:52px}.u164m{width:84px}.u164hero{padding:16px}}
 @media (prefers-reduced-motion:reduce){.u164l{transition:none}.u164l:hover{transform:none}}
 html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(--card,#1b2826));border-color:color-mix(in srgb,#ffd54a 35%,transparent)}html[data-theme="dark"] .u164hero h1{color:#9be7c4}html[data-theme="dark"] .u164hero p{color:inherit}
+/* 5.112 Quà chào mừng app Android */
+.u165gift{display:block;margin-top:4px;font-size:13px;font-weight:800;color:#ffd54a}
+.u165s .u164si{font-size:20px}
+.u165s{padding-right:14px}
+#u165dlg{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) 16px max(16px,env(safe-area-inset-bottom,0px));background:rgba(10,20,18,.55)}
+#u165dlg.on{display:flex}
+.u165card{width:100%;max-width:380px;background:var(--card,#fff);border-radius:22px;padding:22px 20px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.u165card img{width:110px;height:auto;margin:-60px auto 6px;display:block}
+.u165card h3{margin:6px 0;font-size:28px;color:#0d7a63}.u165card p{margin:0 0 14px;color:var(--muted,#4a5a54)}
 </style>
 </head><body>
 
@@ -6376,12 +6385,12 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='a66030ca';
-document.write('<script src="packs/hsk'+L+'.js?v=a66030ca"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='0be55406';
+document.write('<script src="packs/hsk'+L+'.js?v=0be55406"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=a66030ca','strokes-file');A('packs/dict.js?v=a66030ca','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=0be55406','strokes-file');A('packs/dict.js?v=0be55406','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -24952,16 +24961,50 @@ function u164Strip(){if(u164InApp())return;const h=location.hash||'#home';if(h!=
   let off=0;try{off=+localStorage.getItem('hsk-u164x')||0;}catch(e){}if(Date.now()-off<14*864e5)return;
   const root=app.querySelector('.stack')||app;if(!root||app.querySelector('#u164s'))return;const ios=u164IOS();
   const d=document.createElement('div');d.id='u164s';d.className='u164s';
-  d.innerHTML=`<span class="u164si" aria-hidden="true">${lpIc('play')}</span><div class="u164st"><b>Tâm HSK đã có trên CH Play</b><small>${ios?'Bản iPhone dự kiến có trên App Store ngày 20/11/2026':'Học mượt hơn trên điện thoại · App Store dự kiến 20/11/2026'}</small></div>
+  d.innerHTML=`<span class="u164si" aria-hidden="true">${lpIc('play')}</span><div class="u164st"><b>Tâm HSK đã có trên CH Play · Tải ngay nhận quà</b><small>${ios?'Bản iPhone dự kiến có trên App Store ngày 20/11/2026':'Học mượt hơn trên điện thoại · App Store dự kiến 20/11/2026'}</small><span class="u165gift" hidden></span></div>
     <div class="u164sb">${ios?'':`<a class="btn pri sm" href="${esc(u164Play())}" target="_blank" rel="noopener">Tải app</a>`}<a class="btn sm ghost" href="#lienket">Liên hệ</a></div>
     <button class="u164x" type="button" aria-label="Ẩn thông báo tải app">×</button>`;
-  d.querySelector('.u164x').onclick=()=>{try{localStorage.setItem('hsk-u164x',String(Date.now()));}catch(e){}d.remove();};root.insertBefore(d,root.firstChild);}
+  d.querySelector('.u164x').onclick=()=>{try{localStorage.setItem('hsk-u164x',String(Date.now()));}catch(e){}d.remove();};root.insertBefore(d,root.firstChild);try{u165Paint();}catch(e){}}
 new MutationObserver(()=>{clearTimeout(u164Strip.t);u164Strip.t=setTimeout(u164Strip,60);}).observe(document.getElementById('app')||document.body,{childList:true});
 addEventListener('hashchange',()=>setTimeout(u164Strip,120));setTimeout(u164Strip,400);
 /* Khám phá: thêm lối vào trang Liên kết */
 (function(){const base=viewMore;viewMore=function(){base.apply(this,arguments);const st=app.querySelector('.stack');if(!st||st.querySelector('.u164more'))return;
   st.insertAdjacentHTML('beforeend',`<a class="panel row u164more" href="#lienket"><span class="u164ic" style="--c:#0d7a63">${lpIc('share')}</span><span style="flex:1;min-width:0"><b>${u164InApp()?'Liên hệ & mạng xã hội':'Tải app & liên hệ'}</b><small class="muted" style="display:block">CH Play, App Store, Zalo, Facebook, email…</small></span><b aria-hidden="true">›</b></a>`);};})();
 if(window.__T)window.__u164={viewLinks,u164Items,u164Strip};
+
+/* 5.112 Quà chào mừng app Android + gói quà Pro 7 ngày
+   - 100 tài khoản đầu tiên đăng nhập trên app Android nhận 500 Nguyên bảo (mỗi tài khoản, mỗi máy một lần; máy chủ đếm và chặn trùng).
+   - Web: dải "Đã có trên CH Play" ghi rõ quà và số suất còn lại. App Android chưa đăng nhập: dải mời đăng nhập nhận quà.
+   - Gói "pro7" (Pro 7 ngày) dùng làm phần thưởng cho các hoạt động, quản trị tặng được ở trang người dùng. */
+try{PLAN_NAME.pro7='Gói Pro 7 ngày (quà)';}catch(e){}
+const U165={left:null,max:100,coins:500};
+async function u165Status(){try{const r=await fetch(API_BASE+'/v1/promo/android');if(!r.ok)return;const j=await r.json();U165.left=j.left;U165.max=j.max||100;U165.coins=j.coins||500;u165Paint();}catch(e){}}
+function u165Txt(){if(U165.left===0)return '';const n=U165.left==null?'':` · còn ${U165.left}/${U165.max} suất`;return `Quà chào mừng: ${U165.coins} Nguyên bảo cho ${U165.max} người đầu đăng nhập app Android${n}`;}
+function u165Paint(){const t=u165Txt();document.querySelectorAll('.u165gift').forEach(el=>{el.hidden=!t;el.textContent=t;});u165AppStrip();}
+const u165Uid=()=>(typeof SOC!=='undefined'&&SOC.auth&&SOC.auth.uid)||'';
+const u165Done=uid=>{try{return (JSON.parse(localStorage.getItem('hsk-u165')||'{}'))[uid];}catch(e){return null;}};
+const u165Mark=(uid,v)=>{try{const o=JSON.parse(localStorage.getItem('hsk-u165')||'{}');o[uid]=v;localStorage.setItem('hsk-u165',JSON.stringify(o));}catch(e){}};
+let u165Busy=false;
+async function u165Claim(){if(u165Busy||!window.AndroidApp||!AndroidApp.deviceId)return;const uid=u165Uid();if(!uid||u165Done(uid))return;let dev='';try{dev=AndroidApp.deviceId()||'';}catch(e){}if(!/^[0-9a-f]{32}$/.test(dev))return;
+  u165Busy=true;try{const tok=await idToken();const r=await netFetch('POST',API_BASE+'/v1/promo/android',{'Content-Type':'application/json','Authorization':'Bearer '+tok},JSON.stringify({dev}));
+    const j=JSON.parse(r.text||'{}');
+    if(j.ok){u165Mark(uid,'ok');U165.left=j.left;u165Celebrate(j);}
+    else if(j.error==='DONE'||j.error==='DEVICE_USED'||j.error==='FULL'){u165Mark(uid,j.error);if(j.left!=null)U165.left=j.left;}
+  }catch(e){}finally{u165Busy=false;u165Paint();}}
+function u165Celebrate(j){let d=document.getElementById('u165dlg');if(!d){d=document.createElement('div');d.id='u165dlg';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');document.body.appendChild(d);}
+  let mas='';try{mas=charPoseSrc('cheer');}catch(e){}
+  d.innerHTML=`<div class="u165card">${mas?`<img src="${mas}" alt="" aria-hidden="true">`:''}<div class="label">Quà chào mừng app Android</div><h3>+${j.coins} Nguyên bảo 🎉</h3><p>Bạn là người thứ <b>${j.no}</b> trong ${U165.max} người đầu tiên đăng nhập app Tâm HSK trên Android. Nguyên bảo đã vào ví của bạn.</p><div class="row" style="gap:8px;justify-content:center;flex-wrap:wrap"><a class="btn pri" href="#shop" id="u165go">Mở Cửa hàng</a><button class="btn" type="button" id="u165ok">Để sau</button></div></div>`;
+  d.classList.add('on');const close=()=>d.classList.remove('on');d.querySelector('#u165ok').onclick=close;d.querySelector('#u165go').onclick=close;d.onclick=e=>{if(e.target===d)close();};}
+/* app Android, chưa đăng nhập: dải mời đăng nhập nhận quà ở đầu Trang chủ (trong luồng trang, không nổi đè) */
+function u165AppStrip(){if(!window.AndroidApp)return;const h=location.hash||'#home';const old=app.querySelector('#u165s');
+  const show=(h==='#home'||h==='#')&&!u165Uid()&&U165.left!==0;if(!show){if(old)old.remove();return;}if(old)return;
+  const root=app.querySelector('.stack')||app;const d=document.createElement('div');d.id='u165s';d.className='u164s u165s';
+  d.innerHTML=`<span class="u164si" aria-hidden="true">🎁</span><div class="u164st"><b>Quà chào mừng app Android</b><span class="u165gift"></span></div><div class="u164sb"><a class="btn pri sm" href="#settings">Đăng nhập nhận quà</a></div>`;
+  root.insertBefore(d,root.firstChild);const g=d.querySelector('.u165gift');g.textContent=u165Txt();}
+new MutationObserver(()=>{clearTimeout(u165AppStrip.t);u165AppStrip.t=setTimeout(()=>{u165AppStrip();try{const t=u165Txt();document.querySelectorAll('.u165gift').forEach(el=>{if(el.textContent!==t){el.hidden=!t;el.textContent=t;}});}catch(e){}},80);}).observe(document.getElementById('app')||document.body,{childList:true});
+addEventListener('hashchange',()=>setTimeout(()=>{u165AppStrip();u165Claim();},150));
+setTimeout(u165Status,1200);setTimeout(u165Claim,2500);setInterval(u165Claim,20000);
+if(window.__T)window.__u165={U165,u165Status,u165Claim,u165Paint,u165Txt};
 
 function route(){
   stopGames();

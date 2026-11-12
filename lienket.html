@@ -36,6 +36,7 @@ span.it{opacity:.65}
 .go{width:20px;height:20px;color:var(--muted);flex:none}
 .soon{flex:none;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:#e8640c;color:#fff}
 .it.main{background:var(--jade);border-color:var(--jade);color:#fff}.it.main .ic{background:var(--gold);color:#2e2200}.it.main .t small{color:#d6efe6}.it.main .go{color:#fff}
+.gift{margin:0;padding:12px 16px;border-radius:16px;background:#fff3c4;color:#5a4300;font-weight:700;font-size:15px}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:6px 0}
 footer button{font:inherit;font-weight:700;color:var(--jade);background:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;margin-bottom:8px}
 @media (prefers-reduced-motion:reduce){a.it{transition:none}a.it:hover{transform:none}}
@@ -47,6 +48,7 @@ footer button{font:inherit;font-weight:700;color:var(--jade);background:none;bor
     <img class="logo" src="icons/icon-192.png" alt="Biểu tượng Tâm HSK">
     <div class="txt"><h1>Tâm HSK</h1><p>Học tiếng Trung HSK 1–6 như chơi game. Tải app, học trên web hoặc nhắn tư vấn.</p></div>
   </section>
+  <p id="gift" class="gift" hidden></p>
   <div id="out"></div>
   <footer><button type="button" id="cp">Sao chép đường dẫn trang này</button><div>© Tâm HSK · hsk.kassertam.com</div></footer>
 </main>
@@ -73,6 +75,7 @@ function draw(c){var L=(c&&c.links)||{},hot=(c&&c.hotline)||'';
   document.getElementById('out').innerHTML=h;}
 var c0=null;try{c0=JSON.parse(localStorage.getItem('hsk-lpcfg')||'null');}catch(e){}draw(c0);
 fetch(API+'/v1/char/lp').then(function(r){return r.ok?r.json():null;}).then(function(j){if(j){draw(j);try{localStorage.setItem('hsk-lpcfg',JSON.stringify(j));}catch(e){}}}).catch(function(){});
+fetch(API+'/v1/promo/android').then(function(r){return r.ok?r.json():null;}).then(function(j){if(!j||!j.left)return;var g=document.getElementById('gift');g.textContent='🎁 Quà chào mừng: '+j.coins+' Nguyên bảo cho '+j.max+' người đầu đăng nhập app Android (còn '+j.left+'/'+j.max+' suất). Tải app trên CH Play ngay!';g.hidden=false;}).catch(function(){});
 var cp=document.getElementById('cp');cp.onclick=function(){var u=SITE+'/lienket';(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){cp.textContent='Đã sao chép ✓';},function(){prompt('Sao chép đường dẫn:',u);});};
 })();
 </script>
