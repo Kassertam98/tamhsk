@@ -6388,6 +6388,12 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 .u168row .btn{flex:none;min-height:40px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .u168ic-word{background:color-mix(in srgb,#ffd54a 14%,var(--card,#1b2826));color:#ffd54a}:root:not([data-theme="light"]) .u168ok{background:color-mix(in srgb,#3fbf94 22%,transparent);color:#c8f3df}}
 :root[data-theme="dark"] .u168ic-word{background:color-mix(in srgb,#ffd54a 14%,var(--card,#1b2826));color:#ffd54a}:root[data-theme="dark"] .u168ok{background:color-mix(in srgb,#3fbf94 22%,transparent);color:#c8f3df}
+.u168c{display:flex;align-items:flex-start;gap:14px;padding:14px 48px 14px 14px;border-radius:18px;background:var(--card,#fff);border:1.5px solid #f2d98a;position:relative}
+.u168cw{flex:none;width:76px;height:76px;border-radius:18px;background:#0b5444;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.u168cw svg{width:20px!important;height:20px!important;fill:#ffd54a;margin-bottom:2px}.u168cw b{font-size:26px}.u168cw small{font-size:11px;color:#cfe7df}
+.u168ct{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.u168ct small{color:var(--muted,#5b6b65)}
+.u168cx{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;border:0;background:transparent;color:var(--muted,#5b6b65);font-size:22px;cursor:pointer}
+.u168hl{outline:3px solid #ffd54a;outline-offset:3px;transition:outline-color .4s}
 </style>
 </head><body>
 
@@ -6413,12 +6419,12 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='9378c06e';
-document.write('<script src="packs/hsk'+L+'.js?v=9378c06e"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='af6c7af2';
+document.write('<script src="packs/hsk'+L+'.js?v=af6c7af2"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=9378c06e','strokes-file');A('packs/dict.js?v=9378c06e','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=af6c7af2','strokes-file');A('packs/dict.js?v=af6c7af2','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -25123,6 +25129,7 @@ function u168Go(o){if(!o||!o.a)return;
   else if(o.a==='progress')to('#progress');
   else if(o.a==='word'&&o.zh){const zh=String(o.zh).slice(0,12);if(!/^#(home)?$/.test(location.hash||''))location.hash='#home';
     setTimeout(()=>{try{openWordAny(zh);}catch(e){}try{speak(zh);}catch(e){}},450);}
+  else if(o.a==='widgets'){to('#more');setTimeout(()=>{const p=document.getElementById('u168p');if(p){p.scrollIntoView({block:'center'});p.classList.add('u168hl');setTimeout(()=>p.classList.remove('u168hl'),2400);}},500);}
   else to('#home');}
 function u168Launch(){let s='';try{s=AndroidApp.takeLaunch()||'';}catch(e){}
   if(!s){try{s=sessionStorage.getItem('u168l')||'';sessionStorage.removeItem('u168l');}catch(e){}}
@@ -25142,7 +25149,25 @@ function u168Wire(root){root.querySelectorAll('[data-u168]').forEach(b=>b.onclic
   let k=0;const t=setInterval(()=>{const p=document.getElementById('u168p');if(!p||++k>40){clearInterval(t);return;}let n=0;try{n=AndroidApp.widgetCount(b.dataset.u168);}catch(e){}if(n){clearInterval(t);p.outerHTML=u168Panel();const q=document.getElementById('u168p');if(q)u168Wire(q);}},1500);});}
 (function(){const base=viewMore;viewMore=function(){base.apply(this,arguments);if(!u168On())return;const st=app.querySelector('.stack');if(!st||st.querySelector('#u168p'))return;
   const anchor=st.querySelector('.u164more');const html=u168Panel();if(anchor)anchor.insertAdjacentHTML('beforebegin',html);else st.insertAdjacentHTML('beforeend',html);u168Wire(st);};})();
-if(window.__T)window.__u168={u168Data,u168Go,u168Launch,u168Panel,u168Sync};
+/* Trang chủ: gợi ý thêm widget (một lần, ẩn được), nằm trong luồng trang */
+function u168Card(){if(!u168On())return;const h=location.hash||'#home';if(h!=='#home'&&h!=='#')return;if(app.querySelector('#u168c'))return;
+  let pin=false,cnt=0;try{pin=AndroidApp.widgetPinOk();cnt=U168_KINDS.reduce((a,[k])=>a+(AndroidApp.widgetCount(k)||0),0);}catch(e){}if(!pin||cnt)return;
+  let off=0;try{off=+localStorage.getItem('hsk-u168h')||0;}catch(e){}if(off<0||Date.now()-off<21*864e5)return;
+  let started=false;try{started=(S.streak&&S.streak.count>0)||LESSONS.some(l=>lessonProgress(l.n)>0);}catch(e){}if(!started)return;
+  const root=app.querySelector('.stack')||app;if(!root.firstElementChild)return;const n=stkNow();
+  const d=document.createElement('section');d.id='u168c';d.className='u168c';
+  d.innerHTML=`<span class="u168cw" aria-hidden="true"><svg viewBox="5 1.5 14 21"><path d="M12 2c1 3.5 5 5.5 5 11a5 5 0 0 1-10 0c0-2.5 1.2-4 2.5-5.2.3 1.8 1 2.8 2 3.2-.4-3 0-6 .5-9z"/></svg><b>${n}</b><small>ngày</small></span>
+    <div class="u168ct"><b>Đặt Chuỗi ngày học ra màn hình chính</b><small>Mở điện thoại là thấy, nhắc bạn giữ chuỗi mỗi ngày.</small>
+    <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn sm pri" type="button" id="u168cadd">Thêm widget</button><a class="btn sm ghost" href="#more" id="u168call">Xem 3 widget</a></div></div>
+    <button class="u168cx" type="button" aria-label="Ẩn gợi ý widget">×</button>`;
+  d.querySelector('.u168cx').onclick=()=>{let k=0;try{k=(+localStorage.getItem('hsk-u168k')||0)+1;localStorage.setItem('hsk-u168k',String(k));localStorage.setItem('hsk-u168h',String(k>=2?-1:Date.now()));}catch(e){}d.remove();};
+  d.querySelector('#u168cadd').onclick=()=>{u168Sync();let ok=false;try{ok=AndroidApp.pinWidget('streak');}catch(e){}if(!ok){location.hash='#more';return;}
+    let k=0;const t=setInterval(()=>{let c=0;try{c=AndroidApp.widgetCount('streak');}catch(e){}if(c||++k>40){clearInterval(t);if(c){d.remove();try{gardenToast('Đã thêm widget Chuỗi ngày học ra màn hình chính');}catch(e){}}}},1500);};
+  d.querySelector('#u168call').onclick=e=>{e.preventDefault();u168Go({a:'widgets'});};
+  let ref=root.firstElementChild;while(ref&&/\bu16[45]s\b/.test(ref.className))ref=ref.nextElementSibling;root.insertBefore(d,ref);}
+new MutationObserver(()=>{clearTimeout(u168Card.t);u168Card.t=setTimeout(u168Card,120);}).observe(document.getElementById('app')||document.body,{childList:true});
+addEventListener('hashchange',()=>setTimeout(u168Card,200));setTimeout(u168Card,1200);
+if(window.__T)window.__u168={u168Card,u168Data,u168Go,u168Launch,u168Panel,u168Sync};
 
 function route(){
   stopGames();
