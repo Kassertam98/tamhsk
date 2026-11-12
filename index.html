@@ -6382,7 +6382,7 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 .u168ic svg{width:26px!important;height:26px!important;display:block}
 .u168ic-word{background:#fff8e6;color:#0b4d3e}
 .u168ic-streak{background:#0b5444}.u168ic-streak svg{fill:#ffd54a}
-.u168ic-lesson{background:#ffd54a}.u168ic-lesson svg{fill:#2e2200}
+.u168ic-lesson{background:#ffd54a}.u168ic-games{background:#5b6bd6;color:#fff}.u168ic-dict{background:#0d7a63;color:#fff}.u168ic-lesson svg{fill:#2e2200}
 .u168t{flex:1;min-width:140px;display:flex;flex-direction:column;gap:2px}.u168t small{color:var(--muted,#5b6b65);font-size:13px}
 .u168ok{flex:none;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:#e3f4ec;color:#0b4d3e}
 .u168row .btn{flex:none;min-height:40px}
@@ -6419,12 +6419,12 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='af6c7af2';
-document.write('<script src="packs/hsk'+L+'.js?v=af6c7af2"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='f0baad55';
+document.write('<script src="packs/hsk'+L+'.js?v=f0baad55"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=af6c7af2','strokes-file');A('packs/dict.js?v=af6c7af2','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f0baad55','strokes-file');A('packs/dict.js?v=f0baad55','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -25107,7 +25107,10 @@ if(window.__T)window.__u167={curLesson,curPool,u167Review};
    - Nhấn widget: app mở đúng chỗ (thẻ từ + phát âm, bài học, Tiến độ). Widget của cấp HSK khác thì chuyển cấp trước.
    - Khám phá: mục "Widget màn hình chính" để thêm widget bằng một chạm (Android 8 trở lên). */
 const u168On=()=>!!(window.AndroidApp&&AndroidApp.setWidget);
-const U168_KINDS=[['word','Từ mỗi ngày','Chữ Hán, pinyin, nghĩa · đổi mỗi ngày','2×2 hoặc 4×2'],['streak','Chuỗi ngày học','Số ngày liên tiếp và lượt luyện hôm nay','2×2'],['lesson','Học tiếp','Vào thẳng bài đang học','4×1']];
+const U168_KINDS=[['streak','Tiểu Long Hổ · Chuỗi ngày','Linh thú vui buồn theo chuỗi ngày học','2×2 hoặc 4×2'],['word','Từ mỗi ngày','Chữ Hán, pinyin, nghĩa · đổi mỗi ngày','2×2 hoặc 4×2'],['lesson','Học tiếp','Vào thẳng bài đang học','4×1'],['games','Trò chơi','Chạm là vào thẳng trò chơi','4×2'],['dict','Tra từ điển','Tra bằng chữ, pinyin hoặc giọng nói','4×1']];
+/* 5.117: danh sách trò chơi cho widget (ưu tiên trò hành động) */
+const U169_GAME=[['defense','Thủ thành'],['race','Đua xe'],['runner','Vượt ải'],['fish','Câu cá'],['blocks','Xếp chữ'],['garden','Khu vườn'],['travel','Du lịch'],['duel','Thách đấu'],['chat','WeChat'],['memory','Lật thẻ']];
+function u169Games(){const out=[];try{U169_GAME.forEach(([k,n])=>{const h=HUB.find(x=>x.k===k);if(h&&out.length<8)out.push([k,h.ic||'游',h.col||'#0d7a63',n]);});}catch(e){}return out;}
 function u168Data(){const n=curLesson(),T=today();let ln=n,pct=Math.round(lessonProgress(n)*100),st=pct>0?'doing':'next';
   if(passed(n)){if(n<NL){ln=n+1;pct=Math.round(lessonProgress(ln)*100);st=pct>0?'doing':'next';}else st='all';}
   const L=LESSONS[ln-1]||{};
@@ -25117,9 +25120,21 @@ function u168Data(){const n=curLesson(),T=today();let ln=n,pct=Math.round(lesson
   /* trộn cố định theo thứ tự trong bài (không ngẫu nhiên) để mỗi ngày một từ khác nhau */
   let i=0,j=0;while(ws.length<pool.length&&ws.length<160){if(i<mine.length&&(ws.length%2===0||j>=rest.length))ws.push(mine[i++]);else if(j<rest.length)ws.push(rest[j++]);else break;}
   return {lv:LEVEL,ln,lt:L.topic||'',pct,st,streak:(S.streak&&S.streak.count)||0,last:(S.streak&&S.streak.last)||'',goal:S.goal||20,dd:T,dn:(S.days&&S.days[T])||0,
-    words:ws.map(w=>[w.zh,w.py||'',String(w.vi).split(/[;；]/)[0].trim(),w.hv||'',w.l])};}
+    words:ws.map(w=>[w.zh,w.py||'',String(w.vi).split(/[;；]/)[0].trim(),w.hv||'',w.l]),games:u169Games()};}
 function u168Sync(){if(!u168On())return;try{AndroidApp.setWidget(JSON.stringify(u168Data()));}catch(e){}}
-(function(){const base=rmSync;rmSync=function(){const r=base.apply(this,arguments);u168Sync();return r;};})();
+(function(){const base=rmSync;rmSync=function(){const r=base.apply(this,arguments);u168Sync();try{u169PetSync();}catch(e){}return r;};})();
+/* 5.117: ảnh 7 tư thế của linh thú đang dùng (kèm đồ đang mặc) cho widget cảm xúc; chỉ gửi lại khi đổi linh thú hoặc đồ */
+const U169_POSES=['wave','happy','study','worry','sad','sleep','cheer'];
+function u169Look(){const base=charMascot();if(!base)return null;return {base,L:c3Look(null,base)};}
+async function u169PoseUrl(pose){const x=u169Look();if(!x)return MASCOT_URL;const {base,L}=x;
+  if(L.wear&&Object.keys(L.wear).length){try{const u=await c3Compose(base,pose,L.wear,L.img);if(u)return u;}catch(e){}}return charImgU(L.img,pose);}
+function u169Png(src){return new Promise(res=>{const im=new Image();im.crossOrigin='anonymous';
+  im.onload=()=>{try{const k=Math.min(1,360/Math.max(im.naturalWidth,im.naturalHeight));const c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.naturalWidth*k));c.height=Math.max(1,Math.round(im.naturalHeight*k));c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/png'));}catch(e){res('');}};
+  im.onerror=()=>res('');setTimeout(()=>res(''),15000);im.src=src;});}
+function u169Key(){const x=u169Look();if(!x)return 'mascot';const im=x.L.img||{};return JSON.stringify([im.slug||'',im.ver||'',x.L.wear||{}]);}
+async function u169PetSync(force){if(!u168On()||!AndroidApp.setWidgetPet||u169PetSync.busy)return;
+  let key='';try{key=u169Key();if(!force&&(AndroidApp.widgetCount('streak')||0)===0)return;if(!force&&AndroidApp.widgetPetKey()===key)return;}catch(e){return;}
+  u169PetSync.busy=1;try{let ok=0;for(const p of U169_POSES){const u=await u169PoseUrl(p);const b=u?await u169Png(u):'';if(b){AndroidApp.setWidgetPet(p,b);ok++;}}if(ok)AndroidApp.widgetPetDone(key);}catch(e){}finally{u169PetSync.busy=0;}}
 /* mở từ widget */
 function u168Go(o){if(!o||!o.a)return;
   if(o.lv&&+o.lv!==LEVEL&&LEVEL_READY[+o.lv]&&window.HSK_SITE){try{sessionStorage.setItem('u168l',JSON.stringify(o));localStorage.setItem('hsk-level',String(+o.lv));}catch(e){}location.hash='#home';location.reload();return;}
@@ -25129,24 +25144,28 @@ function u168Go(o){if(!o||!o.a)return;
   else if(o.a==='progress')to('#progress');
   else if(o.a==='word'&&o.zh){const zh=String(o.zh).slice(0,12);if(!/^#(home)?$/.test(location.hash||''))location.hash='#home';
     setTimeout(()=>{try{openWordAny(zh);}catch(e){}try{speak(zh);}catch(e){}},450);}
+  else if(o.a==='game'&&/^[a-z]{2,12}$/.test(o.k||'')&&HUB.some(x=>x.k===o.k))to('#'+o.k);
+  else if(o.a==='games')to('#games');
+  else if(o.a==='dict'){try{tdSt.tab=o.tab==='luu'?'luu':'tra';}catch(e){}to('#tudien');
+    setTimeout(()=>{if(o.mic){const m=document.getElementById('tdmic');if(m){m.click();return;}}const q=document.getElementById('tdq');if(q&&o.tab!=='luu'){q.focus();try{AndroidApp.showKeyboard();}catch(e){}}},600);}
   else if(o.a==='widgets'){to('#more');setTimeout(()=>{const p=document.getElementById('u168p');if(p){p.scrollIntoView({block:'center'});p.classList.add('u168hl');setTimeout(()=>p.classList.remove('u168hl'),2400);}},500);}
   else to('#home');}
 function u168Launch(){let s='';try{s=AndroidApp.takeLaunch()||'';}catch(e){}
   if(!s){try{s=sessionStorage.getItem('u168l')||'';sessionStorage.removeItem('u168l');}catch(e){}}
   if(!s)return;let o=null;try{o=JSON.parse(s);}catch(e){return;}u168Go(o);}
 window.u168Launch=u168Launch;
-if(u168On()){setTimeout(u168Launch,700);setTimeout(u168Sync,1500);}
+if(u168On()){setTimeout(u168Launch,700);setTimeout(u168Sync,1500);setTimeout(()=>{try{u169PetSync();}catch(e){}},4000);}
 /* Khám phá: thêm widget */
 function u168Panel(){const pinOk=(()=>{try{return AndroidApp.widgetPinOk();}catch(e){return false;}})();
   return `<section class="panel stack u168p" id="u168p"><div><h3 style="margin:0">Widget màn hình chính</h3><p class="small muted" style="margin:4px 0 0">Xem từ mới, chuỗi ngày và bài đang học ngay trên màn hình điện thoại, không cần mở app.</p></div>
   <div class="u168list">${U168_KINDS.map(([k,t,d,sz])=>{let n=0;try{n=AndroidApp.widgetCount(k)||0;}catch(e){}
-    return `<div class="u168row"><span class="u168ic u168ic-${k}" aria-hidden="true">${k==='word'?'学':k==='streak'?'<svg viewBox="5 1.5 14 21"><path d="M12 2c1 3.5 5 5.5 5 11a5 5 0 0 1-10 0c0-2.5 1.2-4 2.5-5.2.3 1.8 1 2.8 2 3.2-.4-3 0-6 .5-9z"/></svg>':'<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>'}</span>
+    return `<div class="u168row"><span class="u168ic u168ic-${k}" aria-hidden="true">${k==='word'?'学':k==='games'?'戏':k==='dict'?'字':k==='streak'?'<svg viewBox="5 1.5 14 21"><path d="M12 2c1 3.5 5 5.5 5 11a5 5 0 0 1-10 0c0-2.5 1.2-4 2.5-5.2.3 1.8 1 2.8 2 3.2-.4-3 0-6 .5-9z"/></svg>':'<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>'}</span>
       <span class="u168t"><b>${t}</b><small>${d} · ${sz}</small></span>
       ${pinOk?`<button class="btn sm ${n?'ghost':'pri'}" type="button" data-u168="${k}">${n?'Thêm nữa':'Thêm'}</button>`:''}${n?'<span class="u168ok">Đã thêm</span>':''}</div>`;}).join('')}</div>
   ${pinOk?'':'<p class="small muted u168how" style="margin:0">Cách thêm: nhấn giữ chỗ trống trên màn hình chính › <b>Tiện ích</b> (Widgets) › tìm <b>Tâm HSK</b> › kéo widget ra màn hình.</p>'}</section>`;}
 function u168Wire(root){root.querySelectorAll('[data-u168]').forEach(b=>b.onclick=()=>{u168Sync();let ok=false;try{ok=AndroidApp.pinWidget(b.dataset.u168);}catch(e){}
   if(!ok){try{gardenToast('Máy này chưa cho thêm tự động. Nhấn giữ màn hình chính › Tiện ích › Tâm HSK.');}catch(e){}return;}
-  let k=0;const t=setInterval(()=>{const p=document.getElementById('u168p');if(!p||++k>40){clearInterval(t);return;}let n=0;try{n=AndroidApp.widgetCount(b.dataset.u168);}catch(e){}if(n){clearInterval(t);p.outerHTML=u168Panel();const q=document.getElementById('u168p');if(q)u168Wire(q);}},1500);});}
+  let k=0;const t=setInterval(()=>{const p=document.getElementById('u168p');if(!p||++k>40){clearInterval(t);return;}let n=0;try{n=AndroidApp.widgetCount(b.dataset.u168);}catch(e){}if(n){clearInterval(t);if(b.dataset.u168==='streak')u169PetSync(true);p.outerHTML=u168Panel();const q=document.getElementById('u168p');if(q)u168Wire(q);}},1500);});}
 (function(){const base=viewMore;viewMore=function(){base.apply(this,arguments);if(!u168On())return;const st=app.querySelector('.stack');if(!st||st.querySelector('#u168p'))return;
   const anchor=st.querySelector('.u164more');const html=u168Panel();if(anchor)anchor.insertAdjacentHTML('beforebegin',html);else st.insertAdjacentHTML('beforeend',html);u168Wire(st);};})();
 /* Trang chủ: gợi ý thêm widget (một lần, ẩn được), nằm trong luồng trang */
@@ -25157,17 +25176,17 @@ function u168Card(){if(!u168On())return;const h=location.hash||'#home';if(h!=='#
   const root=app.querySelector('.stack')||app;if(!root.firstElementChild)return;const n=stkNow();
   const d=document.createElement('section');d.id='u168c';d.className='u168c';
   d.innerHTML=`<span class="u168cw" aria-hidden="true"><svg viewBox="5 1.5 14 21"><path d="M12 2c1 3.5 5 5.5 5 11a5 5 0 0 1-10 0c0-2.5 1.2-4 2.5-5.2.3 1.8 1 2.8 2 3.2-.4-3 0-6 .5-9z"/></svg><b>${n}</b><small>ngày</small></span>
-    <div class="u168ct"><b>Đặt Chuỗi ngày học ra màn hình chính</b><small>Mở điện thoại là thấy, nhắc bạn giữ chuỗi mỗi ngày.</small>
-    <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn sm pri" type="button" id="u168cadd">Thêm widget</button><a class="btn sm ghost" href="#more" id="u168call">Xem 3 widget</a></div></div>
+    <div class="u168ct"><b>Đặt Tiểu Long Hổ ra màn hình chính</b><small>Linh thú vui buồn theo chuỗi ngày học, nhắc bạn giữ chuỗi mỗi ngày.</small>
+    <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn sm pri" type="button" id="u168cadd">Thêm widget</button><a class="btn sm ghost" href="#more" id="u168call">Xem 5 widget</a></div></div>
     <button class="u168cx" type="button" aria-label="Ẩn gợi ý widget">×</button>`;
   d.querySelector('.u168cx').onclick=()=>{let k=0;try{k=(+localStorage.getItem('hsk-u168k')||0)+1;localStorage.setItem('hsk-u168k',String(k));localStorage.setItem('hsk-u168h',String(k>=2?-1:Date.now()));}catch(e){}d.remove();};
   d.querySelector('#u168cadd').onclick=()=>{u168Sync();let ok=false;try{ok=AndroidApp.pinWidget('streak');}catch(e){}if(!ok){location.hash='#more';return;}
-    let k=0;const t=setInterval(()=>{let c=0;try{c=AndroidApp.widgetCount('streak');}catch(e){}if(c||++k>40){clearInterval(t);if(c){d.remove();try{gardenToast('Đã thêm widget Chuỗi ngày học ra màn hình chính');}catch(e){}}}},1500);};
+    let k=0;const t=setInterval(()=>{let c=0;try{c=AndroidApp.widgetCount('streak');}catch(e){}if(c||++k>40){clearInterval(t);if(c){u169PetSync(true);d.remove();try{gardenToast('Đã thêm Tiểu Long Hổ ra màn hình chính');}catch(e){}}}},1500);};
   d.querySelector('#u168call').onclick=e=>{e.preventDefault();u168Go({a:'widgets'});};
   let ref=root.firstElementChild;while(ref&&/\bu16[45]s\b/.test(ref.className))ref=ref.nextElementSibling;root.insertBefore(d,ref);}
 new MutationObserver(()=>{clearTimeout(u168Card.t);u168Card.t=setTimeout(u168Card,120);}).observe(document.getElementById('app')||document.body,{childList:true});
 addEventListener('hashchange',()=>setTimeout(u168Card,200));setTimeout(u168Card,1200);
-if(window.__T)window.__u168={u168Card,u168Data,u168Go,u168Launch,u168Panel,u168Sync};
+if(window.__T)window.__u168={u169Games,u169PetSync,u169Key,u168Card,u168Data,u168Go,u168Launch,u168Panel,u168Sync};
 
 function route(){
   stopGames();
