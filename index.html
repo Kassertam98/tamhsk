@@ -6375,6 +6375,19 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 .u166emp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;margin-top:8px}.u166emp b{width:100%;text-align:center}
 .u166row{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:8px;margin:8px auto 0;max-width:620px;width:100%}.u166row .u166pz{margin:0;width:100%}
 /* 5.114 */
+/* 5.115 Widget màn hình chính */
+.u168list{display:flex;flex-direction:column;gap:10px}
+.u168row{display:flex;align-items:center;gap:12px;min-height:60px;padding:8px 12px;border-radius:16px;border:1.5px solid var(--line,#e3e6e1);background:var(--card,#fff);flex-wrap:wrap}
+.u168ic{flex:none;width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif SC',serif;font-weight:900;font-size:22px}
+.u168ic svg{width:26px!important;height:26px!important;display:block}
+.u168ic-word{background:#fff8e6;color:#0b4d3e}
+.u168ic-streak{background:#0b5444}.u168ic-streak svg{fill:#ffd54a}
+.u168ic-lesson{background:#ffd54a}.u168ic-lesson svg{fill:#2e2200}
+.u168t{flex:1;min-width:140px;display:flex;flex-direction:column;gap:2px}.u168t small{color:var(--muted,#5b6b65);font-size:13px}
+.u168ok{flex:none;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:#e3f4ec;color:#0b4d3e}
+.u168row .btn{flex:none;min-height:40px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .u168ic-word{background:color-mix(in srgb,#ffd54a 14%,var(--card,#1b2826));color:#ffd54a}:root:not([data-theme="light"]) .u168ok{background:color-mix(in srgb,#3fbf94 22%,transparent);color:#c8f3df}}
+:root[data-theme="dark"] .u168ic-word{background:color-mix(in srgb,#ffd54a 14%,var(--card,#1b2826));color:#ffd54a}:root[data-theme="dark"] .u168ok{background:color-mix(in srgb,#3fbf94 22%,transparent);color:#c8f3df}
 </style>
 </head><body>
 
@@ -6400,12 +6413,12 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='b4c6d5ce';
-document.write('<script src="packs/hsk'+L+'.js?v=b4c6d5ce"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='9378c06e';
+document.write('<script src="packs/hsk'+L+'.js?v=9378c06e"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=b4c6d5ce','strokes-file');A('packs/dict.js?v=b4c6d5ce','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=9378c06e','strokes-file');A('packs/dict.js?v=9378c06e','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -25081,6 +25094,55 @@ function u167Review(){if(!window.AndroidApp||!AndroidApp.requestReview)return;le
   if(!happy)return;st.n=(st.n||0)+1;st.at=Date.now();save();try{AndroidApp.requestReview();}catch(e){}}
 addEventListener('hashchange',()=>{if(/^#(home)?$/.test(location.hash))setTimeout(u167Review,1500);});setTimeout(u167Review,6000);
 if(window.__T)window.__u167={curLesson,curPool,u167Review};
+
+/* 5.115 Widget màn hình chính (chỉ app Android):
+   - Gửi dữ liệu cho 3 widget qua AndroidApp.setWidget: bài đang học, chuỗi ngày, lượt luyện hôm nay, danh sách từ (Bài 1 → bài đang học).
+     Widget vẽ từ dữ liệu này trong máy, không cần mạng; app gửi lại mỗi khi học xong một lượt, khi rời app và khi mở app.
+   - Nhấn widget: app mở đúng chỗ (thẻ từ + phát âm, bài học, Tiến độ). Widget của cấp HSK khác thì chuyển cấp trước.
+   - Khám phá: mục "Widget màn hình chính" để thêm widget bằng một chạm (Android 8 trở lên). */
+const u168On=()=>!!(window.AndroidApp&&AndroidApp.setWidget);
+const U168_KINDS=[['word','Từ mỗi ngày','Chữ Hán, pinyin, nghĩa · đổi mỗi ngày','2×2 hoặc 4×2'],['streak','Chuỗi ngày học','Số ngày liên tiếp và lượt luyện hôm nay','2×2'],['lesson','Học tiếp','Vào thẳng bài đang học','4×1']];
+function u168Data(){const n=curLesson(),T=today();let ln=n,pct=Math.round(lessonProgress(n)*100),st=pct>0?'doing':'next';
+  if(passed(n)){if(n<NL){ln=n+1;pct=Math.round(lessonProgress(ln)*100);st=pct>0?'doing':'next';}else st='all';}
+  const L=LESSONS[ln-1]||{};
+  /* từ của các bài đã mở, bài đang học đứng trước để "Từ hôm nay" ưu tiên từ mới */
+  const pool=curPool().filter(w=>w.zh&&w.vi);const mine=pool.filter(w=>w.l===n),rest=pool.filter(w=>w.l!==n);
+  let ws=[];
+  /* trộn cố định theo thứ tự trong bài (không ngẫu nhiên) để mỗi ngày một từ khác nhau */
+  let i=0,j=0;while(ws.length<pool.length&&ws.length<160){if(i<mine.length&&(ws.length%2===0||j>=rest.length))ws.push(mine[i++]);else if(j<rest.length)ws.push(rest[j++]);else break;}
+  return {lv:LEVEL,ln,lt:L.topic||'',pct,st,streak:(S.streak&&S.streak.count)||0,last:(S.streak&&S.streak.last)||'',goal:S.goal||20,dd:T,dn:(S.days&&S.days[T])||0,
+    words:ws.map(w=>[w.zh,w.py||'',String(w.vi).split(/[;；]/)[0].trim(),w.hv||'',w.l])};}
+function u168Sync(){if(!u168On())return;try{AndroidApp.setWidget(JSON.stringify(u168Data()));}catch(e){}}
+(function(){const base=rmSync;rmSync=function(){const r=base.apply(this,arguments);u168Sync();return r;};})();
+/* mở từ widget */
+function u168Go(o){if(!o||!o.a)return;
+  if(o.lv&&+o.lv!==LEVEL&&LEVEL_READY[+o.lv]&&window.HSK_SITE){try{sessionStorage.setItem('u168l',JSON.stringify(o));localStorage.setItem('hsk-level',String(+o.lv));}catch(e){}location.hash='#home';location.reload();return;}
+  const to=h=>{if(location.hash===h)route();else location.hash=h;window.scrollTo({top:0});};
+  if(o.a==='lesson'&&+o.n>=1&&+o.n<=NL)to('#l'+(+o.n));
+  else if(o.a==='review')to('#review');
+  else if(o.a==='progress')to('#progress');
+  else if(o.a==='word'&&o.zh){const zh=String(o.zh).slice(0,12);if(!/^#(home)?$/.test(location.hash||''))location.hash='#home';
+    setTimeout(()=>{try{openWordAny(zh);}catch(e){}try{speak(zh);}catch(e){}},450);}
+  else to('#home');}
+function u168Launch(){let s='';try{s=AndroidApp.takeLaunch()||'';}catch(e){}
+  if(!s){try{s=sessionStorage.getItem('u168l')||'';sessionStorage.removeItem('u168l');}catch(e){}}
+  if(!s)return;let o=null;try{o=JSON.parse(s);}catch(e){return;}u168Go(o);}
+window.u168Launch=u168Launch;
+if(u168On()){setTimeout(u168Launch,700);setTimeout(u168Sync,1500);}
+/* Khám phá: thêm widget */
+function u168Panel(){const pinOk=(()=>{try{return AndroidApp.widgetPinOk();}catch(e){return false;}})();
+  return `<section class="panel stack u168p" id="u168p"><div><h3 style="margin:0">Widget màn hình chính</h3><p class="small muted" style="margin:4px 0 0">Xem từ mới, chuỗi ngày và bài đang học ngay trên màn hình điện thoại, không cần mở app.</p></div>
+  <div class="u168list">${U168_KINDS.map(([k,t,d,sz])=>{let n=0;try{n=AndroidApp.widgetCount(k)||0;}catch(e){}
+    return `<div class="u168row"><span class="u168ic u168ic-${k}" aria-hidden="true">${k==='word'?'学':k==='streak'?'<svg viewBox="5 1.5 14 21"><path d="M12 2c1 3.5 5 5.5 5 11a5 5 0 0 1-10 0c0-2.5 1.2-4 2.5-5.2.3 1.8 1 2.8 2 3.2-.4-3 0-6 .5-9z"/></svg>':'<svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>'}</span>
+      <span class="u168t"><b>${t}</b><small>${d} · ${sz}</small></span>
+      ${pinOk?`<button class="btn sm ${n?'ghost':'pri'}" type="button" data-u168="${k}">${n?'Thêm nữa':'Thêm'}</button>`:''}${n?'<span class="u168ok">Đã thêm</span>':''}</div>`;}).join('')}</div>
+  ${pinOk?'':'<p class="small muted u168how" style="margin:0">Cách thêm: nhấn giữ chỗ trống trên màn hình chính › <b>Tiện ích</b> (Widgets) › tìm <b>Tâm HSK</b> › kéo widget ra màn hình.</p>'}</section>`;}
+function u168Wire(root){root.querySelectorAll('[data-u168]').forEach(b=>b.onclick=()=>{u168Sync();let ok=false;try{ok=AndroidApp.pinWidget(b.dataset.u168);}catch(e){}
+  if(!ok){try{gardenToast('Máy này chưa cho thêm tự động. Nhấn giữ màn hình chính › Tiện ích › Tâm HSK.');}catch(e){}return;}
+  let k=0;const t=setInterval(()=>{const p=document.getElementById('u168p');if(!p||++k>40){clearInterval(t);return;}let n=0;try{n=AndroidApp.widgetCount(b.dataset.u168);}catch(e){}if(n){clearInterval(t);p.outerHTML=u168Panel();const q=document.getElementById('u168p');if(q)u168Wire(q);}},1500);});}
+(function(){const base=viewMore;viewMore=function(){base.apply(this,arguments);if(!u168On())return;const st=app.querySelector('.stack');if(!st||st.querySelector('#u168p'))return;
+  const anchor=st.querySelector('.u164more');const html=u168Panel();if(anchor)anchor.insertAdjacentHTML('beforebegin',html);else st.insertAdjacentHTML('beforeend',html);u168Wire(st);};})();
+if(window.__T)window.__u168={u168Data,u168Go,u168Launch,u168Panel,u168Sync};
 
 function route(){
   stopGames();
