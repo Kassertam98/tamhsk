@@ -6374,6 +6374,7 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 .u157prize{margin:-2px 0 8px;font-weight:700;color:#8a6400}.u157prize span{font-weight:500;color:var(--muted,#5b6b65)}
 .u166emp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;margin-top:8px}.u166emp b{width:100%;text-align:center}
 .u166row{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:8px;margin:8px auto 0;max-width:620px;width:100%}.u166row .u166pz{margin:0;width:100%}
+/* 5.114 */
 </style>
 </head><body>
 
@@ -6399,12 +6400,12 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='8e217a43';
-document.write('<script src="packs/hsk'+L+'.js?v=8e217a43"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='b4c6d5ce';
+document.write('<script src="packs/hsk'+L+'.js?v=b4c6d5ce"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=8e217a43','strokes-file');A('packs/dict.js?v=8e217a43','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=b4c6d5ce','strokes-file');A('packs/dict.js?v=b4c6d5ce','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -10605,8 +10606,8 @@ function viewFriendGarden(f,head){
 const DUEL_N=10,DUEL_MS=10000,DUEL_TYPES=['h2m','m2h','p2h','tone','h2m','m2h','p2h','h2m','m2h','tone'];
 let duelPre=null,duelBusy=false;
 function withSeed(seed,fn){let a=seed>>>0;const r=Math.random;Math.random=()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};try{return fn();}finally{Math.random=r;}}
-const duelWords=l=>(l===XPID?XWORDS:l>=1&&l<=NL?WORDS.filter(w=>!w.custom&&w.l===l):WORDS.filter(w=>!w.custom&&w.l>=1&&w.l<=NL));
-const duelLName=(l,lv)=>(lv&&lv!==LEVEL||LEVEL!==2?'HSK'+(lv||2)+' · ':'')+(l===XPID?'Gói HSK 3.0':l>=1&&l<=NL?'Bài '+l:'Tổng hợp '+NL+' bài');
+const duelWords=l=>(l===XPID?XWORDS:l<0?WORDS.filter(w=>!w.custom&&w.l>=1&&w.l<=-l):l>=1&&l<=NL?WORDS.filter(w=>!w.custom&&w.l===l):WORDS.filter(w=>!w.custom&&w.l>=1&&w.l<=NL));
+const duelLName=(l,lv)=>(lv&&lv!==LEVEL||LEVEL!==2?'HSK'+(lv||2)+' · ':'')+(l===XPID?'Gói HSK 3.0':l<0?'Bài 1–'+(-l):l>=1&&l<=NL?'Bài '+l:'Tổng hợp '+NL+' bài');
 function duelQs(l,seed){const ws=duelWords(l);return withSeed(seed,()=>{const pk=shuffle(ws).slice(0,DUEL_N);while(pk.length<DUEL_N)pk.push(ws[pk.length%ws.length]);return pk.map((w,i)=>qWord(w,ws,DUEL_TYPES[i]));});}
 const duelPts=(ok,ms)=>ok?100+Math.round(Math.max(0,DUEL_MS-ms)/200):0;
 function runDuel(el,qs,done){
@@ -10906,7 +10907,7 @@ function foeSVG(t){const col=['#7c5cd6','#3a8f8a','#c3402b'][t];
   return `<svg viewBox="0 0 60 60" width="${t===2?64:44}" height="${t===2?64:44}" aria-hidden="true">${t===2?'<path d="M14 18 L8 4 L22 13Z M46 18 L52 4 L38 13Z" fill="#f5b041"/>':''}<ellipse cx="30" cy="34" rx="22" ry="20" fill="${col}"/>${t===1?'<path d="M9 28 Q30 4 51 28 Z" fill="#8a9aa3" stroke="#56636b" stroke-width="2"/>':''}<circle cx="22" cy="33" r="6" fill="#fff"/><circle cx="38" cy="33" r="6" fill="#fff"/><circle cx="23" cy="34" r="3" fill="#1b2826"/><circle cx="39" cy="34" r="3" fill="#1b2826"/><path d="M22 45 Q30 ${t===2?40:50} 38 45" stroke="#1b2826" stroke-width="2.5" fill="none" stroke-linecap="round"/><ellipse cx="18" cy="53" rx="6" ry="3" fill="${col}"/><ellipse cx="42" cy="53" rx="6" ry="3" fill="${col}"/></svg>`;}
 const DEF_UP=[['wall','Tường thành dày','Thêm 1 máu cho cổng thành',[30,60,100]],['ice','Trận băng','Quái đi chậm hơn 10%',[40,80,120]],['bomb','Pháo hoa','Thêm 1 lượt pháo hoa: dọn sạch quái trên màn hình',[50,100]],['crit','Mũi tên vàng','Đúng liên tiếp 5 lần: bắn xuyên hạ thêm 1 quái',[80]]];
 function DF(){const d=S.def||(S.def={coins:0,up:{},stars:{},best:0});d.up=d.up||{};d.stars=d.stars||{};return d;}
-const defWords=l=>l===XPID?XWORDS:l>=1&&l<=NL?WORDS.filter(w=>!w.custom&&w.l===l):WORDS.filter(w=>!w.custom&&w.l>=1&&w.l<=NL);
+const defWords=l=>l===XPID?XWORDS:curPool();
 function viewDefense(){
   stopGames();const d=DF(),g=G();const maxL=Math.max(1,Math.min(NL,g.unlocked||1));
   const ls=[];for(let l=1;l<=NL;l++)ls.push(l);
@@ -22438,7 +22439,7 @@ function ctaProHTML(){const t=acctTier(),app_=typeof isApp==='function'&&isApp()
   const life=PM().plan==='life'||PM().study;
   if(t==='pro'&&life)return `<div class="ctapro on"><div><b>⭐ Bạn đang dùng Gói Pro Trọn đời</b><span>Gồm toàn bộ quyền lợi Plus. Cảm ơn bạn đã ủng hộ Tâm HSK!</span></div><a class="btn ctapro-btn" href="#premium">Xem gói của tôi</a></div>`;
   return `<div class="ctapro"><div><b>${t==='pro'?'⭐ Gia hạn Gói Pro':t==='plus'?'⭐ Lên Gói Pro':'⭐ Nâng cấp Plus · Pro'}</b>
-    <span>${app_?'Plus: Khỉ Thông Thái + chơi tiếp miễn phí. Pro: không tốn năng lượng, gồm cả Plus.':'Plus <b>39K</b>/tháng · Pro <b>59K</b>/tháng · Pro Trọn đời <b>ưu đãi 500 người đầu</b>.'}</span></div>
+    <span>${app_?'Plus: Khỉ Thông Thái + chơi tiếp miễn phí. Pro: không tốn năng lượng, gồm cả Plus.':'Plus <b>39K</b>/tháng · Pro <b>59K</b>/tháng · Pro Trọn đời <b>ưu đãi 100 người đầu</b>.'}</span></div>
     <a class="btn ctapro-btn" href="#premium">Xem các gói</a></div>`;}
 function ctaProMount(){const c=document.querySelector('footer.site .cta');if(!c)return;let row=c.closest('.ctarow');
   if(!row){row=document.createElement('div');row.className='ctarow';c.parentNode.insertBefore(row,c);row.appendChild(c);}
@@ -24987,11 +24988,11 @@ addEventListener('hashchange',()=>setTimeout(u164Strip,120));setTimeout(u164Stri
 if(window.__T)window.__u164={viewLinks,u164Items,u164Strip};
 
 /* 5.112 Quà chào mừng app Android + gói quà Pro 7 ngày
-   - 500 tài khoản đầu tiên (5.113) đăng nhập trên app Android nhận 500 Nguyên bảo (mỗi tài khoản, mỗi máy một lần; máy chủ đếm và chặn trùng).
+   - 100 tài khoản đầu tiên đăng nhập trên app Android nhận 500 Nguyên bảo (mỗi tài khoản, mỗi máy một lần; máy chủ đếm và chặn trùng).
    - Web: dải "Đã có trên CH Play" ghi rõ quà và số suất còn lại. App Android chưa đăng nhập: dải mời đăng nhập nhận quà.
    - Gói "pro7" (Pro 7 ngày) dùng làm phần thưởng cho các hoạt động, quản trị tặng được ở trang người dùng. */
 try{PLAN_NAME.pro7='Gói Pro 7 ngày (quà)';}catch(e){}
-const U165={left:null,max:500,coins:500};
+const U165={left:null,max:100,coins:500};
 async function u165Status(){try{const r=await fetch(API_BASE+'/v1/promo/android');if(!r.ok)return;const j=await r.json();U165.left=j.left;U165.max=j.max||100;U165.coins=j.coins||500;u165Paint();}catch(e){}}
 function u165Txt(){if(U165.left===0)return '';const n=U165.left==null?'':` · còn ${U165.left}/${U165.max} suất`;return `Quà chào mừng: ${U165.coins} Nguyên bảo cho ${U165.max} người đầu đăng nhập app Android${n}`;}
 function u165Paint(){const t=u165Txt();document.querySelectorAll('.u165gift').forEach(el=>{el.hidden=!t;el.textContent=t;});u165AppStrip();}
@@ -25052,6 +25053,34 @@ function u166Pod(){const bx=app.querySelector('#rkboard');if(!bx)return;const em
   const bx=app.querySelector('#rkboard');if(bx&&!bx.__u166){bx.__u166=1;new MutationObserver(()=>setTimeout(u166Pod,30)).observe(bx,{childList:true,subtree:true});}u166Pod();}catch(e){console.warn(e);}return r;};})();
 document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('[data-u166all]')){e.preventDefault();u166Open();}});
 if(window.__T)window.__u166={U166_PRIZE,u166Txt,u166Open};
+
+/* 5.114
+   1. Trò chơi không chọn bài nữa: dùng từ của tất cả các bài từ Bài 1 tới bài đang học trong cấp HSK hiện tại
+      (vd HSK2 đang ở Bài 6 → Bài 1–6 của HSK2), không cần đã học xong các bài trước. Áp dụng cho Thủ thành,
+      Thách đấu, Đua xe, Vượt ải, Câu cá và các trò nhỏ. Bài đang học = bài xa nhất đã mở hoặc đã qua.
+   2. Hộp đánh giá của Google ngay trong app Android (không kèm quà): chỉ hỏi lúc người học đang vui
+      (đã qua 3 bài, giữ chuỗi 7 ngày hoặc thi thử đạt), sau ít nhất 2 ngày dùng app, tối đa 3 lần, cách nhau 60 ngày. */
+function curLesson(){let n=nextLesson();try{LESSONS.forEach(l=>{if(passed(l.n)||lessonProgress(l.n)>0)n=Math.max(n,l.n);});}catch(e){}return Math.max(1,Math.min(NL,n||1));}
+function curPool(){const n=curLesson();let p=WORDS.filter(w=>!w.custom&&typeof w.l==='number'&&w.l>=1&&w.l<=n);if(p.length<8)p=WORDS.filter(w=>!w.custom&&typeof w.l==='number'&&w.l>=1&&w.l<=Math.min(NL,n+1));return p;}
+gamePool=function(){return curPool();};
+rcPool=function(){return curPool();};
+wwPool=function(){let p=curPool().filter(w=>w.vi&&w.zh);if(p.length<8)p=WORDS.filter(w=>w.vi&&w.zh);return p;};
+/* Thủ thành: một nút vào trận thay cho chọn màn theo bài */
+(function(){const base=viewDefense;viewDefense=function(){base.apply(this,arguments);try{const lv=app.querySelector('.deflv');if(!lv)return;const n=curLesson(),c=curPool().length;
+  lv.innerHTML=`<button class="dlv u167go" data-l="0"><b>Vào trận · Bài 1–${n}</b><span class="small muted">${c} từ của ${HSKN}</span></button>`;lv.querySelector('[data-l]').onclick=()=>defPlay(0);
+  const h=lv.closest('.panel').querySelector('h3');if(h)h.textContent='Bắt đầu';const p=lv.parentElement.querySelector('p.small');if(p)p.innerHTML=`Quái mang từ của tất cả các bài từ <b>Bài 1</b> tới bài bạn đang học (<b>Bài ${n}</b>). Kỷ lục: <b>${DF().best||0}</b> điểm.`;}catch(e){console.warn(e);}};})();
+/* Thách đấu: chủ đề cố định là Bài 1 – bài đang học */
+(function(){const base=viewDuel;viewDuel=async function(){const r=await base.apply(this,arguments);try{u167Duel();}catch(e){}return r;};})();
+function u167Duel(){const sel=app.querySelector('select#dl.dsel');if(!sel||sel.dataset.u167)return;const n=curLesson();sel.dataset.u167='1';sel.innerHTML=`<option value="${-n}" selected>Bài 1–${n} (các bài đã học)</option>`;sel.disabled=true;}
+new MutationObserver(()=>{if(location.hash==='#duel')u167Duel();}).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+/* hộp đánh giá CH Play trong app */
+function u167Review(){if(!window.AndroidApp||!AndroidApp.requestReview)return;let st={};try{st=JSON.parse(localStorage.getItem('hsk-rv')||'{}');}catch(e){}
+  const save=()=>{try{localStorage.setItem('hsk-rv',JSON.stringify(st));}catch(e){}};
+  if(!st.first){st.first=Date.now();save();return;}if(Date.now()-st.first<2*864e5||(st.n||0)>=3||Date.now()-(st.at||0)<60*864e5)return;
+  let happy=false;try{happy=LESSONS.filter(l=>passed(l.n)).length>=3||stkNow()>=7||(S.exams||[]).some(e=>pctOf(e)>=60);}catch(e){}
+  if(!happy)return;st.n=(st.n||0)+1;st.at=Date.now();save();try{AndroidApp.requestReview();}catch(e){}}
+addEventListener('hashchange',()=>{if(/^#(home)?$/.test(location.hash))setTimeout(u167Review,1500);});setTimeout(u167Review,6000);
+if(window.__T)window.__u167={curLesson,curPool,u167Review};
 
 function route(){
   stopGames();
