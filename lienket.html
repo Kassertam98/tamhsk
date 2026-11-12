@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tâm HSK — Tải app & liên hệ</title>
+<meta name="description" content="Tâm HSK: học tiếng Trung HSK 1–6. Tải app trên CH Play, học trên web, liên hệ Zalo, Facebook, email.">
+<meta property="og:title" content="Tâm HSK — Tải app & liên hệ">
+<meta property="og:description" content="Học tiếng Trung HSK 1–6 như chơi game. Tải miễn phí trên CH Play, học ngay trên web hsk.kassertam.com.">
+<meta property="og:image" content="https://hsk.kassertam.com/icons/icon-512.png">
+<meta property="og:url" content="https://hsk.kassertam.com/lienket">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b5444">
+<link rel="icon" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<style>
+:root{--jade:#0d7a63;--deep:#0b5444;--gold:#ffd54a;--cream:#fff8e6;--ink:#1d2b26;--muted:#5b6b65;--card:#ffffff;--line:#e6e3d8;--bg:#f4f6f3}
+@media (prefers-color-scheme:dark){:root{--ink:#e9f2ee;--muted:#a9bab3;--card:#1b2826;--line:#2c3d39;--bg:#111816;--cream:#1f2b25}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45;
+  padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+main{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.hero{background:var(--deep);color:#fff;border-radius:24px;padding:22px 20px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+.hero img.logo{width:72px;height:72px;border-radius:18px;flex:none;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.hero h1{margin:0;font-size:26px;line-height:1.15}.hero p{margin:4px 0 0;color:#cfeee3;font-size:15px}
+.hero img.mas{position:absolute;right:-6px;bottom:-10px;width:96px;opacity:.95}
+
+h2{font-size:16px;margin:4px 4px 8px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.list{display:flex;flex-direction:column;gap:10px}
+a.it,span.it{display:flex;align-items:center;gap:14px;min-height:64px;padding:10px 14px;border-radius:16px;background:var(--card);border:1.5px solid var(--line);color:inherit;text-decoration:none;transition:transform .15s,border-color .15s}
+a.it:hover{transform:translateY(-2px);border-color:var(--c)}
+span.it{opacity:.65}
+.ic{flex:none;width:44px;height:44px;border-radius:13px;background:color-mix(in srgb,var(--c) 15%,transparent);color:var(--c);display:flex;align-items:center;justify-content:center}
+.ic svg{width:24px;height:24px}
+.t{flex:1;min-width:0;display:flex;flex-direction:column}.t b{font-size:16px}.t small{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.go{width:20px;height:20px;color:var(--muted);flex:none}
+.soon{flex:none;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:#e8640c;color:#fff}
+.it.main{background:var(--jade);border-color:var(--jade);color:#fff}.it.main .ic{background:var(--gold);color:#2e2200}.it.main .t small{color:#d6efe6}.it.main .go{color:#fff}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:6px 0}
+footer button{font:inherit;font-weight:700;color:var(--jade);background:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;margin-bottom:8px}
+@media (prefers-reduced-motion:reduce){a.it{transition:none}a.it:hover{transform:none}}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <img class="logo" src="icons/icon-192.png" alt="Biểu tượng Tâm HSK">
+    <div class="txt"><h1>Tâm HSK</h1><p>Học tiếng Trung HSK 1–6 như chơi game. Tải app, học trên web hoặc nhắn tư vấn.</p></div>
+  </section>
+  <div id="out"></div>
+  <footer><button type="button" id="cp">Sao chép đường dẫn trang này</button><div>© Tâm HSK · hsk.kassertam.com</div></footer>
+</main>
+<script>
+(function(){
+var API='https://tamhsk-api.nguyenminhtam19081998.workers.dev',PLAY='https://play.google.com/store/apps/details?id=com.kasser.tamhsk',SITE='https://hsk.kassertam.com';
+var IC={play:'<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>',web:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+ zalo:'<path d="M4 5h16v11H9l-5 4z"/><path d="M9 8.5h6l-6 5h6"/>',msg:'<path d="M12 3.5c-4.9 0-8.5 3.4-8.5 7.8 0 2.4 1.1 4.5 2.9 5.9V21l3.1-1.7c.8.2 1.6.3 2.5.3 4.9 0 8.5-3.4 8.5-7.8S16.9 3.5 12 3.5z"/><path d="M7.5 13.5l3-3 2.5 2 3.5-3"/>',
+ phone:'<path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2C10.7 20.4 3.6 13.3 3 5a2 2 0 012-2z"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/>',
+ fb:'<path d="M4 10v9h4v-9zM8 10l4-7c1.5 0 2.5 1 2 3l-1 3h5.5a2 2 0 012 2.3l-1.2 6A2 2 0 0117.3 19H8"/>',group:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c3 .2 5.5 2.4 5.5 5.8"/>',
+ yt:'<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5l5 2.5-5 2.5z"/>',tt:'<path d="M14 3v11.5a3.5 3.5 0 11-3.5-3.5"/><path d="M14 3c.5 2.6 2.4 4.4 5 4.6"/>',
+ learn:'<path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5"/>',en:'<path d="M4 6h9M8.5 4v2c0 4-2 7-4.5 8M6 10c1.5 2 4 3.5 6.5 4"/><path d="M13 20l4-9 4 9M14.5 17h5"/>',arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>'};
+function svg(k,c){return '<svg class="'+(c||'')+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+IC[k]+'</svg>';}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function ok(u){return /^(https:\/\/|mailto:|tel:|#)/.test(u||'')?u:'';}
+function row(r,main){var href=ok(r[5]);if(!href)return r[6]?'<span class="it" style="--c:'+r[4]+'"><span class="ic">'+svg(r[3])+'</span><span class="t"><b>'+esc(r[0])+'</b><small>'+esc(r[1])+'</small></span><span class="soon">Sắp có</span></span>':'';
+  return '<a class="it'+(main?' main':'')+'" style="--c:'+r[4]+'" href="'+esc(href)+'"'+(/^https/.test(href)?' target="_blank" rel="noopener"':'')+'><span class="ic">'+svg(r[3])+'</span><span class="t"><b>'+esc(r[0])+'</b><small>'+esc(r[1])+'</small></span>'+svg('arrow','go')+'</a>';}
+function draw(c){var L=(c&&c.links)||{},hot=(c&&c.hotline)||'';
+  var G=[['Tải app & học ngay',[['Tải trên Google Play','App Android miễn phí','play','play','#0d7a63',L.play||PLAY],['App Store',L.appstore?'Bản cho iPhone và iPad':'Bản iPhone, iPad · dự kiến 20/11/2026','appstore','play','#1d6fb8',L.appstore,1],['Học ngay trên web','hsk.kassertam.com · cùng tài khoản với app','web','web','#0f8a8a',L.web||SITE+'/']]],
+    ['Liên hệ tư vấn',[['Zalo','Nhắn tin tư vấn','zalo','zalo','#0068ff',L.zalo],['Messenger','Nhắn qua Facebook','msg','msg','#7b3fa0',L.messenger],[hot?'Gọi '+hot:'Gọi hotline','Tư vấn qua điện thoại','phone','phone','#e8640c',L.phone],['Email',String(L.email||'').replace(/^mailto:/,'')||'Gửi thư','mail','mail','#c62828',L.email]]],
+    ['Theo dõi Tâm HSK',[['Fanpage Facebook','Mẹo học, sự kiện, ưu đãi mới','fb','fb','#1877f2',L.fanpage],['Hội nhóm Tâm HSK','Hỏi đáp, chia sẻ tài liệu, tìm bạn học','group','group','#e8640c',L.group],['YouTube','Video bài giảng, luyện nghe','yt','yt','#c62828',L.youtube],['TikTok','Mỗi ngày một mẹo tiếng Trung','tt','tt','#1f2a26',L.tiktok]]],
+    ['Khám phá thêm',[['Khóa học online HSK1–6','Học cùng giáo viên Trung tâm HSK','learn','learn','#0b5444',SITE+'/#hoc-online'],['Kasser English','App học tiếng Anh cùng giao diện','en','en','#7b3fa0',L.english]]]];
+  var h='';G.forEach(function(g,gi){var rows=g[1].map(function(r,i){return row([r[0],r[1],r[2],r[3],r[4],r[5],r[6]],gi===0&&i===0);}).join('');if(rows)h+='<section><h2>'+g[0]+'</h2><div class="list">'+rows+'</div></section>';});
+  document.getElementById('out').innerHTML=h;}
+var c0=null;try{c0=JSON.parse(localStorage.getItem('hsk-lpcfg')||'null');}catch(e){}draw(c0);
+fetch(API+'/v1/char/lp').then(function(r){return r.ok?r.json():null;}).then(function(j){if(j){draw(j);try{localStorage.setItem('hsk-lpcfg',JSON.stringify(j));}catch(e){}}}).catch(function(){});
+var cp=document.getElementById('cp');cp.onclick=function(){var u=SITE+'/lienket';(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){cp.textContent='Đã sao chép ✓';},function(){prompt('Sao chép đường dẫn:',u);});};
+})();
+</script>
+</body>
+</html>
