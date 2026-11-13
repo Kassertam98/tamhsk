@@ -6394,6 +6394,15 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 .u168ct{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.u168ct small{color:var(--muted,#5b6b65)}
 .u168cx{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;border:0;background:transparent;color:var(--muted,#5b6b65);font-size:22px;cursor:pointer}
 .u168hl{outline:3px solid #ffd54a;outline-offset:3px;transition:outline-color .4s}
+.u170cta{align-items:center;gap:12px;text-decoration:none;color:inherit;border:1.5px solid #f2d98a;flex-wrap:wrap}
+.u170ic{flex:none;width:44px;height:44px;border-radius:13px;background:#fff8e6;color:#b45f06;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900}
+.u170t{flex:1;min-width:180px;display:flex;flex-direction:column;gap:2px}.u170t small{color:var(--muted,#5b6b65)}
+.u170cta .btn{flex:none}
+.u170back{display:inline-block;margin-bottom:-4px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .u170ic{background:color-mix(in srgb,#ffd54a 14%,var(--card,#1b2826));color:#ffd54a}}
+:root[data-theme="dark"] .u170ic{background:color-mix(in srgb,#ffd54a 14%,var(--card,#1b2826));color:#ffd54a}
+.u170hero{display:inline-block;margin-top:10px;font-size:14px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+.u170alt{display:block;text-align:center;margin-top:8px;font-size:14px;font-weight:700;color:var(--accent,#0d7a63);text-decoration:underline;text-underline-offset:3px;min-height:24px}
 </style>
 </head><body>
 
@@ -6419,12 +6428,12 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='f0baad55';
-document.write('<script src="packs/hsk'+L+'.js?v=f0baad55"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='6a74a31a';
+document.write('<script src="packs/hsk'+L+'.js?v=6a74a31a"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f0baad55','strokes-file');A('packs/dict.js?v=f0baad55','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=6a74a31a','strokes-file');A('packs/dict.js?v=6a74a31a','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -23168,7 +23177,7 @@ function olcChatAdd(j,isT){const el=app.querySelector('#olcmsgs');if(!el)return;
   if(!el.children.length)el.innerHTML='<div class="small muted olcempty">Chưa có tin nhắn. Chào cả lớp một câu nhé 👋</div>';else{const e0=el.querySelector('.olcempty');if(e0&&L.length)e0.remove();}
   if(L.length&&(atEnd||L.some(m=>m.me)))el.scrollTop=el.scrollHeight;olcPins(j.pins,isT);}
 /* Đăng ký lớp cũ (#classreg) chuyển sang trang mới */
-(function(){viewClassReg=function(){viewOlc();};})();
+(function(){window.viewCrForm=viewClassReg;viewClassReg=function(){viewOlc();};})();
 if(window.__T)window.__u138={olcSched:null,olcLeft,OLC_ERR};
 
 /* ===== 5.98–5.99: Kho nhân vật — linh thú (mặc định + bán), thú cưng vườn, phụ kiện 3D (Mũ, Cầm tay, Trang phục) nạp từ trang quản trị ===== */
@@ -25188,6 +25197,31 @@ new MutationObserver(()=>{clearTimeout(u168Card.t);u168Card.t=setTimeout(u168Car
 addEventListener('hashchange',()=>setTimeout(u168Card,200));setTimeout(u168Card,1200);
 if(window.__T)window.__u168={u169Games,u169PetSync,u169Key,u168Card,u168Data,u168Go,u168Launch,u168Panel,u168Sync};
 
+/* 5.118 Form tư vấn lớp học (#tuvan): giữ form đăng ký cũ cho người thích điền form hơn nhắn tin.
+   - Trang Khóa học online (#hoc-online): dòng "Điền form đăng ký" dưới nút tư vấn, "hoặc điền form đăng ký" ở mỗi thẻ khóa (chọn sẵn lớp), thẻ "Thích điền form hơn nhắn tin?".
+   - Trang Liên hệ (#lienket) có thêm dòng "Điền form tư vấn".
+   - Dữ liệu vẫn vào mục Quản trị › Đăng ký lớp như trước. */
+function u170View(){if(typeof viewCrForm!=='function'){viewOlc();return;}viewCrForm();
+  const w=app.querySelector('.crwrap');if(!w)return;
+  w.insertAdjacentHTML('afterbegin','<a class="small u170back" href="#hoc-online">‹ Khóa học online</a>');
+  const h=w.querySelector('.addhero h1');if(h)h.textContent='Để lại thông tin, Kasser liên hệ tư vấn';
+  const p=w.querySelector('.addhero p');if(p)p.textContent='Không cần nhắn tin: điền form bên dưới, giáo viên Kasser sẽ gọi hoặc nhắn lại để tư vấn lớp phù hợp với bạn.';
+  if(u170Want){const sel=w.querySelector('#crwant');if(sel&&[...sel.options].some(o=>o.value===u170Want||o.textContent===u170Want)){sel.value=[...sel.options].find(o=>o.value===u170Want||o.textContent===u170Want).value;}u170Want='';}
+  window.scrollTo({top:0});try{document.title='Đăng ký tư vấn lớp học · Tâm HSK';}catch(e){}}
+/* gợi ý sẵn lớp muốn học khi bấm từ thẻ khóa HSK n */
+try{['Lớp HSK4','Lớp HSK5','Lớp HSK6'].forEach(x=>{if(!CR_WANTS.includes(x))CR_WANTS.splice(CR_WANTS.indexOf('Giao tiếp cơ bản')>=0?CR_WANTS.indexOf('Giao tiếp cơ bản'):CR_WANTS.length,0,x);});}catch(e){}
+let u170Want='';
+(function(){const base=viewCourseLP;viewCourseLP=function(){const r=base.apply(this,arguments);try{const w=app.querySelector('.lpwrap');if(!w||w.querySelector('.u170cta'))return r;
+  const q=w.querySelector('.lphero .lpcta');if(q)q.insertAdjacentHTML('afterend','<a class="u170hero" href="#tuvan">Không muốn nhắn tin? <b>Điền form đăng ký</b>, Kasser gọi lại cho bạn ›</a>');
+  w.querySelectorAll('article.lpc').forEach(a=>{const m=String(a.className).match(/\blv(\d)\b/);const n=m?+m[1]:0;const bt=a.querySelector('.lpcb');
+    const h=`<a class="u170alt" href="#tuvan" data-want="${n===1?'Lớp HSK1 (người mới)':'Lớp HSK'+n}">hoặc điền form đăng ký</a>`;if(bt)bt.insertAdjacentHTML('afterend',h);else a.insertAdjacentHTML('beforeend',h);});
+  const band=w.querySelector('.lpband');const html=`<a class="panel row u170cta" href="#tuvan"><span class="u170ic han" aria-hidden="true">表</span><span class="u170t"><b>Thích điền form hơn nhắn tin?</b><small>Để lại tên và số điện thoại, giáo viên Kasser sẽ liên hệ tư vấn lớp phù hợp.</small></span><span class="btn sm pri" aria-hidden="true">Điền form</span></a>`;
+  if(band)band.insertAdjacentHTML('afterend',html);else w.insertAdjacentHTML('beforeend',html);
+  w.querySelectorAll('a[href="#tuvan"]').forEach(x=>x.addEventListener('click',()=>{u170Want=x.dataset.want||'';}));}catch(e){}return r;};})();
+(function(){if(typeof u164Items!=='function')return;const base=u164Items;u164Items=function(){const L=base.apply(this,arguments);const i=L.findIndex(r=>r[0]==='email');
+  L.splice(i<0?L.length:i+1,0,['tuvan','Điền form tư vấn','Để lại thông tin, Kasser gọi lại cho bạn','learn','#b45f06','contact','#tuvan']);return L;};})();
+if(window.__T)window.__u170={u170View};
+
 function route(){
   stopGames();
   const h=(location.hash||'#home').slice(1);
@@ -25206,7 +25240,7 @@ function route(){
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
   else if(h==='support')viewSupport();else if(h==='cert')viewCert();else if(h==='teach-apply')viewTeachApply();else if(h==='hoc-online')viewOlc();else if(h==='lienket')viewLinks();else if(h==='thegioi')viewWorldChat();else if(h==='tudo')viewTudo();else if(/^nhaban-[A-Za-z0-9_-]{4,64}$/.test(h))viewFriendHouse2(h.slice(7));else if(/^lop-online\/\d{1,9}$/.test(h))viewOlcClass(+h.split('/')[1]);else if(/^certv-[A-Z0-9]{4,12}$/.test(h))viewCertVerify(h.slice(6));else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
-  else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
+  else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='tuvan')u170View();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(h==='runner')viewRunner();else if(h==='fish')viewFish();else if(h==='bomber'||h==='duo-bomber'){location.replace('#games');return;}else if(/^duo-(race|defense|memory)$/.test(h))viewDuo(h.slice(4));else if(h==='memory')viewMemory();else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
   else if(h.startsWith('d='))viewDeckOpen(h.slice(2));else if(h==='evo')viewEvo();else if(h.startsWith('evo-'))viewEvo(decodeURIComponent(h.slice(4)));else if(h==='puzzle')viewPuzzle();else if(h==='focus')viewFocus();else if(h==='deck')viewDeckMake();else if(h==='name')viewName();else if(h==='hv')viewHvDetective();else if(h==='num')viewNumbers();else if(h==='handsfree')viewHandsfree();else if(h==='sheet')viewWorksheet();else if(h==='plan')viewPlan();
