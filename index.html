@@ -6410,6 +6410,26 @@ a,button,summary,label,[role="button"],[role="tab"],select{-webkit-tap-highlight
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active:not(:disabled){transform:none}}
 /* hộp thoại mở: khóa cuộn trang nền */
 html:has(dialog[open]){overflow:hidden}
+/* 5.120 Bài học ↔ chủ đề Từ điển */
+.u172lc{display:flex;align-items:center;gap:12px;width:100%;text-align:left;margin:4px 0 2px;padding:10px 14px;border-radius:14px;border:1.5px solid var(--line,#e3e6e1);background:var(--card,#fff);color:inherit;font:inherit;cursor:pointer;min-height:52px}
+.u172lc.on{border-color:#f2d98a;background:#fff8e6}
+.u172ic{flex:none;width:36px;height:36px;border-radius:11px;background:color-mix(in srgb,#0d7a63 12%,transparent);display:flex;align-items:center;justify-content:center;font-size:20px}
+.u172lt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.u172lt small{color:var(--muted,#5b6b65)}
+.u172box{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:14px;background:color-mix(in srgb,#0d7a63 7%,var(--card,#fff));margin-bottom:10px}
+.u172box.done{background:color-mix(in srgb,#ffd54a 22%,var(--card,#fff))}
+.u172bar{height:8px;border-radius:99px;background:color-mix(in srgb,#0d7a63 16%,transparent);overflow:hidden}.u172bar i{display:block;height:100%;border-radius:99px;background:#0d7a63;transition:width .3s}
+.u172row{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.u172medal{font-weight:800;color:#8a5a00}
+.u172done{font-weight:800}
+.u172ls{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.u172lb{white-space:normal;text-align:left}
+.tdtile.u172learn,.tdtile.u172seen{position:relative}
+.tdtile.u172learn::after,.tdtile.u172seen::after{content:"✓";position:absolute;top:4px;right:6px;font-size:12px;font-weight:900;color:#0d7a63}
+.tdtile.u172seen::after{color:#8a5a00;content:"•"}
+.tdtp.u172got{position:relative}.tdtp.u172got::after{content:"🏅";position:absolute;top:-6px;right:-4px;font-size:16px}
+.u172dlg{border:0;border-radius:22px;padding:22px;max-width:min(420px,calc(100vw - 32px));background:var(--card,#fff);color:inherit}
+.u172dlg::backdrop{background:rgba(0,0,0,.45)}.u172big{font-size:44px;line-height:1}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .u172lc.on{background:color-mix(in srgb,#ffd54a 12%,var(--card,#1b2826))}:root:not([data-theme="light"]) .u172medal{color:#ffd54a}}
+:root[data-theme="dark"] .u172lc.on{background:color-mix(in srgb,#ffd54a 12%,var(--card,#1b2826))}:root[data-theme="dark"] .u172medal{color:#ffd54a}
 </style>
 </head><body>
 
@@ -6435,12 +6455,12 @@ html:has(dialog[open]){overflow:hidden}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='ed9bcee7';
-document.write('<script src="packs/hsk'+L+'.js?v=ed9bcee7"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='ef5805ac';
+document.write('<script src="packs/hsk'+L+'.js?v=ef5805ac"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ed9bcee7','strokes-file');A('packs/dict.js?v=ed9bcee7','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ef5805ac','strokes-file');A('packs/dict.js?v=ef5805ac','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -25242,6 +25262,62 @@ function u171Fix(root){if(!u171Touch())return;(root||document).querySelectorAll(
 new MutationObserver(()=>{clearTimeout(u171Fix.t);u171Fix.t=setTimeout(()=>u171Fix(),80);}).observe(document.body,{childList:true,subtree:true});
 setTimeout(()=>u171Fix(),500);
 if(window.__T)window.__u171={u171Fix};
+
+/* 5.120 Nối Bài học ↔ Chủ đề Từ điển:
+   1) Trang bài học có dòng "Chủ đề liên quan"; học xong bài lần đầu hiện hộp mời mở rộng sang chủ đề đó.
+   2) Trong Từ điển, chủ đề hiện tiến độ đã xem/đã biết, đánh dấu từ đã học, gợi ý bài học liên quan; xem hết chủ đề thì chúc mừng.
+   3) Biết từ 80% số từ của chủ đề (từ đã học trong bài hoặc đã xem trong chủ đề) → huy hiệu chủ đề + 20 Nguyên bảo.
+   Bảng gắn bài → chủ đề: U172_MAP[cấp][bài-1] = [mã chủ đề, tên bài]. */
+const U172_MAP={"1": [[null, "Chào anh!"], [null, "Cảm ơn anh!"], ["hoc", "Cô tên gì?"], ["cv", "Cô ấy là cô giáo dạy tôi tiếng Trung Quốc"], ["so", "Con gái của cô ấy năm nay 20 tuổi"], ["hoc", "Tôi biết nói tiếng Trung Quốc"], ["tg", "Hôm nay là ngày mấy?"], ["an", "Tôi muốn uống trà"], ["cv", "Con trai anh làm việc ở đâu?"], ["nha", "Tôi có thể ngồi ở đây được không?"], ["tg", "Bây giờ là mấy giờ?"], ["tt", "Ngày mai thời tiết thế nào?"], ["an", "Anh ấy đang học nấu món ăn Trung Quốc"], ["ms", "Cô ấy đã mua nhiều quần áo"], ["gt", "Tôi đáp máy bay đến đây"]], "2": [["dl", "Đi Bắc Kinh du lịch tốt nhất vào tháng Chín"], ["yt", "Mỗi ngày tôi dậy lúc sáu giờ"], ["mau", "Cái màu đỏ bên trái là của tôi"], ["cv", "Công việc này là anh ấy giới thiệu giúp tôi"], ["ms", "Mua chiếc này đi"], ["an", "Sao bạn không ăn nữa?"], ["gt", "Nhà bạn có xa công ty không?"], ["st", "Để tôi nghĩ rồi nói bạn sau"], ["hoc", "Nhiều câu quá, tôi làm không xong"], ["nha", "Đừng tìm nữa, điện thoại ở trên bàn kìa"], ["gd", "Anh ấy hơn tôi ba tuổi"], ["tt", "Bạn mặc ít quá"], ["nha", "Cửa đang mở"], ["st", "Bạn đã xem bộ phim đó chưa?"], ["le", "Năm mới sắp đến rồi"]], "3": [["st", "Cuối tuần bạn định làm gì?"], ["cv", "Khi nào anh ấy quay về?"], ["an", "Trên bàn để rất nhiều đồ uống."], ["cx", "Cô ấy luôn mỉm cười khi nói chuyện với khách."], ["yt", "Dạo này mình ngày càng béo ra."], ["nha", "Sao tự nhiên lại không tìm thấy nữa?"], ["tg", "Tôi với cô ấy quen nhau được năm năm rồi"], ["cx", "Em đi đâu thì anh đi đó"], ["hoc", "Cô ấy nói tiếng Trung giỏi như người Trung Quốc"], ["hoc", "Môn Toán khó hơn môn Lịch sử nhiều"], ["nha", "Đừng quên tắt điều hòa nhé"], ["dl", "Để đồ quan trọng ở chỗ mình nhé"], ["gt", "Mình đi bộ về đấy"], ["an", "Con mang hoa quả lại đây nhé"], ["yt", "Những chỗ khác đều không có vấn đề gì"], ["cty", "Giờ mình mệt đến mức tan làm là chỉ muốn đi ngủ"], ["yt", "Ai cũng có cách chữa khỏi “bệnh” của bạn"], ["cty", "Mình tin là họ sẽ đồng ý"], ["dv", "Bạn không nhìn ra à?"], ["ms", "Mình bị cậu ấy ảnh hưởng rồi"]], "4": [["cx", "Tình yêu giản dị"], ["cx", "Người bạn thật sự"], ["cty", "Giám đốc có ấn tượng khá tốt về tôi"], ["cty", "Đừng quá vội kiếm tiền"], ["ms", "Chỉ mua cái đúng, không mua cái đắt"], ["so", "Tiền nào của nấy"], ["yt", "Bác sĩ giỏi nhất là chính mình"], ["st", "Cuộc sống không thiếu cái đẹp"], ["ttao", "Sau cơn mưa trời lại sáng"], ["cx", "Thước đo của hạnh phúc"], ["st", "Đọc sách có ích, đọc sách hay, ham đọc sách"], ["dl", "Dùng trái tim để khám phá thế giới"], ["st", "Vừa uống trà vừa xem Kinh kịch"], ["tn", "Bảo vệ Mẹ Trái Đất"], ["gd", "Nghệ thuật dạy con"], ["dl", "Cuộc sống có thể tốt đẹp hơn"], ["tn", "Con người và thiên nhiên"], ["cn", "Khoa học công nghệ và thế giới"], ["an", "Hương vị cuộc sống"], ["dl", "Phong cảnh dọc đường"]]};
+const u172T=k=>TD_TOPICS.find(t=>t[0]===k);
+const u172Words=k=>{try{buildIdx();}catch(e){}const t=u172T(k);return t?t[3].split(' ').filter(z=>z&&tdEnt(z)):[];};
+const TPV=()=>S.tpv||(S.tpv={}),TPB=()=>S.tpb||(S.tpb={}),TPD=()=>S.tpd||(S.tpd={});
+function u172Known(z,k){if((TPV()[k]||[]).includes(z))return 'seen';try{const a=inApp(z);if(a&&((S.cards&&S.cards[a.id])||(typeof a.l==='number'&&passed(a.l))))return 'learn';}catch(e){}return '';}
+function u172Stat(k){const ws=u172Words(k),sv=TPV()[k]||[];let seen=0,known=0;ws.forEach(z=>{if(sv.includes(z))seen++;if(u172Known(z,k))known++;});return {n:ws.length,seen,known};}
+function u172TopicOf(lv,n){const r=(U172_MAP[lv]||[])[n-1];return r&&r[0]&&u172T(r[0])?r[0]:null;}
+function u172LessonsOf(k){const out=[];Object.keys(U172_MAP).forEach(lv=>U172_MAP[lv].forEach(([kk,vi],i)=>{if(kk===k)out.push({lv:+lv,n:i+1,vi});}));
+  return out.sort((a,b)=>(a.lv===LEVEL?0:1)-(b.lv===LEVEL?0:1)||a.lv-b.lv||a.n-b.n);}
+function u172Go(lv,n){if(lv===LEVEL){location.hash='#l'+n;return;}if(typeof u168Go==='function')u168Go({a:'lesson',n,lv});}
+function u172Open(k){tdTopic=k;try{tdSt.tab='tra';tdSt.q='';}catch(e){}if(location.hash==='#tudien')route();else location.hash='#tudien';
+  setTimeout(()=>{const p=document.querySelector('.u172box')||document.querySelector('.tdtpw');if(p)p.scrollIntoView({block:'center',behavior:'smooth'});},600);}
+function u172Badge(k){const st=u172Stat(k);if(!st.n||TPB()[k]||st.known/st.n<0.8)return false;TPB()[k]=Date.now();try{G().coins+=20;}catch(e){}save();
+  const t=u172T(k);try{confetti(50);sfx('win');}catch(e){}try{gardenToast(`🏅 Huy hiệu chủ đề ${t[2]}! Bạn đã biết ${st.known}/${st.n} từ · +20 Nguyên bảo`);}catch(e){}return true;}
+function u172BoxHTML(k){const st=u172Stat(k),T=u172T(k),ls=u172LessonsOf(k).slice(0,3),done=st.n&&st.seen>=st.n,pct=st.n?Math.round(st.seen/st.n*100):0;
+  return `<div class="u172box${done?' done':''}"><div class="u172bar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Đã xem ${st.seen}/${st.n} từ"><i style="width:${pct}%"></i></div>
+   <div class="u172row"><span>Đã xem <b>${st.seen}/${st.n}</b> từ · Đã biết <b>${st.known}/${st.n}</b></span>${TPB()[k]?'<span class="u172medal">🏅 Đã có huy hiệu</span>':`<span class="small muted">Biết ${Math.ceil(st.n*0.8)} từ để nhận huy hiệu +20 Nguyên bảo</span>`}</div>
+   ${done?`<div class="u172done">🎉 Bạn đã xem hết chủ đề ${esc(T[2])}!</div>`:'<div class="small muted">Chạm từng từ để xem, từ có dấu ✓ là từ bạn đã học.</div>'}
+   ${ls.length?`<div class="u172ls"><span class="small muted">${done?'Học sâu hơn trong bài:':'Có trong bài học:'}</span>${ls.map(x=>`<button type="button" class="tdchip u172lb" data-u172l="${x.lv},${x.n}">HSK${x.lv} · Bài ${x.n}: ${esc(x.vi)}</button>`).join('')}</div>`:''}</div>`;}
+(function(){const base=tdExplore;tdExplore=function(){let h=base.apply(this,arguments);try{
+  h=h.replace(/<button class="tdtp([^"]*)" data-tp="(\w+)">/g,(m,c,k)=>TPB()[k]?`<button class="tdtp${c} u172got" data-tp="${k}" title="Đã có huy hiệu chủ đề">`:m);
+  if(tdTopic&&u172T(tdTopic)){const k=tdTopic;h=h.replace('<div class="tdtpw">',u172BoxHTML(k)+'<div class="tdtpw">');
+    h=h.replace(/<button class="tdtile" data-wz="([^"]+)">/g,(m,z)=>{const s=u172Known(z,k);return s?`<button class="tdtile u172${s}" data-wz="${z}">`:m;});}}catch(e){}return h;};})();
+function u172Refresh(k){const b=document.querySelector('.u172box');if(b)b.outerHTML=u172BoxHTML(k);
+  document.querySelectorAll('.tdtpw [data-wz]').forEach(t=>{const s=u172Known(t.dataset.wz,k);t.classList.toggle('u172seen',s==='seen');t.classList.toggle('u172learn',s==='learn');});
+  const st=u172Stat(k);if(st.n&&st.seen>=st.n&&!TPD()[k]){TPD()[k]=Date.now();save();try{confetti(40);sfx('win');}catch(e){}}
+  if(u172Badge(k)){const c=document.querySelector(`.tdtp[data-tp="${k}"]`);if(c)c.classList.add('u172got');const b2=document.querySelector('.u172box');if(b2)b2.outerHTML=u172BoxHTML(k);}}
+document.addEventListener('click',e=>{const el=e.target&&e.target.closest?e.target:null;if(!el)return;
+  const l=el.closest('[data-u172l]');if(l){e.preventDefault();e.stopPropagation();const [lv,n]=l.dataset.u172l.split(',').map(Number);u172Go(lv,n);return;}
+  const t=el.closest('[data-u172t]');if(t){e.preventDefault();e.stopPropagation();u172Open(t.dataset.u172t);return;}
+  const w=el.closest('[data-wz]');if(w&&tdTopic&&location.hash==='#tudien'&&u172Words(tdTopic).includes(w.dataset.wz)){const a=TPV()[tdTopic]||(TPV()[tdTopic]=[]),z=w.dataset.wz;if(!a.includes(z)){a.push(z);save();const k=tdTopic;setTimeout(()=>u172Refresh(k),50);}}},true);
+/* trang bài học: dòng chủ đề liên quan ngay dưới tiêu đề bài */
+(function(){const base=viewLesson;viewLesson=function(n){const r=base.apply(this,arguments);try{const k=u172TopicOf(LEVEL,+n),h=app.querySelector('.lhead');
+  if(k&&h&&!app.querySelector('.u172lc')){const T=u172T(k),ok=passed(+n);
+    h.insertAdjacentHTML('afterend',`<button type="button" class="u172lc${ok?' on':''}" data-u172t="${k}"><span class="u172ic" aria-hidden="true">${T[1]}</span><span class="u172lt"><b>${ok?'Mở rộng từ vựng':'Chủ đề liên quan'}: ${esc(T[2])}</b><small>Từ vựng theo chủ đề trong Từ điển${TPB()[k]?' · 🏅':''}</small></span><span aria-hidden="true">›</span></button>`);
+    /* đếm từ đã biết sau khi trang đã vẽ (lần đầu cần nạp chỉ mục Từ điển) */
+    setTimeout(()=>{const el=app.querySelector('.u172lc small');if(!el)return;const st=u172Stat(k);if(st.n)el.textContent=`Trong Từ điển · bạn đã biết ${st.known}/${st.n} từ`+(TPB()[k]?' · 🏅':'');},60);}}catch(e){}return r;};})();
+/* học xong bài lần đầu → mời mở rộng sang chủ đề */
+function u172Pass(){try{if(document.querySelector('dialog[open]'))return;const key=n=>LEVEL+'.'+n;
+  if(!Array.isArray(S.u172p)){S.u172p=LESSONS.filter(l=>passed(l.n)).map(l=>key(l.n));save();return;}
+  const fresh=LESSONS.filter(l=>passed(l.n)&&!S.u172p.includes(key(l.n)));if(!fresh.length)return;fresh.forEach(l=>S.u172p.push(key(l.n)));save();
+  const l=fresh[fresh.length-1],k=u172TopicOf(LEVEL,l.n);if(!k)return;u172Badge(k);const T=u172T(k),st=u172Stat(k),left=Math.max(0,st.n-st.known);
+  const d=document.createElement('dialog');d.className='u172dlg';d.setAttribute('aria-label','Mở rộng từ vựng');
+  d.innerHTML=`<div class="stack" style="gap:10px;align-items:center;text-align:center"><span class="u172big" aria-hidden="true">${T[1]}</span><h2 style="margin:0">Xong Bài ${l.n}! Mở rộng từ vựng</h2>
+    <p style="margin:0">Chủ đề <b>${esc(T[2])}</b> trong Từ điển: bạn đã biết <b>${st.known}/${st.n}</b> từ${left?`, còn <b>${left}</b> từ mới để học thêm`:''}.</p>
+    <div class="row" style="gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn pri" type="button" id="u172go">Xem chủ đề ${esc(T[2])}</button><button class="btn ghost" type="button" id="u172no">Để sau</button></div></div>`;
+  document.body.appendChild(d);const close=()=>{try{d.close();}catch(e){}d.remove();};d.querySelector('#u172no').onclick=close;d.querySelector('#u172go').onclick=()=>{close();u172Open(k);};
+  d.addEventListener('cancel',()=>setTimeout(()=>d.remove(),0));try{d.showModal();}catch(e){d.setAttribute('open','');}}catch(e){}}
+addEventListener('hashchange',()=>{clearTimeout(u172Pass.t);u172Pass.t=setTimeout(u172Pass,900);});setTimeout(u172Pass,2500);
+if(window.__T)window.__u172={U172_MAP,u172Stat,u172Open,u172Pass,u172TopicOf,u172LessonsOf};
 
 function route(){
   stopGames();
