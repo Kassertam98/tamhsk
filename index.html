@@ -6487,12 +6487,12 @@ a.u173c,a.u173c:visited{color:var(--ink,#1b2826)}a.u173c .u173ct b{color:var(--i
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='55e9ca92';
-document.write('<script src="packs/hsk'+L+'.js?v=55e9ca92"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='6ccf9f6f';
+document.write('<script src="packs/hsk'+L+'.js?v=6ccf9f6f"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=55e9ca92','strokes-file');A('packs/dict.js?v=55e9ca92','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=6ccf9f6f','strokes-file');A('packs/dict.js?v=6ccf9f6f','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -25438,7 +25438,7 @@ function u173ReadHTML(a){const md=artMd(a.body||''),im=u173Img(a.cover);
    ${(a.tags||[]).length?`<div class="u173tags">${a.tags.map(t=>`<button type="button" class="chip" data-u173t2="${esc(t)}">${esc(t)}</button>`).join('')}</div>`:''}
    <div class="u173share"><b>Thấy hay? Gửi cho bạn cùng học</b><div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn sm pri" type="button" id="u173sh">Chia sẻ bài viết</button><button class="btn sm ghost" type="button" id="u173cp">Sao chép link</button></div></div>
    ${(a.related||[]).length?`<h2 style="margin:6px 0 0">Bài viết liên quan</h2><div class="u173grid">${a.related.map(x=>u173Card(x,'big')).join('')}</div>`:''}</article>`;}
-function u173Read(slug){const url=U173_SITE+'/bai-viet/'+slug;const draw=a=>{if(location.hash!=='#bai-viet/'+slug)return;app.innerHTML=u173ReadHTML(a);try{document.title=a.title+' · Tâm HSK';}catch(e){}
+function u173Read(slug){const url=U173_SITE+'/post/'+slug;const draw=a=>{if(location.hash!=='#bai-viet/'+slug)return;app.innerHTML=u173ReadHTML(a);try{document.title=a.title+' · Tâm HSK';}catch(e){}
     app.querySelectorAll('[data-u173j]').forEach(x=>x.onclick=e=>{e.preventDefault();const t=document.getElementById(x.dataset.u173j);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});
     app.querySelectorAll('[data-u173t2]').forEach(b=>b.onclick=()=>{U173.tag=b.dataset.u173t2;u173Fetch(true).then(()=>{location.hash='#bai-viet';});});
     const sh=app.querySelector('#u173sh');if(sh)sh.onclick=async()=>{try{if(window.AndroidApp&&AndroidApp.share){AndroidApp.share(a.title+'\n'+url);return;}}catch(e){}if(navigator.share){navigator.share({title:a.title,url}).catch(()=>{});}else{try{await navigator.clipboard.writeText(url);gardenToast('Đã sao chép link bài viết');}catch(e){prompt('Sao chép link:',url);}}};
@@ -25452,7 +25452,7 @@ function u173View(rest){rest=String(rest||'').replace(/^\//,'');if(rest&&/^[a-z0
 /* link trong bài: từ điển → thẻ từ, bài viết khác → trong app, trang của app → chuyển trang */
 document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('.u173b a[href]');if(!a)return;const h=a.getAttribute('href')||'';let m;
   if((m=h.match(/^(?:https:\/\/hsk\.kassertam\.com)?\/tu\/([^/?#]+)/))){e.preventDefault();try{openWordAny(decodeURIComponent(m[1]));}catch(x){}return;}
-  if((m=h.match(/^(?:https:\/\/hsk\.kassertam\.com)?\/bai-viet\/([a-z0-9-]+)\/?$/))){e.preventDefault();location.hash='#bai-viet/'+m[1];return;}
+  if((m=h.match(/^(?:https:\/\/hsk\.kassertam\.com)?\/(?:post|bai-viet)\/([a-z0-9-]+)\/?$/))){e.preventDefault();location.hash='#bai-viet/'+m[1];return;}
   if((m=h.match(/^(?:https:\/\/hsk\.kassertam\.com)?\/?(#[\w-]+(?:\/[\w-]+)?)$/))){e.preventDefault();location.hash=m[1];return;}},true);
 if(window.__T)window.__u173={U173,u173Load,u173View,artMd};
 

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 Sitemap: https://hsk.kassertam.com/sitemap.xml
-Sitemap: https://hsk.kassertam.com/bai-viet/sitemap.xml
+Sitemap: https://hsk.kassertam.com/post/sitemap.xml
