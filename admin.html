@@ -26,6 +26,12 @@ a{color:var(--jade)}
 .ofhead{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}.chth.big{width:96px;height:110px}.chth.sm{width:40px;height:46px}.ofsec{margin-top:10px;display:grid;gap:6px}.ofsheet{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}.ofsheet figure{margin:0;padding:4px;border:1px solid #e3ddd0;border-radius:10px;text-align:center;background:repeating-conic-gradient(#f1f1f1 0 25%,#fff 0 50%) 0 0/14px 14px}.ofsheet img{width:100%;aspect-ratio:1;object-fit:contain}.ofsheet figcaption{font-size:11.5px}.ofmissf{display:grid;place-items:center;min-height:80px;color:#c0392b}.ofmissf span{font-size:22px;font-weight:800}.ofrow{display:grid;gap:6px;padding:8px;border:1px solid #e3ddd0;border-radius:12px;background:#fffdf8}.ofrow.none{opacity:.75}.ofpet{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ofstrip{display:grid;grid-template-columns:repeat(17,minmax(0,1fr));gap:3px}.ofstrip img,.ofmiss{width:100%;aspect-ratio:.87;object-fit:contain;border-radius:6px;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/10px 10px}.ofmiss{display:grid;place-items:center;color:#c0392b;font-weight:800;border:1px dashed #e0a0a0}.ofprog{height:8px;border-radius:999px;background:#eee;overflow:hidden}.ofprog i{display:block;height:100%;width:0;background:#0f7a5f;transition:width .2s}@media(max-width:720px){.ofsheet{grid-template-columns:repeat(3,minmax(0,1fr))}.ofstrip{grid-template-columns:repeat(9,minmax(0,1fr))}}
 .chth{width:64px;height:74px;object-fit:contain;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/14px 14px;border-radius:10px}.chpos{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0;padding:10px;border:1px dashed #cbbf9f;border-radius:12px}.chpos canvas{width:360px;max-width:100%;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/16px 16px;border-radius:12px}.chsl{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:6px}
 .lpgridf{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}.lpgridf label{display:grid;gap:4px;font-size:13px}.lpgridf input{width:100%;box-sizing:border-box}
+.artedgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}@media (max-width:980px){.artedgrid{grid-template-columns:1fr}}
+.artedgrid .stack{display:flex;flex-direction:column;gap:12px}.artedgrid label{display:flex;flex-direction:column;gap:4px}
+.arttb{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0}.arttb button{padding:4px 10px;font-size:13px}
+.artprev{max-height:80vh;overflow:auto;line-height:1.7}.artprev img{max-width:100%;border-radius:10px}.artprev .artcovp{width:100%;aspect-ratio:16/9;object-fit:cover}.artprev blockquote{border-left:4px solid #0d7a63;margin:10px 0;padding:6px 12px;background:#f2f8f5}.artprev table{border-collapse:collapse}.artprev td,.artprev th{border:1px solid #ddd;padding:6px}.artprev mark{background:#ffe9a3}.artprev .artvid{aspect-ratio:16/9;position:relative}.artprev .artvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.artgg{border:1px solid #e3e6e1;border-radius:10px;padding:10px 12px;margin:8px 0;background:#fff}.gg-t{color:#1a0dab;font-size:18px}.gg-u{color:#006621;font-size:13px}.gg-d{color:#4d5156;font-size:14px}
+.artck{list-style:none;padding:0;margin:6px 0;font-size:14px}.artck .ok{color:#0d7a63}.artck .no{color:#b45f06}
 </style></head><body><main>
 <h1>Quản trị Tâm HSK</h1>
 <div class="card" id="login">
@@ -54,11 +60,11 @@ a{color:var(--jade)}
     if(r.status===401&&AUTH&&AUTH.rf&&!again)return refresh().then(function(){return req(m,p,b,true);});if(!r.ok)throw new Error(emsg(j.error&&j.error.message||r.status));return j;});});}
   var WHO={};function start(){req('GET','/v1/admin/whoami').then(function(j){ROLE=j.role;WHO=j;$('#login').hidden=true;$('#box').hidden=false;
       $('#whoami').innerHTML='Đang đăng nhập: <b>'+esc(j.who)+'</b> · vai trò <b>'+({owner:'Chủ',admin:'Quản trị viên',teacher:'Giáo viên'}[j.role])+'</b>'+(j.bank?'':' · <span class="err">Chưa đặt tài khoản ngân hàng (BANK_ID, BANK_ACC)</span>');
-      var T=ROLE==='teacher'?[['regs','Đăng ký lớp']]:[['users','Người dùng'],['orders','Đơn mua'],['vouchers','Voucher'],['regs','Đăng ký lớp'],['notify','Gửi thông báo'],['games','Trò chơi'],['cf','Hạn mức Cloudflare'],['sup','Hỗ trợ'],['tapps','Đơn giáo viên'],['olc','Khóa học online'],['char','Asset nhân vật'],['shop','Quản lí cửa hàng'],['lp','Trang khóa học & liên kết'],['ext','Lớp ngoài & cọc'],['prices','Gói & giá'],['exp','Xuất dữ liệu'],['rrep','Báo cáo Phòng Tự Học'],['log','Nhật ký']];
+      var T=ROLE==='teacher'?[['regs','Đăng ký lớp']]:[['users','Người dùng'],['orders','Đơn mua'],['vouchers','Voucher'],['regs','Đăng ký lớp'],['notify','Gửi thông báo'],['games','Trò chơi'],['cf','Hạn mức Cloudflare'],['sup','Hỗ trợ'],['tapps','Đơn giáo viên'],['olc','Khóa học online'],['char','Asset nhân vật'],['shop','Quản lí cửa hàng'],['lp','Trang khóa học & liên kết'],['art','Bài viết'],['ext','Lớp ngoài & cọc'],['prices','Gói & giá'],['exp','Xuất dữ liệu'],['rrep','Báo cáo Phòng Tự Học'],['log','Nhật ký']];
       $('#tabs').innerHTML=T.map(function(t){return '<button data-t="'+t[0]+'">'+t[1]+'</button>';}).join('');show(TAB&&T.some(function(t){return t[0]===TAB;})?TAB:T[0][0]);})
     .catch(function(e){AUTH=null;sessionStorage.removeItem('adauth');$('#login').hidden=false;$('#box').hidden=true;$('#lmsg').textContent=e.message;});}
   $('#tabs').onclick=function(e){var b=e.target.closest('[data-t]');if(b)show(b.dataset.t);};
-  function show(t){TAB=t;$$('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t);});$('#pane').innerHTML='<div class="card muted">Đang tải…</div>';({users:users,orders:orders,vouchers:vouchers,regs:regs,notify:notify,games:games,cf:cfu,rrep:rrep,sup:sup,tapps:tapps,ext:extTab,olc:olcTab,char:charTab,shop:shopTab,lp:lpTab,prices:prices,exp:exp,log:log})[t]();}
+  function show(t){TAB=t;$$('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t);});$('#pane').innerHTML='<div class="card muted">Đang tải…</div>';({users:users,orders:orders,vouchers:vouchers,regs:regs,notify:notify,games:games,cf:cfu,rrep:rrep,sup:sup,tapps:tapps,ext:extTab,olc:olcTab,char:charTab,shop:shopTab,lp:lpTab,art:artTab,prices:prices,exp:exp,log:log})[t]();}
   function fail(e){$('#pane').innerHTML='<div class="card err">'+esc(e.message)+'</div>';}
   /* --- Người dùng --- */
   var UQ='';
@@ -255,6 +261,105 @@ a{color:var(--jade)}
   function charSlotSel(v,id){return '<select'+(id?' id="'+id+'"':'')+' data-chslot>'+CHAR_SLOTS.map(function(s){return '<option value="'+s[0]+'"'+(s[0]===v?' selected':'')+'>'+s[1]+'</option>';}).join('')+'</select>';}
   /* --- 5.100: Quản lí cửa hàng (giá Nguyên bảo, ai được mua, ẩn món, nhãn) --- */
   var SHOPC={items:{}},SHOPL=[],SHOPF={q:'',cat:''};
+  /* --- 5.121: Bài viết (blog SEO) --- */
+/* Bài viết: chuyển Markdown đơn giản → HTML an toàn (dùng chung Worker và app) */
+function artMd(src) {
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const okUrl = u => /^https:\/\/[^\s"<>]+$/i.test(u) || /^\/[^\s"<>]*$/.test(u) || /^#[\w-]+$/.test(u);
+  const hid = t => t.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/gi, 'd').toLowerCase().replace(/[^a-z0-9一-鿿]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'muc';
+  const inl = t => {
+    let s = esc(t);
+    const codes = []; s = s.replace(/`([^`]+)`/g, (m, c) => { codes.push(c); return '\u0000' + (codes.length - 1) + '\u0000'; });
+    s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (m, a, u) => { u = u.replace(/&amp;/g, '&'); return okUrl(u) ? `<img src="${esc(u)}" alt="${a}" loading="lazy">` : m; });
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, a, u) => { u = u.replace(/&amp;/g, '&'); if (!okUrl(u)) return m; const ext = /^https:/i.test(u) && !/^https:\/\/hsk\.kassertam\.com/i.test(u); return `<a href="${esc(u)}"${ext ? ' target="_blank" rel="noopener"' : ''}>${a}</a>`; });
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<i>$2</i>').replace(/==([^=]+)==/g, '<mark>$1</mark>');
+    return s.replace(/\u0000(\d+)\u0000/g, (m, i) => `<code>${codes[+i]}</code>`);
+  };
+  const yt = u => { const m = String(u).match(/^https:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{6,15})/); return m ? m[1] : ''; };
+  const L = String(src || '').replace(/\r\n?/g, '\n').split('\n'), out = [], toc = [];
+  let i = 0; const used = {};
+  while (i < L.length) {
+    const ln = L[i];
+    if (/^```/.test(ln)) { const buf = []; i++; while (i < L.length && !/^```/.test(L[i])) buf.push(L[i++]); i++; out.push(`<pre><code>${esc(buf.join('\n'))}</code></pre>`); continue; }
+    if (!ln.trim()) { i++; continue; }
+    let m;
+    if ((m = ln.match(/^(#{2,4})\s+(.+)$/))) { const lv = m[1].length, t = m[2].trim(); let id = hid(t); used[id] = (used[id] || 0) + 1; if (used[id] > 1) id += '-' + used[id]; if (lv === 2) toc.push([id, t]); out.push(`<h${lv} id="${id}">${inl(t)}</h${lv}>`); i++; continue; }
+    if ((m = ln.match(/^#\s+(.+)$/))) { out.push(`<h2>${inl(m[1])}</h2>`); i++; continue; }
+    if (/^(-{3,}|\*{3,})\s*$/.test(ln)) { out.push('<hr>'); i++; continue; }
+    if (yt(ln.trim())) { out.push(`<div class="artvid"><iframe src="https://www.youtube-nocookie.com/embed/${yt(ln.trim())}" title="Video" loading="lazy" allowfullscreen></iframe></div>`); i++; continue; }
+    if ((m = ln.match(/^!\[([^\]]*)\]\(([^)\s]+)\)\s*$/))) { const u = m[2]; if (okUrl(u)) { out.push(`<figure><img src="${esc(u)}" alt="${esc(m[1])}" loading="lazy">${m[1] ? `<figcaption>${inl(m[1])}</figcaption>` : ''}</figure>`); i++; continue; } }
+    if (/^>\s?/.test(ln)) { const buf = []; while (i < L.length && /^>\s?/.test(L[i])) buf.push(L[i++].replace(/^>\s?/, '')); out.push(`<blockquote>${buf.map(inl).join('<br>')}</blockquote>`); continue; }
+    if (/^\s*[-*]\s+/.test(ln)) { const buf = []; while (i < L.length && /^\s*[-*]\s+/.test(L[i])) buf.push(L[i++].replace(/^\s*[-*]\s+/, '')); out.push(`<ul>${buf.map(x => `<li>${inl(x)}</li>`).join('')}</ul>`); continue; }
+    if (/^\s*\d+[.)]\s+/.test(ln)) { const buf = []; while (i < L.length && /^\s*\d+[.)]\s+/.test(L[i])) buf.push(L[i++].replace(/^\s*\d+[.)]\s+/, '')); out.push(`<ol>${buf.map(x => `<li>${inl(x)}</li>`).join('')}</ol>`); continue; }
+    if (/^\|.*\|\s*$/.test(ln) && i + 1 < L.length && /^\|[\s:|-]+\|\s*$/.test(L[i + 1])) {
+      const row = r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+      const head = row(ln); i += 2; const rows = []; while (i < L.length && /^\|.*\|\s*$/.test(L[i])) rows.push(row(L[i++]));
+      out.push(`<div class="arttbl"><table><thead><tr>${head.map(c => `<th>${inl(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${inl(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`); continue; }
+    const buf = []; while (i < L.length && L[i].trim() && !/^(#{1,4}\s|```|>|\s*[-*]\s+|\s*\d+[.)]\s+|\|)/.test(L[i]) && !/^!\[[^\]]*\]\([^)]+\)\s*$/.test(L[i])) buf.push(L[i++]);
+    if (!buf.length) { buf.push(L[i++]); }
+    out.push(`<p>${buf.map(inl).join('<br>')}</p>`);
+  }
+  return { html: out.join('\n'), toc };
+}
+function artText(md) { return String(md || '').replace(/```[\s\S]*?```/g, ' ').replace(/!\[[^\]]*\]\([^)]*\)/g, ' ').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[#>*`|=_-]+/g, ' ').replace(/\s+/g, ' ').trim(); }
+function artMinutes(md) { const t = artText(md); const w = t.split(' ').filter(Boolean).length + (t.match(/[一-鿿]/g) || []).length / 2; return Math.max(1, Math.round(w / 220)); }
+
+  var ARTL=[],ARTE=null;
+  function artSlugA(s){return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/gi,'d').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);}
+  function artDateA(t){if(!t)return '—';var d=new Date(t);return d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();}
+  function artTab(){var P=$('#pane');req('GET','/v1/admin/art').then(function(j){ARTL=j.list||[];
+    P.innerHTML='<div class="card"><div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3 style="margin:0">Bài viết ('+ARTL.length+')</h3><div class="row" style="gap:6px;flex-wrap:wrap"><a class="small" href="https://hsk.kassertam.com/bai-viet/" target="_blank" rel="noopener">Xem trang bài viết ›</a><button class="pri" id="artnew">+ Viết bài mới</button></div></div>'+
+      '<p class="small muted">Bài đã đăng hiện trong app (cột phải trên máy tính, mục Khám phá trên điện thoại) và có trang riêng cho Google tại hsk.kassertam.com/bai-viet/…</p>'+
+      (ARTL.length?'<div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Bài viết</th><th>Trạng thái</th><th>Ngày đăng</th><th>Lượt xem</th><th></th></tr></thead><tbody>'+ARTL.map(function(a){
+        return '<tr><td><b>'+esc(a.title)+'</b><div class="small muted">/bai-viet/'+esc(a.slug)+'</div></td><td>'+(a.status==='pub'?'<span class="chip ok">Đã đăng</span>':'<span class="chip">Nháp</span>')+'</td><td>'+artDateA(a.pub_at)+'</td><td>'+(a.views||0)+'</td><td class="row" style="gap:6px;flex-wrap:wrap"><button data-ae="'+a.id+'">Sửa</button>'+(a.status==='pub'?'<a class="btn" href="https://hsk.kassertam.com/bai-viet/'+encodeURIComponent(a.slug)+'" target="_blank" rel="noopener">Xem</a>':'')+'<button class="danger" data-ad="'+a.id+'">Xóa</button></td></tr>';}).join('')+'</tbody></table></div>':'<p class="muted">Chưa có bài viết nào. Bấm "Viết bài mới" để bắt đầu.</p>')+'</div>';
+    $('#artnew').onclick=function(){artEdit(null);};
+    $$('[data-ae]').forEach(function(b){b.onclick=function(){artEdit(ARTL.find(function(a){return String(a.id)===b.dataset.ae;}));};});
+    $$('[data-ad]').forEach(function(b){b.onclick=function(){var a=ARTL.find(function(x){return String(x.id)===b.dataset.ad;});if(!a||!confirm('Xóa hẳn bài "'+a.title+'"? Không khôi phục được.'))return;req('POST','/v1/admin/art/del',{id:a.id}).then(artTab).catch(fail);};});
+  }).catch(fail);}
+  function artImgUp(file,maxW){return new Promise(function(ok,no){if(!file)return no(new Error('Chưa chọn ảnh'));var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var k=Math.min(1,maxW/im.naturalWidth),c=document.createElement('canvas');c.width=Math.round(im.naturalWidth*k);c.height=Math.round(im.naturalHeight*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+      var q=0.85,d=c.toDataURL('image/webp',q);while(d.length>880000&&q>0.4){q-=0.1;d=c.toDataURL('image/webp',q);}if(d.indexOf('data:image/webp')!==0)d=c.toDataURL('image/jpeg',0.82);if(d.length>880000)return no(new Error('Ảnh quá lớn, hãy chọn ảnh nhỏ hơn'));
+      req('POST','/v1/admin/art/img',{mime:d.slice(5,d.indexOf(';')),data:d}).then(function(j){ok(API+j.path);}).catch(no);};im.onerror=function(){no(new Error('Không đọc được ảnh'));};im.src=r.result;};r.readAsDataURL(file);});}
+  function artSeo(a){var t=a.seo_title||a.title,d=a.seo_desc||a.summary,txt=artText(a.body),w=txt.split(' ').filter(Boolean).length,h2=(a.body.match(/^##\s/gm)||[]).length,il=/\]\((https:\/\/hsk\.kassertam\.com|\/)/.test(a.body);
+    return [[t.length>=30&&t.length<=65,'Tiêu đề hiển thị trên Google dài 30–65 ký tự (hiện '+t.length+')'],[d.length>=70&&d.length<=160,'Mô tả dài 70–160 ký tự (hiện '+d.length+')'],[!!a.cover,'Có ảnh bìa (hiện khi chia sẻ Facebook, Zalo)'],[w>=300,'Nội dung từ 300 chữ trở lên (hiện '+w+')'],[h2>=2,'Có từ 2 đề mục ## trở lên (hiện '+h2+')'],[il,'Có link tới trang khác của Tâm HSK (vd hsk.kassertam.com/tu/学习)'],[a.tags.length>0,'Có ít nhất 1 thẻ']];}
+  function artEdit(a){var P=$('#pane');a=a?JSON.parse(JSON.stringify(a)):{id:0,title:'',slug:'',summary:'',cover:'',tags:[],lv:0,body:'',seo_title:'',seo_desc:'',status:'draft'};ARTE=a;var slugTouched=!!a.id;
+    var tb=[['h2','Đề mục'],['h3','Đề mục nhỏ'],['b','Đậm'],['i','Nghiêng'],['mark','Tô vàng'],['link','Link'],['img','Ảnh'],['ul','Danh sách'],['ol','Danh sách số'],['quote','Trích dẫn'],['table','Bảng'],['yt','Video YouTube']];
+    P.innerHTML='<div class="card"><div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><button id="artback">‹ Danh sách bài</button><div class="row" style="gap:6px;flex-wrap:wrap"><span class="small muted" id="artmsg"></span><button id="artdraft">Lưu nháp</button><button class="pri" id="artpub">'+(a.status==='pub'?'Cập nhật bài':'Đăng bài')+'</button></div></div></div>'+
+      '<div class="artedgrid"><div class="card stack">'+
+      '<label>Tiêu đề bài viết<input id="atitle" maxlength="150" value="'+esc(a.title)+'" placeholder="VD: 150 từ vựng HSK1 học trong 7 ngày"></label>'+
+      '<label>Đường dẫn <span class="small muted">hsk.kassertam.com/bai-viet/<b id="aslugv">'+esc(a.slug)+'</b></span><input id="aslug" maxlength="80" value="'+esc(a.slug)+'" placeholder="tự tạo từ tiêu đề"></label>'+
+      '<label>Tóm tắt (hiện ở danh sách và đầu bài) <span class="small muted" id="asumc"></span><textarea id="asum" rows="2" maxlength="300">'+esc(a.summary)+'</textarea></label>'+
+      '<div><b>Ảnh bìa</b> <span class="small muted">khổ ngang 16:9, tự nén</span><div class="row" style="gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px"><img id="acovimg" alt="" style="width:160px;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:#eef3f0'+(a.cover?'':';display:none')+'" src="'+esc(a.cover)+'"><label class="btn">Tải ảnh lên<input type="file" accept="image/*" id="acovf" hidden></label><input id="acov" style="flex:1;min-width:200px" placeholder="hoặc dán link ảnh https://…" value="'+esc(a.cover)+'"></div></div>'+
+      '<div class="row" style="gap:10px;flex-wrap:wrap"><label style="flex:1;min-width:200px">Thẻ (cách nhau dấu phẩy)<input id="atags" value="'+esc((a.tags||[]).join(', '))+'" placeholder="HSK1, Mẹo học, Ngữ pháp"></label><label>Cấp HSK<select id="alv">'+[0,1,2,3,4,5,6].map(function(i){return '<option value="'+i+'"'+(+a.lv===i?' selected':'')+'>'+(i?'HSK '+i:'Không gắn')+'</option>';}).join('')+'</select></label></div>'+
+      '<div><b>Nội dung</b> <span class="small muted">viết kiểu Markdown, xem trước ở bên phải</span><div class="arttb">'+tb.map(function(x){return '<button type="button" data-tb="'+x[0]+'">'+x[1]+'</button>';}).join('')+'<input type="file" accept="image/*" id="abimg" hidden></div>'+
+      '<textarea id="abody" rows="22" style="width:100%;font-family:ui-monospace,Consolas,monospace;font-size:14px" placeholder="## Đề mục\nNội dung đoạn văn…">'+esc(a.body)+'</textarea></div>'+
+      '<details class="artseo" open><summary><b>SEO cho Google</b></summary><label>Tiêu đề trên Google (để trống = tiêu đề bài) <span class="small muted" id="astc"></span><input id="ast" maxlength="80" value="'+esc(a.seo_title)+'"></label><label>Mô tả trên Google (để trống = tóm tắt) <span class="small muted" id="asdc"></span><textarea id="asd" rows="2" maxlength="180">'+esc(a.seo_desc)+'</textarea></label>'+
+      '<div class="artgg" id="artgg"></div><ul class="artck" id="artck"></ul></details>'+
+      '</div><div class="card"><div class="small muted" style="margin-bottom:6px">Xem trước</div><div id="aprev" class="artprev"></div></div></div>';
+    var $t=$('#atitle'),$s=$('#aslug'),$b=$('#abody');
+    function cur(){a.title=$t.value.trim();a.slug=artSlugA($s.value||a.title);a.summary=$('#asum').value.trim();a.cover=$('#acov').value.trim();a.tags=$('#atags').value.split(',').map(function(x){return x.trim();}).filter(Boolean);a.lv=+$('#alv').value;a.body=$b.value;a.seo_title=$('#ast').value.trim();a.seo_desc=$('#asd').value.trim();return a;}
+    function render(){cur();$('#aslugv').textContent=a.slug||'…';$('#asumc').textContent=a.summary.length+'/300';$('#astc').textContent=(a.seo_title||a.title).length+' ký tự';$('#asdc').textContent=(a.seo_desc||a.summary).length+' ký tự';
+      var img=$('#acovimg');img.src=a.cover;img.style.display=a.cover?'':'none';
+      var m=artMd(a.body);$('#aprev').innerHTML='<h1>'+esc(a.title||'(Chưa có tiêu đề)')+'</h1>'+(a.cover?'<img class="artcovp" src="'+esc(a.cover)+'" alt="">':'')+(a.summary?'<p class="lead">'+esc(a.summary)+'</p>':'')+m.html;
+      $('#artgg').innerHTML='<div class="small muted">Xem trước trên Google</div><div class="gg-t">'+esc((a.seo_title||a.title||'Tiêu đề bài viết')+' | Tâm HSK')+'</div><div class="gg-u">hsk.kassertam.com › bai-viet › '+esc(a.slug||'…')+'</div><div class="gg-d">'+esc((a.seo_desc||a.summary||artText(a.body)).slice(0,160))+'</div>';
+      $('#artck').innerHTML=artSeo(a).map(function(c){return '<li class="'+(c[0]?'ok':'no')+'">'+(c[0]?'✓ ':'• ')+esc(c[1])+'</li>';}).join('');}
+    var rt;function later(){clearTimeout(rt);rt=setTimeout(render,200);}
+    $t.oninput=function(){if(!slugTouched)$s.value=artSlugA($t.value);later();};$s.oninput=function(){slugTouched=true;later();};
+    ['#asum','#acov','#atags','#alv','#abody','#ast','#asd'].forEach(function(k){$(k).oninput=later;$(k).onchange=later;});
+    function wrap(pre,post,ph){var s=$b.selectionStart,e=$b.selectionEnd,v=$b.value,sel=v.slice(s,e)||ph||'';$b.value=v.slice(0,s)+pre+sel+post+v.slice(e);$b.focus();$b.selectionStart=s+pre.length;$b.selectionEnd=s+pre.length+sel.length;render();}
+    function line(txt){var s=$b.selectionStart,v=$b.value,nl=(s>0&&v[s-1]!=='\n')?'\n\n':'';$b.value=v.slice(0,s)+nl+txt+'\n'+v.slice(s);$b.focus();$b.selectionStart=$b.selectionEnd=s+nl.length+txt.length;render();}
+    $$('[data-tb]').forEach(function(btn){btn.onclick=function(){var k=btn.dataset.tb;
+      if(k==='h2')line('## Đề mục');else if(k==='h3')line('### Đề mục nhỏ');else if(k==='b')wrap('**','**','chữ đậm');else if(k==='i')wrap('*','*','chữ nghiêng');else if(k==='mark')wrap('==','==','chữ tô vàng');
+      else if(k==='link'){var u=prompt('Dán link (https://…). Link tới từ trong từ điển: https://hsk.kassertam.com/tu/学习','https://hsk.kassertam.com/');if(u)wrap('[',']('+u+')','chữ gắn link');}
+      else if(k==='img')$('#abimg').click();else if(k==='ul')line('- Ý thứ nhất\n- Ý thứ hai');else if(k==='ol')line('1. Bước một\n2. Bước hai');else if(k==='quote')line('> Câu trích dẫn');
+      else if(k==='table')line('| Chữ Hán | Pinyin | Nghĩa |\n| --- | --- | --- |\n| 你好 | nǐ hǎo | xin chào |');
+      else if(k==='yt'){var y=prompt('Dán link video YouTube');if(y)line(y.trim());}};});
+    $('#abimg').onchange=function(){var f=this.files[0];this.value='';$('#artmsg').textContent='Đang tải ảnh…';artImgUp(f,1400).then(function(u){var alt=prompt('Chú thích ảnh (để trống nếu không cần)','')||'';line('!['+alt+']('+u+')');$('#artmsg').textContent='Đã chèn ảnh';}).catch(function(e){$('#artmsg').textContent=e.message;});};
+    $('#acovf').onchange=function(){var f=this.files[0];this.value='';$('#artmsg').textContent='Đang tải ảnh bìa…';artImgUp(f,1600).then(function(u){$('#acov').value=u;render();$('#artmsg').textContent='Đã tải ảnh bìa';}).catch(function(e){$('#artmsg').textContent=e.message;});};
+    function save(st){cur();if(!a.title){$('#artmsg').textContent='Cần tiêu đề';$t.focus();return;}if(st==='pub'&&artText(a.body).length<50){$('#artmsg').textContent='Nội dung quá ngắn để đăng';return;}
+      $('#artmsg').textContent='Đang lưu…';req('POST','/v1/admin/art/save',{id:a.id,title:a.title,slug:a.slug,summary:a.summary,cover:a.cover,tags:a.tags,lv:a.lv,body:a.body,seo_title:a.seo_title,seo_desc:a.seo_desc,status:st}).then(function(j){a.id=j.id;a.slug=j.slug;a.status=st;$s.value=j.slug;slugTouched=true;render();
+        $('#artmsg').innerHTML=st==='pub'?'Đã đăng · <a href="https://hsk.kassertam.com/bai-viet/'+encodeURIComponent(j.slug)+'" target="_blank" rel="noopener">xem bài</a>':'Đã lưu nháp';$('#artpub').textContent='Cập nhật bài';}).catch(function(e){$('#artmsg').textContent=e.message;});}
+    $('#artdraft').onclick=function(){save('draft');};$('#artpub').onclick=function(){save('pub');};$('#artback').onclick=artTab;
+    render();}
   /* --- 5.103: link cho trang khóa học online và hệ sinh thái --- */
   var LP_F=[['Nút tư vấn',[['consult','Nút "Nhận tư vấn" chính (để trống thì dùng Zalo/Messenger/Form)'],['zalo','Zalo tư vấn (dạng https://zalo.me/0900000000; cũng là nút nổi Zalo)'],['messenger','Messenger tư vấn (nút nổi Facebook; để trống thì dùng Fanpage)'],['phone','Số gọi (dạng tel:0900000000)'],['email','Email liên hệ (dạng mailto:ten@gmail.com)'],['form','Form đăng ký tư vấn']]],
     ['Hệ sinh thái Tâm HSK',[['play','Google Play (app Tâm HSK)'],['appstore','App Store'],['web','Bản web (để trống = hsk.kassertam.com)'],['english','App Kasser English'],['fanpage','Fanpage Tâm HSK'],['group','Hội nhóm Tâm HSK'],['youtube','Kênh YouTube (để trống thì ẩn)'],['tiktok','Kênh video ngắn (để trống thì ẩn)']]]];
