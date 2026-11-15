@@ -6462,6 +6462,68 @@ html:has(dialog[open]){overflow:hidden}
 :root[data-theme="dark"] .u173hero,:root[data-theme="dark"] .u173toc{background:color-mix(in srgb,#ffd54a 10%,var(--card,#1b2826));border-color:color-mix(in srgb,#ffd54a 35%,transparent)}:root[data-theme="dark"] .u173hero h1{color:#9be7c4}
 a.u173c,a.u173c:visited{color:var(--ink,#1b2826)}a.u173c .u173ct b{color:var(--ink,#1b2826)}
 .u173rh a,.u173back{color:var(--jade,#0d7a63);text-decoration:none}.u173rh a:hover,.u173back:hover{text-decoration:underline}
+/* 5.123 bảng giá mới + logo chữ theo gói */
+.u174lg{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;flex:none;height:30px;min-width:54px;padding:0 12px;border-radius:10px;border:1.5px solid transparent;font-family:'Be Vietnam Pro',system-ui,sans-serif;line-height:1;vertical-align:middle;isolation:isolate}
+.u174lg b{position:relative;z-index:2;font-size:17px;font-weight:900;font-style:italic;letter-spacing:.02em}
+.u174lg.sm{height:22px;min-width:40px;padding:0 8px;border-radius:7px}.u174lg.sm b{font-size:12.5px}
+.u174lg.lg{height:58px;min-width:58px;padding:0 10px;border-radius:16px}.u174lg.lg b{font-size:24px}
+.u174lg::after{content:'';position:absolute;z-index:1;inset:-2px;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.85) 48%,transparent 64%);transform:translateX(-130%);pointer-events:none}
+/* Free: bạc trơn */
+.u174-free{background:linear-gradient(180deg,#fafbfc,#d9dde2);border-color:#c1c7ce;color:#6b737c}.u174-free::after{display:none}
+/* Pro 1 tháng: bạc kim loại */
+.u174-month{background:linear-gradient(135deg,#f3f5f7 0%,#bcc4cc 42%,#f7f9fa 54%,#9da7b1 100%);border-color:#8f99a4;color:#2b3640;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
+.u174-month::after{animation:u174sh 5s ease-in-out infinite}
+/* Pro 6 tháng: vàng */
+.u174-half{background:linear-gradient(135deg,#fff4c7 0%,#f6c843 38%,#c68608 62%,#ffe38a 100%);border-color:#b07400;color:#4a2c00;box-shadow:0 4px 12px -6px rgba(198,134,8,.8),inset 0 1px 0 rgba(255,255,255,.7)}
+.u174-half::after{animation:u174sh 3.6s ease-in-out infinite}
+/* Pro 1 năm: xanh lục bảo bạch kim phản quang */
+.u174-year{background:linear-gradient(135deg,#f0fff9 0%,#a6ecd2 26%,#33b88c 48%,#e4fff5 60%,#7fd9b8 78%,#effffa 100%);background-size:200% 200%;border-color:#1f8f6c;color:#06392c;box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 4px 14px -6px rgba(31,143,108,.9);animation:u174pl 6s ease-in-out infinite}
+.u174-year::after{background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.95) 45%,rgba(200,255,240,.6) 52%,transparent 66%);animation:u174sh 2.6s ease-in-out infinite}
+/* Pro trọn đời: chromatic, đổi màu liên tục + lấp lánh */
+.u174-life{background:linear-gradient(115deg,#ff6aa8,#ffb547,#fff06a,#5ff0a6,#4cc6ff,#9d7bff,#ff6aa8);background-size:320% 100%;border-color:rgba(255,255,255,.9);color:#fff;animation:u174ch 4s linear infinite,u174gl 3s ease-in-out infinite}
+.u174-life b{text-shadow:0 1px 0 rgba(60,20,90,.55),0 0 6px rgba(80,30,140,.45)}
+.u174-life::after{animation:u174sh 2.2s ease-in-out infinite}
+.u174-life::before{content:'✦';position:absolute;z-index:3;top:1px;right:4px;font-size:9px;color:#fff;animation:u174tw 1.6s ease-in-out infinite}
+.u174lg.lg.u174-life::before{font-size:13px;top:4px;right:7px}
+@keyframes u174sh{0%,55%{transform:translateX(-130%)}85%,100%{transform:translateX(130%)}}
+@keyframes u174pl{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes u174ch{to{background-position:320% 0}}
+@keyframes u174gl{0%,100%{box-shadow:0 0 8px 0 rgba(255,106,168,.55)}33%{box-shadow:0 0 10px 1px rgba(76,198,255,.6)}66%{box-shadow:0 0 10px 1px rgba(255,240,106,.6)}}
+@keyframes u174tw{0%,100%{opacity:.2;transform:scale(.6) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(45deg)}}
+/* huy hiệu PRO cạnh ảnh đại diện: đổi theo gói đang dùng */
+html[data-u174t] .probadge{font-size:0!important;font-style:italic;letter-spacing:0}
+html[data-u174t] .probadge::after{content:'Pro';font-size:10px;font-weight:900}
+html[data-u174t] .probadge.sm::after{font-size:9px}html[data-u174t] .probadge.big::after{font-size:12px}
+html[data-u174t="month"] .probadge{background:linear-gradient(135deg,#f3f5f7,#aeb7c0 50%,#e9edf0);color:#2b3640}
+html[data-u174t="half"] .probadge{background:linear-gradient(135deg,#ffe48a,#e0a812 55%,#c68608);color:#4a2c00}
+html[data-u174t="year"] .probadge{background:linear-gradient(135deg,#e4fff5,#33b88c 55%,#a6ecd2);background-size:200% 200%;color:#06392c;animation:u174pl 6s ease-in-out infinite}
+html[data-u174t="life"] .probadge{background:linear-gradient(115deg,#ff6aa8,#ffb547,#fff06a,#5ff0a6,#4cc6ff,#9d7bff,#ff6aa8);background-size:320% 100%;color:#fff;text-shadow:0 1px 0 rgba(60,20,90,.55);animation:u174ch 4s linear infinite}
+@media (prefers-reduced-motion:reduce){.u174lg,.u174lg::after,.u174lg::before,html[data-u174t] .probadge{animation:none!important}.u174lg::after{display:none}}
+/* trang gói */
+.u174hero .addicon{background:none;box-shadow:none;width:auto;height:auto}
+.u174 .pvproh{gap:14px}
+.u174more{align-self:flex-start;min-height:42px;font-weight:700}
+.u174mo[hidden]{display:none}
+.u174opts{grid-template-columns:repeat(4,minmax(0,1fr))}
+.u174 .u174main{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ctapro b .u174lg{margin-right:4px}.u148ct .u174lg{vertical-align:middle}
+.u174opt{gap:6px}.u174opt .u174lg{margin-bottom:2px}
+.u174nb{display:inline-block;font-size:12.5px;font-weight:800;padding:3px 9px;border-radius:999px;background:#fff3cf;color:#7a4b00;border:1px solid #f0d27a}
+.u174soon{opacity:.72;filter:saturate(.6)}
+.u174soont{display:inline-block;vertical-align:middle;margin-left:6px;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;background:#5b6b65;color:#fff}
+.u174coins h2{margin:0 0 4px}.u174coins>p{margin:0 0 12px}
+.u174copts{grid-template-columns:repeat(3,minmax(0,1fr))}
+.u174cmp th.c-free,.u174cmp td:nth-child(2){background:rgba(150,160,170,.08)}
+.u174cmp thead th{min-width:92px;vertical-align:bottom}.u174cmp thead th span{display:block;margin-top:6px;font-size:13px;line-height:1.25}
+.u174cmp thead th:first-child,.u174cmp tbody th{position:sticky;left:0;z-index:1;background:var(--card,#fff)}
+.u174cmp thead .c-pro{border-radius:0;background:rgba(245,179,1,.14);color:inherit}
+:root[data-theme="dark"] .u174nb{background:rgba(255,213,74,.14);color:#ffe08a;border-color:rgba(255,213,74,.35)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .u174nb{background:rgba(255,213,74,.14);color:#ffe08a;border-color:rgba(255,213,74,.35)}}
+@media (max-width:1100px){.u174opts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.u174 .u174main{grid-template-columns:minmax(0,1fr)}.u174 .u174opts{grid-template-columns:repeat(2,minmax(0,1fr))}.u174 .u174copts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.u174 .u174opt .pvp{font-size:22px}.u174 .u174opt .pvn{font-size:15px}.u174 .u174opt{padding:14px 10px 10px}.u174 .u174copts{grid-template-columns:minmax(0,1fr)}.u174cmp thead th{min-width:78px}.u174cmp tbody th{min-width:118px}}
+@media (max-width:340px){.u174 .u174opts{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.u174 .u174c{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:center;padding:14px 12px}.u174 .u174c .pvn,.u174 .u174c .pvp,.u174 .u174c small{grid-column:1}.u174 .u174c .pvgo{grid-column:2;grid-row:1/4;margin:0;padding:10px 18px;align-self:center}.u174 .u174c .pvp{font-size:22px}}
 </style>
 </head><body>
 
@@ -6487,12 +6549,12 @@ a.u173c,a.u173c:visited{color:var(--ink,#1b2826)}a.u173c .u173ct b{color:var(--i
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='6ccf9f6f';
-document.write('<script src="packs/hsk'+L+'.js?v=6ccf9f6f"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='3ca02e88';
+document.write('<script src="packs/hsk'+L+'.js?v=3ca02e88"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=6ccf9f6f','strokes-file');A('packs/dict.js?v=6ccf9f6f','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=3ca02e88','strokes-file');A('packs/dict.js?v=3ca02e88','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -25455,6 +25517,126 @@ document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest
   if((m=h.match(/^(?:https:\/\/hsk\.kassertam\.com)?\/(?:post|bai-viet)\/([a-z0-9-]+)\/?$/))){e.preventDefault();location.hash='#bai-viet/'+m[1];return;}
   if((m=h.match(/^(?:https:\/\/hsk\.kassertam\.com)?\/?(#[\w-]+(?:\/[\w-]+)?)$/))){e.preventDefault();location.hash=m[1];return;}},true);
 if(window.__T)window.__u173={U173,u173Load,u173View,artMd};
+
+/* ===== 5.123: Bảng giá mới — bỏ Gói Học Viên, Nguyên bảo 1.000/2.100/5.000, Pro 1 tháng · 6 tháng · 1 năm · trọn đời kèm Nguyên bảo, logo chữ theo gói, ẩn Plus (sắp mở bán) ===== */
+delete PLAN_FALLBACK.student;
+Object.assign(PLAN_FALLBACK,{
+  month:{name:'Gói Pro 1 tháng',price:49000,days:30,plan:'month',coins:199},
+  half:{name:'Gói Pro 6 tháng',price:199000,days:180,plan:'half',coins:999},
+  year:{name:'Gói Pro 1 năm',price:299000,days:365,plan:'year',coins:2999},
+  life:{name:'Gói Pro trọn đời',price:599000,days:0,plan:'life',coins:9999},
+  coins1000:{name:'1.000 Nguyên bảo',price:50000,days:0,plan:'coins',coins:1000},
+  coins2100:{name:'2.100 Nguyên bảo',price:100000,days:0,plan:'coins',coins:2100},
+  coins5000:{name:'5.000 Nguyên bảo',price:200000,days:0,plan:'coins',coins:5000}});
+Object.assign(PLAN_NAME,{month:'Pro 1 tháng',half:'Pro 6 tháng',year:'Pro 1 năm',life:'Pro trọn đời',coins1000:'1.000 Nguyên bảo',coins2100:'2.100 Nguyên bảo',coins5000:'5.000 Nguyên bảo',pro30:'Pro 1 tháng (quà)'});
+try{delete GPB_IDS.student;delete GPB_OF.tamhsk_student;Object.assign(GPB_IDS,{half:'tamhsk_half',coins2100:'tamhsk_coins2100',coins5000:'tamhsk_coins5000'});['half','coins2100','coins5000'].forEach(k=>GPB_OF[GPB_IDS[k]]=k);}catch(e){}
+try{Object.assign(PLAN_FEAT,{half:['⚡ Học và chơi không tốn năng lượng 180 ngày','🔁 Thêm lượt chơi lại khi thua','🪙 Tặng 999 Nguyên bảo'],
+  coins2100:['🪙 Cộng ngay 2.100 Nguyên bảo vào ví','♻️ Mua được nhiều lần'],coins5000:['🪙 Cộng ngay 5.000 Nguyên bảo vào ví','♻️ Mua được nhiều lần']});}catch(e){}
+/* lớp của giáo viên Kasser: không còn bán Gói Học Viên, hướng sang đăng ký lớp */
+(function(){const base=fbErr;fbErr=function(m){if(/STUDENT_PLAN/.test(String(m||'')))return 'Lớp này do giáo viên của Kasser phụ trách. Hãy đăng ký lớp ở mục Lớp học online (#classreg), Kasser sẽ mở quyền vào lớp cho bạn.';return base.apply(this,arguments);};})();
+
+/* ---------- logo chữ theo gói ---------- */
+const U174_PRO=['month','half','year','life'];
+const U174_COINS=['coins1000','coins2100','coins5000'];
+const U174_LGN={free:'Free',month:'Pro 1 tháng',half:'Pro 6 tháng',year:'Pro 1 năm',life:'Pro trọn đời'};
+function u174Tier(p){p=p||PM();if(!planActiveC(p))return 'free';if(p.study||p.plan==='life')return 'life';return p.plan==='year'||p.plan==='half'?p.plan:'month';}
+function u174Logo(t,cls){t=U174_LGN[t]?t:'free';return `<span class="u174lg u174-${t}${cls?' '+cls:''}" role="img" aria-label="${U174_LGN[t]}"><b aria-hidden="true">${t==='free'?'Free':'Pro'}</b></span>`;}
+function u174Mark(){try{document.documentElement.dataset.u174t=u174Tier();}catch(e){}}
+(function(){const base=planStatusHTML;planStatusHTML=function(){u174Mark();const h=base.apply(this,arguments)||'';return h.replace('<span>⭐ <b>',`<span>${u174Logo(u174Tier(),'sm')} <b>`);};})();
+(function(){if(typeof pchipRender!=='function')return;const base=pchipRender;pchipRender=function(){u174Mark();return base.apply(this,arguments);};})();
+u174Mark();
+/* Gói Học Viên cũ: chỉ hiện hạn, không còn nút gia hạn */
+(function(){const base=planStatusHTML;planStatusHTML=function(){return (base.apply(this,arguments)||'').replace(/(🎓 <b>Gói Học Viên<\/b>[^]*?<\/span>)<b class="prgo">Gia hạn ↓<\/b>/,'$1');};})();
+/* khối mua gói dưới chân trang: giá mới, không nhắc Plus */
+ctaProHTML=function(){const t=acctTier(),tr=u174Tier();
+  if(tr==='life')return `<div class="ctapro on"><div><b>${u174Logo('life','sm')} Bạn đang dùng Pro trọn đời</b><span>Cảm ơn bạn đã ủng hộ Tâm HSK!</span></div><a class="btn ctapro-btn" href="#premium">Xem gói của tôi</a></div>`;
+  return `<div class="ctapro"><div><b>${u174Logo(t==='pro'?tr:'half','sm')} ${t==='pro'?'Gia hạn Gói Pro':'Nâng cấp Gói Pro'}</b>
+    <span>${(typeof isApp==='function'&&isApp())?'Học và chơi không tốn năng lượng, thêm lượt chơi lại, tặng Nguyên bảo.':'Pro <b>49K</b>/tháng · 6 tháng <b>199K</b> · tặng tới <b>9.999 Nguyên bảo</b>.'}</span></div>
+    <a class="btn ctapro-btn" href="#premium">Xem các gói</a></div>`;};
+try{ctaProMount();}catch(e){}
+/* hộp năng lượng: ẩn thẻ Plus (sắp mở bán), logo Pro bằng chữ */
+(function(){const base=u148UpHTML;u148UpHTML=function(){let h=base.apply(this,arguments);h=h.replace(/<a class="u148c plus"[^]*?<\/a>/,'');return h.replace('<span class="u148ct">⭐ Pro</span>',`<span class="u148ct">${u174Logo('half','sm')}</span>`);};})();
+
+/* ---------- trang mua gói ---------- */
+const U174_MAIN=[['⚡','Học và chơi không tốn năng lượng','Học bao nhiêu bài, chơi bao nhiêu trò cũng được'],['🔁','Thêm lượt chơi lại','Thua ván nào cũng được chơi tiếp miễn phí'],['🪙','Tặng Nguyên bảo','Từ 199 đến 9.999 Nguyên bảo tùy gói']];
+const U174_MORE=[['📚','Ôn từ hay sai không giới hạn','Ôn đến khi thuộc, không bị khóa giữa chừng'],['🐒','Khỉ Thông Thái tự thu hoạch vườn','Không lo cây héo hay bị trộm'],['👥','Kết bạn tới 500 người','Gấp 10 lần tài khoản Free'],
+  ['📝','Gói luyện thi HSK đầy đủ','Đề không giới hạn, dự đoán điểm, phân tích phần yếu (Pro 1 năm, Pro trọn đời)'],['🏷️','Logo Pro riêng theo gói','Bạc, vàng, lục bảo bạch kim hoặc chromatic trên hồ sơ']];
+const U174_CMP=[['Học và chơi không tốn năng lượng',0,1,1,1,1],['Thêm lượt chơi lại khi thua',0,1,1,1,1],['Tặng Nguyên bảo',0,'199','999','2.999','9.999'],['Ôn từ hay sai không giới hạn',0,1,1,1,1],
+  ['Khỉ Thông Thái tự thu hoạch vườn',0,1,1,1,1],['Số bạn bè tối đa','50','500','500','500','500'],['Gói luyện thi HSK đầy đủ',0,0,0,1,1],['Thời hạn','Mãi mãi','30 ngày','180 ngày','365 ngày','Trọn đời']];
+const U174_SUB={month:'30 ngày',half:'180 ngày',year:'365 ngày',life:'trả 1 lần, dùng mãi',coins1000:'mua nhiều lần',coins2100:'mua nhiều lần',coins5000:'mua nhiều lần'};
+viewPremium=async function(){
+  const head=`<section class="addhero prhero pvhero u174hero"><div class="addicon" aria-hidden="true">${u174Logo('life','lg')}</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Học và chơi thoải mái</h1><p>Chọn gói, xác nhận, thanh toán. Gói kích hoạt ngay khi tiền vào.</p></div></section>`;
+  app.innerHTML=`<div class="stack">${head}<div class="panel muted">Đang tải bảng giá…</div></div>`;
+  try{await meFetch();}catch(e){}u174Mark();
+  const app_=gpbOK();if(isApp()&&!app_){app.innerHTML=`<div class="stack">${head}${planStatusHTML()||''}<div class="panel small muted">Hãy cập nhật app lên bản mới nhất trên Google Play để mua gói.</div></div>`;return;}
+  const pr=app_?{products:Object.assign({},PLAN_FALLBACK),auto:false}:await pricingGet();const P=Object.assign({},PLAN_FALLBACK,pr.products||{});const p=PM();
+  if(!app_)['month','half','year','life'].forEach(k=>{if(P[k]&&!P[k].coins)P[k].coins=PLAN_FALLBACK[k].coins;});
+  const lifeOwned=p.plan==='life'||!!p.study;
+  const hid=k=>!P[k]||P[k].hidden||(app_&&Object.keys(GPB.items).length>0&&!GPB.items[GPB_IDS[k]])||['plus','plus_life','teacher','deposit','student','replay','replay_year'].includes(k)||(lifeOwned&&U174_PRO.includes(k));
+  const m=ME(),pend=(m.uid===(SOC.auth&&SOC.auth.uid))&&(m.orders||[]).find(o=>o.status==='pending');
+  const priceOf=k=>{if(app_){const it=GPB.items[GPB_IDS[k]];return it&&it.price?esc(it.price):'…';}const x=P[k]||{};return vnd(x.early&&x.early.left>0?x.early.price:x.price);};
+  const oldOf=k=>{if(app_)return '';const x=P[k]||{};return x.early&&x.early.left>0?`<s>${vnd(x.price)}</s>`:'';};
+  const perMo=(k,mo)=>{const x=P[k]||{};return app_||!x.price?'':' · chỉ ~'+vnd(Math.round(x.price/mo/1000)*1000)+'/tháng';};
+  const nb=n=>Number(n||0).toLocaleString('vi-VN');
+  const opt=k=>{if(hid(k))return '';const x=P[k]||{},early=!app_&&x.early&&x.early.left>0,best=k==='year';
+    const mo=k==='half'?perMo(k,6):k==='year'?perMo(k,12):'';
+    return `<button type="button" class="pvopt big u174opt u174o-${k}${best?' best':''}" data-pvbuy="${k}">${best?'<span class="pvtag">Tiết kiệm nhất</span>':''}${early?`<span class="pvtag hot">🔥 ${esc(x.early.label||'Ưu đãi')} · còn ${x.early.left}</span>`:''}
+      ${u174Logo(k)}<b class="pvn">${esc(PLAN_NAME[k]||x.name||k)}</b><span class="pvp">${priceOf(k)} ${oldOf(k)}</span><small>${U174_SUB[k]||''}${mo}</small>
+      ${x.coins?`<span class="u174nb">🪙 Tặng ${nb(x.coins)} NB</span>`:''}<span class="pvgo">Chọn gói này →</span></button>`;};
+  const copt=k=>{if(hid(k))return '';const x=P[k]||{},bonus=k==='coins2100'?'+5%':k==='coins5000'?'+25%':'';
+    return `<button type="button" class="pvopt u174c${k==='coins5000'?' best':''}" data-pvbuy="${k}">${bonus?`<span class="pvtag">Thêm ${bonus}</span>`:''}<b class="pvn">🪙 ${nb(x.coins)} NB</b><span class="pvp">${priceOf(k)}</span><small>${U174_SUB[k]}</small><span class="pvgo">Mua →</span></button>`;};
+  const cell=v=>v===1?'<span class="pvy" aria-label="Có">✓</span>':v===0?'<span class="pvx" aria-label="Không">–</span>':`<b>${esc(String(v))}</b>`;
+  const feat=a=>a.map(([i,t,s])=>`<li><i aria-hidden="true">${i}</i><div><b>${t}</b><small>${s}</small></div></li>`).join('');
+  let more=false;
+  const draw=()=>{if(location.hash.indexOf('#premium')!==0)return;
+    const proOpts=U174_PRO.map(opt).join(''),coinOpts=U174_COINS.map(copt).join('');
+    app.innerHTML=`<div class="stack plans2 pv2 u174">${head}${planStatusHTML()}
+    ${pend&&!app_?`<div class="fb">Bạn có đơn <b>${esc(pend.ref)}</b> (${vnd(pend.final)}) đang chờ thanh toán. Chọn lại đúng gói đó để mở lại trang thanh toán (không bị trừ tiền 2 lần).</div>`:''}
+    ${proOpts?`<section class="pvpro" id="plg-pro"><div class="pvproh">${u174Logo('half','lg')}<div><h2>Gói Pro</h2><p>Học và chơi không giới hạn</p></div></div>
+      <ul class="pvfeat u174main">${feat(U174_MAIN)}</ul>
+      <button type="button" class="btn u174more" aria-expanded="${more}" aria-controls="u174mo">${more?'Thu gọn quyền lợi ▴':'Xem chi tiết quyền lợi ▾'}</button>
+      <ul class="pvfeat u174mo" id="u174mo"${more?'':' hidden'}>${feat(U174_MORE)}</ul>
+      <div class="pvopts u174opts">${proOpts}</div></section>`:''}
+    <section class="pvplus u174soon" id="plg-replay" aria-disabled="true"><div class="pvplush"><h2>🐉 Gói Plus <span class="u174soont">Sắp mở bán</span></h2><p class="small">Gói nhẹ hơn Pro đang được chuẩn bị. Hiện tại Gói Pro đã gồm mọi quyền lợi của Plus.</p></div></section>
+    ${coinOpts?`<section class="panel u174coins" id="plg-coins"><h2>🪙 Nạp Nguyên bảo</h2><p class="small muted">Mua chậu, hạt giống, trang phục hoặc chơi tiếp. Gói lớn được thêm Nguyên bảo.</p><div class="pvopts u174copts">${coinOpts}</div></section>`:''}
+    <section class="panel pvcmp u174cmp"><h2>So sánh các gói</h2><div class="pvtw" tabindex="0" role="region" aria-label="Bảng so sánh gói"><table><thead><tr><th scope="col">Quyền lợi</th>
+      <th scope="col" class="c-free">${u174Logo('free','sm')}<span>Free</span><small>0đ</small></th>${U174_PRO.map(k=>`<th scope="col" class="c-pro">${u174Logo(k,'sm')}<span>${esc(PLAN_NAME[k])}</span><small>${priceOf(k)}</small></th>`).join('')}</tr></thead>
+      <tbody>${U174_CMP.map(r=>`<tr><th scope="row">${r[0]}</th><td>${cell(r[1])}</td>${r.slice(2).map(v=>`<td class="c-pro">${cell(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></section>
+    <p class="small muted pvnote">${app_?'Thanh toán an toàn qua Google Play, gói kích hoạt ngay, không tự gia hạn.':pr.auto?'Thanh toán qua PayOS: quét QR ngân hàng, ví điện tử hoặc thẻ. Gói tự kích hoạt khi tiền vào, không tự gia hạn.':'Thanh toán chuyển khoản, Kasser kích hoạt trong 24 giờ.'} Gia hạn bất cứ lúc nào, ngày còn lại được cộng dồn.</p>
+    <div class="panel row prmini" style="justify-content:space-between"><span>👩‍🏫 Muốn học có giáo viên kèm? <b>Lớp online của Kasser</b>, luyện nói và chữa phát âm trực tiếp.</span><a class="btn sm" href="#classreg">Xem lớp →</a></div></div>`;
+    app.querySelectorAll('[data-pvbuy]').forEach(b=>b.onclick=()=>pvConfirm(b.dataset.pvbuy));
+    const mb=app.querySelector('.u174more');if(mb)mb.onclick=()=>{more=!more;const ul=app.querySelector('#u174mo');ul.hidden=!more;mb.setAttribute('aria-expanded',more);mb.textContent=more?'Thu gọn quyền lợi ▴':'Xem chi tiết quyền lợi ▾';};};
+  function pvConfirm(k){const x=P[k]||{};if(app_){pvGplay(k);return;}
+    let d=document.getElementById('pvdlg');if(!d){d=document.createElement('dialog');d.id='pvdlg';d.className='wd pvdlg';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
+    const isPro=U174_PRO.includes(k),feats=isPro?[U174_MAIN[0],U174_MAIN[1]].map(f=>f[0]+' '+f[1]).concat(x.coins?['🪙 Tặng '+nb(x.coins)+' Nguyên bảo']:[]):(PLAN_FEAT[k]||['🪙 Cộng ngay '+nb(x.coins)+' Nguyên bảo vào ví']).slice(0,3);
+    let quote=null,code='';
+    const body=()=>`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Xác nhận mua</div><h2 style="margin:2px 0 0">${isPro?u174Logo(k,'sm')+' ':''}${esc(PLAN_NAME[k]||x.name)}</h2></div><button type="button" class="icon-btn" data-pvx aria-label="Đóng">✕</button></div>
+      <div class="pvdp">${vnd(quote?quote.final:(x.early&&x.early.left>0?x.early.price:x.price))}${quote&&quote.discount?` <s>${vnd(quote.base||x.price)}</s> <span class="prtag">${esc(quote.label||'')}</span>`:''}<small>${U174_SUB[k]||''}</small></div>
+      <ul class="pvdf">${feats.map(f=>`<li>${f}</li>`).join('')}</ul>
+      <div id="pvacc"></div>
+      ${accCloud()?`<button type="button" class="btn pri big pvpay" id="pvpay">Thanh toán ngay →</button>`:''}
+      <div class="small" id="pvmsg" role="status"></div>
+      <details class="pvvc"><summary>Có mã giảm giá?</summary><div class="row prvc"><input id="pvcode" placeholder="Nhập mã voucher" maxlength="30" autocomplete="off" value="${esc(code)}"><button type="button" class="btn" id="pvapply">Áp dụng</button></div></details>
+      <p class="small muted" style="margin:0">Mở trang PayOS: quét QR ngân hàng, ví điện tử hoặc thẻ. Không tự gia hạn.</p></div>`;
+    const wire=()=>{const msg=(t,ok)=>{const e=d.querySelector('#pvmsg');if(e)e.innerHTML=t?`<span style="color:${ok?'var(--jade)':'var(--seal)'}">${esc(t)}</span>`:'';};
+      d.querySelector('[data-pvx]').onclick=()=>d.close();
+      const pa=d.querySelector('#pvacc');if(pa&&!accCloud()){pa.innerHTML='<p class="small" style="margin:0 0 6px"><b>Đăng nhập để mua</b>, gói gắn với tài khoản (đổi máy vẫn giữ):</p><div id="pvacc2"></div>';accUI(pa.querySelector('#pvacc2'),{guest:false,done:()=>{try{pendClaim();}catch(e){}meFetch().then(()=>{d.innerHTML=body();wire();});}});}
+      const ap=d.querySelector('#pvapply');if(ap)ap.onclick=async()=>{const c=d.querySelector('#pvcode').value.trim();if(!c){quote=null;code='';d.innerHTML=body();wire();return;}
+        try{const j=await shopPost('/v1/voucher/check',{code:c,product:k});code=j.code;quote=Object.assign({product:k},j);d.innerHTML=body();wire();msg('✓ '+j.label+': còn '+vnd(j.final),1);}catch(e){msg(e.message);}};
+      const bb=d.querySelector('#pvpay');if(bb)bb.onclick=async()=>{bb.disabled=true;bb.textContent='Đang mở trang thanh toán…';
+        try{const o=await shopPost('/v1/order/create',{product:k,voucher:code||undefined});
+          if(o.status==='paid'){d.close();await meFetch();gardenToast('⭐ Đã kích hoạt '+(PLAN_NAME[k]||'gói')+'!');try{confetti(60);}catch(e){}viewPremium();return;}
+          const box=d.querySelector('.in');box.innerHTML=payHTML2(o,pr.auto);try{wireCopy(box);}catch(e){}meFetch();
+          prPollStart(o.ref,async()=>{try{d.close();sfx('win');confetti(80);}catch(e){}gardenToast('⭐ Đã nhận tiền, '+(PLAN_NAME[k]||'gói')+' đã kích hoạt!');viewPremium();});}
+        catch(e){bb.disabled=false;bb.textContent='Thanh toán ngay →';msg(e.message);}};};
+    d.innerHTML=body();wire();if(!d.open)d.showModal();setTimeout(()=>{const b=d.querySelector('#pvpay');if(b)b.focus();},50);}
+  async function pvGplay(k){if(!accCloud()){location.hash='#settings';return;}if(!GPB.items[GPB_IDS[k]]){gardenToast('Đang tải giá từ Google Play, thử lại sau vài giây nhé.');return;}
+    const acc=await gpbAcc();if(!acc){gardenToast('Chưa kết nối được máy chủ, kiểm tra mạng rồi thử lại.');return;}try{AndroidBilling.buy(GPB_IDS[k],acc);}catch(e){gardenToast('Không mở được Google Play.');}}
+  if(app_){const off=gpbOn(e=>{if(location.hash.indexOf('#premium')!==0){off();return;}if(e.type==='products'||e.type==='purchase')draw();
+    else if(e.type==='error')gardenToast(e.msg==='ITEM_ALREADY_OWNED'?'Bạn đã mua gói này, đang kích hoạt lại…':e.code===3?'Google Play chưa sẵn sàng trên máy này.':'Google Play báo lỗi ('+e.code+'). Thử lại sau.');});gpbQuery();gpbRestore();}
+  draw();
+  const pre=(location.hash.match(/#premium-([a-z0-9_]+)/)||[])[1];if(pre){const tgt={teacher:'year',student:'year',replay:'year',replay_year:'year',coins:'coins1000'}[pre]||pre;const b=app.querySelector(`[data-pvbuy="${tgt}"]`);if(b){b.scrollIntoView({block:'center'});b.classList.add('pvflash');}}};
+if(window.__T)window.__u174={u174Tier,u174Logo,U174_CMP,up:v=>u148UpHTML(v)};
 
 function route(){
   stopGames();
