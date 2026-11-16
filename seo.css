@@ -94,6 +94,23 @@ h1.zh{font-size:64px;line-height:1.1;margin:0;font-weight:700;overflow-wrap:anyw
 .foot .in{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .foot .fl{display:flex;flex-direction:column;gap:4px}
 .foot p{grid-column:1/-1;margin:8px 0 0;color:var(--muted)}
+/* tính năng mở rộng */
+.fico{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;background:var(--jsoft);color:var(--jade);font-size:26px;font-weight:800;font-family:"Noto Serif SC","Songti SC",serif;flex:none}
+.fico.big{width:96px;height:96px;font-size:44px;border-radius:24px}
+.fc{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:12px}
+.fc b{flex:1;min-width:0}.fc .muted{flex-basis:100%}
+.fc.sm .fico{width:40px;height:40px;font-size:19px;border-radius:12px}
+.fc.wide{margin:14px 0}
+.fhero{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.fhero h1{margin:0 0 4px}
+.steps{padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.toc a{padding:6px 12px;border-radius:999px;background:var(--jsoft);text-decoration:none;font-weight:700;font-size:14px}
+.faq{border-top:1px solid var(--line);padding:10px 0}.faq summary{font-weight:700;cursor:pointer}.faq p{margin:8px 0 0}
+.room{background:var(--jsoft);border-radius:16px;padding:14px;margin:14px 0}
+.room label{display:block;font-weight:700;margin-bottom:8px}
+.room .rr{display:flex;gap:8px;flex-wrap:wrap}
+.room input{flex:1;min-width:160px;height:48px;border-radius:12px;border:1.5px solid var(--jade);padding:0 12px;font:inherit;font-size:24px;font-weight:800;letter-spacing:4px;text-align:center;background:var(--card);color:var(--ink)}
 
 .wart .wa-bob{animation:waBob 1.6s ease-in-out infinite}
 .wart .wa-hop{animation:waHop 1.1s ease-in-out infinite}
