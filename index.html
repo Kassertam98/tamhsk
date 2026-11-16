@@ -6791,12 +6791,12 @@ html[data-u174t="life"] .probadge{background:linear-gradient(115deg,#ff6aa8,#ffb
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='1b3f2149';
-document.write('<script src="packs/hsk'+L+'.js?v=1b3f2149"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='3a1147c6';
+document.write('<script src="packs/hsk'+L+'.js?v=3a1147c6"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=1b3f2149','strokes-file');A('packs/dict.js?v=1b3f2149','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=3a1147c6','strokes-file');A('packs/dict.js?v=3a1147c6','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -26040,7 +26040,7 @@ const U176_T={mean:'Nhìn chữ Hán, chọn nghĩa',hanzi:'Đọc nghĩa, chọ
 function u176Now(){return Date.now()+U176.off;}
 function u176Stop(){clearInterval(U176.poll);U176.poll=0;u176Music.stop();}
 function u176Err(m){m=String(m||'');return ({ARENA_NOT_FOUND:'Không tìm thấy phòng, kiểm tra lại mã.',ARENA_BAD_CODE:'Mã phòng gồm 6 chữ số.',ARENA_FULL:'Phòng đã đủ người.',ARENA_ENDED:'Trận này đã kết thúc.',ARENA_HOST_CANNOT_JOIN:'Bạn là chủ phòng này, hãy mở màn hình chủ phòng.',
-  ARENA_TOO_FEW:'Cần ít nhất 3 câu hỏi.',ARENA_MIN_PLAYERS:'Cần ít nhất 4 người chơi mới bắt đầu được.',ARENA_HOST_LIMIT:'Hôm nay bạn đã tạo đủ số phòng cho phép.',ARENA_CLOSED:'Hết giờ trả lời câu này rồi.',ARENA_ANSWERED:'Bạn đã trả lời câu này.',TOO_MANY_ATTEMPTS_TRY_LATER:'Thao tác quá nhanh, thử lại sau ít phút.'})[m]||('Có lỗi: '+m);}
+  ARENA_TOO_FEW:'Cần ít nhất 3 câu hỏi.',ARENA_MIN_PLAYERS:'Cần ít nhất 2 người chơi mới bắt đầu được.',ARENA_HOST_LIMIT:'Hôm nay bạn đã tạo đủ số phòng cho phép.',ARENA_CLOSED:'Hết giờ trả lời câu này rồi.',ARENA_ANSWERED:'Bạn đã trả lời câu này.',TOO_MANY_ATTEMPTS_TRY_LATER:'Thao tác quá nhanh, thử lại sau ít phút.'})[m]||('Có lỗi: '+m);}
 function u176Gid(){let g='';try{g=localStorage.getItem('hsk-arena-gid')||'';}catch(e){}if(!/^g_[0-9a-f]{24}$/.test(g)){g='g_'+[...crypto.getRandomValues(new Uint8Array(12))].map(x=>x.toString(16).padStart(2,'0')).join('');try{localStorage.setItem('hsk-arena-gid',g);}catch(e){}}return g;}
 function u176Me(){return accCloud()&&SOC.auth?SOC.auth.uid:u176Gid();}
 async function u176Api(method,path,body){if(accCloud())return frApi(method,path,body);const g=u176Gid();if(method==='GET')path+=(path.indexOf('?')<0?'?':'&')+'gid='+g;else body=Object.assign({},body||{},{gid:g});
@@ -26093,10 +26093,10 @@ function u176Guide(){const d=U176.details;
   <button type="button" class="btn sm u176more" aria-expanded="${d}" aria-controls="u176det">${d?'Thu gọn ▴':'Xem chi tiết ▾'}</button>
   <ol class="u176det" id="u176det"${d?'':' hidden'}>
     <li><b>Chủ phòng</b> chọn bài HSK, số câu và thời gian mỗi câu (mặc định 30 giây), rồi chiếu màn hình lên máy chiếu hoặc livestream.</li>
-    <li><b>Người chơi</b> mở hsk.kassertam.com, vào Đấu trường HSK, quét mã QR hoặc nhập 6 số. <b>Không cần tài khoản</b> vẫn chơi được 3 trận/ngày; tài khoản Pro chơi 10 trận/ngày. Cần <b>ít nhất 4 người</b> mới bắt đầu.</li>
+    <li><b>Người chơi</b> mở hsk.kassertam.com, vào Đấu trường HSK, quét mã QR hoặc nhập 6 số. <b>Không cần tài khoản</b> vẫn chơi được 3 trận/ngày; tài khoản Pro chơi 10 trận/ngày. Cần <b>ít nhất 2 người</b> mới bắt đầu.</li>
     <li>Câu hỏi hiện trên màn hình chủ, điện thoại có 4 nút A B C D. <b>Đúng và càng nhanh càng nhiều điểm</b> (tối đa 1.000 điểm/câu). Đúng nhiều câu liên tiếp được cộng thêm tới 500 điểm.</li>
     <li>Sau mỗi câu hiện đáp án và top 5. Kết thúc có bục vinh danh và chế độ <b>Phân tích</b>: xem lại từng câu, ai đúng ai sai.</li>
-    <li><b>Thưởng Nguyên bảo</b> cho hạng 1, 2, 3: 30, 20 và 10 Nguyên bảo, khi có ít nhất 4 người trả lời từ nửa số câu trở lên. Chỉ tài khoản đã đăng nhập mới nhận được; người chơi khách vào top 3 có 48 giờ để đăng nhập và nhận. Mỗi tài khoản nhận thưởng tối đa 3 trận/ngày.</li>
+    <li><b>Thưởng Nguyên bảo</b> cho hạng 1, 2, 3, tăng theo số người chơi: dưới 11 người 30/20/10; từ 11 người 50/30/10; từ 21 người trở lên 100/50/30 (mức cao nhất). Chỉ tính người trả lời từ nửa số câu trở lên. Chỉ tài khoản đã đăng nhập mới nhận được; người chơi khách vào top 3 có 48 giờ để đăng nhập và nhận. Mỗi tài khoản nhận thưởng tối đa 3 trận/ngày.</li>
   </ol></section>`;}
 function u176WireGuide(){const b=app.querySelector('.u176more');if(b)b.onclick=()=>{U176.details=!U176.details;const ol=app.querySelector('#u176det');ol.hidden=!U176.details;b.setAttribute('aria-expanded',U176.details);b.textContent=U176.details?'Thu gọn ▴':'Xem chi tiết ▾';};}
 
@@ -26163,7 +26163,7 @@ function u176HostRender(j){const key=j.state+':'+j.qi+':'+(j.state==='lobby'?j.c
   const top=`<div class="u176top"><span class="u176pill">${j.state==='lobby'?'Phòng chờ':j.state==='end'?'Kết thúc':'Câu '+(j.qi+1)+'/'+j.n}</span><b>${esc(j.cfg.title||'Đấu trường HSK')}</b><span class="u176code">hsk.kassertam.com · mã <b>${j.code.slice(0,3)} ${j.code.slice(3)}</b></span>
     <button type="button" class="btn sm" id="u176mu" aria-pressed="${U176.music}">${U176.music?'🔊 Nhạc':'🔇 Nhạc'}</button></div>`;
   if(j.state==='lobby'){H.innerHTML=`${top}<div class="u176lobby"><div class="u176pin"><div><small>Vào <b>hsk.kassertam.com</b> → Đấu trường HSK, nhập mã:</small><b class="u176big">${j.code.slice(0,3)} ${j.code.slice(3)}</b></div><div class="u176qr" id="u176qr" role="img" aria-label="Mã QR vào phòng"></div></div>
-      <div class="u176set"><b>${j.count} người đã vào</b>${j.count<(j.minP||4)?`<span class="u176need">Cần ít nhất ${j.minP||4} người · còn thiếu ${(j.minP||4)-j.count}</span>`:''}<label>Thời gian mỗi câu <select id="u176secs">${[10,15,20,30,45,60,90].map(s=>`<option value="${s}"${s===j.secs?' selected':''}>${s} giây</option>`).join('')}</select></label><button type="button" class="btn pri big" id="u176go"${j.count>=(j.minP||4)?'':' disabled'}>Bắt đầu</button></div>
+      <div class="u176set"><b>${j.count} người đã vào</b>${j.count<(j.minP||2)?`<span class="u176need">Cần ít nhất ${j.minP||2} người · còn thiếu ${(j.minP||2)-j.count}</span>`:''}<label>Thời gian mỗi câu <select id="u176secs">${[10,15,20,30,45,60,90].map(s=>`<option value="${s}"${s===j.secs?' selected':''}>${s} giây</option>`).join('')}</select></label><button type="button" class="btn pri big" id="u176go"${j.count>=(j.minP||2)?'':' disabled'}>Bắt đầu</button></div>
       <div class="u176plist">${(j.players||[]).map((p,i)=>`<span class="u176pl">${u176Pod(p,i)}<b>${esc(p.name)}</b></span>`).join('')||'<span class="muted">Chờ người chơi vào phòng…</span>'}</div>
       ${u176Guide()}</div>`;}
   else if(j.state==='q'){const q=j.q;H.innerHTML=`${top}<div class="u176q"><div class="u176qm"><div class="u176ringw"><div class="u176ring" id="u176ring"></div><b id="u176clk" class="u176clk">${j.secs}</b></div><small>${U176_T[q.t]||''}</small></div>
