@@ -6763,9 +6763,26 @@ html[data-u174t="life"] .probadge{background:linear-gradient(115deg,#ff6aa8,#ffb
 .u176need{font-weight:800;color:#8a2c00;background:#fff1e6;padding:6px 12px;border-radius:999px}
 .u176step{flex-direction:column;gap:2px}.u176step small{font-weight:800;font-size:14px}
 .u176gnote{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border-radius:14px;padding:10px 12px;text-align:left;font-size:14px;width:100%;box-sizing:border-box}.u176gnote b{color:#ffd54a}.u176gnote .btn{flex:none}
-.u176prize{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:20px;background:#fff3c4;color:#3a2600;text-align:center}.u176prize b{font-size:20px}
-.u176prize.g{background:#0b5444;color:#fff}.u176prize.g b{color:#ffd54a}
 .u176gnote .btn{background:#ffd54a!important;color:#2e2200!important;border:0!important;font-weight:800}
+.u176ttl{font-style:normal;font-size:12px;font-weight:800;color:#5a3a00;background:#ffe58a;border-radius:999px;padding:2px 8px;margin-left:6px;white-space:nowrap;display:inline-block;vertical-align:middle}
+.u176prof,.u176lb{display:flex;flex-direction:column;gap:10px}.u176prof h2,.u176lb h2,.u176prof h3{margin:0}.u176prof h3{font-size:16px}
+.u176ph,.u176lbh{justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.u176stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.u176stats>div{display:flex;flex-direction:column;align-items:center;padding:10px 4px;border-radius:14px;background:#f5f6f2;text-align:center}.u176stats b{font-size:22px;color:#0b4d3e}.u176stats small{font-size:12px}
+.u176bds{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.u176bd{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;border-radius:14px;background:#f0f1ed;text-align:center;opacity:.6}.u176bd.on{background:#fff3c4;opacity:1;animation:u176pop .35s ease-out}
+.u176bi{font-size:28px;line-height:1.1}.u176bd b{font-size:13px}.u176bd small{font-size:11px;line-height:1.3;color:#4a5650}
+.u176tabs{display:flex;gap:4px;background:#f0f1ed;border-radius:999px;padding:3px}.u176tabs button{border:0;background:none;border-radius:999px;padding:6px 12px;font:inherit;font-weight:700;cursor:pointer;color:inherit}.u176tabs button[aria-selected=true]{background:#0b5444;color:#fff}
+.u176lbl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.u176lbl li{display:grid;grid-template-columns:32px minmax(0,1fr) auto;grid-template-areas:"r n p" "r s p";column-gap:10px;align-items:center;padding:8px 10px;border-radius:12px;background:#f5f6f2}
+.u176lbr{grid-area:r;text-align:center;font-size:18px}.u176lbn{grid-area:n;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.u176lbl li>.small{grid-area:s}.u176lbp{grid-area:p;font-size:18px;color:#0b4d3e}
+.u176lbl li.t1{background:#fff3c4}.u176lbl li.t2{background:#eef1f4}.u176lbl li.t3{background:#fbe9dc}.u176lbl li.me{outline:2px solid #0d7a63}
+.u176gain{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px;border-radius:20px;background:#fff3c4;color:#3a2600;text-align:center}
+.u176gain>b{font-size:30px}.u176gain em{font-style:normal;font-size:20px;margin-left:6px}.u176gain em.up{color:#0b6b55}.u176gain em.down{color:#b3261e}
+.u176gain.g{background:#0b5444;color:#fff}.u176gain.g b{color:#ffd54a;font-size:19px}
+.u176nbs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:100%}.u176nbs>span{width:100%;font-weight:800}.u176nbs .u176bd{width:130px}
+.u176pend .u176wide2{grid-column:1/-1}
+.u176pd .u176ttl{margin-left:0}
+@media (max-width:420px){.u176stats b{font-size:18px}.u176bds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head><body>
 
@@ -6791,12 +6808,12 @@ html[data-u174t="life"] .probadge{background:linear-gradient(115deg,#ff6aa8,#ffb
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='3a1147c6';
-document.write('<script src="packs/hsk'+L+'.js?v=3a1147c6"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='fe508ba0';
+document.write('<script src="packs/hsk'+L+'.js?v=fe508ba0"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=3a1147c6','strokes-file');A('packs/dict.js?v=3a1147c6','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=fe508ba0','strokes-file');A('packs/dict.js?v=fe508ba0','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -26046,12 +26063,8 @@ function u176Me(){return accCloud()&&SOC.auth?SOC.auth.uid:u176Gid();}
 async function u176Api(method,path,body){if(accCloud())return frApi(method,path,body);const g=u176Gid();if(method==='GET')path+=(path.indexOf('?')<0?'?':'&')+'gid='+g;else body=Object.assign({},body||{},{gid:g});
   const r=await netFetch(method,API_BASE+path,{'Content-Type':'application/json'},method==='GET'?'':JSON.stringify(body));const j=JSON.parse(r.text||'{}');if(r.status>=400)throw new Error(j.error&&j.error.message||'Lỗi');return j;}
 function u176Q(){return u176Api('GET','/v1/arena/quota');}
-/* khách vào top 3 rồi đăng nhập: nhận Nguyên bảo đang chờ */
-async function u176Claim(show){if(!accCloud())return;let g='';try{g=localStorage.getItem('hsk-arena-gid')||'';}catch(e){}if(!g)return;
-  try{const j=await frApi('POST','/v1/arena/claim',{gid:g});if(j.coins>0){try{if(typeof walletSync==='function')walletSync();}catch(e){}gardenToast(`🏆 <b>+${j.coins} Nguyên bảo</b> · thưởng Đấu trường HSK`);u176Pet('cheer');}
-    else if(show)gardenToast(j.capped?'Hôm nay bạn đã nhận đủ thưởng 3 trận, phần thưởng giữ lại để mai nhận.':'Không có phần thưởng đang chờ.');return j;}catch(e){if(show)gardenToast(u176Err(e.message));}}
 function u176Login(after){let d=document.getElementById('u176lg');if(!d){d=document.createElement('dialog');d.id='u176lg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
-  d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Đăng nhập để nhận Nguyên bảo</h2><button type="button" class="icon-btn" data-x aria-label="Đóng">✕</button></div><div id="u176lgb"></div></div>`;
+  d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Đăng nhập để lưu cúp và điểm xếp hạng</h2><button type="button" class="icon-btn" data-x aria-label="Đóng">✕</button></div><div id="u176lgb"></div></div>`;
   d.querySelector('[data-x]').onclick=()=>d.close();if(!d.open)d.showModal();try{accUI(document.getElementById('u176lgb'),{guest:false,done:()=>{d.close();if(after)after();}});}catch(e){}}
 const U176_QR={};
 async function u176QR(el,code){if(!el)return;const url='https://hsk.kassertam.com/#dau-truong/'+code;try{if(!U176_QR[code]){const q=await qrLoad();const o=q(0,'M');o.addData(url);o.make();U176_QR[code]=o.createSvgTag(4,0);}el.innerHTML=U176_QR[code];}catch(e){el.innerHTML='<small>'+esc(url)+'</small>';}}
@@ -26096,7 +26109,7 @@ function u176Guide(){const d=U176.details;
     <li><b>Người chơi</b> mở hsk.kassertam.com, vào Đấu trường HSK, quét mã QR hoặc nhập 6 số. <b>Không cần tài khoản</b> vẫn chơi được 3 trận/ngày; tài khoản Pro chơi 10 trận/ngày. Cần <b>ít nhất 2 người</b> mới bắt đầu.</li>
     <li>Câu hỏi hiện trên màn hình chủ, điện thoại có 4 nút A B C D. <b>Đúng và càng nhanh càng nhiều điểm</b> (tối đa 1.000 điểm/câu). Đúng nhiều câu liên tiếp được cộng thêm tới 500 điểm.</li>
     <li>Sau mỗi câu hiện đáp án và top 5. Kết thúc có bục vinh danh và chế độ <b>Phân tích</b>: xem lại từng câu, ai đúng ai sai.</li>
-    <li><b>Thưởng Nguyên bảo</b> cho hạng 1, 2, 3, tăng theo số người chơi: dưới 11 người 30/20/10; từ 11 người 50/30/10; từ 21 người trở lên 100/50/30 (mức cao nhất). Chỉ tính người trả lời từ nửa số câu trở lên. Chỉ tài khoản đã đăng nhập mới nhận được; người chơi khách vào top 3 có 48 giờ để đăng nhập và nhận. Mỗi tài khoản nhận thưởng tối đa 3 trận/ngày.</li>
+    <li><b>Cúp và điểm xếp hạng</b>: người chơi có tài khoản được cộng hoặc trừ điểm xếp hạng theo thứ hạng trong trận (thắng người giỏi hơn được nhiều điểm hơn), mở khóa cúp và danh hiệu hiện bên cạnh tên. Bảng xếp hạng tuần làm mới mỗi thứ Hai. Chỉ tính người trả lời từ nửa số câu trở lên.</li>
   </ol></section>`;}
 function u176WireGuide(){const b=app.querySelector('.u176more');if(b)b.onclick=()=>{U176.details=!U176.details;const ol=app.querySelector('#u176det');ol.hidden=!U176.details;b.setAttribute('aria-expanded',U176.details);b.textContent=U176.details?'Thu gọn ▴':'Xem chi tiết ▾';};}
 
@@ -26108,10 +26121,51 @@ function u176Home(){app.innerHTML=`<div class="stack u176home">
   <section class="u176hero"><img src="${esc(u175Pose?u175Pose('cheer'):MASCOT_URL)}" alt="" class="u176heroimg"><div><div class="label">Đố vui cả lớp</div><h1>Đấu trường HSK</h1><p>Một người chiếu câu hỏi, cả lớp trả lời bằng điện thoại. Câu hỏi lấy từ bài học HSK, không phải soạn.</p><div id="u176qh" class="small"></div></div></section>
   <div class="u176two"><form class="panel u176join" id="u176jf"><h2>Vào phòng</h2><label for="u176code">Mã phòng 6 số</label><input id="u176code" inputmode="numeric" autocomplete="off" maxlength="7" placeholder="482 913"><button class="btn pri big" type="submit">Vào phòng</button><div class="small" id="u176jm" role="status"></div></form>
     <div class="panel u176mk"><h2>Tạo phòng</h2><p class="small">Dành cho giáo viên, trưởng nhóm hoặc buổi livestream. Bạn chiếu màn hình chủ phòng, người khác vào chơi.</p><a class="btn big" href="#dau-truong/tao">Tạo phòng mới</a></div></div>
+  <div class="u176two"><section class="panel u176prof" id="u176prof" aria-live="polite"><h2>Hồ sơ Đấu trường</h2><p class="small muted">Đang tải…</p></section>
+    <section class="panel u176lb"><div class="row u176lbh"><h2>Bảng xếp hạng</h2><div class="u176tabs" role="tablist"><button type="button" role="tab" data-sc="week" aria-selected="true">Tuần này</button><button type="button" role="tab" data-sc="all" aria-selected="false">Mọi thời gian</button></div></div><div id="u176lbb"><p class="small muted">Đang tải…</p></div></section></div>
   ${u176Guide()}</div>`;
+  u176Prof();u176Board('week');app.querySelectorAll('.u176tabs [data-sc]').forEach(b=>b.onclick=()=>{app.querySelectorAll('.u176tabs [data-sc]').forEach(x=>x.setAttribute('aria-selected',x===b));u176Board(b.dataset.sc);});
   u176WireGuide();const f=document.getElementById('u176jf');f.onsubmit=e=>{e.preventDefault();const c=document.getElementById('u176code').value.replace(/\D/g,'');if(c.length!==6){document.getElementById('u176jm').textContent='Mã phòng gồm 6 chữ số.';return;}location.hash='#dau-truong/'+c;};
-  u176Q().then(q=>{const e=document.getElementById('u176qh');if(e)e.innerHTML=`Hôm nay bạn còn <b>${Math.max(0,q.limit-q.used)}/${q.limit}</b> trận${q.pro?' (Pro)':' · Pro được 10 trận/ngày'}.`+(q.guest?' Bạn đang chơi với tư cách khách: đăng nhập để nhận Nguyên bảo khi vào top 3.':'');}).catch(()=>{});
-  u176Claim(false);}
+  u176Q().then(q=>{const e=document.getElementById('u176qh');if(e)e.innerHTML=`Hôm nay bạn còn <b>${Math.max(0,q.limit-q.used)}/${q.limit}</b> trận${q.pro?' (Pro)':' · Pro được 10 trận/ngày'}.`+(q.guest?' Bạn đang chơi với tư cách khách: đăng nhập để lưu cúp và điểm xếp hạng.':'');}).catch(()=>{});}
+/* cúp, danh hiệu, hồ sơ, bảng xếp hạng */
+const U176_BI={legend:'👑',r1500:'💎',win10:'🏆',streak10:'⚡',r1200:'⭐',perfect:'🎯',podium10:'🎖️',games50:'🛡️',win1:'🥇',streak5:'🔥',games10:'⚔️',first:'🐣'};
+function u176Ttl(t){return t?`<em class="u176ttl">${esc(t)}</em>`:'';}
+function u176Badge(b,on){return `<div class="u176bd${on?' on':''}" title="${esc(b.desc)}"><span class="u176bi" aria-hidden="true">${on?(U176_BI[b.id]||'🏅'):'🔒'}</span><b>${esc(b.name)}</b><small>${esc(b.desc)}</small></div>`;}
+async function u176Prof(){const el=document.getElementById('u176prof');if(!el)return;let m;try{m=await u176Api('GET','/v1/arena/me');}catch(e){el.innerHTML='<h2>Hồ sơ Đấu trường</h2><p class="small muted">Chưa tải được hồ sơ.</p>';return;}
+  if(m.guest){el.innerHTML=`<h2>Hồ sơ Đấu trường</h2><p class="small">Đăng nhập để có điểm xếp hạng, cúp và danh hiệu. Khách vẫn chơi bình thường nhưng không được lưu thành tích.</p><button type="button" class="btn pri" id="u176plg">Đăng nhập</button>
+    <div class="u176bds">${m.defs.slice().reverse().slice(0,6).map(b=>u176Badge(b,false)).join('')}</div>`;const b=document.getElementById('u176plg');if(b)b.onclick=()=>u176Login(()=>u176Home());return;}
+  const own=new Set(m.badges||[]),acc=m.answered?Math.round(100*m.correct/m.answered):0;
+  el.innerHTML=`<div class="row u176ph"><h2>Hồ sơ Đấu trường</h2>${u176Ttl(m.title)}</div>
+    <div class="u176stats"><div><b>${m.rating.toLocaleString('vi-VN')}</b><small>Điểm xếp hạng</small></div><div><b>${m.games}</b><small>Trận</small></div><div><b>${m.wins}</b><small>Vô địch</small></div><div><b>${acc}%</b><small>Trả lời đúng</small></div></div>
+    <p class="small">Tuần này: ${m.week.games?`<b>${m.week.pts>0?'+':''}${m.week.pts}</b> điểm · ${m.week.games} trận · hạng <b>${m.week.rank}</b>`:'chưa chơi trận nào'}</p>
+    <h3>Cúp (${own.size}/${m.defs.length})</h3><div class="u176bds">${(()=>{const d=m.defs.slice().reverse(),got=d.filter(b=>own.has(b.id)),rest=d.filter(b=>!own.has(b.id));return got.map(b=>u176Badge(b,true)).join('')+rest.map((b,i)=>u176Badge(b,false).replace('class="u176bd"',i<4?'class="u176bd"':'class="u176bd" hidden data-more')).join('');})()}</div>
+    ${m.defs.length-own.size>4?`<button type="button" class="btn sm u176allb" aria-expanded="false">Xem tất cả cúp ▾</button>`:''}`;
+  const ab=el.querySelector('.u176allb');if(ab)ab.onclick=()=>{const open=ab.getAttribute('aria-expanded')!=='true';el.querySelectorAll('[data-more]').forEach(x=>x.hidden=!open);ab.setAttribute('aria-expanded',open);ab.textContent=open?'Thu gọn ▴':'Xem tất cả cúp ▾';};}
+async function u176Board(sc){const el=document.getElementById('u176lbb');if(!el)return;el.innerHTML='<p class="small muted">Đang tải…</p>';let t;try{t=await u176Api('GET','/v1/arena/top?scope='+sc);}catch(e){el.innerHTML='<p class="small muted">Chưa tải được bảng xếp hạng.</p>';return;}
+  const me=accCloud()&&SOC.auth?SOC.auth.uid:'';
+  if(!t.rows.length){el.innerHTML=`<p class="small muted">${sc==='week'?'Tuần này chưa có trận nào được tính điểm. Hãy là người đầu tiên!':'Cần chơi ít nhất 3 trận để có tên trên bảng.'}</p>`;return;}
+  el.innerHTML=`<ol class="u176lbl">${t.rows.slice(0,20).map(r=>`<li class="${r.uid===me?'me':''}${r.rank<=3?' t'+r.rank:''}"><b class="u176lbr">${r.rank}</b><span class="u176lbn">${esc(r.name||'Người chơi')}${sc==='all'?u176Ttl(r.title):''}</span><span class="small">${r.games} trận · ${r.wins} vô địch</span><b class="u176lbp">${sc==='week'?(r.pts>0?'+':'')+r.pts:r.rating.toLocaleString('vi-VN')}</b></li>`).join('')}</ol>
+    <p class="small muted">${sc==='week'?'Điểm xếp hạng kiếm được từ thứ Hai tuần này. Bảng làm mới mỗi thứ Hai.':'Xếp theo điểm xếp hạng, từ 3 trận trở lên.'}</p>`;}
+/* ảnh chia sẻ kết quả 1080×1350 */
+function u176Img(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});}
+async function u176ShareCanvas(o){const c=document.createElement('canvas');c.width=1080;c.height=1350;const x=c.getContext('2d');
+  const g=x.createLinearGradient(0,0,0,1350);g.addColorStop(0,'#0b5444');g.addColorStop(1,'#063629');x.fillStyle=g;x.fillRect(0,0,1080,1350);
+  x.fillStyle='rgba(255,213,74,.10)';for(let k=0;k<14;k++){x.beginPath();x.arc(80+k*77,130+(k%3)*30,18,0,7);x.fill();}
+  const F=(w,sz)=>`${w} ${sz}px "Be Vietnam Pro", system-ui, sans-serif`;x.textAlign='center';
+  x.fillStyle='#ffd54a';x.font=F(800,44);x.fillText('ĐẤU TRƯỜNG HSK',540,120);
+  x.fillStyle='#cfe7df';x.font=F(600,32);x.fillText((o.room||'').slice(0,42),540,172);
+  const im=await u176Img(u175Pose('cheer'));if(im){const h=430,w=h*im.width/im.height;x.drawImage(im,540-w/2,215,w,h);}
+  x.fillStyle=o.win?'#ffd54a':'#ffffff';x.font=F(900,o.win?120:104);x.fillText(o.head,540,790);
+  x.fillStyle='#ffffff';x.font=F(800,58);x.fillText((o.name||'').slice(0,20),540,880);
+  if(o.title){x.font=F(800,34);const tw=x.measureText(o.title).width+60;x.fillStyle='#ffd54a';x.beginPath();x.roundRect?x.roundRect(540-tw/2,905,tw,60,30):x.rect(540-tw/2,905,tw,60);x.fill();x.fillStyle='#2e2200';x.fillText(o.title,540,947);}
+  x.fillStyle='#ffffff';x.font=F(800,50);x.fillText(o.line1,540,1060);x.fillStyle='#cfe7df';x.font=F(600,38);x.fillText(o.line2||'',540,1120);
+  x.fillStyle='#ffd54a';x.fillRect(0,1220,1080,130);x.fillStyle='#2e2200';x.font=F(900,46);x.fillText('hsk.kassertam.com',540,1285);x.font=F(700,30);x.fillText('Học tiếng Trung HSK miễn phí · chơi Đấu trường cùng bạn bè',540,1330);
+  return c;}
+async function u176Share(){const j=U176.last||{},me=j.me||{};let ok=0,tot=j.n||0;try{const r=await u176Api('POST','/v1/arena/report',{code:U176.code});ok=r.ans.filter(a=>a.ok).length;tot=r.qs.length;}catch(e){}
+  const c=await u176ShareCanvas({room:(j.cfg||{}).title,head:me.rank===1?'VÔ ĐỊCH!':'HẠNG '+me.rank+'/'+j.count,win:me.rank===1,name:me.name,title:me.title,line1:(me.score||0).toLocaleString('vi-VN')+' điểm · đúng '+ok+'/'+tot+' câu',line2:me.rating?'Điểm xếp hạng '+me.rating.toLocaleString('vi-VN')+' ('+(me.rdelta>=0?'+':'')+me.rdelta+')':''});
+  const blob=await new Promise(r=>c.toBlob(r,'image/png'));if(!blob)return;const f=new File([blob],'dau-truong-hsk.png',{type:'image/png'});
+  try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'Đấu trường HSK',text:'Mình vừa chơi Đấu trường HSK trên hsk.kassertam.com'});return;}}catch(e){if(e&&e.name==='AbortError')return;}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='dau-truong-hsk.png';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);gardenToast('Đã lưu ảnh kết quả. Bạn có thể đăng lên TikTok, Facebook.');}
 
 /* ---------- tạo phòng: sinh câu hỏi từ bài học ---------- */
 function u176Shuf(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
@@ -26164,7 +26218,7 @@ function u176HostRender(j){const key=j.state+':'+j.qi+':'+(j.state==='lobby'?j.c
     <button type="button" class="btn sm" id="u176mu" aria-pressed="${U176.music}">${U176.music?'🔊 Nhạc':'🔇 Nhạc'}</button></div>`;
   if(j.state==='lobby'){H.innerHTML=`${top}<div class="u176lobby"><div class="u176pin"><div><small>Vào <b>hsk.kassertam.com</b> → Đấu trường HSK, nhập mã:</small><b class="u176big">${j.code.slice(0,3)} ${j.code.slice(3)}</b></div><div class="u176qr" id="u176qr" role="img" aria-label="Mã QR vào phòng"></div></div>
       <div class="u176set"><b>${j.count} người đã vào</b>${j.count<(j.minP||2)?`<span class="u176need">Cần ít nhất ${j.minP||2} người · còn thiếu ${(j.minP||2)-j.count}</span>`:''}<label>Thời gian mỗi câu <select id="u176secs">${[10,15,20,30,45,60,90].map(s=>`<option value="${s}"${s===j.secs?' selected':''}>${s} giây</option>`).join('')}</select></label><button type="button" class="btn pri big" id="u176go"${j.count>=(j.minP||2)?'':' disabled'}>Bắt đầu</button></div>
-      <div class="u176plist">${(j.players||[]).map((p,i)=>`<span class="u176pl">${u176Pod(p,i)}<b>${esc(p.name)}</b></span>`).join('')||'<span class="muted">Chờ người chơi vào phòng…</span>'}</div>
+      <div class="u176plist">${(j.players||[]).map((p,i)=>`<span class="u176pl">${u176Pod(p,i)}<b>${esc(p.name)}</b>${u176Ttl(p.title)}</span>`).join('')||'<span class="muted">Chờ người chơi vào phòng…</span>'}</div>
       ${u176Guide()}</div>`;}
   else if(j.state==='q'){const q=j.q;H.innerHTML=`${top}<div class="u176q"><div class="u176qm"><div class="u176ringw"><div class="u176ring" id="u176ring"></div><b id="u176clk" class="u176clk">${j.secs}</b></div><small>${U176_T[q.t]||''}</small></div>
       <div class="u176qc">${q.t==='listen'?`<button type="button" class="u176spk" id="u176spk" aria-label="Nghe lại">🔊</button>`:q.t==='hanzi'?`<b class="u176vi">${esc(q.vi)}</b>`:`<b class="u176zh han" lang="zh">${esc(q.zh)}</b>`}<span class="u176ask">${esc(q.ask)}</span></div>
@@ -26175,7 +26229,7 @@ function u176HostRender(j){const key=j.state+':'+j.qi+':'+(j.state==='lobby'?j.c
   else if(j.state==='reveal'){const q=j.q,tot=(j.dist||[]).reduce((a,b)=>a+b,0)||1,good=(j.dist||[])[q.ans]||0,happy=good/tot>=.5;
     H.innerHTML=`${top}<div class="u176rev"><div class="u176rq"><b class="u176zh sm han" lang="zh">${esc(q.zh)}</b><span>${esc(q.py)} · ${esc(q.vi)}</span>
       <div class="u176dist">${q.opts.map((o,i)=>`<div class="u176drow${i===q.ans?' ok':''}"><span class="u176dk" style="background:${U176_COL[i]}">${U176_K[i]}</span><b class="${q.t==='mean'||q.t==='py'?'':'han'}">${esc(o)}</b><span class="u176dbar"><i style="width:${Math.round(100*(j.dist[i]||0)/tot)}%;background:${U176_COL[i]}"></i></span><b>${j.dist[i]||0}</b>${i===q.ans?' ✓':''}</div>`).join('')}</div></div>
-      <div class="u176lead"><h2>Bảng xếp hạng</h2>${(j.players||[]).slice(0,5).map((p,i)=>`<div class="u176lr${i===0?' first':''}"><b>${i+1}</b>${u176Pod(p,i)}<span>${esc(p.name)}</span>${p.streak>=2?`<em>Chuỗi ${p.streak}</em>`:''}<b>${p.score.toLocaleString('vi-VN')}</b></div>`).join('')}
+      <div class="u176lead"><h2>Bảng xếp hạng</h2>${(j.players||[]).slice(0,5).map((p,i)=>`<div class="u176lr${i===0?' first':''}"><b>${i+1}</b>${u176Pod(p,i)}<span>${esc(p.name)}${u176Ttl(p.title)}</span>${p.streak>=2?`<em>Chuỗi ${p.streak}</em>`:''}<b>${p.score.toLocaleString('vi-VN')}</b></div>`).join('')}
       <img class="u176petimg ${happy?'m-done':'m-sad'}" src="${esc(u175Pose(happy?'cheer':'worry'))}" alt=""><p class="small">${good}/${tot} người trả lời đúng</p></div></div>
       <div class="u176bar"><button type="button" class="btn pri big" id="u176nx">${j.qi+1>=j.n?'Xem kết quả cuối ›':'Câu tiếp theo ›'}</button></div>`;
     happy?u176Ok():u176No();}
@@ -26191,7 +26245,7 @@ function u176HostRender(j){const key=j.state+':'+j.qi+':'+(j.state==='lobby'?j.c
   const sp=document.getElementById('u176spk');if(sp)sp.onclick=()=>{try{speak(j.q.zh,.8);}catch(e){}};
   const an=document.getElementById('u176an');if(an)an.onclick=()=>u176Report();
   if(j.state==='q')u176Tick();}
-function u176PodHTML(P){const p=i=>P[i]?`<div class="u176pd p${i+1}">${i===0?`<img class="u176petimg m-done" src="${esc(u175Pose('cheer'))}" alt="">`:''}${u176Pod(P[i],i)}<b>${esc(P[i].name)}</b><span>${P[i].score.toLocaleString('vi-VN')} điểm</span><div class="u176step"><b>${i+1}</b>${P[i].prize>0?`<small>+${P[i].prize} Nguyên bảo</small>`:''}</div></div>`:'<div></div>';
+function u176PodHTML(P){const p=i=>P[i]?`<div class="u176pd p${i+1}">${i===0?`<img class="u176petimg m-done" src="${esc(u175Pose('cheer'))}" alt="">`:''}${u176Pod(P[i],i)}<b>${esc(P[i].name)}</b>${u176Ttl(P[i].title)}<span>${P[i].score.toLocaleString('vi-VN')} điểm</span><div class="u176step"><b>${i+1}</b></div></div>`:'<div></div>';
   return `<h1 class="u176champ">${P[0]?'Chúc mừng '+esc(P[0].name)+'!':'Trận đấu kết thúc'}</h1><div class="u176podium">${p(1)}${p(0)}${p(2)}</div>`;}
 
 /* ---------- phân tích ---------- */
@@ -26202,7 +26256,7 @@ function u176RepRender(){const r=U176.rep,A={};r.ans.forEach(a=>{(A[a.uid]=A[a.u
   app.innerHTML=`<div class="stack u176rep"><div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:8px"><h1 style="margin:0">Phân tích trận đấu</h1><a class="btn" href="#dau-truong">Về Đấu trường</a></div>
     <p class="small muted">${esc(r.cfg.title||'')} · ${r.qs.length} câu · ${r.players.length} người chơi${r.host?'':' · bạn chỉ thấy kết quả của mình'}</p>
     <section class="panel"><h2>${r.host?'Đúng sai từng người':'Kết quả của bạn'}</h2><div class="u176tw" tabindex="0" role="region" aria-label="Bảng đúng sai"><table><thead><tr><th scope="col">Người chơi</th>${r.qs.map((q,i)=>`<th scope="col" title="${esc(q.zh)}">${i+1}</th>`).join('')}<th scope="col">Đúng</th><th scope="col">Điểm</th></tr></thead>
-      <tbody>${P.map(p=>`<tr><th scope="row">${esc(p.name)}</th>${r.qs.map((q,i)=>cell(p.uid,i)).join('')}<td><b>${r.qs.filter((q,i)=>((A[p.uid]||{})[i]||{}).ok).length}/${r.qs.length}</b></td><td>${p.score.toLocaleString('vi-VN')}</td></tr>`).join('')}
+      <tbody>${P.map(p=>`<tr><th scope="row">${esc(p.name)}${u176Ttl(p.title)}</th>${r.qs.map((q,i)=>cell(p.uid,i)).join('')}<td><b>${r.qs.filter((q,i)=>((A[p.uid]||{})[i]||{}).ok).length}/${r.qs.length}</b></td><td>${p.score.toLocaleString('vi-VN')}</td></tr>`).join('')}
       ${r.host?`<tr class="rate"><th scope="row">Tỉ lệ đúng</th>${r.qs.map((q,i)=>`<td>${rate(i)}%</td>`).join('')}<td></td><td></td></tr>`:''}</tbody></table></div></section>
     <section class="panel"><h2>Xem lại câu hỏi</h2><div class="u176rv">${r.qs.map((q,i)=>{const wrong=r.host?r.ans.filter(a=>a.qi===i&&!a.ok).map(a=>(r.players.find(p=>p.uid===a.uid)||{}).name).filter(Boolean):[];const mine=!r.host?(A[u176Me()]||{})[i]:null;
       return `<div class="u176rvq"><div class="u176rvh"><b>Câu ${i+1}</b><small>${U176_T[q.t]||''}</small>${r.host?`<span class="u176rate">${rate(i)}% đúng</span>`:mine?`<span class="u176rate ${mine.ok?'ok':'no'}">${mine.ok?'Bạn đúng':'Bạn sai'}</span>`:'<span class="u176rate">Bạn bỏ qua</span>'}</div>
@@ -26216,7 +26270,7 @@ function u176PlayStart(){app.innerHTML='<div class="u176play"><div class="panel 
 function u176JoinForm(){let gn='';try{gn=localStorage.getItem('hsk-arena-name')||'';}catch(e){}const g=!accCloud(),nm=((!g&&SOC.me&&SOC.me.name)||(!g&&myHandle())||gn||'').slice(0,16);
   app.innerHTML=`<div class="u176play"><section class="u176jcard"><img src="${esc(u175Pose('wave'))}" alt="" class="u176jimg"><h1>Đấu trường HSK</h1><p>Phòng <b>${U176.code.slice(0,3)} ${U176.code.slice(3)}</b></p>
     <form id="u176pj"><label for="u176nm">Tên hiện trên màn hình</label><input id="u176nm" maxlength="16" value="${esc(nm)}" required><button class="btn pri big" type="submit">Vào phòng</button><div class="small" id="u176pm" role="status"></div></form><div class="small" id="u176pq"></div>
-    ${g?`<div class="u176gnote"><span>Không cần tài khoản vẫn chơi được. <b>Đăng nhập</b> để nhận Nguyên bảo khi vào top 3.</span><button type="button" class="btn sm" id="u176lgn">Đăng nhập</button></div>`:''}</section></div>`;
+    ${g?`<div class="u176gnote"><span>Không cần tài khoản vẫn chơi được. <b>Đăng nhập</b> để lưu cúp và điểm xếp hạng.</span><button type="button" class="btn sm" id="u176lgn">Đăng nhập</button></div>`:''}</section></div>`;
   const lg=document.getElementById('u176lgn');if(lg)lg.onclick=()=>u176Login(()=>u176JoinForm());
   u176Q().then(q=>{const e=document.getElementById('u176pq');if(e)e.textContent=`Hôm nay còn ${Math.max(0,q.limit-q.used)}/${q.limit} trận.`;}).catch(()=>{});
   document.getElementById('u176pj').onsubmit=async e=>{e.preventDefault();const m=document.getElementById('u176pm');m.textContent='Đang vào…';
@@ -26239,16 +26293,19 @@ function u176PlayRender(j){const me=j.me||{},key=j.state+':'+j.qi+':'+(j.mine?'a
     <p>${ok?'+'+a.pts.toLocaleString('vi-VN')+' điểm'+(me.streak>=2?' · Chuỗi đúng '+me.streak+' câu':''):'Đáp án đúng là '+U176_K[j.q.ans]+'. '+esc(j.q.opts[j.q.ans])}</p><p class="u176rk">Hạng ${me.rank||'–'}/${j.count}</p><small class="han" lang="zh">${esc(j.q.zh)} · ${esc(j.q.py)} · ${esc(j.q.vi)}</small></div>`;
     a&&a.ok?u176Ok():u176No();}
   else if(j.state==='end'){const win=me.rank===1;body=`<div class="u176res ${win?'ok':''}"><img class="u176petimg m-done" src="${esc(u175Pose('cheer'))}" alt=""><h2>${win?'Vô địch!':'Hạng '+me.rank+'/'+j.count}</h2><p>${(me.score||0).toLocaleString('vi-VN')} điểm</p></div>
-    ${me.prize>0?(me.guest&&!me.paid?`<div class="u176prize g"><b>Bạn được thưởng ${me.prize} Nguyên bảo!</b><span>Đăng nhập hoặc tạo tài khoản Tâm HSK miễn phí trong 48 giờ để nhận.</span><button type="button" class="btn pri big" id="u176cl">Đăng nhập và nhận thưởng</button></div>`
-      :me.paid===1?`<div class="u176prize"><b>+${me.prize} Nguyên bảo</b><span>Đã cộng vào ví của bạn.</span></div>`:me.paid===2?`<div class="u176prize"><span>Hôm nay bạn đã nhận thưởng đủ 3 trận. Phần thưởng trận này không được cộng.</span></div>`:''):''}
-    <div class="u176pend"><button type="button" class="btn pri big" id="u176an">Xem phân tích</button><a class="btn big" href="#dau-truong">Về Đấu trường</a></div>`;
-    if(win){try{sfx('win');confetti(70);}catch(e){}setTimeout(()=>u176Pet('cheer'),300);}if(me.paid===1){try{if(typeof walletSync==='function')walletSync();}catch(e){}}u176Stop();}
+    ${me.guest?`<div class="u176gain g"><b>Lưu thành tích của bạn</b><span>Đăng nhập để có điểm xếp hạng, cúp và danh hiệu ở các trận sau.</span><button type="button" class="btn pri" id="u176glg">Đăng nhập</button></div>`
+      :me.rating?`<div class="u176gain"><span>Điểm xếp hạng</span><b>${me.rating.toLocaleString('vi-VN')} <em class="${me.rdelta>=0?'up':'down'}">${me.rdelta>=0?'+':''}${me.rdelta}</em></b>
+        ${(me.newBadges||[]).length?`<div class="u176nbs"><span>Cúp mới</span>${me.newBadges.map(b=>u176Badge(b,true)).join('')}</div>`:''}</div>`
+      :`<div class="u176gain"><span>Trận này không tính điểm xếp hạng: cần ít nhất 2 người có tài khoản trả lời từ nửa số câu trở lên.</span></div>`}
+    <div class="u176pend"><button type="button" class="btn pri big" id="u176an">Xem phân tích</button><button type="button" class="btn big" id="u176sh">Chia sẻ ảnh kết quả</button><a class="btn big u176wide2" href="#dau-truong">Về Đấu trường</a></div>`;
+    if(win){try{sfx('win');confetti(70);}catch(e){}setTimeout(()=>u176Pet('cheer'),300);}else if((me.newBadges||[]).length)setTimeout(()=>u176Pet('happy'),300);u176Stop();}
   app.innerHTML=`<div class="u176play">${top}${body}</div>`;u176WireGuide();
   const pm=document.getElementById('u176pmu');if(pm)pm.onclick=()=>{U176.pmusic=!U176.pmusic;if(!U176.pmusic)u176Music.stop();U176.shown='';u176PlayRender(U176.last);};
   app.querySelectorAll('[data-ch]').forEach(b=>b.onclick=async()=>{const ch=+b.dataset.ch;app.querySelectorAll('[data-ch]').forEach(x=>x.disabled=true);b.classList.add('pick');try{sfx('ok');}catch(e){}
     try{await u176Api('POST','/v1/arena/answer',{code:U176.code,qi:j.qi,choice:ch});U176.last.mine={choice:ch};U176.shown='';u176PlayRender(U176.last);}catch(e){gardenToast(u176Err(e.message));app.querySelectorAll('[data-ch]').forEach(x=>x.disabled=false);}});
   const an=document.getElementById('u176an');if(an)an.onclick=()=>u176Report();
-  const cl=document.getElementById('u176cl');if(cl)cl.onclick=()=>{const go=async()=>{const r=await u176Claim(true);if(r&&r.coins>0){const box=app.querySelector('.u176prize');if(box)box.innerHTML=`<b>+${r.coins} Nguyên bảo</b><span>Đã cộng vào ví của bạn.</span>`;}};accCloud()?go():u176Login(go);};
+  const sh=document.getElementById('u176sh');if(sh)sh.onclick=()=>u176Share();
+  const gl=document.getElementById('u176glg');if(gl)gl.onclick=()=>u176Login(()=>gardenToast('Đã đăng nhập. Từ trận sau thành tích sẽ được lưu.'));
   if(j.state==='q'&&!j.mine)u176Tick();}
 
 /* ---------- lối vào ---------- */
@@ -26256,7 +26313,7 @@ function u176PlayRender(j){const me=j.me||{},key=j.state+':'+j.qi+':'+(j.mine?'a
   a.innerHTML=`<img src="${esc(u175Pose('cheer'))}" alt=""><span><b>Đấu trường HSK</b><small>Đố vui cả lớp: chiếu câu hỏi, mọi người trả lời bằng điện thoại</small></span><span class="u176go" aria-hidden="true">›</span>`;st.insertBefore(a,st.children[1]||null);}}catch(e){}return r;};})();
 (function(){if(typeof rrailHTML!=='function')return;const base=rrailHTML;rrailHTML=function(){let h=base.apply(this,arguments);try{h=`<a class="u175rr u176rr" href="#dau-truong"><img src="${esc(u175Pose('cheer'))}" alt=""><span><b>Đấu trường HSK</b><small>Đố vui cả lớp</small></span></a>`+h;}catch(e){}return h;};})();
 window.addEventListener('hashchange',()=>{if(location.hash.indexOf('#dau-truong')!==0)u176Stop();});
-if(window.__T)window.__u176={U176,u176Make,u176Music,u176Pet,u176MusicLvl,api:frApi,u176Api,u176Gid};
+if(window.__T)window.__u176={U176,u176Make,u176Music,u176Pet,u176MusicLvl,api:frApi,u176Api,u176Gid,u176ShareCanvas,u176Share};
 
 function route(){
   stopGames();
