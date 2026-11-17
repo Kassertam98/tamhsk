@@ -6857,6 +6857,27 @@ html[data-u174t="life"] .probadge{background:linear-gradient(115deg,#ff6aa8,#ffb
 .u177hw .u176pin .btn{background:#fff;color:#0b4d3e;border-color:#fff}
 .u177cap{margin:10px 0 0}
 #u177up img{display:block;margin:0 auto}
+/* 5.131 Túi đồ, vật phẩm, gói âm thanh, loa Thế giới */
+.u178bag,.u178snd{gap:10px}
+.u178h{margin:8px 0 0;font-size:17px}
+.u178it{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.u178ic{font-size:30px;width:52px;height:52px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#f2f4ef}
+.u178ic.big{width:64px;height:64px;font-size:36px}
+.u178tx{flex:1;min-width:200px}
+.u178ac{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.u178full{background:#fdecea!important;color:#8a1c14!important}
+.u178on{display:flex;align-items:center;gap:12px;background:#fff3c4!important;border-color:#f2b81c!important}
+.u178login{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.u178sps{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.u178sp{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.u178sp small{line-height:1.35}
+.u178chip{display:inline-flex;align-items:center;margin-left:6px;padding:3px 10px;border-radius:999px;background:linear-gradient(90deg,#ffd54a,#f2b81c);color:#3a2600;font-weight:900;font-size:12px;text-decoration:none;white-space:nowrap}
+.wcht.loa{background:#ffe8cc;color:#7a3a00}
+.wchlocks{display:flex;flex-direction:column;gap:8px}
+.helpgrid .u178it{grid-column:1/-1}
+@media (max-width:520px){.u178ac{margin-left:0;width:100%}.u178ac .btn{flex:1}}
+
+.u178tx .acctag{white-space:nowrap;display:inline-block;margin:2px 0}
 </style>
 </head><body>
 
@@ -6882,12 +6903,12 @@ html[data-u174t="life"] .probadge{background:linear-gradient(115deg,#ff6aa8,#ffb
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='374f1df6';
-document.write('<script src="packs/hsk'+L+'.js?v=374f1df6"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='850c7b4f';
+document.write('<script src="packs/hsk'+L+'.js?v=850c7b4f"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=374f1df6','strokes-file');A('packs/dict.js?v=374f1df6','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=850c7b4f','strokes-file');A('packs/dict.js?v=850c7b4f','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -23775,34 +23796,36 @@ if(window.__T)window.__u141={u141Level,u141BigHTML};
 /* 5.100 Kênh chat Thế giới: Plus/Pro được nhắn, ai cũng đọc được */
 const WCH={list:[],at:0,busy:false,poll:0,mute:[]};
 try{WCH.mute=JSON.parse(localStorage.getItem('hsk-wchmute')||'[]')||[];}catch(e){}
-function wchCan(){try{return !!(SOC.auth&&plusActive());}catch(e){return false;}}
+function wchCan(){try{return !!(SOC.auth&&(plusActive()||wchLoa()>0));}catch(e){return false;}}
+/* 5.131: tài khoản miễn phí nhắn bằng loa trong túi đồ (mỗi tin 1 loa) */
+function wchLoa(){try{return (!plusActive()&&typeof U178!=='undefined'&&U178.st&&U178.st.items)?U178.st.items.loa:0;}catch(e){return 0;}}
 async function wchLoad(){if(WCH.busy)return;WCH.busy=true;try{const r=await fetch(API_BASE+'/v1/world');if(r.ok){const j=await r.json();const sig=JSON.stringify((j.chat||[]).map(x=>x.id));if(sig!==WCH.sig){WCH.sig=sig;WCH.list=j.chat||[];WCH.at=Date.now();wchPaint();}}}catch(e){}finally{WCH.busy=false;}}
 async function wchPost(body){const h={'Content-Type':'application/json'};h.Authorization='Bearer '+await idToken();const r=await fetch(API_BASE+'/v1/world/say',{method:'POST',headers:h,body:JSON.stringify(body)});let j={};try{j=await r.json();}catch(e){}if(!r.ok)throw new Error((j.error&&(j.error.message||j.error))||'ERR');return j;}
 function wchTime(t){const d=new Date(t),n=new Date();const hm=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');return d.toDateString()===n.toDateString()?hm:d.getDate()+'/'+(d.getMonth()+1)+' '+hm;}
 function wchMsgHTML(c,full){const me=SOC.auth&&c.uid===SOC.auth.uid,d=c.data||{};if(!me&&WCH.mute.includes(c.uid))return '';
-  return `<div class="wchm${me?' me':''}"><div class="wchh"><b>${esc(me?'Bạn':c.name||'Bạn học')}</b><span class="wcht ${d.tier==='pro'?'pro':'plus'}">${d.tier==='pro'?'Pro':'Plus'}</span><time>${wchTime(c.at)}</time>${full&&!me&&SOC.auth?`<button type="button" class="wcha" data-wchrep="${c.id}" title="Báo cáo tin nhắn" aria-label="Báo cáo tin nhắn">⚑</button><button type="button" class="wcha" data-wchmute="${esc(c.uid)}" title="Ẩn tin của bạn này" aria-label="Ẩn tin của ${esc(c.name||'')}">🔇</button>`:''}</div><div class="wchx">${esc(d.t||'')}</div></div>`;}
+  return `<div class="wchm${me?' me':''}"><div class="wchh"><b>${esc(me?'Bạn':c.name||'Bạn học')}</b><span class="wcht ${d.tier==='pro'?'pro':d.tier==='loa'?'loa':'plus'}">${d.tier==='pro'?'Pro':d.tier==='loa'?'📢 Loa':'Plus'}</span><time>${wchTime(c.at)}</time>${full&&!me&&SOC.auth?`<button type="button" class="wcha" data-wchrep="${c.id}" title="Báo cáo tin nhắn" aria-label="Báo cáo tin nhắn">⚑</button><button type="button" class="wcha" data-wchmute="${esc(c.uid)}" title="Ẩn tin của bạn này" aria-label="Ẩn tin của ${esc(c.name||'')}">🔇</button>`:''}</div><div class="wchx">${esc(d.t||'')}</div></div>`;}
 function wchFormHTML(){if(!SOC.auth)return `<a class="u141lock" href="#settings"><span aria-hidden="true">🔑</span><span><b>Đăng nhập để tham gia</b><small>Tài khoản Plus và Pro được nhắn trong kênh Thế giới.</small></span></a>`;
-  if(!wchCan())return `<a class="u141lock" href="#premium"><span aria-hidden="true">🔒</span><span><b>Chat Thế giới dành cho Plus và Pro</b><small>Bạn vẫn đọc được tin. Nâng cấp để trò chuyện cùng mọi người.</small></span></a>`;
-  return `<form class="wchf" id="wchf" autocomplete="off"><input id="wchin" maxlength="120" placeholder="Nhắn cả thế giới (tối đa 120 ký tự)" aria-label="Tin nhắn Thế giới"><button type="submit" class="btn pri">Gửi</button></form>`;}
+  if(!wchCan())return `<div class="wchlocks"><a class="u141lock" href="#shop" data-u178go="tui"><span aria-hidden="true">📢</span><span><b>Mua loa để nhắn</b><small>Gói 5 loa giá 200 Nguyên bảo, mỗi loa nhắn kênh Thế giới 1 lần.</small></span></a><a class="u141lock" href="#premium"><span aria-hidden="true">🔒</span><span><b>Plus và Pro nhắn không giới hạn</b><small>Bạn vẫn đọc được tin của mọi người.</small></span></a></div>`;
+  const lo=wchLoa();return `<form class="wchf" id="wchf" autocomplete="off"><input id="wchin" maxlength="120" placeholder="${lo?`Nhắn bằng loa · còn ${lo} loa (mỗi tin 1 loa)`:'Nhắn cả thế giới (tối đa 120 ký tự)'}" aria-label="Tin nhắn Thế giới"><button type="submit" class="btn pri">${lo?'📢 Gửi':'Gửi'}</button></form>`;}
 function viewWorldChat(){WCH.lastPaint='';app.innerHTML=`<div class="stack wchwrap">
-  <section class="panel wchhead"><span class="wchglobe" aria-hidden="true">🌍</span><div><h1>Kênh Thế giới</h1><p class="small muted">Trò chuyện với mọi người đang học Tâm HSK. Tài khoản <b>Plus</b> và <b>Pro</b> được nhắn, ai cũng đọc được.</p></div></section>
+  <section class="panel wchhead"><span class="wchglobe" aria-hidden="true">🌍</span><div><h1>Kênh Thế giới</h1><p class="small muted">Trò chuyện với mọi người đang học Tâm HSK. Tài khoản <b>Plus</b> và <b>Pro</b> nhắn không giới hạn, tài khoản thường nhắn bằng <b>loa</b> (mua trong Túi đồ). Ai cũng đọc được.</p></div></section>
   <section class="panel wchbox"><div class="wchlist" id="wchlist" role="log" aria-live="polite"></div><div id="wchfw" data-can="${wchCan()?1:0}">${wchFormHTML()}</div><p class="small muted" style="margin:6px 0 0">Nhắn lịch sự, không gửi đường dẫn hay tài khoản mạng xã hội. Tin bị báo cáo sẽ được quản trị xem xét. Tin giữ lại 2 ngày.</p></section>
   <section class="panel wchhon"><h3>📢 Vinh danh gần đây</h3><ul class="wchhl">${(WT.items||[]).slice(0,8).map(it=>{const t=wtText(it);return t?`<li>${t}</li>`:'';}).join('')||'<li class="small muted">Chưa có tin mới.</li>'}</ul></section></div>`;
-  wchPaint(true);wchLoad();clearInterval(WCH.poll);let k=0;WCH.poll=setInterval(()=>{if(location.hash!=='#thegioi'){clearInterval(WCH.poll);return;}wchFormSync();if(++k%6===0&&!document.hidden)wchLoad();},1000);}
-function wchFormSync(){const w=document.getElementById('wchfw');if(!w)return;const c=wchCan()?'1':'0';if(w.dataset.can!==c){w.dataset.can=c;w.innerHTML=wchFormHTML();}}
+  wchPaint(true);wchLoad();if(typeof u178Load==='function')u178Load(true).then(()=>wchFormSync());clearInterval(WCH.poll);let k=0;WCH.poll=setInterval(()=>{if(location.hash!=='#thegioi'){clearInterval(WCH.poll);return;}wchFormSync();if(++k%6===0&&!document.hidden)wchLoad();},1000);}
+function wchFormSync(){const w=document.getElementById('wchfw');if(!w)return;const c=(wchCan()?'1':'0')+':'+wchLoa();if(w.dataset.can!==c){const i=document.getElementById('wchin'),v=i?i.value:'',f=document.activeElement===i;w.dataset.can=c;w.innerHTML=wchFormHTML();const i2=document.getElementById('wchin');if(i2){i2.value=v;if(f)i2.focus();}}}
 function wchPaint(force){const L=document.getElementById('wchlist');if(L){const h=WCH.list.map(c=>wchMsgHTML(c,true)).join('')||'<p class="small muted wchempty">Chưa có tin nhắn nào. Hãy là người mở lời!</p>';
     if(force||h!==WCH.lastPaint){const atEnd=L.scrollHeight-L.scrollTop-L.clientHeight<60;WCH.lastPaint=h;L.innerHTML=h;if(atEnd||force)L.scrollTop=L.scrollHeight;}}
   const R=document.getElementById('wchrail');if(R)R.innerHTML=wchRailInner();}
 function wchRailInner(){const last=WCH.list.filter(c=>!WCH.mute.includes(c.uid)).slice(-3);return (last.length?last.map(c=>wchMsgHTML(c,false)).join(''):'<p class="small muted" style="margin:0">Chưa có tin nhắn.</p>')+`<a class="wchopen" href="#thegioi">${wchCan()?'💬 Vào chat':'Mở kênh Thế giới'} ›</a>`;}
 document.addEventListener('submit',async e=>{if(e.target.id!=='wchf')return;e.preventDefault();const i=document.getElementById('wchin'),t=(i.value||'').trim();if(!t)return;const btn=e.target.querySelector('button');btn.disabled=true;
-  try{await wchPost({t,name:pubName()});i.value='';await wchLoad();const L=document.getElementById('wchlist');if(L)L.scrollTop=L.scrollHeight;}
-  catch(x){const m=String(x.message);gardenToast({NO_LINKS:'Không gửi được đường dẫn hay tài khoản mạng xã hội.',CHAT_BANNED:'Bạn đang bị tạm khóa chat vì có tin nhắn bị báo cáo.',CHAT_PLUS_ONLY:'Chat Thế giới dành cho tài khoản Plus và Pro.',SLOW_DOWN:'Từ từ nhé, chờ vài giây rồi gửi tiếp.',BAD_CHAT:'Tin nhắn trống.'}[m]||'Chưa gửi được, thử lại nhé.');}
+  try{const j=await wchPost({t,name:pubName()});if(j&&j.tier==='loa'&&typeof U178!=='undefined'&&U178.st){U178.st.items.loa=j.loa;if(!j.loa)gardenToast('📢 Bạn đã dùng hết loa. Mua thêm trong Túi đồ nhé.');}i.value='';await wchLoad();const L=document.getElementById('wchlist');if(L)L.scrollTop=L.scrollHeight;}
+  catch(x){const m=String(x.message);gardenToast({NO_LINKS:'Không gửi được đường dẫn hay tài khoản mạng xã hội.',CHAT_BANNED:'Bạn đang bị tạm khóa chat vì có tin nhắn bị báo cáo.',CHAT_PLUS_ONLY:'Bạn hết loa. Mua gói 5 loa trong Túi đồ, hoặc nâng cấp Plus/Pro để nhắn không giới hạn.',SLOW_DOWN:'Từ từ nhé, chờ vài giây rồi gửi tiếp.',BAD_CHAT:'Tin nhắn trống.'}[m]||'Chưa gửi được, thử lại nhé.');}
   finally{btn.disabled=false;i.focus();}});
 document.addEventListener('click',async e=>{const r=e.target.closest&&e.target.closest('[data-wchrep],[data-wchmute]');if(!r)return;e.preventDefault();
   if(r.dataset.wchmute){WCH.mute=[...new Set([...WCH.mute,r.dataset.wchmute])].slice(-100);try{localStorage.setItem('hsk-wchmute',JSON.stringify(WCH.mute));}catch(x){}wchPaint(true);gardenToast('Đã ẩn tin nhắn của bạn này.');return;}
   try{await wchPost({rep:+r.dataset.wchrep});gardenToast('Đã gửi báo cáo, cảm ơn bạn!');}catch(x){gardenToast('Chưa gửi được báo cáo.');}});
 /* cột trái: xem nhanh 3 tin chat; thanh chữ chạy: bấm chữ "Thế giới" để mở kênh */
-(function(){const base=lrailHTML;lrailHTML=function(){const h=base.apply(this,arguments);try{if(!wtOn())return h;return h+`<div class="rworld wchr"><div class="rwhd"><span>💬 Chat Thế giới</span><span class="wcht plus">Plus·Pro</span></div><div id="wchrail">${wchRailInner()}</div></div>`;}catch(e){return h;}};})();
+(function(){const base=lrailHTML;lrailHTML=function(){const h=base.apply(this,arguments);try{if(!wtOn())return h;return h+`<div class="rworld wchr"><div class="rwhd"><span>💬 Chat Thế giới</span><span class="wcht plus">Plus·Pro·📢</span></div><div id="wchrail">${wchRailInner()}</div></div>`;}catch(e){return h;}};})();
 document.addEventListener('click',e=>{const l=e.target.closest&&e.target.closest('#wtick .wtlb');if(!l)return;e.preventDefault();location.hash='#thegioi';});
 function wchFriendsBan(){if(location.hash!=='#friends'||document.querySelector('#app .wchban'))return;const hero=document.querySelector('#app .frhero')||document.querySelector('#app .addhero');
   if(hero)hero.insertAdjacentHTML('afterend',`<a class="panel wchban" href="#thegioi"><span aria-hidden="true">🌍</span><span><b>Kênh chat Thế giới</b><small>Trò chuyện với mọi người đang học · Plus và Pro được nhắn</small></span><em>Vào ›</em></a>`);}
@@ -26629,6 +26652,125 @@ async function u177HwDone(j){const me=j.me||{},done=(me.hq||0)>=j.n;U176.last=j;
   document.getElementById('u176an').onclick=()=>u176Report();document.getElementById('u176sh').onclick=()=>u176Share();}
 window.addEventListener('hashchange',()=>{U176.hwq=null;U176.hwGo=0;});
 if(window.__T)window.__u177={U177,u177Xlsx,u177Sheets,u176Make,u177Load,u177Keep};
+
+/* ===== 5.131: Túi đồ + vật phẩm (băng chuỗi giá tăng dần, loa Thế giới, thẻ x2 XP) + gói âm thanh tương tác ===== */
+const U178={st:null,busy:false,at:0};
+const U178_IT={
+  freeze:{ic:'❄️',n:'Băng chuỗi',d:'Lỡ một ngày, băng tự giữ chuỗi ngày học. Mỗi lần mua, giá tăng thêm 25 Nguyên bảo.'},
+  loa:{ic:'📢',n:'Loa Thế giới',d:'Mỗi loa nhắn kênh Thế giới 1 lần (tài khoản Plus và Pro nhắn không cần loa). Gói 5 loa.'},
+  x2d:{ic:'⚡',n:'Thẻ x2 XP 24 giờ',d:'Nhân đôi XP trong 24 giờ. Không cộng dồn, mua tối đa 5 thẻ mỗi tháng.'},
+  x2w:{ic:'🌟',n:'Thẻ x2 XP 1 tuần',d:'Nhân đôi XP trong 7 ngày. Không cộng dồn, mua tối đa 2 thẻ mỗi tháng.'},
+};
+const U178_ERR={INSUFFICIENT:'Không đủ Nguyên bảo.',BAG_MONTH_LIMIT:'Tháng này bạn đã mua đủ số thẻ cho phép, tháng sau mua tiếp nhé.',BOOST_ACTIVE:'Đang có thẻ x2 XP chạy. Thẻ không cộng dồn, chờ thẻ hiện tại hết rồi dùng tiếp.',BAG_EMPTY:'Túi không còn món này.',NO_WALLET:'Ví đang đồng bộ, thử lại sau vài giây.',TOO_MANY_ATTEMPTS_TRY_LATER:'Thao tác quá nhanh, thử lại sau ít phút.'};
+function u178Err(m){return U178_ERR[m]||('Có lỗi: '+m);}
+/* ---------- thẻ x2 XP: nhớ thời hạn trên máy để nhân XP cả khi mất mạng ---------- */
+function u178Boost(){try{const b=JSON.parse(localStorage.getItem('hsk-boost')||'null');if(b&&b.uid===(SOC.auth&&SOC.auth.uid)&&b.until>Date.now())return b;}catch(e){}return null;}
+function u178KeepBoost(st){try{if(st&&st.boost)localStorage.setItem('hsk-boost',JSON.stringify({...st.boost,uid:SOC.auth&&SOC.auth.uid}));else localStorage.removeItem('hsk-boost');}catch(e){}}
+function u178Left(ms){ms=Math.max(0,ms);const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return d?`${d} ngày ${h} giờ`:h?`${h} giờ ${m} phút`:`${m} phút`;}
+(function(){if(typeof addXp!=='function')return;const base=addXp;addXp=function(n){if(n>0&&u178Boost())n*=2;return base.call(this,n);};})();
+/* chip "x2 XP" cạnh chuỗi ngày học */
+setInterval(()=>{const st=document.getElementById('stat');if(!st)return;const b=u178Boost(),c=st.querySelector('.u178chip');
+  if(b&&!c)st.insertAdjacentHTML('beforeend',`<a class="u178chip" href="#shop" data-u178go="tui" title="Thẻ x2 XP đang chạy">⚡x2 XP</a>`);else if(!b&&c)c.remove();},2000);
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('[data-u178go]');if(!a)return;try{shopTab=a.dataset.u178go;}catch(x){}});
+/* ---------- máy chủ ---------- */
+async function u178Load(force){if(!walOn())return null;if(!force&&U178.st&&Date.now()-U178.at<15000)return U178.st;
+  try{U178.st=await frApi('GET','/v1/bag');U178.at=Date.now();u178KeepBoost(U178.st);u178Equip();}catch(e){}return U178.st;}
+function u178Coins(st){if(!st||st.balance==null)return;try{const w=walCur();w.srv=st.balance;walSave(w);walSetCoins(st.balance+walPendSum(w));}catch(e){}}
+async function u178Buy(item){if(!walOn()){u178NeedLogin();return null;}if(U178.busy)return null;U178.busy=true;
+  try{await walletSync();const opid='bag'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);let st;
+    for(let k=0;k<2;k++){try{st=await frApi('POST','/v1/bag/buy',{item,opid});break;}catch(e){if(e.message==='NO_WALLET'&&!k){await walletSync();continue;}throw e;}}
+    U178.st=st;U178.at=Date.now();u178Coins(st);try{sfx('coin');}catch(e){}
+    gardenToast(`${U178_IT[item].ic} Đã mua ${item==='loa'?'5 loa Thế giới':U178_IT[item].n}${st.price?` · ${YB} ${st.price}`:''}. Đã cất vào túi đồ.`);
+    if(item==='freeze')await u178Equip();return st;}
+  catch(e){gardenToast(u178Err(e.message));u178Load(true);return null;}finally{U178.busy=false;}}
+async function u178Use(item){try{const st=await frApi('POST','/v1/bag/use',{item});U178.st=st;U178.at=Date.now();u178KeepBoost(st);return st;}catch(e){gardenToast(u178Err(e.message));return null;}}
+/* băng chuỗi: tự đặt vào ô giữ chuỗi trên máy (tối đa 3), phần dư nằm trong túi */
+async function u178Equip(){const st=U178.st;if(!st||!st.items||U178.eq)return;U178.eq=1;
+  try{let n=0;while((S.freeze||0)<FREEZE_MAX&&U178.st.items.freeze>0){const r=await frApi('POST','/v1/bag/use',{item:'freeze'});U178.st=r;S.freeze=(S.freeze||0)+1;n++;}
+    if(n){save();try{renderStat();}catch(e){}}}catch(e){}finally{U178.eq=0;}}
+function u178NeedLogin(){gardenToast('Đăng nhập để dùng túi đồ và mua vật phẩm.');}
+/* khách chưa đăng nhập: băng chuỗi vẫn mua được bằng ví trên máy, giá cũng tăng dần */
+function u178GuestFzPrice(){const s=SHOP();return 25*((s.fzN||0)+1);}
+function u178GuestFzBuy(){const s=SHOP(),pr=u178GuestFzPrice();if((S.freeze||0)>=FREEZE_MAX){gardenToast('Ô giữ chuỗi đã đầy (3/3).');return false;}if(!spend(pr,'Mua băng chuỗi'))return false;s.fzN=(s.fzN||0)+1;shSave();S.freeze=(S.freeze||0)+1;save();try{renderStat();}catch(e){}return true;}
+function u178FzPrice(){return walOn()?(U178.st?U178.st.prices.freeze:null):u178GuestFzPrice();}
+
+/* ---------- gói âm thanh tương tác (tổng hợp bằng Web Audio, không cần tải file) ---------- */
+const U178_SP=[['vui','🎉','Kèn tiệc vui nhộn','Kèn tiệc tò te khi thắng, tiếng “boing” khi sai',200],['arcade','👾','Máy chơi game 8-bit','Âm thanh bíp bíp kiểu máy điện tử thùng',300],['hoi','🥁','Trống chiêng lễ hội','Trống, chiêng và mõ rộn ràng',500],['tieulong','🐉','Tiểu Long Hổ líu lo','Tiểu Long Hổ reo hò, chíp chíp theo từng câu',800],['dantranh','🎐','Đàn tranh cổ phong','Tiếng gảy đàn ngũ cung nhẹ nhàng, thanh thoát',1000],['phaohoa','🎆','Pháo hoa chiến thắng','Pháo hoa bay vút rồi nổ lách tách khi thắng',1500]];
+function u178AC(){if(S.set&&S.set.sfx===false)return null;const A=window.AudioContext||window.webkitAudioContext;if(!A)return null;try{if(!SFXAC)SFXAC=new A();if(SFXAC.state==='suspended')SFXAC.resume();}catch(e){return null;}return SFXAC;}
+function u178T(ac,f0,f1,t,d,type,v){const o=ac.createOscillator(),g=ac.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f0,t);if(f1)o.frequency.exponentialRampToValueAtTime(Math.max(20,f1),t+d);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v||.2,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+d+.05);}
+function u178N(ac,t,d,v,fq,q){const n=Math.max(1,Math.floor(ac.sampleRate*d)),buf=ac.createBuffer(1,n,ac.sampleRate),x=buf.getChannelData(0);for(let i=0;i<n;i++)x[i]=(Math.random()*2-1)*(1-i/n);const s=ac.createBufferSource();s.buffer=buf;const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.value=fq||1200;f.Q.value=q||1;const g=ac.createGain();g.gain.value=v||.3;s.connect(f).connect(g).connect(ac.destination);s.start(t);}
+function u178Pluck(ac,f,t,v){[1,2,3].forEach((h,i)=>u178T(ac,f*h,0,t,1.1/(h*.8),i?'sine':'triangle',(v||.22)/(h*1.6)));}
+const U178_SPF={
+  vui:{win:(ac,t)=>{[523,659,784].forEach((f,i)=>u178T(ac,f,0,t+i*.09,.12,'sawtooth',.09));u178T(ac,523,1568,t+.3,.45,'sawtooth',.1);u178T(ac,1046,0,t+.75,.35,'square',.06);},
+    ok:(ac,t)=>{u178T(ac,700,1400,t,.12,'sawtooth',.08);u178T(ac,1400,0,t+.12,.1,'square',.05);},no:(ac,t)=>{u178T(ac,300,90,t,.35,'sine',.25);u178T(ac,150,60,t+.05,.3,'triangle',.12);},
+    coin:(ac,t)=>{u178T(ac,988,0,t,.06,'square',.06);u178T(ac,1319,0,t+.06,.14,'square',.06);},tap:(ac,t)=>u178T(ac,880,1200,t,.05,'sawtooth',.04)},
+  arcade:{win:(ac,t)=>{[523,659,784,1047,784,1047].forEach((f,i)=>u178T(ac,f,0,t+i*.08,.09,'square',.07));u178T(ac,1568,0,t+.5,.3,'square',.07);},
+    ok:(ac,t)=>{u178T(ac,880,0,t,.06,'square',.07);u178T(ac,1320,0,t+.07,.1,'square',.07);},no:(ac,t)=>{u178T(ac,220,110,t,.25,'square',.08);u178T(ac,110,55,t+.2,.25,'square',.07);},
+    coin:(ac,t)=>{u178T(ac,1976,0,t,.05,'square',.05);u178T(ac,2637,0,t+.05,.16,'square',.05);},tap:(ac,t)=>u178T(ac,1200,0,t,.03,'square',.04)},
+  hoi:{win:(ac,t)=>{[0,.18,.36,.5,.62].forEach(k=>{u178T(ac,110,50,t+k,.22,'sine',.5);u178N(ac,t+k,.08,.25,180,2);});[0,.62].forEach(k=>[1,2.76,5.4].forEach(h=>u178T(ac,196*h,0,t+k+.05,1.4,'sine',.1/h)));},
+    ok:(ac,t)=>{u178T(ac,900,0,t,.08,'triangle',.15);u178T(ac,1200,0,t+.08,.08,'triangle',.12);},no:(ac,t)=>{u178T(ac,120,60,t,.3,'sine',.4);u178N(ac,t,.12,.2,150,2);},
+    coin:(ac,t)=>[1,2.76].forEach(h=>u178T(ac,523*h,0,t,.5,'sine',.08/h)),tap:(ac,t)=>u178T(ac,1100,0,t,.04,'triangle',.08)},
+  tieulong:{win:(ac,t)=>{for(let i=0;i<6;i++)u178T(ac,800+i*90,1300+i*90,t+i*.08,.08,'triangle',.12);u178T(ac,1047,1760,t+.55,.35,'triangle',.14);u178T(ac,1319,1976,t+.75,.3,'triangle',.1);},
+    ok:(ac,t)=>{[[740,990],[880,1180],[1050,1400]].forEach((f,i)=>u178T(ac,f[0],f[1],t+i*.08,.1,'triangle',.13));},no:(ac,t)=>{u178T(ac,620,420,t,.25,'triangle',.13);u178T(ac,500,330,t+.22,.3,'triangle',.11);},
+    coin:(ac,t)=>{u178T(ac,1200,1800,t,.08,'triangle',.1);u178T(ac,1500,2200,t+.08,.1,'triangle',.08);},tap:(ac,t)=>u178T(ac,900,1300,t,.05,'triangle',.06)},
+  dantranh:{win:(ac,t)=>{[392,440,523,587,659,784,880,1047].forEach((f,i)=>u178Pluck(ac,f,t+i*.07,.2));u178Pluck(ac,523,t+.7,.25);u178Pluck(ac,784,t+.7,.18);},
+    ok:(ac,t)=>{u178Pluck(ac,587,t,.2);u178Pluck(ac,784,t+.09,.2);},no:(ac,t)=>{u178Pluck(ac,330,t,.2);u178Pluck(ac,294,t+.14,.18);},
+    coin:(ac,t)=>u178Pluck(ac,1047,t,.15),tap:(ac,t)=>u178Pluck(ac,880,t,.08)},
+  phaohoa:{win:(ac,t)=>{[0,.45,.8].forEach((k,i)=>{u178T(ac,400,2200+i*300,t+k,.35,'sine',.08);u178N(ac,t+k+.36,.5,.4,1800,.7);for(let j=0;j<6;j++)u178N(ac,t+k+.5+j*.06+Math.random()*.03,.03,.25,4000,1);});},
+    ok:(ac,t)=>{u178N(ac,t,.08,.2,5000,1);u178T(ac,1568,2093,t,.15,'sine',.08);},no:(ac,t)=>{u178N(ac,t,.35,.15,600,.6);u178T(ac,400,120,t,.35,'sine',.08);},
+    coin:(ac,t)=>{u178N(ac,t,.05,.2,6000,1);u178T(ac,2093,0,t,.12,'sine',.06);},tap:(ac,t)=>u178N(ac,t,.03,.12,5000,1)},
+};
+function u178Play(k,kind,ac){ac=ac||u178AC();if(!ac)return false;const P=U178_SPF[k];if(!P||!P[kind])return false;try{P[kind](ac,ac.currentTime+.01);return true;}catch(e){return false;}}
+(function(){if(typeof sfx!=='function')return;const base=sfx;sfx=function(kind){try{const k=SHOP().sp;if(k&&SHOP().own&&SHOP().own['sp:'+k]&&U178_SPF[k]&&U178_SPF[k][kind]){if(u178Play(k,kind))return;}}catch(e){}return base.apply(this,arguments);};})();
+function u178Demo(k){const ac=u178AC();if(!ac){gardenToast('Âm thanh đang tắt trong Cài đặt.');return;}u178Play(k,'tap',ac);setTimeout(()=>u178Play(k,'ok',ac),350);setTimeout(()=>u178Play(k,'no',ac),900);setTimeout(()=>u178Play(k,'win',ac),1600);}
+
+/* ---------- cửa hàng: tab Túi đồ và tab Âm thanh ---------- */
+if(typeof U144_TABS!=='undefined'){const i=U144_TABS.findIndex(x=>x[0]==='log');U144_TABS.splice(i<0?U144_TABS.length:i,0,['tui','🎒 Túi đồ'],['amthanh','🔊 Âm thanh']);}
+function u178Card(k,st){const it=U178_IT[k],own=st?st.items[k]:0,pr=st?st.prices[k]:k==='freeze'?u178GuestFzPrice():({loa:200,x2d:200,x2w:500})[k],guestLock=!st&&k!=='freeze',lim=st&&st.limits[k],full=lim&&lim.used>=lim.max,b=st&&st.boost;
+  let use='';if(k==='x2d'||k==='x2w')use=own?`<button type="button" class="btn sm pri" data-u178use="${k}"${b?' disabled':''}>${b?'Đang có thẻ chạy':'Dùng'}</button>`:'';
+  else if(k==='freeze')use=`<span class="acctag">Ô giữ chuỗi ${S.freeze||0}/${FREEZE_MAX}</span>`;else if(k==='loa')use=own?'<a class="btn sm" href="#thegioi">Nhắn Thế giới</a>':'';
+  return `<div class="panel u178it"><span class="u178ic" aria-hidden="true">${it.ic}</span><div class="u178tx"><b>${esc(it.n)}</b> ${st||k==='freeze'?`<span class="acctag">Trong túi: ${k==='freeze'&&!st?0:own}</span>`:''}${lim?` <span class="acctag${full?' u178full':''}">Tháng này ${lim.used}/${lim.max}</span>`:''}<div class="small muted">${esc(it.d)}</div></div>
+    <div class="u178ac">${use}<button type="button" class="btn sm${full?'':' pri'}" data-u178buy="${k}"${full?' disabled':''}>${full?'Hết lượt tháng này':guestLock?`🔒 ${YB} ${pr}`:`${YB} ${pr}`}</button></div></div>`;}
+function u178BagHTML(st){const s=SHOP(),inv=Object.entries(s.inv||{}).filter(([k,v])=>v>0),sp=U178_SP.filter(x=>s.own&&s.own['sp:'+x[0]]);
+  const b=st&&st.boost;
+  return `<div class="stack u178bag">${!walOn()?`<div class="panel u178login"><b>Đăng nhập để dùng túi đồ</b><div class="small muted">Loa Thế giới và thẻ x2 XP được cất trong túi đồ trên máy chủ, mở máy nào cũng còn.</div><a class="btn sm pri" href="#settings">Đăng nhập</a></div>`:''}
+    ${b?`<div class="panel u178on"><span class="u178ic">⚡</span><div><b>${esc(U178_IT[b.kind].n)} đang chạy</b><div class="small">XP nhân đôi, còn <b>${esc(u178Left(b.until-Date.now()))}</b></div></div></div>`:''}
+    <h3 class="u178h">Vật phẩm</h3>${['freeze','loa','x2d','x2w'].map(k=>u178Card(k,st)).join('')}
+    ${sp.length?`<h3 class="u178h">Gói âm thanh của bạn</h3><div class="u178sps">${sp.map(([k,ic,n])=>`<div class="panel u178sp"><span class="u178ic">${ic}</span><b>${esc(n)}</b>${s.sp===k?'<span class="acctag on">Đang dùng</span>':`<button type="button" class="btn sm pri" data-u178sp="${k}">Dùng</button>`}</div>`).join('')}</div>`:''}
+    ${inv.length?`<h3 class="u178h">Bùa trợ giúp trong trò chơi</h3><div class="small muted">${inv.map(([k,v])=>`${esc(k)} ×${v}`).join(' · ')}</div>`:''}
+    <p class="small muted">Nguyên bảo dùng mua vật phẩm được trừ thẳng trong ví trên máy chủ. Băng chuỗi tự đặt vào ô giữ chuỗi (tối đa ${FREEZE_MAX} ô), phần dư nằm trong túi và tự bổ sung khi ô trống.</p></div>`;}
+function u178SoundHTML(){const s=SHOP();return `<div class="stack u178snd"><p class="small muted" style="margin:0">Thay âm thanh khi trả lời đúng, sai, chiến thắng và nhận Nguyên bảo trong toàn app. Mua một lần, dùng mãi.</p>
+  <div class="u178sps">${U178_SP.map(([k,ic,n,d,pr])=>{const own=s.own&&s.own['sp:'+k];return `<div class="panel u178sp"><span class="u178ic big">${ic}</span><b>${esc(n)}</b><small class="muted">${esc(d)}</small>
+    <button type="button" class="btn sm ghost" data-u178demo="${k}">▶ Nghe thử</button>${s.sp===k?'<span class="acctag on">Đang dùng</span>':own?`<button type="button" class="btn sm pri" data-u178sp="${k}">Dùng</button>`:`<button type="button" class="btn sm pri" data-u178spb="${k}" data-p="${pr}">${YB} ${pr}</button>`}</div>`;}).join('')}</div>
+  ${s.sp?'<button type="button" class="btn sm" data-u178sp="">Về âm thanh mặc định</button>':''}</div>`;}
+function u178Wire(body,rer){
+  body.querySelectorAll('[data-u178buy]').forEach(b=>b.onclick=async()=>{const k=b.dataset.u178buy;b.disabled=true;
+    if(!walOn()){if(k==='freeze'){if(u178GuestFzBuy())gardenToast('Đã mua 1 băng chuỗi ❄️');rer();}else{u178NeedLogin();b.disabled=false;}return;}
+    await u178Buy(k);rer();});
+  body.querySelectorAll('[data-u178use]').forEach(b=>b.onclick=async()=>{b.disabled=true;const st=await u178Use(b.dataset.u178use);if(st){try{sfx('win');}catch(e){}gardenToast(`⚡ Đã bật ${esc(U178_IT[b.dataset.u178use].n)}: XP nhân đôi!`);}rer();});
+  body.querySelectorAll('[data-u178sp]').forEach(b=>b.onclick=()=>{const s=SHOP();s.sp=b.dataset.u178sp||'';shSave();if(s.sp)setTimeout(()=>u178Play(s.sp,'win'),50);rer();});
+  body.querySelectorAll('[data-u178spb]').forEach(b=>b.onclick=()=>{const k=b.dataset.u178spb,it=U178_SP.find(x=>x[0]===k),s=SHOP();if(!spend(+b.dataset.p,'Mua gói âm thanh '+it[2]))return;s.own=s.own||{};s.own['sp:'+k]=1;s.sp=k;shSave();setTimeout(()=>u178Play(k,'win'),80);gardenToast(`${it[1]} Đã mua và bật gói “${esc(it[2])}”.`);rer();});
+  body.querySelectorAll('[data-u178demo]').forEach(b=>b.onclick=()=>u178Demo(b.dataset.u178demo));}
+(function(){if(typeof shopBody!=='function')return;const base=shopBody;shopBody=function(body){const rer=()=>viewShop();
+  if(shopTab==='tui'){body.innerHTML=u178BagHTML(U178.st);u178Wire(body,rer);if(walOn()&&(!U178.st||Date.now()-U178.at>15000))u178Load(true).then(st=>{if(st&&shopTab==='tui'&&body.isConnected){body.innerHTML=u178BagHTML(st);u178Wire(body,rer);}});return;}
+  if(shopTab==='amthanh'){body.innerHTML=u178SoundHTML();u178Wire(body,rer);return;}
+  const r=base.apply(this,arguments);
+  if(shopTab==='help'){try{const fz=body.querySelector('#hbfz');if(fz){const n=fz.cloneNode(false);n.removeAttribute('disabled');n.removeAttribute('id');n.dataset.u178buy='freeze';const pr=u178FzPrice();n.innerHTML=`${YB} ${pr==null?'…':pr}`;fz.replaceWith(n);
+      const row=n.closest('.helpit');if(row){const d=row.querySelector('.small.muted');if(d)d.textContent='Lỡ một ngày, băng tự giữ chuỗi ngày học. Mỗi lần mua, giá tăng thêm 25 Nguyên bảo.';}}
+    body.querySelector('.helpgrid').insertAdjacentHTML('beforeend',['loa','x2d','x2w'].map(k=>u178Card(k,U178.st)).join(''));
+    body.insertAdjacentHTML('beforeend','<p class="small"><a href="#shop" data-u178go="tui" class="u178gotui">🎒 Mở túi đồ ›</a></p>');u178Wire(body,rer);
+    const gt=body.querySelector('.u178gotui');if(gt)gt.onclick=e=>{e.preventDefault();u144Go('tui');};
+    if(walOn()&&!U178.st)u178Load(true).then(st=>{if(st&&shopTab==='help'&&body.isConnected)viewShop();});}catch(e){console.warn(e);}}
+  return r;};})();
+/* hộp Chuỗi ngày học: nút mua băng chuỗi theo giá mới */
+(function(){if(typeof viewStreak!=='function')return;const base=viewStreak;viewStreak=function(){const r=base.apply(this,arguments);try{const b=document.querySelector('dialog .stkfz #stkbuy');if(!b)return r;const pr=u178FzPrice();
+  const full=(S.freeze||0)>=FREEZE_MAX;b.textContent=full?'Ô giữ chuỗi đã đầy':`Mua · ${pr==null?'…':pr} Nguyên bảo`;b.disabled=false;b.classList.add('pri');
+  const note=b.closest('.stkfz').querySelector('.small.muted');if(note)note.textContent='Lỡ một ngày, băng chuỗi tự giữ chuỗi cho bạn. Cứ đủ 7 ngày liên tiếp được tặng 1 băng. Mua thêm thì mỗi lần giá tăng 25 Nguyên bảo, băng dư cất trong túi đồ.';
+  b.onclick=async()=>{b.disabled=true;let ok=false;if(walOn())ok=!!(await u178Buy('freeze'));else{ok=u178GuestFzBuy();if(ok)gardenToast('Đã mua 1 băng chuỗi ❄️');}const d=b.closest('dialog');if(d){d.close();d.remove();}viewStreak();};
+  if(walOn()&&!U178.st)u178Load(true).then(()=>{if(b.isConnected&&!full){const p2=u178FzPrice();b.textContent=`Mua · ${p2} Nguyên bảo`;}});}catch(e){}return r;};})();
+/* tải túi đồ khi mở app (bổ sung băng chuỗi vào ô trống, nhớ thẻ x2 XP) */
+setTimeout(()=>{u178Load(true);},4000);setInterval(()=>{if(!document.hidden)u178Load(true);},600000);
+if(window.__T)window.__u178={U178,u178Load,u178Buy,u178Use,u178Boost,U178_SP,U178_SPF,u178Play,SHOP:()=>SHOP(),shSave:()=>shSave(),save:()=>save(),S:()=>S,G:()=>G(),addXp:n=>addXp(n),sfx:k=>sfx(k),viewStreak:()=>viewStreak(),walletSync:()=>walletSync(),FREEZE_MAX};
 
 function route(){
   stopGames();
