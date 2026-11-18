@@ -317,12 +317,16 @@ function artMinutes(md) { const t = artText(md); const w = t.split(' ').filter(B
       '<td><label><input type="checkbox" data-aifb="'+p+'"'+(c.fb[p]?' checked':'')+'> Dự phòng</label></td>'+
       '<td><input data-aimodel="'+p+'" value="'+esc(c.models[p])+'" style="width:220px" aria-label="Mô hình '+AIN[p]+'"></td>'+
       '<td><button class="btn" data-aitest="'+p+'">Thử</button></td></tr>';}).join('');
-    var stat=(j.stat||[]).map(function(r){return '<tr><td>'+esc(r.day)+'</td><td>'+AIN[r.prov]+'</td><td>'+r.ok+'</td><td>'+r.fail+'</td></tr>';}).join('')||'<tr><td colspan="4" class="muted">Chưa có lượt nào.</td></tr>';
+    var sec=function(ms){return (ms/1000).toFixed(1).replace('.',',')+' giây';};
+    var avg={};(j.stat||[]).forEach(function(r){var a=avg[r.prov]||(avg[r.prov]={ok:0,ms:0});if(r.ms){a.ok+=r.ok;a.ms+=r.ms;}});
+    var avgTxt=Object.keys(avg).filter(function(p){return avg[p].ok;}).map(function(p){return AIN[p]+' <b>'+sec(avg[p].ms/avg[p].ok)+'</b>';}).join(' · ');
+    var stat=(j.stat||[]).map(function(r){return '<tr><td>'+esc(r.day)+'</td><td>'+AIN[r.prov]+'</td><td>'+r.ok+'</td><td>'+r.fail+'</td><td>'+(r.ms&&r.ok?sec(r.ms/r.ok):'–')+'</td></tr>';}).join('')||'<tr><td colspan="5" class="muted">Chưa có lượt nào.</td></tr>';
     P.innerHTML='<div class="card"><h3 style="margin-top:0">Tiểu Long Hổ AI</h3>'+
       '<p><label><input type="checkbox" id="aion"'+(c.on?' checked':'')+'> <b>Bật trang Nói chuyện</b></label></p>'+
       '<p class="small muted">Thứ tự gọi: AI chính trước. Nếu lỗi hoặc trả lời hỏng thì lần lượt gọi các AI đang bật Dự phòng. AI chưa gắn khóa sẽ bị bỏ qua. Đang chạy: <b>'+(j.chain.length?j.chain.map(function(p){return AIN[p];}).join(' → '):'chưa có AI nào')+'</b></p>'+
       '<div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Nhà cung cấp</th><th></th><th></th><th>Mô hình</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
       '<p class="small">Thứ tự dự phòng: <select id="aiord"><option value="cf,gemini,openai">Gemini trước, rồi OpenAI</option><option value="cf,openai,gemini">OpenAI trước, rồi Gemini</option></select></p>'+
+      '<p class="small">Mức suy nghĩ của Gemini: <select id="aithink"><option value="minimal">Thấp nhất (minimal) — nhanh nhất</option><option value="low">Thấp (low) — sửa lỗi kỹ hơn một chút</option><option value="medium">Vừa (medium) — chậm hơn rõ</option><option value="high">Cao (high) — chậm nhất</option></select><br><span class="muted">Gemini nghĩ ngầm trước khi trả lời: nghĩ càng nhiều càng chậm và càng tốn token. Hội thoại ngắn nên để Thấp nhất. Mô hình nào không hỗ trợ thì tự bỏ qua.</span></p>'+
       '<div id="aitestout" class="small" role="status"></div>'+
       '<h4>Lượt nói mỗi ngày</h4><div class="row" style="gap:12px;flex-wrap:wrap">'+
       '<label>Free <input type="number" id="aifree" min="0" max="200" value="'+c.free+'" style="width:80px"></label>'+
@@ -332,13 +336,13 @@ function artMinutes(md) { const t = artText(md); const w = t.split(' ').filter(B
       '<label>tối đa <input type="number" id="aixm" min="0" max="20" value="'+c.extraMax+'" style="width:64px"> lần/ngày</label></div>'+
       '<p><button class="btn pri" id="aisave">Lưu cài đặt</button> <span id="aimsg" class="small"></span></p>'+
       '<p class="small muted">Hôm nay: '+(j.today.users||0)+' người dùng, '+(j.today.turns||0)+' lượt nói, '+(j.today.buys||0)+' lần mua thêm lượt.</p></div>'+
-      '<div class="card"><h3 style="margin-top:0">7 ngày gần nhất</h3><div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Ngày</th><th>AI</th><th>Thành công</th><th>Lỗi</th></tr></thead><tbody>'+stat+'</tbody></table></div></div>';
-    $('#aiord').value=c.order.join(',')==='cf,openai,gemini'?'cf,openai,gemini':'cf,gemini,openai';
+      '<div class="card"><h3 style="margin-top:0">7 ngày gần nhất</h3><div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Ngày</th><th>AI</th><th>Thành công</th><th>Lỗi</th><th>TB trả lời</th></tr></thead><tbody>'+stat+'</tbody></table></div>'+(avgTxt?'<p class="small">Thời gian trả lời trung bình 7 ngày (lượt thành công): '+avgTxt+'</p>':'')+'<p class="small muted">Thời gian tính từ lúc Worker hỏi AI đến lúc nhận đủ câu trả lời, chưa gồm mạng của người học và giọng đọc.</p></div>';
+    $('#aiord').value=c.order.join(',')==='cf,openai,gemini'?'cf,openai,gemini':'cf,gemini,openai';$('#aithink').value=c.think||'minimal';
     $$('[data-aitest]').forEach(function(b){b.onclick=function(){var o=$('#aitestout');o.textContent='Đang thử '+AIN[b.dataset.aitest]+'…';
       req('POST','/v1/admin/ai/test',{prov:b.dataset.aitest}).then(function(r){o.innerHTML=r.ok?'<span style="color:#0d7a63">✓ '+AIN[r.prov]+' trả lời sau '+r.ms+' ms: <b>'+esc(r.reply.zh)+'</b> · '+esc(r.reply.vi)+'</span>':'<span style="color:#b3261e">✗ '+AIN[r.prov]+': '+esc(r.error==='NO_AI_BINDING'?'chưa gắn liên kết Workers AI':r.error==='NO_API_KEY'?'chưa nhập khóa API':(r.error||'trả lời không đúng định dạng'))+'</span>';}).catch(function(e){o.textContent=e.message;});};});
     $('#aisave').onclick=function(){var fb={},models={};$$('[data-aifb]').forEach(function(x){fb[x.dataset.aifb]=x.checked;});$$('[data-aimodel]').forEach(function(x){models[x.dataset.aimodel]=x.value.trim();});
       var pri=(document.querySelector('input[name=aipri]:checked')||{}).value||'cf';
-      req('POST','/v1/admin/ai/save',{on:$('#aion').checked,primary:pri,fb:fb,order:$('#aiord').value.split(','),models:models,free:+$('#aifree').value,pro:+$('#aipro').value,extraN:+$('#aixn').value,extraCost:+$('#aixc').value,extraMax:+$('#aixm').value})
+      req('POST','/v1/admin/ai/save',{on:$('#aion').checked,primary:pri,fb:fb,order:$('#aiord').value.split(','),models:models,free:+$('#aifree').value,pro:+$('#aipro').value,extraN:+$('#aixn').value,extraCost:+$('#aixc').value,extraMax:+$('#aixm').value,think:$('#aithink').value})
         .then(function(){$('#aimsg').textContent='Đã lưu.';aiTab();}).catch(function(e){$('#aimsg').textContent=e.message;});};
   }).catch(function(e){P.innerHTML='<div class="card">'+esc(e.message)+'</div>';});}
   function artTab(){var P=$('#pane');req('GET','/v1/admin/art').then(function(j){ARTL=j.list||[];
