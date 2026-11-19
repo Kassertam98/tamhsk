@@ -309,7 +309,7 @@ function artMinutes(md) { const t = artText(md); const w = t.split(' ').filter(B
   function artDateA(t){if(!t)return '—';var d=new Date(t);return d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();}
 
   /* 5.124: Tiểu Long Hổ AI — chọn AI chính, công tắc dự phòng, mô hình, hạn mức, nút thử */
-  var AIN={cf:'Cloudflare Workers AI',openai:'OpenAI (ChatGPT)',gemini:'Google Gemini'};
+  var AIN={cf:'Cloudflare Workers AI',openai:'OpenAI (ChatGPT)',gemini:'Google Gemini',tr:'Dịch thuật (Từ điển)'};
   var AIK={cf:'liên kết (binding) Workers AI tên AI',openai:'bí mật OPENAI_API_KEY',gemini:'bí mật GEMINI_API_KEY'};
   function aiTab(){var P=$('#pane');req('GET','/v1/admin/ai').then(function(j){var c=j.cfg,st=j.status;
     var rows=['cf','openai','gemini'].map(function(p){return '<tr><td><b>'+AIN[p]+'</b><div class="small muted">'+(st[p]?'<span style="color:#0d7a63">✓ Đã gắn '+AIK[p]+'</span>':'<span style="color:#b3261e">Chưa gắn '+AIK[p]+'</span>')+'</div></td>'+
@@ -320,7 +320,7 @@ function artMinutes(md) { const t = artText(md); const w = t.split(' ').filter(B
     var sec=function(ms){return (ms/1000).toFixed(1).replace('.',',')+' giây';};
     var avg={};(j.stat||[]).forEach(function(r){var a=avg[r.prov]||(avg[r.prov]={ok:0,ms:0});if(r.ms){a.ok+=r.ok;a.ms+=r.ms;}});
     var avgTxt=Object.keys(avg).filter(function(p){return avg[p].ok;}).map(function(p){return AIN[p]+' <b>'+sec(avg[p].ms/avg[p].ok)+'</b>';}).join(' · ');
-    var stat=(j.stat||[]).map(function(r){return '<tr><td>'+esc(r.day)+'</td><td>'+AIN[r.prov]+'</td><td>'+r.ok+'</td><td>'+r.fail+'</td><td>'+(r.ms&&r.ok?sec(r.ms/r.ok):'–')+'</td></tr>';}).join('')||'<tr><td colspan="5" class="muted">Chưa có lượt nào.</td></tr>';
+    var stat=(j.stat||[]).map(function(r){return '<tr><td>'+esc(r.day)+'</td><td>'+(AIN[r.prov]||r.prov)+'</td><td>'+r.ok+'</td><td>'+r.fail+'</td><td>'+(r.ms&&r.ok?sec(r.ms/r.ok):'–')+'</td></tr>';}).join('')||'<tr><td colspan="5" class="muted">Chưa có lượt nào.</td></tr>';
     P.innerHTML='<div class="card"><h3 style="margin-top:0">Tiểu Long Hổ AI</h3>'+
       '<p><label><input type="checkbox" id="aion"'+(c.on?' checked':'')+'> <b>Bật trang Nói chuyện</b></label></p>'+
       '<p class="small muted">Thứ tự gọi: AI chính trước. Nếu lỗi hoặc trả lời hỏng thì lần lượt gọi các AI đang bật Dự phòng. AI chưa gắn khóa sẽ bị bỏ qua. Đang chạy: <b>'+(j.chain.length?j.chain.map(function(p){return AIN[p];}).join(' → '):'chưa có AI nào')+'</b></p>'+
@@ -328,6 +328,8 @@ function artMinutes(md) { const t = artText(md); const w = t.split(' ').filter(B
       '<p class="small">Thứ tự dự phòng: <select id="aiord"><option value="cf,gemini,openai">Gemini trước, rồi OpenAI</option><option value="cf,openai,gemini">OpenAI trước, rồi Gemini</option></select></p>'+
       '<p class="small">Mức suy nghĩ của Gemini: <select id="aithink"><option value="minimal">Thấp nhất (minimal) — nhanh nhất</option><option value="low">Thấp (low) — sửa lỗi kỹ hơn một chút</option><option value="medium">Vừa (medium) — chậm hơn rõ</option><option value="high">Cao (high) — chậm nhất</option></select><br><span class="muted">Gemini nghĩ ngầm trước khi trả lời: nghĩ càng nhiều càng chậm và càng tốn token. Hội thoại ngắn nên để Thấp nhất. Mô hình nào không hỗ trợ thì tự bỏ qua.</span></p>'+
       '<div id="aitestout" class="small" role="status"></div>'+
+      '<h4>Dịch đoạn văn (Từ điển)</h4><p class="small muted" style="margin:0 0 6px">Dịch bằng AI Cloudflare, trả về từng câu kèm pinyin, nghĩa và từ khóa HSK. Mô hình chính lỗi thì dùng mô hình dự phòng, rồi Gemini, cuối cùng là dịch thô Azure/MyMemory. Câu trùng lấy lại từ bộ nhớ đệm, không tốn Neurons.'+(j.gateway?' <b style="color:#0d7a63">Đang đi qua AI Gateway.</b>':' Chưa gắn AI Gateway (tùy chọn).')+'</p>'+
+      '<div class="row" style="gap:12px;flex-wrap:wrap"><label>Mô hình chính <input id="trm1" value="'+esc((j.tr||{}).m1||'')+'" style="width:240px"></label><label>Dự phòng <input id="trm2" value="'+esc((j.tr||{}).m2||'')+'" style="width:240px"></label><label><input type="checkbox" id="trgem"'+((j.tr||{}).gem!==false?' checked':'')+'> Dùng Gemini khi cả hai lỗi</label></div>'+
       '<h4>Lượt nói mỗi ngày</h4><div class="row" style="gap:12px;flex-wrap:wrap">'+
       '<label>Free <input type="number" id="aifree" min="0" max="200" value="'+c.free+'" style="width:80px"></label>'+
       '<label>Pro <input type="number" id="aipro" min="0" max="1000" value="'+c.pro+'" style="width:80px"></label>'+
@@ -342,7 +344,7 @@ function artMinutes(md) { const t = artText(md); const w = t.split(' ').filter(B
       req('POST','/v1/admin/ai/test',{prov:b.dataset.aitest}).then(function(r){o.innerHTML=r.ok?'<span style="color:#0d7a63">✓ '+AIN[r.prov]+' trả lời sau '+r.ms+' ms: <b>'+esc(r.reply.zh)+'</b> · '+esc(r.reply.vi)+'</span>':'<span style="color:#b3261e">✗ '+AIN[r.prov]+': '+esc(r.error==='NO_AI_BINDING'?'chưa gắn liên kết Workers AI':r.error==='NO_API_KEY'?'chưa nhập khóa API':(r.error||'trả lời không đúng định dạng'))+'</span>';}).catch(function(e){o.textContent=e.message;});};});
     $('#aisave').onclick=function(){var fb={},models={};$$('[data-aifb]').forEach(function(x){fb[x.dataset.aifb]=x.checked;});$$('[data-aimodel]').forEach(function(x){models[x.dataset.aimodel]=x.value.trim();});
       var pri=(document.querySelector('input[name=aipri]:checked')||{}).value||'cf';
-      req('POST','/v1/admin/ai/save',{on:$('#aion').checked,primary:pri,fb:fb,order:$('#aiord').value.split(','),models:models,free:+$('#aifree').value,pro:+$('#aipro').value,extraN:+$('#aixn').value,extraCost:+$('#aixc').value,extraMax:+$('#aixm').value,think:$('#aithink').value})
+      req('POST','/v1/admin/ai/save',{on:$('#aion').checked,primary:pri,fb:fb,order:$('#aiord').value.split(','),models:models,free:+$('#aifree').value,pro:+$('#aipro').value,extraN:+$('#aixn').value,extraCost:+$('#aixc').value,extraMax:+$('#aixm').value,think:$('#aithink').value,tr:{m1:$('#trm1').value.trim(),m2:$('#trm2').value.trim(),gem:$('#trgem').checked}})
         .then(function(){$('#aimsg').textContent='Đã lưu.';aiTab();}).catch(function(e){$('#aimsg').textContent=e.message;});};
   }).catch(function(e){P.innerHTML='<div class="card">'+esc(e.message)+'</div>';});}
   function artTab(){var P=$('#pane');req('GET','/v1/admin/art').then(function(j){ARTL=j.list||[];
