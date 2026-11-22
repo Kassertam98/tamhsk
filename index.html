@@ -7248,6 +7248,15 @@ html.rails.rl-on.rlw main#app.wrap,html.rails.rl-on.rlw #gpromo,html.rails.rl-on
 .rankv #rkboard.u182rk .rkrow .rkwho{min-width:0;flex:1 1 auto;overflow:hidden}
 .rankv #rkboard.u182rk .rkrow .rkwho b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 html.rails.rl-on.rlw header.top>.in{box-sizing:border-box}
+/* 5.137 app iOS */
+html.ios-app #gpromo{display:none!important}
+.accbtn.ap{background:#000!important;color:#fff!important;border-color:#000!important}
+.accbtn.ap .accbi{color:#fff;background:transparent!important}
+.accbtn.ap small{color:rgba(255,255,255,.75)!important}
+.accbtn.ap i{color:rgba(255,255,255,.8)}
+:root[data-theme="dark"] .accbtn.ap{background:#fff!important;color:#000!important;border-color:#fff!important}
+:root[data-theme="dark"] .accbtn.ap .accbi{color:#000}
+:root[data-theme="dark"] .accbtn.ap small,:root[data-theme="dark"] .accbtn.ap i{color:rgba(0,0,0,.65)!important}
 </style>
 </head><body>
 
@@ -7273,12 +7282,12 @@ html.rails.rl-on.rlw header.top>.in{box-sizing:border-box}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='66e2b4b2';
-document.write('<script src="packs/hsk'+L+'.js?v=66e2b4b2"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='1af0b102';
+document.write('<script src="packs/hsk'+L+'.js?v=1af0b102"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=66e2b4b2','strokes-file');A('packs/dict.js?v=66e2b4b2','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=1af0b102','strokes-file');A('packs/dict.js?v=1af0b102','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -8668,7 +8677,7 @@ const FSVG='<svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><
 const KSVG='<svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="12" fill="#1f3b2d"/><path d="M15 12v24M15 25l13-13M19 21l11 15" stroke="#f5b800" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
 function accGet(){try{return JSON.parse(localStorage.getItem(ACCKEY)||'null')||{};}catch(e){return {};}}
 function accSet(o){const a=Object.assign(accGet(),o);try{localStorage.setItem(ACCKEY,JSON.stringify(a));}catch(e){}return a;}
-const accCloud=()=>{const a=accGet();return !!(SOC.auth&&(a.mode==='google'||a.mode==='kasser'||a.mode==='facebook'));};
+const accCloud=()=>{const a=accGet();return !!(SOC.auth&&(a.mode==='google'||a.mode==='kasser'||a.mode==='facebook'||a.mode==='apple'));};
 function cloudBlob(){const o={};SYNC_KEYS.forEach(k=>{try{const v=localStorage.getItem(k);if(v!=null)o[k]=v;}catch(e){}});return JSON.stringify(o);}
 const hashStr=s=>{let h=5381;for(let i=0;i<s.length;i++)h=((h*33)^s.charCodeAt(i))>>>0;return h.toString(36)+':'+s.length;};
 async function saveReq(body){const tok=await idToken();
@@ -27447,6 +27456,42 @@ if(window.__T)window.__u182={petChatOpen,u182Rail,u182Width,U182};
 function u182Rank(){const bd=app.querySelector('.rankv #rkboard');if(!bd)return;let k='hsk2';try{k=u180BgKey();}catch(e){}
   if(bd.dataset.bg!==k){bd.dataset.bg=k;bd.style.setProperty('--u182bg',`url('bg/${k}.webp')`);}bd.classList.add('u182rk');}
 (function(){const base=viewRank;viewRank=async function(){const p=base.apply(this,arguments);try{u182Rank();}catch(e){}const r=await p;try{u182Rank();}catch(e){}return r;};})();
+
+/* 5.137 App iOS (App Store): chỉ chạy khi trang nằm trong app iOS (window.__TAMHSK_IOS do app cài trước khi trang tải).
+   - Mua gói qua App Store (StoreKit 2): dùng chung giao diện mua của Google Play, đổi đường xác minh sang /v1/pay/apple.
+   - Đăng nhập bằng Apple (bắt buộc với app có đăng nhập Google/Facebook).
+   - Đổi chữ "Google Play / CH Play" thành "App Store", ẩn quảng cáo tải app Android. */
+const IOS_APP=!!window.__TAMHSK_IOS;
+const ASVG='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16.37 12.6c-.02-2.13 1.74-3.15 1.82-3.2-1-1.45-2.54-1.65-3.08-1.67-1.31-.13-2.56.77-3.22.77-.67 0-1.69-.75-2.78-.73-1.43.02-2.75.83-3.48 2.11-1.49 2.58-.38 6.39 1.06 8.48.71 1.02 1.55 2.17 2.65 2.13 1.07-.04 1.47-.69 2.76-.69 1.28 0 1.65.69 2.77.67 1.15-.02 1.87-1.04 2.57-2.07.81-1.18 1.14-2.33 1.16-2.39-.03-.01-2.21-.85-2.23-3.41zM14.3 6.34c.58-.71.98-1.69.87-2.67-.84.03-1.87.56-2.47 1.27-.54.62-1.01 1.62-.89 2.58.94.07 1.9-.48 2.49-1.18z"/></svg>';
+try{ACC_PROV.apple=['Apple',ASVG];}catch(e){}
+if(IOS_APP){
+  document.documentElement.classList.add('ios-app');
+  /* ---- mua gói: Google Play → App Store ---- */
+  (function(){const base=shopPost;shopPost=function(path,body){if(path==='/v1/pay/play'){const b=Object.assign({},body);b.transactionId=b.purchaseToken;return base.call(this,'/v1/pay/apple',b);}return base.apply(this,arguments);};})();
+  gpbAcc=async function(){try{const r=await netFetch('GET',API_BASE+'/v1/pay/apple/acc',{'Authorization':'Bearer '+await idToken()},'');return JSON.parse(r.text||'{}').acc||'';}catch(e){return '';}};
+  try{Object.assign(VC_ERR,{APPLE_NOT_CONFIGURED:'Máy chủ chưa bật thanh toán App Store. Tiền chưa bị mất: gói sẽ tự kích hoạt khi máy chủ sẵn sàng, mở lại trang Gói trả phí sau.',APPLE_AUTH_FAILED:'Máy chủ chưa kết nối được App Store. Gói sẽ tự kích hoạt khi mở lại trang Gói trả phí.',APPLE_PERMISSION:'Máy chủ chưa được cấp quyền đọc giao dịch App Store. Gói sẽ tự kích hoạt khi mở lại trang Gói trả phí.',INVALID_APPLE_TOKEN:'Đăng nhập Apple chưa thành công, thử lại nhé.',APPLE_UNREACHABLE:'Chưa kết nối được Apple, kiểm tra mạng rồi thử lại.',APPLE_ALREADY_LINKED:'Tài khoản Apple này đã gắn với tài khoản Tâm HSK khác.'});}catch(e){}
+  /* ---- đổi chữ ---- */
+  const IOS_TXT=[[/Google Play/g,'App Store'],[/CH Play/g,'App Store'],[/Play Store/g,'App Store'],[/số dư Google Play/g,'Apple ID']];
+  const iosFix=root=>{const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while((n=w.nextNode())){const t=n.data;if(!/Play/.test(t))continue;let v=t;IOS_TXT.forEach(([a,b])=>{v=v.replace(a,b);});if(v!==t)n.data=v;}};
+  new MutationObserver(ms=>{for(const m of ms)m.addedNodes.forEach(x=>{if(x.nodeType===1)iosFix(x);else if(x.nodeType===3&&/Play/.test(x.data))iosFix(x.parentNode||document.body);});}).observe(document.body||document.documentElement,{childList:true,subtree:true});
+  setTimeout(()=>iosFix(document.body),500);
+  /* ---- Đăng nhập bằng Apple ---- */
+  window.__appleAuth=async function(res){let r=res;try{if(typeof res==='string')r=JSON.parse(res);}catch(e){r={};}
+    if(!r||!r.token){if(r&&r.err&&r.err!=='cancel'){window.__accErr='Đăng nhập Apple chưa thành công ('+r.err+').';window.dispatchEvent(new CustomEvent('hsk-acc',{detail:'error'}));}else window.dispatchEvent(new CustomEvent('hsk-acc',{detail:'error'}));return;}
+    try{const body={identityToken:r.token,name:r.name||''};let link=false;try{link=localStorage.getItem('hsk-alink')==='1';localStorage.removeItem('hsk-alink');}catch(e){}
+      if((SOC.auth&&!SOC.auth.email&&!accCloud())||(link&&SOC.auth)){try{body.idToken=await idToken();}catch(e){}}if(link)body.link=true;
+      const j=await fbAuth('apple',body);setAuth(j);SOC.me=null;
+      if(link){try{meFetch();}catch(e){}window.dispatchEvent(new CustomEvent('hsk-acc',{detail:'linked'}));gardenToast('✅ Đã liên kết Apple với tài khoản của bạn.');return;}
+      accSet({mode:'apple',email:j.appleEmail||j.email||'',name:j.appleName||r.name||'',uid:'',ls:0,lh:''});
+      const rr=await cloudSync();window.dispatchEvent(new CustomEvent('hsk-acc',{detail:rr}));}
+    catch(e){window.__accErr=fbErr(e.message);window.dispatchEvent(new CustomEvent('hsk-acc',{detail:'error'}));gardenToast(esc(fbErr(e.message)));}};
+  const appleGo=link=>{try{if(link)localStorage.setItem('hsk-alink','1');else localStorage.removeItem('hsk-alink');}catch(e){}try{AndroidApp.appleSignIn();}catch(e){gardenToast('Máy này chưa hỗ trợ Đăng nhập bằng Apple.');}};
+  const iosAcc=()=>{document.querySelectorAll('.acc3').forEach(box=>{if(box.querySelector('.accbtn.ap'))return;
+    box.insertAdjacentHTML('afterbegin',`<button class="accbtn ap" type="button"><span class="accbi">${ASVG}</span><span class="accbt"><b>Tiếp tục với Apple</b><small>Ẩn email nếu bạn muốn</small></span><i>›</i></button>`);
+    const b=box.querySelector('.accbtn.ap');b.onclick=e=>{e.preventDefault();e.stopPropagation();const m=box.querySelector('.accmsg');if(m)m.innerHTML='<span class="spin"></span> Đang mở Đăng nhập bằng Apple…';appleGo(false);};});};
+  new MutationObserver(()=>iosAcc()).observe(document.body||document.documentElement,{childList:true,subtree:true});
+  if(window.__T)window.__u183={iosFix,appleGo};
+}
 
 function route(){
   stopGames();
