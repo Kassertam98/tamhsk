@@ -7394,6 +7394,32 @@ html body #gscene.gz.gz .gttl small,html body #gscene.gz.gz .gttl span{color:#6d
 @media (max-width:860px){.rkxgrid{grid-template-columns:1fr}.rkxside{position:static}}
 @media (max-width:480px){.rkxmain{padding:14px!important}.rkxt{padding:8px 11px;font-size:13px}.rkxval{font-size:15px}.rkxpz{font-size:11px}.rkxnm{font-size:13px}.rkxp.p1 .rkxstep{min-height:118px}}
 html.dark .rkx .panel,[data-theme="dark"] .rkx .panel{background:var(--paper);border-color:var(--line)}
+/* BXH trên nền tranh HSK (6 tranh như Bảng tin) · mọi phần hiện ra hết */
+.rkx.rkxbgon{position:relative;padding:18px;border-radius:24px;background:var(--rkxbg) top center/100% auto no-repeat,linear-gradient(#e9eee2,#e9eee2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.rkx.rkxbgon .rkxhead,.rkx.rkxbgon .rkxbar{padding:10px 14px;border-radius:18px;background:rgba(255,253,248,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 6px 18px -12px rgba(0,0,0,.35)}
+.rkx.rkxbgon .panel{background:rgba(255,253,248,.86)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-color:rgba(255,255,255,.85)!important;box-shadow:0 10px 26px -18px rgba(0,0,0,.45)!important}
+.rkx.rkxbgon .rkxlg{text-align:center;margin:0;padding:6px 12px;border-radius:999px;background:rgba(255,253,248,.8);justify-self:center;align-self:center}
+.rkxtt p{margin:2px 0 0}
+.rkxbar-r{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rkxbgb{border:1.5px solid #cfe2d6;background:#fff;color:#0d7a63;border-radius:999px;padding:6px 12px;font:inherit;font-weight:700;font-size:13px;cursor:pointer;min-height:34px}
+.rkxbgb:hover{border-color:#0d7a63}
+.rkxlist{display:grid;gap:6px}
+.rkx .rkxlist .rkxrow,.rkx .rkxmine .rkxrow{grid-template-columns:44px 34px minmax(0,1fr) auto auto;border:1px solid #eee7d8;border-radius:12px;background:#fff;border-bottom-width:1px}
+.rkx .rkxrow.me{background:#eaf5ee;border-color:#0d7a63}
+.rkx .rkxrow .frad{font-size:12px;padding:4px 9px;border-radius:999px;border:1.5px solid #0d7a63;background:#fff;color:#0d7a63;font-weight:700;white-space:nowrap;cursor:pointer}
+.rkx .rkxrow .frad[disabled]{opacity:.7;cursor:default}
+.rkxside .rkxsb{display:grid;gap:8px}
+.rkxg{display:grid;gap:4px;text-align:left;border:1.5px solid #e2dbcb;background:#fff;border-radius:14px;padding:10px 12px;font:inherit;color:#2c3a33;cursor:pointer;width:100%}
+.rkxg:hover{border-color:#9cc4b1}
+.rkxgh{display:flex;align-items:center;gap:8px}.rkxgh b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}.rkxgh i{font-style:normal;color:#8a8172}
+.rkxg .rkxgl{display:grid;gap:2px;margin:0}
+.rkxg .rkxgr{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:6px;padding:2px 0;border:0;font-size:13px}
+.rkxg .rkxgr em{font-style:normal;text-align:center}.rkxg .rkxgr b{font-weight:800}
+.rkxg .rkxgl.none{font-size:12px;color:#8a8172}
+.rkxrew{padding:18px!important}.rkxrew h3{margin:0 0 10px;font-size:18px;color:#1f3b33}
+@media (max-width:480px){.rkx.rkxbgon{padding:10px;border-radius:18px}.rkx .rkxlist .rkxrow,.rkx .rkxmine .rkxrow{grid-template-columns:34px 30px minmax(0,1fr) auto;row-gap:4px}.rkx .rkxrow .frad{grid-column:3/5;justify-self:start}}
+html.dark .rkx.rkxbgon .panel,[data-theme="dark"] .rkx.rkxbgon .panel,[data-theme="dark"] .rkx.rkxbgon .rkxhead,[data-theme="dark"] .rkx.rkxbgon .rkxbar{background:rgba(28,30,28,.86)!important;color:#eee}
+
 
 /* ---- Pro trọn đời: Đồng hành sớm ---- */
 .u174o-life .u184tag{background:linear-gradient(90deg,#c0392b,#e67e22);color:#fff}
@@ -7415,6 +7441,74 @@ html body #gscene.gz.gz .gzst .gpx.gp-lh{width:calc(var(--s,1)*100px)!important;
 html body #gscene.gz.gz .gztag.ripe{flex-direction:row;gap:4px;padding:1px 7px 1px 2px;background:#fff6e2}
 html body #gscene.gz.gz .gztag.ripe .gbbar{display:none}
 html body #gscene.gz.gz .gztag.ripe::before{content:'Thu hoạch!';display:block;font-weight:800;color:#fff;background:#e8640c;border-radius:999px;padding:0 6px;font-size:max(9px,calc(var(--s,1)*11px));line-height:1.35}
+.rkx.rkxbgon #rkboard.rkxmain{background:linear-gradient(180deg,rgba(255,253,248,.35) 0,rgba(255,253,248,.55) 300px,rgba(255,253,248,.82) 520px)!important;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.rkx.rkxbgon .rkxmh h2,.rkx.rkxbgon .rkxmine-h{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(255,253,248,.9)}
+.rkx.rkxbgon .rkxnm{background:rgba(255,253,248,.92);border-radius:999px;padding:2px 10px}
+.rkx.rkxbgon .rkxpod{background:none}
+.rkx.rkxbgon .rkxstep{box-shadow:0 8px 20px -14px rgba(0,0,0,.5)}
+.rkx.rkxbgon .rkxp.p2 .rkxstep,.rkx.rkxbgon .rkxp.p3 .rkxstep{background:rgba(227,238,230,.95)}
+.rkx.rkxbgon .rkxp.p1 .rkxstep{background:rgba(253,239,200,.97)}
+@media (max-width:480px){.rkx .rkxlist .rkxrow,.rkx .rkxmine .rkxrow{grid-template-columns:34px 30px minmax(0,1fr) auto;padding:8px}
+ .rkx .rkxrow>.rkxr{grid-column:1;grid-row:1}.rkx .rkxrow>.rkxa{grid-column:2;grid-row:1}.rkx .rkxrow>.rkxn{grid-column:3;grid-row:1}
+ .rkx .rkxrow>b{grid-column:4;grid-row:1}.rkx .rkxrow>.frad{grid-column:3/5;grid-row:2;justify-self:start}}
+/* ===== BXH v2: bục nổi bật · hiệu ứng bay · đồng hồ đếm ngược · cột trò chơi xanh lục ===== */
+.rkx #rkboard.rkxmain{position:relative;overflow:hidden;isolation:isolate}
+.rkx #rkboard>*:not(.rkxfx){position:relative;z-index:1}
+.rkxfx{position:absolute;left:0;right:0;top:0;height:470px;pointer-events:none;z-index:0;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.rkxfx i{position:absolute;left:var(--x);bottom:-50px;font-style:normal;transform:scale(var(--s));animation:rkxup var(--d) linear var(--w) infinite;opacity:0}
+.rkxfx.book i{font-size:26px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+.rkxfx.gold i{width:34px;height:34px;filter:drop-shadow(0 0 8px rgba(255,205,60,.75))}
+.rkxfx.gold i svg{width:100%;height:100%}
+.rkxfx.gold i:nth-child(3n)::after{content:'';position:absolute;right:-6px;top:-4px;width:8px;height:8px;background:#fff6c8;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:rkxtw 1.2s ease-in-out infinite}
+@keyframes rkxup{0%{transform:translate(0,0) rotate(-10deg) scale(var(--s));opacity:0}10%{opacity:.95}50%{transform:translate(14px,-240px) rotate(8deg) scale(var(--s))}85%{opacity:.8}100%{transform:translate(-8px,-500px) rotate(-6deg) scale(var(--s));opacity:0}}
+@keyframes rkxtw{50%{transform:scale(1.6);opacity:.4}}
+@media (prefers-reduced-motion:reduce){.rkxfx i{animation:none;opacity:.35;bottom:auto;top:calc(20% + var(--x) * .5)}}
+/* tiêu đề + đồng hồ góc phải */
+.rkx .rkxmh{align-items:flex-start;flex-wrap:wrap}
+.rkxcd{margin-left:auto;display:grid;justify-items:end;gap:2px;padding:8px 14px;border-radius:16px;background:linear-gradient(160deg,#0f6b55,#094c3d);color:#fff;box-shadow:0 10px 22px -12px rgba(9,76,61,.8),inset 0 1px 0 rgba(255,255,255,.18)}
+.rkxcd small{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.rkxcdv{display:flex;align-items:baseline;gap:3px;font-variant-numeric:tabular-nums}
+.rkxcdv b{font-size:22px;font-weight:900;line-height:1;background:rgba(255,255,255,.14);border-radius:7px;padding:3px 5px;min-width:1.5em;text-align:center}
+.rkxcdv i{font-style:normal;font-size:12px;font-weight:700;margin:0 4px 0 2px;opacity:.9}.rkxcdv em{font-style:normal;font-weight:900;opacity:.75}
+.rkxcd.urgent{background:linear-gradient(160deg,#d63a2f,#9e1f17);box-shadow:0 10px 22px -10px rgba(190,40,30,.85);animation:rkxpulse 1.6s ease-in-out infinite}
+@keyframes rkxpulse{50%{box-shadow:0 0 0 6px rgba(214,58,47,.18),0 10px 22px -10px rgba(190,40,30,.85)}}
+@media (prefers-reduced-motion:reduce){.rkxcd.urgent{animation:none}}
+/* bục 1-2-3 nổi bật */
+.rkx .rkxpod{gap:10px;margin-top:22px}
+.rkx .rkxav{border-width:3.5px;box-shadow:0 8px 18px -8px rgba(0,0,0,.45)}
+.rkx .rkxp.p1 .rkxav{border-color:#f0b429;box-shadow:0 0 0 5px rgba(255,214,102,.55),0 0 26px 4px rgba(255,200,60,.55)}
+.rkx .rkxp.p2 .rkxav{border-color:#a9b8c4;box-shadow:0 0 0 4px rgba(200,212,222,.6),0 8px 18px -8px rgba(0,0,0,.4)}
+.rkx .rkxp.p3 .rkxav{border-color:#cd8a4b;box-shadow:0 0 0 4px rgba(230,170,120,.5),0 8px 18px -8px rgba(0,0,0,.4)}
+.rkx .rkxp.p1 .rkxav::before{content:'👑';position:absolute;left:50%;top:-24px;transform:translateX(-50%) rotate(-8deg);font-size:24px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+.rkx .rkxno{width:28px;height:28px;font-size:14px;border:2px solid #fff;color:#fff}
+.rkx .rkxp.p1 .rkxno{background:#e0a100}.rkx .rkxp.p2 .rkxno{background:#8a9aa8}.rkx .rkxp.p3 .rkxno{background:#b8733a}
+.rkx .rkxnm{font-weight:800}
+.rkx.rkxbgon .rkxp .rkxstep{position:relative;border-radius:18px 18px 6px 6px;padding:28px 8px 14px;gap:8px;border:2px solid rgba(255,255,255,.75);box-shadow:0 14px 26px -14px rgba(0,0,0,.55),inset 0 2px 0 rgba(255,255,255,.6)}
+.rkx.rkxbgon .rkxp.p1 .rkxstep{background:linear-gradient(180deg,#ffe58a,#f5bd2e 60%,#e09f12);min-height:150px}
+.rkx.rkxbgon .rkxp.p2 .rkxstep{background:linear-gradient(180deg,#f1f5f8,#cdd7df 60%,#aebcc7);min-height:118px}
+.rkx.rkxbgon .rkxp.p3 .rkxstep{background:linear-gradient(180deg,#fbe1c8,#e7aa74 60%,#c98245);min-height:100px}
+.rkx .rkxp .rkxstep::before{position:absolute;left:50%;top:-2px;transform:translateX(-50%);font-size:42px;font-weight:900;line-height:1;opacity:.22;color:#3a2a00}
+.rkx .rkxp.p1 .rkxstep::before{content:'1'}.rkx .rkxp.p2 .rkxstep::before{content:'2'}.rkx .rkxp.p3 .rkxstep::before{content:'3'}
+.rkx .rkxval{font-size:22px;font-weight:900;color:#3b2800;text-shadow:0 1px 0 rgba(255,255,255,.7)}
+.rkx .rkxp.p1 .rkxval{font-size:26px}
+.rkx .rkxp.p2 .rkxval{color:#2c3a46}.rkx .rkxp.p3 .rkxval{color:#4a2a10}
+.rkx .rkxpz{display:block;margin:0 auto;max-width:100%;padding:5px 9px;border-radius:12px;background:rgba(255,255,255,.88);color:#7a3b00;font-weight:800;font-size:12px;line-height:1.3;box-shadow:0 3px 8px -4px rgba(0,0,0,.35)}
+.rkx .rkxpz::before{content:'🎁 '}
+.rkx .rkxp.p1 .rkxpz{background:#fff;color:#b23a00;box-shadow:0 0 0 2px #fff3c4,0 4px 10px -4px rgba(170,90,0,.6)}
+@media (max-width:480px){.rkx .rkxpod{gap:6px}.rkx .rkxval{font-size:17px}.rkx .rkxp.p1 .rkxval{font-size:20px}.rkx .rkxpz{font-size:10.5px;padding:4px 6px}.rkxcdv b{font-size:18px}.rkx.rkxbgon .rkxp.p1 .rkxstep{min-height:138px}}
+/* cột BXH trò chơi: khối xanh lục đối lập */
+.rkx .rkxside,.rkx.rkxbgon .rkxside{background:linear-gradient(170deg,#178a6c,#0b6150 60%,#08513f)!important;border-color:#0a5a47!important;color:#fff;backdrop-filter:none}
+.rkx .rkxside .rkxsh h3{color:#fff}
+.rkx .rkxside .rkxt{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff}
+.rkx .rkxside .rkxt.on{background:#fff;border-color:#fff;color:#0b6150}
+.rkx .rkxside .rkxg{background:rgba(255,255,255,.96);border-color:transparent;box-shadow:0 6px 14px -10px rgba(0,0,0,.6)}
+.rkx .rkxside .rkxg:hover{background:#fff;box-shadow:0 0 0 2px #ffd666}
+/* các nút trên thanh kỳ */
+.rkxbar-r{justify-content:flex-end}
+@media (max-width:640px){.rkxbar-r{width:100%;justify-content:flex-start}}
+@media (max-width:480px){.rkx .rkxmh{flex-wrap:nowrap;align-items:center;gap:6px}.rkx .rkxmh h2{font-size:16px;padding:4px 10px}
+ .rkxcd{padding:6px 9px;border-radius:12px;flex-shrink:0}.rkxcd small{font-size:9.5px}.rkxcdv b{font-size:15px;padding:2px 4px}.rkxcdv i{font-size:10px;margin:0 2px 0 1px}
+ .rkxbar-r{gap:6px}.rkxbar-r .rkxbgb{font-size:12px;padding:5px 9px;min-height:32px}.rkx .rkxp.p1 .rkxav::before{font-size:20px;top:-20px}}
 </style>
 </head><body>
 
@@ -7440,12 +7534,12 @@ html body #gscene.gz.gz .gztag.ripe::before{content:'Thu hoạch!';display:block
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='f3d01cd8';
-document.write('<script src="packs/hsk'+L+'.js?v=f3d01cd8"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='3067b43e';
+document.write('<script src="packs/hsk'+L+'.js?v=3067b43e"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f3d01cd8','strokes-file');A('packs/dict.js?v=f3d01cd8','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=3067b43e','strokes-file');A('packs/dict.js?v=3067b43e','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -27715,7 +27809,19 @@ if(GZ_ON)(function(){const bp=potSVG;potSVG=function(){return GZ_NOPOT?'':bp.app
 /* ---------------- 2. Bảng xếp hạng ---------------- */
 (function(){try{['xp','earn'].forEach(b=>{(U166_PRIZE[b].m||[]).forEach(z=>{z.fz=1;});});}catch(e){}
   const bt=u166Txt;u166Txt=function(z,short){const s=bt.apply(this,arguments);return z&&z.fz?s+(s?' + ':'')+(short?'1 ❄️':'1 Băng chuỗi'):s;};})();
-const RKX={gsel:''};
+const RKX={gsel:'',ends:0,t:0};
+(function(){const e=RK_B.find(x=>x[0]==='earn');if(e)e[2]='Phú Hộ';})();
+/* đồng hồ đếm ngược đến lúc chốt bảng: xanh đậm, đỏ khi còn dưới 24 giờ */
+function rkxTick(){clearInterval(RKX.t);const f=()=>{const el=document.getElementById('rkleft');if(!el||!RKX.ends){clearInterval(RKX.t);return;}
+  const s=Math.max(0,RKX.ends-Date.now()),d=Math.floor(s/864e5),h=Math.floor(s%864e5/36e5),m=Math.floor(s%36e5/6e4),sec=Math.floor(s%6e4/1e3),z=n=>String(n).padStart(2,'0');
+  el.classList.toggle('urgent',s<864e5);el.setAttribute('aria-label','Chốt bảng sau '+rkLeft(RKX.ends));
+  el.innerHTML=`<small>Chốt sau</small><span class="rkxcdv">${d?`<b>${d}</b><i>ngày</i>`:''}<b>${z(h)}</b><em>:</em><b>${z(m)}</b><em>:</em><b>${z(sec)}</b></span>`;};
+  f();RKX.t=setInterval(f,1000);}
+/* hiệu ứng nền bục: Kinh nghiệm sách bay lên, Phú Hộ nguyên bảo vàng bay lên */
+function rkxFxHTML(b){const n=12,it=b==='earn'?YB:'<span class="rkxbook">📖</span>';
+  return `<div class="rkxfx ${b==='earn'?'gold':'book'}" aria-hidden="true">${Array.from({length:n},(_,i)=>`<i style="--x:${(i*8.3+3)%100}%;--d:${(5+(i*7)%5).toFixed(1)}s;--w:${-(i*1.3).toFixed(1)}s;--s:${(.7+(i%4)*.18).toFixed(2)}">${b==='earn'||i%3?it:'<span class="rkxbook">📚</span>'}</i>`).join('')}</div>`;}
+/* nền tranh HSK: dùng chung ảnh nền đã chọn ở Bảng tin (6 tranh HSK, Tự động theo cấp đang học) */
+function rkxBg(){const v=app.querySelector('.rkx');if(!v)return;let k='hsk1';try{k=u180BgKey();}catch(e){}v.dataset.bg=k;v.style.setProperty('--rkxbg',`url('bg/${k}.webp')`);v.classList.add('rkxbgon');}
 function rkxPrizes(b,p){if(p==='a')return null;return ((U166_PRIZE[b]||{})[p])||null;}
 function rkxPodHTML(L,b,p){const Z=rkxPrizes(b,p)||[];
   const one=i=>{const r=L[i],z=Z[i];const pz=z?`<small class="rkxpz">${u166Txt(z)}</small>`:'';
@@ -27723,7 +27829,7 @@ function rkxPodHTML(L,b,p){const Z=rkxPrizes(b,p)||[];
     const nm=r.mine?'Bạn':showName(r.handle,r.name,r.idn);
     return `<div class="rkxp p${i+1}${r.mine?' me':''}"><div class="rkxav">${avHTML(r.av2||r.avatar,i?52:64,r.frame)}<span class="rkxno">${i+1}</span></div><b class="rkxnm">${nm}</b>${ttlChip(r.ttl)}<div class="rkxstep"><span class="rkxval">${rkFmt(r.val,b)}</span>${pz}</div></div>`;};
   return `<div class="rkxpod">${one(1)}${one(0)}${one(2)}</div>`;}
-function rkxRow(r,b){return `<div class="rkxrow${r.mine?' me':''}"><span class="rkxr">#${r.rank}</span><span class="rkxa">${avHTML(r.av2||r.avatar,30,r.frame)}</span><span class="rkxn">${r.mine?'Bạn':showName(r.handle,r.name,r.idn)} ${ttlChip(r.ttl)}</span><b>${rkFmt(r.val,b)}</b></div>`;}
+function rkxRow(r,b){const fu=!r.mine&&r.uid?` data-fu="${esc(r.uid)}" data-fn="${esc(r.name||r.handle||'')}"`:'';return `<div class="rkxrow${r.mine?' me':''}"${fu}><span class="rkxr">#${r.rank}</span><span class="rkxa">${avHTML(r.av2||r.avatar,30,r.frame)}</span><span class="rkxn">${r.mine?'Bạn':showName(r.handle,r.name,r.idn)} ${ttlChip(r.ttl)}</span><b>${rkFmt(r.val,b)}</b></div>`;}
 function rkxMineHTML(j,L,b){if(!gOnline())return `<div class="rkxguest">Đăng nhập để có tên trên bảng xếp hạng và nhận quà. <a class="btn sm pri" href="#settings">Đăng nhập</a></div>`;
   const i=L.findIndex(r=>r.mine);
   if(i>=0){const rows=L.slice(Math.max(0,i-1),i+2);return rows.map(r=>rkxRow(r,b)).join('');}
@@ -27731,36 +27837,32 @@ function rkxMineHTML(j,L,b){if(!gOnline())return `<div class="rkxguest">Đăng n
   return `<div class="rkxguest">Bạn chưa có tên trên bảng kỳ này. Học một bài hoặc chơi một ván là có hạng ngay.</div>`;}
 async function rkxGames(){const box=app.querySelector('.rkxside');if(!box)return;box.querySelectorAll('[data-gbs]').forEach(x=>x.classList.toggle('on',x.dataset.gbs===GB.side));
   const body=box.querySelector('.rkxsb');let j={games:{}};try{j=await gbGet('/v1/gscore/sum?period='+GB.side,60e3);}catch(e){}if(!box.isConnected)return;const G=j.games||{};
-  const ks=GB_ORDER.filter(k=>gbMeta(k));if(!RKX.gsel||!ks.includes(RKX.gsel))RKX.gsel=ks[0];
-  const open=RKX.gsel,m=gbMeta(open),L=G[open]||[];
-  body.innerHTML=`<div class="rkxgsel"><select id="rkxgs" aria-label="Chọn trò chơi">${ks.map(k=>`<option value="${k}"${k===open?' selected':''}>${esc(gbMeta(k).name)}</option>`).join('')}</select></div>
-    <div class="rkxgl">${L.length?L.map(r=>`<div class="rkxgr${r.mine?' me':''}"><span>${gbMedal(r.rank)} ${r.mine?'Bạn':showName(r.handle,r.name,r.idn)}</span><b>${Number(r.best).toLocaleString('vi-VN')}</b></div>`).join(''):'<div class="small muted rkxgempty">Chưa có ai · chơi ngay để đứng đầu!</div>'}</div>
-    <button type="button" class="btn sm ghost rkxgfull" data-gbo="${open}">Xem đầy đủ ${esc(m.name)} ›</button>
-    <div class="rkxgo">${ks.filter(k=>k!==open).map(k=>`<button type="button" class="rkxgb" data-rkxg="${k}">${esc(gbMeta(k).name)} <i aria-hidden="true">›</i></button>`).join('')}</div>`;
-  const sel=body.querySelector('#rkxgs');sel.onchange=()=>{RKX.gsel=sel.value;rkxGames();};
-  body.querySelectorAll('[data-rkxg]').forEach(x=>x.onclick=()=>{RKX.gsel=x.dataset.rkxg;rkxGames();});}
+  const ks=GB_ORDER.filter(k=>gbMeta(k));
+  body.innerHTML=ks.map(k=>{const m=gbMeta(k),L=G[k]||[];return `<button type="button" class="rkxg" data-gbo="${k}"><span class="rkxgh"><span aria-hidden="true">${m.ic||'🎮'}</span><b>${esc(m.name)}</b><i aria-hidden="true">›</i></span>${L.length?`<span class="rkxgl">${L.slice(0,5).map(r=>`<span class="rkxgr${r.mine?' me':''}"><em>${gbMedal(r.rank)}</em><span>${r.mine?'Bạn':showName(r.handle,r.name,r.idn)}</span><b>${Number(r.best).toLocaleString('vi-VN')}</b></span>`).join('')}</span>`:'<span class="rkxgl none">Chưa có ai · chơi ngay để đứng đầu!</span>'}</button>`;}).join('');}
 viewRank=async function(){stopGames();const vis=RK_B.filter(x=>!RK_HID_C.includes(x[0]));if(!vis.some(x=>x[0]===RK.board))RK.board='xp';
   const b=RK.board,p=RK.period,B=RK_B.find(x=>x[0]===b),PN=(RK_P.find(x=>x[0]===p)||RK_P[0])[1];
-  app.innerHTML=`<div class="stack rankv rkx"><div class="rkxhead"><h1><span aria-hidden="true">🏆</span> Bảng xếp hạng</h1>
+  app.innerHTML=`<div class="stack rankv rkx"><div class="rkxhead"><div class="rkxtt"><h1><span aria-hidden="true">🏆</span> Bảng xếp hạng</h1><p class="small muted">Chốt mỗi tuần, mỗi tháng · top 3 nhận quà (có Gói Pro, Băng chuỗi), cúp và danh hiệu.</p></div>
       <div class="rkxbd" role="tablist" aria-label="Chọn bảng">${vis.map(([k,,t])=>`<button role="tab" class="rkxt${k===b?' on':''}" data-rkb="${k}" aria-selected="${k===b}">${t}</button>`).join('')}</div></div>
-    <div class="rkxbar"><div class="rkxper" role="tablist" aria-label="Chọn kỳ">${RK_P.map(([k,t])=>`<button role="tab" class="rkxt${k===p?' on':''}" data-rkp="${k}" aria-selected="${k===p}">${t}</button>`).join('')}</div><span class="rkxleft small muted" id="rkleft"></span></div>
+    <div class="rkxbar"><div class="rkxper" role="tablist" aria-label="Chọn kỳ">${RK_P.map(([k,t])=>`<button role="tab" class="rkxt${k===p?' on':''}" data-rkp="${k}" aria-selected="${k===p}">${t}</button>`).join('')}</div><span class="rkxbar-r">${p!=='a'?`<button type="button" class="rkxbgb" id="rkprev">📜 Kết quả ${p==='w'?'tuần':'tháng'} trước</button>`:''}<button type="button" class="rkxbgb" data-u166all>🎁 Xem tất cả quà</button><button type="button" class="rkxbgb" id="rkxbg" aria-haspopup="dialog">🖼 Đổi nền</button></span></div>
     <div class="rkxgrid"><section class="panel rkxmain" id="rkboard" aria-live="polite"><div class="rkxload"><i></i><i></i><i></i></div></section>
       <aside class="panel rkxside" aria-label="Bảng xếp hạng trò chơi"><div class="rkxsh"><h3><span aria-hidden="true">🎮</span> BXH trò chơi</h3><div class="rkxper sm" role="tablist"><button role="tab" class="rkxt" data-gbs="w">Tuần</button><button role="tab" class="rkxt" data-gbs="a">Mọi thời đại</button></div></div><div class="rkxsb"><div class="rkxload"><i></i><i></i><i></i></div></div></aside></div>
-    <div class="row rkxmore">${p!=='a'?`<button class="btn ghost sm" id="rkprev">📜 Kết quả ${p==='w'?'tuần':'tháng'} trước</button>`:''}<button class="btn ghost sm" type="button" data-u166all>🎁 Xem tất cả quà</button></div>
+    <section class="panel rkxrew"><h3>🎁 ${p==='a'?'Cúp mọi thời đại':'Thưởng '+(p==='w'?'hàng tuần':'hàng tháng')} · ${B[2]}</h3>${rkRewardsHTML(b,p)}</section>
+    <p class="small muted rkxlg">Giải đấu theo hạng đang được làm lại. <a href="#league">Xem giải đấu cũ</a></p>
     ${cupShelfHTML()}</div>`;
   app.querySelectorAll('[data-rkb]').forEach(x=>x.onclick=()=>{RK.board=x.dataset.rkb;viewRank();});
   app.querySelectorAll('[data-rkp]').forEach(x=>x.onclick=()=>{RK.period=x.dataset.rkp;viewRank();});
-  app.querySelectorAll('[data-gbs]').forEach(x=>x.onclick=()=>{GB.side=x.dataset.gbs;rkxGames();});
+  app.querySelectorAll('[data-gbs]').forEach(x=>x.onclick=()=>{GB.side=x.dataset.gbs;rkxGames();});rkxBg();
+  const bgb=app.querySelector('#rkxbg');if(bgb)bgb.onclick=()=>{try{u180BgPick();const d=document.getElementById('u180bgd');if(d&&!d.__rkx){d.__rkx=1;d.addEventListener('close',rkxBg);}}catch(e){}};
   const box=app.querySelector('#rkboard');let prev=false;
   const load=async()=>{const per=prev?'p'+p:p;if(gOnline())rankSync(true);
     const draw=j=>{if(!box.isConnected||location.hash!=='#rank')return;const L=j.list||[];
-      const lf=app.querySelector('#rkleft');if(lf)lf.textContent=prev?'':j.ends?'Chốt sau '+rkLeft(j.ends):'';
+      RKX.ends=prev?0:(j.ends||0);
       const title=prev?`Kết quả ${p==='w'?'tuần':'tháng'} trước`:`Top 3 · ${PN}`;
-      box.innerHTML=`<div class="rkxmh"><h2>${title}</h2>${prev?'<button class="btn sm ghost" id="rkback">← Kỳ hiện tại</button>':''}</div>
+      box.innerHTML=`${rkxFxHTML(b)}<div class="rkxmh"><h2>${title}</h2>${prev?'<button class="btn sm ghost" id="rkback">← Kỳ hiện tại</button>':(RKX.ends?'<div class="rkxcd" id="rkleft" role="timer" aria-live="off"></div>':'')}</div>
         ${L.length?rkxPodHTML(L,b,prev?null:p):`<div class="rkxempty">${baoSVG('think',64)}<p class="small muted">Chưa có ai trên bảng ${prev?'kỳ trước':'kỳ này'}. Học một bài, chơi một ván là có tên ngay!</p>${!prev&&rkxPrizes(b,p)?`<div class="rkxemppz">${rkxPrizes(b,p).map((z,i)=>`<span>${['🥇','🥈','🥉'][i]} ${u166Txt(z)}</span>`).join('')}</div>`:''}</div>`}
         ${prev?'':`<h3 class="rkxmine-h">Hạng của bạn</h3><div class="rkxmine">${rkxMineHTML(j,L,b)}</div>`}
-        ${L.length>3?`<details class="rkxall"><summary>Xem top ${Math.min(50,L.length)}</summary><div class="rkxlist">${L.slice(3).map(r=>rkxRow(r,b)).join('')}</div></details>`:''}`;
-      const bk=box.querySelector('#rkback');if(bk)bk.onclick=()=>{prev=false;load();};};
+        ${L.length>3?`<h3 class="rkxmine-h">Top ${Math.min(50,L.length)} ${prev?'kỳ trước':PN.toLowerCase()}</h3><div class="rkxlist">${L.slice(3,50).map(r=>rkxRow(r,b)).join('')}</div>`:''}`;
+      const bk=box.querySelector('#rkback');if(bk)bk.onclick=()=>{prev=false;load();};rkxTick();};
     const c0=RK.cache[b+per];if(c0)draw(c0);else box.innerHTML='<div class="rkxload"><i></i><i></i><i></i></div>';let j;
     try{const r=await netFetch('GET',API_BASE+'/v1/rank?board='+b+'&period='+per,gOnline()?{'Authorization':'Bearer '+await idToken()}:{},'');j=JSON.parse(r.text||'{}');if(r.status>=400)throw new Error((j.error&&j.error.message)||'Lỗi');}
     catch(e){if(box.isConnected&&!c0)box.innerHTML=`<div class="rkxmh"><h2>Top 3 · ${PN}</h2></div><div class="small" style="color:var(--seal)">${esc(netMsg(e))}</div>`;return;}
