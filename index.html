@@ -7572,6 +7572,31 @@ html body #gscene.gz.gz .gztag.ripe::before{content:'Thu hoạch!';display:block
 #lrail .wf .wfn{padding:5px 7px;font-size:12px}
 #lrail .wf .wfn time{display:none}
 @media (max-width:640px){.wf.full .wflist{max-height:max(240px,calc(100dvh - 430px));min-height:220px}.wfpage .wchhead p{font-size:13px}}
+/* ===== 5.140 Cập nhật app ===== */
+.u186bar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;width:min(1040px,calc(100% - 32px));box-sizing:border-box;margin:12px auto 0;padding:10px 14px;border-radius:16px;
+  background:linear-gradient(120deg,color-mix(in srgb,var(--jade,#0d7a63) 12%,var(--card)),var(--card));border:1.5px solid color-mix(in srgb,var(--jade,#0d7a63) 35%,var(--line));color:var(--ink)}
+.u186bi{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-size:18px;font-weight:900;color:#fff;background:var(--jade,#0d7a63)}
+.u186bt b{display:block;font-size:14.5px}.u186bt b span{font-size:12px;font-weight:800;color:var(--jade,#0d7a63);background:color-mix(in srgb,var(--jade,#0d7a63) 12%,transparent);padding:1px 7px;border-radius:999px;margin-left:4px}
+.u186bt small{display:block;font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.u186ba{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.u186go{background:var(--jade,#0d7a63)!important;color:#fff!important;border-color:transparent!important;font-weight:800}
+.u186x{all:unset;cursor:pointer;font-size:12.5px;font-weight:700;color:var(--muted);padding:6px 8px;border-radius:8px}
+.u186x:hover{color:var(--ink);background:color-mix(in srgb,var(--line) 50%,transparent)}
+.u186x:focus-visible,.u186alt:focus-visible{outline:2px solid var(--jade,#0d7a63);outline-offset:2px}
+@media (max-width:560px){.u186bar{grid-template-columns:auto minmax(0,1fr)}.u186ba{grid-column:1/-1;justify-content:stretch}.u186ba .btn{flex:1}}
+/* màn chắn: nội dung ở giữa màn hình, không sát đáy */
+html.u186lock,html.u186lock body{overflow:hidden}
+.u186blk{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));overflow:auto;
+  background:color-mix(in srgb,var(--paper,#f6f3ea) 94%,transparent);backdrop-filter:blur(6px)}
+.u186card{width:min(420px,100%);box-sizing:border-box;text-align:center;padding:24px 22px 20px;border-radius:24px;background:var(--card);border:1.5px solid var(--line);box-shadow:0 24px 60px -30px rgba(0,0,0,.45);color:var(--ink)}
+.u186m{width:120px;height:120px;object-fit:contain;margin:-8px auto 6px;display:block}
+.u186card h2{margin:0 0 8px;font-size:22px}.u186card p{margin:0 0 14px;line-height:1.5;color:var(--ink)}
+.u186big{width:100%;padding:12px 16px;font-size:16px}
+.u186v{margin:12px 0 0!important;color:var(--muted)!important}
+.u186alt{all:unset;cursor:pointer;margin-top:8px;font-size:13px;font-weight:700;color:var(--jade,#0d7a63);padding:6px 10px;border-radius:8px}
+.u186prog{height:10px;border-radius:999px;background:color-mix(in srgb,var(--line) 70%,transparent);overflow:hidden;margin:4px 0 8px}
+.u186prog i{display:block;height:100%;background:var(--jade,#0d7a63);border-radius:999px;transition:width .4s}
+@media (prefers-reduced-motion:reduce){.u186prog i{transition:none}}
 </style>
 </head><body>
 
@@ -7597,12 +7622,12 @@ html body #gscene.gz.gz .gztag.ripe::before{content:'Thu hoạch!';display:block
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='1e2ea8e0';
-document.write('<script src="packs/hsk'+L+'.js?v=1e2ea8e0"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='ecfb0019';
+document.write('<script src="packs/hsk'+L+'.js?v=ecfb0019"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=1e2ea8e0','strokes-file');A('packs/dict.js?v=1e2ea8e0','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ecfb0019','strokes-file');A('packs/dict.js?v=ecfb0019','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -28059,6 +28084,95 @@ function wfPop(t){let d=document.getElementById('wfpop');if(!d){d=document.creat
 setInterval(()=>{if(!document.hidden&&document.querySelector('.wf'))wchLoad();},20000);
 setTimeout(()=>{try{wfPaint(true);}catch(e){}if(SOC.auth&&typeof u178Load==='function')u178Load().then(()=>wfStatusSync());},2600);
 if(window.__T)window.__u185={WF,wfPaint,wfRows,wfPop,wfCanSend,wfStatus,wfPaid,wfHTML,setChat:c=>{WF.chat=c;wfStatusSync();}};
+
+/* ===== 5.140 Cập nhật app (Android, iOS) =====
+   - Máy chủ /v1/config trả appver {android:{min,rec}, ios:{min,rec}, note}, chỉnh ở trang quản trị (tab "Phiên bản app")
+   - App cũ hơn "khuyên dùng": dải nhỏ "Có bản mới" nằm trong luồng trang (không đè nội dung), đóng được 3 ngày
+   - App cũ hơn "tối thiểu": màn hình chắn "Cần cập nhật để tiếp tục" cho tới khi cập nhật
+   - Android có In-App Updates: cập nhật ngay trong app (khuyên dùng = tải nền rồi khởi động lại, tối thiểu = cập nhật toàn màn hình)
+   - App Android cũ (chưa có AndroidApp.appVersion) được coi là cũ hơn mọi phiên bản; nút Cập nhật mở CH Play
+   - Web thường: không hiện gì */
+const U186_PLAY='https://play.google.com/store/apps/details?id=com.kasser.tamhsk';
+const U186_STORE='https://apps.apple.com/app/id6837971457';
+const U186={os:'',ver:'',min:'',rec:'',note:'',at:0,mode:'',poll:0,busy:0};
+function u186Os(){if(window.__TAMHSK_IOS)return 'ios';if(window.AndroidApp&&!window.__TAMHSK_IOS)return 'android';return '';}
+function u186Ver(os){try{if(os==='ios')return String(window.__IOS_VER||'');if(typeof AndroidApp.appVersion==='function')return String(AndroidApp.appVersion()||'');}catch(e){}return '';}
+function u186Cmp(a,b){const A=String(a).split('.').map(n=>parseInt(n,10)||0),B=String(b).split('.').map(n=>parseInt(n,10)||0);
+  for(let i=0;i<Math.max(A.length,B.length);i++){const d=(A[i]||0)-(B[i]||0);if(d)return d<0?-1:1;}return 0;}
+const u186Old=v=>!!v&&(!U186.ver||u186Cmp(U186.ver,v)<0);
+const u186InApp=()=>U186.os==='android'&&typeof AndroidApp.updStart==='function';
+function u186State(){try{return JSON.parse(AndroidApp.updState()||'{}')||{};}catch(e){return {};}}
+function u186Mascot(){try{return charPoseSrc('cheer');}catch(e){return typeof MASCOT_URL!=='undefined'?MASCOT_URL:'';}}
+function u186Store(){const u=U186.os==='ios'?U186_STORE:U186_PLAY;
+  try{if(window.AndroidApp&&typeof AndroidApp.openUrl==='function'){AndroidApp.openUrl(u);return;}}catch(e){}
+  const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();}
+async function u186Cfg(){const url=API_BASE+'/v1/config';
+  try{const r=await fetch(url,{cache:'no-store'});if(r.ok)return await r.json();}catch(e){}
+  try{if(typeof netFetch==='function'){const r=await netFetch('GET',url,{},'');if(r.status<400)return JSON.parse(r.text||'{}');}}catch(e){}
+  return null;}
+function u186Hidden(){let v='';try{v=localStorage.getItem('hsk-u186x')||'';}catch(e){}const [ver,t]=v.split('|');return ver===U186.rec&&Date.now()-(+t||0)<3*864e5;}
+/* ---------- dải nhắc (khuyên dùng) ---------- */
+function u186BarHTML(st){const s=st||{},dl=s.status==='downloading',ok=s.status==='downloaded';
+  const pct=dl&&s.total>0?Math.round(s.done*100/s.total):0;
+  return `<div class="u186bi" aria-hidden="true">⬆</div><div class="u186bt"><b>${ok?'Bản mới đã tải xong':'Có bản Tâm HSK mới'}${U186.rec?` <span>${esc(U186.rec)}</span>`:''}</b>
+    <small>${ok?'Khởi động lại app để dùng bản mới.':dl?`Đang tải bản mới… ${pct?pct+'%':''}`:esc(U186.note||'Cập nhật để dùng tính năng mới và bản sửa lỗi.')}</small></div>
+    <div class="u186ba">${ok?'<button class="btn sm u186go" type="button" data-u186="finish">Khởi động lại</button>':dl?'':'<button class="btn sm u186go" type="button" data-u186="go">Cập nhật</button>'}
+    ${ok||dl?'':'<button class="u186x" type="button" data-u186="later" aria-label="Để sau">Để sau</button>'}</div>`;}
+function u186Bar(st){if(document.getElementById('u186blk'))return;let el=document.getElementById('u186bar');const app=document.getElementById('app');if(!app)return;
+  if(!el){el=document.createElement('div');el.id='u186bar';el.className='u186bar';el.setAttribute('role','status');app.insertAdjacentElement('beforebegin',el);}
+  el.innerHTML=u186BarHTML(st);u186Gap(el);}
+/* không để linh thú nổi ở góc (#lhpet) đè lên dải nhắc */
+function u186Gap(el){try{el.style.marginTop='';const pet=document.getElementById('lhpet');if(!pet||getComputedStyle(pet).position!=='fixed')return;
+  const p=pet.getBoundingClientRect(),r=el.getBoundingClientRect();if(!p.width||p.right<=r.left||p.left>=r.right)return;
+  if(window.scrollY<5&&r.top<p.bottom+6)el.style.marginTop=(12+Math.ceil(p.bottom+6-r.top))+'px';}catch(e){}}
+function u186BarOff(){const el=document.getElementById('u186bar');if(el)el.remove();}
+/* ---------- màn chắn (tối thiểu) ---------- */
+function u186Block(st){u186BarOff();let el=document.getElementById('u186blk');
+  if(!el){el=document.createElement('div');el.id='u186blk';el.className='u186blk';el.setAttribute('role','dialog');el.setAttribute('aria-modal','true');el.setAttribute('aria-labelledby','u186h');document.body.appendChild(el);document.documentElement.classList.add('u186lock');}
+  const s=st||{},dl=s.status==='downloading'||s.status==='installing',pct=s.total>0?Math.round(s.done*100/s.total):0,m=u186Mascot();
+  el.innerHTML=`<div class="u186card">${m?`<img class="u186m" src="${m}" alt="" draggable="false">`:''}
+    <h2 id="u186h">Cần cập nhật để tiếp tục</h2>
+    <p>${esc(U186.note||'Phiên bản bạn đang dùng đã cũ và không còn được hỗ trợ. Cập nhật lên bản mới để học tiếp, dữ liệu của bạn vẫn giữ nguyên.')}</p>
+    ${dl?`<div class="u186prog" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i style="width:${pct||8}%"></i></div><p class="small muted">Đang cập nhật… ${pct?pct+'%':''}</p>`
+      :`<button class="btn u186go u186big" type="button" data-u186="${s.status==='downloaded'?'finish':'go'}">${s.status==='downloaded'?'Khởi động lại để cập nhật':U186.os==='ios'?'Cập nhật trên App Store':'Cập nhật ngay'}</button>`}
+    <p class="small muted u186v">Phiên bản của bạn: <b>${esc(U186.ver||'cũ')}</b> · Cần tối thiểu: <b>${esc(U186.min)}</b></p>
+    ${U186.os==='android'?'<button class="u186alt" type="button" data-u186="store">Mở CH Play</button>':''}</div>`;}
+/* ---------- hành động ---------- */
+function u186Watch(){clearInterval(U186.poll);let n=0;U186.poll=setInterval(()=>{const st=u186State();n++;
+  if(st.status==='failed'||st.status==='unavailable'||st.status==='canceled'){clearInterval(U186.poll);U186.busy=0;
+    if(U186.mode==='immediate'){u186Block({});if(st.status!=='canceled')u186Store();}else u186Bar({});return;}
+  if(U186.mode==='immediate'){if(st.status==='downloading'||st.status==='installing'||st.status==='downloaded')u186Block(st);}
+  else u186Bar(st);
+  if(st.status==='downloaded'&&U186.mode!=='immediate'){clearInterval(U186.poll);U186.busy=0;}
+  if(n>1800){clearInterval(U186.poll);U186.busy=0;}},1000);}
+function u186Go(){const imm=!!document.getElementById('u186blk');
+  if(!u186InApp()){u186Store();return;}
+  if(U186.busy)return;U186.busy=1;U186.mode=imm?'immediate':'flexible';
+  let ok=false;try{ok=AndroidApp.updStart(U186.mode)!==false;}catch(e){ok=false;}
+  if(!ok){U186.busy=0;u186Store();return;}u186Watch();}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-u186]');if(!b)return;const k=b.dataset.u186;
+  if(k==='go')u186Go();
+  else if(k==='store')u186Store();
+  else if(k==='finish'){try{AndroidApp.updFinish();}catch(e){u186Store();}}
+  else if(k==='later'){try{localStorage.setItem('hsk-u186x',U186.rec+'|'+Date.now());}catch(e){}u186BarOff();}});
+/* ---------- kiểm tra ---------- */
+async function u186Check(force){U186.os=u186Os();if(!U186.os)return;
+  if(!force&&Date.now()-U186.at<36e5&&U186.at)return;U186.at=Date.now();
+  U186.ver=u186Ver(U186.os);
+  const j=await u186Cfg();const a=j&&j.appver&&j.appver[U186.os];if(!a)return;
+  U186.min=a.min||'';U186.rec=a.rec||'';U186.note=(j.appver.note||'').trim();
+  if(u186Old(U186.min)){u186Block(u186InApp()?u186State():{});return;}
+  const blk=document.getElementById('u186blk');if(blk){blk.remove();document.documentElement.classList.remove('u186lock');}
+  const st=u186InApp()?u186State():{};
+  if(st.status==='downloaded'){U186.mode='flexible';u186Bar(st);return;}
+  if(u186Old(U186.rec)&&!u186Hidden())u186Bar(st);else if(!U186.busy)u186BarOff();}
+/* Android: hỏi Google Play sẵn để nút bấm phản hồi nhanh */
+try{if(u186Os()==='android'&&typeof AndroidApp.updCheck==='function')AndroidApp.updCheck();}catch(e){}
+setTimeout(()=>u186Check(true),1800);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')u186Check(false);});
+/* sau mỗi lần đổi trang, dải nhắc vẫn phải nằm ngay trên nội dung */
+window.addEventListener('hashchange',()=>{const el=document.getElementById('u186bar'),app=document.getElementById('app');if(el&&app&&el.nextElementSibling!==app)app.insertAdjacentElement('beforebegin',el);});
+window.__u186={U186,u186Cmp,u186Check,u186Block,u186Bar};
 
 function route(){
   stopGames();
