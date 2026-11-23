@@ -7597,6 +7597,92 @@ html.u186lock,html.u186lock body{overflow:hidden}
 .u186prog{height:10px;border-radius:999px;background:color-mix(in srgb,var(--line) 70%,transparent);overflow:hidden;margin:4px 0 8px}
 .u186prog i{display:block;height:100%;background:var(--jade,#0d7a63);border-radius:999px;transition:width .4s}
 @media (prefers-reduced-motion:reduce){.u186prog i{transition:none}}
+/* ===== 5.141 ===== */
+/* --- Điện thoại: không bao giờ được thừa trái/phải hay kéo ngang (luật thiết kế) --- */
+@media (max-width:768px){
+  html{overflow-x:hidden;max-width:100%}
+  body{overflow-x:clip;max-width:100%}
+  main#app,main#app.wrap{max-width:100%;min-width:0;overflow-x:clip;box-sizing:border-box}
+  main#app img,main#app video,main#app canvas,main#app svg:not([width]),main#app table,main#app pre{max-width:100%}
+  main#app pre,main#app code{white-space:pre-wrap;overflow-wrap:anywhere}
+  .wpost,.wpost *,.fdpost,.fdpost *,.rpfd,.thrrow{min-width:0}
+  .wpost p,.wpost .wtx,.wtext,.fdpost p{overflow-wrap:anywhere;word-break:break-word}
+}
+/* --- BXH: bục top 3 không được chồng lên nhau ở màn hẹp --- */
+.rkx .rkxpod,.rkxpod{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr) minmax(0,1fr)}
+.rkxp{min-width:0;max-width:100%}
+.rkxp>*{max-width:100%;box-sizing:border-box}
+.rkxp .rkxstep{width:100%;min-width:0;overflow:hidden}
+.rkxp .rkttl{display:inline-block;max-width:100%;margin:2px 0 4px;white-space:normal;overflow-wrap:anywhere;text-align:center;line-height:1.25}
+.rkxp .rkxval{display:block;max-width:100%;overflow-wrap:anywhere;line-height:1.1}
+.rkxp .rkxpz{display:block;max-width:100%;overflow-wrap:anywhere}
+@media (max-width:480px){
+  .rkx .rkxpod{gap:5px}
+  .rkxp .rkttl{font-size:10px;padding:2px 6px}
+  .rkx .rkxp .rkxval{font-size:clamp(13px,4.4vw,17px)}
+  .rkx .rkxp.p1 .rkxval{font-size:clamp(15px,5vw,20px)}
+  .rkx.rkxbgon .rkxp .rkxstep{padding:24px 5px 10px}
+  .rkx .rkxpz{font-size:10px;padding:3px 5px}
+  .rkxp .rkxnm{font-size:12.5px}
+}
+@media (max-width:360px){.rkx .rkxp .rkxstep::before{font-size:34px}.rkxp .rkttl{font-size:9.5px}}
+/* --- Máy tính: chữ ở cột trái to hơn --- */
+@media (min-width:769px){
+  html:not(.tabbar) #lrail .u182hd,html:not(.tabbar) #lrail .rphd,html:not(.tabbar) #lrail .rptg{font-size:15px}
+  html:not(.tabbar) #lrail .rptg,html:not(.tabbar) #lrail .u182hd b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  html:not(.tabbar) #lrail .u182tabs button{font-size:13px}
+  html:not(.tabbar) #lrail .thrrow b{font-size:14.5px}
+  html:not(.tabbar) #lrail .thrrow small{font-size:13px;line-height:1.35}
+  html:not(.tabbar) #lrail .thrr small{font-size:12px}
+  html:not(.tabbar) #lrail .rpfd b{font-size:14.5px}
+  html:not(.tabbar) #lrail .rpfd small{font-size:13px;line-height:1.4}
+  html:not(.tabbar) #lrail .rpn{font-size:14px}
+  html:not(.tabbar) #lrail .rplink{font-size:13.5px}
+  html:not(.tabbar) #lrail .rpempty,html:not(.tabbar) #lrail .small{font-size:13.5px}
+  html:not(.tabbar) #lrail .rpopt{font-size:13px}
+  html:not(.tabbar) #lrail .rkttl{font-size:12px}
+  html:not(.tabbar) #lrail .wf .wft{font-size:13px;padding:4px 10px}
+  html:not(.tabbar) #lrail .wf .wfn{font-size:14px;padding:6px 9px}
+  html:not(.tabbar) #lrail .wf .wchx{font-size:14.5px}
+  html:not(.tabbar) #lrail .wf .wchm{font-size:12.5px}
+  html:not(.tabbar) #lrail .wfin{font-size:14.5px}
+  html:not(.tabbar) #lrail .wfst{font-size:12.5px}
+  html:not(.tabbar) #lrail .evban b,html:not(.tabbar) #lrail .evban strong{font-size:15px}
+  html:not(.tabbar) #lrail .evban small,html:not(.tabbar) #lrail .evban span{font-size:13px}
+}
+/* --- Máy tính: một nút góc, rê chuột bung menu --- */
+html:not(.tabbar):not(.fs) #viewtools.u187{width:auto!important;padding:0!important;gap:0;background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;opacity:1!important;display:block}
+html:not(.tabbar):not(.fs) #viewtools.u187::before{content:'';position:absolute;left:-12px;bottom:-14px;width:96px;height:96px}
+.u187fab,.u187nav,.u187sep{display:none}
+html:not(.tabbar):not(.fs) .u187fab{position:relative;display:grid;place-items:center;gap:2px;width:60px;height:60px;border-radius:20px;border:0;cursor:pointer;background:var(--jade,#0d7a63);color:var(--jade-ink,#fff);
+  box-shadow:0 12px 24px -12px color-mix(in srgb,var(--jade,#0d7a63) 85%,#000);transition:transform .2s,border-radius .25s,box-shadow .2s;font:inherit}
+html:not(.tabbar):not(.fs) .u187fab:hover,html:not(.tabbar):not(.fs) #viewtools.open .u187fab{transform:translateY(-2px)}
+html:not(.tabbar):not(.fs) #viewtools.open .u187fab{border-radius:50%}
+.u187fab:focus-visible{outline:3px solid color-mix(in srgb,var(--jade,#0d7a63) 45%,#fff);outline-offset:3px}
+.u187bars{display:grid;gap:4px;width:22px}.u187bars i{display:block;height:2.5px;border-radius:2px;background:currentColor;transition:transform .25s,opacity .2s}
+#viewtools.open .u187bars i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}#viewtools.open .u187bars i:nth-child(2){opacity:0}#viewtools.open .u187bars i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.u187lb{font-size:10.5px;font-weight:800;letter-spacing:.02em;line-height:1}
+html:not(.tabbar):not(.fs) .u187menu{position:absolute;left:0;bottom:72px;width:212px;display:grid;gap:2px;padding:8px;border-radius:20px;background:var(--card);border:1.5px solid var(--line);
+  box-shadow:0 22px 44px -18px rgba(0,0,0,.45);transform-origin:12% 100%;transform:translateY(12px) scale(.92);opacity:0;visibility:hidden;pointer-events:none;transition:transform .22s cubic-bezier(.2,.9,.3,1.2),opacity .18s,visibility 0s .22s}
+html:not(.tabbar):not(.fs) #viewtools.open .u187menu{transform:none;opacity:1;visibility:visible;pointer-events:auto;transition:transform .26s cubic-bezier(.2,.9,.3,1.25),opacity .18s,visibility 0s}
+html:not(.tabbar):not(.fs) .u187nav{display:grid;gap:2px}
+html:not(.tabbar):not(.fs) .u187sep{display:block;height:1px;margin:5px 6px;background:var(--line)}
+html:not(.tabbar):not(.fs) .u187tools{display:grid;gap:2px}
+html:not(.tabbar):not(.fs) #viewtools .u187it{display:flex!important;flex-direction:row!important;align-items:center;justify-content:flex-start!important;gap:11px!important;width:auto!important;padding:6px 10px 6px 6px!important;border-radius:14px;text-decoration:none;color:var(--ink);background:transparent;border:0;cursor:pointer;font:inherit;text-align:left;
+  opacity:0;transform:translateY(10px);transition:opacity .18s,transform .22s,background .15s}
+html:not(.tabbar):not(.fs) #viewtools.open .u187it{opacity:1;transform:none;transition-delay:calc((8 - var(--i,0)) * 22ms),calc((8 - var(--i,0)) * 22ms),0s}
+html:not(.tabbar):not(.fs) #viewtools .u187it:hover,html:not(.tabbar):not(.fs) #viewtools .u187it:focus-visible{background:color-mix(in srgb,var(--jade,#0d7a63) 12%,transparent);outline:none;transform:none}
+html:not(.tabbar):not(.fs) #viewtools .u187it i{flex:none;width:38px!important;height:38px!important;display:grid;place-items:center;border-radius:12px!important;background:var(--paper,var(--bg))!important;border:1.5px solid var(--line)!important;box-shadow:none!important;font-style:normal;font-size:18px!important;overflow:hidden}
+html:not(.tabbar):not(.fs) #viewtools .u187it i svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+html:not(.tabbar):not(.fs) #viewtools .u187it i .avatar,html:not(.tabbar):not(.fs) #viewtools .u187it i .av{width:30px!important;height:30px!important}
+html:not(.tabbar):not(.fs) #viewtools .u187it b{display:block!important;font-size:14.5px!important;font-weight:700;opacity:1!important;white-space:nowrap}
+html:not(.tabbar):not(.fs) #viewtools .u187it.on{background:color-mix(in srgb,var(--jade,#0d7a63) 14%,transparent);color:var(--jade,#0d7a63)}
+html:not(.tabbar):not(.fs) #viewtools .u187it.on i{background:var(--jade,#0d7a63)!important;color:var(--jade-ink,#fff);border-color:var(--jade,#0d7a63)!important}
+html:not(.tabbar):not(.fs) #viewtools .vtb.on i{background:var(--jade,#0d7a63)!important;color:var(--jade-ink,#fff)}
+html:not(.tabbar):not(.fs) #viewtools .vtui{display:flex!important}
+/* điện thoại / toàn màn hình: hiện thẳng các nút cũ */
+html.tabbar #viewtools .u187menu,html.fs #viewtools .u187menu,html.tabbar #viewtools .u187tools,html.fs #viewtools .u187tools{display:contents}
+@media (prefers-reduced-motion:reduce){html:not(.tabbar) .u187menu,html:not(.tabbar) #viewtools .u187it,.u187bars i,.u187fab{transition:none!important}}
 </style>
 </head><body>
 
@@ -7622,12 +7708,12 @@ html.u186lock,html.u186lock body{overflow:hidden}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='ecfb0019';
-document.write('<script src="packs/hsk'+L+'.js?v=ecfb0019"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='13bcb44e';
+document.write('<script src="packs/hsk'+L+'.js?v=13bcb44e"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ecfb0019','strokes-file');A('packs/dict.js?v=ecfb0019','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=13bcb44e','strokes-file');A('packs/dict.js?v=13bcb44e','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -28173,6 +28259,39 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 /* sau mỗi lần đổi trang, dải nhắc vẫn phải nằm ngay trên nội dung */
 window.addEventListener('hashchange',()=>{const el=document.getElementById('u186bar'),app=document.getElementById('app');if(el&&app&&el.nextElementSibling!==app)app.insertAdjacentElement('beforebegin',el);});
 window.__u186={U186,u186Cmp,u186Check,u186Block,u186Bar};
+
+/* ===== 5.141 Máy tính: nút góc dưới bên trái gộp các công cụ + điều hướng, rê chuột thì bung menu =====
+   - Gộp Toàn màn hình, Tắt đèn, Giao diện vào một nút tròn; thêm 5 mục giống thanh tab điện thoại (Học, Từ điển, Trò chơi, Khám phá, Tôi)
+   - Rê chuột vào góc (hoặc bấm, hoặc Tab tới) thì menu bung lên theo hiệu ứng lần lượt; rời chuột / Esc thì thu lại
+   - Điện thoại và chế độ toàn màn hình: giữ nguyên các nút cũ (menu hiện thẳng, không có nút gộp) */
+const U187_NAV=[['home','#home','Học'],['tudien','#tudien','Từ điển'],['games','#games','Trò chơi'],['explore','#more','Khám phá'],['me','#profile','Tôi']];
+function u187Ic(k){try{const it=TB_ITEMS.find(x=>x[0]===k);if(k==='me'){try{return avHTML(myAv(),24,SHOP().frame);}catch(e){return '🙂';}}
+  return it?`<svg viewBox="0 0 24 24" aria-hidden="true">${it[2]}</svg>`:'';}catch(e){return '';}}
+function u187Act(){try{return tbActive();}catch(e){return '';}}
+function u187Nav(){const act=u187Act();return U187_NAV.map(([k,h,t],i)=>`<a class="u187it u187nv${act===k?' on':''}" href="${h}" role="menuitem" data-u187="${k}" style="--i:${i}"${act===k?' aria-current="page"':''}><i>${u187Ic(k)}</i><b>${t}</b></a>`).join('');}
+function u187Build(){const t=document.getElementById('viewtools');if(!t)return;
+  if(!t.querySelector('.u187fab')){
+    const tools=[...t.querySelectorAll(':scope > .vtb')];
+    t.classList.add('u187');
+    t.insertAdjacentHTML('afterbegin',`<div class="u187menu" id="u187menu" role="menu" aria-label="Menu nhanh"><div class="u187nav"></div><div class="u187sep" aria-hidden="true"></div><div class="u187tools"></div></div>
+      <button type="button" class="u187fab" aria-haspopup="menu" aria-expanded="false" aria-controls="u187menu" title="Menu nhanh"><span class="u187bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="u187lb">Menu</span></button>`);
+    const box=t.querySelector('.u187tools');tools.forEach((b,j)=>{b.classList.add('u187it');b.style.setProperty('--i',U187_NAV.length+j);b.setAttribute('role','menuitem');box.appendChild(b);});
+    const fab=t.querySelector('.u187fab');let tm=0;
+    let at=0;const open=v=>{clearTimeout(tm);const was=t.classList.contains('open');if(v===was)return;if(v){at=Date.now();u187Paint();}t.classList.toggle('open',v);fab.setAttribute('aria-expanded',String(v));};
+    t.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover)').matches)open(true);});
+    t.addEventListener('mouseleave',()=>{clearTimeout(tm);tm=setTimeout(()=>open(false),260);});
+    t.addEventListener('focusin',()=>open(true));
+    t.addEventListener('focusout',e=>{if(!t.contains(e.relatedTarget))tm=setTimeout(()=>open(false),120);});
+    fab.addEventListener('click',()=>{const o=t.classList.contains('open');if(o&&Date.now()-at<600)return;open(!o);});
+    t.addEventListener('click',e=>{if(e.target.closest('.u187nv'))setTimeout(()=>open(false),60);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&t.classList.contains('open')){open(false);fab.focus();}});
+    document.addEventListener('pointerdown',e=>{if(t.classList.contains('open')&&!t.contains(e.target))open(false);});}
+  u187Paint();}
+function u187Paint(){const t=document.getElementById('viewtools');const n=t&&t.querySelector('.u187nav');if(n)n.innerHTML=u187Nav();}
+(function(){const base=fsBtnSync;fsBtnSync=function(){base.apply(this,arguments);try{u187Build();}catch(e){}};})();
+addEventListener('hashchange',()=>setTimeout(u187Paint,80));
+setTimeout(()=>{try{u187Build();}catch(e){}},600);
+if(window.__T)window.__u187={u187Build,u187Paint};
 
 function route(){
   stopGames();
