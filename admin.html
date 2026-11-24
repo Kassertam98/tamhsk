@@ -32,6 +32,18 @@ a{color:var(--jade)}
 .artprev{max-height:80vh;overflow:auto;line-height:1.7}.artprev img{max-width:100%;border-radius:10px}.artprev .artcovp{width:100%;aspect-ratio:16/9;object-fit:cover}.artprev blockquote{border-left:4px solid #0d7a63;margin:10px 0;padding:6px 12px;background:#f2f8f5}.artprev table{border-collapse:collapse}.artprev td,.artprev th{border:1px solid #ddd;padding:6px}.artprev mark{background:#ffe9a3}.artprev .artvid{aspect-ratio:16/9;position:relative}.artprev .artvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .artgg{border:1px solid #e3e6e1;border-radius:10px;padding:10px 12px;margin:8px 0;background:#fff}.gg-t{color:#1a0dab;font-size:18px}.gg-u{color:#006621;font-size:13px}.gg-d{color:#4d5156;font-size:14px}
 .artck{list-style:none;padding:0;margin:6px 0;font-size:14px}.artck .ok{color:#0d7a63}.artck .no{color:#b45f06}
+:root{--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a}
+@media (prefers-color-scheme:dark){:root{--s1:#3987e5;--s2:#d95926;--s3:#199e70}}
+.vz{display:block;width:100%;height:auto;margin:6px 0}.vzg{stroke:var(--line);stroke-width:1}.vzt{fill:var(--muted);font-size:11px}
+.vzh:hover{fill:color-mix(in srgb,var(--ink) 7%,transparent)}.vzl{stroke:var(--ink);stroke-width:2;stroke-dasharray:5 4;opacity:.75}.vzlt{fill:var(--ink);font-weight:700}
+.vzlg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--ink);margin:4px 0}.vzlg span{display:inline-flex;align-items:center;gap:6px}.vzlg i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.vzlg i.vzll{height:0;border-top:2px dashed var(--ink);border-radius:0;width:16px}
+.vzk{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:8px}.vzk>div{background:var(--soft);border-radius:12px;padding:10px 12px;display:grid;gap:2px}
+.vzk small{color:var(--muted)}.vzk b{font-size:24px}.vzk span{font-size:12.5px;color:var(--muted)}
+.vzhb{display:grid;gap:6px}.vzhb>div{display:grid;grid-template-columns:minmax(90px,150px) 1fr auto;gap:10px;align-items:center;font-size:13.5px}
+.vzhb b{height:12px;background:var(--soft);border-radius:4px;overflow:hidden;display:block}.vzhb b i{display:block;height:100%;background:var(--s1);border-radius:0 4px 4px 0}.vzhb em{font-style:normal;color:var(--muted);white-space:nowrap}
+.vztb{margin-top:6px;font-size:13px}.vztb summary{cursor:pointer;color:var(--jade)}.vztb .tw{max-height:260px;overflow:auto}.vztb table{width:100%;border-collapse:collapse}.vztb td,.vztb th{padding:4px 8px;border-bottom:1px solid var(--line);text-align:left}
+.vzrg button.on{background:var(--jade);color:#fff}
 </style></head><body><main>
 <h1>Quản trị Tâm HSK</h1>
 <div class="card" id="login">
@@ -60,11 +72,11 @@ a{color:var(--jade)}
     if(r.status===401&&AUTH&&AUTH.rf&&!again)return refresh().then(function(){return req(m,p,b,true);});if(!r.ok)throw new Error(emsg(j.error&&j.error.message||r.status));return j;});});}
   var WHO={};function start(){req('GET','/v1/admin/whoami').then(function(j){ROLE=j.role;WHO=j;$('#login').hidden=true;$('#box').hidden=false;
       $('#whoami').innerHTML='Đang đăng nhập: <b>'+esc(j.who)+'</b> · vai trò <b>'+({owner:'Chủ',admin:'Quản trị viên',teacher:'Giáo viên',writer:'Người viết bài',support:'Chăm sóc khách hàng'}[j.role])+'</b>'+(j.bank?'':' · <span class="err">Chưa đặt tài khoản ngân hàng (BANK_ID, BANK_ACC)</span>');
-      var T=ROLE==='teacher'?[['regs','Đăng ký lớp']]:ROLE==='writer'?[['art','Bài viết']]:ROLE==='support'?[['sup','Hỗ trợ']]:[['users','Người dùng'],['orders','Đơn mua'],['vouchers','Voucher'],['regs','Đăng ký lớp'],['notify','Gửi thông báo'],['games','Trò chơi'],['appver','Phiên bản app'],['cf','Hạn mức Cloudflare'],['sup','Hỗ trợ'],['tapps','Đơn giáo viên'],['olc','Khóa học online'],['char','Asset nhân vật'],['shop','Quản lí cửa hàng'],['lp','Trang khóa học & liên kết'],['art','Bài viết'],['ai','Tiểu Long Hổ AI'],['ext','Lớp ngoài & cọc'],['prices','Gói & giá'],['exp','Xuất dữ liệu'],['rrep','Báo cáo Phòng Tự Học'],['log','Nhật ký']];
+      var T=ROLE==='teacher'?[['regs','Đăng ký lớp']]:ROLE==='writer'?[['art','Bài viết']]:ROLE==='support'?[['sup','Hỗ trợ']]:[['users','Người dùng'],['stats','Thống kê'],['orders','Đơn mua'],['vouchers','Voucher'],['regs','Đăng ký lớp'],['notify','Gửi thông báo'],['games','Trò chơi'],['appver','Phiên bản app'],['cf','Hạn mức Cloudflare'],['sup','Hỗ trợ'],['tapps','Đơn giáo viên'],['olc','Khóa học online'],['char','Asset nhân vật'],['shop','Quản lí cửa hàng'],['lp','Trang khóa học & liên kết'],['art','Bài viết'],['ai','Tiểu Long Hổ AI'],['ext','Lớp ngoài & cọc'],['prices','Gói & giá'],['exp','Xuất dữ liệu'],['rrep','Báo cáo Phòng Tự Học'],['log','Nhật ký']];
       $('#tabs').innerHTML=T.map(function(t){return '<button data-t="'+t[0]+'">'+t[1]+'</button>';}).join('');show(TAB&&T.some(function(t){return t[0]===TAB;})?TAB:T[0][0]);})
     .catch(function(e){AUTH=null;sessionStorage.removeItem('adauth');$('#login').hidden=false;$('#box').hidden=true;$('#lmsg').textContent=e.message;});}
   $('#tabs').onclick=function(e){var b=e.target.closest('[data-t]');if(b)show(b.dataset.t);};
-  function show(t){TAB=t;$$('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t);});$('#pane').innerHTML='<div class="card muted">Đang tải…</div>';({users:users,orders:orders,vouchers:vouchers,regs:regs,notify:notify,games:games,appver:appverTab,cf:cfu,rrep:rrep,sup:sup,tapps:tapps,ext:extTab,olc:olcTab,char:charTab,shop:shopTab,lp:lpTab,art:artTab,ai:aiTab,prices:prices,exp:exp,log:log})[t]();}
+  function show(t){TAB=t;$$('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t);});$('#pane').innerHTML='<div class="card muted">Đang tải…</div>';({users:users,orders:orders,vouchers:vouchers,regs:regs,notify:notify,games:games,appver:appverTab,stats:statsTab,cf:cfu,rrep:rrep,sup:sup,tapps:tapps,ext:extTab,olc:olcTab,char:charTab,shop:shopTab,lp:lpTab,art:artTab,ai:aiTab,prices:prices,exp:exp,log:log})[t]();}
   function fail(e){$('#pane').innerHTML='<div class="card err">'+esc(e.message)+'</div>';}
   /* --- Người dùng --- */
   var UQ='';
@@ -81,7 +93,7 @@ a{color:var(--jade)}
       '<span>Tiến độ</span><b>'+j.sum.words+' từ · chuỗi '+j.sum.streak+' ngày · '+j.sum.coins+' Nguyên bảo</b><span>Ví trên máy chủ</span><div>'+(j.wallet?'<b>'+j.wallet.coins+' Nguyên bảo</b><div class="small muted">'+j.wallet.log.slice(0,8).map(function(x){return (x.delta>0?'+':'')+x.delta+' · '+esc(x.why||x.kind)+' · '+dt(x.at);}).join('<br>')+'</div>':'<span class="muted">Chưa chuyển ví (app cũ hoặc chưa đăng nhập)</span>')+'</div><span>Hồ sơ bạn bè</span><span>'+(j.profile.code?'Mã '+esc(j.profile.code)+' · cấp '+j.profile.level+' · '+j.profile.xp+' XP':'Chưa tạo')+'</span>'+
       '<span>Giải đấu</span><span>'+(j.league.map(function(l){return l.week+': hạng '+['Đồng','Bạc','Vàng','Bạch Kim','Kim Cương'][l.tier]+' '+l.xp+' XP';}).join('<br>')||'Chưa tham gia')+'</span>'+
       '<span>Đơn mua</span><span>'+(j.orders.map(function(o){return esc(o.ref)+' · '+vnd(o.final)+' · '+o.status;}).join('<br>')||'Chưa có')+'</span><span>Đăng ký lớp</span><span>'+(j.regs.map(function(r){return esc(r.want)+' · '+r.status;}).join('<br>')||'Chưa có')+'</span></div>'+
-      '<div class="grid2"><div class="act"><b>⭐ Gói học: '+esc(pmTxt)+'</b><div class="row"><select id="aplan"><option value="month">+ Gói Tháng (30 ngày)</option><option value="year">+ Gói Năm (365 ngày + 300 NB)</option><option value="life">+ Trọn đời</option><option value="plus">+ Plus 1 tháng (Khỉ Thông Thái tự thu hoạch)</option><option value="plus_life">+ Plus trọn đời</option><option value="replay">+ Chơi Tiếp 1 tháng</option><option value="replay_year">+ Chơi Tiếp 1 năm</option><option value="coins1000">+ 1.000 Nguyên bảo</option><option value="pro7">+ Pro 7 ngày (quà)</option></select><button data-a="plan">Tặng gói</button>'+(pm?'<button data-a="premium">Thu hồi gói học</button>':'')+'</div></div>'+
+      '<div class="card" id="uact"><span class="muted">Đang tải hoạt động…</span></div><div class="grid2"><div class="act"><b>⭐ Gói học: '+esc(pmTxt)+'</b><div class="row"><select id="aplan"><option value="month">+ Gói Tháng (30 ngày)</option><option value="year">+ Gói Năm (365 ngày + 300 NB)</option><option value="life">+ Trọn đời</option><option value="plus">+ Plus 1 tháng (Khỉ Thông Thái tự thu hoạch)</option><option value="plus_life">+ Plus trọn đời</option><option value="replay">+ Chơi Tiếp 1 tháng</option><option value="replay_year">+ Chơi Tiếp 1 năm</option><option value="coins1000">+ 1.000 Nguyên bảo</option><option value="pro7">+ Pro 7 ngày (quà)</option></select><button data-a="plan">Tặng gói</button>'+(pm?'<button data-a="premium">Thu hồi gói học</button>':'')+'</div></div>'+
       '<div class="act"><b>🏫 Gói Giáo viên: '+esc(tpTxt)+'</b><div class="row"><button data-a="tplan">+ 30 ngày Giáo viên</button></div></div>'+
       '<div class="act"><b>'+String.fromCodePoint(0x1FA99)+' Nguyên bảo</b><div class="row"><input id="acn" type="number" placeholder="+50 / -20"><input id="acw" placeholder="Lý do"></div><button data-a="coins">Gửi</button></div>'+
       '<div class="act"><b>🔑 Mật khẩu tạm</b><input id="apw" placeholder="Ít nhất 6 ký tự"><button data-a="password"'+(u.email?'':' disabled')+'>Đặt mật khẩu</button><span class="small muted">Báo cho học viên mật khẩu mới qua điện thoại/Zalo.</span></div>'+
@@ -89,7 +101,7 @@ a{color:var(--jade)}
       (ROLE==='owner'?'<div class="act"><b>👤 Phân quyền</b><select id="arole"><option value="">Người dùng thường</option><option value="teacher"'+(u.role==='teacher'?' selected':'')+'>Giáo viên (tạo lớp học, xem đăng ký lớp)</option><option value="writer"'+(u.role==='writer'?' selected':'')+'>Người viết bài (chỉ mục Bài viết)</option><option value="support"'+(u.role==='support'?' selected':'')+'>Chăm sóc khách hàng (chỉ mục Hỗ trợ: đọc và trả lời)</option><option value="admin"'+(u.role==='admin'?' selected':'')+'>Quản trị viên (toàn quyền trừ phân quyền)</option></select><button data-a="role"'+(u.email?'':' disabled')+'>Lưu quyền</button></div>':'')+
       '<div class="act"><b>🖼️ Ảnh, bảng xếp hạng & thông báo thế giới</b><span class="small muted">Gỡ ảnh không phù hợp, tin vinh danh sai, hoặc người gian lận điểm khỏi bảng xếp hạng.</span><button data-a="avatar" class="danger">Gỡ ảnh đại diện</button><button data-a="world" class="danger">Xóa tin thế giới của người này</button><button data-a="league" class="danger">Gỡ khỏi Giải đấu tuần này</button><button data-a="wall" class="danger">Gỡ khỏi bảng thợ xây Vạn Lý</button></div>'+
       '<div class="act"><b>⛔ Khóa / xóa</b><button data-a="ban" class="danger">'+(u.banned?'Mở khóa tài khoản':'Khóa tài khoản')+'</button><button data-a="delete" class="danger">Xóa vĩnh viễn</button></div></div><div id="amsg" class="small" style="margin-top:8px"></div></div>';
-    document.body.appendChild(d);var close=function(){d.remove();};$('#dx',d).onclick=close;d.onclick=function(e){if(e.target===d)close();};
+    document.body.appendChild(d);userAct(uid,d);var close=function(){d.remove();};$('#dx',d).onclick=close;d.onclick=function(e){if(e.target===d)close();};
     var done=function(t){$('#amsg',d).innerHTML='<span class="okc">'+esc(t)+' ✓</span>';setTimeout(function(){close();openUser(uid);users();},700);},bad=function(e){$('#amsg',d).innerHTML='<span class="err">'+esc(e.message)+'</span>';};
     $$('[data-a]',d).forEach(function(b){b.onclick=function(){var a=b.dataset.a,body={uid:uid,action:a};
       if(a==='premium')body.on=false;if(a==='plan'){body.product=$('#aplan',d).value;}if(a==='tplan'){body.action='plan';body.product='teacher';}if(a==='coins'){body.coins=+$('#acn',d).value;body.why=$('#acw',d).value;}if(a==='password')body.password=$('#apw',d).value;if(a==='role')body.role=$('#arole',d).value||null;if(a==='ban')body.on=!u.banned;
@@ -168,6 +180,65 @@ a{color:var(--jade)}
     ['Mini game',[['mini:mem','Lật thẻ ghép đôi',1],['mini:tone','Đua thanh điệu',1],['mini:tf','Đúng hay sai 60 giây',1],['mini:order','Xếp câu 60 giây',10],['mini:rad','Săn bộ thủ',10],['mini:write','Viết nhanh',10],['mini:rain','Mưa chữ',20],['mini:lego','Lò ghép chữ',20]]],
     ['Khác',[['puzzle','Câu đố ghép chữ',1],['hv','Thám tử Hán Việt',1]]]];
   /* 5.140: phiên bản app tối thiểu / khuyên dùng */
+  /* ===== 5.143 Thống kê sử dụng ===== */
+  var FEAT_N={hoc:'Học bài',tudien:'Từ điển',on:'Ôn tập',nghe:'Nghe · nói · đọc',game:'Trò chơi',xh:'Xếp hạng',ban:'Bạn bè',tg:'Thế giới',nha:'Nhà',vuon:'Vườn',shop:'Cửa hàng',ai:'Trò chuyện AI',lop:'Lớp học',canhan:'Cá nhân',khac:'Khác'};
+  var PLAT=[['android','Android'],['ios','iOS'],['web','Web']];
+  var mins=function(m){m=Math.round(m||0);return m<60?m+' phút':Math.floor(m/60)+' giờ'+(m%60?' '+m%60+' phút':'');};
+  var dlab=function(d){var p=d.split('-');return p[2]+'/'+p[1];};
+  var nice=function(v){var st=v/4;if(st<=1)return 4;var p=Math.pow(10,Math.floor(Math.log10(st))),n=st/p;return (n<=1?1:n<=2?2:n<=5?5:10)*p*4;};
+  /* biểu đồ cột theo ngày, xếp chồng nhiều nhóm; line: đường phụ cùng đơn vị (WAU) */
+  function vzBars(rows,keys,o){o=o||{};var W=o.W||960,H=o.H||240,L=40,R=8,T=22,B=26,n=rows.length,pw=W-L-R,ph=H-T-B;
+    var tot=rows.map(function(r){return keys.reduce(function(a,k){return a+(+r.v[k[0]]||0);},0);}),mx=nice(Math.max.apply(null,tot.concat(o.line?rows.map(function(r){return r.line||0;}):[]).concat([1])));
+    var bw=pw/n,g='<svg class="vz" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(o.title||'')+'">';
+    for(var i=0;i<=4;i++){var y=T+ph-ph*i/4;g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y+'" y2="'+y+'" class="vzg"/><text x="'+(L-6)+'" y="'+(y+4)+'" class="vzt" text-anchor="end">'+Math.round(mx*i/4)+'</text>';}
+    var step=Math.ceil(n/12);
+    rows.forEach(function(r,i){var x=L+i*bw+Math.max(1,bw*.14),w=Math.max(2,bw*.72),y=T+ph,tip=r.lab+': ';var parts=[];
+      keys.forEach(function(k,j){var v=+r.v[k[0]]||0;if(!v)return;var h=ph*v/mx;y-=h;parts.push(k[1]+' '+(o.fmt?o.fmt(v):v));
+        g+='<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+Math.max(0,h-(j<keys.length-1?2:0)).toFixed(1)+'" rx="'+(Math.min(3,w/3)).toFixed(1)+'" fill="var(--s'+(k[2]||1)+')"/>';});
+      if(o.line)parts.push((o.lineName||'')+' '+(r.line||0));
+      g+='<rect x="'+(L+i*bw).toFixed(1)+'" y="'+T+'" width="'+bw.toFixed(1)+'" height="'+ph+'" fill="transparent" class="vzh"><title>'+esc(tip+(parts.join(' · ')||'0'))+'</title></rect>';
+      if(i%step===0||i===n-1)g+='<text x="'+(L+i*bw+bw/2).toFixed(1)+'" y="'+(H-8)+'" class="vzt" text-anchor="middle">'+esc(r.lab)+'</text>';});
+    if(o.line){var pts=rows.map(function(r,i){return (L+i*bw+bw/2).toFixed(1)+','+(T+ph-ph*(r.line||0)/mx).toFixed(1);});g+='<polyline points="'+pts.join(' ')+'" fill="none" class="vzl"/>';
+      var lr=rows[n-1];g+='<text x="'+(W-R-2)+'" y="'+Math.max(13,T+ph-ph*(lr.line||0)/mx-7).toFixed(1)+'" class="vzt vzlt" text-anchor="end">'+esc(o.lineName)+' '+(lr.line||0)+'</text>';}
+    return g+'</svg>';}
+  function vzLegend(keys,extra){return '<div class="vzlg">'+keys.map(function(k){return '<span><i style="background:var(--s'+(k[2]||1)+')"></i>'+esc(k[1])+'</span>';}).join('')+(extra||'')+'</div>';}
+  function vzHbars(list,fmt){var mx=Math.max.apply(null,list.map(function(x){return x[1];}).concat([1]));
+    return '<div class="vzhb">'+list.map(function(x){return '<div title="'+esc(x[0]+': '+fmt(x[1]))+'"><span>'+esc(x[0])+'</span><b><i style="width:'+Math.max(1,x[1]/mx*100).toFixed(1)+'%"></i></b><em>'+esc(fmt(x[1]))+'</em></div>';}).join('')+'</div>';}
+  function vzTable(head,rows){return '<details class="vztb"><summary>Xem bảng số liệu</summary><div class="tw"><table><thead><tr>'+head.map(function(h){return '<th>'+esc(h)+'</th>';}).join('')+'</tr></thead><tbody>'+rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+esc(c)+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div></details>';}
+  var PK=[['android','Android',1],['ios','iOS',2],['web','Web',3]];
+  function featList(f){return Object.keys(f||{}).map(function(k){return [FEAT_N[k]||k,f[k]];}).sort(function(a,b){return b[1]-a[1];});}
+  var SDAYS=30;
+  function statsTab(){$('#pane').innerHTML='<div class="card muted">Đang tải thống kê…</div>';
+    req('GET','/v1/admin/stats?days='+SDAYS).then(function(j){var S=j.series,last=S[S.length-1]||{};
+      var sumNu=S.reduce(function(a,x){return a+x.nu;},0),avgDau=S.reduce(function(a,x){return a+x.dau;},0)/Math.max(1,S.length);avgDau=avgDau<10?(Math.round(avgDau*10)/10).toLocaleString('vi-VN'):Math.round(avgDau);
+      var act=S.filter(function(x){return x.dau;}),avgMin=act.length?Math.round(act.reduce(function(a,x){return a+x.avg;},0)/act.length):0;
+      var hrs=j.hours.map(function(h,i){return {lab:i+'h',v:h};}),peak=0;j.hours.forEach(function(h,i){var t=(h.android||0)+(h.ios||0)+(h.web||0),p=(j.hours[peak].android||0)+(j.hours[peak].ios||0)+(j.hours[peak].web||0);if(t>p)peak=i;});
+      var pt=j.plat||{},ptT=(pt.android||0)+(pt.ios||0)+(pt.web||0),fl=featList(j.feat);
+      $('#pane').innerHTML='<div class="card"><div class="row" style="justify-content:space-between;align-items:center"><h2 style="margin:0">Thống kê sử dụng</h2><div class="row vzrg">'+[7,30,90].map(function(d){return '<button data-sd="'+d+'"'+(d===SDAYS?' class="on"':'')+'>'+d+' ngày</button>';}).join('')+'</div></div>'+
+        '<p class="small muted">Chỉ tính người đã đăng nhập, từ bản 5.143 trở đi. Một phút online = app đang mở trên màn hình và có thao tác trong 2 phút gần nhất. Giờ theo giờ Việt Nam.</p>'+
+        '<div class="vzk"><div><small>Tổng người dùng</small><b>'+j.total+'</b><span>+'+sumNu+' trong '+SDAYS+' ngày</span></div><div><small>Hoạt động hôm nay</small><b>'+(last.dau||0)+'</b><span>7 ngày qua: '+(last.wau||0)+' người</span></div><div><small>Trung bình mỗi ngày</small><b>'+avgDau+'</b><span>người hoạt động</span></div><div><small>Online trung bình</small><b>'+mins(avgMin)+'</b><span>mỗi người mỗi ngày</span></div></div></div>'+
+        '<div class="card"><h3>Người dùng mới theo ngày</h3>'+vzBars(S.map(function(x){return {lab:dlab(x.d),v:{nu:x.nu}};}),[['nu','Người mới',1]],{title:'Người dùng mới theo ngày'})+
+          vzTable(['Ngày','Người mới','Tổng cộng dồn'],S.slice().reverse().map(function(x){return [dlab(x.d),x.nu,x.cum];}))+'</div>'+
+        '<div class="card"><h3>Người hoạt động (DAU / WAU)</h3>'+vzLegend(PK,'<span><i class="vzll"></i>WAU (7 ngày)</span>')+vzBars(S.map(function(x){return {lab:dlab(x.d),v:x.plat||{},line:x.wau};}),PK,{line:true,lineName:'WAU',title:'Người hoạt động mỗi ngày theo nền tảng'})+
+          '<p class="small muted">Cột: số người mở app trong ngày (DAU), chia theo nền tảng. Một người dùng cả web và app được tính ở cả hai cột màu. Đường: số người hoạt động trong 7 ngày gần nhất (WAU).</p>'+
+          vzTable(['Ngày','DAU','Android','iOS','Web','WAU'],S.slice().reverse().map(function(x){var p=x.plat||{};return [dlab(x.d),x.dau,p.android||0,p.ios||0,p.web||0,x.wau];}))+'</div>'+
+        '<div class="card"><h3>Thời gian online</h3><div><div><h4>Trung bình mỗi người mỗi ngày</h4>'+vzBars(S.map(function(x){return {lab:dlab(x.d),v:{m:x.avg}};}),[['m','Online',1]],{fmt:mins,title:'Phút online trung bình mỗi người'})+'</div>'+
+          '<div><h4>Giờ trong ngày (cao điểm '+peak+'h–'+(peak+1)+'h)</h4>'+vzLegend(PK)+vzBars(hrs,PK,{fmt:mins,title:'Tổng phút online theo giờ'})+'</div></div>'+
+          '<p class="small">Theo nền tảng: '+PLAT.map(function(p){return p[1]+' <b>'+(ptT?Math.round((pt[p[0]]||0)/ptT*100):0)+'%</b>';}).join(' · ')+' tổng thời gian.</p>'+
+          vzTable(['Giờ','Android','iOS','Web'],j.hours.map(function(h,i){return [i+'h',mins(h.android),mins(h.ios),mins(h.web)];}))+'</div>'+
+        '<div class="card"><h3>Chức năng hay dùng</h3><p class="small muted">Tổng thời gian dùng mỗi nhóm chức năng trong '+SDAYS+' ngày.</p>'+(fl.length?vzHbars(fl,mins):'<p class="muted">Chưa có dữ liệu.</p>')+'</div>';
+      $$('[data-sd]').forEach(function(b){b.onclick=function(){SDAYS=+b.dataset.sd;statsTab();};});
+    }).catch(function(e){$('#pane').innerHTML='<div class="card err">'+esc(e.message)+'</div>';});}
+  function userAct(uid,d){req('GET','/v1/admin/useract?uid='+encodeURIComponent(uid)+'&days=30').then(function(a){var el=$('#uact',d);if(!el)return;
+      var pt=a.plat||{},tot=a.total||0,fl=featList(a.feat).slice(0,6);
+      el.innerHTML='<h3 style="margin:0 0 6px">📊 Hoạt động 30 ngày</h3><div class="kv"><span>Online</span><b>'+mins(tot)+' · '+a.activeDays+'/30 ngày'+(a.activeDays?' · TB '+mins(tot/a.activeDays)+'/ngày':'')+'</b>'+
+        '<span>Từ trước tới nay</span><span>'+mins(a.allMins)+' trong '+a.allDays+' ngày'+(a.since?' (ghi từ '+dlab(a.since)+'/'+a.since.slice(0,4)+')':'')+'</span>'+
+        '<span>Dùng app hay web</span><span>'+(tot?PLAT.filter(function(p){return pt[p[0]];}).map(function(p){return p[1]+' '+Math.round(pt[p[0]]/tot*100)+'%';}).join(' · '):'Chưa có dữ liệu')+'</span>'+
+        '<span>Lần cuối</span><span>'+(a.lastAt?dt(a.lastAt)+' · '+((PLAT.filter(function(p){return p[0]===a.lastPlat;})[0]||['',''])[1])+(a.ver?' '+esc(a.ver):''):'—')+'</span>'+
+        '<span>Số bạn bè</span><b>'+a.friends+'</b></div>'+
+        (tot?vzBars(a.days.map(function(x){return {lab:dlab(x[0]),v:{m:x[1]}};}),[['m','Online',1]],{fmt:mins,title:'Phút online mỗi ngày',W:520,H:200}):'')+
+        (fl.length?'<h4>Hay dùng</h4>'+vzHbars(fl,mins):'<p class="small muted">Chưa ghi nhận (người này chưa mở bản 5.143 trở lên khi đã đăng nhập).</p>');
+    }).catch(function(e){var el=$('#uact',d);if(el)el.innerHTML='<span class="err">'+esc(e.message)+'</span>';});}
   function appverTab(){req('GET','/v1/admin/appver').then(function(j){var a=j.appver||{},ro=ROLE!=='owner'&&ROLE!=='admin';
     var f=function(os,k){var v=(a[os]||{})[k]||'';return '<input data-av="'+os+':'+k+'" value="'+esc(v)+'" placeholder="VD 5.140" style="width:120px"'+(ro?' disabled':'')+'>';};
     $('#pane').innerHTML='<div class="card"><h2>Phiên bản app (Android, iOS)</h2><p class="small muted">So với phiên bản app người dùng đang cài (VD <code>5.140</code>). Để trống là tắt.<br>'+
