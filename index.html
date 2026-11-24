@@ -7683,6 +7683,66 @@ html:not(.tabbar):not(.fs) #viewtools .vtui{display:flex!important}
 /* điện thoại / toàn màn hình: hiện thẳng các nút cũ */
 html.tabbar #viewtools .u187menu,html.fs #viewtools .u187menu,html.tabbar #viewtools .u187tools,html.fs #viewtools .u187tools{display:contents}
 @media (prefers-reduced-motion:reduce){html:not(.tabbar) .u187menu,html:not(.tabbar) #viewtools .u187it,.u187bars i,.u187fab{transition:none!important}}
+/* ===== 5.142 Cửa sổ mini Nhà / Vườn (cột phải, máy tính) ===== */
+.u188{position:fixed;bottom:16px;right:10px;width:236px;box-sizing:border-box;display:grid;gap:8px;padding:9px 8px;border-radius:20px;background:var(--card);border:1.5px solid var(--line);box-shadow:0 14px 30px -20px rgba(0,0,0,.45);z-index:2}
+.u188h{display:flex;align-items:center;gap:2px;min-width:0}
+.u188tabs{display:flex;gap:3px;flex:1;min-width:0}
+.u188tabs button{all:unset;cursor:pointer;font-size:12px;font-weight:800;padding:4px 7px;border-radius:999px;color:var(--muted);background:color-mix(in srgb,var(--line) 45%,var(--card));white-space:nowrap}
+.u188tabs button.on{background:var(--jade,#0d7a63);color:#fff}
+.u188tabs button:focus-visible,.u188b:focus-visible,.u188scene:focus-visible{outline:2px solid var(--jade,#0d7a63);outline-offset:2px}
+.u188b{all:unset;flex:none;cursor:pointer;width:22px;height:24px;border-radius:9px;display:grid;place-items:center;font-size:15px;color:var(--muted)}
+.u188b:hover{background:color-mix(in srgb,var(--line) 55%,transparent);color:var(--ink)}
+.u188opt{display:grid;gap:6px;padding:8px 10px;border-radius:12px;background:color-mix(in srgb,var(--jade,#0d7a63) 7%,var(--card));font-size:13px}
+.u188opt label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.u188scene{position:relative;display:block;isolation:isolate;border-radius:14px;overflow:hidden;aspect-ratio:5/3;background:#f3ead8;text-decoration:none;border:1.5px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.u188.big .u188scene{aspect-ratio:4/3}
+.u188art,.u188art>svg,.u188gw{position:absolute;inset:0;width:100%;height:100%;display:block}
+.u188art>svg{object-fit:cover}
+.u188gw>svg:first-child,.u188gw>.gbg,.u188gw>div:first-child:not(.u188beds){position:absolute;inset:0;width:100%;height:100%}
+.u188beds{position:absolute;left:5%;right:26%;bottom:6%;top:34%;display:flex;align-items:flex-end}
+.u188row{display:grid;width:100%;grid-template-columns:repeat(var(--c,3),1fr);gap:4px 2px;align-items:end;justify-items:center}
+.u188pl,.u188lock{display:block;width:100%;max-width:64px;aspect-ratio:1;font-style:normal}
+.u188pl svg{width:100%!important;height:100%!important;display:block}
+.u188pl.ripe{filter:drop-shadow(0 0 6px #ffd54a)}.u188pl.wilt{filter:grayscale(.7)}
+.u188lock{display:grid;place-items:center;font-size:14px;opacity:.55}
+.u188link{position:absolute;inset:0;display:block;text-decoration:none;border-radius:14px}
+.u188link:focus-visible{outline:3px solid var(--jade,#0d7a63);outline-offset:-3px}
+.u188pet{all:unset;position:absolute;right:3%;bottom:2%;height:64%;aspect-ratio:.88;cursor:pointer;z-index:2;border-radius:14px;transition:transform .25s}
+.u188pet img{display:block;height:100%;width:auto;margin-left:auto;filter:drop-shadow(0 6px 6px rgba(0,0,0,.25));pointer-events:none}
+.u188pet:hover{transform:translateY(-4px)}.u188pet:focus-visible{outline:3px solid var(--jade,#0d7a63);outline-offset:2px}
+.u188pet.hop{animation:u188hop .55s ease}.u188pet.u182hold{transform:scale(.94)}
+@keyframes u188hop{30%{transform:translateY(-14px)}60%{transform:translateY(0)}80%{transform:translateY(-5px)}}
+.u188.big .u188pet{height:60%}
+.u188say{position:absolute;left:6px;top:6px;right:40%;z-index:3;display:grid;gap:1px;padding:6px 9px;border-radius:12px;background:#fff;color:#2a2420;box-shadow:0 8px 18px -10px rgba(0,0,0,.5);font-size:12px;line-height:1.3;animation:u188in .2s ease;transition:opacity .3s}
+.u188say .han{font-size:15px}.u188say small{color:#7a6a5a;font-size:11px}.u188say.out{opacity:0}
+@keyframes u188in{from{opacity:0;transform:translateY(4px)}}
+.u188go{z-index:1}
+.u188go{position:absolute;left:8px;top:8px;font-size:12px;font-weight:800;color:#fff;background:rgba(13,122,99,.92);padding:4px 10px;border-radius:999px;opacity:0;transform:translateY(-4px);transition:opacity .2s,transform .2s}
+.u188link:hover .u188go,.u188link:focus-visible .u188go{opacity:1;transform:none}
+.u188scene:has(.u188say) .u188go{opacity:0!important}
+.u188scene.hot::after{content:'';position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 3px #f5b800;animation:u188hot 1.6s ease-in-out infinite;pointer-events:none}
+@keyframes u188hot{50%{box-shadow:inset 0 0 0 3px transparent}}
+.u188info{display:grid;gap:2px;padding:0 4px;font-size:13.5px;color:var(--ink)}.u188info small{font-size:12.5px;color:var(--muted)}
+.u188.min{gap:0}
+@media (prefers-reduced-motion:reduce){.u188scene.hot::after{animation:none}.u188pet,.u188go{transition:none;animation:none!important}}
+html.tabbar .u188{display:none}
+html.rails.u188on #rrail{bottom:calc(16px + var(--u188h,300px) + 10px)!important}
+html.fs #u188,html.trmfull #u188{display:none}
+.u188art>svg.roomsvg{width:100%!important;height:100%!important;max-width:none!important;margin:0!important}
+.u188def{display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:700}
+.u188def select{font:inherit;font-size:13px;padding:3px 6px;border-radius:8px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+/* linh thú nổi ẩn khi cửa sổ mini đang hiện (linh thú nằm trong cửa sổ) */
+html.u188on #u151pet,html.u188on #u151say{display:none!important}
+/* máy tính: nút "Thêm từ" đã vào Menu góc trái, cột phải xuống sát đáy */
+@media (min-width:769px){html:not(.tabbar) #fab{display:none!important}html.rails:not(.tabbar) #rrail{bottom:16px}}
+html:not(.tabbar):not(.fs) #viewtools .u187add i{background:var(--jade,#0d7a63)!important;color:#fff;border-color:var(--jade,#0d7a63)!important}
+html:not(.tabbar):not(.fs) #viewtools .u187add i svg{stroke-width:2.6}
+html:not(.tabbar):not(.fs) #viewtools .u188tg{display:flex!important}
+html:not(.tabbar):not(.fs) #viewtools .u188tg.on i{background:color-mix(in srgb,var(--jade,#0d7a63) 16%,var(--card))!important}
+/* thanh cuộn cột trái nằm sát mép trái màn hình (tránh kéo nhầm khi cuộn nội dung chính) */
+html:not(.tabbar) #lrail{direction:rtl;scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--ink) 22%,transparent) transparent}
+html:not(.tabbar) #lrail>*{direction:ltr}
+html:not(.tabbar) #lrail::-webkit-scrollbar{width:7px}html:not(.tabbar) #lrail::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--ink) 22%,transparent);border-radius:8px}
 </style>
 </head><body>
 
@@ -7708,12 +7768,12 @@ html.tabbar #viewtools .u187menu,html.fs #viewtools .u187menu,html.tabbar #viewt
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='13bcb44e';
-document.write('<script src="packs/hsk'+L+'.js?v=13bcb44e"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='dc0511a2';
+document.write('<script src="packs/hsk'+L+'.js?v=dc0511a2"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=13bcb44e','strokes-file');A('packs/dict.js?v=13bcb44e','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=dc0511a2','strokes-file');A('packs/dict.js?v=dc0511a2','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -28292,6 +28352,107 @@ function u187Paint(){const t=document.getElementById('viewtools');const n=t&&t.q
 addEventListener('hashchange',()=>setTimeout(u187Paint,80));
 setTimeout(()=>{try{u187Build();}catch(e){}},600);
 if(window.__T)window.__u187={u187Build,u187Paint};
+
+/* ===== 5.142 Cửa sổ mini Nhà / Vườn ở góc phải trên máy tính =====
+   - Cố định ở cột phải, sát đáy; cột phải tự ngắn lại phía trên nên không có gì bị che
+   - Tab Nhà | Vườn | Tự đổi (chỉ đổi cảnh đang xem); ⚙ chọn cảnh MẶC ĐỊNH khi mở app (mặc định: Nhà)
+   - Khi cửa sổ hiện: linh thú nổi (#u151pet) ẩn đi; linh thú trong cửa sổ vẫn bấm để chơi, bấm 3 lần / giữ để trò chuyện AI
+   - Nút ✕ ẩn cửa sổ (linh thú nổi quay lại); mở lại ở nút Menu góc trái
+   - Chỉ hiện khi màn rộng ≥ 1280px và có cột phải; điện thoại, toàn màn hình không hiện */
+const U188K='hsk-u188';
+function u188Opt(){let o={};try{o=JSON.parse(localStorage.getItem(U188K)||'{}')||{};}catch(e){}
+  const M=['house','garden','auto'];return {def:M.includes(o.def)?o.def:'house',pet:o.pet!==0,info:o.info!==0,min:!!o.min,size:o.size==='l'?'l':'m',off:!!o.off};}
+/* cảnh đang xem trong phiên này (tab); mở app lần sau quay về mặc định */
+function u188View(){let v='';try{v=sessionStorage.getItem('hsk-u188v')||'';}catch(e){}return ['house','garden','auto'].includes(v)?v:u188Opt().def;}
+function u188SetView(v){try{sessionStorage.setItem('hsk-u188v',v);}catch(e){}}
+function u188Save(p){const o=Object.assign(u188Opt(),p);try{localStorage.setItem(U188K,JSON.stringify(o));}catch(e){}return o;}
+const U188={tick:0,cur:''};
+function u188Pet(){try{return charPoseSrc('idle');}catch(e){try{return MASCOT_URL;}catch(x){return '';}}}
+function u188House(){let t=0,lux=0,name='Nhà';try{t=tierOf(luxury());lux=luxury();name=HT[t][0];}catch(e){}
+  let svg='';try{svg=roomSVG(t,0,false);}catch(e){svg='';}
+  let n=0;try{n=Object.values(HS().place||{}).filter(id=>FURN[id]).length;}catch(e){}
+  return {svg,info:`🏠 <b>${esc(name)}</b> · ✨ ${lux.toLocaleString('vi-VN')} điểm`,sub:n?`Đã bày ${n} món đồ`:'Chưa bày đồ, bấm để trang trí',href:'#house',label:'Nhà của bạn'};}
+function u188Garden(){let g=null;try{g=G();}catch(e){}
+  const plots=g&&g.plots?g.plots:[];let sky='day';try{sky=gSky();}catch(e){}
+  const SK={day:['#bfe6ff','#eaf7ff'],dawn:['#ffd3b0','#fff1de'],dusk:['#f6a67a','#ffd9b8'],night:['#1d2b55','#3b4f86']}[sky]||['#bfe6ff','#eaf7ff'];
+  const bg=`<svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="u188sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${SK[0]}"/><stop offset="1" stop-color="${SK[1]}"/></linearGradient></defs>
+    <rect width="300" height="180" fill="url(#u188sk)"/>${sky==='night'?'<circle cx="250" cy="30" r="12" fill="#fff6cf"/>':'<circle cx="250" cy="32" r="16" fill="#ffe27a" opacity=".9"/>'}
+    <path d="M0 84 Q60 58 120 78 T240 70 T300 76 V180 H0z" fill="#9fd08a"/><path d="M0 100 Q80 86 160 98 T300 94 V180 H0z" fill="#7cbf6b"/>
+    <rect y="112" width="300" height="68" fill="#8a6a4a"/><rect y="112" width="300" height="6" fill="#6d5238"/>
+    <path d="M8 112 V92 M20 112 V92 M32 112 V92 M44 112 V92 M256 112 V92 M268 112 V92 M280 112 V92 M292 112 V92" stroke="#c99a62" stroke-width="4"/><path d="M4 98 H48 M252 98 H298" stroke="#c99a62" stroke-width="3"/></svg>`;
+  const cell=(p,i)=>{if(!p)return '<i class="u188lock">🔒</i>';try{if(p.l){const st=stageOf(p.gr||0);return `<i class="u188pl${st===4&&!p.wilt?' ripe':''}${p.wilt?' wilt':''}">${plantSVG(p.l,st,46,p.pot||0)}</i>`;}
+    return `<i class="u188pl empty"><svg viewBox="0 0 120 120">${potSVG(1,p.pot||0).replace(/<text[^>]*>[^<]*<\/text>/,'')}</svg></i>`;}catch(e){return '<i></i>';}};
+  const n=plots.length,cols=n<=4?Math.max(n,1):n<=6?3:Math.ceil(n/2);const rows=`<span class="u188row" style="--c:${cols}">${plots.map((p,i)=>cell(p,i)).join('')}</span>`;
+  const ripe=plots.filter(p=>p&&p.l&&!p.wilt&&stageOf(p.gr||0)===4).length,wilt=plots.filter(p=>p&&p.wilt).length,grow=plots.filter(p=>p&&p.l).length;
+  return {svg:`<div class="u188gw">${bg}<div class="u188beds">${rows}</div></div>`,info:`🌱 <b>${grow}/${plots.length||0}</b> chậu đang trồng${g?` · 💧 ${g.water}`:''}`,
+    sub:ripe?`🍎 ${ripe} cây chín, vào thu hoạch!`:wilt?`🥀 ${wilt} cây đang héo`:'Chăm cây mỗi ngày để có Nguyên bảo',href:'#garden',label:'Vườn của bạn',hot:!!ripe||!!wilt};}
+function u188Mode(){const v=u188View();if(v!=='auto')return v;return Math.floor(Date.now()/30000)%2?'garden':'house';}
+function u188HTML(){const o=u188Opt(),v=u188View(),m=u188Mode(),d=m==='garden'?u188Garden():u188House(),pet=o.pet?u188Pet():'';U188.cur=m;
+  return `<section class="u188 ${o.size==='l'?'big':''}${o.min?' min':''}" data-m="${m}" aria-label="${d.label}">
+   <div class="u188h"><div class="u188tabs" role="tablist" aria-label="Chọn cảnh">
+     <button type="button" role="tab" aria-selected="${v==='house'}" class="${v==='house'?'on':''}" data-u188m="house">🏠 Nhà</button>
+     <button type="button" role="tab" aria-selected="${v==='garden'}" class="${v==='garden'?'on':''}" data-u188m="garden">🌱 Vườn</button>
+     <button type="button" role="tab" aria-selected="${v==='auto'}" class="${v==='auto'?'on':''}" data-u188m="auto" title="Tự đổi Nhà ↔ Vườn mỗi 30 giây" aria-label="Tự đổi Nhà và Vườn">🔁</button></div>
+    <button type="button" class="u188b" data-u188="opt" aria-label="Tùy chọn" aria-expanded="false" title="Tùy chọn">⚙</button>
+    <button type="button" class="u188b" data-u188="min" aria-label="${o.min?'Mở rộng':'Thu nhỏ'}" title="${o.min?'Mở rộng':'Thu nhỏ'}">${o.min?'▴':'▾'}</button>
+    <button type="button" class="u188b" data-u188="off" aria-label="Ẩn cửa sổ" title="Ẩn cửa sổ (mở lại ở nút Menu góc trái)">✕</button></div>
+   <div class="u188opt" hidden>
+     <div class="u188def"><span>Mặc định khi mở app</span><select data-u188o="def" aria-label="Cảnh mặc định khi mở app">${[['house','🏠 Nhà'],['garden','🌱 Vườn'],['auto','🔁 Tự đổi']].map(([k,t])=>`<option value="${k}"${o.def===k?' selected':''}>${t}</option>`).join('')}</select></div>
+     <label><input type="checkbox" data-u188o="pet"${o.pet?' checked':''}> Hiện linh thú trong cảnh</label>
+     <label><input type="checkbox" data-u188o="info"${o.info?' checked':''}> Hiện dòng tin bên dưới</label>
+     <label><input type="checkbox" data-u188o="size"${o.size==='l'?' checked':''}> Cửa sổ lớn hơn</label></div>
+   ${o.min?'':`<div class="u188scene${d.hot?' hot':''}"><a class="u188link" href="${d.href}" aria-label="Mở ${d.label}">
+     <span class="u188art">${d.svg}</span><span class="u188go">Vào ${m==='garden'?'vườn':'nhà'} →</span></a>
+     ${pet?`<button type="button" class="u188pet" id="u188pet" aria-label="Tiểu Long Hổ · bấm để chơi cùng, bấm 3 lần hoặc nhấn giữ để trò chuyện AI"><img src="${pet}" alt="" draggable="false"></button>`:''}</div>
+   ${o.info?`<div class="u188info"><span>${d.info}</span><small>${d.sub}</small></div>`:''}`}</section>`;}
+function u188On(){const R=document.documentElement;return !u188Opt().off&&!R.classList.contains('tabbar')&&!R.classList.contains('fs')&&R.classList.contains('rr-on')&&innerWidth>=1280;}
+/* linh thú trong cửa sổ: bấm để nói một câu + đổi dáng; bấm 3 lần / nhấn giữ để trò chuyện AI (dùng chung cách của linh thú nổi) */
+function u188PetPlay(){const b=document.getElementById('u188pet');if(!b)return;const im=b.querySelector('img');
+  const acts=['wave','happy','love','cheer','think','point'];const a=acts[Math.floor(Math.random()*acts.length)];
+  try{im.src=charPoseSrc(a);clearTimeout(U188.pt);U188.pt=setTimeout(()=>{try{im.src=u188Pet();}catch(e){}},2200);}catch(e){}
+  b.classList.remove('hop');void b.offsetWidth;b.classList.add('hop');
+  let L=null;try{L=U151_LINES[Math.floor(Math.random()*U151_LINES.length)];}catch(e){}if(!L)return;
+  const sc=b.closest('.u188scene');let bub=sc.querySelector('.u188say');if(bub)bub.remove();bub=document.createElement('div');bub.className='u188say';bub.setAttribute('role','status');
+  bub.innerHTML=`<b class="han">${esc(L[0])}</b><small>${esc(L[1])}</small><span>${esc(L[2])}</span>`;sc.appendChild(bub);
+  try{if(typeof speak==='function')speak(L[0]);}catch(e){}
+  clearTimeout(U188.st);U188.st=setTimeout(()=>{bub.classList.add('out');setTimeout(()=>bub.remove(),300);},3200);}
+/* cửa sổ nằm cố định ở cột phải, ngay trên nút "Thêm từ"; cột phải tự ngắn lại phía trên nên không có gì bị che */
+function u188Paint(){const R=document.documentElement,rr=document.getElementById('rrail');let el=document.getElementById('u188');
+  if(!rr||!u188On()){if(el)el.remove();R.classList.remove('u188on');return;}
+  const box=document.createElement('div');box.innerHTML=u188HTML();const n=box.firstElementChild;n.id='u188';
+  if(el)el.replaceWith(n);else document.body.appendChild(n);R.classList.add('u188on');u188Place();
+  const pb=document.getElementById('u188pet');if(pb){try{u182PetBind(pb);}catch(e){}pb.addEventListener('click',u188PetPlay);}
+  const sb=document.getElementById('u151say');if(sb)sb.remove();}
+function u188Place(){const el=document.getElementById('u188'),rr=document.getElementById('rrail');if(!el||!rr)return;const R=document.documentElement;
+  const cs=getComputedStyle(rr);el.style.right=cs.right;el.style.width=rr.getBoundingClientRect().width+'px';
+  R.style.setProperty('--u188h',el.offsetHeight+'px');}
+(function(){if(typeof rrailHTML!=='function')return;const base=rrailHTML;rrailHTML=function(){const h=base.apply(this,arguments);setTimeout(u188Paint,0);return h;};})();
+document.addEventListener('click',e=>{const s=e.target.closest('#u188');if(!s)return;const m=e.target.closest('[data-u188m]');
+  if(m){u188SetView(m.dataset.u188m);u188Save({min:false});u188Paint();return;}
+  const b=e.target.closest('[data-u188]');if(!b)return;
+  if(b.dataset.u188==='min'){u188Save({min:!u188Opt().min});u188Paint();}
+  if(b.dataset.u188==='off'){u188Toggle(false);}
+  if(b.dataset.u188==='opt'){const p=s.querySelector('.u188opt');p.hidden=!p.hidden;b.setAttribute('aria-expanded',String(!p.hidden));u188Place();}});
+document.addEventListener('change',e=>{const c=e.target.closest('[data-u188o]');if(!c)return;const k=c.dataset.u188o;
+  if(k==='def'){u188Save({def:c.value});u188SetView(c.value);}else u188Save(k==='size'?{size:c.checked?'l':'m'}:{[k]:c.checked?1:0});u188Paint();const s=document.querySelector('#u188 .u188opt');if(s){s.hidden=false;u188Place();}});
+addEventListener('resize',()=>{clearTimeout(U188.tick);U188.tick=setTimeout(u188Paint,200);});
+setInterval(()=>{if(u188View()==='auto'&&!document.hidden&&u188Mode()!==U188.cur)u188Paint();},5000);
+/* ẩn / hiện cả cửa sổ (nút ✕ trong cửa sổ, mục trong nút Menu góc trái) */
+function u188Toggle(on){u188Save({off:!on});u188Paint();try{u187Paint();}catch(e){}
+  if(!on){document.documentElement.classList.remove('u188on');try{u151Mount();}catch(e){}}
+  try{gardenToast(on?'Đã hiện cửa sổ Nhà / Vườn':'Đã ẩn cửa sổ Nhà / Vườn · mở lại ở nút Menu góc trái');}catch(e){}}
+new MutationObserver(()=>{const fs=document.documentElement.classList.contains('fs'),el=document.getElementById('u188');if((fs&&el)||(!fs&&!el&&u188On()))u188Paint();}).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+setTimeout(u188Paint,900);
+/* nút Menu góc trái (máy tính): thêm "Thêm từ" (thay nút nổi góc phải) và bật/tắt cửa sổ Nhà / Vườn */
+(function(){if(typeof u187Nav!=='function')return;const base=u187Nav;u187Nav=function(){let h=base.apply(this,arguments);
+  const f=document.getElementById('fab'),addOn=!f||!f.hidden,R=document.documentElement;
+  if(addOn)h+=`<a class="u187it u187nv u187add${/^#add/.test(location.hash)?' on':''}" href="#add" role="menuitem" data-u187="add" style="--i:5"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></i><b>Thêm từ</b></a>`;
+  if(innerWidth>=1280&&R.classList.contains('rr-on')){const on=!u188Opt().off;
+    h+=`<button type="button" class="u187it u188tg${on?' on':''}" role="menuitemcheckbox" aria-checked="${on}" data-u188t="1" style="--i:6"><i aria-hidden="true">🏡</i><b>${on?'Ẩn':'Hiện'} cửa sổ Nhà</b></button>`;}
+  return h;};})();
+document.addEventListener('click',e=>{const t=e.target.closest('[data-u188t]');if(!t)return;e.preventDefault();u188Toggle(!!u188Opt().off);});
+if(window.__T)window.__u188={u188Paint,u188Save,u188Opt,u188Toggle,u188View,seed(){const h=HS();const ids=Object.keys(FURN);ids.forEach(id=>h.furn[id]=1);const t=tierOf(luxury());roomSlots(HT[t][3]).forEach(([k,x,y,sid])=>{const id=ids.find(f=>FURN[f][3]===k&&!Object.values(h.place).includes(f));if(id)h.place['0-'+sid]=id;});
+  const g=G();g.plots.forEach((pl,i)=>{pl.l=(i%5)+1;pl.gr=[100,80,50,20,100,60][i%6];pl.pot=i%3;pl.wilt=0;});return {t,place:h.place,plots:g.plots.length};}};
 
 function route(){
   stopGames();
