@@ -7265,6 +7265,9 @@ html.ios-app #gpromo{display:none!important}
 html.ios-app:not(.fs):not(.gfull):not(.u163play):not(.trmfull) body{padding-top:env(safe-area-inset-top,0px)}
 html.ios-app:not(.fs):not(.gfull):not(.u163play):not(.trmfull)::before{content:"";position:fixed;left:0;right:0;top:0;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:25;pointer-events:none}
 html.ios-app.liveon body{padding-top:calc(36px + env(safe-area-inset-top,0px))}
+
+/* 5.148: App Store chưa có gói Pro → ẩn lối mua Pro */
+html.ios-nopro a[href="#premium"],html.ios-nopro .kcproad,html.ios-nopro .ctapro{display:none!important}
 /* ===== 5.138 Vườn sân Á Đông · BXH bục 2–1–3 · Pro Đồng hành sớm ===== */
 /* ---- Vườn ---- */
 html body #gscene.gz.gz{background:linear-gradient(#f5f0e4 0,#f2ecdf 46%,#dfeccb 72%,#d6e7be 100%)!important;overflow:hidden}
@@ -7983,6 +7986,16 @@ a.kchc.u195h{text-decoration:none;color:inherit;padding:10px 12px}
 :root[data-skin="nganha"] body{background:radial-gradient(1000px 520px at 20% -10%,#2a3a7a 0,transparent 60%),radial-gradient(800px 400px at 90% 0,#3d2a6e 0,transparent 55%),var(--paper)}
 .wx-meteor .wxmoon{position:fixed;right:8%;top:9%;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 40% 38%,#fffdf0,#f3e3a3 70%,#d9bd62);box-shadow:0 0 30px 10px rgba(255,240,180,.35);pointer-events:none;opacity:.9}
 :root[data-wx="meteor"] body{background-image:linear-gradient(180deg,rgba(20,26,61,.12),transparent 40%)}
+
+/* 5.148: thẻ trang chủ không gạch chân như link */
+a.kchc.u196h{text-decoration:none;color:inherit}
+a.kchc.u196h b{color:inherit;text-decoration:none}
+/* 5.148: thẻ thông báo Trang chủ tắt được (× hoặc vuốt ngang) */
+.hkcard{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.kchc.hkcard.hkcard{padding-right:44px!important}
+.hkx{position:absolute;top:6px;right:6px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(20,60,90,.08);color:#355;font-size:19px;line-height:30px;text-align:center;padding:0;cursor:pointer;z-index:1}
+.hkx:hover{background:rgba(20,60,90,.16)}
+@media (prefers-color-scheme:dark){.hkx{background:rgba(255,255,255,.12);color:#dde}}
 </style>
 </head><body>
 
@@ -8008,12 +8021,12 @@ a.kchc.u195h{text-decoration:none;color:inherit;padding:10px 12px}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='ebf740db';
-document.write('<script src="packs/hsk'+L+'.js?v=ebf740db"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='077e059c';
+document.write('<script src="packs/hsk'+L+'.js?v=077e059c"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=ebf740db','strokes-file');A('packs/dict.js?v=ebf740db','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=077e059c','strokes-file');A('packs/dict.js?v=077e059c','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -24247,7 +24260,7 @@ function extCard(e,dep){const d=dep.find(x=>x.ext===e.id&&x.status!=='refund');r
     const mine=dep.filter(d=>d.status!=='refund');sec.querySelector('#extmine').innerHTML=mine.length?mine.map(d=>`<div class="extmine">${d.status==='placed'?'🎉':'⏳'} <b>${esc(d.name)}</b>: ${d.status==='placed'?'đã xếp lớp':'đã cọc, chờ giáo viên xếp lớp (hoàn cọc nếu quá '+fmtVN(d.refundAt)+')'}${d.link?` · <a href="${esc(d.link)}" target="_blank" rel="noopener">Mở trang lớp</a>`:''}</div>`).join(''):'';
     g.innerHTML=ls.map(e=>extCard(e,dep)).join('');
     g.querySelectorAll('[data-dep]').forEach(b=>b.onclick=async()=>{if(!SOC.auth||!accCloud||!accCloud()){gardenToast('Đăng nhập tài khoản để đặt cọc nhé.');location.hash='#premium';return;}
-      if(typeof isApp==='function'&&isApp()){gardenToast('Đặt cọc lớp ngoài trên web hsk.kassertam.com nhé.');try{AndroidApp.openUrl('https://hsk.kassertam.com/#classreg');}catch(e){}return;}
+      if(window.__TAMHSK_IOS){gardenToast('Đặt cọc lớp ngoài chưa mở trên app iOS.');return;}if(typeof isApp==='function'&&isApp()){gardenToast('Đặt cọc lớp ngoài trên web hsk.kassertam.com nhé.');try{AndroidApp.openUrl('https://hsk.kassertam.com/#classreg');}catch(e){}return;}
       b.disabled=true;b.textContent='Đang tạo đơn…';try{const o=await shopPost('/v1/order/create',{product:'deposit',ext:b.dataset.dep});
         if(o.status==='paid'){viewClassReg();return;}const px=sec.querySelector('#extpay');px.innerHTML=payHTML2(o,true);try{wireCopy(px);}catch(e){}px.scrollIntoView({behavior:'smooth',block:'start'});}
       catch(e){b.disabled=false;b.textContent='Đặt cọc 100.000đ';gardenToast(/ALREADY_DEPOSITED/.test(e.message)?'Bạn đã đặt cọc lớp này rồi.':esc(e.message));}});}).catch(()=>{sec.remove();});
@@ -26565,7 +26578,7 @@ Object.assign(LP_IC,{zalo:'<path d="M4 5h16v11H9l-5 4z"/><path d="M9 8.5h6l-6 5h
 /* [khóa, nhãn, dòng phụ, biểu tượng, màu, nhóm] */
 function u164Items(){const inApp=u164InApp(),ph=LPC.hotline||'';return [
   ['play',inApp?'Đánh giá 5 sao trên CH Play':'Tải trên Google Play',inApp?'Mỗi đánh giá giúp Tâm HSK đến với nhiều người hơn':'App Android miễn phí','play','#0d7a63','app',u164Play()],
-  ['appstore','App Store',lpLink('appstore')?'Bản cho iPhone và iPad':'Bản iPhone, iPad · dự kiến 20/11/2026','appstore','#1d6fb8','app',lpLink('appstore')],
+  ['appstore','App Store',lpLink('appstore')?'Bản cho iPhone và iPad':'Bản iPhone, iPad · sắp ra mắt','appstore','#1d6fb8','app',lpLink('appstore')],
   ['web','Học trên web','hsk.kassertam.com · cùng tài khoản với app','web','#0f8a8a','app',inApp?'':(lpLink('web')||U164_SITE+'/')],
   ['zalo','Zalo','Nhắn tin tư vấn','zalo','#0068ff','contact',lpLink('zalo')],
   ['messenger','Messenger','Nhắn qua Facebook','msg','#7b3fa0','contact',lpLink('messenger')],
@@ -26596,9 +26609,14 @@ function viewLinks(){const L=u164Items(),G=[['app','Tải app & học ngay'],['c
 function u164Strip(){if(u164InApp())return;const h=location.hash||'#home';if(h!=='#home'&&h!=='#')return;
   let off=0;try{off=+localStorage.getItem('hsk-u164x')||0;}catch(e){}if(Date.now()-off<14*864e5)return;
   const root=app.querySelector('.stack')||app;if(!root||app.querySelector('#u164s'))return;const ios=u164IOS();
-  const d=document.createElement('div');d.id='u164s';d.className='u164s';
-  d.innerHTML=`<span class="u164si" aria-hidden="true">${lpIc('play')}</span><div class="u164st"><b>Tâm HSK đã có trên CH Play · Tải ngay nhận quà</b><small>${ios?'Bản iPhone dự kiến có trên App Store ngày 20/11/2026':'Học mượt hơn trên điện thoại · App Store dự kiến 20/11/2026'}</small><span class="u165gift" hidden></span></div>
-    <div class="u164sb">${ios?'':`<a class="btn pri sm" href="${esc(u164Play())}" target="_blank" rel="noopener">Tải app</a>`}<a class="btn sm ghost" href="#lienket">Liên hệ</a></div>
+  const asu=(()=>{try{return lpLink('appstore')||'';}catch(e){return '';}})();
+  const hk='u164:'+(ios?(asu?'ios':'iospre'):'play'+(asu?'+ios':''));try{const r=hkGet()[hk];if(r&&(r.x||Date.now()-(r.t||0)>HK_SHOW))return;}catch(e){}
+  const d=document.createElement('div');d.id='u164s';d.className='u164s';d.dataset.hk=hk;
+  const tt=ios?(asu?'Tâm HSK đã có trên App Store · Tải ngay':'Tâm HSK sắp có trên App Store'):'Tâm HSK đã có trên CH Play · Tải ngay nhận quà';
+  const sub=ios?(asu?'Bản cho iPhone và iPad, tải miễn phí':'Trong lúc chờ, bạn vẫn học đầy đủ ngay trên web này'):(asu?'Học mượt hơn trên điện thoại · Đã có cả trên App Store':'Học mượt hơn trên điện thoại');
+  const go=ios?(asu?`<a class="btn pri sm" href="${esc(asu)}" target="_blank" rel="noopener">Tải app</a>`:''):`<a class="btn pri sm" href="${esc(u164Play())}" target="_blank" rel="noopener">Tải app</a>`;
+  d.innerHTML=`<span class="u164si" aria-hidden="true">${lpIc(ios&&asu?'appstore':'play')}</span><div class="u164st"><b>${tt}</b><small>${sub}</small><span class="u165gift" hidden></span></div>
+    <div class="u164sb">${go}<a class="btn sm ghost" href="#lienket">Liên hệ</a></div>
     <button class="u164x" type="button" aria-label="Ẩn thông báo tải app">×</button>`;
   d.querySelector('.u164x').onclick=()=>{try{localStorage.setItem('hsk-u164x',String(Date.now()));}catch(e){}d.remove();};root.insertBefore(d,root.firstChild);try{u165Paint();}catch(e){}}
 new MutationObserver(()=>{clearTimeout(u164Strip.t);u164Strip.t=setTimeout(u164Strip,60);}).observe(document.getElementById('app')||document.body,{childList:true});
@@ -27106,7 +27124,7 @@ viewPremium=async function(){
           prPollStart(o.ref,async()=>{try{d.close();sfx('win');confetti(80);}catch(e){}gardenToast('⭐ Đã nhận tiền, '+(PLAN_NAME[k]||'gói')+' đã kích hoạt!');viewPremium();});}
         catch(e){bb.disabled=false;bb.textContent='Thanh toán ngay →';msg(e.message);}};};
     d.innerHTML=body();wire();if(!d.open)d.showModal();setTimeout(()=>{const b=d.querySelector('#pvpay');if(b)b.focus();},50);}
-  async function pvGplay(k){if(!accCloud()){location.hash='#settings';return;}if(!GPB.items[GPB_IDS[k]]){gardenToast('Đang tải giá từ Google Play, thử lại sau vài giây nhé.');return;}
+  async function pvGplay(k){if(!accCloud()){location.hash='#settings';return;}if(!GPB.items[GPB_IDS[k]]){gardenToast('Đang tải giá từ '+(window.__TAMHSK_IOS?'App Store':'Google Play')+', thử lại sau vài giây nhé.');return;}
     const acc=await gpbAcc();if(!acc){gardenToast('Chưa kết nối được máy chủ, kiểm tra mạng rồi thử lại.');return;}try{AndroidBilling.buy(GPB_IDS[k],acc);}catch(e){gardenToast('Không mở được Google Play.');}}
   if(app_){const off=gpbOn(e=>{if(location.hash.indexOf('#premium')!==0){off();return;}if(e.type==='products'||e.type==='purchase')draw();
     else if(e.type==='error')gardenToast(e.msg==='ITEM_ALREADY_OWNED'?'Bạn đã mua gói này, đang kích hoạt lại…':e.code===3?'Google Play chưa sẵn sàng trên máy này.':'Google Play báo lỗi ('+e.code+'). Thử lại sau.');});gpbQuery();gpbRestore();}
@@ -28228,7 +28246,23 @@ if(IOS_APP){
     box.insertAdjacentHTML('afterbegin',`<button class="accbtn ap" type="button"><span class="accbi">${ASVG}</span><span class="accbt"><b>Tiếp tục với Apple</b><small>Ẩn email nếu bạn muốn</small></span><i>›</i></button>`);
     const b=box.querySelector('.accbtn.ap');b.onclick=e=>{e.preventDefault();e.stopPropagation();const m=box.querySelector('.accmsg');if(m)m.innerHTML='<span class="spin"></span> Đang mở Đăng nhập bằng Apple…';appleGo(false);};});};
   new MutationObserver(()=>iosAcc()).observe(document.body||document.documentElement,{childList:true,subtree:true});
-  if(window.__T)window.__u183={iosFix,appleGo};
+  /* ---- 5.148: App Store chưa có gói (chưa ký hợp đồng trả phí / gói chưa duyệt) → ẩn gói Pro, báo "sắp mở" ---- */
+  const IOS_PRO=['month','half','year','life'];
+  const iosHasPro=()=>IOS_PRO.some(k=>GPB.items[GPB_IDS[k]]);
+  try{gpbOn(e=>{if(e.type==='products'||e.type==='error'){GPB.got=true;GPB.gotAt=Date.now();document.documentElement.classList.toggle('ios-nopro',!iosHasPro());}});}catch(e){}
+  setTimeout(()=>{try{if(!GPB.got)gpbQuery();}catch(e){}},1500);
+  const iosWait=ms=>new Promise(res=>{if(GPB.got)return res();const off=gpbOn(e=>{if(e.type==='products'||e.type==='error'){off();res();}});
+    setTimeout(()=>{off();res();},ms);});
+  const iosSoon=()=>{const p=(()=>{try{return planStatusHTML()||'';}catch(e){return '';}})();
+    app.innerHTML=`<div class="stack"><section class="addhero prhero pvhero u174hero"><div class="addicon" aria-hidden="true">${(()=>{try{return u174Logo('life','lg');}catch(e){return '⭐';}})()}</div><div style="min-width:0"><div class="label" style="color:#b8860b">Gói trả phí</div><h1>Gói Pro sắp mở</h1><p>Gói Pro trên App Store đang được chuẩn bị, bạn vẫn học miễn phí như thường.</p></div></section>${p}
+      <section class="panel u183soon"><p class="small" style="margin:0 0 8px">Mọi bài học, luyện nói, trò chơi và vườn vẫn dùng miễn phí như bình thường. Khi gói Pro sẵn sàng, trang này sẽ tự hiện bảng giá.</p>
+      <button type="button" class="btn ghost" id="u183retry">Kiểm tra lại</button></section></div>`;
+    const b=app.querySelector('#u183retry');if(b)b.onclick=()=>{GPB.got=false;try{gpbQuery();}catch(e){}viewPremium();};};
+  (function(){const base=viewPremium;viewPremium=async function(){if(location.hash.indexOf('#premium')!==0)return base.apply(this,arguments);
+    if(!iosHasPro()){if(!GPB.got||Date.now()-(GPB.gotAt||0)>60000){GPB.got=false;app.innerHTML='<div class="stack"><div class="panel muted">Đang kết nối App Store…</div></div>';try{gpbQuery();}catch(e){}await iosWait(8000);}
+      if(location.hash.indexOf('#premium')!==0)return;if(!iosHasPro()){iosSoon();return;}}
+    return base.apply(this,arguments);};})();
+  if(window.__T)window.__u183={iosFix,appleGo,iosHasPro,iosSoon};
 }
 
 /* ===== 5.138
@@ -29303,8 +29337,8 @@ function kcPillPlace(){const k=document.getElementById('kcpill'),y=document.getE
 /* ---------- thẻ quà ở trang chủ: gói Pro tặng Kim Cương, cứu chuỗi ---------- */
 (function(){const base=viewHome;viewHome=function(){const r=base.apply(this,arguments);try{kcHomeCards();}catch(e){}return r;};})();
 function kcHomeCards(){if(!kcOn()||!app)return;const st=KCS().st||{},pro=st.pro||{},L=kcLostNow();let h='';
-  if(L)h+=`<section class="kchc kcfix"><img src="${esc(u192Src?u192Src('sad'):'')}" alt="" onerror="this.remove()"><div><b>Chuỗi ${L.n} ngày vừa bị mất</b><small>Cứu lại trong ${KC_FIX_DAYS} ngày, chuỗi được nối tiếp như chưa từng gián đoạn.</small></div><button type="button" class="btn pri kcgo" data-kcfix>Cứu · ${KC_FIX} ${KC_I}</button></section>`;
-  if(pro.can&&pro.amount>0)h+=`<section class="kchc kcpro"><img src="${esc(u192Src?u192Src('love'):'')}" alt="" onerror="this.remove()"><div><b>Quà gói của bạn: ${pro.amount} ${KC_I}</b><small>Mỗi 30 ngày bạn được nhận Kim Cương một lần.</small></div><button type="button" class="btn pri kcgo" data-kcpro>Nhận ${pro.amount} ${KC_I}</button></section>`;
+  if(L)h+=`<section class="kchc kcfix" data-hk="kcfix:${esc(String(L.d||L.last||''))}"><img src="${esc(u192Src?u192Src('sad'):'')}" alt="" onerror="this.remove()"><div><b>Chuỗi ${L.n} ngày vừa bị mất</b><small>Cứu lại trong ${KC_FIX_DAYS} ngày, chuỗi được nối tiếp như chưa từng gián đoạn.</small></div><button type="button" class="btn pri kcgo" data-kcfix>Cứu · ${KC_FIX} ${KC_I}</button></section>`;
+  if(pro.can&&pro.amount>0)h+=`<section class="kchc kcpro" data-hk="kcpro:${esc(String(pro.next||pro.at||today()))}"><img src="${esc(u192Src?u192Src('love'):'')}" alt="" onerror="this.remove()"><div><b>Quà gói của bạn: ${pro.amount} ${KC_I}</b><small>Mỗi 30 ngày bạn được nhận Kim Cương một lần.</small></div><button type="button" class="btn pri kcgo" data-kcpro>Nhận ${pro.amount} ${KC_I}</button></section>`;
   try{if(typeof u195HomeHTML==='function')h+=u195HomeHTML();}catch(e){}
   if(!h)return;const root=app.querySelector('.stack')||app;const old=root.querySelector('.kchcs');if(old)old.remove();root.insertAdjacentHTML('afterbegin',`<div class="kchcs">${h}</div>`);
   const f=root.querySelector('[data-kcfix]');if(f)f.onclick=kcFixStreak;const p=root.querySelector('[data-kcpro]');if(p)p.onclick=()=>kcClaimPro(p);}
@@ -29562,7 +29596,7 @@ function u195QuestHTML(){const o=kqGet(),per=kqPer(),n=Object.keys(o.cl).length,
   return `<section class="panel u195 u195q"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">Nhiệm vụ Kim Cương tuần này</h2><span class="kctag inl${n>=5?'':' x2'}">${n*per}/${5*per} ${KC_I}</span></div>
     <p class="small muted" style="margin:6px 0 8px">Thử thách cả tuần, làm xong là Kim Cương tự cộng · còn ${kqLeft()} ngày, thứ Hai làm mới. Mỗi tuần tối đa ${5*per} ${KC_I}${pro?' (gói Pro nhân đôi)':`. <a href="#premium">Gói Pro</a> nhận 10 ${KC_I} mỗi tuần`}. Nhiệm vụ ngày vẫn thưởng Nguyên bảo như cũ.</p><ul class="u195ql">${u195QuestRows()}</ul></section>`;}
 function u195HomeHTML(){const o=kqGet(),per=kqPer(),n=Object.keys(o.cl).length;if(n>=5)return '';
-  return `<a class="kchc u195h" href="#kc"><span class="u195hi" aria-hidden="true">${KC_I}</span><div><b>Nhiệm vụ Kim Cương tuần này</b><small>${KQ.map(([k,ic])=>`<i class="${o.cl[k]?'on':''}">${o.cl[k]?'✅':ic}</i>`).join('')}<i class="${o.cl.all?'on':''}">🎁</i> · đã nhận ${n*per}/${5*per}</small></div><span class="btn sm kcalt">Xem ›</span></a>`;}
+  return `<a class="kchc u195h" href="#kc" data-hk="kq:${o.w}"><span class="u195hi" aria-hidden="true">${KC_I}</span><div><b>Nhiệm vụ Kim Cương tuần này</b><small>${KQ.map(([k,ic])=>`<i class="${o.cl[k]?'on':''}">${o.cl[k]?'✅':ic}</i>`).join('')}<i class="${o.cl.all?'on':''}">🎁</i> · đã nhận ${n*per}/${5*per}</small></div><span class="btn sm kcalt">Xem ›</span></a>`;}
 
 /* ---------- 4a. thẻ tháng ---------- */
 function u195CardHTML(){const c=(KCS().st||{}).card;if(!c)return '';const left=c.on?Math.max(1,Math.ceil((c.until-Date.now())/864e5)):0;
@@ -29753,7 +29787,7 @@ function u196Promo(kind){const now=Date.now(),st=U196.st,S=(st&&st.season)||u196
   return `<a class="u196promo${live?'':' pre'}" href="#dang-nguyet" data-u196p="${kind}">${u196Token(30,!live)}<span><b>${lab}</b><small>${live?`Bậc ${t}/30 · ${why}`:`<em class="u196pvt">🔒 Xem trước</em> mở cửa sau ${u196Left(U196_START-now)} (00:00 · 01/12). ${why}`}</small></span><span class="btn sm ${live?'pri':''}">${live?'Leo tiếp ›':'Xem trước ›'}</span></a>`;}
 function u196HomeHTML(){const st=U196.st,now=Date.now(),S=(st&&st.season)||u196SeasonAt(now),live=now>=U196_START&&S.live;if(st&&st.season&&now>st.season.claimUntil)return '';
   const t=st&&live?st.tier:0,n=live&&st&&st.tiers?st.tiers.reduce((a,x,i)=>a+(t>i&&x.free&&!st.claimed.includes((i+1)+':free')?1:0)+(t>i&&x.paid&&st.has&&!st.claimed.includes((i+1)+':paid')?1:0),0):0;
-  return `<a class="kchc u196h${live?'':' pre'}" href="#dang-nguyet">${u196Token(36,!live)}<div><b>Đăng Nguyệt Chi Lộ · ${esc(S.name||'')}</b><small>${live?`Bậc ${t}/30${n?` · <b>${n} quà chờ nhận</b>`:''}`:`<em class="u196pvt">🔒 Xem trước</em> · mở cửa sau ${u196Left(U196_START-now)}`}</small></div><span class="btn sm kcalt">${n?'Nhận ›':live?'Xem ›':'Xem trước ›'}</span></a>`;}
+  return `<a class="kchc u196h${live?'':' pre'}" href="#dang-nguyet" data-hk="dn:${S.n}:${live?'L':'P'}">${u196Token(36,!live)}<div><b>Đăng Nguyệt Chi Lộ · ${esc(S.name||'')}</b><small>${live?`Bậc ${t}/30${n?` · <b>${n} quà chờ nhận</b>`:''}`:`<em class="u196pvt">🔒 Xem trước</em> · mở cửa sau ${u196Left(U196_START-now)}`}</small></div><span class="btn sm kcalt">${n?'Nhận ›':live?'Xem ›':'Xem trước ›'}</span></a>`;}
 /* giới thiệu ở nhiều nơi: hộp Chuỗi ngày học, Nhiệm vụ hôm nay, trang Kim Cương, Kim Bảng */
 function u196Inject(){try{const ins=(el,kind,where)=>{if(!el||el.querySelector(':scope > .u196promo')||(el.parentElement&&el.parentElement.querySelector(':scope > .u196promo[data-u196p="'+kind+'"]')))return;el.insertAdjacentHTML(where||'beforeend',u196Promo(kind));};
   document.querySelectorAll('section.quests, section.mhday').forEach(e=>ins(e,'quest'));
@@ -29766,6 +29800,43 @@ try{const i=HUB.findIndex(x=>x.k==='rank');HUB.splice(i>=0?i+1:Math.min(4,HUB.le
 function u196Boot(){if(!accCloud())return;u196Load().then(()=>{try{if(location.hash==='#home'||location.hash===''||location.hash==='#')kcHomeCards();}catch(e){}});}
 setTimeout(u196Boot,2500);
 if(window.__T)window.__u196={uid:()=>SOC.auth&&SOC.auth.uid,streak:()=>viewStreak(),addXp:n=>addXp(n),gxp:()=>G().xp,load:u196Load,render:u196Render,st:()=>U196.st,defs:u196Defs,claim:u196Claim,buyKc:u196BuyKc,txt:u196Txt,home:u196HomeHTML};
+
+/* 5.148: thẻ thông báo đầu Trang chủ (Đăng Nguyệt, Nhiệm vụ Kim Cương tuần, cứu chuỗi, quà gói, dải tải app)
+   - Mỗi thẻ có khóa data-hk. Thẻ chỉ hiện ở lần đầu vào (30 phút kể từ lúc thấy lần đầu), sau đó tự ẩn.
+   - Có nút × để tắt nhanh và vuốt ngang để ẩn. Nội dung mới (mùa mới, tuần mới, mở cửa…) có khóa mới nên hiện lại 1 lần. */
+const HK_K='hsk-hk',HK_SHOW=30*60*1000;
+function hkGet(){let o={};try{o=JSON.parse(localStorage.getItem(HK_K)||'{}')||{};}catch(e){}return o;}
+function hkSet(o){try{const ks=Object.keys(o);if(ks.length>80)ks.sort((a,b)=>(o[a].t||0)-(o[b].t||0)).slice(0,ks.length-80).forEach(k=>delete o[k]);localStorage.setItem(HK_K,JSON.stringify(o));}catch(e){}}
+function hkOff(k){const o=hkGet();o[k]=Object.assign({t:Date.now()},o[k]||{},{x:1});hkSet(o);}
+function hkGone(el){const p=el.parentElement;el.remove();if(p&&p.classList.contains('kchcs')&&!p.children.length)p.remove();}
+function hkHide(el,dir){if(el.dataset.hkOut)return;el.dataset.hkOut='1';hkOff(el.dataset.hk);
+  el.style.transition='transform .22s ease,opacity .22s ease';el.style.transform=`translateX(${dir<0?-110:110}%)`;el.style.opacity='0';
+  setTimeout(()=>{const h=el.offsetHeight;el.style.transition='height .18s ease,margin .18s ease,padding .18s ease';el.style.height=h+'px';el.style.overflow='hidden';
+    requestAnimationFrame(()=>{el.style.height='0';el.style.paddingTop='0';el.style.paddingBottom='0';el.style.marginTop='0';el.style.marginBottom='0';});setTimeout(()=>hkGone(el),200);},220);}
+function hkSwipe(el){el.setAttribute('draggable','false');el.querySelectorAll('img,a').forEach(x=>x.setAttribute('draggable','false'));el.addEventListener('dragstart',e=>e.preventDefault());let x0=0,y0=0,dx=0,on=false,lock=false,moved=false;
+  el.addEventListener('pointerdown',e=>{if(e.button>0||e.target.closest('.hkx'))return;x0=e.clientX;y0=e.clientY;dx=0;on=true;lock=false;moved=false;el.style.transition='none';},{passive:true});
+  el.addEventListener('pointermove',e=>{if(!on)return;const ax=e.clientX-x0,ay=e.clientY-y0;
+    if(!lock){if(Math.abs(ay)>10&&Math.abs(ay)>Math.abs(ax)){on=false;return;}if(Math.abs(ax)>10){lock=true;moved=true;try{el.setPointerCapture(e.pointerId);}catch(x){}}else return;}
+    dx=ax;el.style.transform=`translateX(${dx}px)`;el.style.opacity=String(Math.max(.25,1-Math.abs(dx)/260));},{passive:true});
+  const end=()=>{if(!on&&!lock)return;on=false;if(!lock)return;lock=false;
+    if(Math.abs(dx)>90)hkHide(el,dx);else{el.style.transition='transform .18s ease,opacity .18s ease';el.style.transform='';el.style.opacity='';}};
+  el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
+  el.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);}
+function hkScan(){const h=location.hash||'#home';if(h!=='#home'&&h!=='#')return;const a=document.getElementById('app');if(!a)return;
+  const els=a.querySelectorAll('[data-hk]');if(!els.length)return;const o=hkGet(),now=Date.now();let ch=false;
+  els.forEach(el=>{const k=el.dataset.hk;if(!k||el.dataset.hkOn)return;const r=o[k];
+    if(r&&(r.x||now-(r.t||0)>HK_SHOW)){hkGone(el);return;}
+    if(!r){o[k]={t:now};ch=true;}
+    el.dataset.hkOn='1';el.classList.add('hkcard');
+    let x=el.querySelector(':scope > .u164x');
+    if(!x){el.insertAdjacentHTML('beforeend','<button type="button" class="hkx" aria-label="Ẩn thông báo này" title="Ẩn">×</button>');x=el.querySelector(':scope > .hkx');}
+    x.onclick=e=>{e.preventDefault();e.stopPropagation();hkHide(el,1);};
+    hkSwipe(el);});
+  if(ch)hkSet(o);}
+new MutationObserver(()=>{clearTimeout(hkScan.t);hkScan.t=setTimeout(hkScan,30);}).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+addEventListener('hashchange',()=>setTimeout(hkScan,150));setTimeout(hkScan,500);
+(function(){try{const b=kcHomeCards;kcHomeCards=function(){const r=b.apply(this,arguments);try{hkScan();}catch(e){}return r;};}catch(e){}})();
+if(window.__T)window.__u197={hkGet,hkSet,hkScan,HK_SHOW};
 
 function route(){
   stopGames();
