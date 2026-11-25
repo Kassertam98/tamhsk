@@ -7816,6 +7816,53 @@ html.tabbar .tskip.bot{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 @keyframes u192bob{50%{transform:translateY(-4px)}}
 .tchead img.u192pet{width:64px;height:auto;filter:drop-shadow(0 6px 6px rgba(0,0,0,.18))}
 @media (prefers-reduced-motion:reduce){.u192hop{animation:none!important}}
+/* ===== 5.145 Kim Cương ===== */
+.kcpill{display:inline-flex;align-items:center;gap:3px;padding:3px 9px 3px 6px;border-radius:999px;background:linear-gradient(135deg,#e6f6ff,#b9e4ff);color:#0b4f7a;font-weight:700;text-decoration:none;border:1px solid #7cc4f2;white-space:nowrap;flex:0 0 auto}
+.kcpill i{font-style:normal;font-size:14px;line-height:1}.kcpill b{color:#0b4f7a!important}
+.kcpill:hover{filter:brightness(1.03);transform:translateY(-1px)}
+.kcpill.pulse{animation:ybPulse .7s ease}
+.btn.kcalt{background:linear-gradient(135deg,#e9f7ff,#c9ebff);border-color:#7cc4f2;color:#0b4f7a;font-weight:700}
+.btn.kcalt:disabled{opacity:.5}
+.btn.kcgo,.btn.pri.kcgo{background:linear-gradient(135deg,#2e9be0,#1a6fb8);border-color:#1a6fb8;color:#fff}
+.gmbox .row.kcrow{flex-wrap:wrap}
+.kcdlg{max-width:min(440px,calc(100vw - 32px))}
+.kcdlg .kcbtns{justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.kchcs{display:flex;flex-direction:column;gap:10px}
+.kchc{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;border:1px solid #9ad3f5;background:linear-gradient(135deg,#f2fbff,#dff3ff);flex-wrap:wrap}
+.kchc.kcfix{border-color:#ffb38a;background:linear-gradient(135deg,#fff6ef,#ffe6d6)}
+.kchc img{width:52px;height:auto;flex:0 0 auto}
+.kchc>div{flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.kchc small{color:var(--muted,#667)}
+.kchc .btn{flex:0 0 auto;margin-left:auto}
+.kchero .kcbig{font-size:46px;line-height:1;width:72px;height:72px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(135deg,#e6f6ff,#b9e4ff);flex:0 0 auto}
+.kchero h1{margin:2px 0}
+.kcpacks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:720px){.kcpacks{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.kcpack{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:22px 8px 12px;border-radius:16px;border:1.5px solid #9ad3f5;background:#fff;cursor:pointer;font:inherit;color:inherit;min-width:0}
+.kcpack:hover{border-color:#2e9be0;transform:translateY(-1px)}
+.kcpack.best{border-color:#2e9be0;box-shadow:0 4px 14px rgba(46,155,224,.18)}
+.kcpack .kcgem{font-size:26px;line-height:1}
+.kcpack>b{font-size:20px;color:#0b4f7a}
+.kcpack s{font-size:12px;color:var(--muted,#889)}
+.kcpack .kcprice{font-weight:700;margin-top:4px}
+.kctag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:#2e9be0;color:#fff}
+.kctag.x2{background:linear-gradient(135deg,#ff7a3d,#e5383b)}
+.kctag.inl{position:static;transform:none}
+.kcproad{display:flex;flex-direction:column;gap:2px;margin-top:12px;padding:10px 12px;border-radius:12px;background:#fff8e1;border:1px solid #f0c94a;color:inherit;text-decoration:none}
+.kcrowp{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.kcrowp>div{flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.kcuse{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 14px}
+.kcuse li{display:flex;gap:8px;align-items:flex-start}.kcuse i{font-style:normal;flex:0 0 auto}
+.kcswap{gap:8px;align-items:center;flex-wrap:wrap}
+.kcswap input{width:90px;max-width:100%}
+.kcaw,.kclog{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.kcaw li,.kclog li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line,#e5e5e5)}
+.kcaw li:last-child,.kclog li:last-child{border-bottom:0}
+.kclog li>span{display:flex;flex-direction:column;min-width:0}.kclog li>span b{font-weight:600;overflow-wrap:anywhere}
+.kclog small{color:var(--muted,#889)}
+.kclog .up{color:#0b8a5f}.kclog .dn{color:#c3402b}
+.u193kc .kcpacks{margin-top:4px}
+/* 5.145 micro + đồng bộ: không có giao diện riêng */
 </style>
 </head><body>
 
@@ -7841,12 +7888,12 @@ html.tabbar .tskip.bot{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='1d71ca9c';
-document.write('<script src="packs/hsk'+L+'.js?v=1d71ca9c"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='c997b49e';
+document.write('<script src="packs/hsk'+L+'.js?v=c997b49e"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=1d71ca9c','strokes-file');A('packs/dict.js?v=1d71ca9c','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=c997b49e','strokes-file');A('packs/dict.js?v=c997b49e','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -27040,7 +27087,7 @@ function u175Wire(){const mic=document.getElementById('u175mic'),kb=document.get
   const start=()=>{if(U175.busy||U175.mode==='listen')return;if(!sttSupported()){gardenToast('Máy này chưa nghe được giọng nói, hãy gõ chữ nhé.');if(!U175.kb)kb.click();return;}
     U175.held=Date.now();U175.live='';u175SetMode('listen');mic.classList.add('on');document.getElementById('u175micl').textContent='Thả ra để gửi';u175Paint();
     U175.stop=startListening({partial:t=>{U175.live=t;u175Paint();},final:a=>{u175MicReset();const v=(a&&a[0]||'').trim();U175.live='';if(v)u175Send(v);else{u175SetMode('idle');u175Paint();gardenToast('Chưa nghe rõ, thử nói lại nhé.');}},
-      error:c=>{u175MicReset();U175.live='';u175SetMode('idle');u175Paint();gardenToast(c==='not-allowed'?'Hãy cho phép dùng micro để nói chuyện.':'Micro gặp lỗi, thử lại hoặc gõ chữ nhé.');}});};
+      error:c=>{u175MicReset();U175.live='';u175SetMode('idle');u175Paint();gardenToast(c==='not-allowed'?'Hãy cho phép dùng micro để nói chuyện (Cài đặt điện thoại › Ứng dụng › Tâm HSK › Quyền › Micro).':esc(sttErrorText(c))+' Bạn cũng có thể gõ chữ.');}});};
   const end=()=>{if(U175.mode!=='listen')return;if(Date.now()-U175.held<350)return;/* bấm nhanh: giữ chế độ nghe, bấm lần nữa để gửi */try{U175.stop&&U175.stop();}catch(e){}};
   mic.addEventListener('pointerdown',e=>{e.preventDefault();if(U175.mode==='listen'){try{U175.stop&&U175.stop();}catch(x){}return;}start();});
   mic.addEventListener('pointerup',end);mic.addEventListener('pointerleave',end);mic.addEventListener('contextmenu',e=>e.preventDefault());
@@ -28374,7 +28421,7 @@ function u186Go(){const imm=!!document.getElementById('u186blk');
 document.addEventListener('click',e=>{const b=e.target.closest('[data-u186]');if(!b)return;const k=b.dataset.u186;
   if(k==='go')u186Go();
   else if(k==='store')u186Store();
-  else if(k==='finish'){try{AndroidApp.updFinish();}catch(e){u186Store();}}
+  else if(k==='finish'){b.disabled=true;(async()=>{try{if(window.__appSaveNow)await window.__appSaveNow(5000);}catch(e){}try{AndroidApp.updFinish();}catch(e){b.disabled=false;u186Store();}})();}
   else if(k==='later'){try{localStorage.setItem('hsk-u186x',U186.rec+'|'+Date.now());}catch(e){}u186BarOff();}});
 /* ---------- kiểm tra ---------- */
 async function u186Check(force){U186.os=u186Os();if(!U186.os)return;
@@ -28973,6 +29020,316 @@ setInterval(()=>{const now=Date.now();U192B.forEach((b,im)=>{if(!im.isConnected)
 setTimeout(u192Scan,1500);
 if(window.__T)window.__u192={u192Anim,U192B,u192Scan,U192_SLEEP};
 
+/* ===== 5.145 Kim Cương 💎 — tiền cao cấp (máy chủ giữ số dư) =====
+   - Có từ: nạp tiền (chỉ trên web, lần đầu x2), Gói Pro/Plus tặng mỗi 30 ngày, vài mốc thành tích, thưởng BXH (quản trị duyệt).
+   - 1 Kim Cương = 10 Nguyên bảo. Mọi món bán bằng Nguyên bảo đều trả được bằng Kim Cương (giá NB chia 10, làm tròn lên).
+   - Chỉ bằng Kim Cương: nạp đầy năng lượng (8), cứu chuỗi đã mất trong 3 ngày (20), đổi Tên ID từ lần thứ hai (30).
+   - Bản Android: vẫn hiện, tiêu và nhận Kim Cương; không có nút nạp, không nhắc tới web.
+   - Không khóa phần học bằng Kim Cương. Ngừng bán gói Nguyên bảo. */
+const KC_K='hsk-kc',KC_RATE=10,KC_I='💎',KC_FULL=8,KC_FIX=20,KC_RENAME_C=30,KC_FIX_DAYS=3;
+const KC_PACK_FB=[{id:'kc40',price:20000,kc:40},{id:'kc110',price:50000,kc:110},{id:'kc240',price:100000,kc:240},{id:'kc520',price:200000,kc:520}];
+const KC_BONUS={kc110:'+10%',kc240:'+20%',kc520:'+30%'};
+const KC_AWL=[['first','Học xong bài đầu tiên',5],['s7','Chuỗi 7 ngày (mỗi tháng)',2],['s30','Chuỗi 30 ngày (mỗi tháng)',10],['hsk','Qua hết một cấp HSK',10],['top','Top 1 / 2 / 3 BXH tuần của mỗi trò',5],['inv','Mời bạn, bạn học đủ 3 ngày',5]];
+const KC_USE=[['⚡','Đổi năng lượng, nạp đầy năng lượng'],['🎮','Chơi khi hết năng lượng, chơi tiếp khi thua'],['🏎️','Thêm lượt Đua xe có thưởng'],['💬','Thêm lượt nói chuyện với Tiểu Long Hổ'],['🔥','Cứu chuỗi ngày học vừa bị mất'],['🛍️','Mua trang phục, skin xe, nội thất, đồ sự kiện'],['🪪','Đổi Tên ID từ lần thứ hai'],['🪙','Đổi ra Nguyên bảo (1 💎 = 10 🪙)']];
+try{FUN_EV.push('kc_view','kc_buy','kc_spend');}catch(e){}
+try{U174_COINS.length=0;}catch(e){} // ngừng bán gói Nguyên bảo
+try{Object.assign(PLAN_NAME,{kc40:'40 Kim Cương',kc110:'110 Kim Cương',kc240:'240 Kim Cương',kc520:'520 Kim Cương'});}catch(e){}
+try{U174_MAIN.push(['💎','Tặng Kim Cương mỗi 30 ngày','30 Kim Cương mỗi tháng, gói 1 năm được 40']);U174_CMP.splice(3,0,['Kim Cương mỗi 30 ngày',0,'30','30','40','30']);}catch(e){}
+try{PROINV.kc={t:'Kim Cương sắp hết rồi 💎',d:'Gói Pro tặng Kim Cương mỗi 30 ngày, lại học và chơi không tốn năng lượng. Có Pro là đủ dùng cả tháng!',f:['💎','30 Kim Cương mỗi tháng, gói năm được 40']};}catch(e){}
+
+/* ---------- số dư (máy chủ) + giao dịch đang chờ gửi ---------- */
+function KCS(){const uid=SOC.auth&&SOC.auth.uid;try{const o=JSON.parse(localStorage.getItem(KC_K)||'null')||{};if(o.uid!==uid)return {uid,srv:0,pend:[],st:null,aw:{}};o.pend=o.pend||[];o.aw=o.aw||{};return o;}catch(e){return {uid,srv:0,pend:[],st:null,aw:{}};}}
+function kcPut(o){try{localStorage.setItem(KC_K,JSON.stringify(o));}catch(e){}}
+function kcOn(){try{return typeof walOn==='function'&&walOn();}catch(e){return false;}}
+const kcPend=o=>(o.pend||[]).reduce((a,x)=>a+(x.c||0),0);
+function kcBal(){const o=KCS();return (o.srv||0)-kcPend(o);}
+const kcN=n=>Number(n||0).toLocaleString('vi-VN');
+const kcOf=nb=>Math.max(1,Math.ceil((+nb||0)/KC_RATE));
+const kcApp=()=>{try{return typeof isApp==='function'&&isApp();}catch(e){return false;}};
+function kcPaint(pulse){const b=kcBal();document.querySelectorAll('.kcpill b').forEach(e=>e.textContent=kcN(b));document.querySelectorAll('[data-kcbal]').forEach(e=>e.textContent=kcN(b));
+  if(pulse)document.querySelectorAll('.kcpill').forEach(p=>{p.classList.remove('pulse');void p.offsetWidth;p.classList.add('pulse');});}
+function kcSrv(v,st){const o=KCS();o.srv=Math.round(+v||0);if(st)o.st=Object.assign({},o.st||{},st);o.at=Date.now();kcPut(o);kcPaint();
+  if(st&&(location.hash===''||location.hash==='#home'))setTimeout(()=>{try{kcHomeCards();}catch(e){}},0);}
+let kcLoadAt=0;
+async function kcLoad(force){if(!kcOn())return null;if(!force&&Date.now()-kcLoadAt<60e3)return KCS().st;kcLoadAt=Date.now();
+  try{const j=await frApi('GET','/v1/kc');const o=KCS();if(!o.pend.length)kcSrv(j.bal,j);else{o.st=Object.assign({},o.st||{},j);kcPut(o);}return j;}catch(e){return null;}}
+let kcBusy=false,kcT=0;
+async function kcFlush(){if(!kcOn()||kcBusy)return;if(!KCS().pend.length)return;kcBusy=true;let refused=0,net=false;
+  try{for(const op of KCS().pend.slice(0,20)){let j=null,err='';try{j=await frApi('POST','/v1/kc/spend',op.b);}catch(e){err=String(e.message||'');}
+      if(!j&&!/INSUFFICIENT|INVALID|BAD_ID/.test(err)){net=true;break;} // lỗi mạng: giữ lại, gửi sau
+      const o=KCS();o.pend=o.pend.filter(x=>x.b.id!==op.b.id);if(j)o.srv=j.bal;else refused++;kcPut(o);}}
+  finally{kcBusy=false;}
+  if(refused){await kcLoad(true);gardenToast(`${KC_I} Máy chủ chưa nhận ${refused} giao dịch (không đủ Kim Cương). Số dư đã cập nhật theo máy chủ.`);}
+  kcPaint();if(net)setTimeout(kcFlush,15000);else if(KCS().pend.length)setTimeout(kcFlush,800);}
+function kcQueue(b,c){const o=KCS();b=Object.assign({},b,{id:'k'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)});o.pend.push({b,c});kcPut(o);kcPaint(true);
+  try{funTrack('kc_spend');}catch(e){}clearTimeout(kcT);kcT=setTimeout(kcFlush,500);return b.id;}
+function kcShort(c){const b=kcBal();let inv=false;try{if(!isPremium())inv=proInvite('kc');}catch(e){}
+  if(!inv)gardenToast(`${KC_I} Cần <b>${c}</b> Kim Cương, bạn đang có ${kcN(b)}.${kcApp()?'':' <a href="#kc">Nạp thêm</a>'}`);}
+// trả bằng Kim Cương cho món có giá riêng (không quy từ Nguyên bảo)
+function kcPayItem(item,c,name){if(!kcOn()){gardenToast('Đăng nhập để dùng Kim Cương nhé.');return false;}if(kcBal()<c){kcShort(c);return false;}
+  kcQueue({item,name},c);gardenToast(`${KC_I} −${c} Kim Cương · ${esc(name)}`);try{sfx('coin');}catch(e){}return true;}
+
+/* ---------- trả bằng Kim Cương thay Nguyên bảo ----------
+   KC_PAY bật ngay trước khi chạy hành động mua: spend() trừ Kim Cương (giá NB/10) thay cho Nguyên bảo.
+   Thiếu Nguyên bảo mà đủ Kim Cương: hỏi người dùng rồi bấm lại đúng nút vừa bấm, lần này trả bằng Kim Cương. */
+let KC_PAY=0,KC_LAST=null,KC_LAST_AT=0;
+document.addEventListener('click',e=>{if(!e.isTrusted)return;const b=e.target.closest&&e.target.closest('button,a,[role=button]');if(b){KC_LAST=b;KC_LAST_AT=Date.now();}},true);
+(function(){const base=spend;spend=function(n,why){
+  if(KC_PAY&&kcOn()){KC_PAY=0;const c=kcOf(n);if(kcBal()<c){kcShort(c);return false;}
+    kcQueue({item:'nb',p:Math.round(n),name:String(why||'').slice(0,50)},c);setTimeout(()=>{try{gardenToast(`${KC_I} −${c} Kim Cương · ${esc(why||'')}`);sfx('coin');}catch(e){}},50);return true;}
+  KC_PAY=0;let s=null;try{s=SHOP();}catch(e){}
+  if(s&&s.coins<n&&kcOn()&&kcBal()>=kcOf(n)&&KC_LAST&&KC_LAST.isConnected&&Date.now()-KC_LAST_AT<5000){const el=KC_LAST;kcOffer(n,why,()=>{KC_PAY=1;try{el.click();}finally{setTimeout(()=>{KC_PAY=0;},0);}});return false;}
+  return base.apply(this,arguments);};})();
+function kcDlg(){let d=document.getElementById('kcdlg');if(!d){d=document.createElement('dialog');d.id='kcdlg';d.className='wd kcdlg';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-kx]'))d.close();});}return d;}
+function kcOffer(n,why,go){const c=kcOf(n),d=kcDlg();let coins=0;try{coins=SHOP().coins;}catch(e){}
+  d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Thiếu Nguyên bảo</div><h2 style="margin:2px 0 0">Trả bằng Kim Cương?</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
+    <p style="margin:0">${esc(why||'Món này')} cần <b>${kcN(n)} ${YB}</b>, bạn đang có ${kcN(coins)}. Bạn có thể trả <b>${c} ${KC_I}</b> thay thế.</p>
+    <p class="small muted" style="margin:0">Bạn đang có ${kcN(kcBal())} Kim Cương · 1 ${KC_I} = 10 Nguyên bảo.</p>
+    <div class="row kcbtns"><button type="button" class="btn" data-kx>Thôi</button><button type="button" class="btn pri kcgo" id="kcok">Trả ${c} ${KC_I}</button></div></div>`;
+  d.querySelector('#kcok').onclick=()=>{d.close();go();};if(!d.open)d.showModal();setTimeout(()=>{const b=d.querySelector('#kcok');if(b)b.focus();},50);}
+// hộp thoại trò chơi (hết năng lượng, chơi tiếp): thêm nút trả bằng Kim Cương cạnh nút trả Nguyên bảo
+(function(){const base=gmDlg;gmDlg=function(html,yes,onYes,onNo){const r=base.apply(this,arguments);
+  try{if(!kcOn()||typeof yes!=='string'||yes.indexOf(YB)<0)return r;const m=yes.replace(YB,'').trim().match(/([\d.]+)$/);if(!m)return r;
+    const c=kcOf(+m[1].replace(/\./g,'')),d=document.getElementById('gmdlg'),y=d&&d.querySelector('#gmyes');if(!y)return r;
+    y.insertAdjacentHTML('beforebegin',`<button class="btn kcalt" id="gmkc" type="button"${kcBal()<c?' disabled':''} title="Bạn có ${kcN(kcBal())} Kim Cương">${c} ${KC_I}</button>`);
+    y.parentElement.classList.add('kcrow');
+    d.querySelector('#gmkc').onclick=()=>{d.onclose=null;d.close();KC_PAY=1;try{onYes();}finally{KC_PAY=0;}};}catch(e){}return r;};})();
+// thua mà không đủ Nguyên bảo để chơi tiếp, nhưng đủ Kim Cương
+(function(){const base=gmLose;gmLose=function(key,revive,giveUp){const r=base.apply(this,arguments);if(r)return r;
+  try{if(!kcOn()||(typeof duoOn==='function'&&duoOn()))return r;if(GM_RUN.key!==key)GM_RUN={key,n:0};const n=GM_RUN.n,max=gmMax();if(n>=max)return r;
+    const cost=gmCost(n);if(!(cost>0&&SHOP().coins<cost))return r;const c=kcOf(cost);if(kcBal()<c)return r;
+    gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Chơi tiếp ${esc(GM_NAME[key]||'')}?</h3><p class="small muted" style="margin:0">Giữ nguyên điểm, sau <b>${GM_CD} giây</b> đếm ngược sẽ chơi tiếp từ chỗ vừa thua. Lượt chơi tiếp <b>${n+1}/${max}</b> của ván này tốn <b>${c} ${KC_I}</b> (bạn có ${kcN(kcBal())} Kim Cương).</p>`,
+      `Chơi tiếp · ${c} ${KC_I}`,()=>{KC_PAY=1;const ok=spend(cost,'Chơi tiếp '+(GM_NAME[key]||'trò chơi'));KC_PAY=0;if(!ok)return giveUp&&giveUp();GM_RUN.n=n+1;try{sfx('win');}catch(e){}gmCountdown(key,n+1,max,revive);},giveUp);
+    return true;}catch(e){return r;}};})();
+// thêm nút Kim Cương: nạp đầy năng lượng, thêm lượt nói chuyện AI
+function kcDecorate(){if(!kcOn())return;
+  document.querySelectorAll('#enbuy,#enbuy2').forEach(b=>{if(b.dataset.kcd)return;b.dataset.kcd=1;let v=0;try{v=enGet();}catch(e){}if(v>=EN_MAX)return;
+    b.insertAdjacentHTML('afterend',`<button type="button" class="btn kcalt${b.classList.contains('sm')?' sm':''}${b.classList.contains('rvchip')?' rvchip':''}" data-kcfull>${KC_I} ${KC_FULL} · nạp đầy ${EN_MAX}</button>`);
+    b.nextElementSibling.onclick=()=>{let cur=0;try{cur=enGet();}catch(e){}if(cur>=EN_MAX){gardenToast('Năng lượng đang đầy rồi!');return;}
+      if(!kcPayItem('enfull',KC_FULL,'Nạp đầy năng lượng'))return;enSet(EN_MAX);try{renderEnergy();}catch(e){}try{renderStat();}catch(e){}
+      const dl=b.closest('dialog');if(dl&&dl.id==='endlg'){try{enDialog();}catch(e){dl.close();}}else if(location.hash==='#review'){try{viewReview();}catch(e){}}else{try{route();}catch(e){}}};});
+  const ab=document.getElementById('u175buy');if(ab&&!ab.dataset.kcd){ab.dataset.kcd=1;const q=(typeof U175!=='undefined'&&U175.q)||{},c=q.extraKc||kcOf(q.extraCost||20);
+    ab.insertAdjacentHTML('afterend',`<button type="button" class="btn big kcalt" id="u175kc">Thêm ${q.extraN||5} lượt · ${c} ${KC_I}</button>`);
+    const kb=document.getElementById('u175kc');kb.onclick=async()=>{if(kcBal()<c){kcShort(c);return;}kb.disabled=true;const d=kb.closest('dialog'),msg=d&&d.querySelector('#u175bm');
+      try{await kcFlush();const r=await frApi('POST','/v1/ai/extra',{pay:'kc'});if(r.kc!=null)kcSrv(r.kc);U175.q=Object.assign(U175.q||{},r);try{u175QPaint();}catch(e){}if(d)d.close();try{funTrack('kc_spend');}catch(e){}gardenToast('Đã thêm '+(r.extraN||5)+' lượt nói chuyện!');}
+      catch(e){kb.disabled=false;const m=String(e.message||'');if(msg)msg.textContent=m==='INSUFFICIENT_KC'?'Chưa đủ Kim Cương.':m==='AI_EXTRA_LIMIT'?'Hôm nay đã mua đủ số lần.':'Chưa mua được: '+m;}};}}
+let kcDecT=0;new MutationObserver(()=>{if(kcDecT)return;kcDecT=requestAnimationFrame(()=>{kcDecT=0;try{kcDecorate();}catch(e){}});}).observe(document.body,{childList:true,subtree:true});
+
+/* ---------- đổi Tên ID lần hai: hỏi trả 30 Kim Cương rồi gửi lại ---------- */
+(function(){const base=netFetch;netFetch=async function(method,url,headers,body){const r=await base.apply(this,arguments);
+  try{if(method==='POST'&&/\/v1\/handle\/set$/.test(String(url))&&r.status===400&&/KC_NEEDED/.test(r.text||'')){const j=JSON.parse(r.text);const c=j.cost||KC_RENAME_C;
+    const go=await new Promise(res=>{const d=kcDlg();d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Đổi Tên ID</div><h2 style="margin:2px 0 0">Lần đổi thứ hai trở đi</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
+      <p style="margin:0">Đặt và đổi Tên ID lần đầu miễn phí. Từ lần đổi thứ hai, mỗi lần tốn <b>${c} ${KC_I}</b>. Bạn đang có ${kcN(j.bal!=null?j.bal:kcBal())} Kim Cương.</p>
+      <div class="row kcbtns"><button type="button" class="btn" data-kx>Thôi</button><button type="button" class="btn pri kcgo" id="kcok"${(j.bal!=null?j.bal:kcBal())<c?' disabled':''}>Trả ${c} ${KC_I} để đổi</button></div></div>`;
+      let done=false;d.onclose=()=>{if(!done)res(false);};d.querySelector('#kcok').onclick=()=>{done=true;d.onclose=null;d.close();res(true);};if(!d.open)d.showModal();});
+    if(!go){if((j.bal||0)<c)kcShort(c);return r;}
+    const b=JSON.parse(body||'{}');b.kcId='k'+Date.now().toString(36)+Math.random().toString(36).slice(2,8);const r2=await base.call(this,method,url,headers,JSON.stringify(b));
+    try{const j2=JSON.parse(r2.text||'{}');if(j2.kc!=null){kcSrv(j2.kc);try{funTrack('kc_spend');}catch(e){}}}catch(e){}return r2;}}catch(e){}
+  return r;};})();
+
+/* ---------- cứu chuỗi đã mất (trong 3 ngày) ---------- */
+(function(){const base=touch;touch=function(){try{const t=today();if(S.streak&&S.streak.last&&S.streak.last<addDays(t,-1)&&(S.streak.count||0)>=3)S.kcLost={n:S.streak.count,last:S.streak.last,d:t};}catch(e){}return base.apply(this,arguments);};})();
+function kcLostNow(){const L=S.kcLost;if(!L||!L.n)return null;let gap=99;try{gap=dBetween(L.d,today());}catch(e){}return gap<=KC_FIX_DAYS-1?L:null;}
+function kcFixStreak(){const L=kcLostNow();if(!L)return;if(!kcPayItem('streakfix',KC_FIX,'Cứu chuỗi '+L.n+' ngày'))return;
+  S.frozenDays=S.frozenDays||{};let d=addDays(L.last,1);for(let i=0;i<60&&d<L.d;i++){S.frozenDays[d]=1;d=addDays(d,1);}
+  S.streak.count=(S.streak.count||0)+L.n;S.streakBest=Math.max(S.streakBest||0,S.streak.count);delete S.kcLost;save();try{renderStat();}catch(e){}try{confetti(50);}catch(e){}
+  gardenToast(`🔥 Đã cứu chuỗi: <b>${S.streak.count} ngày</b>!`);if(location.hash===''||location.hash==='#home')try{viewHome();}catch(e){}}
+
+/* ---------- quà Kim Cương: gói Pro mỗi 30 ngày, mốc thành tích ---------- */
+async function kcClaimPro(btn){if(btn)btn.disabled=true;try{const j=await frApi('POST','/v1/kc/claim',{});kcSrv(j.bal,{pro:j.pro});try{sfx('win');confetti(60);}catch(e){}gardenToast(`${KC_I} <b>+${j.got} Kim Cương</b> · quà gói của bạn`);}
+  catch(e){gardenToast('Chưa nhận được quà, thử lại sau nhé.');}if(location.hash==='#kc')u193View();else if(location.hash===''||location.hash==='#home')try{viewHome();}catch(e){}}
+async function kcAwardTick(){if(!kcOn())return;const o=KCS(),mon=today().slice(0,7);let cards=0,stk=0;try{cards=Object.keys(S.cards||{}).length;stk=(S.streak&&S.streak.count)||0;}catch(e){}
+  const NEED={1:150,2:150,3:300,4:600},keys=[];
+  if(cards>=10&&!o.aw.first)keys.push(['first','first']);if(stk>=7&&!o.aw['s7'+mon])keys.push(['s7','s7'+mon]);if(stk>=30&&!o.aw['s30'+mon])keys.push(['s30','s30'+mon]);
+  try{if(NEED[LEVEL]&&cards>=NEED[LEVEL]&&!o.aw['hsk'+LEVEL])keys.push(['hsk'+LEVEL,'hsk'+LEVEL]);}catch(e){}
+  let got=0;for(const [k,mk] of keys){try{const j=await frApi('POST','/v1/kc/award',{key:k});const o2=KCS();o2.aw[mk]=1;kcPut(o2);if(j.got){got+=j.got;kcSrv(j.bal);}}catch(e){}}
+  if(got)setTimeout(()=>{try{gardenToast(`${KC_I} <b>+${got} Kim Cương</b> · quà thành tích 🎁`);sfx('coin');}catch(e){}},900);}
+// lấy số dư kèm /v1/me
+(function(){const base=meFetch;meFetch=async function(){const j=await base.apply(this,arguments);try{if(j&&j.kc&&!KCS().pend.length)kcSrv(j.kc.bal,j.kc);}catch(e){}return j;};})();
+function kcBoot(){if(!kcOn())return;kcFlush();kcLoad();setTimeout(kcAwardTick,6000);}
+setTimeout(kcBoot,3500);window.addEventListener('hsk-acc',()=>setTimeout(kcBoot,1500));
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&kcOn()){kcFlush();kcLoad();}});setInterval(()=>{if(!document.hidden)kcAwardTick();},3600e3);
+
+/* ---------- ví trên thanh đầu trang ---------- */
+(function(){const base=renderStat;renderStat=function(){const r=base.apply(this,arguments);
+  try{const yb=document.getElementById('ybpill');if(yb&&kcOn()&&!document.getElementById('kcpill'))yb.insertAdjacentHTML('afterend',`<a class="kcpill" id="kcpill" href="#kc" title="Kim Cương" aria-label="Kim Cương: ${kcBal()}"><i aria-hidden="true">${KC_I}</i><b>${kcN(kcBal())}</b></a>`);kcPillPlace();}catch(e){}return r;};})();
+function kcPillPlace(){const k=document.getElementById('kcpill'),y=document.getElementById('ybpill');if(k&&y&&y.nextElementSibling!==k)y.after(k);}
+(function(){if(typeof hdrArrange!=='function')return;const base=hdrArrange;hdrArrange=function(){const r=base.apply(this,arguments);try{kcPillPlace();}catch(e){}return r;};})();
+
+/* ---------- thẻ quà ở trang chủ: gói Pro tặng Kim Cương, cứu chuỗi ---------- */
+(function(){const base=viewHome;viewHome=function(){const r=base.apply(this,arguments);try{kcHomeCards();}catch(e){}return r;};})();
+function kcHomeCards(){if(!kcOn()||!app)return;const st=KCS().st||{},pro=st.pro||{},L=kcLostNow();let h='';
+  if(L)h+=`<section class="kchc kcfix"><img src="${esc(u192Src?u192Src('sad'):'')}" alt="" onerror="this.remove()"><div><b>Chuỗi ${L.n} ngày vừa bị mất</b><small>Cứu lại trong ${KC_FIX_DAYS} ngày, chuỗi được nối tiếp như chưa từng gián đoạn.</small></div><button type="button" class="btn pri kcgo" data-kcfix>Cứu · ${KC_FIX} ${KC_I}</button></section>`;
+  if(pro.can&&pro.amount>0)h+=`<section class="kchc kcpro"><img src="${esc(u192Src?u192Src('love'):'')}" alt="" onerror="this.remove()"><div><b>Quà gói của bạn: ${pro.amount} ${KC_I}</b><small>Mỗi 30 ngày bạn được nhận Kim Cương một lần.</small></div><button type="button" class="btn pri kcgo" data-kcpro>Nhận ${pro.amount} ${KC_I}</button></section>`;
+  if(!h)return;const root=app.querySelector('.stack')||app;if(root.querySelector('.kchc'))return;root.insertAdjacentHTML('afterbegin',`<div class="kchcs">${h}</div>`);
+  const f=root.querySelector('[data-kcfix]');if(f)f.onclick=kcFixStreak;const p=root.querySelector('[data-kcpro]');if(p)p.onclick=()=>kcClaimPro(p);}
+
+/* ---------- nạp Kim Cương (chỉ web) ---------- */
+function kcPacks(){const st=KCS().st||{};return (st.packs&&st.packs.length?st.packs:KC_PACK_FB).slice();}
+function kcPackHTML(first){return `<div class="kcpacks">${kcPacks().map(p=>`<button type="button" class="kcpack${p.id==='kc520'?' best':''}" data-kcbuy="${esc(p.id)}">${first?'<span class="kctag x2">x2 lần đầu</span>':KC_BONUS[p.id]?`<span class="kctag">Thêm ${KC_BONUS[p.id]}</span>`:''}
+  <span class="kcgem" aria-hidden="true">${KC_I}</span><b>${kcN(first?p.kc*2:p.kc)}</b>${first?`<s>${kcN(p.kc)}</s>`:''}<span class="kcprice">${vnd(p.price)}</span></button>`).join('')}</div>`;}
+function kcWirePacks(root){root.querySelectorAll('[data-kcbuy]').forEach(b=>b.onclick=()=>kcBuy(b.dataset.kcbuy));}
+let kcPoll=0;
+async function kcBuy(id){if(kcApp())return;const p=kcPacks().find(x=>x.id===id);if(!p)return;const first=!!((KCS().st||{}).first!==false);const d=kcDlg();let auto=false;try{auto=!!(await pricingGet()).auto;}catch(e){}
+  const body=()=>`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Nạp Kim Cương</div><h2 style="margin:2px 0 0">${KC_I} ${kcN(first?p.kc*2:p.kc)} Kim Cương</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
+    <div class="pvdp">${vnd(p.price)}${first?`<small>Lần nạp đầu được nhân đôi (${kcN(p.kc)} × 2)</small>`:''}</div>
+    <ul class="pvdf"><li>${KC_I} Cộng vào ví ngay khi tiền vào</li><li>🪙 Đổi được ra ${kcN((first?p.kc*2:p.kc)*KC_RATE)} Nguyên bảo</li><li>⭐ Gói Pro tặng thêm 30 ${KC_I} mỗi 30 ngày</li></ul>
+    <div id="kcacc"></div>${accCloud()?'<button type="button" class="btn pri big pvpay" id="kcpay">Thanh toán ngay →</button>':''}<div class="small" id="kcmsg" role="status"></div>
+    <p class="small muted" style="margin:0">${auto?'Mở trang PayOS: quét QR ngân hàng, ví điện tử hoặc thẻ.':'Thanh toán chuyển khoản, Kim Cương được cộng khi Kasser xác nhận.'}</p></div>`;
+  const wire=()=>{const pa=d.querySelector('#kcacc');if(pa&&!accCloud()){pa.innerHTML='<p class="small" style="margin:0 0 6px"><b>Đăng nhập để nạp</b>, Kim Cương gắn với tài khoản:</p><div id="kcacc2"></div>';accUI(pa.querySelector('#kcacc2'),{guest:false,done:()=>{meFetch().then(()=>{d.innerHTML=body();wire();});}});}
+    const bb=d.querySelector('#kcpay');if(bb)bb.onclick=async()=>{bb.disabled=true;bb.textContent='Đang mở trang thanh toán…';
+      try{const o=await shopPost('/v1/order/create',{product:id});if(o.status==='paid'){d.close();await kcLoad(true);kcPaid(o);return;}
+        const box=d.querySelector('.in');box.innerHTML=payHTML2(o,auto);try{wireCopy(box);}catch(e){}
+        clearInterval(kcPoll);let n=0;kcPoll=setInterval(async()=>{n++;if(n>120||!d.open){clearInterval(kcPoll);return;}const j=await meFetch();const x=j&&(j.orders||[]).find(y=>y.ref===o.ref);if(x&&x.status==='paid'){clearInterval(kcPoll);d.close();await kcLoad(true);kcPaid(o);}},5000);}
+      catch(e){bb.disabled=false;bb.textContent='Thanh toán ngay →';const m=d.querySelector('#kcmsg');if(m)m.innerHTML=`<span style="color:var(--seal)">${esc(e.message)}</span>`;}};
+    d.querySelectorAll('[data-kx]').forEach(x=>x.onclick=()=>d.close());};
+  d.innerHTML=body();wire();if(!d.open)d.showModal();}
+function kcPaid(o){try{funTrack('kc_buy');sfx('win');confetti(80);}catch(e){}gardenToast(`${KC_I} Đã nhận tiền, Kim Cương đã vào ví: <b>${kcN(kcBal())}</b>`);if(location.hash==='#kc')u193View();}
+// trang gói: thay khối "Nạp Nguyên bảo" bằng "Nạp Kim Cương" (web)
+(function(){const base=viewPremium;viewPremium=async function(){const r=await base.apply(this,arguments);
+  try{if(kcApp()||location.hash.indexOf('#premium')!==0||app.querySelector('#plg-kc'))return r;const first=(KCS().st||{}).first!==false,pro=app.querySelector('#plg-pro');
+    const h=`<section class="panel u193kc" id="plg-kc"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">${KC_I} Nạp Kim Cương</h2><a class="btn sm" href="#kc">Ví Kim Cương ›</a></div>
+      <p class="small muted" style="margin:6px 0 10px">Dùng cho năng lượng, chơi tiếp, thêm lượt nói chuyện, trang phục và nhiều thứ khác. 1 ${KC_I} = 10 Nguyên bảo.${first?' <b>Lần nạp đầu được nhân đôi!</b>':''}</p>${kcPackHTML(first)}</section>`;
+    if(pro)pro.insertAdjacentHTML('afterend',h);else{const s=app.querySelector('.u174');if(s)s.insertAdjacentHTML('beforeend',h);}
+    kcWirePacks(app);try{funTrack('kc_view');}catch(e){}}catch(e){}return r;};})();
+
+/* ---------- trang Ví Kim Cương (#kc) ---------- */
+async function u193View(){try{funTrack('kc_view');}catch(e){}
+  if(!kcOn()){app.innerHTML=`<div class="stack u193"><section class="addhero kchero"><div class="kcbig" aria-hidden="true">${KC_I}</div><div style="min-width:0"><div class="label">Tiền cao cấp</div><h1>Kim Cương</h1><p>Đăng nhập để có ví Kim Cương gắn với tài khoản.</p></div></section><div class="panel" id="kcacc"></div></div>`;
+    try{accUI(app.querySelector('#kcacc'),{guest:false,done:()=>{kcBoot();u193View();}});}catch(e){}return;}
+  const draw=()=>{if(location.hash!=='#kc')return;const o=KCS(),st=o.st||{},pro=st.pro||{},free=st.free||{used:0,cap:20},first=st.first!==false,log=st.log||[];
+    const nextTxt=pro.next?new Date(pro.next).toLocaleDateString('vi-VN'):'';
+    app.innerHTML=`<div class="stack u193">
+      <section class="addhero kchero"><div class="kcbig" aria-hidden="true">${KC_I}</div><div style="min-width:0"><div class="label">Ví Kim Cương</div><h1><span data-kcbal>${kcN(kcBal())}</span> Kim Cương</h1><p>1 ${KC_I} = 10 Nguyên bảo · dùng thay Nguyên bảo ở mọi chỗ, thêm vài tính năng riêng.</p></div></section>
+      ${pro.amount>0?`<section class="panel kcrowp"><div><b>⭐ Quà gói của bạn: ${pro.amount} ${KC_I} mỗi 30 ngày</b><small>${pro.can?'Đã có quà, bấm để nhận.':'Lần nhận tiếp theo: '+esc(nextTxt)}</small></div>${pro.can?`<button type="button" class="btn pri kcgo" data-kcpro>Nhận ${pro.amount} ${KC_I}</button>`:''}</section>`:''}
+      ${kcApp()?'':`<section class="panel"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">Nạp Kim Cương</h2>${first?'<span class="kctag x2 inl">Lần đầu x2</span>':''}</div><p class="small muted" style="margin:6px 0 10px">Gói lớn được tặng thêm. Không tự gia hạn.</p>${kcPackHTML(first)}
+        ${pro.amount>0?'':`<a class="kcproad" href="#premium"><b>⭐ Gói Pro tặng 30 ${KC_I} mỗi tháng</b><small>Kèm học và chơi không tốn năng lượng, lợi hơn nạp lẻ.</small></a>`}</section>`}
+      <section class="panel"><h2 style="margin:0 0 6px">Dùng Kim Cương để làm gì?</h2><ul class="kcuse">${KC_USE.map(([i,t])=>`<li><i aria-hidden="true">${i}</i>${t}</li>`).join('')}</ul>
+        <p class="small muted" style="margin:8px 0 0">Bài học, ôn tập và từ điển luôn miễn phí, không cần Kim Cương.</p></section>
+      <section class="panel"><h2 style="margin:0 0 6px">Đổi ra Nguyên bảo</h2><div class="row kcswap"><label class="small" for="kcsn">Số Kim Cương</label><input id="kcsn" type="number" inputmode="numeric" min="1" max="1000" value="10"><span class="small" id="kcsv">= 100 ${YB}</span><button type="button" class="btn" id="kcsw">Đổi</button></div><p class="small muted" style="margin:6px 0 0">Chỉ đổi một chiều: Nguyên bảo không đổi ngược lại thành Kim Cương.</p></section>
+      <section class="panel"><h2 style="margin:0 0 6px">Nhận Kim Cương miễn phí</h2><p class="small muted" style="margin:0 0 8px">Tối đa ${free.cap||20} ${KC_I} quà mỗi tháng (tháng này đã nhận ${free.used||0}). Thưởng qua cấp HSK không tính vào giới hạn.</p>
+        <ul class="kcaw">${KC_AWL.map(([k,t,n])=>`<li><span>${esc(t)}</span><b>+${n} ${KC_I}</b></li>`).join('')}</ul></section>
+      <section class="panel"><h2 style="margin:0 0 6px">Lịch sử</h2>${log.length?`<ul class="kclog">${log.slice(0,30).map(x=>`<li><span><b>${esc(x.why||'')}</b><small>${new Date(x.at).toLocaleString('vi-VN')}</small></span><b class="${x.delta>0?'up':'dn'}">${x.delta>0?'+':''}${kcN(x.delta)}</b></li>`).join('')}</ul>`:'<p class="small muted" style="margin:0">Chưa có giao dịch nào.</p>'}</section></div>`;
+    kcWirePacks(app);const p=app.querySelector('[data-kcpro]');if(p)p.onclick=()=>kcClaimPro(p);
+    const inp=app.querySelector('#kcsn'),sv=app.querySelector('#kcsv'),sw=app.querySelector('#kcsw');const upd=()=>{const n=Math.max(0,Math.floor(+inp.value||0));sv.innerHTML=`= ${kcN(n*KC_RATE)} ${YB}`;};inp.oninput=upd;upd();
+    sw.onclick=async()=>{const n=Math.floor(+inp.value||0);if(!(n>=1&&n<=1000)){gardenToast('Nhập từ 1 đến 1.000 Kim Cương.');return;}if(kcBal()<n){kcShort(n);return;}sw.disabled=true;
+      try{await kcFlush();await walletSync();const j=await frApi('POST','/v1/kc/swap',{n,id:'s'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)});kcSrv(j.bal);if(j.coins!=null)try{walSetCoins(j.coins+walPendSum(walCur()));}catch(e){}
+        try{sfx('coin');}catch(e){}gardenToast(`${YB} <b>+${kcN(j.nb)} Nguyên bảo</b> · đổi ${n} ${KC_I}`);await kcLoad(true);draw();}
+      catch(e){sw.disabled=false;const m=String(e.message||'');gardenToast(m==='WALLET_NOT_READY'?'Ví Nguyên bảo chưa sẵn sàng, mở lại app rồi thử nhé.':m==='INSUFFICIENT_KC'?'Chưa đủ Kim Cương.':'Chưa đổi được: '+esc(m));}};};
+  draw();await kcFlush();await kcLoad(true);draw();}
+if(window.__T)window.__u193={KCS,kcBal,kcSrv,kcQueue,kcFlush,kcLoad,kcOf,kcOffer,kcFixStreak,kcLostNow,kcAwardTick,kcBuy,u193View,pay:()=>KC_PAY,last:el=>{KC_LAST=el;KC_LAST_AT=Date.now();},S:()=>S,lose:(n,daysAgo)=>{S.kcLost={n,last:addDays(today(),-(daysAgo||2)),d:today()};save();},home:()=>viewHome(),en:()=>enDialog(),gmEnergy:(k,cb)=>gmEnergy(k,cb),setCoins:v=>{const s=SHOP();s.coins=v;shSave();},coins:()=>SHOP().coins,enSet:v=>enSet(v),enGet:()=>enGet(),spend:(n,w)=>spend(n,w),setStreak:(n,last)=>{S.streak={count:n,last:last||today()};save();}};
+
+/* ===== 5.145 Sửa micro và đồng bộ tiến độ (nhất là bản Android) =====
+   1. Micro (Android): không dừng bộ nhận giọng khi nó chưa sẵn sàng (lỗi 5), tự thử lại 1 lần khi bận / mất kết nối dịch vụ (8, 11),
+      lỗi giữa chừng mà đã nghe được chữ thì dùng luôn chữ đó, lỗi quyền (9) báo đúng là chưa cho phép micro.
+   2. Đồng bộ: hai bản (máy này / tài khoản) cùng thay đổi thì GỘP theo từng mục thay vì bắt chọn một bản rồi xóa bản kia:
+      mục chỉ đổi ở một phía thì lấy phía đó; tiến độ học đổi cả hai phía thì gộp từng từ, từng bài, chuỗi ngày, lịch học.
+   3. Android: sao lưu tiến độ ra bộ nhớ của app (AndroidApp.bkSave, ghi thẳng xuống đĩa) và khôi phục sớm khi mở app
+      (android_shim.js) nếu localStorage bị mất các thay đổi cuối do app bị tắt ngang / cập nhật.
+      Rời app (onPause) hoặc trước khi cài bản cập nhật: sao lưu + đẩy lên tài khoản ngay.
+   4. Đồng bộ lỗi liên tục thì báo cho người học biết (dữ liệu vẫn nằm trên máy). */
+
+/* ---------- 1. Micro ---------- */
+(function(){const base=startListening;startListening=function(h){
+  if(!nativeSTT())return base.apply(this,arguments);
+  let done=false,part='',retry=0,wantStop=false,ready=false,t=0;
+  const end=()=>{done=true;clearInterval(t);sttStop=null;};
+  const fin=a=>{if(done)return;end();h.final(a&&a.length?a:(part?[part]:[]));};
+  const err=c=>{if(done)return;if(part){fin([part]);return;}end();h.error(c);};
+  const go=()=>{try{AndroidApp.listen();}catch(e){err('start');return;}
+    clearInterval(t);t=setInterval(()=>{if(done){clearInterval(t);return;}let j;try{j=JSON.parse(AndroidApp.sttPoll());}catch(e){return;}
+      if(j.partial){part=j.partial;try{h.partial(j.partial);}catch(e){}}
+      if((j.state==='listening'||j.state==='processing')&&!ready){ready=true;try{h.ready&&h.ready();}catch(e){}
+        if(wantStop)try{gardenToast('🎤 Micro đã sẵn sàng, bạn nói đi nhé!');}catch(e){}}
+      if(j.state==='done'){fin(j.finals||[]);return;}
+      if(j.state==='error'){const e=+j.error||0;
+        if(e===6||e===7){fin([]);return;}                       // im lặng / không khớp: coi như chưa nghe rõ
+        if((e===5||e===8||e===11)&&retry<1&&!part){retry++;clearInterval(t);setTimeout(()=>{if(!done)go();},400);return;} // bận / mất kết nối: thử lại 1 lần
+        err(e===9?'not-allowed':'a'+e);}},150);
+    try{timers.push(t);}catch(e){}};
+  go();
+  // nhả nút khi micro chưa mở xong (đang xin quyền / đang khởi động): không dừng (dừng lúc này gây lỗi 5), để bộ nhận tự dừng khi người học nói xong
+  sttStop=()=>{wantStop=true;if(!ready)return;try{AndroidApp.stopListen();}catch(e){}};
+  return sttStop;};})();
+
+// mã lỗi Android so khớp đúng từng mã (trước đây "a13" bị hiểu nhầm là lỗi mạng vì khớp "a1")
+(function(){const base=sttErrorText;sttErrorText=function(c){c=String(c||'');const m=c.match(/^a(\d+)$/);if(!m)return base.call(this,c);const n=+m[1];
+  if(n===9)return base.call(this,'not-allowed');if(n===3)return 'Không mở được micro. Kiểm tra xem app khác (gọi điện, ghi âm) có đang dùng micro không rồi thử lại.';
+  if(n===1||n===2)return 'Nhận giọng nói cần có mạng Internet. Hãy kiểm tra kết nối rồi thử lại.';
+  if(n===12||n===13)return 'Điện thoại chưa có gói nhận giọng tiếng Trung. Mở ứng dụng Google › Cài đặt › Giọng nói › Ngôn ngữ, thêm "Tiếng Trung (giản thể)", hoặc cập nhật ứng dụng Google trên CH Play.';
+  if(n===8)return 'Bộ nhận giọng đang bận, đợi một chút rồi thử lại.';if(n===10)return 'Nhận giọng nói đang quá tải, đợi vài giây rồi thử lại.';
+  if(n===5||n===11)return 'Dịch vụ nhận giọng nói của điện thoại vừa bị ngắt. Thử lại nhé; nếu vẫn lỗi, hãy cập nhật ứng dụng Google trên CH Play.';
+  return 'Không nhận được giọng nói (mã '+n+'). Thử lại nhé.';};})();
+
+/* ---------- 2. Đồng bộ: gộp từng mục ---------- */
+const SY_KH='hsk-synckh',SY_PROG=/^hsk[1-6]-progress-v1$|^hsk-common-v1$/;
+function syKH(){try{return JSON.parse(localStorage.getItem(SY_KH)||'null')||{};}catch(e){return {};}}
+function syKHSet(blob){const o={};let b={};try{b=JSON.parse(blob)||{};}catch(e){}for(const k in b)o[k]=hashStr(String(b[k]));try{localStorage.setItem(SY_KH,JSON.stringify(o));}catch(e){}}
+const syJ=s=>{try{const o=JSON.parse(s);return o&&typeof o==='object'?o:null;}catch(e){return null;}};
+function syCard(a,b){if(!a)return b;if(!b)return a;const ba=a.box||0,bb=b.box||0;if(ba!==bb)return ba>bb?a:b;
+  const ua=a.up||a.missAt||'',ub=b.up||b.missAt||'';if(ua!==ub)return ua>ub?a:b;return (a.due||'')>=(b.due||'')?a:b;}
+function syProg(sv,lv){const A=syJ(sv),B=syJ(lv);if(!A)return lv;if(!B)return sv;
+  const la=Math.max(+new Date((A.streak&&A.streak.last)||0)||0,0),lb=Math.max(+new Date((B.streak&&B.streak.last)||0)||0,0);
+  const N=JSON.parse(JSON.stringify(lb>=la?B:A)),O=lb>=la?A:B;
+  if(A.cards||B.cards){N.cards={};const ids=new Set(Object.keys(A.cards||{}).concat(Object.keys(B.cards||{})));ids.forEach(id=>{N.cards[id]=syCard((A.cards||{})[id],(B.cards||{})[id]);});}
+  if(A.lessons||B.lessons){N.lessons=N.lessons||{};for(const n in (O.lessons||{})){const x=O.lessons[n]||{},y=N.lessons[n]||{stages:{},boss:0};
+    y.stages=Object.assign({},x.stages||{},y.stages||{});for(const st in (x.stages||{}))if(x.stages[st])y.stages[st]=true;y.boss=Math.max(+y.boss||0,+x.boss||0);N.lessons[n]=y;}}
+  ['fav','written','frozenDays','stories','txHeard'].forEach(k=>{if(O[k]&&typeof O[k]==='object')N[k]=Object.assign({},O[k],N[k]||{});});
+  if(O.days&&typeof O.days==='object'){N.days=Object.assign({},N.days||{});for(const d in O.days)N.days[d]=Math.max(+N.days[d]||0,+O.days[d]||0);}
+  const sa=A.streak||{},sb=B.streak||{};if(sa.last||sb.last){N.streak=(sa.last||'')>(sb.last||'')?sa:(sb.last||'')>(sa.last||'')?sb:((sa.count||0)>=(sb.count||0)?sa:sb);}
+  N.streakBest=Math.max(+A.streakBest||0,+B.streakBest||0,(N.streak&&N.streak.count)||0);if(A.best7||B.best7)N.best7=true;
+  if((A.lastSeen||'')>(N.lastSeen||''))N.lastSeen=A.lastSeen;if((B.lastSeen||'')>(N.lastSeen||''))N.lastSeen=B.lastSeen;
+  return JSON.stringify(N);}
+function syShop(sv,lv){const A=syJ(sv),B=syJ(lv);if(!A)return lv;if(!B)return sv;const N=JSON.parse(JSON.stringify(B));
+  ['own','ev','chest','once'].forEach(k=>{if(A[k]&&typeof A[k]==='object')N[k]=Object.assign({},A[k],N[k]||{});});return JSON.stringify(N);}
+function syGarden(sv,lv){const A=syJ(sv),B=syJ(lv);if(!A)return lv;if(!B)return sv;return (+A.ut||0)>(+B.ut||0)?sv:lv;}
+// srv, loc: chuỗi JSON {khóa: chuỗi}. kh: mã băm từng mục ở lần đồng bộ trước (không có = gộp hết)
+function syMerge(srv,loc,kh){const S=syJ(srv)||{},L=syJ(loc)||{},out={};let fromSrv=0,fromLoc=0,mixed=0;
+  new Set(Object.keys(S).concat(Object.keys(L))).forEach(k=>{const sv=S[k],lv=L[k];
+    if(sv===lv){out[k]=lv;return;}if(lv==null){out[k]=sv;fromSrv++;return;}if(sv==null){out[k]=lv;fromLoc++;return;}
+    const b=kh&&kh[k];if(b&&hashStr(String(lv))===b){out[k]=sv;fromSrv++;return;}if(b&&hashStr(String(sv))===b){out[k]=lv;fromLoc++;return;}
+    mixed++;out[k]=SY_PROG.test(k)?syProg(sv,lv):k==='hsk-shop'?syShop(sv,lv):k==='hsk-garden'?syGarden(sv,lv):lv;});
+  return {blob:JSON.stringify(out),fromSrv,fromLoc,mixed};}
+let syErrN=0,syErrShown=false;
+async function syMergePush(srv,loc,kh){const m=syMerge(srv.data,loc,kh),o=JSON.parse(m.blob);
+  SYNC_KEYS.forEach(k=>{try{if(typeof o[k]==='string')localStorage.setItem(k,o[k]);}catch(e){}});
+  const blob=cloudBlob(),r=await saveReq({data:blob});accSet({ls:r.utime,lh:hashStr(blob),uid:SOC.auth.uid,at:Date.now()});syKHSet(blob);bkNow(true);
+  try{sessionStorage.setItem('hsk-merged','1');}catch(e){}window.__accReload=1;location.reload();return 'restored';}
+cloudSync=async function(){
+  if(!accCloud())return 'off';if(accBusy||window.__accReload)return 'same';accBusy=true;
+  try{const a=accGet(),loc=cloudBlob(),lh=hashStr(loc),changed=lh!==a.lh;
+    const srv=await saveReq();
+    if(!srv.data){const r=await accPush();syKHSet(loc);syErrN=0;return r;}
+    const first=a.uid!==SOC.auth.uid;
+    if(first){if(blobEmpty(loc)||hashStr(srv.data)===lh){syKHSet(srv.data);applyBlob(srv.data,srv.utime);return 'restored';}
+      if(blobEmpty(srv.data)){const r=await accPush();syKHSet(loc);return r;}
+      return await syMergePush(srv,loc,null);}
+    const srvNew=srv.utime!==a.ls;
+    if(srvNew&&!changed){syKHSet(srv.data);applyBlob(srv.data,srv.utime);return 'restored';}
+    if(srvNew&&changed)return await syMergePush(srv,loc,syKH());
+    if(changed){const r=await accPush();syKHSet(loc);syErrN=0;return r;}
+    accSet({at:Date.now()});syErrN=0;return 'same';
+  }catch(e){window.__accErr=e.message;syErrN++;
+    if(syErrN>=3&&!syErrShown&&navigator.onLine!==false){syErrShown=true;try{gardenToast('☁️ Chưa đồng bộ được tiến độ lên tài khoản ('+esc(e.message||'lỗi mạng')+'). Dữ liệu vẫn lưu trên máy này, app sẽ tự thử lại.');}catch(x){}}
+    return 'error';}finally{accBusy=false;}};
+// vừa gộp xong (trang đã tải lại): báo cho người học
+setTimeout(()=>{try{if(sessionStorage.getItem('hsk-merged')){sessionStorage.removeItem('hsk-merged');gardenToast('☁️ Đã gộp tiến độ trên máy này với tài khoản, không mất bài nào.');}}catch(e){}},2500);
+// mốc cho lần gộp sau: lần đầu chạy bản này mà máy đang khớp với tài khoản thì lấy bản hiện tại làm mốc
+setTimeout(()=>{try{if(!localStorage.getItem(SY_KH)&&accCloud()&&hashStr(cloudBlob())===accGet().lh)syKHSet(cloudBlob());}catch(e){}},2200);
+
+/* ---------- 3. Sao lưu trên Android ---------- */
+const BK_EXTRA=['hsk-acct','hsk2-social-v1','hsk-level','hsk-char','hsk-wallet','hsk-kc','hsk-me',SY_KH];
+let bkLastH='',bkT=0;
+function bkNow(force){try{if(!(window.AndroidApp&&AndroidApp.bkSave))return false;const keys={};SYNC_KEYS.concat(BK_EXTRA).forEach(k=>{try{const v=localStorage.getItem(k);if(v!=null)keys[k]=v;}catch(e){}});
+  const body=JSON.stringify(keys),h=hashStr(body);if(!force&&h===bkLastH)return true;const t=Date.now();
+  if(AndroidApp.bkSave(JSON.stringify({v:1,t,keys}))){bkLastH=h;try{localStorage.setItem('hsk-bkt',String(t));}catch(e){}return true;}}catch(e){}return false;}
+if(window.AndroidApp&&AndroidApp.bkSave){setTimeout(()=>bkNow(),4000);setInterval(()=>{if(!document.hidden)bkNow();},5000);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)bkNow();});}
+// gọi từ MainActivity.onPause và trước khi cài bản cập nhật
+window.__appPause=function(){bkNow();try{if(accCloud()&&hashStr(cloudBlob())!==accGet().lh)cloudSync();}catch(e){}};
+window.__appSaveNow=async function(ms){bkNow(true);if(!accCloud())return;try{await Promise.race([cloudSync(),new Promise(r=>setTimeout(r,ms||5000))]);}catch(e){}};
+if(window.__T)window.__u194={listen:h=>startListening(h),errText:c=>sttErrorText(c),syMerge,syProg,syKH,syKHSet,bkNow,cloudSync:()=>cloudSync(),errN:()=>syErrN};
+
 function route(){
   stopGames();
   const h=(location.hash||'#home').slice(1);
@@ -28992,7 +29349,7 @@ function route(){
   else if(h.startsWith('c-')&&CULTURE.some(c=>c.k===h.slice(2)))viewArticle(h.slice(2));
   else if(h==='hsk3'&&HASX)viewPack();else if(/^x\d{1,2}$/.test(h)&&+h.slice(1)>=1&&+h.slice(1)<=XPACK.length)viewGroup(+h.slice(1));
   else if(h==='support')viewSupport();else if(h==='cert')viewCert();else if(h==='teach-apply')viewTeachApply();else if(h==='hoc-online')viewOlc();else if(h==='lienket')viewLinks();else if(h==='thegioi')viewWorldChat();else if(h==='tudo')viewTudo();else if(/^nhaban-[A-Za-z0-9_-]{4,64}$/.test(h))viewFriendHouse2(h.slice(7));else if(/^lop-online\/\d{1,9}$/.test(h))viewOlcClass(+h.split('/')[1]);else if(/^certv-[A-Z0-9]{4,12}$/.test(h))viewCertVerify(h.slice(6));else if(h==='settings')viewSettings();else if(h==='events')viewEvents();else if(h==='buddy')viewBuddy();else if(h==='lux')viewLux();else if(h==='path')viewPath();else if(h==='invite')viewInvite();else if(h==='english')viewEnglish();else if(h==='feed'||h==='mywall'||h==='msgs')viewFeed(h==='mywall'?'wall':h);
-  else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='tuvan')u170View();else if(h==='bai-viet'||h.indexOf('bai-viet/')===0)u173View(h.slice(9));else if(h==='noi-chuyen'||h.indexOf('noi-chuyen/')===0)u175View(h.slice(10));else if(h==='dau-truong'||h.indexOf('dau-truong/')===0)u176View(h.slice(10));else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
+  else if(h==='tuhoc')viewTuhoc();else if(/^tuhoc-p-[A-Z0-9]{6}$/.test(h))viewTuhoc(h.slice(8));else if(h==='league')viewLeague();else if(h==='rank')viewRank();else if(h==='classreg')viewClassReg();else if(h==='tuvan')u170View();else if(h==='bai-viet'||h.indexOf('bai-viet/')===0)u173View(h.slice(9));else if(h==='noi-chuyen'||h.indexOf('noi-chuyen/')===0)u175View(h.slice(10));else if(h==='dau-truong'||h.indexOf('dau-truong/')===0)u176View(h.slice(10));else if(h==='kc')u193View();else if(h==='premium')viewPremium();else if(h==='profile')viewProfile();else if(h==='halloween')viewHalloween();else if(h==='shop')viewShop();
   else if(h==='race')viewRace();else if(h==='runner')viewRunner();else if(h==='fish')viewFish();else if(h==='bomber'||h==='duo-bomber'){location.replace('#games');return;}else if(/^duo-(race|defense|memory)$/.test(h))viewDuo(h.slice(4));else if(h==='memory')viewMemory();else if(h==='theme')viewTheme();else if(h.startsWith('w-'))viewWordLink(h.slice(2));else if(/^mini-[a-z]{2,12}$/.test(h))viewMiniLink(h.slice(5));else if(/^clw-[a-z0-9]{4,20}$/.test(h))viewClassWords(h.slice(4));else if(/^wl-[A-Za-z0-9_-]{6,64}$/.test(h))viewWallOf(h.slice(3));else if(h==='house')viewHouse();else if(h==='furn')viewFurn();else if(h==='trophy')viewTrophy();else if(h==='wardrobe'){shopTab='wear';viewShop();}
   else if(h==='pinyin')viewPinyin();
   else if(h.startsWith('d='))viewDeckOpen(h.slice(2));else if(h==='evo')viewEvo();else if(h.startsWith('evo-'))viewEvo(decodeURIComponent(h.slice(4)));else if(h==='puzzle')viewPuzzle();else if(h==='focus')viewFocus();else if(h==='deck')viewDeckMake();else if(h==='name')viewName();else if(h==='hv')viewHvDetective();else if(h==='num')viewNumbers();else if(h==='handsfree')viewHandsfree();else if(h==='sheet')viewWorksheet();else if(h==='plan')viewPlan();
