@@ -7973,8 +7973,8 @@ a.kchc.u195h{text-decoration:none;color:inherit;padding:10px 12px}
 .u196note{margin:0 0 8px}
 .kchc.u196h{border-color:#9fd0f0;background:linear-gradient(135deg,#eef8ff,#ddeffc)}.kchc.u196h.pre{border-style:dashed}
 .u196pvt{font-style:normal;font-weight:800;color:#2f6f9e}
-.u196promo{display:flex;align-items:center;gap:10px;margin-top:10px;padding:10px 12px;border-radius:14px;border:1.5px solid #9fd0f0;background:linear-gradient(135deg,#f2faff,#e1f1fc);color:inherit;text-decoration:none}
-.u196promo.pre{border-style:dashed}.u196promo>span:nth-child(2){flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px}.u196promo small{color:#3c5d78;line-height:1.4}.u196promo .btn{flex:0 0 auto}
+.u196promo{display:block;container-type:inline-size;margin-top:10px;padding:10px 12px;border-radius:14px;border:1.5px solid #9fd0f0;background:linear-gradient(135deg,#f2faff,#e1f1fc);color:inherit;text-decoration:none}
+.u196promo.pre{border-style:dashed}.u196promo small{color:#3c5d78;line-height:1.4}.u196promo .btn{flex:0 0 auto}
 @media (min-width:720px){.u196hero{min-height:270px}.u196ht{max-width:62%}.u196moonbig{width:230px;height:230px;top:-40px;right:48px}.u196lh,.u196r{grid-template-columns:70px minmax(0,1fr) minmax(0,1fr)}.u196r::before{left:36px}.u196c{flex-direction:row;justify-content:flex-start;text-align:left;gap:10px}.u196ct{flex:1 1 auto}}
 /* đồ độc quyền mùa 1 */
 .avatar.fr-mayngan{box-shadow:0 0 0 3px #e9eefc,0 0 0 6px #b9c8e8;position:relative}.avatar.fr-mayngan::after{content:"☁️";position:absolute;right:-9px;bottom:-6px;font-size:.45em}
@@ -7990,12 +7990,29 @@ a.kchc.u195h{text-decoration:none;color:inherit;padding:10px 12px}
 /* 5.148: thẻ trang chủ không gạch chân như link */
 a.kchc.u196h{text-decoration:none;color:inherit}
 a.kchc.u196h b{color:inherit;text-decoration:none}
+
+/* 5.148: thẻ giới thiệu co theo bề ngang khung, không ngắt chữ từng từ */
+.u196pi{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"tk t bt" "tk s bt";column-gap:10px;row-gap:2px;align-items:center}
+.u196pi>.u196tok{grid-area:tk}.u196pi>.u196pt{grid-area:t;line-height:1.3}.u196pi>small{grid-area:s}.u196pi>.btn{grid-area:bt;white-space:nowrap}
+@container (max-width:360px){
+  .u196pi{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"tk t" "s s" "bt bt";row-gap:6px}
+  .u196pi>.u196tok{width:24px;height:auto}
+  .u196pi>.btn{justify-self:stretch;text-align:center}
+}
 /* 5.148: thẻ thông báo Trang chủ tắt được (× hoặc vuốt ngang) */
 .hkcard{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .kchc.hkcard.hkcard{padding-right:44px!important}
 .hkx{position:absolute;top:6px;right:6px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(20,60,90,.08);color:#355;font-size:19px;line-height:30px;text-align:center;padding:0;cursor:pointer;z-index:1}
 .hkx:hover{background:rgba(20,60,90,.16)}
 @media (prefers-color-scheme:dark){.hkx{background:rgba(255,255,255,.12);color:#dde}}
+/* 5.148: cột phải kéo giãn */
+html.rails.rrw #rrail{width:var(--u197w)!important}
+html.rails.rrw.rrw main#app.wrap,html.rails.rrw.rrw #gpromo,html.rails.rrw.rrw footer.site>*,html.rails.rrw.rrw header.top>.in,html.rails.rrw.rrw header.top .navrow{max-width:var(--u197m)!important;margin-left:var(--u197ml)!important;margin-right:0!important;box-sizing:border-box}
+#u197grip{position:fixed;z-index:30;width:10px;cursor:ew-resize;touch-action:none;border-radius:8px}
+#u197grip::after{content:'';position:absolute;left:4px;top:50%;width:3px;height:44px;margin-top:-22px;border-radius:3px;background:var(--line);opacity:.55;transition:opacity .2s,background .2s}
+#u197grip:hover::after,#u197grip.on::after,#u197grip:focus-visible::after{opacity:1;background:var(--jade)}
+#u197grip:focus-visible{outline:2px solid var(--jade)}
+@media (max-width:1199px){#u197grip{display:none!important}}
 </style>
 </head><body>
 
@@ -8021,12 +8038,12 @@ a.kchc.u196h b{color:inherit;text-decoration:none}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='077e059c';
-document.write('<script src="packs/hsk'+L+'.js?v=077e059c"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='70bc3826';
+document.write('<script src="packs/hsk'+L+'.js?v=70bc3826"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=077e059c','strokes-file');A('packs/dict.js?v=077e059c','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=70bc3826','strokes-file');A('packs/dict.js?v=70bc3826','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -29784,7 +29801,7 @@ async function u196BuyVnd(){if(kcApp())return;const d=kcDlg();let auto=false;try
 function u196Promo(kind){const now=Date.now(),st=U196.st,S=(st&&st.season)||u196SeasonAt(now),live=now>=U196_START&&S.live;if(st&&st.season&&now>st.season.claimUntil)return '';
   const t=st&&live?st.tier:0,lab=`Đăng Nguyệt Chi Lộ · Mùa ${S.n} ${esc(S.name||'')}`;
   const why={streak:'Giữ chuỗi mỗi ngày là cách nhanh nhất leo bậc thang lên trăng.',quest:'XP từ nhiệm vụ hôm nay cũng được tính để leo bậc.',kc:'Kim Cương mua được Nguyệt Lệnh mở dải quà vàng.',rank:'Kim Bảng xếp hạng, Đăng Nguyệt tặng quà theo XP gốc của riêng bạn.'}[kind]||'';
-  return `<a class="u196promo${live?'':' pre'}" href="#dang-nguyet" data-u196p="${kind}">${u196Token(30,!live)}<span><b>${lab}</b><small>${live?`Bậc ${t}/30 · ${why}`:`<em class="u196pvt">🔒 Xem trước</em> mở cửa sau ${u196Left(U196_START-now)} (00:00 · 01/12). ${why}`}</small></span><span class="btn sm ${live?'pri':''}">${live?'Leo tiếp ›':'Xem trước ›'}</span></a>`;}
+  return `<a class="u196promo${live?'':' pre'}" href="#dang-nguyet" data-u196p="${kind}"><span class="u196pi">${u196Token(30,!live)}<b class="u196pt">${lab}</b><small>${live?`Bậc ${t}/30 · ${why}`:`<em class="u196pvt">🔒 Xem trước</em> mở cửa sau ${u196Left(U196_START-now)} (00:00 · 01/12). ${why}`}</small><span class="btn sm ${live?'pri':''}">${live?'Leo tiếp ›':'Xem trước ›'}</span></span></a>`;}
 function u196HomeHTML(){const st=U196.st,now=Date.now(),S=(st&&st.season)||u196SeasonAt(now),live=now>=U196_START&&S.live;if(st&&st.season&&now>st.season.claimUntil)return '';
   const t=st&&live?st.tier:0,n=live&&st&&st.tiers?st.tiers.reduce((a,x,i)=>a+(t>i&&x.free&&!st.claimed.includes((i+1)+':free')?1:0)+(t>i&&x.paid&&st.has&&!st.claimed.includes((i+1)+':paid')?1:0),0):0;
   return `<a class="kchc u196h${live?'':' pre'}" href="#dang-nguyet" data-hk="dn:${S.n}:${live?'L':'P'}">${u196Token(36,!live)}<div><b>Đăng Nguyệt Chi Lộ · ${esc(S.name||'')}</b><small>${live?`Bậc ${t}/30${n?` · <b>${n} quà chờ nhận</b>`:''}`:`<em class="u196pvt">🔒 Xem trước</em> · mở cửa sau ${u196Left(U196_START-now)}`}</small></div><span class="btn sm kcalt">${n?'Nhận ›':live?'Xem ›':'Xem trước ›'}</span></a>`;}
@@ -29837,6 +29854,36 @@ new MutationObserver(()=>{clearTimeout(hkScan.t);hkScan.t=setTimeout(hkScan,30);
 addEventListener('hashchange',()=>setTimeout(hkScan,150));setTimeout(hkScan,500);
 (function(){try{const b=kcHomeCards;kcHomeCards=function(){const r=b.apply(this,arguments);try{hkScan();}catch(e){}return r;};}catch(e){}})();
 if(window.__T)window.__u197={hkGet,hkSet,hkScan,HK_SHOW};
+
+/* 5.148: cột phải máy tính kéo giãn được (tối đa gấp đôi), nội dung giữa tự dịch sang trái để không bị che.
+   Tay kéo ở mép trái cột phải; bấm đúp để trả về như cũ; phím ← → khi tay kéo đang chọn. */
+const U197_RW='hsk-rrw';
+function u197Base(){return Math.min(236,Math.max(190,(innerWidth-1040)/2-40));}
+function u197Lres(){const l=document.getElementById('lrail');if(l){const r=l.getBoundingClientRect();if(r.width>0&&getComputedStyle(l).display!=='none')return r.right+16;}return 64;}
+function u197Layout(){const R=document.documentElement,rr=document.getElementById('rrail');let w=null;try{w=+localStorage.getItem(U197_RW)||null;}catch(e){}
+  const on=rr&&R.classList.contains('rails')&&R.classList.contains('rr-on')&&!R.classList.contains('rr-closed')&&!R.classList.contains('fs')&&getComputedStyle(rr).display!=='none';
+  if(!on||!w){if(R.classList.contains('rrw'))R.classList.remove('rrw');['--u197w','--u197m','--u197ml'].forEach(k=>R.style.removeProperty(k));u197GripPos();return;}
+  const base=u197Base(),L=u197Lres(),max=Math.max(base,Math.min(base*2,innerWidth-L-640-26)),W=Math.round(Math.min(max,Math.max(base,w)));
+  const Rres=W+10+16,M=Math.min(1040,innerWidth-L-Rres),ml=L+(innerWidth-L-Rres-M)/2;
+  R.style.setProperty('--u197w',W+'px');R.style.setProperty('--u197m',M+'px');R.style.setProperty('--u197ml',Math.round(ml)+'px');if(!R.classList.contains('rrw'))R.classList.add('rrw');u197GripPos();}
+function u197GripPos(){const g=document.getElementById('u197grip'),rr=document.getElementById('rrail'),R=document.documentElement;
+  const on=rr&&R.classList.contains('rails')&&R.classList.contains('rr-on')&&!R.classList.contains('rr-closed')&&!R.classList.contains('fs')&&getComputedStyle(rr).display!=='none';
+  if(!on){if(g)g.style.display='none';return;}
+  const r=rr.getBoundingClientRect();if(!g)return;g.style.display='';g.style.left=Math.round(r.left-9)+'px';g.style.top=Math.round(r.top)+'px';g.style.height=Math.round(Math.max(60,r.height))+'px';}
+function u197Grip(){let g=document.getElementById('u197grip');
+  if(!g){g=document.createElement('div');g.id='u197grip';g.setAttribute('role','separator');g.setAttribute('aria-orientation','vertical');g.tabIndex=0;g.title='Kéo sang trái để mở rộng cột · bấm đúp để trả về như cũ';g.setAttribute('aria-label','Đổi bề ngang cột phải');document.body.appendChild(g);
+    let drag=false;const move=x=>{const w=innerWidth-10-x;try{localStorage.setItem(U197_RW,String(Math.round(w)));}catch(e){}u197Layout();};
+    g.addEventListener('pointerdown',e=>{drag=true;g.classList.add('on');try{g.setPointerCapture(e.pointerId);}catch(x){}e.preventDefault();});
+    g.addEventListener('pointermove',e=>{if(drag)move(e.clientX+5);});
+    const end=()=>{if(!drag)return;drag=false;g.classList.remove('on');try{const w=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--u197w'))||0;if(w&&w<=u197Base()+2)localStorage.removeItem(U197_RW);else if(w)localStorage.setItem(U197_RW,String(w));}catch(e){}u197Layout();try{window.dispatchEvent(new Event('resize'));}catch(e){}};
+    g.addEventListener('pointerup',end);g.addEventListener('pointercancel',end);
+    g.addEventListener('dblclick',()=>{try{localStorage.removeItem(U197_RW);}catch(e){}u197Layout();});
+    g.addEventListener('keydown',e=>{if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;e.preventDefault();const r=document.getElementById('rrail').getBoundingClientRect();move(r.left+(e.key==='ArrowLeft'?-24:24));});}
+  u197Layout();}
+addEventListener('resize',()=>{clearTimeout(u197Layout.t);u197Layout.t=setTimeout(u197Layout,120);});
+new MutationObserver(()=>{clearTimeout(u197Layout.m);u197Layout.m=setTimeout(u197Layout,60);}).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+setTimeout(u197Grip,800);setInterval(u197GripPos,1500);
+if(window.__T)window.__u197b={u197Layout,u197Base};
 
 function route(){
   stopGames();
