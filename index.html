@@ -6386,6 +6386,8 @@ html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(-
 .u157prize{margin:-2px 0 8px;font-weight:700;color:#8a6400}.u157prize span{font-weight:500;color:var(--muted,#5b6b65)}
 .u166emp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;margin-top:8px}.u166emp b{width:100%;text-align:center}
 .u166row{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:8px;margin:8px auto 0;max-width:620px;width:100%}.u166row .u166pz{margin:0;width:100%}
+
+.rkrw.low{opacity:.92}.rkrw.low small{white-space:normal}
 /* 5.114 */
 /* 5.115 Widget màn hình chính */
 .u168list{display:flex;flex-direction:column;gap:10px}
@@ -7509,6 +7511,7 @@ html body #gscene.gz.gz .gztag.ripe::before{content:'Thu hoạch!';display:block
 @media (max-width:480px){.rkx .rkxmh{flex-wrap:nowrap;align-items:center;gap:6px}.rkx .rkxmh h2{font-size:16px;padding:4px 10px}
  .rkxcd{padding:6px 9px;border-radius:12px;flex-shrink:0}.rkxcd small{font-size:9.5px}.rkxcdv b{font-size:15px;padding:2px 4px}.rkxcdv i{font-size:10px;margin:0 2px 0 1px}
  .rkxbar-r{gap:6px}.rkxbar-r .rkxbgb{font-size:12px;padding:5px 9px;min-height:32px}.rkx .rkxp.p1 .rkxav::before{font-size:20px;top:-20px}}
+.rkxtt .rkxsub{margin:2px 0 0;color:var(--muted,#667);letter-spacing:.02em}
 /* ===== 5.139 Thế giới gộp một khung ===== */
 .wf{display:flex;flex-direction:column;gap:8px;min-height:0}
 .wfbar{display:flex;gap:4px;flex-wrap:wrap}
@@ -7862,7 +7865,53 @@ html.tabbar .tskip.bot{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 .kclog small{color:var(--muted,#889)}
 .kclog .up{color:#0b8a5f}.kclog .dn{color:#c3402b}
 .u193kc .kcpacks{margin-top:4px}
+/* ===== 5.146 ===== */
+.kcen{display:inline-flex;gap:6px;flex-wrap:wrap;margin-left:6px;vertical-align:middle}
+.btn.kcchip{margin-left:6px;padding-left:8px;padding-right:8px;white-space:nowrap}
+.kcsup{display:inline-block;margin:2px 0 4px;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:700;color:#0b4f7a;background:linear-gradient(135deg,#e6f6ff,#b9e4ff);border:1px solid #7cc4f2}
+.kcen .kccap,.kccap{display:block;flex-basis:100%;font-size:12px;color:var(--muted,#667);margin-top:2px}
 /* 5.145 micro + đồng bộ: không có giao diện riêng */
+/* ===== 5.146 nhiệm vụ Kim Cương, thẻ tháng, ưu đãi tuần, chấm chi tiết ===== */
+.u195ql{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.u195ql li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line,#e5e5e5)}
+.u195ql li:last-child{border-bottom:0}
+.u195ql li>i{font-style:normal;flex:0 0 auto;width:24px;text-align:center}
+.u195ql li>span{flex:1 1 auto;min-width:0}
+.u195ql li>b{flex:0 0 auto;color:#0b4f7a;white-space:nowrap}
+.u195ql li.done>span{color:var(--muted,#889);text-decoration:line-through}
+.u195ql li.done>b{color:#0b8a5f}
+.u195ql li.all{font-weight:600}
+a.kchc.u195h{text-decoration:none;color:inherit;padding:10px 12px}
+.u195h .u195hi{font-size:26px;line-height:1;flex:0 0 auto}
+.u195h small i{font-style:normal;margin-right:3px;opacity:.55}
+.u195h small i.on{opacity:1}
+.u195card{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;padding:12px;border-radius:14px;border:1.5px solid #f0c94a;background:linear-gradient(135deg,#fffbe9,#fff1c2)}
+.u195card.on{border-color:#9ad3f5;background:linear-gradient(135deg,#f2fbff,#dff3ff)}
+.u195card .u195ci{font-size:28px;line-height:1;flex:0 0 auto}
+.u195card>div{flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.u195card small{color:var(--muted,#667)}
+.u195card .btn{flex:0 0 auto;margin-left:auto}
+.u195dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:720px){.u195dl{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.u195di{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;padding:12px 8px;border-radius:14px;border:1.5px solid #9ad3f5;background:#fff;min-width:0}
+.u195di.own{opacity:.65}
+.u195di .u195dic{font-size:28px;line-height:1}
+.u195di>b{overflow-wrap:anywhere}
+.u195di small{color:var(--muted,#889)}
+.u195dp{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-size:12px;color:var(--muted,#889)}
+.u195dp .ybi{width:13px;height:13px;vertical-align:-2px}
+.u195rvb{display:block;margin-top:6px;padding:4px 10px;border-radius:999px;border:1px solid #7cc4f2;background:linear-gradient(135deg,#e9f7ff,#c9ebff);color:#0b4f7a;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.u195rvb:disabled{opacity:.6}
+.u195rvs{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;background:var(--bg2,#f5f5f2)}
+.u195rvs.ok{background:#e9f8f0;border:1px solid #9bd8b8}
+.u195rvs small{color:var(--muted,#667)}
+.u195rvs b.han{font-size:20px}
+.u195rvs em{font-style:normal;color:var(--muted,#556)}
+.u195rvs .btn{align-self:flex-start;margin-top:4px}
+.u195rvn{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.u195rvn li{display:flex;flex-direction:column;gap:2px;padding-left:10px;border-left:3px solid #f0c94a}
+.u195rvn s{color:#c3402b}
+.u195rvn small{color:var(--muted,#556)}
 </style>
 </head><body>
 
@@ -7888,12 +7937,12 @@ html.tabbar .tskip.bot{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='c997b49e';
-document.write('<script src="packs/hsk'+L+'.js?v=c997b49e"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='3afcd104';
+document.write('<script src="packs/hsk'+L+'.js?v=3afcd104"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=c997b49e','strokes-file');A('packs/dict.js?v=c997b49e','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=3afcd104','strokes-file');A('packs/dict.js?v=3afcd104','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -14483,7 +14532,7 @@ const EV_DEF={
  trungthu:{n:'Tết Trung thu',zh:'中秋节',ic:'🥮',col:'#e07a12',d:'Rằm tháng Tám: ngắm trăng, ăn bánh trung thu, rước đèn.',w:[['中秋节','zhōngqiū jié','Tết Trung thu'],['月饼','yuèbing','bánh trung thu'],['月亮','yuèliang','mặt trăng'],['嫦娥','Cháng\'é','chị Hằng'],['玉兔','yùtù','thỏ ngọc'],['赏月','shǎngyuè','ngắm trăng'],['团圆','tuányuán','đoàn viên'],['灯笼','dēnglong','đèn lồng']]}};
 const EV_DATES={trungcuu:['2026-10-18','2027-10-08','2028-10-26'],docthan:['2026-11-11','2027-11-11','2028-11-11'],dongchi:['2026-12-21','2027-12-22','2028-12-21'],noel:['2026-12-25','2027-12-25','2028-12-25'],
  tet:['2027-02-06','2028-01-26'],nguyentieu:['2027-02-20','2028-02-09'],valentine:['2027-02-14','2028-02-14'],doanngo:['2027-06-09','2028-05-28'],thattich:['2027-08-08','2028-08-26'],trungthu:['2027-09-15','2028-10-03']};
-const EV_ITEM_PRICE=160;
+const EV_ITEM_PRICE=480;
 function evList(){const out=[];for(const k in EV_DATES)EV_DATES[k].forEach(d=>{const pre=k==='tet'?6:3,post=k==='tet'?7:3;out.push({k,day:d,from:addDays(d,-pre),to:addDays(d,post),...EV_DEF[k]});});return out.sort((a,b)=>a.from.localeCompare(b.from));}
 function evNow(){const t=today();return evList().find(e=>t>=e.from&&t<=e.to)||null;}
 function evNext(n){const t=today();return evList().filter(e=>e.from>t).slice(0,n||3);}
@@ -18426,7 +18475,7 @@ function lessonsTotal(){let n=0;for(const lv of [1,2,3,4]){const k=lv===2?'hsk2-
 async function rankSync(force){if(!gOnline())return;if(!force&&Date.now()-RK.syncAt<90000)return;RK.syncAt=Date.now();try{await frApi('POST','/v1/rank/sync',{xp:PXP(),ls:lessonsTotal()});}catch(e){}}
 async function rankMe(force){if(!gOnline())return RK.me;if(!force&&RK.me&&Date.now()-RK.meAt<120000)return RK.me;try{RK.me=await frApi('GET','/v1/rank/me');RK.meAt=Date.now();try{localStorage.setItem('hsk-rkme',JSON.stringify(RK.me));}catch(e){}}catch(e){}return RK.me;}
 const myTitle=()=>(RK.me&&RK.me.titles&&RK.me.titles[0]&&RK.me.titles[0].t)||'';
-const ttlChip=t=>t?`<span class="rkttl" title="Danh hiệu Bảng xếp hạng">${esc(t)}</span>`:'';
+const ttlChip=t=>t?`<span class="rkttl" title="Danh hiệu Kim Bảng">${esc(t)}</span>`:'';
 setTimeout(()=>{rankSync(true).then(()=>rankMe(true)).then(()=>{try{pchipRender();}catch(e){}});},4000);
 setInterval(()=>{if(!document.hidden)rankSync();},300000);
 addEventListener('hashchange',()=>{if(/^#(rank|profile|trophy|house)$/.test(location.hash))rankSync();});
@@ -18442,8 +18491,8 @@ function cupSVG(kind,size){const c=CUP_COL[kind]||CUP_COL['cup-gold'],id='cg'+ki
 function certSVG(a){const b=RK_B.find(x=>x[0]===a.board)||RK_B[0],m=a.pk.slice(1);
   return `<div class="certi"><span class="certseal han">证</span><b>Giấy chứng nhận</b><small>${esc(b[4])} tháng ${esc(m.split('-').reverse().join('/'))}</small><em>${['Hạng nhất','Hạng nhì','Hạng ba'][a.place-1]||''} · ${esc(b[2])}</em><span class="certsign">Tâm HSK</span></div>`;}
 function cupShelfHTML(){const me=RK.me;if(!gOnline())return '';const aw=(me&&me.awards)||[],cups=aw.filter(a=>a.item),wk=aw.filter(a=>a.pk[0]==='w'),sh=(me&&me.shining)||[];
-  if(!aw.length&&!sh.length)return `<div class="panel stack cupshelf empty"><h3 style="margin:0">🏆 Tủ cúp Bảng xếp hạng</h3><p class="small muted" style="margin:0">Lọt top 3 tháng để mang <b>cúp</b> và <b>giấy chứng nhận</b> về nhà. Đứng số 1 mọi thời đại để giữ <b>Cúp Vĩnh Cửu</b> lấp lánh. <a href="#rank">Xem bảng xếp hạng →</a></p></div>`;
-  return `<div class="panel stack cupshelf"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏆 Tủ cúp Bảng xếp hạng</h3><a class="btn sm ghost" href="#rank">Bảng xếp hạng</a></div>
+  if(!aw.length&&!sh.length)return `<div class="panel stack cupshelf empty"><h3 style="margin:0">🏆 Tủ cúp Kim Bảng</h3><p class="small muted" style="margin:0">Lọt top 3 tháng để mang <b>cúp</b> và <b>giấy chứng nhận</b> về nhà. Đứng số 1 mọi thời đại để giữ <b>Cúp Vĩnh Cửu</b> lấp lánh. <a href="#rank">Xem Kim Bảng →</a></p></div>`;
+  return `<div class="panel stack cupshelf"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏆 Tủ cúp Kim Bảng</h3><a class="btn sm ghost" href="#rank">Kim Bảng</a></div>
     <div class="cupgrid">${sh.map(b=>{const B=RK_B.find(x=>x[0]===b);return `<div class="cupit eternal">${cupSVG('cup-eternal',86)}<b>Cúp Vĩnh Cửu</b><small>👑 ${esc(B?B[4]:'')} mọi thời đại</small></div>`;}).join('')}
       ${cups.map(a=>`<div class="cupit">${cupSVG(a.item,64)}<b>${esc(CUP_COL[a.item]?CUP_COL[a.item][3]:'Cúp')}</b><small>${esc(a.title)}<br>${esc(a.pk.slice(1).split('-').reverse().join('/'))}</small></div>`).join('')}</div>
     ${cups.length?`<div class="certrow">${cups.map(certSVG).join('')}</div>`:''}
@@ -18457,10 +18506,10 @@ function rkRewardsHTML(b,p){const B=RK_B.find(x=>x[0]===b);
   if(p==='a')return `<div class="rkrew eternal"><div class="rkrewart">${cupSVG('cup-eternal',72)}</div><div><b>Cúp Vĩnh Cửu lấp lánh</b><p>Chỉ người đứng <b>số 1 mọi thời đại</b> giữ cúp này, ai vượt lên sẽ giành mất. Top 3 có danh hiệu <b>“👑 ${esc(B[4])} mọi thời đại”</b>, <b>“🥈/🥉 ${esc(B[4])} mọi thời đại”</b> hiện cạnh tên khi người khác nhìn thấy bạn.</p></div></div>`;
   const w=p==='w',nb=w?[30,20,10]:[300,200,100];
   return `<div class="rkrew"><div class="rkrewrows">${nb.map((n,i)=>`<div class="rkrw p${i+1}"><span class="rkmedal">${['🥇','🥈','🥉'][i]}</span><span><b>Hạng ${i+1}: ${n} ${YB}</b><small>Danh hiệu “${['🥇','🥈','🥉'][i]} ${esc(B[4])} ${w?'tuần':'tháng'}” trong ${w?'1 tuần':'1 tháng'}${w?'':` · ${['Cúp vàng','Cúp bạc','Cúp đồng'][i]} + giấy chứng nhận mang về nhà`}</small></span>${w?'':cupSVG(['cup-gold','cup-silver','cup-bronze'][i],34)}</div>`).join('')}</div>
-    <p class="small muted" style="margin:6px 0 0">Thưởng tự vào ví khi ${w?'hết tuần (0 giờ thứ Hai)':'hết tháng (0 giờ ngày 1)'}. Danh hiệu hiện cạnh tên ở Bạn bè, tường, tin nhắn và bảng xếp hạng.</p></div>`;}
+    <p class="small muted" style="margin:6px 0 0">Thưởng tự vào ví khi ${w?'hết tuần (0 giờ thứ Hai)':'hết tháng (0 giờ ngày 1)'}. Danh hiệu hiện cạnh tên ở Bạn bè, tường, tin nhắn và Kim Bảng.</p></div>`;}
 function rkRowHTML(r,b){return `<div class="rkrow${r.mine?' me':''}" data-fu="${r.mine?'':esc(r.uid||'')}" data-fn="${esc(r.name||r.handle||'')}"><span class="rkn">${r.rank||'–'}</span>${avHTML(r.av2||r.avatar,36,r.frame)}<span class="rkwho"><b>${r.mine?'Bạn':showName(r.handle,r.name,r.idn)}</b>${ttlChip(r.ttl)}</span><b class="rkv">${rkFmt(r.val||0,b)}</b></div>`;}
 async function viewRank(){stopGames();const b=RK.board,p=RK.period,B=RK_B.find(x=>x[0]===b);
-  app.innerHTML=`<div class="stack rankv"><section class="rkhero"><div><div class="label">Bảng xếp hạng · 排行榜</div><h1>Ai chăm nhất Tâm HSK?</h1><p>3 bảng: kinh nghiệm, Nguyên bảo kiếm được, bài học hoàn thành. Chốt mỗi tuần, mỗi tháng, và bảng mọi thời đại.</p></div><div class="rkheroart">${cupSVG('cup-silver',46)}${cupSVG('cup-eternal',78)}${cupSVG('cup-bronze',42)}</div></section>
+  app.innerHTML=`<div class="stack rankv"><section class="rkhero"><div><div class="label">Kim Bảng Đề Danh · 金榜题名</div><h1>Ai chăm nhất Tâm HSK?</h1><p>3 bảng: kinh nghiệm, Nguyên bảo kiếm được, bài học hoàn thành. Chốt mỗi tuần, mỗi tháng, và bảng mọi thời đại.</p></div><div class="rkheroart">${cupSVG('cup-silver',46)}${cupSVG('cup-eternal',78)}${cupSVG('cup-bronze',42)}</div></section>
     <div class="rkboards" role="tablist">${RK_B.map(([k,ic,t])=>`<button role="tab" class="rkb${k===b?' on':''}" data-rkb="${k}" aria-selected="${k===b}"><span>${ic}</span><b>${t}</b></button>`).join('')}</div>
     <div class="rkper" role="tablist">${RK_P.map(([k,t])=>`<button role="tab" class="fdtab${k===p?' on':''}" data-rkp="${k}" aria-selected="${k===p}">${t}</button>`).join('')}<span class="rkleft small muted" id="rkleft"></span></div>
     <div class="panel stack"><h3 style="margin:0">🎁 Thưởng ${p==='w'?'hàng tuần':p==='m'?'hàng tháng':'trọn đời'} · ${esc(B[2])}</h3>${rkRewardsHTML(b,p)}</div>
@@ -18479,7 +18528,7 @@ async function viewRank(){stopGames();const b=RK.board,p=RK.period,B=RK_B.find(x
     box.innerHTML=`<div class="row" style="justify-content:space-between"><h3 style="margin:0">${prev?'📜 Kết quả '+(p==='w'?'tuần':'tháng')+' trước':B[1]+' '+esc(B[2])+' · '+RK_P.find(x=>x[0]===p)[1]}</h3>${prev?'<button class="btn sm ghost" id="rkback">← Hiện tại</button>':''}</div>
       ${L.length?`<div class="rkpodium">${pod(1)}${pod(0)}${pod(2)}</div><div class="rklist">${rest.map(r=>rkRowHTML(r,b)).join('')}</div>`:`<div class="rkempty">${baoSVG('think',70)}<div class="small muted">Chưa có ai trên bảng ${prev?'kỳ trước':'kỳ này'}. Học một bài, chơi một ván là có tên ngay!</div></div>`}
       ${j.me&&!L.some(r=>r.mine)?`<div class="rkmine">${rkRowHTML(Object.assign({mine:true},j.me),b)}</div>`:''}
-      ${!gOnline()?'<div class="notice small">Đăng nhập để có tên trên bảng xếp hạng và nhận thưởng. <a href="#settings">Đăng nhập</a></div>':''}`;
+      ${!gOnline()?'<div class="notice small">Đăng nhập để có tên trên Kim Bảng và nhận thưởng. <a href="#settings">Đăng nhập</a></div>':''}`;
     const bk=box.querySelector('#rkback');if(bk)bk.onclick=()=>{prev=false;load();};};
     const c0=RK.cache[b+per];if(c0)draw(c0);else box.innerHTML='<div class="small muted">Đang tải bảng…</div>';let j;
     try{const r=await netFetch('GET',API_BASE+'/v1/rank?board='+b+'&period='+per,gOnline()?{'Authorization':'Bearer '+await idToken()}:{},'');j=JSON.parse(r.text||'{}');if(r.status>=400)throw new Error((j.error&&j.error.message)||'Lỗi');}
@@ -18488,9 +18537,9 @@ async function viewRank(){stopGames();const b=RK.board,p=RK.period,B=RK_B.find(x
   const pb=app.querySelector('#rkprev');if(pb)pb.onclick=()=>{prev=true;load();box.scrollIntoView({behavior:'smooth',block:'start'});};
   load();rankMe().then(()=>{const c=app.querySelector('.cupshelf');if(c&&location.hash==='#rank')c.outerHTML=cupShelfHTML();});}
 /* thay Giải đấu bằng Bảng xếp hạng ở menu + Khu trò chơi */
-try{const it=NAVG.game.items,i=it.findIndex(x=>x[0]==='league');if(i>=0)it.splice(i,1,['rank','Xếp hạng']);else it.splice(2,0,['rank','Xếp hạng']);}catch(e){}
-function lgNavTile(){const on=location.hash==='#rank',t=myTitle();return `<a href="#rank" class="n1 n1c n1lg n1rk${on?' on':''}" style="--nc:#b8860b" title="Bảng xếp hạng" aria-label="Bảng xếp hạng${t?': '+esc(t):''}"><span class="n1art">${cupSVG('cup-gold',30)}</span><span class="n1t">Xếp hạng</span></a>`;}
-try{HUB.splice(Math.min(4,HUB.length),0,{k:'rank',cat:'friends',ic:'榜',col:'#b8860b',name:'Bảng xếp hạng',d:'3 bảng: kinh nghiệm, Nguyên bảo kiếm được, bài học. Top 3 tuần nhận Nguyên bảo, top 3 tháng có cúp mang về nhà.',meta:()=>myTitle()||'Thưởng mỗi tuần · mỗi tháng · Cúp Vĩnh Cửu',isNew:1,net:1});GA_ART.rank=GA_ART.league||GA_ART.duel;GA_BG.rank=['#fff1c9','#fffaf0'];}catch(e){}
+try{const it=NAVG.game.items,i=it.findIndex(x=>x[0]==='league');if(i>=0)it.splice(i,1,['rank','Kim Bảng']);else it.splice(2,0,['rank','Kim Bảng']);}catch(e){}
+function lgNavTile(){const on=location.hash==='#rank',t=myTitle();return `<a href="#rank" class="n1 n1c n1lg n1rk${on?' on':''}" style="--nc:#b8860b" title="Kim Bảng Đề Danh" aria-label="Kim Bảng Đề Danh${t?': '+esc(t):''}"><span class="n1art">${cupSVG('cup-gold',30)}</span><span class="n1t">Kim Bảng</span></a>`;}
+try{HUB.splice(Math.min(4,HUB.length),0,{k:'rank',cat:'friends',ic:'榜',col:'#b8860b',name:'Kim Bảng',d:'3 bảng: kinh nghiệm, Nguyên bảo kiếm được, bài học. Top 3 nhận Kim Cương, hạng 4–10 nhận Nguyên bảo, top 3 tháng có cúp.',meta:()=>myTitle()||'Thưởng mỗi tuần · mỗi tháng · Cúp Vĩnh Cửu',isNew:1,net:1});GA_ART.rank=GA_ART.league||GA_ART.duel;GA_BG.rank=['#fff1c9','#fffaf0'];}catch(e){}
 /* danh hiệu cạnh tên: hồ sơ, Bạn bè (qua frExtra), tường, bảng tin, tin nhắn */
 (function(){const b=viewProfile;viewProfile=function(){b.apply(this,arguments);if(location.hash!=='#profile')return;const h=app.querySelector('.profhero h1');const add=()=>{const t=(RK.me&&RK.me.titles)||[];const h1=app.querySelector('.profhero h1');if(!h1||app.querySelector('.proftt'))return;if(t.length)h1.insertAdjacentHTML('afterend',`<div class="proftt">${t.slice(0,3).map(x=>ttlChip(x.t)).join('')}</div>`);};add();rankMe().then(add);};})();
 if(window.__T)window.__u77={RK,rankSync,rankMe,lessonsTotal,viewRank,cupSVG,cupShelfHTML,myTitle,NAVG,frExtra:()=>frExtra(),feedPostHTML:p=>feedPostHTML(p)};
@@ -18551,7 +18600,7 @@ function viewEvents(){stopGames();const ev=evAllHTML();
   app.innerHTML=`<div class="stack evpage"><section class="addhero evhero"><div class="addicon han" aria-hidden="true">庆</div><div style="min-width:0"><div class="label">Mở rộng</div><h1>Sự kiện & Nhiệm vụ</h1><p>Sự kiện đang diễn ra, 3 nhiệm vụ mỗi ngày và rương quà. Xong cả 3 nhiệm vụ được mở rương: +20 ${YB}, +5 giọt nước, +10 XP.</p></div></section>
     ${ev?`<div class="stack evlist"><h3 style="margin:0">🎉 Sự kiện</h3>${ev}</div>`:'<div class="panel"><h3 style="margin:0">🎉 Sự kiện</h3><p class="small muted" style="margin:4px 0 0">Hiện chưa có sự kiện nào. Sự kiện mới sẽ hiện ở đây và trong Thông báo.</p></div>'}
     ${questHTML()}
-    <div class="row" style="gap:8px;justify-content:center"><a class="btn" href="#games">🎮 Khu trò chơi</a><a class="btn ghost" href="#rank">🏆 Bảng xếp hạng</a></div></div>`;
+    <div class="row" style="gap:8px;justify-content:center"><a class="btn" href="#games">🎮 Khu trò chơi</a><a class="btn ghost" href="#rank">🏆 Kim Bảng</a></div></div>`;
   bindQuestHere(app,()=>{if(location.hash==='#events')viewEvents();});}
 /* Khu trò chơi: thêm khối Sự kiện & Nhiệm vụ ở đầu trang */
 (function(){const base=viewGames;viewGames=function(){base.apply(this,arguments);if(location.hash!=='#games'||app.querySelector('.gevq'))return;
@@ -21235,7 +21284,7 @@ setTimeout(glockSync,1500);setInterval(()=>{if(!document.hidden)glockSync();},36
 /* ---------- 2. Khu trò chơi: Hành động · Thế giới · Đối kháng · Câu chuyện · Mini game · Thành tựu (cuối) ---------- */
 HUB_CATS.splice(0,HUB_CATS.length,['all','Tất cả'],['action','Hành động'],['world','Thế giới'],['versus','Đối kháng'],['story','Câu chuyện'],['mini','Mini game'],['social','Thành tựu']);
 Object.assign(HUB_SEC,{action:['Hành động','Phản xạ nhanh, nhận mặt chữ tức thì'],world:['Thế giới','Chơi dài ngày, cùng mọi người xây dựng'],versus:['Đối kháng','Đấu trực tiếp với bạn bè, người chơi khác hoặc máy'],
-  story:['Câu chuyện','Đọc hiểu và hội thoại như đang sống ở Trung Quốc'],mini:['Mini game','Chơi nhanh 1–3 phút với từ đã học'],social:['Thành tựu','Bảng xếp hạng, bạn bè và huy hiệu']});
+  story:['Câu chuyện','Đọc hiểu và hội thoại như đang sống ở Trung Quốc'],mini:['Mini game','Chơi nhanh 1–3 phút với từ đã học'],social:['Thành tựu','Kim Bảng, bạn bè và huy hiệu']});
 const HUB_TONE={action:'#d7261e',world:'#2f6fd6',versus:'#e0a106',story:'#8e5cc7',mini:'#0d7a63',social:'#7a5a3a'};
 const HUB_ICO={action:'⚡',world:'🌏',versus:'⚔️',story:'💬',mini:'🎲',social:'🏆'};
 const HUB_CAT2={race:'action',bomber:'action',defense:'action',blocks:'action',wall:'world',garden:'world',travel:'world',duel:'versus','duo-memory':'versus',chat:'story',rank:'social',friends:'social',achievements:'social'};
@@ -21672,7 +21721,7 @@ function pgxInvite(){const s=app.querySelector('.rfsteps');if(s&&!s.classList.co
   if(pn)pn.outerHTML=`<div class="pgxfeat">${[['🔥','#e07a1f','Chuỗi học đôi','Chọn một bạn thân, cả hai cùng học mỗi ngày để giữ chuỗi chung.'],['🌳','#2e9e6a','Cây tình bạn','Mỗi ngày cùng học, cây lớn thêm. Tưới đôi lớn nhanh gấp đôi.'],['👥','#1d6fb8','Nhóm học','Lập nhóm, đặt mục tiêu XP tuần và xem bảng thi đua.'],['🃏','#8e5cc7','Đố nhau bằng thẻ','Gửi thẻ từ cho bạn, đố nhau và nhận điểm thân thiết.']].map(f=>`<div class="pgxf" style="--fc:${f[1]}"><span>${f[0]}</span><b>${f[2]}</b><small>${f[3]}</small></div>`).join('')}</div>
     <div class="panel pgxlogin"><div><b>Cần tài khoản để kết bạn</b><p class="small muted" style="margin:2px 0 0">Tạo hồ sơ trong mục Bạn bè, chỉ mất 10 giây.</p></div><a class="btn pri" href="#friends">👋 Tạo hồ sơ / Đăng nhập</a></div>`;}catch(e){console.warn(e);}return r;};})();
 /* --- Sự kiện & Nhiệm vụ --- */
-(function(){const base=viewEvents;viewEvents=function(){base.apply(this,arguments);try{pgxHero('events');const row=app.querySelector('.evpage > .row:last-child');if(row){row.classList.add('pgxlinks');row.innerHTML=`<a href="#games" class="pgxlink" style="--fc:#d7261e"><span>🎮</span><b>Khu trò chơi</b><small>Chơi để hoàn thành nhiệm vụ</small></a><a href="#rank" class="pgxlink" style="--fc:#e0a106"><span>🏆</span><b>Bảng xếp hạng</b><small>Xem ai đang dẫn đầu tuần này</small></a>`;}}catch(e){console.warn(e);}};})();
+(function(){const base=viewEvents;viewEvents=function(){base.apply(this,arguments);try{pgxHero('events');const row=app.querySelector('.evpage > .row:last-child');if(row){row.classList.add('pgxlinks');row.innerHTML=`<a href="#games" class="pgxlink" style="--fc:#d7261e"><span>🎮</span><b>Khu trò chơi</b><small>Chơi để hoàn thành nhiệm vụ</small></a><a href="#rank" class="pgxlink" style="--fc:#e0a106"><span>🏆</span><b>Kim Bảng Đề Danh</b><small>Xem ai đang dẫn đầu tuần này</small></a>`;}}catch(e){console.warn(e);}};})();
 /* --- Tên tiếng Trung --- */
 (function(){const base=viewName;viewName=function(){base.apply(this,arguments);try{if(app.querySelector('.addhero'))pgxHero('name');}catch(e){console.warn(e);}};})();
 /* --- Gói HSK 3.0 --- */
@@ -22633,7 +22682,7 @@ function certOpen(a){const T=CERT_TH[a.board]||CERT_TH.xp,B=RK_B.find(x=>x[0]===
     <button class="certx" type="button" aria-label="Đóng">✕</button>
     <div class="cbhead"><span class="cbic">${certIco(a.board,54)}</span><div><div class="cbcn han">荣誉证书</div><h2>GIẤY CHỨNG NHẬN</h2></div></div>
     <p class="cbline">Chứng nhận</p><div class="cbwho">${esc(who)}</div>
-    <p class="cbline">đã đạt <b>${['Hạng nhất','Hạng nhì','Hạng ba'][a.place-1]||''}</b> Bảng xếp hạng <b>${esc(B[2])}</b> ${per==='mọi thời đại'?'mọi thời đại':per+' '+esc(when)}</p>
+    <p class="cbline">đã đạt <b>${['Hạng nhất','Hạng nhì','Hạng ba'][a.place-1]||''}</b> Kim Bảng <b>${esc(B[2])}</b> ${per==='mọi thời đại'?'mọi thời đại':per+' '+esc(when)}</p>
     <div class="cbttl">${esc(awTitle(a))}</div>
     ${a.item?`<div class="cbcup">${cupSVG(a.item,70,a.board)}<span>${esc(CUP_COL[a.item]?CUP_COL[a.item][3]:'Cúp')}</span></div>`:''}
     <div class="cbfoot"><div><small>Số chứng nhận</small><b>${esc(no)}</b></div><div class="cbseal han">证</div><div><small>Đơn vị cấp</small><b>Tâm HSK</b></div></div>
@@ -22644,8 +22693,8 @@ function certOpen(a){const T=CERT_TH[a.board]||CERT_TH.xp,B=RK_B.find(x=>x[0]===
 document.addEventListener('click',e=>{const c=e.target.closest&&e.target.closest('[data-cert]');if(!c)return;try{certOpen(JSON.parse(c.dataset.cert));}catch(x){}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const o=document.getElementById('certov');if(o)o.classList.remove('on');}});
 cupShelfHTML=function(){const me=RK.me;if(!gOnline())return '';const aw=(me&&me.awards)||[],cups=aw.filter(a=>a.item),wk=aw.filter(a=>a.pk&&a.pk[0]==='w'),sh=(me&&me.shining)||[];
-  if(!aw.length&&!sh.length)return `<div class="panel stack cupshelf empty"><h3 style="margin:0">🏆 Tủ cúp Bảng xếp hạng</h3><p class="small muted" style="margin:0">Lọt top 3 tháng để mang <b>cúp</b> và <b>giấy chứng nhận</b> về nhà: Cao thủ có ngôi sao, Phú hộ có cánh vàng, Học bá đội mũ tốt nghiệp. Đứng số 1 mọi thời đại để giữ <b>Cúp Vĩnh Cửu</b>. <a href="#rank">Xem bảng xếp hạng →</a></p></div>`;
-  return `<div class="panel stack cupshelf"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏆 Tủ cúp Bảng xếp hạng</h3><a class="btn sm ghost" href="#rank">Bảng xếp hạng</a></div>
+  if(!aw.length&&!sh.length)return `<div class="panel stack cupshelf empty"><h3 style="margin:0">🏆 Tủ cúp Kim Bảng</h3><p class="small muted" style="margin:0">Lọt top 3 tháng để mang <b>cúp</b> và <b>giấy chứng nhận</b> về nhà: Cao thủ có ngôi sao, Phú hộ có cánh vàng, Học bá đội mũ tốt nghiệp. Đứng số 1 mọi thời đại để giữ <b>Cúp Vĩnh Cửu</b>. <a href="#rank">Xem Kim Bảng →</a></p></div>`;
+  return `<div class="panel stack cupshelf"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏆 Tủ cúp Kim Bảng</h3><a class="btn sm ghost" href="#rank">Kim Bảng</a></div>
     <div class="cupgrid">${sh.map(b=>{const B=RK_B.find(x=>x[0]===b);return `<div class="cupit eternal">${cupSVG('cup-eternal',86,b)}<b>Cúp Vĩnh Cửu</b><small>👑 ${esc(B?B[4]:'')} mọi thời đại</small></div>`;}).join('')}
       ${cups.map(a=>`<div class="cupit">${cupSVG(a.item,64,a.board)}<b>${esc(CUP_COL[a.item]?CUP_COL[a.item][3]:'Cúp')}</b><small>${esc(awTitle(a))}<br>${esc(awWhen(a))}</small></div>`).join('')}</div>
     ${cups.length?`<div class="small muted">Bấm vào giấy chứng nhận để phóng to và khoe.</div><div class="certrow">${cups.map(certSVG).join('')}</div>`:''}
@@ -22654,7 +22703,7 @@ rkRewardsHTML=function(b,p){const B=RK_B.find(x=>x[0]===b);
   if(p==='a')return `<div class="rkrew eternal"><div class="rkrewart">${cupSVG('cup-eternal',72,b)}</div><div><b>Cúp Vĩnh Cửu lấp lánh</b><p>Chỉ người đứng <b>số 1 mọi thời đại</b> giữ cúp này, ai vượt lên sẽ giành mất. Top 3 có danh hiệu <b>“👑 ${esc(B[4])} mọi thời đại”</b>, <b>“🥈/🥉 ${esc(B[4])} mọi thời đại”</b> hiện cạnh tên khi người khác nhìn thấy bạn.</p></div></div>`;
   const w=p==='w',nb=w?[30,20,10]:[300,200,100],per=w?'tuần':'tháng';
   return `<div class="rkrew"><div class="rkrewrows">${nb.map((n,i)=>`<div class="rkrw p${i+1}"><span class="rkmedal">${['🥇','🥈','🥉'][i]}</span><span><b>Hạng ${i+1}: ${n} ${YB}</b><small>Danh hiệu “${['🥇','🥈','🥉'][i]} ${esc(B[4])} ${per}” trong 1 ${per}${w?'':` · ${['Cúp vàng','Cúp bạc','Cúp đồng'][i]} ${esc(B[4])} + giấy chứng nhận mang về nhà`}</small></span>${w?'':cupSVG(PLACE_KIND[i],38,b)}</div>`).join('')}</div>
-    <p class="small muted" style="margin:6px 0 0">Thưởng tự vào ví khi ${w?'hết tuần (0 giờ thứ Hai)':'hết tháng (0 giờ ngày 1)'}. Danh hiệu hiện cạnh tên ở Bạn bè, tường, tin nhắn và bảng xếp hạng.</p></div>`;};
+    <p class="small muted" style="margin:6px 0 0">Thưởng tự vào ví khi ${w?'hết tuần (0 giờ thứ Hai)':'hết tháng (0 giờ ngày 1)'}. Danh hiệu hiện cạnh tên ở Bạn bè, tường, tin nhắn và Kim Bảng.</p></div>`;};
 
 /* ---------- 7. Thi thử dạng tờ giấy thi ---------- */
 const CN_NUM=['','一','二','三','四','五','六'];
@@ -26527,21 +26576,25 @@ if(window.__T)window.__u165={U165,u165Status,u165Claim,u165Paint,u165Txt};
    - Nguyên bảo: tuần 🥇 Pro 7 ngày + 1.000 KN, 🥈 500 KN, 🥉 300 KN · tháng 🥇 Pro 1 tháng + 5.000 KN, 🥈 2.000, 🥉 1.000
    - Trò chơi tuần: 🥇 100 · 🥈 50 · 🥉 30 NB. Bảng Bài học hoàn thành tạm ẩn. Cúp, danh hiệu như cũ.
    - Bục trao giải hiện quà dưới từng hạng; ai cũng bấm vào xem được toàn bộ bảng quà. */
-const U166_PRIZE={xp:{w:[{pro:7,nb:100},{nb:50},{nb:30}],m:[{pro:30,nb:1000},{nb:500},{nb:300}]},earn:{w:[{pro:7,xp:1000},{xp:500},{xp:300}],m:[{pro:30,xp:5000},{xp:2000},{xp:1000}]}};
+/* 5.146: top 3 thưởng Kim Cương (= 1/10 mức Nguyên bảo cũ), hạng 4–10 thưởng Nguyên bảo */
+const U166_KC={w:[{pro:7,kc:10},{kc:5},{kc:3}],m:[{pro:30,kc:100,fz:1},{kc:50,fz:1},{kc:30,fz:1}]};
+const U166_PRIZE={xp:U166_KC,earn:U166_KC};
+const U166_LOW={w:[60,50,30,30,30,30,30],m:[600,500,300,300,300,300,300]};
+const u166LowTxt=(per,short)=>{const L=U166_LOW[per];return `hạng 4: ${u166Num(L[0])}, hạng 5: ${u166Num(L[1])}, hạng 6–10: ${u166Num(L[2])} ${short?YB:'Nguyên bảo'}`;};
 const U166_GAME=[{nb:100},{nb:50},{nb:30}];
 (function(){const i=RK_B.findIndex(x=>x[0]==='ls');if(i>=0)RK_B.splice(i,1);if(RK.board==='ls')RK.board='xp';})();
 const u166Num=n=>Number(n).toLocaleString('vi-VN');
-function u166Txt(z,short){const a=[];if(z.pro)a.push(`Gói Pro ${z.pro>=30?'1 tháng':z.pro+' ngày'}`);if(z.nb)a.push(`${u166Num(z.nb)} ${short?YB:'Nguyên bảo'}`);if(z.xp)a.push(`${u166Num(z.xp)} ${short?'KN':'kinh nghiệm'}`);return a.join(' + ');}
+function u166Txt(z,short){const a=[];if(z.pro)a.push(`Gói Pro ${z.pro>=30?'1 tháng':z.pro+' ngày'}`);if(z.kc)a.push(`${u166Num(z.kc)} ${short?'💎':'Kim Cương'}`);if(z.nb)a.push(`${u166Num(z.nb)} ${short?YB:'Nguyên bảo'}`);if(z.xp)a.push(`${u166Num(z.xp)} ${short?'KN':'kinh nghiệm'}`);return a.join(' + ');}
 rkRewardsHTML=function(b,p){const B=RK_B.find(x=>x[0]===b)||RK_B[0];
   if(p==='a')return `<div class="rkrew eternal"><div class="rkrewart">${cupSVG('cup-eternal',72)}</div><div><b>Cúp Vĩnh Cửu lấp lánh</b><p>Chỉ người đứng <b>số 1 mọi thời đại</b> giữ cúp này, ai vượt lên sẽ giành mất. Top 3 có danh hiệu <b>“👑 ${esc(B[4])} mọi thời đại”</b>, <b>“🥈/🥉 ${esc(B[4])} mọi thời đại”</b> hiện cạnh tên khi người khác nhìn thấy bạn.</p></div></div>`;
   const w=p==='w',Z=((U166_PRIZE[b]||{})[p])||[];
-  return `<div class="rkrew"><div class="rkrewrows">${Z.map((z,i)=>`<div class="rkrw p${i+1}"><span class="rkmedal">${['🥇','🥈','🥉'][i]}</span><span><b>Hạng ${i+1}: ${u166Txt(z)}</b><small>Danh hiệu “${['🥇','🥈','🥉'][i]} ${esc(B[4])} ${w?'tuần':'tháng'}”${w?'':` · ${['Cúp vàng','Cúp bạc','Cúp đồng'][i]} + giấy chứng nhận mang về nhà`}</small></span>${w?'':cupSVG(['cup-gold','cup-silver','cup-bronze'][i],34)}</div>`).join('')}</div>
+  return `<div class="rkrew"><div class="rkrewrows">${Z.map((z,i)=>`<div class="rkrw p${i+1}"><span class="rkmedal">${['🥇','🥈','🥉'][i]}</span><span><b>Hạng ${i+1}: ${u166Txt(z)}</b><small>Danh hiệu “${['🥇','🥈','🥉'][i]} ${esc(B[4])} ${w?'tuần':'tháng'}”${w?'':` · ${['Cúp vàng','Cúp bạc','Cúp đồng'][i]} + giấy chứng nhận mang về nhà`}</small></span>${w?'':cupSVG(['cup-gold','cup-silver','cup-bronze'][i],34)}</div>`).join('')}<div class="rkrw low"><span class="rkmedal">🏅</span><span><b>Hạng 4–10: Nguyên bảo</b><small>${u166LowTxt(p)}</small></span></div></div>
     <p class="small muted" style="margin:6px 0 0">Quà tự vào tài khoản khi ${w?'hết tuần (0 giờ thứ Hai)':'hết tháng (0 giờ ngày 1)'} và có thông báo trong app. <button class="linkbtn" type="button" data-u166all>Xem tất cả quà</button></p></div>`;};
-function u166AllHTML(){const row=(lab,Z)=>`<div class="u166g"><b>${lab}</b>${Z.map((z,i)=>`<div class="u166r"><span>${['🥇','🥈','🥉'][i]}</span><span>${u166Txt(z)}</span></div>`).join('')}</div>`;
-  return `<div class="u166card" role="document"><div class="row" style="justify-content:space-between;align-items:center"><h3 style="margin:0">🎁 Quà bảng xếp hạng</h3><button class="btn sm ghost" type="button" data-u166x aria-label="Đóng">✕</button></div>
-    <div class="u166grid">${row('⭐ Kinh nghiệm tuần',U166_PRIZE.xp.w)}${row('⭐ Kinh nghiệm tháng',U166_PRIZE.xp.m)}${row('💰 Nguyên bảo tuần',U166_PRIZE.earn.w)}${row('💰 Nguyên bảo tháng',U166_PRIZE.earn.m)}${row('🎮 Mỗi trò chơi · tuần',U166_GAME)}</div>
-    <p class="small muted" style="margin:0">Top 3 vẫn nhận cúp và danh hiệu như cũ. Quà tự vào tài khoản khi chốt bảng (tuần: 0 giờ thứ Hai, tháng: 0 giờ ngày 1). Bảng trò chơi mọi thời đại xếp hạng có thưởng từ tháng 12.</p></div>`;}
-function u166Open(){let d=document.getElementById('u166dlg');if(!d){d=document.createElement('div');d.id='u166dlg';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-label','Quà bảng xếp hạng');document.body.appendChild(d);}
+function u166AllHTML(){const row=(lab,Z,per)=>`<div class="u166g"><b>${lab}</b>${Z.map((z,i)=>`<div class="u166r"><span>${['🥇','🥈','🥉'][i]}</span><span>${u166Txt(z)}</span></div>`).join('')}${per?`<div class="u166r"><span>🏅</span><span>${u166LowTxt(per)}</span></div>`:''}</div>`;
+  return `<div class="u166card" role="document"><div class="row" style="justify-content:space-between;align-items:center"><h3 style="margin:0">🎁 Quà Kim Bảng</h3><button class="btn sm ghost" type="button" data-u166x aria-label="Đóng">✕</button></div>
+    <div class="u166grid">${row('⭐ Kinh nghiệm tuần',U166_PRIZE.xp.w,'w')}${row('⭐ Kinh nghiệm tháng',U166_PRIZE.xp.m,'m')}${row('💰 Nguyên bảo tuần',U166_PRIZE.earn.w,'w')}${row('💰 Nguyên bảo tháng',U166_PRIZE.earn.m,'m')}${row('🎮 Mỗi trò chơi · tuần',U166_GAME)}</div>
+    <p class="small muted" style="margin:0">Top 3 nhận Kim Cương, cúp và danh hiệu; hạng 4–10 nhận Nguyên bảo. Quà tự vào tài khoản khi chốt bảng (tuần: 0 giờ thứ Hai, tháng: 0 giờ ngày 1). Bảng trò chơi mọi thời đại xếp hạng có thưởng từ tháng 12.</p></div>`;}
+function u166Open(){let d=document.getElementById('u166dlg');if(!d){d=document.createElement('div');d.id='u166dlg';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-label','Quà Kim Bảng');document.body.appendChild(d);}
   d.innerHTML=u166AllHTML();d.classList.add('on');const close=()=>d.classList.remove('on');d.querySelector('[data-u166x]').onclick=close;d.onclick=e=>{if(e.target===d)close();};}
 /* quà dưới từng bậc của bục trao giải */
 function u166Pod(){const bx=app.querySelector('#rkboard');if(!bx)return;const em=bx.querySelector('.rkempty');
@@ -26550,7 +26603,7 @@ function u166Pod(){const bx=app.querySelector('#rkboard');if(!bx)return;const em
   const row=document.createElement('div');row.className='u166row';row.innerHTML=[1,0,2].map(i=>Z[i]?`<button type="button" class="u166pz p${i+1}" aria-label="Quà hạng ${i+1}: ${u166Txt(Z[i])}. Bấm xem tất cả quà">${['🥇','🥈','🥉'][i]} ${u166Txt(Z[i],1)}</button>`:'<span></span>').join('');
   row.querySelectorAll('.u166pz').forEach(x=>x.onclick=u166Open);p.after(row);}
 (function(){const base=viewRank;viewRank=async function(){const r=await base.apply(this,arguments);try{
-  const hp=app.querySelector('.rkhero p');if(hp)hp.textContent='2 bảng: kinh nghiệm và Nguyên bảo kiếm được. Chốt mỗi tuần, mỗi tháng, top 3 nhận quà (có Gói Pro), cúp và danh hiệu.';
+  const hp=app.querySelector('.rkhero p');if(hp)hp.textContent='2 bảng: kinh nghiệm và Nguyên bảo kiếm được. Chốt mỗi tuần, mỗi tháng: top 3 nhận Kim Cương (hạng nhất kèm Gói Pro), cúp và danh hiệu; hạng 4–10 nhận Nguyên bảo.';
   const bx=app.querySelector('#rkboard');if(bx&&!bx.__u166){bx.__u166=1;new MutationObserver(()=>setTimeout(u166Pod,30)).observe(bx,{childList:true,subtree:true});}u166Pod();}catch(e){console.warn(e);}return r;};})();
 document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('[data-u166all]')){e.preventDefault();u166Open();}});
 if(window.__T)window.__u166={U166_PRIZE,u166Txt,u166Open};
@@ -27654,12 +27707,13 @@ if(window.__T)window.__u177={U177,u177Xlsx,u177Sheets,u176Make,u177Load,u177Keep
 /* ===== 5.131: Túi đồ + vật phẩm (băng chuỗi giá tăng dần, loa Thế giới, thẻ x2 XP) + gói âm thanh tương tác ===== */
 const U178={st:null,busy:false,at:0};
 const U178_IT={
-  freeze:{ic:'❄️',n:'Băng chuỗi',d:'Lỡ một ngày, băng tự giữ chuỗi ngày học. Băng hiếm: lần đầu 500 Nguyên bảo, mỗi lần sau tăng thêm 500. Top 1–3 BXH tháng và gói Pro mỗi tháng được tặng 1 băng.'},
+  freeze:{ic:'❄️',n:'Băng chuỗi',d:'Lỡ một ngày, băng tự giữ chuỗi ngày học. Băng hiếm: cái đầu tiên mua được bằng Nguyên bảo, từ cái thứ hai chỉ bán bằng Kim Cương (50, 100, 150…). Top 1–3 Kim Bảng tháng và gói Pro mỗi tháng được tặng 1 băng.'},
+  x2h:{ic:'⏱️',n:'Thẻ x2 XP 30 phút',d:'Nhân đôi XP trong 30 phút, hợp lúc đua Kim Bảng. Chỉ bán bằng Kim Cương. Không cộng dồn với thẻ khác.'},
   loa:{ic:'📢',n:'Loa Thế giới',d:'Mỗi loa nhắn kênh Thế giới 1 lần (tài khoản Plus và Pro nhắn không cần loa). Gói 5 loa.'},
   x2d:{ic:'⚡',n:'Thẻ x2 XP 24 giờ',d:'Nhân đôi XP trong 24 giờ. Không cộng dồn, mua tối đa 5 thẻ mỗi tháng.'},
   x2w:{ic:'🌟',n:'Thẻ x2 XP 1 tuần',d:'Nhân đôi XP trong 7 ngày. Không cộng dồn, mua tối đa 2 thẻ mỗi tháng.'},
 };
-const U178_ERR={INSUFFICIENT:'Không đủ Nguyên bảo.',BAG_MONTH_LIMIT:'Tháng này bạn đã mua đủ số thẻ cho phép, tháng sau mua tiếp nhé.',BOOST_ACTIVE:'Đang có thẻ x2 XP chạy. Thẻ không cộng dồn, chờ thẻ hiện tại hết rồi dùng tiếp.',BAG_EMPTY:'Túi không còn món này.',NO_WALLET:'Ví đang đồng bộ, thử lại sau vài giây.',TOO_MANY_ATTEMPTS_TRY_LATER:'Thao tác quá nhanh, thử lại sau ít phút.'};
+const U178_ERR={KC_ONLY:'Món này chỉ bán bằng Kim Cương.',INSUFFICIENT_KC:'Chưa đủ Kim Cương.',INSUFFICIENT:'Không đủ Nguyên bảo.',BAG_MONTH_LIMIT:'Tháng này bạn đã mua đủ số thẻ cho phép, tháng sau mua tiếp nhé.',BOOST_ACTIVE:'Đang có thẻ x2 XP chạy. Thẻ không cộng dồn, chờ thẻ hiện tại hết rồi dùng tiếp.',BAG_EMPTY:'Túi không còn món này.',NO_WALLET:'Ví đang đồng bộ, thử lại sau vài giây.',TOO_MANY_ATTEMPTS_TRY_LATER:'Thao tác quá nhanh, thử lại sau ít phút.'};
 function u178Err(m){return U178_ERR[m]||('Có lỗi: '+m);}
 /* ---------- thẻ x2 XP: nhớ thời hạn trên máy để nhân XP cả khi mất mạng ---------- */
 function u178Boost(){try{const b=JSON.parse(localStorage.getItem('hsk-boost')||'null');if(b&&b.uid===(SOC.auth&&SOC.auth.uid)&&b.until>Date.now())return b;}catch(e){}return null;}
@@ -27674,11 +27728,11 @@ document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest
 async function u178Load(force){if(!walOn())return null;if(!force&&U178.st&&Date.now()-U178.at<15000)return U178.st;
   try{U178.st=await frApi('GET','/v1/bag');U178.at=Date.now();u178KeepBoost(U178.st);u178Equip();}catch(e){}return U178.st;}
 function u178Coins(st){if(!st||st.balance==null)return;try{const w=walCur();w.srv=st.balance;walSave(w);walSetCoins(st.balance+walPendSum(w));}catch(e){}}
-async function u178Buy(item){if(!walOn()){u178NeedLogin();return null;}if(U178.busy)return null;U178.busy=true;
+async function u178Buy(item,pay){if(!walOn()){u178NeedLogin();return null;}if(U178.busy)return null;U178.busy=true;
   try{await walletSync();const opid='bag'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);let st;
-    for(let k=0;k<2;k++){try{st=await frApi('POST','/v1/bag/buy',{item,opid});break;}catch(e){if(e.message==='NO_WALLET'&&!k){await walletSync();continue;}throw e;}}
-    U178.st=st;U178.at=Date.now();u178Coins(st);try{sfx('coin');}catch(e){}
-    gardenToast(`${U178_IT[item].ic} Đã mua ${item==='loa'?'5 loa Thế giới':U178_IT[item].n}${st.price?` · ${YB} ${st.price}`:''}. Đã cất vào túi đồ.`);
+    for(let k=0;k<2;k++){try{if(pay==='kc')await kcFlush();st=await frApi('POST','/v1/bag/buy',pay==='kc'?{item,opid,v:146,pay:'kc'}:{item,opid,v:146});break;}catch(e){if(e.message==='NO_WALLET'&&!k){await walletSync();continue;}throw e;}}
+    U178.st=st;U178.at=Date.now();u178Coins(st);try{sfx('coin');}catch(e){}try{if(st.kc!=null){kcSrv(st.kc);funTrack('kc_spend');}}catch(e){}
+    gardenToast(`${U178_IT[item].ic} Đã mua ${item==='loa'?'5 loa Thế giới':U178_IT[item].n}${pay==='kc'?` · ${st.kcPrice} 💎`:st.price?` · ${YB} ${st.price}`:''}. Đã cất vào túi đồ.`);
     if(item==='freeze')await u178Equip();return st;}
   catch(e){gardenToast(u178Err(e.message));u178Load(true);return null;}finally{U178.busy=false;}}
 async function u178Use(item){try{const st=await frApi('POST','/v1/bag/use',{item});U178.st=st;U178.at=Date.now();u178KeepBoost(st);return st;}catch(e){gardenToast(u178Err(e.message));return null;}}
@@ -27724,16 +27778,16 @@ function u178Demo(k){const ac=u178AC();if(!ac){gardenToast('Âm thanh đang tắ
 
 /* ---------- cửa hàng: tab Túi đồ và tab Âm thanh ---------- */
 if(typeof U144_TABS!=='undefined'){const i=U144_TABS.findIndex(x=>x[0]==='log');U144_TABS.splice(i<0?U144_TABS.length:i,0,['tui','🎒 Túi đồ'],['amthanh','🔊 Âm thanh']);}
-function u178Card(k,st){const it=U178_IT[k],own=st?st.items[k]:0,pr=st?st.prices[k]:k==='freeze'?u178GuestFzPrice():({loa:200,x2d:200,x2w:500})[k],guestLock=!st&&k!=='freeze',lim=st&&st.limits[k],full=lim&&lim.used>=lim.max,b=st&&st.boost;
-  let use='';if(k==='x2d'||k==='x2w')use=own?`<button type="button" class="btn sm pri" data-u178use="${k}"${b?' disabled':''}>${b?'Đang có thẻ chạy':'Dùng'}</button>`:'';
+function u178Card(k,st){const it=U178_IT[k],own=st?(st.items[k]||0):0,pr=st?st.prices[k]:k==='freeze'?u178GuestFzPrice():({loa:600,x2d:600,x2w:1500})[k],kp=st&&st.kcPrices?st.kcPrices[k]:({x2h:5})[k],ko=k==='x2h'||!!(st&&st.kcOnly&&st.kcOnly[k]),guestLock=!st&&k!=='freeze',lim=st&&st.limits[k],full=lim&&lim.used>=lim.max,b=st&&st.boost;
+  let use='';if(k==='x2h'||k==='x2d'||k==='x2w')use=own?`<button type="button" class="btn sm pri" data-u178use="${k}"${b?' disabled':''}>${b?'Đang có thẻ chạy':'Dùng'}</button>`:'';
   else if(k==='freeze')use=`<span class="acctag">Ô giữ chuỗi ${S.freeze||0}/${FREEZE_MAX}</span>`;else if(k==='loa')use=own?'<a class="btn sm" href="#thegioi">Nhắn Thế giới</a>':'';
   return `<div class="panel u178it"><span class="u178ic" aria-hidden="true">${it.ic}</span><div class="u178tx"><b>${esc(it.n)}</b> ${st||k==='freeze'?`<span class="acctag">Trong túi: ${k==='freeze'&&!st?0:own}</span>`:''}${lim?` <span class="acctag${full?' u178full':''}">Tháng này ${lim.used}/${lim.max}</span>`:''}<div class="small muted">${esc(it.d)}</div></div>
-    <div class="u178ac">${use}<button type="button" class="btn sm${full?'':' pri'}" data-u178buy="${k}"${full?' disabled':''}>${full?'Hết lượt tháng này':guestLock?`🔒 ${YB} ${pr}`:`${YB} ${pr}`}</button></div></div>`;}
+    <div class="u178ac">${use}${ko&&!full?'':`<button type="button" class="btn sm${full?'':' pri'}" data-u178buy="${k}"${full?' disabled':''}>${full?'Hết lượt tháng này':guestLock?`🔒 ${YB} ${pr}`:`${YB} ${pr}`}</button>`}${st&&kp&&!full?`<button type="button" class="btn sm kcalt" data-u178kc="${k}" title="Trả bằng Kim Cương">${kp} 💎</button>`:!st&&k==='x2h'?'<button type="button" class="btn sm kcalt" data-u178buy="x2h">🔒 5 💎</button>':''}</div></div>`;}
 function u178BagHTML(st){const s=SHOP(),inv=Object.entries(s.inv||{}).filter(([k,v])=>v>0),sp=U178_SP.filter(x=>s.own&&s.own['sp:'+x[0]]);
   const b=st&&st.boost;
   return `<div class="stack u178bag">${!walOn()?`<div class="panel u178login"><b>Đăng nhập để dùng túi đồ</b><div class="small muted">Loa Thế giới và thẻ x2 XP được cất trong túi đồ trên máy chủ, mở máy nào cũng còn.</div><a class="btn sm pri" href="#settings">Đăng nhập</a></div>`:''}
     ${b?`<div class="panel u178on"><span class="u178ic">⚡</span><div><b>${esc(U178_IT[b.kind].n)} đang chạy</b><div class="small">XP nhân đôi, còn <b>${esc(u178Left(b.until-Date.now()))}</b></div></div></div>`:''}
-    <h3 class="u178h">Vật phẩm</h3>${['freeze','loa','x2d','x2w'].map(k=>u178Card(k,st)).join('')}
+    <h3 class="u178h">Vật phẩm</h3>${['freeze','loa','x2h','x2d','x2w'].map(k=>u178Card(k,st)).join('')}
     ${sp.length?`<h3 class="u178h">Gói âm thanh của bạn</h3><div class="u178sps">${sp.map(([k,ic,n])=>`<div class="panel u178sp"><span class="u178ic">${ic}</span><b>${esc(n)}</b>${s.sp===k?'<span class="acctag on">Đang dùng</span>':`<button type="button" class="btn sm pri" data-u178sp="${k}">Dùng</button>`}</div>`).join('')}</div>`:''}
     ${inv.length?`<h3 class="u178h">Bùa trợ giúp trong trò chơi</h3><div class="small muted">${inv.map(([k,v])=>`${esc(k)} ×${v}`).join(' · ')}</div>`:''}
     <p class="small muted">Nguyên bảo dùng mua vật phẩm được trừ thẳng trong ví trên máy chủ. Băng chuỗi tự đặt vào ô giữ chuỗi (tối đa ${FREEZE_MAX} ô), phần dư nằm trong túi và tự bổ sung khi ô trống.</p></div>`;}
@@ -27745,6 +27799,7 @@ function u178Wire(body,rer){
   body.querySelectorAll('[data-u178buy]').forEach(b=>b.onclick=async()=>{const k=b.dataset.u178buy;b.disabled=true;
     if(!walOn()){if(k==='freeze'){if(u178GuestFzBuy())gardenToast('Đã mua 1 băng chuỗi ❄️');rer();}else{u178NeedLogin();b.disabled=false;}return;}
     await u178Buy(k);rer();});
+  body.querySelectorAll('[data-u178kc]').forEach(b=>b.onclick=async()=>{b.disabled=true;await u178Buy(b.dataset.u178kc,'kc');rer();});
   body.querySelectorAll('[data-u178use]').forEach(b=>b.onclick=async()=>{b.disabled=true;const st=await u178Use(b.dataset.u178use);if(st){try{sfx('win');}catch(e){}gardenToast(`⚡ Đã bật ${esc(U178_IT[b.dataset.u178use].n)}: XP nhân đôi!`);}rer();});
   body.querySelectorAll('[data-u178sp]').forEach(b=>b.onclick=()=>{const s=SHOP();s.sp=b.dataset.u178sp||'';shSave();if(s.sp)setTimeout(()=>u178Play(s.sp,'win'),50);rer();});
   body.querySelectorAll('[data-u178spb]').forEach(b=>b.onclick=()=>{const k=b.dataset.u178spb,it=U178_SP.find(x=>x[0]===k),s=SHOP();if(!spend(+b.dataset.p,'Mua gói âm thanh '+it[2]))return;s.own=s.own||{};s.own['sp:'+k]=1;s.sp=k;shSave();setTimeout(()=>u178Play(k,'win'),80);gardenToast(`${it[1]} Đã mua và bật gói “${esc(it[2])}”.`);rer();});
@@ -27753,19 +27808,20 @@ function u178Wire(body,rer){
   if(shopTab==='tui'){body.innerHTML=u178BagHTML(U178.st);u178Wire(body,rer);if(walOn()&&(!U178.st||Date.now()-U178.at>15000))u178Load(true).then(st=>{if(st&&shopTab==='tui'&&body.isConnected){body.innerHTML=u178BagHTML(st);u178Wire(body,rer);}});return;}
   if(shopTab==='amthanh'){body.innerHTML=u178SoundHTML();u178Wire(body,rer);return;}
   const r=base.apply(this,arguments);
-  if(shopTab==='help'){try{const fz=body.querySelector('#hbfz');if(fz){const n=fz.cloneNode(false);n.removeAttribute('disabled');n.removeAttribute('id');n.dataset.u178buy='freeze';const pr=u178FzPrice();n.innerHTML=`${YB} ${pr==null?'…':pr}`;fz.replaceWith(n);
-      const row=n.closest('.helpit');if(row){const d=row.querySelector('.small.muted');if(d)d.textContent='Lỡ một ngày, băng tự giữ chuỗi ngày học. Băng hiếm: lần đầu 500 Nguyên bảo, mỗi lần sau tăng thêm 500.';}}
-    body.querySelector('.helpgrid').insertAdjacentHTML('beforeend',['loa','x2d','x2w'].map(k=>u178Card(k,U178.st)).join(''));
+  if(shopTab==='help'){try{const fz=body.querySelector('#hbfz');if(fz){const n=fz.cloneNode(false);n.removeAttribute('disabled');n.removeAttribute('id');const st=U178.st,ko=!!(walOn()&&st&&st.kcOnly&&st.kcOnly.freeze);if(ko){n.dataset.u178kc='freeze';n.classList.add('kcalt');n.innerHTML=`${st.kcPrices.freeze} 💎`;}else{n.dataset.u178buy='freeze';const pr=u178FzPrice();n.innerHTML=`${YB} ${pr==null?'…':pr}`;}fz.replaceWith(n);
+      const row=n.closest('.helpit');if(row){const d=row.querySelector('.small.muted');if(d)d.textContent='Lỡ một ngày, băng tự giữ chuỗi ngày học. Băng hiếm: cái đầu tiên mua bằng Nguyên bảo, từ cái thứ hai chỉ bán bằng Kim Cương.';}}
+    body.querySelector('.helpgrid').insertAdjacentHTML('beforeend',['loa','x2h','x2d','x2w'].map(k=>u178Card(k,U178.st)).join(''));
     body.insertAdjacentHTML('beforeend','<p class="small"><a href="#shop" data-u178go="tui" class="u178gotui">🎒 Mở túi đồ ›</a></p>');u178Wire(body,rer);
     const gt=body.querySelector('.u178gotui');if(gt)gt.onclick=e=>{e.preventDefault();u144Go('tui');};
     if(walOn()&&!U178.st)u178Load(true).then(st=>{if(st&&shopTab==='help'&&body.isConnected)viewShop();});}catch(e){console.warn(e);}}
   return r;};})();
 /* hộp Chuỗi ngày học: nút mua băng chuỗi theo giá mới */
 (function(){if(typeof viewStreak!=='function')return;const base=viewStreak;viewStreak=function(){const r=base.apply(this,arguments);try{const b=document.querySelector('dialog .stkfz #stkbuy');if(!b)return r;const pr=u178FzPrice();
-  const full=(S.freeze||0)>=FREEZE_MAX;b.textContent=full?'Ô giữ chuỗi đã đầy':`Mua · ${pr==null?'…':pr} Nguyên bảo`;b.disabled=false;b.classList.add('pri');
-  const note=b.closest('.stkfz').querySelector('.small.muted');if(note)note.textContent='Lỡ một ngày, băng chuỗi tự giữ chuỗi cho bạn. Băng rất hiếm: lần đầu 500 Nguyên bảo, mỗi lần mua sau tăng thêm 500. Top 1–3 BXH tháng và gói Pro mỗi tháng được tặng 1 băng; băng dư cất trong túi đồ.';
-  b.onclick=async()=>{b.disabled=true;let ok=false;if(walOn())ok=!!(await u178Buy('freeze'));else{ok=u178GuestFzBuy();if(ok)gardenToast('Đã mua 1 băng chuỗi ❄️');}const d=b.closest('dialog');if(d){d.close();d.remove();}viewStreak();};
-  if(walOn()&&!U178.st)u178Load(true).then(()=>{if(b.isConnected&&!full){const p2=u178FzPrice();b.textContent=`Mua · ${p2} Nguyên bảo`;}});}catch(e){}return r;};})();
+  const full=(S.freeze||0)>=FREEZE_MAX;const ko=()=>!!(walOn()&&U178.st&&U178.st.kcOnly&&U178.st.kcOnly.freeze),lab=()=>ko()?`Mua · ${U178.st.kcPrices.freeze} 💎 Kim Cương`:`Mua · ${u178FzPrice()==null?'…':u178FzPrice()} Nguyên bảo`;
+  b.textContent=full?'Ô giữ chuỗi đã đầy':lab();b.disabled=false;b.classList.add('pri');
+  const note=b.closest('.stkfz').querySelector('.small.muted');if(note)note.textContent='Lỡ một ngày, băng chuỗi tự giữ chuỗi cho bạn. Băng rất hiếm: lần mua đầu 1.500 Nguyên bảo, từ lần thứ hai chỉ bán bằng Kim Cương (50 💎, mỗi lần sau thêm 50). Top 1–3 Kim Bảng tháng và gói Pro mỗi tháng được tặng 1 băng; băng dư cất trong túi đồ.';
+  b.onclick=async()=>{b.disabled=true;let ok=false;if(walOn())ok=!!(await u178Buy('freeze',ko()?'kc':undefined));else{ok=u178GuestFzBuy();if(ok)gardenToast('Đã mua 1 băng chuỗi ❄️');}const d=b.closest('dialog');if(d){d.close();d.remove();}viewStreak();};
+  if(walOn()&&!U178.st)u178Load(true).then(()=>{if(b.isConnected&&!full)b.textContent=lab();});}catch(e){}return r;};})();
 /* tải túi đồ khi mở app (bổ sung băng chuỗi vào ô trống, nhớ thẻ x2 XP) */
 setTimeout(()=>{u178Load(true);},4000);setInterval(()=>{if(!document.hidden)u178Load(true);},600000);
 if(window.__T)window.__u178={U178,u178Load,u178Buy,u178Use,u178Boost,U178_SP,U178_SPF,u178Play,SHOP:()=>SHOP(),shSave:()=>shSave(),save:()=>save(),S:()=>S,G:()=>G(),addXp:n=>addXp(n),sfx:k=>sfx(k),viewStreak:()=>viewStreak(),walletSync:()=>walletSync(),FREEZE_MAX};
@@ -28192,7 +28248,7 @@ function rkxPodHTML(L,b,p){const Z=rkxPrizes(b,p)||[];
     return `<div class="rkxp p${i+1}${r.mine?' me':''}"><div class="rkxav">${avHTML(r.av2||r.avatar,i?52:64,r.frame)}<span class="rkxno">${i+1}</span></div><b class="rkxnm">${nm}</b>${ttlChip(r.ttl)}<div class="rkxstep"><span class="rkxval">${rkFmt(r.val,b)}</span>${pz}</div></div>`;};
   return `<div class="rkxpod">${one(1)}${one(0)}${one(2)}</div>`;}
 function rkxRow(r,b){const fu=!r.mine&&r.uid?` data-fu="${esc(r.uid)}" data-fn="${esc(r.name||r.handle||'')}"`:'';return `<div class="rkxrow${r.mine?' me':''}"${fu}><span class="rkxr">#${r.rank}</span><span class="rkxa">${avHTML(r.av2||r.avatar,30,r.frame)}</span><span class="rkxn">${r.mine?'Bạn':showName(r.handle,r.name,r.idn)} ${ttlChip(r.ttl)}</span><b>${rkFmt(r.val,b)}</b></div>`;}
-function rkxMineHTML(j,L,b){if(!gOnline())return `<div class="rkxguest">Đăng nhập để có tên trên bảng xếp hạng và nhận quà. <a class="btn sm pri" href="#settings">Đăng nhập</a></div>`;
+function rkxMineHTML(j,L,b){if(!gOnline())return `<div class="rkxguest">Đăng nhập để có tên trên Kim Bảng và nhận quà. <a class="btn sm pri" href="#settings">Đăng nhập</a></div>`;
   const i=L.findIndex(r=>r.mine);
   if(i>=0){const rows=L.slice(Math.max(0,i-1),i+2);return rows.map(r=>rkxRow(r,b)).join('');}
   if(j.me&&j.me.rank){const me=Object.assign({mine:true},j.me),near=L.filter(r=>Math.abs(r.rank-me.rank)===1);return [...near.filter(r=>r.rank<me.rank),me,...near.filter(r=>r.rank>me.rank)].map(r=>rkxRow(r,b)).join('');}
@@ -28203,7 +28259,7 @@ async function rkxGames(){const box=app.querySelector('.rkxside');if(!box)return
   body.innerHTML=rkxAd('game')+ks.map(k=>{const m=gbMeta(k),L=G[k]||[];return `<button type="button" class="rkxg" data-gbo="${k}"><span class="rkxgh"><span aria-hidden="true">${m.ic||'🎮'}</span><b>${esc(m.name)}</b><i aria-hidden="true">›</i></span>${L.length?`<span class="rkxgl">${L.slice(0,5).map(r=>`<span class="rkxgr${r.mine?' me':''}"><em>${gbMedal(r.rank)}</em><span>${r.mine?'Bạn':showName(r.handle,r.name,r.idn)}</span><b>${Number(r.best).toLocaleString('vi-VN')}</b></span>`).join('')}</span>`:'<span class="rkxgl none">Chưa có ai · chơi ngay để đứng đầu!</span>'}</button>`;}).join('');}
 viewRank=async function(){stopGames();const vis=RK_B.filter(x=>!RK_HID_C.includes(x[0]));if(!vis.some(x=>x[0]===RK.board))RK.board='xp';
   const b=RK.board,p=RK.period,B=RK_B.find(x=>x[0]===b),PN=(RK_P.find(x=>x[0]===p)||RK_P[0])[1];
-  app.innerHTML=`<div class="stack rankv rkx"><div class="rkxhead"><div class="rkxtt"><h1><span aria-hidden="true">🏆</span> Bảng xếp hạng</h1><p class="small muted">Chốt mỗi tuần, mỗi tháng · top 3 nhận quà (có Gói Pro, Băng chuỗi), cúp và danh hiệu.</p></div>
+  app.innerHTML=`<div class="stack rankv rkx"><div class="rkxhead"><div class="rkxtt"><h1><span aria-hidden="true">🏆</span> Kim Bảng Đề Danh</h1><div class="label rkxsub">金榜题名 · Bảng xếp hạng</div><p class="small muted">Chốt mỗi tuần, mỗi tháng · top 3 nhận Kim Cương (hạng nhất kèm Gói Pro), cúp và danh hiệu; hạng 4–10 nhận Nguyên bảo.</p></div>
       <div class="rkxbd" role="tablist" aria-label="Chọn bảng">${vis.map(([k,,t])=>`<button role="tab" class="rkxt${k===b?' on':''}" data-rkb="${k}" aria-selected="${k===b}">${t}</button>`).join('')}</div></div>
     <div class="rkxbar"><div class="rkxper" role="tablist" aria-label="Chọn kỳ">${RK_P.map(([k,t])=>`<button role="tab" class="rkxt${k===p?' on':''}" data-rkp="${k}" aria-selected="${k===p}">${t}</button>`).join('')}</div><span class="rkxbar-r">${p!=='a'?`<button type="button" class="rkxbgb" id="rkprev">📜 Kết quả ${p==='w'?'tuần':'tháng'} trước</button>`:''}<button type="button" class="rkxbgb" data-u166all>🎁 Xem tất cả quà</button><button type="button" class="rkxbgb" id="rkxbg" aria-haspopup="dialog">🖼 Đổi nền</button></span></div>
     <div class="rkxgrid"><section class="panel rkxmain" id="rkboard" aria-live="polite"><div class="rkxload"><i></i><i></i><i></i></div></section>
@@ -28246,7 +28302,7 @@ function u184Life(){if(location.hash.indexOf('#premium')!==0)return;const b=app.
 try{new MutationObserver(()=>setTimeout(u184Life,20)).observe(app,{childList:true,subtree:true});}catch(e){}
 
 /* ---------------- 4. Băng chuỗi hiếm ---------------- */
-try{U178_IT.freeze.d='Lỡ một ngày, băng tự giữ chuỗi ngày học. Băng rất hiếm: lần mua đầu 500 Nguyên bảo, mỗi lần sau tăng thêm 500. Top 1–3 BXH tháng và gói Pro mỗi tháng được tặng 1 băng.';}catch(e){}
+try{U178_IT.freeze.d='Lỡ một ngày, băng tự giữ chuỗi ngày học. Băng rất hiếm: lần mua đầu 1.500 Nguyên bảo, từ lần thứ hai chỉ bán bằng Kim Cương (50 💎, mỗi lần sau thêm 50). Top 1–3 Kim Bảng tháng và gói Pro mỗi tháng được tặng 1 băng.';}catch(e){}
 u178GuestFzPrice=function(){const s=SHOP();return 500*((s.fzN||0)+1);};
 
 if(window.__T)window.__u184={GZ,gzApply,gzFit,rkxPodHTML,u184Life};
@@ -29022,18 +29078,19 @@ if(window.__T)window.__u192={u192Anim,U192B,u192Scan,U192_SLEEP};
 
 /* ===== 5.145 Kim Cương 💎 — tiền cao cấp (máy chủ giữ số dư) =====
    - Có từ: nạp tiền (chỉ trên web, lần đầu x2), Gói Pro/Plus tặng mỗi 30 ngày, vài mốc thành tích, thưởng BXH (quản trị duyệt).
-   - 1 Kim Cương = 10 Nguyên bảo. Mọi món bán bằng Nguyên bảo đều trả được bằng Kim Cương (giá NB chia 10, làm tròn lên).
+   - 5.146: 1 Kim Cương = 30 Nguyên bảo (giá Nguyên bảo của vật phẩm ×3, giá Kim Cương = giá cũ chia 10). Món bán bằng Nguyên bảo trả được bằng Kim Cương (giá NB chia 30, làm tròn lên).
    - Chỉ bằng Kim Cương: nạp đầy năng lượng (8), cứu chuỗi đã mất trong 3 ngày (20), đổi Tên ID từ lần thứ hai (30).
    - Bản Android: vẫn hiện, tiêu và nhận Kim Cương; không có nút nạp, không nhắc tới web.
    - Không khóa phần học bằng Kim Cương. Ngừng bán gói Nguyên bảo. */
-const KC_K='hsk-kc',KC_RATE=10,KC_I='💎',KC_FULL=8,KC_FIX=20,KC_RENAME_C=30,KC_FIX_DAYS=3;
+const KC_K='hsk-kc',KC_RATE=30,KC_I='💎',KC_FULL=8,KC_FIX=20,KC_RENAME_C=30,KC_FIX_DAYS=3;
 const KC_PACK_FB=[{id:'kc40',price:20000,kc:40},{id:'kc110',price:50000,kc:110},{id:'kc240',price:100000,kc:240},{id:'kc520',price:200000,kc:520}];
 const KC_BONUS={kc110:'+10%',kc240:'+20%',kc520:'+30%'};
-const KC_AWL=[['first','Học xong bài đầu tiên',5],['s7','Chuỗi 7 ngày (mỗi tháng)',2],['s30','Chuỗi 30 ngày (mỗi tháng)',10],['hsk','Qua hết một cấp HSK',10],['top','Top 1 / 2 / 3 BXH tuần của mỗi trò',5],['inv','Mời bạn, bạn học đủ 3 ngày',5]];
-const KC_USE=[['⚡','Đổi năng lượng, nạp đầy năng lượng'],['🎮','Chơi khi hết năng lượng, chơi tiếp khi thua'],['🏎️','Thêm lượt Đua xe có thưởng'],['💬','Thêm lượt nói chuyện với Tiểu Long Hổ'],['🔥','Cứu chuỗi ngày học vừa bị mất'],['🛍️','Mua trang phục, skin xe, nội thất, đồ sự kiện'],['🪪','Đổi Tên ID từ lần thứ hai'],['🪙','Đổi ra Nguyên bảo (1 💎 = 10 🪙)']];
+const KC_AWL=[['chest','Rương chuỗi 7 / 14 / 30 / 60 / 100 ngày','3 / 5 / 10 / 15 / 30'],['hsk','Qua hết một cấp HSK','10'],['rk','Top 1 / 2 / 3 Kim Bảng Kinh nghiệm, Nguyên bảo · tuần','10 / 5 / 3'],['rkm','Top 1 / 2 / 3 Kim Bảng Kinh nghiệm, Nguyên bảo · tháng','100 / 50 / 30'],['top','Top 1 / 2 / 3 BXH tuần của mỗi trò','5 / 3 / 2'],['inv','Mời bạn, bạn học đủ 3 ngày','5']];
+const KC_CHEST=[[7,'c7'],[14,'c14'],[30,'c30'],[60,'c60'],[100,'c100']];
+const KC_USE=[['⚡','Đổi năng lượng, nạp đầy năng lượng'],['🎮','Chơi khi hết năng lượng, chơi tiếp khi thua'],['🏎️','Thêm lượt Đua xe có thưởng'],['💬','Thêm lượt nói chuyện với Tiểu Long Hổ'],['🔥','Cứu chuỗi ngày học vừa bị mất'],['🛍️','Mua trang phục, skin xe, nội thất, đồ sự kiện'],['🪪','Đổi Tên ID từ lần thứ hai'],['⚡','Thẻ x2 XP 30 phút, băng chuỗi, loa Thế giới'],['🔎','Tiểu Long Hổ chấm chi tiết câu bạn nói'],['🪙','Đổi ra Nguyên bảo (1 💎 = 30 🪙)']];
 try{FUN_EV.push('kc_view','kc_buy','kc_spend');}catch(e){}
 try{U174_COINS.length=0;}catch(e){} // ngừng bán gói Nguyên bảo
-try{Object.assign(PLAN_NAME,{kc40:'40 Kim Cương',kc110:'110 Kim Cương',kc240:'240 Kim Cương',kc520:'520 Kim Cương'});}catch(e){}
+try{Object.assign(PLAN_NAME,{kcard:'Thẻ tháng Kim Cương',kc40:'40 Kim Cương',kc110:'110 Kim Cương',kc240:'240 Kim Cương',kc520:'520 Kim Cương'});}catch(e){}
 try{U174_MAIN.push(['💎','Tặng Kim Cương mỗi 30 ngày','30 Kim Cương mỗi tháng, gói 1 năm được 40']);U174_CMP.splice(3,0,['Kim Cương mỗi 30 ngày',0,'30','30','40','30']);}catch(e){}
 try{PROINV.kc={t:'Kim Cương sắp hết rồi 💎',d:'Gói Pro tặng Kim Cương mỗi 30 ngày, lại học và chơi không tốn năng lượng. Có Pro là đủ dùng cả tháng!',f:['💎','30 Kim Cương mỗi tháng, gói năm được 40']};}catch(e){}
 
@@ -29044,7 +29101,9 @@ function kcOn(){try{return typeof walOn==='function'&&walOn();}catch(e){return f
 const kcPend=o=>(o.pend||[]).reduce((a,x)=>a+(x.c||0),0);
 function kcBal(){const o=KCS();return (o.srv||0)-kcPend(o);}
 const kcN=n=>Number(n||0).toLocaleString('vi-VN');
-const kcOf=nb=>Math.max(1,Math.ceil((+nb||0)/KC_RATE));
+const kcOf=(nb,r)=>Math.max(1,Math.ceil((+nb||0)/(r||KC_RATE)));
+// 5.146: nội thất nhà (trang #furn, #house) không bị ×3 nên giá Kim Cương = giá Nguyên bảo ÷ 20 (món khác ÷ 30)
+const KC_RATE_FURN=20,kcRateHere=()=>/^#(furn|house)/.test(location.hash||'')?KC_RATE_FURN:KC_RATE;
 const kcApp=()=>{try{return typeof isApp==='function'&&isApp();}catch(e){return false;}};
 function kcPaint(pulse){const b=kcBal();document.querySelectorAll('.kcpill b').forEach(e=>e.textContent=kcN(b));document.querySelectorAll('[data-kcbal]').forEach(e=>e.textContent=kcN(b));
   if(pulse)document.querySelectorAll('.kcpill').forEach(p=>{p.classList.remove('pulse');void p.offsetWidth;p.classList.add('pulse');});}
@@ -29056,7 +29115,7 @@ async function kcLoad(force){if(!kcOn())return null;if(!force&&Date.now()-kcLoad
 let kcBusy=false,kcT=0;
 async function kcFlush(){if(!kcOn()||kcBusy)return;if(!KCS().pend.length)return;kcBusy=true;let refused=0,net=false;
   try{for(const op of KCS().pend.slice(0,20)){let j=null,err='';try{j=await frApi('POST','/v1/kc/spend',op.b);}catch(e){err=String(e.message||'');}
-      if(!j&&!/INSUFFICIENT|INVALID|BAD_ID/.test(err)){net=true;break;} // lỗi mạng: giữ lại, gửi sau
+      if(!j&&!/INSUFFICIENT|INVALID|BAD_ID|KC_LIMIT/.test(err)){net=true;break;} // lỗi mạng: giữ lại, gửi sau
       const o=KCS();o.pend=o.pend.filter(x=>x.b.id!==op.b.id);if(j)o.srv=j.bal;else refused++;kcPut(o);}}
   finally{kcBusy=false;}
   if(refused){await kcLoad(true);gardenToast(`${KC_I} Máy chủ chưa nhận ${refused} giao dịch (không đủ Kim Cương). Số dư đã cập nhật theo máy chủ.`);}
@@ -29066,53 +29125,67 @@ function kcQueue(b,c){const o=KCS();b=Object.assign({},b,{id:'k'+Date.now().toSt
 function kcShort(c){const b=kcBal();let inv=false;try{if(!isPremium())inv=proInvite('kc');}catch(e){}
   if(!inv)gardenToast(`${KC_I} Cần <b>${c}</b> Kim Cương, bạn đang có ${kcN(b)}.${kcApp()?'':' <a href="#kc">Nạp thêm</a>'}`);}
 // trả bằng Kim Cương cho món có giá riêng (không quy từ Nguyên bảo)
-function kcPayItem(item,c,name){if(!kcOn()){gardenToast('Đăng nhập để dùng Kim Cương nhé.');return false;}if(kcBal()<c){kcShort(c);return false;}
-  kcQueue({item,name},c);gardenToast(`${KC_I} −${c} Kim Cương · ${esc(name)}`);try{sfx('coin');}catch(e){}return true;}
+/* 5.146: giới hạn mua bằng Kim Cương mỗi ngày [thường, Pro] — hết lượt thì chặn hẳn, mời mua gói Pro. Máy chủ giữ số thật (KC_CAP), app đếm thêm tại chỗ để chặn ngay cả khi chưa gửi xong */
+const KC_CAP={game:[5,15],en3:[1,6],enfull:[1,2],race:[3,10],review:[3,20]};
+const KC_CAP_NAME={game:'lượt chơi khi hết năng lượng',en3:'đổi +3 năng lượng',enfull:'nạp đầy năng lượng',race:'thêm lượt Đua xe',review:'chấm chi tiết'};
+function kcDay(){return new Date(Date.now()+7*3600e3).toISOString().slice(0,10);}
+function kcIsPro(){const st=KCS().st||{};if(st.caps&&st.caps.game)return st.caps.game.max===KC_CAP.game[1];try{return !!isPremium();}catch(e){return false;}}
+function kcCap(item){if(!KC_CAP[item])return null;const o=KCS(),st=o.st||{},d=kcDay(),pro=kcIsPro(),max=KC_CAP[item][pro?1:0];
+  const srv=(st.caps&&st.day===d&&st.caps[item])?(+st.caps[item].n||0):0,loc=(o.cap&&o.cap.day===d)?(+o.cap.n[item]||0):0,n=Math.max(srv,loc);
+  return {n,max,left:Math.max(0,max-n),pro,proMax:KC_CAP[item][1]};}
+function kcCapUse(item){const o=KCS(),d=kcDay();if(!o.cap||o.cap.day!==d)o.cap={day:d,n:{}};const c=kcCap(item);o.cap.n[item]=(c?c.n:0)+1;kcPut(o);}
+function kcCapTxt(item){const c=kcCap(item);return c?`còn ${c.left}/${c.max} hôm nay`:'';}
+function kcLimitDlg(item){const c=kcCap(item)||{n:0,max:0,pro:false,proMax:0},d=kcDlg(),nm=KC_CAP_NAME[item]||'món này',app=(()=>{try{return kcApp();}catch(e){return false;}})();
+  d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Giới hạn mỗi ngày</div><h2 style="margin:2px 0 0">Hết lượt hôm nay</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
+    <p style="margin:0">Hôm nay bạn đã dùng Kim Cương để <b>${esc(nm)}</b> ${c.n}/${c.max} lần.${c.pro?' Đây là mức tối đa của gói Pro, ngày mai lại mua được nhé.':` Gói <b>Pro</b> được <b>${c.proMax} lần mỗi ngày</b>, kèm Kim Cương tặng hằng tháng và nhiệm vụ tuần gấp đôi.`}</p>
+    <div class="row kcbtns">${c.pro?'<button type="button" class="btn pri" data-kx>Đã hiểu</button>':`<button type="button" class="btn" data-kx>Để mai</button><a class="btn pri" href="#premium" data-kx>Xem gói Pro</a>`}</div></div>`;
+  if(!d.open)d.showModal();try{funTrack('kc_limit');}catch(e){}}
+function kcPayItem(item,c,name,extra){if(!kcOn()){gardenToast('Đăng nhập để dùng Kim Cương nhé.');return false;}
+  const cp=kcCap(item);if(cp&&cp.left<=0){try{const g=document.getElementById('gmdlg');if(g&&g.open)g.close();}catch(e){}kcLimitDlg(item);return false;}
+  if(kcBal()<c){kcShort(c);return false;}
+  if(cp)kcCapUse(item);kcQueue(Object.assign({item,name},extra||{}),c);gardenToast(`${KC_I} −${c} Kim Cương · ${esc(name)}`);try{sfx('coin');}catch(e){}return true;}
 
 /* ---------- trả bằng Kim Cương thay Nguyên bảo ----------
    KC_PAY bật ngay trước khi chạy hành động mua: spend() trừ Kim Cương (giá NB/10) thay cho Nguyên bảo.
    Thiếu Nguyên bảo mà đủ Kim Cương: hỏi người dùng rồi bấm lại đúng nút vừa bấm, lần này trả bằng Kim Cương. */
 let KC_PAY=0,KC_LAST=null,KC_LAST_AT=0;
+// KC_PAY: 1 = lần spend() kế tiếp trả bằng Kim Cương; {n,t} = chỉ khi đúng số Nguyên bảo n và trong 20 giây (bấm nút 💎 cạnh giá)
+const kcPayHit=n=>{const k=KC_PAY;if(!k)return false;if(k===1)return true;return k.n===Math.round(n)&&Date.now()-k.t<20000;};
 document.addEventListener('click',e=>{if(!e.isTrusted)return;const b=e.target.closest&&e.target.closest('button,a,[role=button]');if(b){KC_LAST=b;KC_LAST_AT=Date.now();}},true);
 (function(){const base=spend;spend=function(n,why){
-  if(KC_PAY&&kcOn()){KC_PAY=0;const c=kcOf(n);if(kcBal()<c){kcShort(c);return false;}
-    kcQueue({item:'nb',p:Math.round(n),name:String(why||'').slice(0,50)},c);setTimeout(()=>{try{gardenToast(`${KC_I} −${c} Kim Cương · ${esc(why||'')}`);sfx('coin');}catch(e){}},50);return true;}
-  KC_PAY=0;let s=null;try{s=SHOP();}catch(e){}
-  if(s&&s.coins<n&&kcOn()&&kcBal()>=kcOf(n)&&KC_LAST&&KC_LAST.isConnected&&Date.now()-KC_LAST_AT<5000){const el=KC_LAST;kcOffer(n,why,()=>{KC_PAY=1;try{el.click();}finally{setTimeout(()=>{KC_PAY=0;},0);}});return false;}
+  if(kcPayHit(n)&&kcOn()){KC_PAY=0;const r=kcRateHere(),c=kcOf(n,r);if(kcBal()<c){kcShort(c);return false;}
+    kcQueue({item:r===KC_RATE_FURN?'nbf':'nb',p:Math.round(n),name:String(why||'').slice(0,50)},c);setTimeout(()=>{try{gardenToast(`${KC_I} −${c} Kim Cương · ${esc(why||'')}`);sfx('coin');}catch(e){}},50);return true;}
+  if(KC_PAY===1)KC_PAY=0;let s=null;try{s=SHOP();}catch(e){}
+  if(s&&s.coins<n&&kcOn()&&kcBal()>=kcOf(n,kcRateHere())&&KC_LAST&&KC_LAST.isConnected&&Date.now()-KC_LAST_AT<5000){const el=KC_LAST;kcOffer(n,why,()=>{KC_PAY=1;try{el.click();}finally{setTimeout(()=>{KC_PAY=0;},0);}});return false;}
   return base.apply(this,arguments);};})();
 function kcDlg(){let d=document.getElementById('kcdlg');if(!d){d=document.createElement('dialog');d.id='kcdlg';d.className='wd kcdlg';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-kx]'))d.close();});}return d;}
-function kcOffer(n,why,go){const c=kcOf(n),d=kcDlg();let coins=0;try{coins=SHOP().coins;}catch(e){}
+function kcOffer(n,why,go){const c=kcOf(n,kcRateHere()),d=kcDlg();let coins=0;try{coins=SHOP().coins;}catch(e){}
   d.innerHTML=`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Thiếu Nguyên bảo</div><h2 style="margin:2px 0 0">Trả bằng Kim Cương?</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
     <p style="margin:0">${esc(why||'Món này')} cần <b>${kcN(n)} ${YB}</b>, bạn đang có ${kcN(coins)}. Bạn có thể trả <b>${c} ${KC_I}</b> thay thế.</p>
-    <p class="small muted" style="margin:0">Bạn đang có ${kcN(kcBal())} Kim Cương · 1 ${KC_I} = 10 Nguyên bảo.</p>
+    <p class="small muted" style="margin:0">Bạn đang có ${kcN(kcBal())} Kim Cương · 1 ${KC_I} = ${KC_RATE} Nguyên bảo.</p>
     <div class="row kcbtns"><button type="button" class="btn" data-kx>Thôi</button><button type="button" class="btn pri kcgo" id="kcok">Trả ${c} ${KC_I}</button></div></div>`;
   d.querySelector('#kcok').onclick=()=>{d.close();go();};if(!d.open)d.showModal();setTimeout(()=>{const b=d.querySelector('#kcok');if(b)b.focus();},50);}
-// hộp thoại trò chơi (hết năng lượng, chơi tiếp): thêm nút trả bằng Kim Cương cạnh nút trả Nguyên bảo
-(function(){const base=gmDlg;gmDlg=function(html,yes,onYes,onNo){const r=base.apply(this,arguments);
-  try{if(!kcOn()||typeof yes!=='string'||yes.indexOf(YB)<0)return r;const m=yes.replace(YB,'').trim().match(/([\d.]+)$/);if(!m)return r;
-    const c=kcOf(+m[1].replace(/\./g,'')),d=document.getElementById('gmdlg'),y=d&&d.querySelector('#gmyes');if(!y)return r;
-    y.insertAdjacentHTML('beforebegin',`<button class="btn kcalt" id="gmkc" type="button"${kcBal()<c?' disabled':''} title="Bạn có ${kcN(kcBal())} Kim Cương">${c} ${KC_I}</button>`);
-    y.parentElement.classList.add('kcrow');
-    d.querySelector('#gmkc').onclick=()=>{d.onclose=null;d.close();KC_PAY=1;try{onYes();}finally{KC_PAY=0;}};}catch(e){}return r;};})();
-// thua mà không đủ Nguyên bảo để chơi tiếp, nhưng đủ Kim Cương
-(function(){const base=gmLose;gmLose=function(key,revive,giveUp){const r=base.apply(this,arguments);if(r)return r;
-  try{if(!kcOn()||(typeof duoOn==='function'&&duoOn()))return r;if(GM_RUN.key!==key)GM_RUN={key,n:0};const n=GM_RUN.n,max=gmMax();if(n>=max)return r;
-    const cost=gmCost(n);if(!(cost>0&&SHOP().coins<cost))return r;const c=kcOf(cost);if(kcBal()<c)return r;
-    gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Chơi tiếp ${esc(GM_NAME[key]||'')}?</h3><p class="small muted" style="margin:0">Giữ nguyên điểm, sau <b>${GM_CD} giây</b> đếm ngược sẽ chơi tiếp từ chỗ vừa thua. Lượt chơi tiếp <b>${n+1}/${max}</b> của ván này tốn <b>${c} ${KC_I}</b> (bạn có ${kcN(kcBal())} Kim Cương).</p>`,
-      `Chơi tiếp · ${c} ${KC_I}`,()=>{KC_PAY=1;const ok=spend(cost,'Chơi tiếp '+(GM_NAME[key]||'trò chơi'));KC_PAY=0;if(!ok)return giveUp&&giveUp();GM_RUN.n=n+1;try{sfx('win');}catch(e){}gmCountdown(key,n+1,max,revive);},giveUp);
-    return true;}catch(e){return r;}};})();
 // thêm nút Kim Cương: nạp đầy năng lượng, thêm lượt nói chuyện AI
+function kcEnAfter(el){const dl=el.closest('dialog');try{renderStat();}catch(e){}if(dl&&dl.id==='endlg'){try{enDialog();}catch(e){dl.close();}}else if(location.hash==='#review'){try{viewReview();}catch(e){}}else{try{route();}catch(e){}}}
 function kcDecorate(){if(!kcOn())return;
-  document.querySelectorAll('#enbuy,#enbuy2').forEach(b=>{if(b.dataset.kcd)return;b.dataset.kcd=1;let v=0;try{v=enGet();}catch(e){}if(v>=EN_MAX)return;
-    b.insertAdjacentHTML('afterend',`<button type="button" class="btn kcalt${b.classList.contains('sm')?' sm':''}${b.classList.contains('rvchip')?' rvchip':''}" data-kcfull>${KC_I} ${KC_FULL} · nạp đầy ${EN_MAX}</button>`);
-    b.nextElementSibling.onclick=()=>{let cur=0;try{cur=enGet();}catch(e){}if(cur>=EN_MAX){gardenToast('Năng lượng đang đầy rồi!');return;}
-      if(!kcPayItem('enfull',KC_FULL,'Nạp đầy năng lượng'))return;enSet(EN_MAX);try{renderEnergy();}catch(e){}try{renderStat();}catch(e){}
-      const dl=b.closest('dialog');if(dl&&dl.id==='endlg'){try{enDialog();}catch(e){dl.close();}}else if(location.hash==='#review'){try{viewReview();}catch(e){}}else{try{route();}catch(e){}}};});
-  const ab=document.getElementById('u175buy');if(ab&&!ab.dataset.kcd){ab.dataset.kcd=1;const q=(typeof U175!=='undefined'&&U175.q)||{},c=q.extraKc||kcOf(q.extraCost||20);
+  // năng lượng: lần đổi đầu trong ngày bằng Nguyên bảo; các lần sau +3 = 3 Kim Cương; nạp đầy = 8 Kim Cương
+  document.querySelectorAll('#enbuy,#enbuy2,#endlg em').forEach(b=>{if(b.dataset.kcd)return;if(b.tagName==='EM'&&!/đã đổi/.test(b.textContent))return;b.dataset.kcd=1;let v=0;try{v=enGet();}catch(e){}if(v>=EN_MAX)return;
+    const used=S.enBuy===today(),cls=`btn kcalt${b.classList.contains('sm')||b.tagName==='EM'?' sm':''}`;
+    b.insertAdjacentHTML('afterend',`<span class="kcen">${used?`<button type="button" class="${cls}" data-kcen3 title="${kcCapTxt('en3')}">+${EN_BUY_N} · 3 ${KC_I}</button>`:''}<button type="button" class="${cls}" data-kcfull title="${kcCapTxt('enfull')}">Nạp đầy ${EN_MAX} · ${KC_FULL} ${KC_I}</button><small class="kccap">Mua bằng Kim Cương: +3 ${kcCapTxt('en3')}, nạp đầy ${kcCapTxt('enfull')}</small></span>`);
+    const w=b.nextElementSibling,f=w.querySelector('[data-kcfull]'),t=w.querySelector('[data-kcen3]');
+    f.onclick=()=>{if(enGet()>=EN_MAX){gardenToast('Năng lượng đang đầy rồi!');return;}if(!kcPayItem('enfull',KC_FULL,'Nạp đầy năng lượng'))return;enSet(EN_MAX);kcEnAfter(b);};
+    if(t)t.onclick=()=>{if(enGet()>=EN_MAX){gardenToast('Năng lượng đang đầy rồi!');return;}if(!kcPayItem('en3',3,'Đổi +'+EN_BUY_N+' năng lượng'))return;enSet(Math.min(EN_MAX,enGet()+EN_BUY_N));kcEnAfter(b);};});
+  // thêm lượt nói chuyện: lần mua đầu trong ngày bằng Nguyên bảo, các lần sau chỉ bằng Kim Cương
+  const ab=document.getElementById('u175buy');if(ab&&!ab.dataset.kcd){ab.dataset.kcd=1;const q=(typeof U175!=='undefined'&&U175.q)||{},c=q.extraKc||2;
+    if(q.buys>=1){ab.style.display='none';const sm=ab.nextElementSibling;if(sm&&sm.tagName==='SMALL')sm.textContent='Hôm nay bạn đã mua 1 lần bằng Nguyên bảo. Các lần sau mua bằng Kim Cương · còn mua được '+(q.buyLeft||0)+' lần.';}
     ab.insertAdjacentHTML('afterend',`<button type="button" class="btn big kcalt" id="u175kc">Thêm ${q.extraN||5} lượt · ${c} ${KC_I}</button>`);
     const kb=document.getElementById('u175kc');kb.onclick=async()=>{if(kcBal()<c){kcShort(c);return;}kb.disabled=true;const d=kb.closest('dialog'),msg=d&&d.querySelector('#u175bm');
       try{await kcFlush();const r=await frApi('POST','/v1/ai/extra',{pay:'kc'});if(r.kc!=null)kcSrv(r.kc);U175.q=Object.assign(U175.q||{},r);try{u175QPaint();}catch(e){}if(d)d.close();try{funTrack('kc_spend');}catch(e){}gardenToast('Đã thêm '+(r.extraN||5)+' lượt nói chuyện!');}
-      catch(e){kb.disabled=false;const m=String(e.message||'');if(msg)msg.textContent=m==='INSUFFICIENT_KC'?'Chưa đủ Kim Cương.':m==='AI_EXTRA_LIMIT'?'Hôm nay đã mua đủ số lần.':'Chưa mua được: '+m;}};}}
+      catch(e){kb.disabled=false;const m=String(e.message||'');if(msg)msg.textContent=m==='INSUFFICIENT_KC'?'Chưa đủ Kim Cương.':m==='AI_EXTRA_LIMIT'?'Hôm nay đã mua đủ số lần.':'Chưa mua được: '+m;}};}
+  // thêm lượt Đua xe có thưởng: lượt mua đầu trong ngày bằng Nguyên bảo, sau đó 2 Kim Cương
+  const rb=document.getElementById('rcbuy');if(rb&&!rb.dataset.kcd){rb.dataset.kcd=1;try{if(RACE().day.bought>=1&&RACE().day.bought<RC_BUY_MAX){rb.innerHTML=`🎟️ Thêm 1 lượt có thưởng · 2 ${KC_I}`;rb.insertAdjacentHTML('afterend',`<small class="kccap">Mua bằng Kim Cương ${kcCapTxt('race')}</small>`);rb.classList.add('kcalt');
+    rb.onclick=()=>{if(RACE().day.bought>=RC_BUY_MAX)return;if(!kcPayItem('race',2,'Thêm lượt Đua xe có thưởng'))return;RACE().day.bought++;shSave();gardenToast('🎟️ +1 lượt đua có thưởng!');viewRace();};}}catch(e){}}
+  try{if(typeof u195Decorate==='function')u195Decorate();}catch(e){}}
 let kcDecT=0;new MutationObserver(()=>{if(kcDecT)return;kcDecT=requestAnimationFrame(()=>{kcDecT=0;try{kcDecorate();}catch(e){}});}).observe(document.body,{childList:true,subtree:true});
 
 /* ---------- đổi Tên ID lần hai: hỏi trả 30 Kim Cương rồi gửi lại ---------- */
@@ -29138,15 +29211,15 @@ function kcFixStreak(){const L=kcLostNow();if(!L)return;if(!kcPayItem('streakfix
 /* ---------- quà Kim Cương: gói Pro mỗi 30 ngày, mốc thành tích ---------- */
 async function kcClaimPro(btn){if(btn)btn.disabled=true;try{const j=await frApi('POST','/v1/kc/claim',{});kcSrv(j.bal,{pro:j.pro});try{sfx('win');confetti(60);}catch(e){}gardenToast(`${KC_I} <b>+${j.got} Kim Cương</b> · quà gói của bạn`);}
   catch(e){gardenToast('Chưa nhận được quà, thử lại sau nhé.');}if(location.hash==='#kc')u193View();else if(location.hash===''||location.hash==='#home')try{viewHome();}catch(e){}}
-async function kcAwardTick(){if(!kcOn())return;const o=KCS(),mon=today().slice(0,7);let cards=0,stk=0;try{cards=Object.keys(S.cards||{}).length;stk=(S.streak&&S.streak.count)||0;}catch(e){}
+async function kcAwardTick(){if(!kcOn())return;const o=KCS();let cards=0,stk=0;try{cards=Object.keys(S.cards||{}).length;stk=Math.max((S.streak&&S.streak.count)||0,S.streakBest||0);}catch(e){}
   const NEED={1:150,2:150,3:300,4:600},keys=[];
-  if(cards>=10&&!o.aw.first)keys.push(['first','first']);if(stk>=7&&!o.aw['s7'+mon])keys.push(['s7','s7'+mon]);if(stk>=30&&!o.aw['s30'+mon])keys.push(['s30','s30'+mon]);
-  try{if(NEED[LEVEL]&&cards>=NEED[LEVEL]&&!o.aw['hsk'+LEVEL])keys.push(['hsk'+LEVEL,'hsk'+LEVEL]);}catch(e){}
-  let got=0;for(const [k,mk] of keys){try{const j=await frApi('POST','/v1/kc/award',{key:k});const o2=KCS();o2.aw[mk]=1;kcPut(o2);if(j.got){got+=j.got;kcSrv(j.bal);}}catch(e){}}
-  if(got)setTimeout(()=>{try{gardenToast(`${KC_I} <b>+${got} Kim Cương</b> · quà thành tích 🎁`);sfx('coin');}catch(e){}},900);}
+  KC_CHEST.forEach(([n,k])=>{if(stk>=n&&!o.aw[k])keys.push(k);});
+  try{if(NEED[LEVEL]&&cards>=NEED[LEVEL]&&!o.aw['hsk'+LEVEL])keys.push('hsk'+LEVEL);}catch(e){}
+  let got=0,chest=0;for(const k of keys){try{const j=await frApi('POST','/v1/kc/award',{key:k});const o2=KCS();o2.aw[k]=1;kcPut(o2);if(j.got){got+=j.got;if(/^c\d/.test(k))chest++;kcSrv(j.bal);}}catch(e){if(!/NOT_ELIGIBLE/.test(String(e.message)))break;}}
+  if(got)setTimeout(()=>{try{gardenToast(`${KC_I} <b>+${got} Kim Cương</b> · ${chest?'rương chuỗi ngày học 🎁':'quà thành tích 🎁'}`);sfx('win');if(chest)confetti(60);}catch(e){}},900);}
 // lấy số dư kèm /v1/me
 (function(){const base=meFetch;meFetch=async function(){const j=await base.apply(this,arguments);try{if(j&&j.kc&&!KCS().pend.length)kcSrv(j.kc.bal,j.kc);}catch(e){}return j;};})();
-function kcBoot(){if(!kcOn())return;kcFlush();kcLoad();setTimeout(kcAwardTick,6000);}
+function kcBoot(){if(!kcOn())return;kcFlush();kcLoad().then(()=>{try{u195Boot();}catch(e){}});setTimeout(kcAwardTick,6000);}
 setTimeout(kcBoot,3500);window.addEventListener('hsk-acc',()=>setTimeout(kcBoot,1500));
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&kcOn()){kcFlush();kcLoad();}});setInterval(()=>{if(!document.hidden)kcAwardTick();},3600e3);
 
@@ -29161,7 +29234,8 @@ function kcPillPlace(){const k=document.getElementById('kcpill'),y=document.getE
 function kcHomeCards(){if(!kcOn()||!app)return;const st=KCS().st||{},pro=st.pro||{},L=kcLostNow();let h='';
   if(L)h+=`<section class="kchc kcfix"><img src="${esc(u192Src?u192Src('sad'):'')}" alt="" onerror="this.remove()"><div><b>Chuỗi ${L.n} ngày vừa bị mất</b><small>Cứu lại trong ${KC_FIX_DAYS} ngày, chuỗi được nối tiếp như chưa từng gián đoạn.</small></div><button type="button" class="btn pri kcgo" data-kcfix>Cứu · ${KC_FIX} ${KC_I}</button></section>`;
   if(pro.can&&pro.amount>0)h+=`<section class="kchc kcpro"><img src="${esc(u192Src?u192Src('love'):'')}" alt="" onerror="this.remove()"><div><b>Quà gói của bạn: ${pro.amount} ${KC_I}</b><small>Mỗi 30 ngày bạn được nhận Kim Cương một lần.</small></div><button type="button" class="btn pri kcgo" data-kcpro>Nhận ${pro.amount} ${KC_I}</button></section>`;
-  if(!h)return;const root=app.querySelector('.stack')||app;if(root.querySelector('.kchc'))return;root.insertAdjacentHTML('afterbegin',`<div class="kchcs">${h}</div>`);
+  try{if(typeof u195HomeHTML==='function')h+=u195HomeHTML();}catch(e){}
+  if(!h)return;const root=app.querySelector('.stack')||app;const old=root.querySelector('.kchcs');if(old)old.remove();root.insertAdjacentHTML('afterbegin',`<div class="kchcs">${h}</div>`);
   const f=root.querySelector('[data-kcfix]');if(f)f.onclick=kcFixStreak;const p=root.querySelector('[data-kcpro]');if(p)p.onclick=()=>kcClaimPro(p);}
 
 /* ---------- nạp Kim Cương (chỉ web) ---------- */
@@ -29170,10 +29244,10 @@ function kcPackHTML(first){return `<div class="kcpacks">${kcPacks().map(p=>`<but
   <span class="kcgem" aria-hidden="true">${KC_I}</span><b>${kcN(first?p.kc*2:p.kc)}</b>${first?`<s>${kcN(p.kc)}</s>`:''}<span class="kcprice">${vnd(p.price)}</span></button>`).join('')}</div>`;}
 function kcWirePacks(root){root.querySelectorAll('[data-kcbuy]').forEach(b=>b.onclick=()=>kcBuy(b.dataset.kcbuy));}
 let kcPoll=0;
-async function kcBuy(id){if(kcApp())return;const p=kcPacks().find(x=>x.id===id);if(!p)return;const first=!!((KCS().st||{}).first!==false);const d=kcDlg();let auto=false;try{auto=!!(await pricingGet()).auto;}catch(e){}
-  const body=()=>`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Nạp Kim Cương</div><h2 style="margin:2px 0 0">${KC_I} ${kcN(first?p.kc*2:p.kc)} Kim Cương</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
+async function kcBuy(id){if(kcApp())return;const card=id==='kcard',cs=((KCS().st||{}).card)||{};const p=card?{id,price:cs.price||29000,kc:cs.now||30}:kcPacks().find(x=>x.id===id);if(!p)return;const first=!card&&!!((KCS().st||{}).first!==false);const d=kcDlg();let auto=false;try{auto=!!(await pricingGet()).auto;}catch(e){}
+  const body=()=>`<div class="in stack"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">${card?'Thẻ tháng':'Nạp Kim Cương'}</div><h2 style="margin:2px 0 0">${KC_I} ${card?'Thẻ tháng Kim Cương':kcN(first?p.kc*2:p.kc)+' Kim Cương'}</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
     <div class="pvdp">${vnd(p.price)}${first?`<small>Lần nạp đầu được nhân đôi (${kcN(p.kc)} × 2)</small>`:''}</div>
-    <ul class="pvdf"><li>${KC_I} Cộng vào ví ngay khi tiền vào</li><li>🪙 Đổi được ra ${kcN((first?p.kc*2:p.kc)*KC_RATE)} Nguyên bảo</li><li>⭐ Gói Pro tặng thêm 30 ${KC_I} mỗi 30 ngày</li></ul>
+    <ul class="pvdf">${card?`<li>${KC_I} Nhận ngay ${p.kc} Kim Cương</li><li>📅 Mỗi ngày mở app nhận thêm ${cs.daily||5} ${KC_I} trong 30 ngày</li><li>🎁 Tổng cộng tới ${p.kc+(cs.daily||5)*30} Kim Cương · không tự gia hạn</li>`:`<li>${KC_I} Cộng vào ví ngay khi tiền vào</li><li>🪙 Đổi được ra ${kcN((first?p.kc*2:p.kc)*KC_RATE)} Nguyên bảo</li><li>⭐ Gói Pro tặng thêm 30 ${KC_I} mỗi 30 ngày</li>`}</ul>
     <div id="kcacc"></div>${accCloud()?'<button type="button" class="btn pri big pvpay" id="kcpay">Thanh toán ngay →</button>':''}<div class="small" id="kcmsg" role="status"></div>
     <p class="small muted" style="margin:0">${auto?'Mở trang PayOS: quét QR ngân hàng, ví điện tử hoặc thẻ.':'Thanh toán chuyển khoản, Kim Cương được cộng khi Kasser xác nhận.'}</p></div>`;
   const wire=()=>{const pa=d.querySelector('#kcacc');if(pa&&!accCloud()){pa.innerHTML='<p class="small" style="margin:0 0 6px"><b>Đăng nhập để nạp</b>, Kim Cương gắn với tài khoản:</p><div id="kcacc2"></div>';accUI(pa.querySelector('#kcacc2'),{guest:false,done:()=>{meFetch().then(()=>{d.innerHTML=body();wire();});}});}
@@ -29189,35 +29263,37 @@ function kcPaid(o){try{funTrack('kc_buy');sfx('win');confetti(80);}catch(e){}gar
 (function(){const base=viewPremium;viewPremium=async function(){const r=await base.apply(this,arguments);
   try{if(kcApp()||location.hash.indexOf('#premium')!==0||app.querySelector('#plg-kc'))return r;const first=(KCS().st||{}).first!==false,pro=app.querySelector('#plg-pro');
     const h=`<section class="panel u193kc" id="plg-kc"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">${KC_I} Nạp Kim Cương</h2><a class="btn sm" href="#kc">Ví Kim Cương ›</a></div>
-      <p class="small muted" style="margin:6px 0 10px">Dùng cho năng lượng, chơi tiếp, thêm lượt nói chuyện, trang phục và nhiều thứ khác. 1 ${KC_I} = 10 Nguyên bảo.${first?' <b>Lần nạp đầu được nhân đôi!</b>':''}</p>${kcPackHTML(first)}</section>`;
+      <p class="small muted" style="margin:6px 0 10px">Dùng cho năng lượng, chơi tiếp, thêm lượt nói chuyện, trang phục và nhiều thứ khác. 1 ${KC_I} = ${KC_RATE} Nguyên bảo.${first?' <b>Lần nạp đầu được nhân đôi!</b>':''}</p>${kcPackHTML(first)}${typeof u195CardHTML==='function'?u195CardHTML():''}</section>`;
     if(pro)pro.insertAdjacentHTML('afterend',h);else{const s=app.querySelector('.u174');if(s)s.insertAdjacentHTML('beforeend',h);}
-    kcWirePacks(app);try{funTrack('kc_view');}catch(e){}}catch(e){}return r;};})();
+    kcWirePacks(app);try{u195Wire(app);}catch(e){}try{funTrack('kc_view');}catch(e){}}catch(e){}return r;};})();
 
 /* ---------- trang Ví Kim Cương (#kc) ---------- */
 async function u193View(){try{funTrack('kc_view');}catch(e){}
   if(!kcOn()){app.innerHTML=`<div class="stack u193"><section class="addhero kchero"><div class="kcbig" aria-hidden="true">${KC_I}</div><div style="min-width:0"><div class="label">Tiền cao cấp</div><h1>Kim Cương</h1><p>Đăng nhập để có ví Kim Cương gắn với tài khoản.</p></div></section><div class="panel" id="kcacc"></div></div>`;
     try{accUI(app.querySelector('#kcacc'),{guest:false,done:()=>{kcBoot();u193View();}});}catch(e){}return;}
-  const draw=()=>{if(location.hash!=='#kc')return;const o=KCS(),st=o.st||{},pro=st.pro||{},free=st.free||{used:0,cap:20},first=st.first!==false,log=st.log||[];
+  const draw=()=>{if(location.hash!=='#kc')return;const o=KCS(),st=o.st||{},pro=st.pro||{},first=st.first!==false,log=st.log||[];
     const nextTxt=pro.next?new Date(pro.next).toLocaleDateString('vi-VN'):'';
     app.innerHTML=`<div class="stack u193">
-      <section class="addhero kchero"><div class="kcbig" aria-hidden="true">${KC_I}</div><div style="min-width:0"><div class="label">Ví Kim Cương</div><h1><span data-kcbal>${kcN(kcBal())}</span> Kim Cương</h1><p>1 ${KC_I} = 10 Nguyên bảo · dùng thay Nguyên bảo ở mọi chỗ, thêm vài tính năng riêng.</p></div></section>
+      <section class="addhero kchero"><div class="kcbig" aria-hidden="true">${KC_I}</div><div style="min-width:0"><div class="label">Ví Kim Cương</div><h1><span data-kcbal>${kcN(kcBal())}</span> Kim Cương</h1>${st.sup?'<span class="kcsup">💎 Người ủng hộ Tâm HSK</span>':''}<p>1 ${KC_I} = ${KC_RATE} Nguyên bảo · dùng thay Nguyên bảo ở mọi chỗ, thêm vài tính năng riêng.</p></div></section>
+      ${typeof u195QuestHTML==='function'?u195QuestHTML():''}
       ${pro.amount>0?`<section class="panel kcrowp"><div><b>⭐ Quà gói của bạn: ${pro.amount} ${KC_I} mỗi 30 ngày</b><small>${pro.can?'Đã có quà, bấm để nhận.':'Lần nhận tiếp theo: '+esc(nextTxt)}</small></div>${pro.can?`<button type="button" class="btn pri kcgo" data-kcpro>Nhận ${pro.amount} ${KC_I}</button>`:''}</section>`:''}
-      ${kcApp()?'':`<section class="panel"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">Nạp Kim Cương</h2>${first?'<span class="kctag x2 inl">Lần đầu x2</span>':''}</div><p class="small muted" style="margin:6px 0 10px">Gói lớn được tặng thêm. Không tự gia hạn.</p>${kcPackHTML(first)}
+      ${kcApp()?'':`<section class="panel"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">Nạp Kim Cương</h2>${first?'<span class="kctag x2 inl">Lần đầu x2</span>':''}</div><p class="small muted" style="margin:6px 0 10px">Gói lớn được tặng thêm. Không tự gia hạn.${first?' Nạp lần đầu còn được danh hiệu <b>Người ủng hộ</b>.':''}</p>${kcPackHTML(first)}${typeof u195CardHTML==='function'?u195CardHTML():''}
         ${pro.amount>0?'':`<a class="kcproad" href="#premium"><b>⭐ Gói Pro tặng 30 ${KC_I} mỗi tháng</b><small>Kèm học và chơi không tốn năng lượng, lợi hơn nạp lẻ.</small></a>`}</section>`}
       <section class="panel"><h2 style="margin:0 0 6px">Dùng Kim Cương để làm gì?</h2><ul class="kcuse">${KC_USE.map(([i,t])=>`<li><i aria-hidden="true">${i}</i>${t}</li>`).join('')}</ul>
         <p class="small muted" style="margin:8px 0 0">Bài học, ôn tập và từ điển luôn miễn phí, không cần Kim Cương.</p></section>
-      <section class="panel"><h2 style="margin:0 0 6px">Đổi ra Nguyên bảo</h2><div class="row kcswap"><label class="small" for="kcsn">Số Kim Cương</label><input id="kcsn" type="number" inputmode="numeric" min="1" max="1000" value="10"><span class="small" id="kcsv">= 100 ${YB}</span><button type="button" class="btn" id="kcsw">Đổi</button></div><p class="small muted" style="margin:6px 0 0">Chỉ đổi một chiều: Nguyên bảo không đổi ngược lại thành Kim Cương.</p></section>
-      <section class="panel"><h2 style="margin:0 0 6px">Nhận Kim Cương miễn phí</h2><p class="small muted" style="margin:0 0 8px">Tối đa ${free.cap||20} ${KC_I} quà mỗi tháng (tháng này đã nhận ${free.used||0}). Thưởng qua cấp HSK không tính vào giới hạn.</p>
+      ${typeof u195DealsHTML==='function'?u195DealsHTML():''}
+      <section class="panel"><h2 style="margin:0 0 6px">Đổi ra Nguyên bảo</h2><div class="row kcswap"><label class="small" for="kcsn">Số Kim Cương</label><input id="kcsn" type="number" inputmode="numeric" min="1" max="1000" value="10"><span class="small" id="kcsv">= 300 ${YB}</span><button type="button" class="btn" id="kcsw">Đổi</button></div><p class="small muted" style="margin:6px 0 0">Chỉ đổi một chiều: Nguyên bảo không đổi ngược lại thành Kim Cương.</p></section>
+      <section class="panel"><h2 style="margin:0 0 6px">Quà Kim Cương khác</h2><p class="small muted" style="margin:0 0 8px">Ngoài nhiệm vụ tuần ở trên, các mốc dưới đây tự cộng Kim Cương khi bạn đạt được.</p>
         <ul class="kcaw">${KC_AWL.map(([k,t,n])=>`<li><span>${esc(t)}</span><b>+${n} ${KC_I}</b></li>`).join('')}</ul></section>
       <section class="panel"><h2 style="margin:0 0 6px">Lịch sử</h2>${log.length?`<ul class="kclog">${log.slice(0,30).map(x=>`<li><span><b>${esc(x.why||'')}</b><small>${new Date(x.at).toLocaleString('vi-VN')}</small></span><b class="${x.delta>0?'up':'dn'}">${x.delta>0?'+':''}${kcN(x.delta)}</b></li>`).join('')}</ul>`:'<p class="small muted" style="margin:0">Chưa có giao dịch nào.</p>'}</section></div>`;
-    kcWirePacks(app);const p=app.querySelector('[data-kcpro]');if(p)p.onclick=()=>kcClaimPro(p);
+    kcWirePacks(app);try{u195Wire(app);}catch(e){}const p=app.querySelector('[data-kcpro]');if(p)p.onclick=()=>kcClaimPro(p);
     const inp=app.querySelector('#kcsn'),sv=app.querySelector('#kcsv'),sw=app.querySelector('#kcsw');const upd=()=>{const n=Math.max(0,Math.floor(+inp.value||0));sv.innerHTML=`= ${kcN(n*KC_RATE)} ${YB}`;};inp.oninput=upd;upd();
     sw.onclick=async()=>{const n=Math.floor(+inp.value||0);if(!(n>=1&&n<=1000)){gardenToast('Nhập từ 1 đến 1.000 Kim Cương.');return;}if(kcBal()<n){kcShort(n);return;}sw.disabled=true;
       try{await kcFlush();await walletSync();const j=await frApi('POST','/v1/kc/swap',{n,id:'s'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)});kcSrv(j.bal);if(j.coins!=null)try{walSetCoins(j.coins+walPendSum(walCur()));}catch(e){}
         try{sfx('coin');}catch(e){}gardenToast(`${YB} <b>+${kcN(j.nb)} Nguyên bảo</b> · đổi ${n} ${KC_I}`);await kcLoad(true);draw();}
       catch(e){sw.disabled=false;const m=String(e.message||'');gardenToast(m==='WALLET_NOT_READY'?'Ví Nguyên bảo chưa sẵn sàng, mở lại app rồi thử nhé.':m==='INSUFFICIENT_KC'?'Chưa đủ Kim Cương.':'Chưa đổi được: '+esc(m));}};};
   draw();await kcFlush();await kcLoad(true);draw();}
-if(window.__T)window.__u193={KCS,kcBal,kcSrv,kcQueue,kcFlush,kcLoad,kcOf,kcOffer,kcFixStreak,kcLostNow,kcAwardTick,kcBuy,u193View,pay:()=>KC_PAY,last:el=>{KC_LAST=el;KC_LAST_AT=Date.now();},S:()=>S,lose:(n,daysAgo)=>{S.kcLost={n,last:addDays(today(),-(daysAgo||2)),d:today()};save();},home:()=>viewHome(),en:()=>enDialog(),gmEnergy:(k,cb)=>gmEnergy(k,cb),setCoins:v=>{const s=SHOP();s.coins=v;shSave();},coins:()=>SHOP().coins,enSet:v=>enSet(v),enGet:()=>enGet(),spend:(n,w)=>spend(n,w),setStreak:(n,last)=>{S.streak={count:n,last:last||today()};save();}};
+if(window.__T)window.__u193={setPay:v=>{KC_PAY=v;},kcCap,kcPayItem,KCS,kcBal,kcSrv,kcQueue,kcFlush,kcLoad,kcOf,kcOffer,kcFixStreak,kcLostNow,kcAwardTick,kcBuy,u193View,pay:()=>KC_PAY,last:el=>{KC_LAST=el;KC_LAST_AT=Date.now();},S:()=>S,lose:(n,daysAgo)=>{S.kcLost={n,last:addDays(today(),-(daysAgo||2)),d:today()};save();},home:()=>viewHome(),en:()=>enDialog(),gmEnergy:(k,cb)=>gmEnergy(k,cb),setCoins:v=>{const s=SHOP();s.coins=v;shSave();},coins:()=>SHOP().coins,enSet:v=>enSet(v),enGet:()=>enGet(),spend:(n,w)=>spend(n,w),setStreak:(n,last)=>{S.streak={count:n,last:last||today()};save();}};
 
 /* ===== 5.145 Sửa micro và đồng bộ tiến độ (nhất là bản Android) =====
    1. Micro (Android): không dừng bộ nhận giọng khi nó chưa sẵn sàng (lỗi 5), tự thử lại 1 lần khi bận / mất kết nối dịch vụ (8, 11),
@@ -29232,24 +29308,29 @@ if(window.__T)window.__u193={KCS,kcBal,kcSrv,kcQueue,kcFlush,kcLoad,kcOf,kcOffer
 /* ---------- 1. Micro ---------- */
 (function(){const base=startListening;startListening=function(h){
   if(!nativeSTT())return base.apply(this,arguments);
-  let done=false,part='',retry=0,wantStop=false,ready=false,t=0;
+  let done=false,part='',wantStop=false,ready=false,t=0,dlg=false;
   const end=()=>{done=true;clearInterval(t);sttStop=null;};
   const fin=a=>{if(done)return;end();h.final(a&&a.length?a:(part?[part]:[]));};
   const err=c=>{if(done)return;if(part){fin([part]);return;}end();h.error(c);};
-  const go=()=>{try{AndroidApp.listen();}catch(e){err('start');return;}
+  const go=()=>{try{AndroidApp.listen();}catch(e){err('start');return;}go.poll();};
+  go.poll=()=>{
     clearInterval(t);t=setInterval(()=>{if(done){clearInterval(t);return;}let j;try{j=JSON.parse(AndroidApp.sttPoll());}catch(e){return;}
       if(j.partial){part=j.partial;try{h.partial(j.partial);}catch(e){}}
+      if(j.state==='dialog'&&!ready){ready=true;try{h.ready&&h.ready();}catch(e){}}
       if((j.state==='listening'||j.state==='processing')&&!ready){ready=true;try{h.ready&&h.ready();}catch(e){}
         if(wantStop)try{gardenToast('🎤 Micro đã sẵn sàng, bạn nói đi nhé!');}catch(e){}}
       if(j.state==='done'){fin(j.finals||[]);return;}
       if(j.state==='error'){const e=+j.error||0;
         if(e===6||e===7){fin([]);return;}                       // im lặng / không khớp: coi như chưa nghe rõ
-        if((e===5||e===8||e===11)&&retry<1&&!part){retry++;clearInterval(t);setTimeout(()=>{if(!done)go();},400);return;} // bận / mất kết nối: thử lại 1 lần
+        // 5.146: máy đã tự thử lại 2 lần (đổi dịch vụ); vẫn bận / quá tải / mất kết nối thì mở hộp nhận giọng của hệ thống (màn "Nói ngay" của Google)
+        if((e===5||e===8||e===10||e===11)&&!part&&!dlg){let ok=false;try{ok=!!(AndroidApp.listenDialog&&AndroidApp.listenDialog());}catch(x){}
+          if(ok){dlg=true;try{localStorage.setItem('hsk-sttdlg',String(Date.now()));}catch(x){}return;}}
         err(e===9?'not-allowed':'a'+e);}},150);
     try{timers.push(t);}catch(e){}};
-  go();
+  let fast=false;try{fast=Date.now()-(+localStorage.getItem('hsk-sttdlg')||0)<20*60e3&&!!AndroidApp.listenDialog;}catch(e){}
+  if(fast){let ok=false;try{ok=!!AndroidApp.listenDialog();}catch(e){}if(ok){dlg=true;go.poll();}else go();}else go();
   // nhả nút khi micro chưa mở xong (đang xin quyền / đang khởi động): không dừng (dừng lúc này gây lỗi 5), để bộ nhận tự dừng khi người học nói xong
-  sttStop=()=>{wantStop=true;if(!ready)return;try{AndroidApp.stopListen();}catch(e){}};
+  sttStop=()=>{wantStop=true;if(!ready||dlg)return;try{AndroidApp.stopListen();}catch(e){}};
   return sttStop;};})();
 
 // mã lỗi Android so khớp đúng từng mã (trước đây "a13" bị hiểu nhầm là lỗi mạng vì khớp "a1")
@@ -29329,6 +29410,133 @@ if(window.AndroidApp&&AndroidApp.bkSave){setTimeout(()=>bkNow(),4000);setInterva
 window.__appPause=function(){bkNow();try{if(accCloud()&&hashStr(cloudBlob())!==accGet().lh)cloudSync();}catch(e){}};
 window.__appSaveNow=async function(ms){bkNow(true);if(!accCloud())return;try{await Promise.race([cloudSync(),new Promise(r=>setTimeout(r,ms||5000))]);}catch(e){}};
 if(window.__T)window.__u194={listen:h=>startListening(h),errText:c=>sttErrorText(c),syMerge,syProg,syKH,syKHSet,bkNow,cloudSync:()=>cloudSync(),errN:()=>syErrN};
+
+/* ===== 5.146 Kim Cương có giá trị hơn =====
+   1. Vật phẩm (trừ nội thất nhà, hạt giống và đồ chăm vườn): giá Nguyên bảo ×3; giá Kim Cương = giá cũ chia 10 (1 💎 = 30 🪙).
+      Cạnh nút giá Nguyên bảo có nút giá Kim Cương.
+   2. Mua năng lượng / lượt chơi: lần đầu bằng Nguyên bảo, các lần sau chỉ bằng Kim Cương
+      (chơi khi hết năng lượng: 50 🪙 rồi 5 💎 mỗi ván; chơi tiếp khi thua: 50 🪙 rồi 10 💎; năng lượng, Đua xe, lượt nói chuyện: xem ux193).
+   3. Nhiệm vụ Kim Cương mỗi TUẦN (khó hơn): 4 nhiệm vụ + thưởng làm đủ = 5 💎 (gói Pro 20 💎). Nhiệm vụ ngày vẫn thưởng Nguyên bảo.
+   4. Thẻ tháng (29.000đ: nhận ngay 30 + 5 mỗi ngày trong 30 ngày), ưu đãi tuần −30% bằng Kim Cương, Tiểu Long Hổ chấm chi tiết câu nói (3 💎). */
+const U195_X=3,U195_GAME=5,U195_REVIVE=10,U195_RV=3,U195_OFF=.7;
+
+/* ---------- 1. giá ×3 ---------- */
+(function(){const base=u144ApplyPrices;u144ApplyPrices=function(){const r=base.apply(this,arguments);
+  try{U144_ARR.forEach(([pre,get,ix])=>{(get()||[]).forEach(x=>{if(typeof x[ix]==='number'&&x[ix]>0)x[ix]=x[ix]*U195_X;});});
+    (CHARL||[]).forEach(p=>{if(p.price>0)p.price=p.price*U195_X;});}catch(e){console.warn(e);}return r;};})();
+u144ApplyPrices();
+// gói âm thanh trong túi đồ và băng chuỗi của khách chưa đăng nhập (không có ví Kim Cương) cũng theo giá ×3
+try{U178_SP.forEach(x=>{x[4]=x[4]*U195_X;});}catch(e){}
+try{u178GuestFzPrice=function(){return 500*U195_X*((SHOP().fzN||0)+1);};}catch(e){}
+// nút giá Kim Cương cạnh nút giá Nguyên bảo (cửa hàng, tủ đồ, sự kiện, garage…)
+const U195_HASH=/^#(shop|tudo|wardrobe|theme|events|halloween|lux|furn|house|race)/;
+function u195Chips(){if(!U195_HASH.test(location.hash||'')&&!document.querySelector('#u144dlg.on'))return;
+  document.querySelectorAll('#app button.btn:not([data-kcx]):not([data-kc2]),#u144dlg button.btn:not([data-kcx]):not([data-kc2])').forEach(b=>{b.dataset.kc2=1;
+    const dis=b.disabled;if((dis&&!b.matches('[data-u144set]'))||b.closest('.u178it,.kcpacks,.u195')||b.matches('[data-kcbuy],[data-pvbuy],[data-u178buy],[data-u178kc],#enbuy,#enbuy2,#rcbuy'))return;
+    const m=b.innerHTML.match(/class="ybi"[\s\S]*?<\/svg>\s*([\d.]+)\s*$/);if(!m||/🔒|Bán|Nhận|\+/.test(b.textContent))return;const n=+m[1].replace(/\./g,'');if(!(n>=10))return;const c=kcOf(n,kcRateHere());
+    b.insertAdjacentHTML('afterend',`<button type="button" class="btn sm kcalt kcchip" data-kcx title="Trả bằng Kim Cương thay cho ${kcN(n)} Nguyên bảo" aria-label="Trả ${c} Kim Cương">${c} ${KC_I}</button>`);
+    b.nextElementSibling.onclick=e=>{e.stopPropagation();if(kcBal()<c){kcShort(c);return;}KC_PAY={n,t:Date.now()};if(dis)b.disabled=false;b.click();};});}
+
+/* ---------- 2. lượt chơi: lần đầu Nguyên bảo, sau đó Kim Cương ---------- */
+(function(){const base=gmEnergy;gmEnergy=function(key,onOk){
+  try{if((window.__T&&window.__noEn)||(typeof isPremium==='function'&&isPremium())||enGet()>=1||!kcOn())return base.apply(this,arguments);
+    const n=gmPaidToday(key);if(n===0&&SHOP().coins>=50)return base.apply(this,arguments);const c=U195_GAME;
+    gmDlg(`<div class="label" style="color:#b8860b">Hết năng lượng</div><h3 style="margin:4px 0">Chơi ${esc(GM_NAME[key]||'trò này')} bằng Kim Cương?</h3><p class="small muted" style="margin:0">${n===0?'Lượt đầu trong ngày mua được bằng 50 Nguyên bảo, nhưng bạn chưa đủ.':'Hôm nay bạn đã mua 1 lượt bằng Nguyên bảo.'} Các lượt tiếp theo tốn <b>${c} ${KC_I}</b> mỗi ván (bạn có ${kcN(kcBal())} Kim Cương) · tính chung mọi trò, <b>${kcCapTxt('game')}</b>. Năng lượng tự hồi dần, hoặc ôn tập để nạp. <a href="#premium">Gói Pro</a> chơi không tốn năng lượng.</p>`,
+      `Chơi · ${c} ${KC_I}`,()=>{if(!kcPayItem('game',c,'Chơi '+(GM_NAME[key]||'trò chơi')+' khi hết năng lượng'))return;const d=shDay();d.enp=d.enp||{};d.enp[key]=n+1;shSave();if(onOk)onOk();},null);
+    return false;}catch(e){return base.apply(this,arguments);}};})();
+function u195ReviveLimit(key,rmax,pro,giveUp){gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Ván này đã hết lượt chơi tiếp</h3><p class="small muted" style="margin:0">Mỗi ván được chơi tiếp bằng Kim Cương <b>${rmax} lần</b>.${pro?' Đây là mức tối đa của gói Pro.':' Gói <b>Pro</b> được <b>2 lần</b> mỗi ván, kèm lượt chơi tiếp miễn phí.'}</p>`,
+  pro?'Đã hiểu':'Xem gói Pro',()=>{if(giveUp)giveUp();if(!pro){location.hash='#premium';try{funTrack('kc_limit');}catch(e){}}},giveUp);return true;}
+(function(){const base=gmLose;gmLose=function(key,revive,giveUp){
+  try{if(!kcOn()||(typeof duoOn==='function'&&duoOn()))return base.apply(this,arguments);if(GM_RUN.key!==key)GM_RUN={key,n:0};
+    const pro=kcIsPro(),n=GM_RUN.n,max=gmMax()+(pro?1:0),rmax=pro?2:1,used=GM_RUN.kc||0;
+    if(n>=max||used>=rmax){if(used<1)return base.apply(this,arguments);return u195ReviveLimit(key,rmax,pro,giveUp);}
+    const pk=gmMax()===3,paid=pk?n-1:n; // số lượt đã trả tiền trong ván này
+    if(paid<=0){const r=base.apply(this,arguments);if(r)return r;if(pk&&n===0)return r;}
+    const c=U195_REVIVE;if(kcBal()<c)return paid<=0?false:(()=>{try{setTimeout(()=>proInvite('lose'),1600);}catch(e){}return false;})();
+    gmDlg(`<div class="label" style="color:var(--seal)">Thua rồi!</div><h3 style="margin:4px 0">Chơi tiếp ${esc(GM_NAME[key]||'')}?</h3><p class="small muted" style="margin:0">Giữ nguyên điểm, sau <b>${GM_CD} giây</b> đếm ngược sẽ chơi tiếp từ chỗ vừa thua. Lượt chơi tiếp này tốn <b>${c} ${KC_I}</b> (bạn có ${kcN(kcBal())} Kim Cương) · mỗi ván chơi tiếp bằng Kim Cương được ${rmax} lần.</p>`,
+      `Chơi tiếp · ${c} ${KC_I}`,()=>{if(!kcPayItem('revive',c,'Chơi tiếp '+(GM_NAME[key]||'trò chơi')))return giveUp&&giveUp();GM_RUN.n=n+1;GM_RUN.kc=used+1;try{sfx('win');}catch(e){}gmCountdown(key,n+1,max,revive);},giveUp);
+    return true;}catch(e){return base.apply(this,arguments);}};})();
+
+/* ---------- 3. nhiệm vụ Kim Cương mỗi tuần ---------- */
+/* 5.146: nhiệm vụ Kim Cương theo TUẦN (thứ Hai → Chủ nhật), khó hơn; nhiệm vụ ngày (Nguyên bảo) giữ nguyên */
+const KQ_G={stage:7,review:150,talk:20,spoke:40,win:15};
+const KQ_K='hsk-kq',KQ=[['stage','📖',`Học xong ${KQ_G.stage} chặng bài mới`],['review','🔁',`Ôn tập ${KQ_G.review} lượt từ`],['talk','💬',`Nói chuyện với Tiểu Long Hổ ${KQ_G.talk} lượt, hoặc luyện nói ${KQ_G.spoke} câu`],['win','🎮',`Chơi xong ${KQ_G.win} ván trò chơi có điểm`]];
+function kqGet(){let o=null;try{o=JSON.parse(localStorage.getItem(KQ_K)||'null');}catch(e){}const w=String(weekId()),u=(SOC.auth&&SOC.auth.uid)||'';if(!o||o.w!==w||o.u!==u)o={w,u,stage:0,rv:0,talk:0,spoke:0,win:0,cl:{}};o.cl=o.cl||{};return o;}
+function kqPut(o){try{localStorage.setItem(KQ_K,JSON.stringify(o));}catch(e){}}
+function kqDone(o,k){if(k==='stage')return o.stage>=KQ_G.stage;if(k==='talk')return o.talk>=KQ_G.talk||o.spoke>=KQ_G.spoke;if(k==='win')return o.win>=KQ_G.win;
+  if(k==='review')return o.rv>=KQ_G.review;return KQ.every(([x])=>o.cl[x]);}
+function kqProg(o,k){if(k==='stage')return [o.stage,KQ_G.stage];if(k==='review')return [o.rv,KQ_G.review];if(k==='win')return [o.win,KQ_G.win];
+  return o.spoke/KQ_G.spoke>o.talk/KQ_G.talk?[o.spoke,KQ_G.spoke,' câu']:[o.talk,KQ_G.talk,' lượt'];}
+function kqLeft(){const d=new Date(weekId()+'T00:00:00');d.setDate(d.getDate()+7);return Math.max(1,Math.ceil((d-Date.now())/864e5));}
+const kqPer=()=>{const q=(KCS().st||{}).quest;return (q&&q.per)||1;};
+let kqT=0,kqBusy=false;
+function kqBump(f,n){try{const o=kqGet();o[f]=(o[f]||0)+(n||1);kqPut(o);clearTimeout(kqT);kqT=setTimeout(kqTick,900);}catch(e){}}
+async function kqTick(){if(!kcOn()||kqBusy)return;kqBusy=true;let got=0,names=[];
+  try{for(const k of KQ.map(x=>x[0]).concat(['all'])){const o=kqGet();if(o.cl[k]||!kqDone(o,k))continue;
+      try{const j=await frApi('POST','/v1/kc/quest',{key:k,spoke:o.spoke});const o2=kqGet();o2.cl[k]=1;kqPut(o2);if(j.got){got+=j.got;names.push(k);}kcSrv(j.bal,{quest:j.quest});}
+      catch(e){if(/NOT_ELIGIBLE/.test(String(e.message)))continue;break;}}}
+  finally{kqBusy=false;}
+  if(got){try{sfx('coin');if(names.includes('all'))confetti(60);}catch(e){}gardenToast(`${KC_I} <b>+${got} Kim Cương</b> · ${names.includes('all')?'xong hết nhiệm vụ Kim Cương tuần này 🎉':'nhiệm vụ: '+esc((KQ.find(x=>x[0]===names[0])||[])[2]||'')}`);}if(location.hash==='#kc')u195Refresh();}
+function u195Refresh(){try{if(location.hash==='#kc'){const e=app.querySelector('.u195q');if(e){e.outerHTML=u195QuestHTML();}}else if(location.hash===''||location.hash==='#home')kcHomeCards();}catch(e){}}
+(function(){const b1=markStage;markStage=function(){const r=b1.apply(this,arguments);kqBump('stage');return r;};
+  const b2=grade;grade=function(){const r=b2.apply(this,arguments);kqBump('rv');return r;};
+  const b3=gbSubmit;gbSubmit=function(k,score){const r=b3.apply(this,arguments);if(+score>0)kqBump('win');return r;};
+  const b4=scoreSpeech;scoreSpeech=function(t,alts){const r=b4.apply(this,arguments);try{if(alts&&alts.length&&String(alts[0]||'').trim())kqBump('spoke');}catch(e){}return r;};
+  const b5=frApi;frApi=async function(m,path){const j=await b5.apply(this,arguments);try{if(path==='/v1/ai/chat'&&j&&j.ok)kqBump('talk');}catch(e){}return j;};})();
+function u195QuestRows(){const o=kqGet(),per=kqPer();return KQ.map(([k,ic,t])=>{const cl=o.cl[k],dn=kqDone(o,k);let pr='';
+    if(!dn){const [a,b,u]=kqProg(o,k);pr=` (${Math.min(a||0,b)}/${b}${u||''})`;}
+    return `<li class="${cl?'done':dn?'wait':''}"><i aria-hidden="true">${cl?'✅':ic}</i><span>${esc(t)}${pr}</span><b>+${per} ${KC_I}</b></li>`;}).join('')+
+  `<li class="${o.cl.all?'done':''} all"><i aria-hidden="true">${o.cl.all?'✅':'🎁'}</i><span>Làm đủ cả 4 nhiệm vụ</span><b>+${per} ${KC_I}</b></li>`;}
+function u195QuestHTML(){const o=kqGet(),per=kqPer(),n=Object.keys(o.cl).length,pro=per>1;
+  return `<section class="panel u195 u195q"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">Nhiệm vụ Kim Cương tuần này</h2><span class="kctag inl${n>=5?'':' x2'}">${n*per}/${5*per} ${KC_I}</span></div>
+    <p class="small muted" style="margin:6px 0 8px">Thử thách cả tuần, làm xong là Kim Cương tự cộng · còn ${kqLeft()} ngày, thứ Hai làm mới. Mỗi tuần tối đa ${5*per} ${KC_I}${pro?' (gói Pro nhân đôi)':`. <a href="#premium">Gói Pro</a> nhận 10 ${KC_I} mỗi tuần`}. Nhiệm vụ ngày vẫn thưởng Nguyên bảo như cũ.</p><ul class="u195ql">${u195QuestRows()}</ul></section>`;}
+function u195HomeHTML(){const o=kqGet(),per=kqPer(),n=Object.keys(o.cl).length;if(n>=5)return '';
+  return `<a class="kchc u195h" href="#kc"><span class="u195hi" aria-hidden="true">${KC_I}</span><div><b>Nhiệm vụ Kim Cương tuần này</b><small>${KQ.map(([k,ic])=>`<i class="${o.cl[k]?'on':''}">${o.cl[k]?'✅':ic}</i>`).join('')}<i class="${o.cl.all?'on':''}">🎁</i> · đã nhận ${n*per}/${5*per}</small></div><span class="btn sm kcalt">Xem ›</span></a>`;}
+
+/* ---------- 4a. thẻ tháng ---------- */
+function u195CardHTML(){const c=(KCS().st||{}).card;if(!c)return '';const left=c.on?Math.max(1,Math.ceil((c.until-Date.now())/864e5)):0;
+  if(c.on)return `<div class="u195 u195card on"><span class="u195ci" aria-hidden="true">📅</span><div><b>Thẻ tháng đang chạy · còn ${left} ngày</b><small>Mỗi ngày mở app nhận ${c.daily} ${KC_I}. ${c.can?'Quà hôm nay đang chờ bạn.':'Hôm nay đã nhận.'}</small></div>${c.can?`<button type="button" class="btn sm pri kcgo" data-u195card>Nhận ${c.daily} ${KC_I}</button>`:''}</div>`;
+  if(kcApp())return '';
+  return `<div class="u195 u195card"><span class="u195ci" aria-hidden="true">📅</span><div><b>Thẻ tháng Kim Cương · ${vnd(c.price)}</b><small>Nhận ngay ${c.now} ${KC_I}, mỗi ngày mở app nhận thêm ${c.daily} ${KC_I} trong 30 ngày. Tổng tới <b>${c.now+c.daily*30} ${KC_I}</b>, lợi gấp nhiều lần nạp lẻ.</small></div><button type="button" class="btn sm pri kcgo" data-kcbuy="kcard">Mua thẻ</button></div>`;}
+async function u195CardClaim(quiet){try{const j=await frApi('POST','/v1/kc/card',{});kcSrv(j.bal,{card:j.card});if(j.got){try{sfx('coin');}catch(e){}gardenToast(`📅 Thẻ tháng: <b>+${j.got} Kim Cương</b> hôm nay`);}if(location.hash==='#kc')u193View();}catch(e){if(!quiet)gardenToast('Chưa nhận được, thử lại sau nhé.');}}
+
+/* ---------- 4b. ưu đãi tuần: 4 món giảm 30% khi trả bằng Kim Cương ---------- */
+const U195_T={sk:['🎨','Giao diện','#theme'],fr:['🖼️','Khung ảnh','#shop'],snd:['🎵','Âm thanh','#shop'],wx:['🌦️','Thời tiết','#shop'],rc:['🏎️','Skin xe đua','#race'],df:['🏯','Skin thủ thành','#shop'],sp:['🏞️','Không gian','#shop']};
+function u195Deals(){const s=SHOP(),wk=String(weekId()),all=[];const h=x=>{let v=2166136261;for(let i=0;i<x.length;i++){v^=x.charCodeAt(i);v=Math.imul(v,16777619);}return v>>>0;};
+  try{U144_ARR.forEach(([pre,get,ix])=>{const T=U195_T[pre.slice(0,-1)];if(!T)return;(get()||[]).forEach(x=>{const id=pre+x[0];if(!x[0]||typeof x[ix]!=='number'||!(x[ix]>0))return;if(u144Hidden(id)||u144Locked(id))return;
+      const full=kcOf(x[ix]);all.push({id,name:x[1],nb:x[ix],full,kc:Math.max(1,Math.floor(full*U195_OFF)),own:!!(s.own&&s.own[id]),T,k:h(wk+id)});});});}catch(e){}
+  return all.sort((a,b)=>a.k-b.k).slice(0,4);}
+function u195Left(){const d=new Date();const day=(d.getDay()+6)%7;const end=new Date(d.getFullYear(),d.getMonth(),d.getDate()+7-day);const ms=end-d,dd=Math.floor(ms/864e5),hh=Math.floor(ms%864e5/36e5);return dd>0?`${dd} ngày ${hh} giờ`:`${hh} giờ ${Math.floor(ms%36e5/6e4)} phút`;}
+function u195DealsHTML(){const L=u195Deals();if(!L.length)return '';
+  return `<section class="panel u195 u195d"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h2 style="margin:0">Ưu đãi tuần này · giảm 30%</h2><span class="kctag inl x2">Còn ${u195Left()}</span></div>
+    <p class="small muted" style="margin:6px 0 10px">Mỗi tuần 4 món, chỉ giảm giá khi trả bằng Kim Cương. Thứ Hai đổi món mới.</p>
+    <div class="u195dl">${L.map(x=>`<div class="u195di${x.own?' own':''}"><span class="u195dic" aria-hidden="true">${x.T[0]}</span><b>${esc(x.name)}</b><small>${x.T[1]}</small><span class="u195dp"><s>${kcN(x.nb)} ${YB}</s><s>${x.full} ${KC_I}</s></span>${x.own?'<span class="acctag">Đã có</span>':`<button type="button" class="btn sm pri kcgo" data-u195deal="${esc(x.id)}">${x.kc} ${KC_I}</button>`}</div>`).join('')}</div></section>`;}
+function u195DealBuy(id){const x=u195Deals().find(y=>y.id===id);if(!x||x.own)return;if(!kcPayItem('deal',x.kc,'Ưu đãi tuần: '+x.name,{kc:x.kc}))return;const s=SHOP();s.own=s.own||{};s.own[id]=1;shSave();try{confetti(50);}catch(e){}
+  gardenToast(`${x.T[0]} Đã mua <b>${esc(x.name)}</b>. Vào <a href="${x.T[2]}">${esc(x.T[1])}</a> để dùng.`);if(location.hash==='#kc')u193View();}
+function u195Wire(root){root.querySelectorAll('[data-u195deal]').forEach(b=>b.onclick=()=>u195DealBuy(b.dataset.u195deal));const c=root.querySelector('[data-u195card]');if(c)c.onclick=()=>{c.disabled=true;u195CardClaim();};
+  root.querySelectorAll('[data-kcbuy="kcard"]').forEach(b=>b.onclick=()=>kcBuy('kcard'));}
+// mở app: khớp nhiệm vụ đã nhận với máy chủ, tự nhận quà thẻ tháng hôm nay
+function u195Boot(){try{const st=KCS().st||{},q=st.quest;if(q&&q.week===String(weekId())){const o=kqGet();(q.done||[]).forEach(k=>{o.cl[k]=1;});kqPut(o);}
+  if(st.card&&st.card.can)u195CardClaim(true);kqTick();u195Refresh();}catch(e){}}
+
+/* ---------- 4c. Tiểu Long Hổ chấm chi tiết câu vừa nói (3 Kim Cương) ---------- */
+function u195Rv(){const cur=document.querySelector('.u175 .u175b.me.cur:not(.live)');if(!cur||cur.querySelector('.u195rvb'))return;const zh=(cur.querySelector('.han')||{}).textContent||'';if(!/\p{Script=Han}/u.test(zh))return;
+  cur.insertAdjacentHTML('beforeend',`<button type="button" class="u195rvb" title="Tiểu Long Hổ sửa lỗi và giải thích câu này">🔎 Chấm chi tiết · ${U195_RV} ${KC_I}</button>`);
+  cur.querySelector('.u195rvb').onclick=e=>{e.stopPropagation();u195Review(zh.trim(),e.currentTarget);};}
+async function u195Review(text,btn){if(!kcOn())return;{const cp=kcCap('review');if(cp&&cp.left<=0){kcLimitDlg('review');return;}}if(kcBal()<U195_RV){kcShort(U195_RV);return;}if(btn){btn.disabled=true;btn.textContent='Đang chấm…';}
+  try{await kcFlush();let lv=2;try{lv=LEVEL;}catch(e){}const j=await frApi('POST','/v1/ai/review',{text,lv,id:'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)});kcSrv(j.bal);kcCapUse('review');try{funTrack('kc_spend');}catch(e){}
+    const r=j.review,d=kcDlg();let py='';try{py=pinyinPro.pinyin(r.fixed,{toneType:'symbol'}).replace(/\s+([，。！？、,.!?])/g,'$1');}catch(e){}
+    const same=r.fixed.replace(/[\s，。！？,.!?]/g,'')===text.replace(/[\s，。！？,.!?]/g,'');
+    d.innerHTML=`<div class="in stack u195rv"><div class="row" style="justify-content:space-between;align-items:flex-start;gap:8px"><div style="min-width:0"><div class="label">Tiểu Long Hổ chấm bài</div><h2 style="margin:2px 0 0">${r.score>=85?'Rất tốt!':r.score>=60?'Khá ổn, sửa một chút':'Cùng sửa lại nhé'} · ${r.score}/100</h2></div><button type="button" class="icon-btn" data-kx aria-label="Đóng">✕</button></div>
+      <div class="u195rvs"><small>Câu của bạn</small><b class="han" lang="zh">${esc(text)}</b></div>
+      <div class="u195rvs ok"><small>${same?'Câu này đã đúng':'Nên nói'}</small><b class="han" lang="zh">${esc(r.fixed)}</b>${py?`<span>${esc(py)}</span>`:''}${r.vi?`<em>${esc(r.vi)}</em>`:''}<button type="button" class="btn sm" id="u195say">🔊 Nghe</button></div>
+      ${r.notes.length?`<ul class="u195rvn">${r.notes.map(n=>`<li><span><s class="han" lang="zh">${esc(n.wrong)}</s> → <b class="han" lang="zh">${esc(n.right)}</b></span><small>${esc(n.why)}</small></li>`).join('')}</ul>`:''}
+      ${r.tip?`<p class="small" style="margin:0">💡 ${esc(r.tip)}</p>`:''}<p class="small muted" style="margin:0">Chấm chi tiết ${kcCapTxt('review')}.</p><div class="row kcbtns"><button type="button" class="btn pri" data-kx>Đã hiểu</button></div></div>`;
+    const sb=d.querySelector('#u195say');if(sb)sb.onclick=()=>{try{speak(r.fixed,.8);}catch(e){}};if(!d.open)d.showModal();if(btn)btn.remove();}
+  catch(e){const m=String(e.message||'');if(btn){btn.disabled=false;btn.textContent=`🔎 Chấm chi tiết · ${U195_RV} ${KC_I}`;}kcLoad(true);
+    if(m==='KC_LIMIT'){const o=KCS(),d=kcDay();if(!o.cap||o.cap.day!==d)o.cap={day:d,n:{}};o.cap.n.review=99;kcPut(o);kcLimitDlg('review');return;}gardenToast(m==='INSUFFICIENT_KC'?'Chưa đủ Kim Cương.':/AI_UNAVAILABLE|AI_OFF/.test(m)?'Tiểu Long Hổ chưa chấm được lúc này, Kim Cương đã được hoàn lại.':'Chưa chấm được: '+esc(m));}}
+function u195Decorate(){try{u195Chips();}catch(e){}try{u195Rv();}catch(e){}}
+if(window.__T)window.__u195={kqGet,kqBump,kqTick,kqDone,u195Deals,u195DealBuy,u195Review,u195CardClaim,gmLose:(k,r,g)=>gmLose(k,r,g),run:()=>GM_RUN,setRun:v=>{GM_RUN=v;},prices:()=>({rc:RC_SKINS.map(x=>x[2]),furn:Object.values(FURN).slice(0,3).map(x=>x[2]),fr:FRAMES.map(x=>x[2])})};
 
 function route(){
   stopGames();
