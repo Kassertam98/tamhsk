@@ -1,124 +1,343 @@
 {
- "v": 3,
+ "v": 5,
  "art": [
   "can_brown",
   "can_blue"
+ ],
+ "slots": [
+  {
+   "k": "A",
+   "x": 425,
+   "y": 452
+  },
+  {
+   "k": "E",
+   "x": 340,
+   "y": 490
+  },
+  {
+   "k": "G",
+   "x": 255,
+   "y": 532
+  },
+  {
+   "k": "O",
+   "x": 418,
+   "y": 548
+  },
+  {
+   "k": "R",
+   "x": 178,
+   "y": 585
+  },
+  {
+   "k": "K",
+   "x": 335,
+   "y": 650
+  },
+  {
+   "k": "I",
+   "x": 200,
+   "y": 655
+  },
+  {
+   "k": "U",
+   "x": 118,
+   "y": 600
+  },
+  {
+   "k": "M",
+   "x": 545,
+   "y": 612
+  },
+  {
+   "k": "Y",
+   "x": 545,
+   "y": 446
+  },
+  {
+   "k": "C",
+   "x": 650,
+   "y": 446
+  },
+  {
+   "k": "S",
+   "x": 755,
+   "y": 446
+  },
+  {
+   "k": "D",
+   "x": 1020,
+   "y": 446
+  },
+  {
+   "k": "X",
+   "x": 1125,
+   "y": 446
+  },
+  {
+   "k": "Z",
+   "x": 1228,
+   "y": 446
+  },
+  {
+   "k": "B",
+   "x": 1349,
+   "y": 452
+  },
+  {
+   "k": "F",
+   "x": 1440,
+   "y": 492
+  },
+  {
+   "k": "H",
+   "x": 1500,
+   "y": 535
+  },
+  {
+   "k": "P",
+   "x": 1368,
+   "y": 560
+  },
+  {
+   "k": "Q",
+   "x": 1540,
+   "y": 598
+  },
+  {
+   "k": "L",
+   "x": 1472,
+   "y": 652
+  },
+  {
+   "k": "J",
+   "x": 1545,
+   "y": 662
+  },
+  {
+   "k": "N",
+   "x": 1229,
+   "y": 612
+  },
+  {
+   "k": "T1",
+   "x": 690,
+   "y": 676,
+   "hang": true
+  },
+  {
+   "k": "T2",
+   "x": 1084,
+   "y": 676,
+   "hang": true
+  },
+  {
+   "k": "T3",
+   "x": 245,
+   "y": 204,
+   "hang": true
+  },
+  {
+   "k": "T4",
+   "x": 820,
+   "y": 676,
+   "hang": true
+  },
+  {
+   "k": "T5",
+   "x": 952,
+   "y": 676,
+   "hang": true
+  }
  ],
  "decor": [
   {
    "id": "lantern",
    "img": "decor_lantern",
+   "slot": "T1",
    "x": 690,
    "y": 676,
-   "w": 34,
+   "w": 40,
    "hang": true
   },
   {
    "id": "palacelamp",
    "img": "decor_palacelamp",
+   "slot": "T2",
    "x": 1084,
    "y": 676,
-   "w": 36,
+   "w": 42,
    "hang": true
   },
   {
    "id": "bell",
    "img": "decor_bell",
+   "slot": "T3",
    "x": 245,
    "y": 204,
-   "w": 22,
+   "w": 26,
    "hang": true
   },
   {
    "id": "rock",
    "img": "decor_rock",
-   "x": 430,
-   "y": 452,
-   "w": 66
+   "slot": "R",
+   "x": 178,
+   "y": 585,
+   "w": 78
   },
   {
    "id": "bonsai",
    "img": "decor_bonsai",
-   "x": 352,
+   "slot": "E",
+   "x": 340,
    "y": 490,
-   "w": 83
+   "w": 92
   },
   {
    "id": "bench",
    "img": "decor_bench",
-   "x": 300,
-   "y": 555,
-   "w": 124
+   "slot": "G",
+   "x": 255,
+   "y": 532,
+   "w": 126
   },
   {
    "id": "screen",
    "img": "decor_screen",
-   "x": 215,
-   "y": 640,
-   "w": 108
+   "slot": "X",
+   "x": 1125,
+   "y": 446,
+   "w": 118
   },
   {
    "id": "gate",
    "img": "decor_gate",
-   "x": 338,
-   "y": 632,
-   "w": 68
+   "slot": "P",
+   "x": 1368,
+   "y": 560,
+   "w": 122
   },
   {
    "id": "pond",
    "img": "decor_pond",
-   "x": 540,
-   "y": 615,
-   "w": 100
+   "slot": "M",
+   "x": 545,
+   "y": 612,
+   "w": 120
   },
   {
    "id": "stonelamp",
    "img": "decor_stonelamp",
-   "x": 740,
+   "slot": "C",
+   "x": 650,
    "y": 446,
-   "w": 45
+   "w": 52
   },
   {
    "id": "peach",
    "img": "decor_peach",
-   "x": 1034,
+   "slot": "D",
+   "x": 1020,
    "y": 446,
-   "w": 91
+   "w": 106
   },
   {
    "id": "lotusjar",
    "img": "decor_lotusjar",
-   "x": 1345,
-   "y": 452,
-   "w": 65
+   "slot": "Z",
+   "x": 1228,
+   "y": 446,
+   "w": 70
   },
   {
    "id": "crane",
    "img": "decor_crane",
-   "x": 1420,
+   "slot": "F",
+   "x": 1440,
    "y": 492,
-   "w": 36
+   "w": 46
   },
   {
    "id": "teatable",
    "img": "decor_teatable",
-   "x": 1480,
-   "y": 548,
-   "w": 111
+   "slot": "H",
+   "x": 1500,
+   "y": 535,
+   "w": 120
   },
   {
    "id": "wisteria",
    "img": "decor_wisteria",
-   "x": 1445,
-   "y": 642,
-   "w": 114
+   "slot": "I",
+   "x": 200,
+   "y": 655,
+   "w": 142
   },
   {
    "id": "lion",
    "img": "decor_lion",
-   "x": 1250,
-   "y": 628,
-   "w": 47
+   "slot": "S",
+   "x": 755,
+   "y": 446,
+   "w": 60
+  },
+  {
+   "id": "incense",
+   "img": "decor_incense",
+   "w": 74,
+   "slot": "Y",
+   "x": 545,
+   "y": 446
+  },
+  {
+   "id": "fountain",
+   "img": "decor_fountain",
+   "w": 135,
+   "slot": "K",
+   "x": 335,
+   "y": 650
+  },
+  {
+   "id": "wishtree",
+   "img": "decor_wishtree",
+   "w": 142,
+   "slot": "A",
+   "x": 425,
+   "y": 452
+  },
+  {
+   "id": "oldpeach",
+   "img": "decor_oldpeach",
+   "w": 152,
+   "slot": "N",
+   "x": 1229,
+   "y": 612
+  },
+  {
+   "id": "pavilion",
+   "img": "decor_pavilion",
+   "w": 176,
+   "slot": "B",
+   "x": 1349,
+   "y": 452
+  },
+  {
+   "id": "jadedragon",
+   "img": "decor_jadedragon",
+   "w": 106,
+   "slot": "O",
+   "x": 418,
+   "y": 548
+  },
+  {
+   "id": "moongate",
+   "img": "decor_moongate",
+   "w": 166,
+   "slot": "L",
+   "x": 1472,
+   "y": 652
   }
  ]
 }
