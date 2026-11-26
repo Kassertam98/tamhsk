@@ -1,5 +1,124 @@
 {
-  "v": 2,
-  "art": [],
-  "decor": []
+ "v": 3,
+ "art": [
+  "can_brown",
+  "can_blue"
+ ],
+ "decor": [
+  {
+   "id": "lantern",
+   "img": "decor_lantern",
+   "x": 690,
+   "y": 676,
+   "w": 34,
+   "hang": true
+  },
+  {
+   "id": "palacelamp",
+   "img": "decor_palacelamp",
+   "x": 1084,
+   "y": 676,
+   "w": 36,
+   "hang": true
+  },
+  {
+   "id": "bell",
+   "img": "decor_bell",
+   "x": 245,
+   "y": 204,
+   "w": 22,
+   "hang": true
+  },
+  {
+   "id": "rock",
+   "img": "decor_rock",
+   "x": 430,
+   "y": 452,
+   "w": 66
+  },
+  {
+   "id": "bonsai",
+   "img": "decor_bonsai",
+   "x": 352,
+   "y": 490,
+   "w": 83
+  },
+  {
+   "id": "bench",
+   "img": "decor_bench",
+   "x": 300,
+   "y": 555,
+   "w": 124
+  },
+  {
+   "id": "screen",
+   "img": "decor_screen",
+   "x": 215,
+   "y": 640,
+   "w": 108
+  },
+  {
+   "id": "gate",
+   "img": "decor_gate",
+   "x": 338,
+   "y": 632,
+   "w": 68
+  },
+  {
+   "id": "pond",
+   "img": "decor_pond",
+   "x": 540,
+   "y": 615,
+   "w": 100
+  },
+  {
+   "id": "stonelamp",
+   "img": "decor_stonelamp",
+   "x": 740,
+   "y": 446,
+   "w": 45
+  },
+  {
+   "id": "peach",
+   "img": "decor_peach",
+   "x": 1034,
+   "y": 446,
+   "w": 91
+  },
+  {
+   "id": "lotusjar",
+   "img": "decor_lotusjar",
+   "x": 1345,
+   "y": 452,
+   "w": 65
+  },
+  {
+   "id": "crane",
+   "img": "decor_crane",
+   "x": 1420,
+   "y": 492,
+   "w": 36
+  },
+  {
+   "id": "teatable",
+   "img": "decor_teatable",
+   "x": 1480,
+   "y": 548,
+   "w": 111
+  },
+  {
+   "id": "wisteria",
+   "img": "decor_wisteria",
+   "x": 1445,
+   "y": 642,
+   "w": 114
+  },
+  {
+   "id": "lion",
+   "img": "decor_lion",
+   "x": 1250,
+   "y": 628,
+   "w": 47
+  }
+ ]
 }

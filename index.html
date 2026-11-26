@@ -8088,12 +8088,12 @@ a.g6chip,button.g6chip{cursor:pointer}a.g6chip:focus-visible,button.g6chip:focus
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='2e52121d';
-document.write('<script src="packs/hsk'+L+'.js?v=2e52121d"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='f8ebc7c7';
+document.write('<script src="packs/hsk'+L+'.js?v=f8ebc7c7"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=2e52121d','strokes-file');A('packs/dict.js?v=2e52121d','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=f8ebc7c7','strokes-file');A('packs/dict.js?v=f8ebc7c7','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -29961,9 +29961,9 @@ const G6E=(function(){
   function im(k){const i=imgs[k];if(i)return i;if(!mfReady||pend[k]||bad[k])return null;pend[k]=1;const x=new Image();x.crossOrigin='anonymous';
     x.onload=()=>{imgs[k]=x;delete pend[k];};x.onerror=()=>{delete pend[k];bad[k]=(bad[k]||0)+1;if(k==='bg')E.failed=true;};x.src=base()+dirOf(k)+'/'+k+'.webp?mv='+MF.v;return null;}
   /* tỉ lệ bề ngang so với cây trưởng thành (đo từ ảnh gốc): [mầm, cây non, héo] theo chỉ số plantN */
-  const RT=[[.146,.798,.95],[.341,.682,.722],[.374,.747,.84],[.341,.682,.824],[.341,.682,.824],[.266,.682,.748],[.214,.633,.824],[.169,.682,.816],[.306,.682,.751],[.341,.682,.824],[.341,.682,.824],[.341,.682,.824],[.341,.682,.824],[.479,.957,.974],[.341,.682,.824]];
-  /* mã cây của app (PLANTS 1…17) → chỉ số plantN; 16 Nấm HSK 3.0 và 17 Cây của bạn tạm dùng Cúc và Trúc */
-  const KMAP={1:0,2:1,3:2,8:3,11:4,15:5,4:6,5:7,6:8,7:9,9:10,10:11,12:12,13:13,14:14,16:2,17:0};
+  const RT=[[.146,.798,.95],[.341,.682,.722],[.374,.747,.84],[.341,.682,.824],[.341,.682,.824],[.266,.682,.748],[.214,.633,.824],[.169,.682,.816],[.306,.682,.751],[.341,.682,.824],[.341,.682,.824],[.341,.682,.824],[.341,.682,.824],[.479,.957,.974],[.341,.682,.824],[.213,.44,.769],[.272,.608,.831]];
+  /* mã cây của app (PLANTS 1…17) → chỉ số plantN; 16 Nấm HSK 3.0 = plant15, 17 Cây của bạn = plant16 (ảnh đợt 2) */
+  const KMAP={1:0,2:1,3:2,8:3,11:4,15:5,4:6,5:7,6:8,7:9,9:10,10:11,12:12,13:13,14:14,16:15,17:16};
   const kindOf=l=>KMAP[l]!=null?KMAP[l]:KMAP[((Math.max(1,+l||1)-1)%15)+1];
   let cv=null,ctx=null,wrap=null,w=0,h=0,s0=1,z=1,ox=0,oy=0,last=0,t=0,path=[],face=-1,walking=false,gesture=null,moved=false,running=false,g=null,gAt=0,owned=[],period='noon',lastGate=null,errs=0,centered=false;
   const player={x:887,y:512},keys=new Set(),pointers=new Map();
@@ -30036,7 +30036,7 @@ const G6E=(function(){
     else{ctx.lineWidth=2.4;ctx.beginPath();ctx.moveTo(-5,0);ctx.lineTo(5,0);ctx.moveTo(0,-5);ctx.lineTo(0,5);ctx.stroke();}
     ctx.restore();}
   /* bình tưới: nâu = tưới vườn mình, xanh = sang vườn bạn tưới. Có ảnh can_brown/can_blue trong /garden6/decor thì dùng ảnh, chưa có thì vẽ nét */
-  const CANS=[{k:'own',img:'can_brown',x:446,y:612,w:50,c:['#9a6a3c','#6f4a26','#c79a66']},{k:'friend',img:'can_blue',x:1322,y:612,w:50,c:['#4f9fd6','#2f6f9f','#a5d5f3']}];
+  const CANS=[{k:'own',img:'can_brown',x:446,y:612,w:71,c:['#9a6a3c','#6f4a26','#c79a66']},{k:'friend',img:'can_blue',x:1322,y:612,w:71,c:['#4f9fd6','#2f6f9f','#a5d5f3']}];
   function drawCan(c){ctx.save();ctx.translate(c.x,c.y);const [a,b,hi]=c.c;ctx.lineJoin='round';ctx.lineCap='round';
     ctx.strokeStyle=b;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-12,-26);ctx.quadraticCurveTo(-31,-24,-27,-9);ctx.stroke();
     ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(12,-12);ctx.lineTo(27,-27);ctx.stroke();ctx.fillStyle=b;ctx.beginPath();ctx.ellipse(29,-29,5,3,-.8,0,Math.PI*2);ctx.fill();
@@ -30047,8 +30047,8 @@ const G6E=(function(){
     ctx.fillStyle=bg;ctx.strokeStyle=ring||'rgba(40,50,40,.35)';ctx.lineWidth=ring?size*.16:1.2;rrect(x-pw/2,y-ph/2,pw,ph,ph/2);ctx.fill();ctx.stroke();ctx.fillStyle=fg;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x,y+size*.04);ctx.restore();return [pw,ph];}
   const HOME={x:1196,y:262};
   function labels(){let wOn=false;try{wOn=!!GW.on;}catch(e){}const wt=Math.max(0,Math.floor((g&&g.water)||0));
-    pill('Tưới vườn · '+wt+' giọt',CANS[0].x,CANS[0].y+17,wOn?'#fff3c4':'rgba(255,250,236,.94)','#5a3a18',wOn?'#e0a100':null);
-    pill('Sang vườn bạn tưới',CANS[1].x,CANS[1].y+17,'rgba(240,249,255,.94)','#1d4f78');
+    pill('Tưới · '+wt+' giọt',CANS[0].x,CANS[0].y+17,wOn?'#fff3c4':'rgba(255,250,236,.94)','#5a3a18',wOn?'#e0a100':null);
+    pill('Tưới vườn bạn',CANS[1].x,CANS[1].y+17,'rgba(240,249,255,.94)','#1d4f78');
     pill('Về nhà',HOME.x,HOME.y,'rgba(255,250,236,.95)','#4a2f12','#b98a3f');}
   /* thoại của thú: hộp thoại bám ngay trên đầu thú */
   let bub=null;
@@ -30150,7 +30150,7 @@ const G6E=(function(){
       objects.push([p.y,()=>{sprite(pot,p.x,p.y,62);if(art&&art[0])sprite(art[0],p.x,p.y-(art[1]===20?27:25),art[1]);}]);
       const mk=plotMark(pl);if(mk)marks.push([mk,p.x+(mk==='grow'?0:24),mk==='grow'?p.y+9:p.y-(pl.l?50:34),pl]);}
     if(canBuy()){const p=spots[order[n]];objects.push([p.y,()=>{ctx.save();ctx.setLineDash([7,6]);ctx.lineWidth=2.4;ctx.strokeStyle='rgba(122,90,18,.85)';ctx.fillStyle='rgba(255,246,214,.5)';ctx.beginPath();ctx.ellipse(p.x,p.y-9,30,13,0,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.restore();}]);marks.push(['buy',p.x,p.y-30,null]);}
-    for(const d of MF.decor){if(!(g.decor||[]).includes(d.id))continue;const di=im(d.img);if(!di)continue;if(!d.hang){cast(di,d.x,d.y,d.w);groundShadow(d.x,d.y,d.w*.3,3.2,.4);}objects.push([d.hang?H:d.y,()=>sprite(di,d.x,d.y,d.w)]);}
+    for(const d of MF.decor){if(!(g.decor||[]).includes(d.id))continue;const di=im(d.img);if(!di)continue;if(!d.hang){cast(di,d.x,d.y,d.w);groundShadow(d.x,d.y,d.w*.3,3.2,.4);}objects.push([d.hang?H:d.y,()=>{if(d.hang){const sw=reduced?0:Math.sin(t*1.3+d.x*.01)*.035;ctx.save();ctx.translate(d.x,d.y);ctx.rotate(sw);sprite(di,0,d.w*di.height/di.width,d.w);ctx.restore();}else sprite(di,d.x,d.y,d.w);}]);}
     for(const c of CANS){const ci=MF.art.includes(c.img)?im(c.img):null;if(ci){cast(ci,c.x,c.y,c.w);}groundShadow(c.x,c.y,17,3.2,.4);objects.push([c.y,()=>{if(ci)sprite(ci,c.x,c.y,c.w);else drawCan(c);}]);}
     const hero=im(walking?'run':'idle')||im('idle');cast(hero,player.x,player.y,74);groundShadow(player.x,player.y,18,3.3,.32);
     updatePets(dt,objects);
@@ -30163,7 +30163,7 @@ const G6E=(function(){
     catch(e){if(++errs===1)console.warn('garden6',e);if(errs>120){E.failed=true;}}
     requestAnimationFrame(frame);}
   function failUI(){const ld=wrap.querySelector('.g6load');if(!ld)return;ld.hidden=false;ld.innerHTML='<b>Chưa tải được ảnh vườn mới</b><span>Kiểm tra mạng rồi mở lại Khu vườn. Lần này dùng tạm vườn cũ.</span><button type="button" class="btn sm">Dùng vườn cũ</button>';ld.querySelector('button').onclick=()=>{try{viewGarden();}catch(e){}};}
-  const E={failed:false,
+  const E={failed:false,url:k=>base()+dirOf(k)+'/'+k+'.webp?mv='+MF.v,
     mount(sc){if(sc.querySelector(':scope>.g6wrap'))return;refresh();
       wrap=document.createElement('div');wrap.className='g6wrap';
       wrap.innerHTML='<canvas tabindex="0" aria-label="Sân vườn. Chạm vào chậu để chăm cây, chạm vào sân để Tiểu Long Hổ đi tới, dùng hai ngón tay để phóng to."></canvas><div class="g6load" role="status"><span>Đang tải vườn…</span></div>'+
@@ -30204,6 +30204,16 @@ buyCan=function(){const p=canNext();
   d.innerHTML=`<div class="in"><h3>Mua thêm bình tưới?</h3><p class="small" style="margin:8px 0 14px">Bình thứ ${canDay().n+1} hôm nay giá <b>${p[1]} ${KC_I} Kim Cương</b>, được +${CAN_N} lượt tưới. Mỗi ngày mua tối đa 3 bình.</p><div class="row" style="justify-content:flex-end;gap:8px"><button class="btn" data-x>Thôi</button><button class="btn pri" data-ok>Mua · ${p[1]} ${KC_I}</button></div></div>`;
   d.querySelector('[data-x]').onclick=()=>d.close();d.querySelector('[data-ok]').onclick=()=>{d.close();canDo();};if(!d.open)d.showModal();};
 if(window.__T)window.__u198c={canDay,canNext,canTxt,buy:()=>buyCan()};
+
+/* 5.151: đồ trang trí vẽ lại theo vườn mới (ảnh đợt 2). 6 món cũ giữ nguyên mã; 10 món mới chỉ bán khi đang dùng vườn mới (vườn cũ không có hình).
+   Giá cũng là điểm sang trọng (luxury() cộng theo DECOR). Vị trí từng món nằm trong /garden6/manifest.json. */
+const G6_DECOR_NEW=[['stonelamp','Đèn đá','灯笼',150],['bonsai','Tùng bonsai','松',180],['rock','Hòn non bộ','石',220],['lotusjar','Chum sen','莲',260],['crane','Hạc đồng','鹤',320],['palacelamp','Đèn cung đình','宫灯',380],['screen','Bình phong trúc','屏',450],['teatable','Bàn trà đá','茶',550],['lion','Sư tử đá','狮',700],['wisteria','Giàn tử đằng','藤',900]];
+const G6_NEWID=new Set(G6_DECOR_NEW.map(x=>x[0]));
+G6_DECOR_NEW.forEach(x=>{if(!DECOR.some(y=>y[0]===x[0]))DECOR.push(x);});
+(function(){const b=decorSVG;decorSVG=function(id,sz){let on=false;try{on=g6On();}catch(e){}
+  if(on&&DECOR.some(x=>x[0]===id)){const n=sz||44;return `<img class="g6dthumb" src="${esc(G6E.url('decor_'+id))}" alt="" width="${n}" height="${n}" loading="lazy" style="width:${n}px;height:${n}px;object-fit:contain">`;}
+  if(G6_NEWID.has(id))return '';return b.apply(this,arguments);};})();
+(function(){const b=openShop;openShop=function(){const r=b.apply(this,arguments);try{if(!g6On()){const d=document.getElementById('gdlg');if(d)d.querySelectorAll('[data-dec]').forEach(x=>{if(G6_NEWID.has(x.dataset.dec)){const it=x.closest('.shopit');if(it)it.remove();}});}}catch(e){}return r;};})();
 
 function route(){
   stopGames();
