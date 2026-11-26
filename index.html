@@ -6363,6 +6363,12 @@ html.fs.gplaying.u153on #gstop,html.u153on #gstop{display:none!important}
 @media (max-width:560px){.u164s{flex-wrap:wrap;align-items:flex-start}.u164x{top:10px;transform:none}.u164st{flex-basis:calc(100% - 56px)}.u164sb{width:100%;padding-left:52px}.u164m{width:84px}.u164hero{padding:16px}}
 @media (prefers-reduced-motion:reduce){.u164l{transition:none}.u164l:hover{transform:none}}
 html[data-theme="dark"] .u164hero{background:color-mix(in srgb,#ffd54a 10%,var(--card,#1b2826));border-color:color-mix(in srgb,#ffd54a 35%,transparent)}html[data-theme="dark"] .u164hero h1{color:#9be7c4}html[data-theme="dark"] .u164hero p{color:inherit}
+
+/* 5.150: dải 2 nút tải iOS / Android */
+.u164two .u164sb .btn{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.u164two .u164sb .btn .lpic{width:17px;height:17px;flex:none}
+.u164two .u164st b{line-height:1.3}.u164two .u164st small{line-height:1.4;margin-top:2px}.u164two .u164st small b{color:#ffe07a}
+@media (max-width:560px){.u164two .u164sb{padding-left:0}.u164two .u164sb .btn{flex:1 1 0;justify-content:center}}
 /* 5.112 Quà chào mừng app Android */
 .u165gift{display:block;margin-top:4px;font-size:13px;font-weight:800;color:#ffd54a}
 .u165s .u164si{font-size:20px}
@@ -8016,7 +8022,7 @@ html.rails.rrw.rrw main#app.wrap,html.rails.rrw.rrw #gpromo,html.rails.rrw.rrw f
 /* 5.149 Vườn mới (đồ họa v6): canvas phủ kín khung #gscene, ẩn phần hình của vườn cũ */
 #gscene.g6on:not(.play){background:#dfe9dc!important;overflow:hidden}
 #gscene.g6on:not(.play)::before,#gscene.g6on:not(.play)::after{display:none!important}
-#gscene.g6on:not(.play)>.gstars,#gscene.g6on:not(.play)>svg,#gscene.g6on:not(.play)>.g3sign,#gscene.g6on:not(.play)>.g3beds,#gscene.g6on:not(.play)>img.gpet,#gscene.g6on:not(.play)>.gplane,#gscene.g6on:not(.play)>.gpx,#gscene.g6on:not(.play)>#gpvoice{display:none!important}
+#gscene.g6on:not(.play)>.gstars,#gscene.g6on:not(.play)>svg,#gscene.g6on:not(.play)>.g3sign,#gscene.g6on:not(.play)>.g3beds,#gscene.g6on:not(.play)>img.gpet,#gscene.g6on:not(.play)>.gplane,#gscene.g6on:not(.play)>.gpx,#gscene.g6on:not(.play)>#gpvoice,#gscene.g6on:not(.play) .gpvoice,#gscene.g6on:not(.play)>.gxhome,#gscene.g6on:not(.play) .gdecor,#gscene.g6on:not(.play)>.gdecor{display:none!important}
 #gscene.play>.g6wrap{display:none}
 .g6wrap{position:absolute;inset:0;z-index:1;overflow:hidden;border-radius:inherit}
 .g6wrap canvas{display:block;width:100%;height:100%;touch-action:none;outline:none;user-select:none;-webkit-user-select:none}
@@ -8027,18 +8033,36 @@ html.rails.rrw.rrw main#app.wrap,html.rails.rrw.rrw #gpromo,html.rails.rrw.rrw f
 .g6zoom button{all:unset;box-sizing:border-box;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:700;color:#214b36;background:rgba(255,253,244,.9);border:1px solid #bdd3be;cursor:pointer;box-shadow:0 3px 10px -6px rgba(0,0,0,.4)}
 .g6zoom button:disabled{opacity:.4;cursor:default}
 .g6zoom button:focus-visible{outline:2px solid var(--jade)}
-.g6card{position:absolute;left:10px;right:10px;bottom:16px;margin:0 auto;max-width:420px;display:flex;align-items:center;gap:10px;padding:10px 40px 10px 14px;border-radius:14px;border:1px solid #c2d3bb;background:rgba(255,253,242,.97);color:#214733;box-shadow:0 8px 22px -12px rgba(0,0,0,.45);z-index:3}
+/* thông báo: to, nằm giữa và hơi cao hơn tâm màn */
+.g6card{position:absolute;left:50%;top:24%;transform:translateX(-50%);width:max-content;max-width:min(460px,calc(100% - 24px));display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:14px 46px 14px 18px;border-radius:18px;border:2px solid #c9b47a;background:rgba(255,252,240,.98);color:#214733;box-shadow:0 14px 34px -14px rgba(0,0,0,.55);z-index:4;animation:g6pop .18s ease-out}
+@keyframes g6pop{from{opacity:0;transform:translateX(-50%) scale(.94)}to{opacity:1;transform:translateX(-50%) scale(1)}}
 .g6card[hidden]{display:none}
-.g6card>div{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px}
-.g6card b{font-size:14.5px}.g6card span{font-size:13px;line-height:1.4;color:#3d5a49}
-.g6card span em{font-style:normal;font-size:16px;color:#1d3b2c;font-family:var(--han,inherit)}.g6card span i{font-style:normal}
-.g6card .g6go{flex:0 0 auto;white-space:nowrap}.g6card .g6go[hidden]{display:none}
-.g6x{all:unset;position:absolute;top:4px;right:4px;width:32px;height:32px;display:grid;place-items:center;font-size:19px;color:#4b6355;cursor:pointer;border-radius:50%}
+.g6card>div{min-width:0;display:flex;flex-direction:column;gap:4px}
+.g6card b{font-size:18px;line-height:1.25}.g6card span{font-size:15.5px;line-height:1.45;color:#34503f}
+.g6card span em{font-style:normal;font-size:19px;color:#1d3b2c}.g6card span i{font-style:normal}
+.g6card .g6go{align-self:flex-start;font-size:15.5px;padding:9px 18px}.g6card .g6go[hidden]{display:none}
+.g6x{all:unset;position:absolute;top:6px;right:6px;width:36px;height:36px;display:grid;place-items:center;font-size:19px;color:#4b6355;cursor:pointer;border-radius:50%}
 .g6x:focus-visible{outline:2px solid var(--jade)}
-@media (max-width:420px){.g6card{flex-wrap:wrap}.g6card .g6go{margin-left:auto}}
+
 /* thanh công cụ dưới (điện thoại): nối màu với mép cỏ của sân vườn mới thay cho nền đất nâu */
 .garden3.g5:has(#gscene.g6on:not(.play)) .gnav{background:linear-gradient(180deg,#a9a877 0,#8f9567 22px,#6f7c52 100%)!important;box-shadow:none}
 .garden3.g5:has(#gscene.g6on:not(.play)) .gnav::before{display:none}
+
+/* 5.150: thanh số liệu trong vườn + hộp thoại của thú */
+.g6hud{position:absolute;left:10px;top:10px;z-index:3;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px;max-width:calc(100% - 20px);pointer-events:none}
+.g6hud>*{pointer-events:auto}
+.g6chip{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 11px;border-radius:999px;background:rgba(255,255,255,.94);border:1.5px solid #d9cfae;color:#3a2c10;font-size:13.5px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.16);white-space:nowrap}
+.g6chip svg{width:16px;height:16px;flex:none}.g6chip i{font-style:normal}
+a.g6chip,button.g6chip{cursor:pointer}a.g6chip:focus-visible,button.g6chip:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+.g6chip.lux{border-color:#e2c26a;background:rgba(255,249,224,.96)}
+.g6voice[aria-pressed="false"]{opacity:.8;background:rgba(240,240,240,.94)}
+@media (max-width:768px){.g6hud{left:8px;max-width:calc(100% - 16px)}.g6chip{height:30px;padding:0 9px;font-size:12.5px}.g6voice span{display:none}}
+.g6bub{position:absolute;left:0;top:0;z-index:3;max-width:min(250px,calc(100% - 12px));display:flex;flex-direction:column;gap:1px;padding:8px 12px 9px;border-radius:14px;border:1.5px solid #cdbb86;background:#fffdf3;color:#1f3a2c;box-shadow:0 8px 18px -10px rgba(0,0,0,.5);pointer-events:none;will-change:transform}
+.g6bub[hidden]{display:none}
+.g6bub b{font-size:11.5px;color:#7a6a3a;font-weight:700}.g6bub em{font-style:normal;font-size:19px;line-height:1.3}.g6bub small{font-size:13.5px;line-height:1.35;color:#3d5a49}
+.g6bub::after{content:'';position:absolute;left:var(--ax,50%);bottom:-7px;width:12px;height:12px;margin-left:-6px;background:#fffdf3;border-right:1.5px solid #cdbb86;border-bottom:1.5px solid #cdbb86;transform:rotate(45deg)}
+.g6bub.below::after{bottom:auto;top:-7px;transform:rotate(225deg)}
+.g6hud .g6chip{pointer-events:auto}
 </style>
 </head><body>
 
@@ -8064,12 +8088,12 @@ html.rails.rrw.rrw main#app.wrap,html.rails.rrw.rrw #gpromo,html.rails.rrw.rrw f
 
 <script>
 window.HSK_SITE=1;window.HSK_READY={"1": 1, "2": 1, "3": 1, "4": 1};
-(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='8c746874';
-document.write('<script src="packs/hsk'+L+'.js?v=8c746874"><\/script>');
+(function(){var L=2;try{var q=new URLSearchParams(location.search).get('lv');if(q){if(window.HSK_READY[+q])localStorage.setItem('hsk-level',q);history.replaceState(null,'',location.pathname+location.hash);}}catch(e){}try{L=+localStorage.getItem('hsk-level')||2}catch(e){}if(!window.HSK_READY[L])L=2;window.HSK_LEVEL=L;try{var sw=JSON.parse(sessionStorage.getItem('hsk-sw')||'null');if(sw&&Date.now()-sw.t<20000){document.write('<div id="u150ov" class="u150ov" role="status"><div class="u150in"><div class="u150lv">HSK<b>'+L+'</b></div><div class="u150dots" aria-hidden="true"><i></i><i></i><i></i></div><p>Đang chuyển khóa học…</p><small>Nguyên bảo, chuỗi ngày, năng lượng và đồ của bạn được giữ nguyên</small></div></div>');setTimeout(function(){var o=document.getElementById('u150ov');if(o)o.remove();},12000);}}catch(e){}window.HSK_PACK_VER='2e52121d';
+document.write('<script src="packs/hsk'+L+'.js?v=2e52121d"><\/script>');
 window.STROKES={};window.HSK_PACKS={};
 var A=function(src,name){var s=document.createElement('script');s.src=src;s.async=true;s.onload=function(){window.HSK_PACKS[name]=1;window.dispatchEvent(new CustomEvent('hsk-pack',{detail:name}));};document.head.appendChild(s);};
 var F=document.createElement('link');F.rel='stylesheet';F.href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap';
-document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=8c746874','strokes-file');A('packs/dict.js?v=8c746874','dict');},0);});
+document.addEventListener('DOMContentLoaded',function(){document.head.appendChild(F);setTimeout(function(){A('lib/pinyin-pro.js','pinyin');A('packs/hsk'+L+'-strokes.js?v=2e52121d','strokes-file');A('packs/dict.js?v=2e52121d','dict');},0);});
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});})();
 </script>
 <script>
@@ -16510,7 +16534,7 @@ function g3Rows(plots,mk,extra){const n=9,rows=[[6,7,8],[3,4,5],[0,1,2]];
 function gToolsChips(){const t=window.__gTools;if(!t)return '';return `<span class="gchip gold" title="Nước vàng để tưới hộ bạn bè, hồi 1 giọt mỗi 3 giờ">💛 <b>${t.w}</b>/3${t.wNext?` <small>+1 sau ${fmtLeft(t.wNext-Date.now())}</small>`:''}</span><span class="gchip shovel" title="Xẻng đen để trộm cây chín của bạn bè, hồi 1 cái mỗi 8 giờ">⛏️ <b>${t.s}</b>/3${t.sNext?` <small>+1 sau ${fmtLeft(t.sNext-Date.now())}</small>`:''}</span>`;}
 function viewGarden(){const g=G();if(typeof socialOnGarden==='function')socialOnGarden();const nm=(S.set&&S.set.name)||'bạn',m=gSky(),w=g.water,nx=gwNext(g),ready=gqReady(g);
   app.innerHTML=`<div class="stack garden3"><section class="gtop"><div><div class="label" style="color:var(--jade)">Khu vườn chữ Hán · ${({day:'ban ngày',dawn:'bình minh',dusk:'hoàng hôn',night:'ban đêm'})[m]}</div><h1 style="margin:2px 0">Vườn của ${esc(nm)}</h1></div>
-    <div class="gchips"><span class="gchip water" title="Mỗi lần tưới tốn 1 giọt, tự hồi 1 giọt mỗi 3 giờ">💧 <b>${w}</b>/${GW_MAX}${nx?` <small>+1 sau ${fmtLeft(nx)}</small>`:''}</span><button class="gchip gcan" id="gcan" title="Bình tưới: +${CAN_N} lượt tưới">🚿 Bình tưới · ${CAN_COST} ${YB}</button><span class="gchip">${YB} <b>${g.coins}</b></span>${gToolsChips()}</div></section>
+    <div class="gchips"><span class="gchip water" title="Mỗi lần tưới tốn 1 giọt, tự hồi 1 giọt mỗi 3 giờ">💧 <b>${w}</b>/${GW_MAX}${nx?` <small>+1 sau ${fmtLeft(nx)}</small>`:''}</span><button class="gchip gcan" id="gcan" title="Bình tưới: +${CAN_N} lượt tưới">🚿 Bình tưới · ${canTxt()}</button><span class="gchip">${YB} <b>${g.coins}</b></span>${gToolsChips()}</div></section>
    <div class="g3scene" id="gscene">${gardenBG()}${gCloud('c1','top:4%;left:-30%')}${gCloud('c2','top:12%;left:-40%')}
     ${g.decor.map(d=>{const ps=DECOR_POS[d]||[50,50];return `<span class="gdecor" style="left:${ps[0]}%;top:${Math.min(ps[1],40)}%">${decorSVG(d,56)}</span>`;}).join('')}
     <div class="g3sign"><b>${esc(nm)}</b><span>${g.plots.filter(p=>p.l).length}/${g.plots.length} chậu đang trồng</span></div>
@@ -16546,7 +16570,7 @@ function plotAction(i){const g=G(),p=g.plots[i];if(!p.l&&!p.pot){chooseSeed(i);r
     ${p.l?`<div class="g3info"><span>${wl?'🥀 Cây đã héo':ripe?`🌸 Đã chín · héo sau ${fmtLeft(gRipeLeft(p))}`:`⏳ Chín sau ${fmtLeft(gLeft(p))}`}</span><span>${YB} Thu hoạch: <b>${val}</b>${p.st?` <small style="color:var(--seal)">(bị trộm ${Math.round(p.st*100)}%)</small>`:''}</span>${p.helpN?`<span>💛 Được bạn bè tưới hộ ${p.helpN} lần</span>`:''}</div>`:''}
     <div class="g3abtn">${wl?'<button class="btn pri big" data-ga="clear">🧹 Dọn cây héo</button>':ripe?`<button class="btn pri big" data-ga="harv">🧺 Thu hoạch +${val} ${YB}</button>`:p.l?`<button class="btn pri big" data-ga="care"${g.water<1?' disabled':''}>💧 Chăm cây (−1 giọt · còn ${g.water})</button>`:'<button class="btn pri big" data-ga="seed">🌱 Gieo hạt giống</button>'}
      ${nx?`<button class="btn big" data-ga="pot"${g.coins<nx[2]?' disabled':''}>🏺 Nâng lên ${nx[1]} · ${nx[2].toLocaleString('vi-VN')} ${YB}<small>Lớn nhanh −${nx[3]}% · héo chậm hơn</small></button>`:'<div class="small muted" style="text-align:center">💎 Chậu đã ở bậc cao nhất</div>'}</div>
-    ${p.l&&!ripe&&!wl&&g.water<1?`<div class="small muted" style="text-align:center">Hết nước. Nước tự hồi 1 giọt mỗi 3 giờ, hoặc mua <b>bình tưới</b> ${CAN_COST} ${YB}.</div>`:''}</div>`;
+    ${p.l&&!ripe&&!wl&&g.water<1?`<div class="small muted" style="text-align:center">Hết nước. Nước tự hồi 1 giọt mỗi 3 giờ, hoặc mua <b>bình tưới</b> ${canTxt()}.</div>`:''}</div>`;
   d.querySelector('[data-x]').onclick=()=>d.close();
   d.querySelectorAll('[data-ga]').forEach(b=>b.onclick=()=>{const a=b.dataset.ga;d.close();if(a==='care')careRound(i);else if(a==='harv')harvest(i);else if(a==='clear')clearWilted(i);else if(a==='seed')chooseSeed(i);else if(a==='pot')potUpgrade(i);});
   if(!d.open)d.showModal();}
@@ -23085,7 +23109,7 @@ gardenDress=function(){const sc=document.getElementById('gscene');if(location.ha
   if(chips)[...chips.children].forEach(c=>box.appendChild(c));
   const can=app.querySelector('#gcan'),water=box.querySelector('.gchip.water');
   if(water&&can){const n=parseInt((water.querySelector('b')||water).textContent,10)||0;water.classList.toggle('empty',n<1);
-    if(n<1){if(!water.contains(can)){can.classList.add('gcanin');can.innerHTML=`+ 🚿 ${CAN_COST}`;can.title=`Mua bình tưới: +${CAN_N} lượt tưới (${CAN_COST} Nguyên bảo)`;water.appendChild(can);}}
+    if(n<1){if(!water.contains(can)){can.classList.add('gcanin');can.innerHTML=`+ 🚿 ${canTxt()}`;can.title=`Mua bình tưới: +${CAN_N} lượt tưới (${canPlain()})`;water.appendChild(can);}}
     else if(can.classList.contains('gcanin')||!box.contains(can)){can.classList.remove('gcanin');box.appendChild(can);}}
   gModeSync();};
 function gModeSync(){const sc=document.getElementById('gscene');if(!sc)return;sc.classList.toggle('gpotmode',GM.mode==='pot');sc.querySelectorAll('[data-gm]').forEach(b=>b.classList.toggle('on',b.dataset.gm===GM.mode));
@@ -23171,7 +23195,7 @@ function gPotBoard(){const g=G();let d=document.getElementById('gdlg');if(!d){d=
 /* bấm chỉ số → vào tính năng tương ứng */
 function gWaterGo(){const g=G();const grow=g.plots.map((p,i)=>[p,i]).filter(([p])=>p&&p.l&&!p.wilt&&stageOf(p.gr||0)<4);
   if(!grow.length){gardenToast('🌱 Chưa có cây nào cần tưới. Gieo hạt vào ô đất trống trước nhé.');gSheet('seed');return;}
-  if(g.water<1){gardenToast(`💧 Hết nước rồi. Bấm <b>+ 🚿</b> để mua bình tưới (${CAN_COST} ${YB}), hoặc chờ nước tự hồi.`);return;}
+  if(g.water<1){gardenToast(`💧 Hết nước rồi. Bấm <b>+ 🚿</b> để mua bình tưới (${canTxt()}), hoặc chờ nước tự hồi.`);return;}
   grow.sort((a,b)=>(a[0].gr||0)-(b[0].gr||0));careRound(grow[0][1]);}
 function gChipGo(e){if(e.target.closest('#gcan'))return;const c=e.currentTarget;e.stopPropagation();
   if(c.classList.contains('water'))gWaterGo();else if(c.matches('.gold,.shovel,.kind,.hurt'))gSheet('fr');else if(c.classList.contains('gcoinchip'))gSheet('shop');}
@@ -23217,7 +23241,7 @@ function gCanSVG(lv,sz){lv=Math.max(0,Math.min(1,lv));const top=34-lv*18;sz=sz||
     `<rect x="16" y="${top}" width="24" height="${40-top}" fill="#3aa7ef" clip-path="url(#gcc)"/><path d="M16 ${top}h24" stroke="#bfe6ff" stroke-width="1.4" clip-path="url(#gcc)"/>`+
     `<path d="M22 16v-4a6 6 0 0 1 12 0v4" fill="none" stroke="#1d5f9a" stroke-width="2.4" stroke-linecap="round"/><path d="M40 20c5 0 5 12 0 12" fill="none" stroke="#1d5f9a" stroke-width="2.4" stroke-linecap="round"/></svg>`;}
 function gGrowing(p){return !!(p&&p.l&&!p.wilt&&stageOf(p.gr||0)<4);}
-function gwSet(on){const g=G();if(on&&g.water<1){gardenToast(`💧 Hết nước rồi. Bấm <b>+ 🚿</b> để mua bình tưới (${CAN_COST} ${YB}), hoặc chờ nước tự hồi.`);on=false;}
+function gwSet(on){const g=G();if(on&&g.water<1){gardenToast(`💧 Hết nước rồi. Bấm <b>+ 🚿</b> để mua bình tưới (${canTxt()}), hoặc chờ nước tự hồi.`);on=false;}
   if(on&&!g.plots.some(gGrowing)){gardenToast('🌱 Chưa có cây nào cần tưới. Gieo hạt vào ô đất trống trước nhé.');gSheet('seed');on=false;}
   GW.on=!!on;gwSync();}
 function gwSync(){const sc=document.getElementById('gscene');if(!sc)return;const on=GW.on&&location.hash==='#garden'&&!sc.classList.contains('play');sc.classList.toggle('gwmode',on);
@@ -26621,7 +26645,7 @@ Object.assign(LP_IC,{zalo:'<path d="M4 5h16v11H9l-5 4z"/><path d="M9 8.5h6l-6 5h
 /* [khóa, nhãn, dòng phụ, biểu tượng, màu, nhóm] */
 function u164Items(){const inApp=u164InApp(),ph=LPC.hotline||'';return [
   ['play',inApp?'Đánh giá 5 sao trên CH Play':'Tải trên Google Play',inApp?'Mỗi đánh giá giúp Tâm HSK đến với nhiều người hơn':'App Android miễn phí','play','#0d7a63','app',u164Play()],
-  ['appstore','App Store',lpLink('appstore')?'Bản cho iPhone và iPad':'Bản iPhone, iPad · sắp ra mắt','appstore','#1d6fb8','app',lpLink('appstore')],
+  ['appstore','App Store',lpLink('appstore')?'Bản cho iPhone và iPad':'Bản iPhone, iPad','appstore','#1d6fb8','app',lpLink('appstore')],
   ['web','Học trên web','hsk.kassertam.com · cùng tài khoản với app','web','#0f8a8a','app',inApp?'':(lpLink('web')||U164_SITE+'/')],
   ['zalo','Zalo','Nhắn tin tư vấn','zalo','#0068ff','contact',lpLink('zalo')],
   ['messenger','Messenger','Nhắn qua Facebook','msg','#7b3fa0','contact',lpLink('messenger')],
@@ -26649,19 +26673,19 @@ function viewLinks(){const L=u164Items(),G=[['app','Tải app & học ngay'],['c
   const sh=app.querySelector('#u164sh');if(sh)sh.onclick=()=>navigator.share({title:'Tâm HSK — Tải app & liên hệ',url}).catch(()=>{});
   window.scrollTo({top:0});try{lpLoad().then(()=>{if(location.hash==='#lienket'&&!app.querySelector('.u164w[data-f]')){const w=app.querySelector('.u164w');if(w&&JSON.stringify(u164Items().map(r=>r[6]))!==JSON.stringify(L.map(r=>r[6])))viewLinks();}});}catch(e){}}
 /* dải "Đã có trên CH Play" đầu Trang chủ (chỉ trên web) */
+const U164_AS='https://apps.apple.com/vn/app/id6837971457';
+function u164GiftLeft(){try{const v=localStorage.getItem('hsk-iosgift');return v==null?null:Math.max(0,+v||0);}catch(e){return null;}}
+/* 5.150: dải báo app đã có trên App Store — 2 nút tải iOS và Android, nút × để tắt; quà 500 Nguyên bảo cho 100 người đầu tải bản iPhone và đăng nhập */
 function u164Strip(){if(u164InApp())return;const h=location.hash||'#home';if(h!=='#home'&&h!=='#')return;
-  let off=0;try{off=+localStorage.getItem('hsk-u164x')||0;}catch(e){}if(Date.now()-off<14*864e5)return;
-  const root=app.querySelector('.stack')||app;if(!root||app.querySelector('#u164s'))return;const ios=u164IOS();
-  const asu=(()=>{try{return lpLink('appstore')||'';}catch(e){return '';}})();
-  const hk='u164:'+(ios?(asu?'ios':'iospre'):'play'+(asu?'+ios':''));try{const r=hkGet()[hk];if(r&&(r.x||Date.now()-(r.t||0)>HK_SHOW))return;}catch(e){}
-  const d=document.createElement('div');d.id='u164s';d.className='u164s';d.dataset.hk=hk;
-  const tt=ios?(asu?'Tâm HSK đã có trên App Store · Tải ngay':'Tâm HSK sắp có trên App Store'):'Tâm HSK đã có trên CH Play · Tải ngay nhận quà';
-  const sub=ios?(asu?'Bản cho iPhone và iPad, tải miễn phí':'Trong lúc chờ, bạn vẫn học đầy đủ ngay trên web này'):(asu?'Học mượt hơn trên điện thoại · Đã có cả trên App Store':'Học mượt hơn trên điện thoại');
-  const go=ios?(asu?`<a class="btn pri sm" href="${esc(asu)}" target="_blank" rel="noopener">Tải app</a>`:''):`<a class="btn pri sm" href="${esc(u164Play())}" target="_blank" rel="noopener">Tải app</a>`;
-  d.innerHTML=`<span class="u164si" aria-hidden="true">${lpIc(ios&&asu?'appstore':'play')}</span><div class="u164st"><b>${tt}</b><small>${sub}</small><span class="u165gift" hidden></span></div>
-    <div class="u164sb">${go}<a class="btn sm ghost" href="#lienket">Liên hệ</a></div>
-    <button class="u164x" type="button" aria-label="Ẩn thông báo tải app">×</button>`;
-  d.querySelector('.u164x').onclick=()=>{try{localStorage.setItem('hsk-u164x',String(Date.now()));}catch(e){}d.remove();};root.insertBefore(d,root.firstChild);try{u165Paint();}catch(e){}}
+  const root=app.querySelector('.stack')||app;if(!root||app.querySelector('#u164s'))return;
+  const asu=(()=>{try{return lpLink('appstore')||U164_AS;}catch(e){return U164_AS;}})(),left=u164GiftLeft(),gift=left==null||left>0;
+  const hk='u164:ios500'+(gift?'':'x');try{const r=hkGet()[hk];if(r&&(r.x||Date.now()-(r.t||0)>HK_SHOW))return;}catch(e){}
+  const d=document.createElement('div');d.id='u164s';d.className='u164s u164two';d.dataset.hk=hk;
+  const sub=gift?`🎁 Tặng <b>500 Nguyên bảo</b> cho 100 người đầu tiên tải app iPhone và đăng nhập${left!=null?` · còn <b>${left}</b> suất`:''}`:'Bản cho iPhone, iPad và Android · tải miễn phí';
+  d.innerHTML=`<span class="u164si" aria-hidden="true">${lpIc('appstore')}</span><div class="u164st"><b>Tâm HSK đã có trên App Store</b><small>${sub}</small></div>
+    <div class="u164sb"><a class="btn pri sm" href="${esc(asu)}" target="_blank" rel="noopener" aria-label="Tải bản iOS trên App Store">${lpIc('appstore')}<span>iOS</span></a><a class="btn pri sm" href="${esc(u164Play())}" target="_blank" rel="noopener" aria-label="Tải bản Android trên CH Play">${lpIc('play')}<span>Android</span></a></div>
+    <button class="u164x" type="button" aria-label="Tắt thông báo">×</button>`;
+  d.querySelector('.u164x').onclick=()=>{d.remove();};root.insertBefore(d,root.firstChild);}
 new MutationObserver(()=>{clearTimeout(u164Strip.t);u164Strip.t=setTimeout(u164Strip,60);}).observe(document.getElementById('app')||document.body,{childList:true});
 addEventListener('hashchange',()=>setTimeout(u164Strip,120));setTimeout(u164Strip,400);
 /* Khám phá: thêm lối vào trang Liên kết */
@@ -29274,7 +29298,7 @@ function kcShort(c){const b=kcBal();let inv=false;try{if(!isPremium())inv=proInv
   if(!inv)gardenToast(`${KC_I} Cần <b>${c}</b> Kim Cương, bạn đang có ${kcN(b)}.${kcApp()?'':' <a href="#kc">Nạp thêm</a>'}`);}
 // trả bằng Kim Cương cho món có giá riêng (không quy từ Nguyên bảo)
 /* 5.146: giới hạn mua bằng Kim Cương mỗi ngày [thường, Pro] — hết lượt thì chặn hẳn, mời mua gói Pro. Máy chủ giữ số thật (KC_CAP), app đếm thêm tại chỗ để chặn ngay cả khi chưa gửi xong */
-const KC_CAP={game:[5,15],en3:[1,6],enfull:[1,2],race:[3,10],review:[3,20]};
+const KC_CAP={game:[5,15],en3:[1,6],enfull:[1,2],race:[3,10],review:[3,20],water2:[1,1],water3:[1,1]};
 const KC_CAP_NAME={game:'lượt chơi khi hết năng lượng',en3:'đổi +3 năng lượng',enfull:'nạp đầy năng lượng',race:'thêm lượt Đua xe',review:'chấm chi tiết'};
 function kcDay(){return new Date(Date.now()+7*3600e3).toISOString().slice(0,10);}
 function kcIsPro(){const st=KCS().st||{};if(st.caps&&st.caps.game)return st.caps.game.max===KC_CAP.game[1];try{return !!isPremium();}catch(e){return false;}}
@@ -29921,7 +29945,7 @@ const G6K='hsk-g6cfg';
 function g6On(){if(G6E.failed)return false;try{if(window.__T&&window.__g6!=null)return !!window.__g6;}catch(e){}
   let c='off';try{c=localStorage.getItem(G6K)||'off';}catch(e){}
   if(c==='all')return true;try{return !!(SOC.auth&&ME().g6);}catch(e){return false;}}
-async function g6Sync(){try{const was=g6On();const r=await fetch(API_BASE+'/v1/config',{cache:'no-store'});if(r.ok){const j=await r.json();if(j&&'garden6' in j){try{localStorage.setItem(G6K,j.garden6==='all'?'all':'off');}catch(e){}}}
+async function g6Sync(){try{const was=g6On();const r=await fetch(API_BASE+'/v1/config',{cache:'no-store'});if(r.ok){const j=await r.json();try{if(j&&j.iosgift&&j.iosgift.left!=null){const o=localStorage.getItem('hsk-iosgift');localStorage.setItem('hsk-iosgift',String(j.iosgift.left));if(o!==String(j.iosgift.left)){const el=document.getElementById('u164s');if(el&&!el.dataset.hkOut){el.remove();u164Strip();}}}}catch(e){}if(j&&'garden6' in j){try{localStorage.setItem(G6K,j.garden6==='all'?'all':'off');}catch(e){}}}
   if(was!==g6On()&&location.hash==='#garden')viewGarden();}catch(e){}}
 setTimeout(g6Sync,2500);
 const G6E=(function(){
@@ -29930,9 +29954,12 @@ const G6E=(function(){
   const base=()=>{try{if(window.__g6base)return window.__g6base;}catch(e){}
     try{if((typeof isApp==='function'&&isApp())||window.__TAMHSK_IOS||location.protocol==='file:')return 'https://hsk.kassertam.com/garden6/';}catch(e){}
     return new URL('garden6/',document.baseURI).href;};
-  const dirOf=k=>/^(bg|detail|wind|sky_|lantern|paperLight)/.test(k)?'scene':/^pot\d/.test(k)?'pots':/^(plant|sprout|young|wilted)\d|^seed$/.test(k)?'plants':'animals';
-  function im(k){const i=imgs[k];if(i)return i;if(pend[k]||bad[k])return null;pend[k]=1;const x=new Image();x.crossOrigin='anonymous';
-    x.onload=()=>{imgs[k]=x;delete pend[k];};x.onerror=()=>{delete pend[k];bad[k]=(bad[k]||0)+1;if(k==='bg')E.failed=true;};x.src=base()+dirOf(k)+'/'+k+'.webp';return null;}
+  let MF={v:1,decor:[],art:[]},mfReady=false,mfAsked=false;
+  function loadMF(){if(mfAsked)return;mfAsked=true;const done=()=>{mfReady=true;};const tm=setTimeout(done,2500);
+    try{fetch(base()+'manifest.json?t='+Math.floor(Date.now()/300000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&typeof j==='object'){MF={v:(+j.v||1),art:Array.isArray(j.art)?j.art.filter(x=>/^[a-z0-9_]{1,30}$/.test(x)).slice(0,40):[],decor:Array.isArray(j.decor)?j.decor.filter(d=>d&&d.id&&/^[a-z0-9_]{1,30}$/.test(d.img||'')&&isFinite(d.x)&&isFinite(d.y)&&d.w>0).slice(0,40):[]};}}).catch(()=>{}).then(()=>{clearTimeout(tm);done();});}catch(e){clearTimeout(tm);done();}}
+  const dirOf=k=>/^(decor_|can_)/.test(k)?'decor':/^(bg|detail|wind|sky_|lantern|paperLight)/.test(k)?'scene':/^pot\d/.test(k)?'pots':/^(plant|sprout|young|wilted)\d|^seed$/.test(k)?'plants':'animals';
+  function im(k){const i=imgs[k];if(i)return i;if(!mfReady||pend[k]||bad[k])return null;pend[k]=1;const x=new Image();x.crossOrigin='anonymous';
+    x.onload=()=>{imgs[k]=x;delete pend[k];};x.onerror=()=>{delete pend[k];bad[k]=(bad[k]||0)+1;if(k==='bg')E.failed=true;};x.src=base()+dirOf(k)+'/'+k+'.webp?mv='+MF.v;return null;}
   /* tỉ lệ bề ngang so với cây trưởng thành (đo từ ảnh gốc): [mầm, cây non, héo] theo chỉ số plantN */
   const RT=[[.146,.798,.95],[.341,.682,.722],[.374,.747,.84],[.341,.682,.824],[.341,.682,.824],[.266,.682,.748],[.214,.633,.824],[.169,.682,.816],[.306,.682,.751],[.341,.682,.824],[.341,.682,.824],[.341,.682,.824],[.341,.682,.824],[.479,.957,.974],[.341,.682,.824]];
   /* mã cây của app (PLANTS 1…17) → chỉ số plantN; 16 Nấm HSK 3.0 và 17 Cây của bạn tạm dùng Cúc và Trúc */
@@ -29943,7 +29970,7 @@ const G6E=(function(){
   const spots=Array.from({length:16},(_,i)=>({x:[488,587,686,785,989,1088,1187,1286][i%8],y:i<8?477:540})),order=[1,6,10,13,3,4,8,15,0,7,11,12,2,5,9,14];
   const pets=[{key:'monkey',x:402,y:525,w:80},{key:'cat',x:1332,y:541,w:82},{key:'dog',x:1405,y:573,w:86},{key:'dove',x:274,y:199,w:62}];
   pets.forEach((p,i)=>Object.assign(p,{id:i,trail:[],rest:1+i*.7,speed:[58,70,51,0][i],flip:false,heart:0}));
-  const dove=pets[3],roosts=[[316,259,38],[1452,259,38],[23,678,64],[1750,678,64],[886,553,59],[885,209,39],[1614,314,47],[1223,77,19],[274,199,58]];
+  const dove=pets[3],roosts=[[316,259,38],[1452,259,38],[23,678,64],[1750,678,64],[886,566,59],[885,216,39],[1614,314,47],[1250,86,19],[274,199,58]];
   let trip=0,flight=null,birdState='perched',birdWait=8;
   const reduced=(()=>{try{return matchMedia('(prefers-reduced-motion:reduce)').matches;}catch(e){return false;}})();
   const posts=[[598,634],[736,772],[997,1036],[1130,1168]];
@@ -29974,9 +30001,14 @@ const G6E=(function(){
   function groundShadow(x,y,rx,ry,strength){ctx.save();ctx.translate(x,y);ctx.scale(rx,ry);const gr=ctx.createRadialGradient(0,0,0,0,0,1);gr.addColorStop(0,'rgba(57,46,32,'+strength+')');gr.addColorStop(.55,'rgba(66,53,35,'+strength*.57+')');gr.addColorStop(1,'rgba(66,53,35,0)');ctx.fillStyle=gr;ctx.fillRect(-1,-1,2,2);ctx.restore();}
   const periods={dawn:{shade:'#ffdcc1',wash:'#f8b27b',side:0,dx:1,dy:.37,length:.75},noon:{shade:'#ffffff',wash:'#ffffff',side:.5,dx:.25,dy:.25,length:.24},dusk:{shade:'#f1bbab',wash:'#ff9260',side:1,dx:-1,dy:.30,length:.93},night:{shade:'#546a99',wash:'#9dc7f4',side:.82,dx:-.72,dy:.30,length:.50}};
   function setPeriod(){let m='day';try{m=window.__g6sky||gSky();}catch(e){}period=({day:'noon',dawn:'dawn',dusk:'dusk',night:'night',noon:'noon'})[m]||'noon';}
+  /* hướng và độ dài bóng theo giờ thật: sáng bóng dài đổ sang phải, trưa ngắn, chiều dài đổ sang trái; đêm theo ánh trăng */
+  function sun(){let hr=null;try{hr=window.__g6hour;}catch(e){}if(hr==null){const d=new Date();hr=d.getHours()+d.getMinutes()/60;}
+    if(period==='night'||hr<5.5||hr>18.5)return {sx:.36,sy:.15,a:.14};
+    const f=clamp((hr-5.5)/13,0,1),c=Math.cos(Math.PI*f),ac=Math.abs(c),len=.24+.55*Math.pow(ac,1.4);return {sx:-c*len,sy:(.25+.12*ac)*len,a:.2};}
+  let SUN={sx:0,sy:.06,a:.2};
   const sil=new WeakMap();
   function cast(i,x,y,width){if(!i)return;let s=sil.get(i);if(s===undefined){try{s=document.createElement('canvas');s.width=i.width;s.height=i.height;const c=s.getContext('2d');c.drawImage(i,0,0);c.globalCompositeOperation='source-in';c.fillStyle='#483c34';c.fillRect(0,0,i.width,i.height);}catch(e){s=null;}sil.set(i,s);}
-    if(!s)return;const l=periods[period],ht=width*i.height/i.width;ctx.save();ctx.translate(x,y);ctx.transform(1,0,-l.dx*l.length,-l.dy*l.length,0,0);ctx.globalAlpha=period==='night'?.14:.20;ctx.drawImage(s,-width/2,-ht,width,ht);ctx.restore();}
+    if(!s)return;const ht=width*i.height/i.width;ctx.save();ctx.translate(x,y);ctx.transform(1,0,SUN.sx,-SUN.sy,0,0);ctx.globalAlpha=SUN.a;ctx.drawImage(s,-width/2,-ht,width,ht);ctx.restore();}
   const lanterns=[{x:343,y:446},{x:1432,y:446}],lampWidth=114;
   function glow(x,y,rx,ry,power){ctx.save();ctx.translate(x,y);ctx.scale(rx,ry);const gr=ctx.createRadialGradient(0,0,0,0,0,1);gr.addColorStop(0,'rgba(255,188,91,'+power+')');gr.addColorStop(.46,'rgba(246,162,64,'+power*.52+')');gr.addColorStop(1,'rgba(243,154,64,0)');ctx.fillStyle=gr;ctx.fillRect(-1,-1,2,2);ctx.restore();}
   function lightLanterns(){const power=period==='night'?1:period==='dusk'?.43:0;if(!power)return;ctx.save();ctx.globalCompositeOperation='screen';
@@ -30003,6 +30035,37 @@ const G6E=(function(){
     else if(kind==='wilt'){ctx.lineWidth=2.4;ctx.beginPath();ctx.moveTo(0,-6);ctx.lineTo(0,1.5);ctx.stroke();ctx.fillStyle='#fff6db';ctx.beginPath();ctx.arc(0,5.4,1.5,0,Math.PI*2);ctx.fill();}
     else{ctx.lineWidth=2.4;ctx.beginPath();ctx.moveTo(-5,0);ctx.lineTo(5,0);ctx.moveTo(0,-5);ctx.lineTo(0,5);ctx.stroke();}
     ctx.restore();}
+  /* bình tưới: nâu = tưới vườn mình, xanh = sang vườn bạn tưới. Có ảnh can_brown/can_blue trong /garden6/decor thì dùng ảnh, chưa có thì vẽ nét */
+  const CANS=[{k:'own',img:'can_brown',x:446,y:612,w:50,c:['#9a6a3c','#6f4a26','#c79a66']},{k:'friend',img:'can_blue',x:1322,y:612,w:50,c:['#4f9fd6','#2f6f9f','#a5d5f3']}];
+  function drawCan(c){ctx.save();ctx.translate(c.x,c.y);const [a,b,hi]=c.c;ctx.lineJoin='round';ctx.lineCap='round';
+    ctx.strokeStyle=b;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-12,-26);ctx.quadraticCurveTo(-31,-24,-27,-9);ctx.stroke();
+    ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(12,-12);ctx.lineTo(27,-27);ctx.stroke();ctx.fillStyle=b;ctx.beginPath();ctx.ellipse(29,-29,5,3,-.8,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=a;ctx.strokeStyle=b;ctx.lineWidth=1.6;ctx.beginPath();ctx.moveTo(-14,-28);ctx.lineTo(14,-28);ctx.lineTo(16,-2);ctx.quadraticCurveTo(0,3,-16,-2);ctx.closePath();ctx.fill();ctx.stroke();
+    ctx.fillStyle=hi;ctx.beginPath();ctx.ellipse(0,-28,14,3.4,0,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(255,255,255,.28)';ctx.fillRect(-10,-23,4,17);
+    ctx.strokeStyle=b;ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,-30,10,Math.PI,2*Math.PI);ctx.stroke();ctx.restore();}
+  function pill(text,x,y,bg,fg,ring){const size=clamp(12.5/(s0*z),14,30);ctx.save();ctx.font='700 '+size+'px system-ui,-apple-system,"Segoe UI",sans-serif';const tw=ctx.measureText(text).width,pw=tw+size*1.1,ph=size*1.62;
+    ctx.fillStyle=bg;ctx.strokeStyle=ring||'rgba(40,50,40,.35)';ctx.lineWidth=ring?size*.16:1.2;rrect(x-pw/2,y-ph/2,pw,ph,ph/2);ctx.fill();ctx.stroke();ctx.fillStyle=fg;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x,y+size*.04);ctx.restore();return [pw,ph];}
+  const HOME={x:1196,y:262};
+  function labels(){let wOn=false;try{wOn=!!GW.on;}catch(e){}const wt=Math.max(0,Math.floor((g&&g.water)||0));
+    pill('Tưới vườn · '+wt+' giọt',CANS[0].x,CANS[0].y+17,wOn?'#fff3c4':'rgba(255,250,236,.94)','#5a3a18',wOn?'#e0a100':null);
+    pill('Sang vườn bạn tưới',CANS[1].x,CANS[1].y+17,'rgba(240,249,255,.94)','#1d4f78');
+    pill('Về nhà',HOME.x,HOME.y,'rgba(255,250,236,.95)','#4a2f12','#b98a3f');}
+  /* thoại của thú: hộp thoại bám ngay trên đầu thú */
+  let bub=null;
+  function bubble(){const el=wrap&&wrap.querySelector('.g6bub');if(!el)return;if(!bub||performance.now()>bub.until||!owned.includes(bub.p.key)){if(!el.hidden)el.hidden=true;bub=null;return;}
+    const p=bub.p,sc=s0*z,x=p.x*sc+ox,y=(p.y-p.w*(p.id===3?1.02:1.16))*sc+oy,bw=el.offsetWidth||180,bh=el.offsetHeight||60;
+    const lx=clamp(x-bw/2,6,Math.max(6,w-bw-6)),below=y-bh-10<4,ty=below?p.y*sc+oy+10:y-bh-10;
+    el.style.transform='translate('+Math.round(lx)+'px,'+Math.round(clamp(ty,4,Math.max(4,h-bh-4)))+'px)';el.style.setProperty('--ax',Math.round(clamp(x-lx,16,bw-16))+'px');el.classList.toggle('below',below);}
+  /* thanh số liệu: Nguyên bảo, Kim Cương, điểm sang trọng, bật/tắt tiếng thú */
+  let hudKey='';
+  function hud(){const el=wrap&&wrap.isConnected&&wrap.querySelector('.g6hud');if(!el)return;
+    try{const sc=wrap.parentElement,sr=sc.getBoundingClientRect();let bt=0;sc.querySelectorAll('.gtopui .gchip,.gtopui .gback,.gtopui .gttl,.gtopui .gfsback').forEach(e=>{const r=e.getBoundingClientRect();if(r.width>0&&r.height>0&&r.bottom-sr.top<sr.height*.3)bt=Math.max(bt,r.bottom-sr.top);});const tp=Math.round(bt?bt+6:10)+'px';if(el.style.top!==tp)el.style.top=tp;}catch(e){}let nb=0,kc=null,lux=0,von=true;
+    try{nb=g.coins|0;}catch(e){}try{if(kcOn())kc=kcBal();}catch(e){}try{lux=luxury();}catch(e){}try{von=gpVoiceOn();}catch(e){}
+    const key=[nb,kc,lux,von].join('|');if(key===hudKey&&el.childElementCount)return;hudKey=key;const F=n=>{try{return (+n).toLocaleString('vi-VN');}catch(e){return String(n);}};
+    el.innerHTML='<span class="g6chip" title="Nguyên bảo" aria-label="Nguyên bảo: '+F(nb)+'">'+YB+'<b>'+F(nb)+'</b></span>'+(kc==null?'':'<a class="g6chip" href="#kc" title="Kim Cương" aria-label="Kim Cương: '+F(kc)+'">'+KC_I+'<b>'+F(kc)+'</b></a>')+
+      '<a class="g6chip lux" href="#house" title="Điểm sang trọng (nhà, nội thất, trang phục, đồ trang trí vườn)" aria-label="Điểm sang trọng: '+F(lux)+'"><i aria-hidden="true">✨</i><b>'+F(lux)+'</b></a>'+
+      '<button type="button" class="g6chip g6voice" aria-pressed="'+von+'" title="Bật/tắt tiếng thú">'+(von?'🔊':'🔇')+'<span>Tiếng thú</span></button>';
+    el.querySelector('.g6voice').onclick=()=>{try{localStorage.setItem('hsk-gpv',gpVoiceOn()?'0':'1');}catch(e){}hudKey='';hud();};}
   function drawSign(){let text='';try{text=String((S.set&&S.set.name)||'').trim();}catch(e){}if(!text)return;const size=clamp(14/(s0*z),21,43);ctx.save();ctx.translate(886,663);ctx.font='bold '+size+'px Georgia,serif';
     const width=clamp(ctx.measureText(text).width+size,124,290),height=size*1.37+4;ctx.fillStyle='#efcc8a';ctx.strokeStyle='#6c461f';ctx.lineWidth=2.6;rrect(-width/2,-height/2,width,height,5);ctx.fill();ctx.stroke();
     ctx.fillStyle='#38200c';ctx.textAlign='center';ctx.textBaseline='middle';let label=text;if(ctx.measureText(label).width>width-14){const chars=Array.from(label);while(chars.length&&ctx.measureText(chars.join('')+'…').width>width-14)chars.pop();label=chars.join('')+'…';}
@@ -30044,14 +30107,23 @@ const G6E=(function(){
   function checkGate(){const k=gateAt(player.x,player.y);if(k!==lastGate){lastGate=k;if(k)offerGate(k);}}
   const PETSAY={dog:[['汪汪！我在看花园。','Gâu gâu! Tớ đang canh vườn đây.'],['有人来了吗？','Có ai tới không nhỉ?']]};
   function petTap(p){let nm=p.key,say=null;try{const q=GPET[p.key];nm=q.n;say=(q.say&&q.say.length?q.say:PETSAY[p.key]||[])[Math.floor(Math.random()*((q.say&&q.say.length?q.say:PETSAY[p.key]||[]).length))];}catch(e){}
-    if(p.id!==3){p.trail=[];p.rest=3;p.heart=1.4;}card(nm,say?[say[0],say[1]]:'…');}
+    if(p.id!==3){p.trail=[];p.rest=3.6;p.heart=1.4;}hideCard();const el=wrap.querySelector('.g6bub');if(!el||!say)return;
+    el.querySelector('em').textContent=say[0];el.querySelector('small').textContent=say[1];el.querySelector('b').textContent=nm;el.hidden=false;bub={p,until:performance.now()+3800};
+    try{if(gpVoiceOn())speakAs(say[0],1,p.key);}catch(e){}}
   function tap(x,y){const p=toWorld(x,y);
     const n=nSlots();
     if(canBuy()){const q=spots[order[n]];if(Math.abs(p.x-q.x)<38&&Math.abs(p.y-(q.y-14))<34){hideCard();try{buyPlot();}catch(e){console.warn(e);}return;}}
     for(let k=n-1;k>=0;k--){const pot=spots[order[k]];if(Math.abs(p.x-pot.x)<37&&p.y<=pot.y+5&&p.y>pot.y-((g.plots[k]||{}).l?92:58)){hideCard();try{plotAction(k);}catch(e){console.warn(e);}return;}}
     const pet=pets.filter(v=>owned.includes(v.key)).sort((a,b)=>b.y-a.y).find(v=>Math.abs(v.x-p.x)<v.w*.58&&p.y<=v.y+4&&p.y>v.y-v.w*1.18);if(pet){petTap(pet);return;}
-    if(p.x>1030&&p.x<1362&&p.y>72&&p.y<243){offerGate('rear');return;}
+    for(const c of CANS){if(Math.abs(p.x-c.x)<44&&p.y>c.y-48&&p.y<c.y+34){canTap(c);return;}}
+    if((p.x>1030&&p.x<1362&&p.y>72&&p.y<243)||(Math.abs(p.x-HOME.x)<70&&Math.abs(p.y-HOME.y)<24)){hideCard();location.hash='#house';return;}
     hideCard();if(!walkable(p.x,p.y))return;path=findRoute(player,p.x,p.y);}
+  function canTap(c){if(c.k==='friend'){hideCard();location.hash='#friends';return;}
+    let on=false;try{on=!!GW.on;}catch(e){}
+    if(!on&&(!g||g.water<1)){let nx=null;try{nx=canNext();}catch(e){}if(!nx){card('Hết nước tưới','Hôm nay bạn đã mua đủ 3 bình. Nước tự hồi 1 giọt mỗi 3 giờ.');return;}
+      card('Hết nước tưới','Mua bình tưới để có ngay 3 lượt tưới.','Mua bình tưới',()=>{try{buyCan();}catch(e){}});const go=wrap.querySelector('.g6go');try{go.innerHTML='Mua · '+canTxt();}catch(e){}return;}
+    try{gwSet(!on);}catch(e){}let now=false;try{now=!!GW.on;}catch(e){}
+    card(now?'Đang bật tưới nhanh':'Đã tắt tưới nhanh',now?'Chạm vào cây đang lớn để tưới. Chạm bình tưới lần nữa để tắt.':'Chạm vào chậu để mở bảng chăm cây như thường.');}
   function geometry(){const a=[...pointers.values()],b=a[1]||a[0];return {x:(a[0].x+b.x)/2,y:(a[0].y+b.y)/2,d:Math.hypot(a[0].x-b.x,a[0].y-b.y)};}
   const local=e=>{const r=cv.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};};
   function bind(){
@@ -30062,7 +30134,7 @@ const G6E=(function(){
     cv.addEventListener('wheel',e=>{let phone=true;try{phone=mhIsPhone();}catch(x){}if(!phone&&!e.ctrlKey)return;e.preventDefault();const q=local(e);zoom(z*Math.exp(-e.deltaY*.0018),q.x,q.y);},{passive:false});
     cv.addEventListener('keydown',e=>{if(e.key.startsWith('Arrow')){e.preventDefault();keys.add(e.key);}});cv.addEventListener('keyup',e=>keys.delete(e.key));cv.addEventListener('blur',()=>keys.clear());
   }
-  function refresh(){try{g=G();}catch(e){}try{owned=gpOwned();}catch(e){owned=[];}gAt=Date.now();setPeriod();}
+  function refresh(){try{g=G();}catch(e){}try{owned=gpOwned();}catch(e){owned=[];}gAt=Date.now();setPeriod();SUN=sun();hud();}
   function draw(dt){
     const dx=(keys.has('ArrowRight')?1:0)-(keys.has('ArrowLeft')?1:0),dy=(keys.has('ArrowDown')?1:0)-(keys.has('ArrowUp')?1:0);walking=false;
     if(dx||dy){path=[];const len=Math.hypot(dx,dy),x=player.x+dx/len*dt*155,y=player.y+dy/len*dt*155;if(walkable(x,y)){player.x=x;player.y=y;walking=true;}if(dx)face=Math.sign(dx);}
@@ -30074,15 +30146,17 @@ const G6E=(function(){
     for(const p of lanterns){cast(lan,p.x,p.y,lampWidth);groundShadow(p.x,p.y,14,3,.35);objects.push([p.y,()=>sprite(lan,p.x,p.y,lampWidth)]);}
     const n=nSlots(),marks=[];
     for(let k=0;k<n;k++){const p=spots[order[k]],pl=g.plots[k]||{},art=plotArt(pl),pot=im('pot'+clamp(+pl.pot||0,0,6))||im('pot0');
-      if(art&&art[0])cast(art[0],p.x,p.y,art[1]);groundShadow(p.x,p.y-.8,21,3.4,.48);
+      cast(pot,p.x,p.y,62);if(art&&art[0])cast(art[0],p.x,p.y,art[1]);groundShadow(p.x,p.y-.8,21,3.4,.48);
       objects.push([p.y,()=>{sprite(pot,p.x,p.y,62);if(art&&art[0])sprite(art[0],p.x,p.y-(art[1]===20?27:25),art[1]);}]);
       const mk=plotMark(pl);if(mk)marks.push([mk,p.x+(mk==='grow'?0:24),mk==='grow'?p.y+9:p.y-(pl.l?50:34),pl]);}
     if(canBuy()){const p=spots[order[n]];objects.push([p.y,()=>{ctx.save();ctx.setLineDash([7,6]);ctx.lineWidth=2.4;ctx.strokeStyle='rgba(122,90,18,.85)';ctx.fillStyle='rgba(255,246,214,.5)';ctx.beginPath();ctx.ellipse(p.x,p.y-9,30,13,0,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.restore();}]);marks.push(['buy',p.x,p.y-30,null]);}
+    for(const d of MF.decor){if(!(g.decor||[]).includes(d.id))continue;const di=im(d.img);if(!di)continue;if(!d.hang){cast(di,d.x,d.y,d.w);groundShadow(d.x,d.y,d.w*.3,3.2,.4);}objects.push([d.hang?H:d.y,()=>sprite(di,d.x,d.y,d.w)]);}
+    for(const c of CANS){const ci=MF.art.includes(c.img)?im(c.img):null;if(ci){cast(ci,c.x,c.y,c.w);}groundShadow(c.x,c.y,17,3.2,.4);objects.push([c.y,()=>{if(ci)sprite(ci,c.x,c.y,c.w);else drawCan(c);}]);}
     const hero=im(walking?'run':'idle')||im('idle');cast(hero,player.x,player.y,74);groundShadow(player.x,player.y,18,3.3,.32);
     updatePets(dt,objects);
     objects.push([player.y,()=>sprite(hero,player.x,player.y-(walking&&!reduced?Math.abs(Math.sin(t*13))*4:0),74,walking&&face===1)]);
     objects.sort((a,b)=>a[0]-b[0]).forEach(o=>o[0]>=H?o[1]():behindGate(o[0],o[1]));
-    finishLighting();lightLanterns();drawSign();marks.forEach(m=>marker(m[0],m[1],m[2],m[3]));checkGate();return true;}
+    finishLighting();lightLanterns();drawSign();marks.forEach(m=>marker(m[0],m[1],m[2],m[3]));labels();bubble();checkGate();return true;}
   function frame(now){if(!cv||!cv.isConnected||E.failed){running=false;if(E.failed&&wrap&&wrap.isConnected)failUI();return;}
     const dt=Math.min((now-last)/1000,.04);last=now;t+=dt;if(Date.now()-gAt>600)refresh();
     try{if(cv.clientWidth!==w||cv.clientHeight!==h)resize();if(w&&h&&g){const ok=draw(dt);const ld=wrap.querySelector('.g6load');if(ld&&ld.hidden===!ok)ld.hidden=ok;}errs=0;}
@@ -30094,22 +30168,42 @@ const G6E=(function(){
       wrap=document.createElement('div');wrap.className='g6wrap';
       wrap.innerHTML='<canvas tabindex="0" aria-label="Sân vườn. Chạm vào chậu để chăm cây, chạm vào sân để Tiểu Long Hổ đi tới, dùng hai ngón tay để phóng to."></canvas><div class="g6load" role="status"><span>Đang tải vườn…</span></div>'+
         '<div class="g6zoom"><button type="button" data-g6z="+" aria-label="Phóng to">+</button><button type="button" data-g6z="-" aria-label="Thu nhỏ">−</button><button type="button" data-g6z="0" aria-label="Về giữa sân">⌂</button></div>'+
+        '<div class="g6hud"></div><div class="g6bub" hidden role="status"><b></b><em class="han"></em><small></small></div>'+
         '<div class="g6card" hidden role="status"><div><b></b><span></span></div><button type="button" class="btn sm pri g6go"></button><button type="button" class="g6x" aria-label="Đóng">×</button></div>';
       sc.insertBefore(wrap,sc.firstChild);sc.classList.add('g6on');cv=wrap.querySelector('canvas');ctx=cv.getContext('2d');w=h=0;pointers.clear();keys.clear();gesture=null;lastGate=gateAt(player.x,player.y);
       wrap.querySelector('.g6x').onclick=hideCard;wrap.querySelectorAll('[data-g6z]').forEach(b=>b.onclick=()=>{const k=b.dataset.g6z;if(k==='0'){z=1;centered=false;w=0;resize();}else zoom(z+(k==='+'?.3:-.3));});
-      bind();if(!walkable(player.x,player.y))refreshActors();resize();
-      ['bg','idle','run','lantern','seed','pot0'].forEach(im);
-      setTimeout(()=>{if(!cv||!cv.isConnected)return;['sky_'+period,'paperLight'].forEach(im);owned.forEach(k=>{const i=pets.findIndex(p=>p.key===k);if(i<0)return;for(let f=0;f<4;f++){im('walk'+i+'_'+f);im('settle'+i+'_'+f);}if(i===3)['wing0','wing1','wing2'].forEach(im);});},60);
+      bind();loadMF();hudKey='';hud();bub=null;if(!walkable(player.x,player.y))refreshActors();resize();
+      const early=()=>{if(!cv||!cv.isConnected)return;if(!mfReady){setTimeout(early,120);return;}['bg','idle','run','lantern','seed','pot0','sky_'+period,'paperLight'].forEach(im);owned.forEach(k=>{const i=pets.findIndex(p=>p.key===k);if(i<0)return;for(let f=0;f<4;f++){im('walk'+i+'_'+f);im('settle'+i+'_'+f);}if(i===3)['wing0','wing1','wing2'].forEach(im);});};setTimeout(early,30);
       setTimeout(()=>{if(!cv||!cv.isConnected||reduced)return;for(let i=0;i<5;i++)for(let f=0;f<5;f++)im('wind'+i+'_'+f);},900);
       if(!running){running=true;last=performance.now();requestAnimationFrame(frame);}},
     unmount(sc){if(sc){sc.classList.remove('g6on');const x=sc.querySelector(':scope>.g6wrap');if(x)x.remove();}},
-    state:()=>({w,h,s0,z,ox,oy,running,period,owned:owned.slice(),slots:nSlots(),buy:canBuy(),player:{x:player.x,y:player.y},loaded:Object.keys(imgs),bad:Object.keys(bad),spot:k=>{const p=spots[order[k]];return {x:p.x*s0*z+ox,y:p.y*s0*z+oy};},toScreen:(x,y)=>({x:x*s0*z+ox,y:y*s0*z+oy})})};
+    state:()=>({w,h,s0,z,ox,oy,running,mf:MF,sun:SUN,cans:CANS.map(c=>({k:c.k,x:c.x*s0*z+ox,y:(c.y-18)*s0*z+oy})),home:{x:HOME.x*s0*z+ox,y:HOME.y*s0*z+oy},pets:pets.filter(p=>owned.includes(p.key)).map(p=>({key:p.key,x:p.x*s0*z+ox,y:(p.y-p.w*.5)*s0*z+oy})),period,owned:owned.slice(),slots:nSlots(),buy:canBuy(),player:{x:player.x,y:player.y},loaded:Object.keys(imgs),bad:Object.keys(bad),spot:k=>{const p=spots[order[k]];return {x:p.x*s0*z+ox,y:p.y*s0*z+oy};},toScreen:(x,y)=>({x:x*s0*z+ox,y:y*s0*z+oy})})};
   return E;})();
 function g6Mount(){const sc=document.getElementById('gscene');if(!sc)return;
   if(location.hash!=='#garden'||!g6On()||sc.classList.contains('play')||!sc.closest('.garden3')||sc.closest('.fgarden')){G6E.unmount(sc);return;}
   G6E.mount(sc);}
 (function(){const b=viewGarden;viewGarden=function(){const r=b.apply(this,arguments);try{g6Mount();}catch(e){console.warn(e);}return r;};})();
 if(window.__T)window.__u198={g6On,g6Mount,g6Sync,E:G6E};
+
+/* 5.150: bán lại nước tưới — mỗi ngày tối đa 3 bình: lần 1 là 20 Nguyên bảo, lần 2 là 2 Kim Cương, lần 3 là 4 Kim Cương; sau đó hết bán trong ngày */
+const CAN_PRICES=[['nb',20],['kc',2,'water2'],['kc',4,'water3']],CAN_DK='hsk-cand';
+function canDay(){let o=null;try{o=JSON.parse(localStorage.getItem(CAN_DK)||'null');}catch(e){}const d=new Date(),k=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();if(!o||o.d!==k)o={d:k,n:0};return o;}
+function canNext(){const c=canDay();return c.n<CAN_PRICES.length?CAN_PRICES[c.n]:null;}
+function canTxt(){const p=canNext();return !p?'hết lượt hôm nay':p[0]==='nb'?`${p[1]} ${YB}`:`${p[1]} ${KC_I}`;}
+function canPlain(){const p=canNext();return !p?'hết lượt hôm nay':p[1]+(p[0]==='nb'?' Nguyên bảo':' Kim Cương');}
+function canDo(){const g=G(),c=canDay(),p=canNext();if(!p)return;
+  if(p[0]==='nb'){if(g.coins<p[1]){gardenToast(`Cần ${p[1]} Nguyên bảo để mua bình tưới.`);return;}g.coins-=p[1];}
+  else if(!kcPayItem(p[2],p[1],'Bình tưới (lần '+(c.n+1)+' hôm nay)'))return;
+  c.n++;try{localStorage.setItem(CAN_DK,JSON.stringify(c));}catch(e){}
+  g.__add=1;g.water=g.water+CAN_N;delete g.__add;g.cans=(g.cans||0)+1;save();try{if(p[0]==='nb')sfx('coin');}catch(e){}
+  const nx=canNext();gardenToast(`🚿 Mua bình tưới: <b>+${CAN_N} lượt tưới</b> (💧 ${g.water}).`+(nx?` Bình kế tiếp hôm nay: ${canTxt()}.`:' Hôm nay đã mua đủ 3 bình.'));viewGarden();}
+buyCan=function(){const p=canNext();
+  if(!p){gardenToast('Hôm nay bạn đã mua đủ 3 bình tưới. Nước tự hồi 1 giọt mỗi 3 giờ, mai mua tiếp nhé!');return;}
+  if(p[0]==='nb'){canDo();return;}
+  let d=document.getElementById('candlg');if(!d){d=document.createElement('dialog');d.id='candlg';d.className='wd';document.body.appendChild(d);d.addEventListener('click',e=>{if(e.target===d)d.close();});}
+  d.innerHTML=`<div class="in"><h3>Mua thêm bình tưới?</h3><p class="small" style="margin:8px 0 14px">Bình thứ ${canDay().n+1} hôm nay giá <b>${p[1]} ${KC_I} Kim Cương</b>, được +${CAN_N} lượt tưới. Mỗi ngày mua tối đa 3 bình.</p><div class="row" style="justify-content:flex-end;gap:8px"><button class="btn" data-x>Thôi</button><button class="btn pri" data-ok>Mua · ${p[1]} ${KC_I}</button></div></div>`;
+  d.querySelector('[data-x]').onclick=()=>d.close();d.querySelector('[data-ok]').onclick=()=>{d.close();canDo();};if(!d.open)d.showModal();};
+if(window.__T)window.__u198c={canDay,canNext,canTxt,buy:()=>buyCan()};
 
 function route(){
   stopGames();
